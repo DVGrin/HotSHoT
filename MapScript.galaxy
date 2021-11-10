@@ -15,21 +15,6 @@ void InitLibs () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Type definitions
-//--------------------------------------------------------------------------------------------------
-void fn_prototype();
-
-struct ShopItem {
-    string name;
-    int minerals_cost;
-    int minerals_increase;
-    int gas_cost;
-    bool alive_only;
-    int max_upgrades;
-    funcref<fn_prototype> increase_function;
-};
-
-//--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
 int[11] gv_PlayerBayul;
@@ -494,6 +479,21 @@ void InitGlobals () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Type definitions
+//--------------------------------------------------------------------------------------------------
+void fn_prototype();
+
+struct ShopItem {
+    string name;
+    int minerals_cost;
+    int minerals_increase;
+    int gas_cost;
+    bool alive_only;
+    int max_upgrades;
+    funcref<fn_prototype> increase_function;
+};
+
+//--------------------------------------------------------------------------------------------------
 // Global Function Declarations
 //--------------------------------------------------------------------------------------------------
 void gf_HrHeroSelect1 ();
@@ -686,6 +686,10 @@ void gf_HrScoreDialogMake ();
 void gf_HrScoreDialogStatToolTip ();
 void gf_HrSurrenderDialogMake ();
 void gf_HrDrawGame ();
+// Utility functions
+int gf_ShopWindowByIndex(int shop_index);
+bool gf_EligibleForBuyingHotkey(int shop_index);
+bool gf_HotkeyStatIncreaseTestConditions();
 
 //--------------------------------------------------------------------------------------------------
 // Trigger Variables
@@ -746,13 +750,15 @@ trigger gt_TrSkillLearnHotKey3;
 trigger gt_TrSkillLearnHotKey4;
 trigger gt_TrStatDialogPageNext;
 trigger gt_TrStatDialogPageNextHotKey;
-trigger gt_TrStatDialogStatIncrease; // DONE
+// DONE
+trigger gt_TrStatDialogStatIncrease;
 trigger gt_TrStatDialogStatIncreaseHotKeyZ;
 trigger gt_TrStatDialogStatIncreaseHotKeyX;
 trigger gt_TrStatDialogStatIncreaseHotKeyC;
 trigger gt_TrStatDialogStatIncreaseHotKeyV;
 trigger gt_TrStatDialogStatIncreaseHotKeyB;
 trigger gt_TrStatDialogStatIncreaseHotKeyN;
+// END DONE
 trigger gt_TrHealingPosionUseComplete;
 trigger gt_TrManaPosionUseComplete;
 trigger gt_TrWardUseComplete;
@@ -14715,6 +14721,67 @@ void gf_HrDrawGame () {
     }
 }
 
+// Utility finctions
+
+int gf_ShopWindowByIndex(int shop_index) {
+    if (i >= 0 && i < 6) {
+        return 0;
+    }
+    if (i >= 6 && i < 12) {
+        return 1;
+    }
+    if (i >= 12 && i < 18) {
+        return 3;
+    }
+    if (i >= 18 && i < 24) {
+        return 2;
+    }
+    if (i >= 24 && i < 30) {
+        return 4;
+    }
+}
+
+bool gf_EligibleForBuyingHotkey(int shop_index) {
+    if (gv_StatusWindowPageSwitch[EventPlayer()] != gf_ShopWindowByIndex(shop_index)) {
+        return false;
+    }
+    if (DialogControlIsEnabled(gv_StatusWindowBtn[shop_index], EventPlayer()) == false) {
+        return false;
+    }
+    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) < gv_StatHowMoney[shop_index][EventPlayer()]) {
+        return false;
+    }
+    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) < gv_ShopItemParameters[shop_index].gas_cost) {
+        return false;
+    }
+    if (gv_ShopItemParameters[shop_index].alive_only && (gv_HeroDeathBoolean[EventPlayer()] == true)) {
+        return false;
+    }
+    return true;
+}
+
+bool gf_HotkeyStatIncreaseTestConditions() {
+    if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
+        return false;
+    }
+    if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
+        return false;
+    }
+    if (!((gv_GameEndBoolean == false))) {
+        return false;
+    }
+    if (!((gv_GameStartBoolean == true))) {
+        return false;
+    }
+    if (!((gv_BeforeStartCounterDialogNum == 0))) {
+        return false;
+    }
+    if (!((gv_StatusWindowAddDelay[EventPlayer()] == false))) {
+        return false;
+    }
+    return true;
+}
+
 //--------------------------------------------------------------------------------------------------
 // Trigger: ?????? ?????????
 //--------------------------------------------------------------------------------------------------
@@ -19586,75 +19653,13 @@ void gt_TrStatDialogStatIncrease_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Utility functions for hotkey stat increases
-//--------------------------------------------------------------------------------------------------
-static int lf_ShopWindowByIndex(int shop_index) {
-    if (i >= 0 && i < 6) {
-        return 0;
-    }
-    if (i >= 6 && i < 12) {
-        return 1;
-    }
-    if (i >= 12 && i < 18) {
-        return 3;
-    }
-    if (i >= 18 && i < 24) {
-        return 2;
-    }
-    if (i >= 24 && i < 30) {
-        return 4;
-    }
-}
-
-static bool lf_EligibleForBuyingHotkey(int shop_index) {
-    if (gv_StatusWindowPageSwitch[EventPlayer()] != lf_ShopWindowByIndex(shop_index)) {
-        return false;
-    }
-    if (DialogControlIsEnabled(gv_StatusWindowBtn[shop_index], EventPlayer()) == false) {
-        return false;
-    }
-    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) < gv_StatHowMoney[shop_index][EventPlayer()]) {
-        return false;
-    }
-    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) < gv_ShopItemParameters[shop_index].gas_cost) {
-        return false;
-    }
-    if (gv_ShopItemParameters[shop_index].alive_only && (gv_HeroDeathBoolean[EventPlayer()] == true)) {
-        return false;
-    }
-    return true;
-}
-
-static bool lf_HotkeyStatIncreaseTestConditions() {
-    if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-        return false;
-    }
-    if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-        return false;
-    }
-    if (!((gv_GameEndBoolean == false))) {
-        return false;
-    }
-    if (!((gv_GameStartBoolean == true))) {
-        return false;
-    }
-    if (!((gv_BeforeStartCounterDialogNum == 0))) {
-        return false;
-    }
-    if (!((gv_StatusWindowAddDelay[EventPlayer()] == false))) {
-        return false;
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ????????? ??????(????????? Z)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        lf_HotkeyStatIncreaseTestConditions();
+        gf_HotkeyStatIncreaseTestConditions();
     }
 
     // Actions
@@ -19663,7 +19668,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
     }
 
     for (i = 0; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == lf_ShopWindowByIndex(i)) && (lf_EligibleForBuyingHotkey(i))) {
+        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
         } else {
@@ -19691,7 +19696,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        lf_HotkeyStatIncreaseTestConditions();
+        gf_HotkeyStatIncreaseTestConditions();
     }
 
     // Actions
@@ -19700,7 +19705,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
     }
 
     for (i = 1; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == lf_ShopWindowByIndex(i)) && (lf_EligibleForBuyingHotkey(i))) {
+        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
         } else {
@@ -19727,7 +19732,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        lf_HotkeyStatIncreaseTestConditions();
+        gf_HotkeyStatIncreaseTestConditions();
     }
 
     // Actions
@@ -19736,7 +19741,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
     }
 
     for (i = 2; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == lf_ShopWindowByIndex(i)) && (lf_EligibleForBuyingHotkey(i))) {
+        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
         } else {
@@ -19763,7 +19768,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        lf_HotkeyStatIncreaseTestConditions();
+        gf_HotkeyStatIncreaseTestConditions();
     }
 
     // Actions
@@ -19772,7 +19777,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
     }
 
     for (i = 3; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == lf_ShopWindowByIndex(i)) && (lf_EligibleForBuyingHotkey(i))) {
+        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
         } else {
@@ -19799,7 +19804,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        lf_HotkeyStatIncreaseTestConditions();
+        gf_HotkeyStatIncreaseTestConditions();
     }
 
     // Actions
@@ -19808,7 +19813,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
     }
 
     for (i = 4; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == lf_ShopWindowByIndex(i)) && (lf_EligibleForBuyingHotkey(i))) {
+        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
         } else {
@@ -19835,7 +19840,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        lf_HotkeyStatIncreaseTestConditions();
+        gf_HotkeyStatIncreaseTestConditions();
     }
 
     // Actions
@@ -19844,7 +19849,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
     }
 
     for (i = 5; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == lf_ShopWindowByIndex(i)) && (lf_EligibleForBuyingHotkey(i))) {
+        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
         } else {
