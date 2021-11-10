@@ -15,6 +15,21 @@ void InitLibs () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Type definitions
+//--------------------------------------------------------------------------------------------------
+void fn_prototype();
+
+struct ShopItem {
+    string name;
+    int minerals_cost;
+    int minerals_increase;
+    int gas_cost;
+    bool alive_only;
+    int max_upgrades;
+    funcref<fn_prototype> increase_function;
+};
+
+//--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
 int[11] gv_PlayerBayul;
@@ -211,6 +226,7 @@ ShopItem[30] gv_ShopItemParameters;
 void InitGlobals () {
     int init_i;
     int init_j;
+    ShopItem empty_si;
 
     gv_AllPlayerGroup = PlayerGroupEmpty();
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -471,6 +487,9 @@ void InitGlobals () {
     }
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_SurrenderDialogBtn[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i < 30; init_i += 1) {
+        gv_ShopItemParameters[init_i] = empty_si;
     }
 }
 
