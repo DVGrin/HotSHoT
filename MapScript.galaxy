@@ -11941,143 +11941,151 @@ void gf_HrStatMoneySet () {
 
 void gf_HrStat1 () {
     // Automatic Variable Declarations
+    const int shop_index = 0;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][0] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322232", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222323", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222322", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][0], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatusWindowNum[EventPlayer()][0]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[0][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[0][EventPlayer()] += gv_StatIncreaseMoney[0];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[0], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[0][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][0] >= 25)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[0], PlayerGroupSingle(EventPlayer()), false);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 25)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat2 () {
     // Automatic Variable Declarations
+    const int shop_index = 1;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][1] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24233", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322233", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222333", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][1], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatusWindowNum[EventPlayer()][1]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[1][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[1][EventPlayer()] += gv_StatIncreaseMoney[1];
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
     if ((gv_SelectedCharNum[EventPlayer()] == 71)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero71Passive", gv_PlayerHero[EventPlayer()], 1);
     }
 
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[1], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[1][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][1] >= 30)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[1], PlayerGroupSingle(EventPlayer()), false);
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 30)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat3 () {
     // Automatic Variable Declarations
+    const int shop_index = 2;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][2] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "DefensePower", gv_PlayerHero[EventPlayer()], 4);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322234", 4);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][2], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatusWindowNum[EventPlayer()][2]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[2][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[2][EventPlayer()] += gv_StatIncreaseMoney[2];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[2], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[2][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][2] >= 20)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[2], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 20)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat4 () {
     // Automatic Variable Declarations
+    const int shop_index = 3;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][3] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Amor2", gv_PlayerHero[EventPlayer()], 4);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222342", 4);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][3], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatusWindowNum[EventPlayer()][3]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[3][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[3][EventPlayer()] += gv_StatIncreaseMoney[3];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[3], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[3][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][3] >= 20)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 20)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat5 () {
     // Automatic Variable Declarations
+    const int shop_index = 4;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][4] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent) + 100.0));
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][4], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatusWindowNum[EventPlayer()][4]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp422", 1);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[4][EventPlayer()]);
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[4][EventPlayer()] += gv_StatIncreaseMoney[4];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[4], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[4][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][4] >= 25)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[4], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 25)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat6 () {
     // Automatic Variable Declarations
+    const int shop_index = 5;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][5] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     if ((gv_CharNoMana[EventPlayer()] == 0)) {
         UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, c_unitPropCurrent) + 75.0));
     }
 
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][5], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatusWindowNum[EventPlayer()][5]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42", 1);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[5][EventPlayer()]);
-    gv_StatHowMoney[5][EventPlayer()] += gv_StatIncreaseMoney[5];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[5], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[5][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][5] >= 25)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[5], PlayerGroupSingle(EventPlayer()), false);
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 25)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat7 () {
     // Automatic Variable Declarations
+    const int shop_index = 6;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][6] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24222", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][6], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatusWindowNum[EventPlayer()][6]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[6][EventPlayer()]);
-    gv_StatHowMoney[6][EventPlayer()] += gv_StatIncreaseMoney[6];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[6], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[6][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][6] >= 20)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[6], PlayerGroupSingle(EventPlayer()), false);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 20)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat8 () {
     // Automatic Variable Declarations
+    const int shop_index = 7;
     // Implementation
     if ((gv_CharNoMana[EventPlayer()] == 0)) {
-        gv_StatusWindowNum[EventPlayer()][7] += 1;
+        gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong2422", gv_PlayerHero[EventPlayer()], 1);
-        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][7], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatusWindowNum[EventPlayer()][7]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
-        PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[7][EventPlayer()]);
-        gv_StatHowMoney[7][EventPlayer()] += gv_StatIncreaseMoney[7];
-        libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[7], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[7][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
-        if ((gv_StatusWindowNum[EventPlayer()][7] >= 20)) {
-            DialogControlSetEnabled(gv_StatusWindowBtn[7], PlayerGroupSingle(EventPlayer()), false);
+        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
+        PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
+        gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+        libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
+        if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 20)) {
+            DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
         }
 
     }
@@ -12088,83 +12096,87 @@ void gf_HrStat8 () {
 
 void gf_HrStat9 () {
     // Automatic Variable Declarations
+    const int shop_index = 8;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][8] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     gf_HrAttackSpeedLevelIncrease();
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223222", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][8], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatusWindowNum[EventPlayer()][8]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[8][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[8][EventPlayer()] += gv_StatIncreaseMoney[8];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[8], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[8][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][8] >= 10)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[8], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 10)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat10 () {
     // Automatic Variable Declarations
+    const int shop_index = 9;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][9] += 1;
-    if ((gv_StatusWindowNum[EventPlayer()][9] == 1)) {
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Armorbreak", gv_PlayerHero[EventPlayer()], 1);
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Armorbreak2", gv_PlayerHero[EventPlayer()], 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade", 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade3", 1);
     }
     else {
-        if ((gv_StatusWindowNum[EventPlayer()][9] == 2)) {
+        if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 2)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade2", 1);
             TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade32", 1);
         }
         else {
-            if ((gv_StatusWindowNum[EventPlayer()][9] == 3)) {
+            if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 3)) {
                 TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade22", 1);
                 TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade322", 1);
             }
 
         }
     }
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][9], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatusWindowNum[EventPlayer()][9]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[9][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[9][EventPlayer()] += gv_StatIncreaseMoney[9];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[9], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[9][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][9] >= 3)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[9], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 3)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat11 () {
     // Automatic Variable Declarations
+    const int shop_index = 10;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][10] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     gf_HrHyepiLevelIncrease();
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][10], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatusWindowNum[EventPlayer()][10]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[10][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[10][EventPlayer()] += gv_StatIncreaseMoney[10];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[10], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[10][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][10] >= 3)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[10], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 3)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat12 () {
     // Automatic Variable Declarations
+    const int shop_index = 11;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][11] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     gf_HrAttackCriticalLevelIncrease();
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][11], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatusWindowNum[EventPlayer()][11]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[11][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[11][EventPlayer()] += gv_StatIncreaseMoney[11];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[11], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[11][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][11] >= 5)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[11], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 5)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
@@ -12176,12 +12188,13 @@ void gf_HrStat25 () {
     // Automatic Variable Declarations
     const int auto9DD66EFC_ae = 17;
     const int auto9DD66EFC_ai = 1;
+    const int shop_index = 12;
 
     // Variable Initialization
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
 
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][12] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
     for ( ; ( (auto9DD66EFC_ai >= 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 <= auto9DD66EFC_ae) || (auto9DD66EFC_ai < 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 >= auto9DD66EFC_ae) ) ; lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 += auto9DD66EFC_ai ) {
         DialogControlSetEnabled(gv_StatusWindowBtn[lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8], PlayerGroupSingle(EventPlayer()), false);
@@ -12193,8 +12206,8 @@ void gf_HrStat25 () {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP32", gv_PlayerHero[EventPlayer()], 1);
     }
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP33", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][12], (StringExternal("Param/Value/8A7F65C7") + IntToText(gv_StatusWindowNum[EventPlayer()][12]) + StringExternal("Param/Value/36A17EA3")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[12][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/8A7F65C7") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/36A17EA3")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
 }
 
@@ -12205,19 +12218,20 @@ void gf_HrStat26 () {
     // Automatic Variable Declarations
     const int auto3240393E_ae = 17;
     const int auto3240393E_ai = 1;
+    const int shop_index = 13;
 
     // Variable Initialization
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
 
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][13] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
     for ( ; ( (auto3240393E_ai >= 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 <= auto3240393E_ae) || (auto3240393E_ai < 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 >= auto3240393E_ae) ) ; lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 += auto3240393E_ai ) {
         DialogControlSetEnabled(gv_StatusWindowBtn[lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8], PlayerGroupSingle(EventPlayer()), false);
     }
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][13], (StringExternal("Param/Value/4851ADBC") + IntToText(gv_StatusWindowNum[EventPlayer()][13]) + StringExternal("Param/Value/DBB538DF")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[13][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4851ADBC") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/DBB538DF")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
 }
 
@@ -12228,20 +12242,21 @@ void gf_HrStat27 () {
     // Automatic Variable Declarations
     const int auto4FC3810C_ae = 17;
     const int auto4FC3810C_ai = 1;
+    const int shop_index = 14;
 
     // Variable Initialization
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
 
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][14] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
     for ( ; ( (auto4FC3810C_ai >= 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 <= auto4FC3810C_ae) || (auto4FC3810C_ai < 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 >= auto4FC3810C_ae) ) ; lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 += auto4FC3810C_ai ) {
         DialogControlSetEnabled(gv_StatusWindowBtn[lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8], PlayerGroupSingle(EventPlayer()), false);
     }
     gf_HrAttackCriticalLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP3233", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][14], (StringExternal("Param/Value/0450D79A") + IntToText(gv_StatusWindowNum[EventPlayer()][14]) + StringExternal("Param/Value/924BE64C")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[14][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0450D79A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/924BE64C")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
 }
 
@@ -12252,20 +12267,21 @@ void gf_HrStat28 () {
     // Automatic Variable Declarations
     const int auto7BD413FC_ae = 17;
     const int auto7BD413FC_ai = 1;
+    const int shop_index = 15;
 
     // Variable Initialization
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
 
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][15] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
     for ( ; ( (auto7BD413FC_ai >= 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 <= auto7BD413FC_ae) || (auto7BD413FC_ai < 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 >= auto7BD413FC_ae) ) ; lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 += auto7BD413FC_ai ) {
         DialogControlSetEnabled(gv_StatusWindowBtn[lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8], PlayerGroupSingle(EventPlayer()), false);
     }
     gf_HrAttackCriticalLevelIncrease2();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323333", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][15], (StringExternal("Param/Value/7CC06727") + IntToText(gv_StatusWindowNum[EventPlayer()][15]) + StringExternal("Param/Value/12C02D1B")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[15][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/7CC06727") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/12C02D1B")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
 }
 
@@ -12276,20 +12292,21 @@ void gf_HrStat29 () {
     // Automatic Variable Declarations
     const int autoC9C614AD_ae = 17;
     const int autoC9C614AD_ai = 1;
+    const int shop_index = 16;
 
     // Variable Initialization
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
 
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][16] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
     for ( ; ( (autoC9C614AD_ai >= 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 <= autoC9C614AD_ae) || (autoC9C614AD_ai < 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 >= autoC9C614AD_ae) ) ; lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 += autoC9C614AD_ai ) {
         DialogControlSetEnabled(gv_StatusWindowBtn[lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8], PlayerGroupSingle(EventPlayer()), false);
     }
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP32333", gv_PlayerHero[EventPlayer()], 1);
     gf_HrHyepiLevelIncrease();
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][16], (StringExternal("Param/Value/EAFCB85C") + IntToText(gv_StatusWindowNum[EventPlayer()][16]) + StringExternal("Param/Value/0B2277F9")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[16][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/EAFCB85C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/0B2277F9")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
 }
 
@@ -12300,170 +12317,183 @@ void gf_HrStat30 () {
     // Automatic Variable Declarations
     const int auto9299BCC7_ae = 17;
     const int auto9299BCC7_ai = 1;
+    const int shop_index = 17;
 
     // Variable Initialization
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
 
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][17] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 = 12;
     for ( ; ( (auto9299BCC7_ai >= 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 <= auto9299BCC7_ae) || (auto9299BCC7_ai < 0 && lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 >= auto9299BCC7_ae) ) ; lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8 += auto9299BCC7_ai ) {
         DialogControlSetEnabled(gv_StatusWindowBtn[lv_eC84A4ECA095EC9DB8EC9EA5EBB288ED98B8], PlayerGroupSingle(EventPlayer()), false);
     }
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323332", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][17], (StringExternal("Param/Value/4CD6BABA") + IntToText(gv_StatusWindowNum[EventPlayer()][17]) + StringExternal("Param/Value/0BD69820")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[17][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4CD6BABA") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/0BD69820")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
 }
 
 void gf_HrStat13 () {
     // Automatic Variable Declarations
+    const int shop_index = 18;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][18] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4232", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][18], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatusWindowNum[EventPlayer()][18]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[18][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[18][EventPlayer()] += gv_StatIncreaseMoney[18];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[18], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[18][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][18] >= 3)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[18], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 3)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat14 () {
     // Automatic Variable Declarations
+    const int shop_index = 19;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][19] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233222", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233222232", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42332222332", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp423322223322", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][19], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatusWindowNum[EventPlayer()][19]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[19][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[19][EventPlayer()] += gv_StatIncreaseMoney[19];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[19], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[19][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][19] >= 3)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[19], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 3)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat15 () {
     // Automatic Variable Declarations
+    const int shop_index = 20;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][20] += 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     gf_HrAttackCriticalLevelIncrease2();
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][20], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatusWindowNum[EventPlayer()][20]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[20][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    gv_StatHowMoney[20][EventPlayer()] += gv_StatIncreaseMoney[20];
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[20], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[20][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][20] >= 3)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[20], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_StatIncreaseMoney[shop_index];
+    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= 3)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
 
 }
 
 void gf_HrStat16 () {
     // Automatic Variable Declarations
+    const int shop_index = 21;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][21] = 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "BoosterItem2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322232222", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][21], (StringExternal("Param/Value/2BBFB346") + IntToText(gv_StatusWindowNum[EventPlayer()][21]) + StringExternal("Param/Value/A431C779")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[21][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2BBFB346") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/A431C779")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    DialogControlSetEnabled(gv_StatusWindowBtn[21], PlayerGroupSingle(EventPlayer()), false);
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
 }
 
 void gf_HrStat17 () {
     // Automatic Variable Declarations
+    const int shop_index = 22;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][22] = 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][22], (StringExternal("Param/Value/E63A395A") + IntToText(gv_StatusWindowNum[EventPlayer()][22]) + StringExternal("Param/Value/AEFB2F88")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[22][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E63A395A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/AEFB2F88")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    DialogControlSetEnabled(gv_StatusWindowBtn[22], PlayerGroupSingle(EventPlayer()), false);
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
 }
 
 void gf_HrStat18 () {
     // Automatic Variable Declarations
+    const int shop_index = 23;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][23] = 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagmaFire", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][23], (StringExternal("Param/Value/F16E4894") + IntToText(gv_StatusWindowNum[EventPlayer()][23]) + StringExternal("Param/Value/50B26F7B")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[23][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F16E4894") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/50B26F7B")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-    DialogControlSetEnabled(gv_StatusWindowBtn[23], PlayerGroupSingle(EventPlayer()), false);
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
 }
 
 void gf_HrStat19 () {
     // Automatic Variable Declarations
+    const int shop_index = 24;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][24] = 1;
-    DialogControlSetEnabled(gv_StatusWindowBtn[24], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong25", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][24], (StringExternal("Param/Value/97E83587") + IntToText(gv_StatusWindowNum[EventPlayer()][24]) + StringExternal("Param/Value/1E42F4E5")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[24][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/97E83587") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E42F4E5")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
 }
 
 void gf_HrStat20 () {
     // Automatic Variable Declarations
+    const int shop_index = 25;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][25] = 1;
-    DialogControlSetEnabled(gv_StatusWindowBtn[25], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong252", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][25], (StringExternal("Param/Value/AA3D08C5") + IntToText(gv_StatusWindowNum[EventPlayer()][25]) + StringExternal("Param/Value/2EAA36A2")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[25][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/AA3D08C5") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2EAA36A2")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
 }
 
 void gf_HrStat21 () {
     // Automatic Variable Declarations
+    const int shop_index = 26;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][26] = 1;
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "Gamsi", c_unitCreateIgnorePlacement, EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]));
     UnitGroupAdd(gv_WardGroup[EventPlayer()], UnitLastCreated());
     UnitControlGroupAddUnit(EventPlayer(), 3, UnitLastCreated());
-    DialogControlSetEnabled(gv_StatusWindowBtn[26], PlayerGroupSingle(EventPlayer()), false);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][26], (StringExternal("Param/Value/44B3468A") + IntToText(gv_StatusWindowNum[EventPlayer()][26]) + StringExternal("Param/Value/5214615F")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[26][EventPlayer()]);
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/44B3468A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/5214615F")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
 }
 
 void gf_HrStat22 () {
     // Automatic Variable Declarations
+    const int shop_index = 27;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][27] = 1;
-    DialogControlSetEnabled(gv_StatusWindowBtn[27], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong242422", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][27], (StringExternal("Param/Value/4792A2C8") + IntToText(gv_StatusWindowNum[EventPlayer()][27]) + StringExternal("Param/Value/B2C67E7D")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[27][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4792A2C8") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/B2C67E7D")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
 }
 
 void gf_HrStat23 () {
     // Automatic Variable Declarations
+    const int shop_index = 28;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][28] = 1;
-    DialogControlSetEnabled(gv_StatusWindowBtn[28], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroLevelup2", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][28], (StringExternal("Param/Value/0DBB13B3") + IntToText(gv_StatusWindowNum[EventPlayer()][28]) + StringExternal("Param/Value/F51317E6")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[28][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0DBB13B3") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/F51317E6")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
 }
 
 void gf_HrStat24 () {
     // Automatic Variable Declarations
+    const int shop_index = 29;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][29] = 1;
-    DialogControlSetEnabled(gv_StatusWindowBtn[29], PlayerGroupSingle(EventPlayer()), false);
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroLevelup22", gv_PlayerHero[EventPlayer()], 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][29], (StringExternal("Param/Value/38D5186D") + IntToText(gv_StatusWindowNum[EventPlayer()][29]) + StringExternal("Param/Value/83231539")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[29][EventPlayer()]);
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/38D5186D") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/83231539")), PlayerGroupSingle(EventPlayer()));
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
 }
 
 void gf_HrAttackSpeedLevelIncrease () {
