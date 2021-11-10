@@ -19662,7 +19662,9 @@ bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        gf_HotkeyStatIncreaseTestConditions();
+        if (!(gf_HotkeyStatIncreaseTestConditions())) {
+            return false;
+        }
     }
 
     // Actions
@@ -19674,6 +19676,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
         if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
+            break;
         } else {
             return false;
         }
@@ -19699,7 +19702,9 @@ bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        gf_HotkeyStatIncreaseTestConditions();
+        if (!(gf_HotkeyStatIncreaseTestConditions())) {
+            return false;
+        }
     }
 
     // Actions
@@ -19711,6 +19716,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
         if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
+            break;
         } else {
             return false;
         }
@@ -19736,7 +19742,9 @@ bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        gf_HotkeyStatIncreaseTestConditions();
+        if (!(gf_HotkeyStatIncreaseTestConditions())) {
+            return false;
+        }
     }
 
     // Actions
@@ -19748,6 +19756,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
         if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
+            break;
         } else {
             return false;
         }
@@ -19773,7 +19782,9 @@ bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        gf_HotkeyStatIncreaseTestConditions();
+        if (!(gf_HotkeyStatIncreaseTestConditions())) {
+            return false;
+        }
     }
 
     // Actions
@@ -19785,6 +19796,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
         if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
+            break;
         } else {
             return false;
         }
@@ -19810,7 +19822,9 @@ bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        gf_HotkeyStatIncreaseTestConditions();
+        if (!(gf_HotkeyStatIncreaseTestConditions())) {
+            return false;
+        }
     }
 
     // Actions
@@ -19822,6 +19836,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
         if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
+            break;
         } else {
             return false;
         }
@@ -19847,7 +19862,9 @@ bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
     int i;
     // Conditions
     if (testConds) {
-        gf_HotkeyStatIncreaseTestConditions();
+        if (!(gf_HotkeyStatIncreaseTestConditions())) {
+            return false;
+        }
     }
 
     // Actions
@@ -19859,6 +19876,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
         if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
+            break;
         } else {
             return false;
         }
