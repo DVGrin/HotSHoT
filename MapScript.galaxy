@@ -19896,14 +19896,14 @@ void gt_TrStatDialogPageNextHotKey_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ????????? ????????? ???????????????
 //--------------------------------------------------------------------------------------------------
-static bool lf_StatEligibleForBuying (int stat_index, int gas_cost, bool alive_only) {
+static bool lf_StatEligibleForBuying (int stat_index) {
     if (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) < gv_StatHowMoney[stat_index][EventPlayer()]) {
         return false;
     }
-    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) < gas_cost) {
+    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) < gv_ShopItemParameters[stat_index].gas_cost) {
         return false;
     }
-    if (alive_only && (gv_HeroDeathBoolean[EventPlayer()] == true)) {
+    if (gv_ShopItemParameters[stat_index].alive_only && (gv_HeroDeathBoolean[EventPlayer()] == true)) {
         return false;
     }
     return true;
@@ -19943,190 +19943,20 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     }
     gv_StatusWindowAddDelay[EventPlayer()] = true;
     // Increase the stat if the criteria are met
-    if ((EventDialogControl() == gv_StatusWindowBtn[0])) {
-        if (!(lf_StatEligibleForBuying(0, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
+    for (i = 0; i < 30; i += 1) {
+        if ((EventDialogControl() == gv_StatusWindowBtn[i])) {
+            if (!(lf_StatEligibleForBuying(i))) {
+                gv_StatusWindowAddDelay[EventPlayer()] = false;
+                return false;
+            }
+            if (i == 26) {
+                // Check if there's a ward alive. Should be unnecessary but just in case
+                if (!(UnitGroupCount(UnitGroup("Gamsi", EventPlayer(), RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0)) {
+                    return false;
+                }
+            }
+            gv_ShopItemParameters[i].increase_function();
         }
-        gf_HrStat1(); // AD
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[1])) {
-        if (!(lf_StatEligibleForBuying(1, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat2(); // AP
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[2])) {
-        if (!(lf_StatEligibleForBuying(2, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat3(); // DP
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[3])) {
-        if (!(lf_StatEligibleForBuying(3, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat4(); // RP
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[4])) {
-        if (!(lf_StatEligibleForBuying(4, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat5(); // HP
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[5])) {
-        if (!(lf_StatEligibleForBuying(5, 0, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat6(); // Mana
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[6])) {
-        if (!(lf_StatEligibleForBuying(6, 0, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat7(); // Mana Regen
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[7])) {
-        if (!(lf_StatEligibleForBuying(7, 0, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat8(); // HP Regen
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[8])) {
-        if (!(lf_StatEligibleForBuying(8, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat9(); // Attack Speed
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[9])) {
-        if (!(lf_StatEligibleForBuying(9, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat10(); // Penetration
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[10])) {
-        if (!(lf_StatEligibleForBuying(10, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat11(); // Evasion
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[11])) {
-        if (!(lf_StatEligibleForBuying(11, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat12(); // Crit Chance
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[18])) {
-        if (!(lf_StatEligibleForBuying(18, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat13(); // Lifesteal
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[19])) {
-        if (!(lf_StatEligibleForBuying(19, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat14(); // Spell Vampirism
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[20])) {
-        if (!(lf_StatEligibleForBuying(20, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat15(); // Cooldown Reduction
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[21])) {
-        if (!(lf_StatEligibleForBuying(21, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat16(); // Booster
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[22])) {
-        if (!(lf_StatEligibleForBuying(22, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat17(); // Spell Shield
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[23])) {
-        if (!(lf_StatEligibleForBuying(23, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat18(); // Lava of Parts
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[24])) {
-        if (!(lf_StatEligibleForBuying(24, 0, true))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat19(); // HP Potion
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[25])) {
-        if (!(lf_StatEligibleForBuying(25, 0, true))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat20(); // Mana Potion
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[26])) {
-        if (!(lf_StatEligibleForBuying(26, 0, true))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        // Check if there's a ward alive. Should be unnecessary but just in case
-        if (!(UnitGroupCount(UnitGroup("Gamsi", EventPlayer(), RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0)) {
-            return false;
-        }
-        gf_HrStat21(); // Ward
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[27])) {
-        if (!(lf_StatEligibleForBuying(27, 0, true))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat22(); // Eye
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[28])) {
-        if (!(lf_StatEligibleForBuying(28, 0, true))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat23(); // Fiery Flask (AD + AS)
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[29])) {
-        if (!(lf_StatEligibleForBuying(29, 0, true))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat24(); // Devil Elixir (slow)
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[12])) {
-        if (!(lf_StatEligibleForBuying(12, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat25(); // Seal of Execution
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[13])) {
-        if (!(lf_StatEligibleForBuying(13, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat26(); // Seal of Curse
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[14])) {
-        if (!(lf_StatEligibleForBuying(14, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat27(); // Seal of Destruction
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[15])) {
-        if (!(lf_StatEligibleForBuying(15, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat28(); // Demon Seal
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[16])) {
-        if (!(lf_StatEligibleForBuying(16, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat29(); // Seal of Iron
-    } else if ((EventDialogControl() == gv_StatusWindowBtn[17])) {
-        if (!(lf_StatEligibleForBuying(17, 1, false))) {
-            gv_StatusWindowAddDelay[EventPlayer()] = false;
-            return false;
-        }
-        gf_HrStat30(); // Seal of Resistance
     }
     Wait(0.1, c_timeReal);
     gf_HrStatTooltip1();
