@@ -19673,7 +19673,10 @@ bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
     }
 
     for (i = 0; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
+        if (!(gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i))) {
+            continue;
+        }
+        if (gf_EligibleForBuyingHotkey(i)) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
             break;
@@ -19713,7 +19716,10 @@ bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
     }
 
     for (i = 1; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
+        if (!(gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i))) {
+            continue;
+        }
+        if (gf_EligibleForBuyingHotkey(i)) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
             break;
@@ -19753,7 +19759,10 @@ bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
     }
 
     for (i = 2; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
+        if (!(gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i))) {
+            continue;
+        }
+        if (gf_EligibleForBuyingHotkey(i)) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
             break;
@@ -19793,7 +19802,10 @@ bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
     }
 
     for (i = 3; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
+        if (!(gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i))) {
+            continue;
+        }
+        if (gf_EligibleForBuyingHotkey(i)) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
             break;
@@ -19833,7 +19845,10 @@ bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
     }
 
     for (i = 4; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
+        if (!(gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i))) {
+            continue;
+        }
+        if (gf_EligibleForBuyingHotkey(i)) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
             break;
@@ -19873,7 +19888,10 @@ bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
     }
 
     for (i = 5; i < 30; i += 6) {
-        if ((gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i)) && (gf_EligibleForBuyingHotkey(i))) {
+        if (!(gv_StatusWindowPageSwitch[EventPlayer()] == gf_ShopWindowByIndex(i))) {
+            continue;
+        }
+        if (gf_EligibleForBuyingHotkey(i)) {
             gv_StatusWindowAddDelay[EventPlayer()] = true;
             gv_ShopItemParameters[i].increase_function();
             break;
