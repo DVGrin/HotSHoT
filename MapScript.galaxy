@@ -222,6 +222,7 @@ bool[3] gv_PlayerOutSurrenderPossible;
 int[11] gv_AllyGiveMoney;
 ShopItem[30] gv_ShopItemParameters;
 int[8] gv_DraftChoiceOrder;
+bool[11] gv_SealBought;
 
 void InitGlobals () {
     int init_i;
@@ -11935,6 +11936,7 @@ static void lf_DisableSeals() {
     for (i = first_seal_index; i <= last_seal_index; i += 1) {
         DialogControlSetEnabled(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
     }
+    gv_SealBought[EventPlayer()] = true;
 }
 
 void gf_HrStat25 () {
@@ -14742,7 +14744,10 @@ bool gf_EligibleForBuyingHotkey(int shop_index) {
     if (gv_StatusWindowPageSwitch[EventPlayer()] != gf_ShopWindowByIndex(shop_index)) {
         return false;
     }
-    if (DialogControlIsEnabled(gv_StatusWindowBtn[shop_index], EventPlayer()) == false) {
+    if (gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades) {
+        return false;
+    }
+    if ((shop_index >= 12) && (shop_index < 18) && (gv_SealBought[EventPlayer()])) {
         return false;
     }
     if (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) < gv_StatHowMoney[shop_index][EventPlayer()]) {
