@@ -656,15 +656,15 @@ void gf_HrMonsterBuffPickUp3 ();
 void gf_HrMonsterBirdRegenTimerStart ();
 void gf_HrMonsterDogRegenTimerStart ();
 void gf_HrMonsterCowRegenTimerStart ();
-void gf_HrMonsterGalicRegenTimerStart ();
-void gf_HrMonsterScolpionRegenTimerStart ();
+void gf_HrMonsterGarlicRegenTimerStart ();
+void gf_HrMonsterScorpionRegenTimerStart ();
 void gf_HrMonsterIceBugRegenTimerStart ();
 void gf_HrMonsterBossRegenTimerStart ();
-void gf_HrHeroRiviveWindowMake ();
+void gf_HrHeroReviveWindowMake ();
 void gf_HrHeroSkillIncreaseEffect ();
 void gf_HrHeroSkillIncreaseEffect2 ();
-void gf_HrHeroAllKillMassage ();
-void gf_HrHeroAddKillMassage ();
+void gf_HrHeroAllKillMessage ();
+void gf_HrHeroAddKillMessage ();
 void gf_HrAssistantBonusTeam1 ();
 void gf_HrAssistantBonusTeam2 ();
 void gf_HrHeroBuffPut ();
@@ -12621,7 +12621,7 @@ void gf_HrMonsterCowRegenTimerStart () {
     }
 }
 
-void gf_HrMonsterGalicRegenTimerStart () {
+void gf_HrMonsterGarlicRegenTimerStart () {
     // Automatic Variable Declarations
     // Implementation
     if ((UnitGroupHasUnit(gv_MonsterGalicGroup[0], EventUnit()) == true) && (gv_RegenNewTimerGalicBoolean[0] == false)) {
@@ -12647,7 +12647,7 @@ void gf_HrMonsterGalicRegenTimerStart () {
     }
 }
 
-void gf_HrMonsterScolpionRegenTimerStart () {
+void gf_HrMonsterScorpionRegenTimerStart () {
     // Automatic Variable Declarations
     // Implementation
     if ((UnitGroupHasUnit(gv_MonsterScolpionGroup[0], EventUnit()) == true) && (gv_RegenNewTimerScolpionBoolean[0] == false)) {
@@ -12747,7 +12747,7 @@ void gf_HrMonsterBossRegenTimerStart () {
     }
 }
 
-void gf_HrHeroRiviveWindowMake () {
+void gf_HrHeroReviveWindowMake () {
     // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
 
@@ -12825,7 +12825,7 @@ void gf_HrHeroSkillIncreaseEffect2 () {
     }
 }
 
-void gf_HrHeroAllKillMassage () {
+void gf_HrHeroAllKillMessage () {
     // Automatic Variable Declarations
     // Implementation
     if ((gv_GameEndBoolean == false) && (((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[1]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[2]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[3]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[4]] == true) && (gv_HeroAllKill[0] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[0]) >= 2)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[5]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[6]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[7]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[8]] == true) && (gv_HeroAllKill[1] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[1]) >= 2)))) {
@@ -12851,7 +12851,7 @@ void gf_HrHeroAllKillMassage () {
 
 }
 
-void gf_HrHeroAddKillMassage () {
+void gf_HrHeroAddKillMessage () {
     // Automatic Variable Declarations
     // Implementation
     if ((UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill") == true) && (UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == true)) {
@@ -15021,7 +15021,7 @@ bool gt_Tr5AllDialogInit_Func (bool testConds, bool runActions) {
     gf_HrStartBeforeCounterMake();
     gf_HrStartBeforeCounterMake2();
     gf_HrStartBeforeCounterMake3();
-    gf_HrHeroRiviveWindowMake();
+    gf_HrHeroReviveWindowMake();
     gf_HrSkillLearnDialogMake();
     gf_HrStatMoneySet();
     gf_HrTeamSelectDialogMake();
@@ -23823,11 +23823,11 @@ bool gt_TrMonsterRegenTimerStart_Func (bool testConds, bool runActions) {
                 }
                 else {
                     if (((UnitGetType(EventUnit()) == "Inunit") || (UnitGetType(EventUnit()) == "Inunit2"))) {
-                        gf_HrMonsterGalicRegenTimerStart();
+                        gf_HrMonsterGarlicRegenTimerStart();
                     }
                     else {
                         if (((UnitGetType(EventUnit()) == "Inunit5") || (UnitGetType(EventUnit()) == "Inunit4"))) {
-                            gf_HrMonsterScolpionRegenTimerStart();
+                            gf_HrMonsterScorpionRegenTimerStart();
                         }
                         else {
                             if (((UnitGetType(EventUnit()) == "SpineCrawler") || (UnitGetType(EventUnit()) == "SporeCrawler"))) {
@@ -24757,7 +24757,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
             gv_HeroNonStopKill[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] += 1;
             UnitBehaviorAdd(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], "PlayerGKill2", gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], 1);
             if ((gv_HeroNonStopKill[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] >= 2) && (gv_HeroDeathBoolean[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] == false)) {
-                gf_HrHeroAddKillMassage();
+                gf_HrHeroAddKillMessage();
             }
             else {
                 UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/CC7197B9") + TextWithColor(PlayerName(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4, false))) + StringExternal("Param/Value/6EFE0FE7") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/B485FF4F") + StringExternal("Param/Value/927B1316") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/F22C6985") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/3081669B") + StringExternal("Param/Value/7C3AB27A")));
@@ -24827,7 +24827,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
 
     }
     if ((((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[1]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[2]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[3]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[4]] == true) && (gv_HeroAllKill[0] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[0]) >= 2)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[5]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[6]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[7]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[8]] == true) && (gv_HeroAllKill[1] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[1]) >= 2)))) {
-        gf_HrHeroAllKillMassage();
+        gf_HrHeroAllKillMessage();
     }
 
     if ((UnitGetType(EventUnit()) != "Hero19")) {
