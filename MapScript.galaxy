@@ -639,9 +639,9 @@ void gf_HrStat22 ();
 void gf_HrStat23 ();
 void gf_HrStat24 ();
 void gf_HrAttackSpeedLevelIncrease ();
-void gf_HrHyepiLevelIncrease ();
-void gf_HrAttackCriticalLevelIncrease ();
-void gf_HrAttackCriticalLevelIncrease2 ();
+void gf_HrEvasionLevelIncrease ();
+void gf_HrCriticalChanceLevelIncrease ();
+void gf_HrCooldownReductionLevelIncrease ();
 void gf_HrStatTooltip1 ();
 void gf_HrItemUseComplete ();
 void gf_HrAssistSystemAdd2 ();
@@ -5207,7 +5207,7 @@ void gf_HrSkillLearnHero5 () {
     }
 
     if ((gv_SkillLearnSwitchR[EventPlayer()] == true) && (gv_SkillRLevel[EventPlayer()] < 3) && (gv_SkillLearnPossibleStatR[EventPlayer()] >= 1)) {
-        gf_HrAttackCriticalLevelIncrease();
+        gf_HrCriticalChanceLevelIncrease();
         if ((gv_SkillRLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333524222", 1);
         }
@@ -11939,249 +11939,196 @@ void gf_HrStatMoneySet () {
     lv_eC84A4ECA095EBB288ED98B8EBB380EC8898 = 0;
 }
 
+static void lf_PayCostsForShopItem(int shop_index) {
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
+    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+}
+
+static void lf_DisableShopButtonOnMaxUpgrades(int shop_index) {
+    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
+        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
+    }
+}
+
 void gf_HrStat1 () {
-    // Automatic Variable Declarations
     const int shop_index = 0;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322232", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222323", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222322", 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat2 () {
-    // Automatic Variable Declarations
     const int shop_index = 1;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24233", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322233", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222333", 1);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
     if ((gv_SelectedCharNum[EventPlayer()] == 71)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero71Passive", gv_PlayerHero[EventPlayer()], 1);
     }
-
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat3 () {
-    // Automatic Variable Declarations
     const int shop_index = 2;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "DefensePower", gv_PlayerHero[EventPlayer()], 4);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322234", 4);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat4 () {
-    // Automatic Variable Declarations
     const int shop_index = 3;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Amor2", gv_PlayerHero[EventPlayer()], 4);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222342", 4);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat5 () {
-    // Automatic Variable Declarations
     const int shop_index = 4;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent) + 100.0));
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
+    // Upgrade
+    UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent) + 100.0));    
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp422", 1);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat6 () {
-    // Automatic Variable Declarations
     const int shop_index = 5;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     if ((gv_CharNoMana[EventPlayer()] == 0)) {
+        // Upgrade
         UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, c_unitPropCurrent) + 75.0));
+        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42", 1);
+        // Shop Changes
+        gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
+        lf_PayCostsForShopItem(shop_index);
+        libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
+        lf_DisableShopButtonOnMaxUpgrades(shop_index);
+    } else {
+        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
     }
-
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
-    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42", 1);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
 }
 
 void gf_HrStat7 () {
-    // Automatic Variable Declarations
     const int shop_index = 6;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24222", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat8 () {
-    // Automatic Variable Declarations
     const int shop_index = 7;
-    // Implementation
     if ((gv_CharNoMana[EventPlayer()] == 0)) {
-        gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+        // Upgrade
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong2422", gv_PlayerHero[EventPlayer()], 1);
+        // Shop Changes
+        gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
-        PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-        PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-        gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+        lf_PayCostsForShopItem(shop_index);
         libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
-        if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-            DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-    else {
+        lf_DisableShopButtonOnMaxUpgrades(shop_index);
+    } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
     }
 }
 
 void gf_HrStat9 () {
-    // Automatic Variable Declarations
     const int shop_index = 8;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     gf_HrAttackSpeedLevelIncrease();
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223222", 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat10 () {
-    // Automatic Variable Declarations
     const int shop_index = 9;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Armorbreak", gv_PlayerHero[EventPlayer()], 1);
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Armorbreak2", gv_PlayerHero[EventPlayer()], 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade", 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade3", 1);
     }
-    else {
-        if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 2)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade2", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade32", 1);
-        }
-        else {
-            if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 3)) {
-                TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade22", 1);
-                TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade322", 1);
-            }
-
-        }
+    else if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 2)) {
+        TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade2", 1);
+        TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade32", 1);
     }
+    else if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 3)) {
+        TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade22", 1);
+        TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade322", 1);
+    }
+
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat11 () {
-    // Automatic Variable Declarations
     const int shop_index = 10;
-    // Implementation
+    // Upgrade
+    gf_HrEvasionLevelIncrease();
+    // Shop Changes
     gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    gf_HrHyepiLevelIncrease();
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat12 () {
-    // Automatic Variable Declarations
     const int shop_index = 11;
-    // Implementation
+    // Upgrade
+    gf_HrCriticalChanceLevelIncrease();
+    // Shop Changes
     gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    gf_HrAttackCriticalLevelIncrease();
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 // gf_HrStat25 to gf_HrStat30 are seals
@@ -12196,277 +12143,221 @@ static void lf_DisableSeals() {
 }
 
 void gf_HrStat25 () {
-    // Variable Declarations
     const int shop_index = 12;
-
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    lf_DisableSeals();
+    // Upgrade
     if ((UnitWeaponRange(gv_PlayerHero[EventPlayer()], 1) > 2.5)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP3", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else {
+    } else {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP32", gv_PlayerHero[EventPlayer()], 1);
     }
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP33", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/8A7F65C7") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/36A17EA3")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableSeals();
 }
 
 void gf_HrStat26 () {
-    // Variable Declarations
     const int shop_index = 13;
-
-
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    lf_DisableSeals();
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4851ADBC") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/DBB538DF")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableSeals();
 }
 
 void gf_HrStat27 () {
-    // Variable Declarations
     const int shop_index = 14;
-
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    lf_DisableSeals();
-    gf_HrAttackCriticalLevelIncrease();
+    // Upgrade
+    gf_HrCriticalChanceLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP3233", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0450D79A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/924BE64C")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableSeals();
 }
 
 void gf_HrStat28 () {
-    // Variable Declarations
     const int shop_index = 15;
-
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    lf_DisableSeals();
-    gf_HrAttackCriticalLevelIncrease2();
+    // Upgrade
+    gf_HrCooldownReductionLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323333", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/7CC06727") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/12C02D1B")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableSeals();
 }
 
 void gf_HrStat29 () {
-    // Variable Declarations
     const int shop_index = 16;
-
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    lf_DisableSeals();
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP32333", gv_PlayerHero[EventPlayer()], 1);
-    gf_HrHyepiLevelIncrease();
+    gf_HrEvasionLevelIncrease();
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/EAFCB85C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/0B2277F9")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableSeals();
 }
 
 void gf_HrStat30 () {
-    // Variable Declarations
     const int shop_index = 17;
-
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    lf_DisableSeals();
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323332", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4CD6BABA") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/0BD69820")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableSeals();
 }
 
 void gf_HrStat13 () {
-    // Automatic Variable Declarations
     const int shop_index = 18;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4232", 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat14 () {
-    // Automatic Variable Declarations
     const int shop_index = 19;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233222", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233222232", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42332222332", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp423322223322", 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat15 () {
-    // Automatic Variable Declarations
     const int shop_index = 20;
-    // Implementation
+    // Upgrade
+    gf_HrCooldownReductionLevelIncrease();
+    // Shop Changes
     gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    gf_HrAttackCriticalLevelIncrease2();
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
+    lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
-
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat16 () {
-    // Automatic Variable Declarations
     const int shop_index = 21;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "BoosterItem2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322232222", 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2BBFB346") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/A431C779")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat17 () {
-    // Automatic Variable Declarations
     const int shop_index = 22;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E63A395A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/AEFB2F88")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat18 () {
-    // Automatic Variable Declarations
     const int shop_index = 23;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagmaFire", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F16E4894") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/50B26F7B")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat19 () {
-    // Automatic Variable Declarations
     const int shop_index = 24;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong25", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/97E83587") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E42F4E5")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat20 () {
-    // Automatic Variable Declarations
     const int shop_index = 25;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong252", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/AA3D08C5") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2EAA36A2")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat21 () {
-    // Automatic Variable Declarations
     const int shop_index = 26;
     // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "Gamsi", c_unitCreateIgnorePlacement, EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]));
     UnitGroupAdd(gv_WardGroup[EventPlayer()], UnitLastCreated());
     UnitControlGroupAddUnit(EventPlayer(), 3, UnitLastCreated());
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/44B3468A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/5214615F")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat22 () {
-    // Automatic Variable Declarations
     const int shop_index = 27;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong242422", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4792A2C8") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/B2C67E7D")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat23 () {
-    // Automatic Variable Declarations
     const int shop_index = 28;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroLevelup2", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0DBB13B3") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/F51317E6")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrStat24 () {
-    // Automatic Variable Declarations
     const int shop_index = 29;
-    // Implementation
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
-    }
+    // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroLevelup22", gv_PlayerHero[EventPlayer()], 1);
+    // Shop Changes
+    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/38D5186D") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/83231539")), PlayerGroupSingle(EventPlayer()));
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
-    PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    lf_PayCostsForShopItem(shop_index);
+    lf_DisableShopButtonOnMaxUpgrades(shop_index);
 }
 
 void gf_HrAttackSpeedLevelIncrease () {
@@ -12532,7 +12423,7 @@ void gf_HrAttackSpeedLevelIncrease () {
     }
 }
 
-void gf_HrHyepiLevelIncrease () {
+void gf_HrEvasionLevelIncrease () {
     // Automatic Variable Declarations
     // Implementation
     if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong24232") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong242323") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong2423232") == false)) {
@@ -12559,7 +12450,7 @@ void gf_HrHyepiLevelIncrease () {
     }
 }
 
-void gf_HrAttackCriticalLevelIncrease () {
+void gf_HrCriticalChanceLevelIncrease () {
     // Automatic Variable Declarations
     // Implementation
     if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical2") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical22") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical222") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical2222") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical22222") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical222223") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical222222") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical2222222") == false) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical22222222") == false)) {
@@ -12622,7 +12513,7 @@ void gf_HrAttackCriticalLevelIncrease () {
     }
 }
 
-void gf_HrAttackCriticalLevelIncrease2 () {
+void gf_HrCooldownReductionLevelIncrease () {
     // Automatic Variable Declarations
     // Implementation
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222332", 2);
