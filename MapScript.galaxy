@@ -221,6 +221,7 @@ bool[12] gv_SurrenderBtnDelay;
 bool[3] gv_PlayerOutSurrenderPossible;
 int[11] gv_AllyGiveMoney;
 ShopItem[30] gv_ShopItemParameters;
+int[8] gv_DraftChoiceOrder;
 
 void InitGlobals () {
     int init_i;
@@ -638,12 +639,12 @@ void gf_HrStat21 ();
 void gf_HrStat22 ();
 void gf_HrStat23 ();
 void gf_HrStat24 ();
-// END DONE
 void gf_HrAttackSpeedLevelIncrease ();
 void gf_HrEvasionLevelIncrease ();
 void gf_HrCriticalChanceLevelIncrease ();
 void gf_HrCooldownReductionLevelIncrease ();
-void gf_HrStatTooltip1 ();
+// END DONE
+void gf_HrStatTooltip1 (); // Maybe seal as separate line
 void gf_HrItemUseComplete ();
 void gf_HrAssistSystemAdd2 ();
 void gf_HrHeroBSpawnH1 ();
@@ -853,6 +854,17 @@ trigger gt_TrPlayerOut;
 //--------------------------------------------------------------------------------------------------
 // Game Parameters
 //--------------------------------------------------------------------------------------------------
+void SetDraftChoiceOrder() {
+    gv_DraftChoiceOrder[0] = 1;
+    gv_DraftChoiceOrder[1] = 5;
+    gv_DraftChoiceOrder[2] = 6;
+    gv_DraftChoiceOrder[3] = 2;
+    gv_DraftChoiceOrder[4] = 7;
+    gv_DraftChoiceOrder[5] = 3;
+    gv_DraftChoiceOrder[6] = 4;
+    gv_DraftChoiceOrder[7] = 8;
+}
+
 void ShopInit() {
     gv_ShopItemParameters[0].name = "AD";
     gv_ShopItemParameters[0].minerals_cost = 225;
@@ -1093,6 +1105,11 @@ void ShopInit() {
     gv_ShopItemParameters[29].alive_only = true;
     gv_ShopItemParameters[29].max_upgrades = 1;
     gv_ShopItemParameters[29].increase_function = gf_HrStat24;
+}
+
+void InitGameParameters() {
+    SetDraftChoiceOrder();
+    ShopInit();
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -12251,7 +12268,6 @@ void gf_HrCooldownReductionLevelIncrease () {
 }
 
 void gf_HrStatTooltip1 () {
-    // Automatic Variable Declarations
     // Implementation
     gv_PlayerProfileAddToolTip[EventPlayer()][0] = (StringExternal("Param/Value/454F0C48") + IntToText(gv_StatusWindowNum[EventPlayer()][0]) + StringExternal("Param/Value/B3285745") + IntToText(gv_StatusWindowNum[EventPlayer()][1]) + StringExternal("Param/Value/BD6955AB") + IntToText(gv_StatusWindowNum[EventPlayer()][2]) + StringExternal("Param/Value/A45AC4F5") + IntToText(gv_StatusWindowNum[EventPlayer()][3]) + StringExternal("Param/Value/BC19B8D0") + IntToText(gv_StatusWindowNum[EventPlayer()][4]) + StringExternal("Param/Value/A99A4175") + IntToText(gv_StatusWindowNum[EventPlayer()][5]));
     gv_PlayerProfileAddToolTip[EventPlayer()][1] = (StringExternal("Param/Value/8BBB5E19") + IntToText(gv_StatusWindowNum[EventPlayer()][6]) + StringExternal("Param/Value/1823CFAF") + IntToText(gv_StatusWindowNum[EventPlayer()][7]) + StringExternal("Param/Value/2885836E") + IntToText(gv_StatusWindowNum[EventPlayer()][8]) + StringExternal("Param/Value/A2FB0C3E") + IntToText(gv_StatusWindowNum[EventPlayer()][9]) + StringExternal("Param/Value/10B42239") + IntToText(gv_StatusWindowNum[EventPlayer()][10]) + StringExternal("Param/Value/50FB32FE") + IntToText(gv_StatusWindowNum[EventPlayer()][11]));
@@ -15300,42 +15316,26 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int i = 1;
     int flag = 1;
-    int[8] draft_choice_order;
-    // Automatic Variable Declarations
-    const int TOTAL_PLAYERS = 8;
-    // Variable initialization
-    draft_choice_order[0] = 1;
-    draft_choice_order[1] = 5;
-    draft_choice_order[2] = 6;
-    draft_choice_order[3] = 2;
-    draft_choice_order[4] = 7;
-    draft_choice_order[5] = 3;
-    draft_choice_order[6] = 4;
-    draft_choice_order[7] = 8;
     // Actions
     if (!runActions) {
         return true;
     }
     TriggerEnable(TriggerGetCurrent(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[0], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[1], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[2], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[3], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomImage[0], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomImage[1], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomImage[2], PlayerGroupAll(), false);
-    DialogControlSetEnabled(gv_CharChooseWindowRandomImage[3], PlayerGroupAll(), false);
+    for (i = 0; i < 4; i += 1) {
+        DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[i], PlayerGroupAll(), false);
+        DialogControlSetEnabled(gv_CharChooseWindowRandomImage[i], PlayerGroupAll(), false);
+    }
     // Hero select
-    for (i = 1 ; i <= TOTAL_PLAYERS ; i += 1 ) {
+    for (i = 1 ; i <= 8 ; i += 1 ) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
-            lf_PlayerHeroChoice(draft_choice_order[i - 1]);
+            lf_PlayerHeroChoice(gv_DraftChoiceOrder[i - 1]);
         }
     }
     // Character swapping
     SoundPlay(SoundLink("UI_Bnet_GameModeBig", -1), PlayerGroupAll(), 100.0, 0.0);
     DialogControlSetEnabled(gv_CharChooseDialogReadyBtn, PlayerGroupAll(), false);
     gv_BeforeStartCounterDialogNum = 15;
-    for (i = 1 ; i <= TOTAL_PLAYERS ; i += 1 ) {
+    for (i = 1 ; i <= 8 ; i += 1 ) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             if ((gv_PlayerBayul[i] != gv_PlayerBayul[1]) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), gv_PlayerBayul[i]) == true) && (PlayerStatus(gv_PlayerBayul[1]) == c_playerStatusActive)) {
                 DialogControlSetVisible(gv_TeamSelectBtn[0], PlayerGroupSingle(gv_PlayerBayul[i]), true);
@@ -15372,14 +15372,9 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     Wait(1.0, c_timeReal);
     // Cleanup
     DialogControlSetEnabled(gv_CharChooseDialogReadyBtn, PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[0], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[1], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[2], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[3], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[4], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[5], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[6], PlayerGroupAll(), false);
-    DialogSetVisible(gv_CharChooseDialog[7], PlayerGroupAll(), false);
+    for (i = 0; i < 8; i += 1) {
+        DialogSetVisible(gv_CharChooseDialog[i], PlayerGroupAll(), false);
+    }
     DialogSetVisible(gv_TeamSelectDialog[0], PlayerGroupAll(), false);
     DialogSetVisible(gv_TeamSelectDialog[1], PlayerGroupAll(), false);
     DialogSetVisible(gv_BeforeStartCounterDialog[0], PlayerGroupAll(), false);
@@ -26326,5 +26321,5 @@ void InitMap () {
     InitLibs();
     InitGlobals();
     InitTriggers();
-    InitShop();
+    InitGameParameters();
 }
