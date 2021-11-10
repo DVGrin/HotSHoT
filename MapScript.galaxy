@@ -15,6 +15,21 @@ void InitLibs () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Type definitions
+//--------------------------------------------------------------------------------------------------
+void fn_prototype();
+
+struct ShopItem {
+    string name;
+    int minerals_cost;
+    int minerals_increase;
+    int gas_cost;
+    bool alive_only;
+    int max_upgrades;
+    funcref<fn_prototype> increase_function;
+};
+
+//--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
 int[11] gv_PlayerBayul;
@@ -211,7 +226,6 @@ int[8] gv_DraftChoiceOrder;
 void InitGlobals () {
     int init_i;
     int init_j;
-    ShopItem empty_si;
 
     gv_AllPlayerGroup = PlayerGroupEmpty();
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -473,25 +487,7 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_SurrenderDialogBtn[init_i] = c_invalidDialogControlId;
     }
-    for (init_i = 0; init_i < 30; init_i += 1) {
-        gv_ShopItemParameters[init_i] = empty_si;
-    }
 }
-
-//--------------------------------------------------------------------------------------------------
-// Type definitions
-//--------------------------------------------------------------------------------------------------
-void fn_prototype();
-
-struct ShopItem {
-    string name;
-    int minerals_cost;
-    int minerals_increase;
-    int gas_cost;
-    bool alive_only;
-    int max_upgrades;
-    funcref<fn_prototype> increase_function;
-};
 
 //--------------------------------------------------------------------------------------------------
 // Global Function Declarations
@@ -14724,21 +14720,22 @@ void gf_HrDrawGame () {
 // Utility finctions
 
 int gf_ShopWindowByIndex(int shop_index) {
-    if (i >= 0 && i < 6) {
+    if ((shop_index >= 0) && (shop_index < 6)) {
         return 0;
     }
-    if (i >= 6 && i < 12) {
+    if ((shop_index >= 6) && (shop_index < 12)) {
         return 1;
     }
-    if (i >= 12 && i < 18) {
+    if ((shop_index >= 12) && (shop_index < 18)) {
         return 3;
     }
-    if (i >= 18 && i < 24) {
+    if ((shop_index >= 18) && (shop_index < 24)) {
         return 2;
     }
-    if (i >= 24 && i < 30) {
+    if ((shop_index >= 24) && (shop_index < 30)) {
         return 4;
     }
+    return -1;
 }
 
 bool gf_EligibleForBuyingHotkey(int shop_index) {
@@ -19657,6 +19654,7 @@ void gt_TrStatDialogStatIncrease_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    int i;
     // Conditions
     if (testConds) {
         gf_HotkeyStatIncreaseTestConditions();
@@ -19730,6 +19728,7 @@ void gt_TrStatDialogStatIncreaseHotKeyX_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    int i;
     // Conditions
     if (testConds) {
         gf_HotkeyStatIncreaseTestConditions();
@@ -19766,6 +19765,7 @@ void gt_TrStatDialogStatIncreaseHotKeyC_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    int i;
     // Conditions
     if (testConds) {
         gf_HotkeyStatIncreaseTestConditions();
@@ -19802,6 +19802,7 @@ void gt_TrStatDialogStatIncreaseHotKeyV_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    int i;
     // Conditions
     if (testConds) {
         gf_HotkeyStatIncreaseTestConditions();
@@ -19838,6 +19839,7 @@ void gt_TrStatDialogStatIncreaseHotKeyB_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    int i;
     // Conditions
     if (testConds) {
         gf_HotkeyStatIncreaseTestConditions();
