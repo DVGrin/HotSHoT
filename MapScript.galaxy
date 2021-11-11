@@ -1362,100 +1362,72 @@ void gf_HrHeroSelect() {
 
 void gf_HrHeroTeamSelectSave () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80;
+    int i;
+    int j;
 
     // Automatic Variable Declarations
-    const int autoA5091C03_ae = 8;
-    const int autoA5091C03_ai = 1;
-    const int auto7B985BD6_ae = 4;
-    const int auto7B985BD6_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
+    const int total_players = 8;
+    const int players_in_team = 4;
 
     // Implementation
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true)) {
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
-        for ( ; ( (auto7B985BD6_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 <= auto7B985BD6_ae) || (auto7B985BD6_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 >= auto7B985BD6_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 += auto7B985BD6_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]) == c_playerStatusActive) && (gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80] != EventPlayer()) && (gv_SelectedCharNum[EventPlayer()] == gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]])) {
-                gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
-                gv_CharSelectedName[EventPlayer()] = StringToText("");
-                gv_SelectedCharNum[EventPlayer()] = 0;
-            }
-
-        }
-    }
-    else {
-        if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true)) {
-            lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
-            for ( ; ( (autoA5091C03_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 <= autoA5091C03_ae) || (autoA5091C03_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 >= autoA5091C03_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 += autoA5091C03_ai ) {
-                if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]) == c_playerStatusActive) && (gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80] != EventPlayer()) && (gv_SelectedCharNum[EventPlayer()] == gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]])) {
+        for (i = 1 ; i <= players_in_team ; i += 1 ) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && 
+                (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && 
+                (gv_PlayerBayul[i] != EventPlayer()) && 
+                (gv_SelectedCharNum[EventPlayer()] == gv_SelectedCharNum[gv_PlayerBayul[i]])
+                ) {
                     gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
                     gv_CharSelectedName[EventPlayer()] = StringToText("");
                     gv_SelectedCharNum[EventPlayer()] = 0;
-                }
-
             }
         }
-
+    } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true)) {
+            for (j = 5 ; j <= total_players ; j += 1 ) {
+                if ((PlayerType(gv_PlayerBayul[j]) == c_playerTypeUser) && 
+                    (PlayerStatus(gv_PlayerBayul[j]) == c_playerStatusActive) &&
+                    (gv_PlayerBayul[j] != EventPlayer()) && 
+                    (gv_SelectedCharNum[EventPlayer()] == gv_SelectedCharNum[gv_PlayerBayul[j]])
+                    ) {
+                        gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
+                        gv_CharSelectedName[EventPlayer()] = StringToText("");
+                        gv_SelectedCharNum[EventPlayer()] = 0;
+                }
+            }
     }
     if ((gv_SelectedCharNum[EventPlayer()] > 0)) {
         if ((EventPlayer() == gv_PlayerBayul[1])) {
             gv_Team1CharNum[0] = gv_SelectedCharNum[EventPlayer()];
         }
-        else {
-            if ((EventPlayer() == gv_PlayerBayul[2])) {
-                gv_Team1CharNum[1] = gv_SelectedCharNum[EventPlayer()];
-            }
-            else {
-                if ((EventPlayer() == gv_PlayerBayul[3])) {
-                    gv_Team1CharNum[2] = gv_SelectedCharNum[EventPlayer()];
-                }
-                else {
-                    if ((EventPlayer() == gv_PlayerBayul[4])) {
-                        gv_Team1CharNum[3] = gv_SelectedCharNum[EventPlayer()];
-                    }
-                    else {
-                        if ((EventPlayer() == gv_PlayerBayul[5])) {
-                            gv_Team2CharNum[0] = gv_SelectedCharNum[EventPlayer()];
-                        }
-                        else {
-                            if ((EventPlayer() == gv_PlayerBayul[6])) {
-                                gv_Team2CharNum[1] = gv_SelectedCharNum[EventPlayer()];
-                            }
-                            else {
-                                if ((EventPlayer() == gv_PlayerBayul[7])) {
-                                    gv_Team2CharNum[2] = gv_SelectedCharNum[EventPlayer()];
-                                }
-                                else {
-                                    if ((EventPlayer() == gv_PlayerBayul[8])) {
-                                        gv_Team2CharNum[3] = gv_SelectedCharNum[EventPlayer()];
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        else if ((EventPlayer() == gv_PlayerBayul[2])) {
+            gv_Team1CharNum[1] = gv_SelectedCharNum[EventPlayer()];
+        }
+        else if ((EventPlayer() == gv_PlayerBayul[3])) {
+            gv_Team1CharNum[2] = gv_SelectedCharNum[EventPlayer()];
+        }
+        else if ((EventPlayer() == gv_PlayerBayul[4])) {
+            gv_Team1CharNum[3] = gv_SelectedCharNum[EventPlayer()];
+        }
+        else if ((EventPlayer() == gv_PlayerBayul[5])) {
+            gv_Team2CharNum[0] = gv_SelectedCharNum[EventPlayer()];
+        }
+        else if ((EventPlayer() == gv_PlayerBayul[6])) {
+            gv_Team2CharNum[1] = gv_SelectedCharNum[EventPlayer()];
+        }
+        else if ((EventPlayer() == gv_PlayerBayul[7])) {
+            gv_Team2CharNum[2] = gv_SelectedCharNum[EventPlayer()];
+        }
+        else if ((EventPlayer() == gv_PlayerBayul[8])) {
+            gv_Team2CharNum[3] = gv_SelectedCharNum[EventPlayer()];
         }
     }
-
 }
 
 void gf_HrHeroTeamSelectSave2 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8;
-
-    // Automatic Variable Declarations
-    int autoB6C4F1AB_ae;
     int i;
+    int j;
     bool banned;
-    const int autoB6C4F1AB_ai = 1;
-
-    // Variable Initialization
 
     // Implementation
     if ((gv_GameModeVoteValue == true)) {
@@ -1463,12 +1435,10 @@ void gf_HrHeroTeamSelectSave2 () {
         DialogControlSetEnabled(gv_CharChooseWindowImage[(gv_SelectedCharNum[EventPlayer()] - 1)], PlayerGroupAll(), false);
     }
 
-    autoB6C4F1AB_ae = (gv_TotalHeroNum - 1);
-    lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 = 0;
-    for ( ; ( (autoB6C4F1AB_ai >= 0 && lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 <= autoB6C4F1AB_ae) || (autoB6C4F1AB_ai < 0 && lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 >= autoB6C4F1AB_ae) ) ; lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 += autoB6C4F1AB_ai ) {
+    for (i = 0 ; i < gv_TotalHeroNum ; i += 1 ) {
         banned = false;
-        for (i = 0; i < 6; i += 1) {
-            if ((lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1) == gv_BannedCharNum[i]) {
+        for (j = 0; j < 6; j += 1) {
+            if ((i + 1) == gv_BannedCharNum[j]) {
                 banned = true;
                 break;
             }
@@ -1476,19 +1446,19 @@ void gf_HrHeroTeamSelectSave2 () {
         if (banned == true) {
             continue;
         }
-        if ((gv_GameModeVoteValue == false) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_SelectedCharNum[gv_PlayerBayul[1]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[2]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[3]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[4]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1))) {
-            DialogControlSetEnabled(gv_CharChooseWindowBtn[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], GameAttributePlayersForTeam(1), true);
-            DialogControlSetEnabled(gv_CharChooseWindowImage[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], GameAttributePlayersForTeam(1), true);
+        if ((gv_GameModeVoteValue == false) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_SelectedCharNum[gv_PlayerBayul[1]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[2]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[3]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[4]] != (i + 1))) {
+            DialogControlSetEnabled(gv_CharChooseWindowBtn[i], GameAttributePlayersForTeam(1), true);
+            DialogControlSetEnabled(gv_CharChooseWindowImage[i], GameAttributePlayersForTeam(1), true);
         }
         else {
-            if ((gv_GameModeVoteValue == false) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_SelectedCharNum[gv_PlayerBayul[5]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[6]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[7]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[8]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1))) {
-                DialogControlSetEnabled(gv_CharChooseWindowBtn[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], GameAttributePlayersForTeam(2), true);
-                DialogControlSetEnabled(gv_CharChooseWindowImage[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], GameAttributePlayersForTeam(2), true);
+            if ((gv_GameModeVoteValue == false) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_SelectedCharNum[gv_PlayerBayul[5]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[6]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[7]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[8]] != (i + 1))) {
+                DialogControlSetEnabled(gv_CharChooseWindowBtn[i], GameAttributePlayersForTeam(2), true);
+                DialogControlSetEnabled(gv_CharChooseWindowImage[i], GameAttributePlayersForTeam(2), true);
             }
             else {
-                if ((gv_GameModeVoteValue == true) && (gv_SelectedCharNum[gv_PlayerBayul[1]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[2]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[3]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[4]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[5]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[6]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[7]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[8]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1))) {
-                    DialogControlSetEnabled(gv_CharChooseWindowBtn[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], PlayerGroupAll(), true);
-                    DialogControlSetEnabled(gv_CharChooseWindowImage[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], PlayerGroupAll(), true);
+                if ((gv_GameModeVoteValue == true) && (gv_SelectedCharNum[gv_PlayerBayul[1]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[2]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[3]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[4]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[5]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[6]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[7]] != (i + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[8]] != (i + 1))) {
+                    DialogControlSetEnabled(gv_CharChooseWindowBtn[i], PlayerGroupAll(), true);
+                    DialogControlSetEnabled(gv_CharChooseWindowImage[i], PlayerGroupAll(), true);
                 }
 
             }
