@@ -15450,18 +15450,19 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     // Display the message for everyone
+    Wait(0.2, c_timeReal);
     UIDisplayMessage(
         PlayerGroupAll(),
         c_messageAreaDebug,
         (
             TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
             StringToText(" has banned ") + // TODO: Move to external string
-            gv_CharSelectedName[EventPlayer()]
+            gv_CharSelectedName[gv_PlayerBayul[player_number]]
         )
     );
     // Reset the chosen character portrait, name and number
-    gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
-    gv_CharSelectedName[EventPlayer()] = StringToText("");
+    gv_CharSelectedImage[gv_PlayerBayul[player_number]] = "Assets\\InviButton.dds";
+    gv_CharSelectedName[gv_PlayerBayul[player_number]] = StringToText("");
     gv_SelectedCharNum[gv_PlayerBayul[player_number]] = 0;
     // "Waiting" under the portrait
     libNtve_gf_SetDialogItemText(
