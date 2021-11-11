@@ -15397,7 +15397,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         PlayerGroupAll()
     );
     // Play the sound
-    SoundPlay(SoundLink("UI_GenericError", -1), PlayerGroupAll(), 100.0, 0.0); // TODO: Choose a fitting sound. Was "UI_Bnet_PopUp_Generic"
+    SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0); // TODO: Choose a fitting sound
     // "Banning" under the portrait
     libNtve_gf_SetDialogItemText(
         gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
@@ -15450,10 +15450,9 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     // Display the message for everyone
-    Wait(0.2, c_timeReal);
     UIDisplayMessage(
         PlayerGroupAll(),
-        c_messageAreaDebug,
+        c_messageAreaSubtitle,
         (
             TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
             StringToText(" has banned ") + // TODO: Move to external string
@@ -15464,6 +15463,9 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     gv_CharSelectedImage[gv_PlayerBayul[player_number]] = "Assets\\InviButton.dds";
     gv_CharSelectedName[gv_PlayerBayul[player_number]] = StringToText("");
     gv_SelectedCharNum[gv_PlayerBayul[player_number]] = 0;
+    // Reset the actual portrait dialog
+    libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[player_number]], gv_CharSelectedImage[gv_PlayerBayul[player_number]], PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[player_number]], gv_CharSelectedName[gv_PlayerBayul[player_number]], PlayerGroupAll());
     // "Waiting" under the portrait
     libNtve_gf_SetDialogItemText(
         gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
