@@ -15390,16 +15390,23 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         gv_BeforeStartCounterDialogLabel[1],
         (
             StringExternal("Param/Value/1F62248E") +
-            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) // +
-            // TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00)) // TODO: Change string to "'s ban"
+            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            TextWithColor(StringToText("'s ban"), Color(100.00, 100.00, 100.00)) // TODO: move to external string
+            // TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00))
         ),
         PlayerGroupAll()
     );
+    // Play the sound
+    SoundPlay(SoundLink("UI_GenericError", -1), PlayerGroupAll(), 100.0, 0.0); // TODO: Choose a fitting sound. Was "UI_Bnet_PopUp_Generic"
     // "Banning" under the portrait
-    SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
     libNtve_gf_SetDialogItemText(
         gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
-        (StringExternal("Param/Value/DBADF006") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/0FA3FB8C")), // TODO: Change second string to (</c><c val="ff4444">Banning</c>)</s>
+        (
+            StringExternal("Param/Value/DBADF006") + 
+            PlayerName(gv_PlayerBayul[player_number]) + 
+            StringToText("(</c><c val=\"ff4444\">Banning</c>)</s>") // TODO: Move to external string
+            // StringExternal("Param/Value/0FA3FB8C")
+        ),
         PlayerGroupAll()
     );
     // Countdown ticks
@@ -15442,6 +15449,16 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     gv_BannedCharNum[ban_number] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
+    // Display the message for everyone
+    UIDisplayMessage(
+        PlayerGroupAll(),
+        c_messageAreaDebug,
+        (
+            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            StringToText(" has banned ") + // TODO: Move to external string
+            gv_CharSelectedName[EventPlayer()]
+        )
+    );
     // Reset the chosen character portrait, name and number
     gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
     gv_CharSelectedName[EventPlayer()] = StringToText("");
