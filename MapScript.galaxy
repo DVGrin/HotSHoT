@@ -223,6 +223,7 @@ int[11] gv_AllyGiveMoney;
 ShopItem[30] gv_ShopItemParameters;
 int[8] gv_DraftChoiceOrder;
 bool[11] gv_SealBought;
+int[6] gv_BannedCharNum;
 
 void InitGlobals () {
     int init_i;
@@ -2034,6 +2035,8 @@ void gf_HrHeroTeamSelectSave2 () {
 
     // Automatic Variable Declarations
     int autoB6C4F1AB_ae;
+    int i;
+    bool banned;
     const int autoB6C4F1AB_ai = 1;
 
     // Variable Initialization
@@ -2047,6 +2050,16 @@ void gf_HrHeroTeamSelectSave2 () {
     autoB6C4F1AB_ae = (gv_TotalHeroNum - 1);
     lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 = 0;
     for ( ; ( (autoB6C4F1AB_ai >= 0 && lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 <= autoB6C4F1AB_ae) || (autoB6C4F1AB_ai < 0 && lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 >= autoB6C4F1AB_ae) ) ; lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 += autoB6C4F1AB_ai ) {
+        banned = false;
+        for (i = 0; i < 6; i += 1) {
+            if ((lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1) == gv_BannedCharNum[i]) {
+                banned = true;
+                break;
+            }
+        }
+        if (banned == true) {
+            continue;
+        }
         if ((gv_GameModeVoteValue == false) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_SelectedCharNum[gv_PlayerBayul[1]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[2]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[3]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1)) && (gv_SelectedCharNum[gv_PlayerBayul[4]] != (lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8 + 1))) {
             DialogControlSetEnabled(gv_CharChooseWindowBtn[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], GameAttributePlayersForTeam(1), true);
             DialogControlSetEnabled(gv_CharChooseWindowImage[lv_eC84A4ECA095ECBA90EBA6ADED84B0EBB288ED98B8], GameAttributePlayersForTeam(1), true);
@@ -15293,68 +15306,39 @@ static void lf_PlayerHeroChoice(int player_number) {
     gv_BeforeStartCounterDialogNum = 25;
     DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), true);
     DialogSetPosition(gv_BeforeStartCounterDialog[1], c_anchorCenter, dialog_x_position, -375);
-    // Add the text
-    if (team_number == 1) {
-        libNtve_gf_SetDialogItemText(
-            gv_BeforeStartCounterDialogLabel[1],
-            (
-                StringExternal("Param/Value/1F62248E") +
-                TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
-                TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00))
-            ),
-            PlayerGroupAll()
-        );
-        SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
-        libNtve_gf_SetDialogItemText(
-            gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
-            (StringExternal("Param/Value/DBADF006") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/0FA3FB8C")),
-            PlayerGroupAll()
-        );
-    } else {
-        libNtve_gf_SetDialogItemText(
-            gv_BeforeStartCounterDialogLabel[1],
-            (
-                StringExternal("Param/Value/362A774A") + 
-                TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
-                TextWithColor(StringExternal("Param/Value/83E97153"), Color(100.00, 100.00, 100.00))
-            ),
-            PlayerGroupAll()
-        );
-        SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
-        libNtve_gf_SetDialogItemText(
-            gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
-            (StringExternal("Param/Value/B9B0EB8A") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/7B0184F4")), 
-            PlayerGroupAll()
-        );
-    }    
+    // "[Player]'s turn" text
+    libNtve_gf_SetDialogItemText(
+        gv_BeforeStartCounterDialogLabel[1],
+        (
+            StringExternal("Param/Value/1F62248E") +
+            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00))
+        ),
+        PlayerGroupAll()
+    );
+    // "Selecting" under the portrait
+    SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
+    libNtve_gf_SetDialogItemText(
+        gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
+        (StringExternal("Param/Value/DBADF006") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/0FA3FB8C")),
+        PlayerGroupAll()
+    );
     // Countdown ticks
     gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = true;
     while ((gv_BeforeStartCounterDialogNum > 0)) {
-        if (team_number == 1) {
-            libNtve_gf_SetDialogItemText(
-                gv_BeforeStartCounterDialogLabel[0],
-                (StringExternal("Param/Value/583553B0") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/0214B204")),
-                PlayerGroupAll()
-            );
-        } else {
-            libNtve_gf_SetDialogItemText(
-                gv_BeforeStartCounterDialogLabel[0],
-                (StringExternal("Param/Value/97A626F6") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/75E10C84")),
-                PlayerGroupAll()
-            );
-        }
+        libNtve_gf_SetDialogItemText(
+            gv_BeforeStartCounterDialogLabel[0],
+            (StringExternal("Param/Value/583553B0") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/0214B204")),
+            PlayerGroupAll()
+        );
         gv_BeforeStartCounterDialogNum -= 1;
         if (((gv_ReadyClickBoolean[gv_PlayerBayul[player_number]] == true) || (PlayerStatus(gv_PlayerBayul[player_number]) != c_playerStatusActive))) {
             gv_BeforeStartCounterDialogNum = 0;
         }
         Wait(1.0, c_timeReal);
     }
-    if (team_number == 1) {
-        libNtve_gf_SetDialogItemText(gv_BeforeStartCounterDialogLabel[0], (StringExternal("Param/Value/5C0B98B5") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/CEFBE5DF")), PlayerGroupAll());
-    } else {
-        libNtve_gf_SetDialogItemText(gv_BeforeStartCounterDialogLabel[0], (StringExternal("Param/Value/5BAF8574") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/45244B75")), PlayerGroupAll());
-    }
-    Wait(1.0, c_timeReal);
+    libNtve_gf_SetDialogItemText(gv_BeforeStartCounterDialogLabel[0], (StringExternal("Param/Value/5C0B98B5") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/CEFBE5DF")), PlayerGroupAll());
+    Wait(0.5, c_timeReal);
     // Disable the countdown
     DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), false);
     // Give a random character if not chosen
@@ -15373,18 +15357,106 @@ static void lf_PlayerHeroChoice(int player_number) {
             Wait(0.01, c_timeReal);
         }
     }
+    // "Ready" under the portrait
+    libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]], (StringExternal("Param/Value/0C8DBF4C") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/7ACF4E49")), PlayerGroupAll());
     // Pass the choice
     gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = false;
-    if (team_number == 1) {
-        libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]], (StringExternal("Param/Value/0C8DBF4C") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/7ACF4E49")), PlayerGroupAll());
-    } else {
-        libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]], (StringExternal("Param/Value/46DACFBD") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/146AC844")), PlayerGroupAll());
-    }
 }
+
+static void lf_PlayerBan(int player_number, int ban_number) {
+    int i;
+    int flag;
+    int team_number;
+    int dialog_x_position;
+    int player_index_in_team;
+    // Variable Initialization
+    flag = 1;
+    team_number = 1;
+    if (player_number > 4) {
+        team_number = 2;
+    }
+    dialog_x_position = -365;
+    player_index_in_team = player_number - 1;
+    if (team_number == 2) {
+        dialog_x_position = 365;
+        player_index_in_team -= 4;
+    }
+    // Enable the countdown
+    gv_BeforeStartCounterDialogNum = 25;
+    DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), true);
+    DialogSetPosition(gv_BeforeStartCounterDialog[1], c_anchorCenter, dialog_x_position, -375);
+    // "[Player]'s turn" text
+    libNtve_gf_SetDialogItemText(
+        gv_BeforeStartCounterDialogLabel[1],
+        (
+            StringExternal("Param/Value/1F62248E") +
+            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) // +
+            // TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00)) // TODO: Change string to "'s ban"
+        ),
+        PlayerGroupAll()
+    );
+    // "Banning" under the portrait
+    SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
+    libNtve_gf_SetDialogItemText(
+        gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
+        (StringExternal("Param/Value/DBADF006") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/0FA3FB8C")), // TODO: Change second string to (</c><c val="ff4444">Banning</c>)</s>
+        PlayerGroupAll()
+    );
+    // Countdown ticks
+    gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = true;
+    while ((gv_BeforeStartCounterDialogNum > 0)) {
+        libNtve_gf_SetDialogItemText(
+            gv_BeforeStartCounterDialogLabel[0],
+            (StringExternal("Param/Value/583553B0") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/0214B204")),
+            PlayerGroupAll()
+        );
+        gv_BeforeStartCounterDialogNum -= 1;
+        if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] != 0) || (PlayerStatus(gv_PlayerBayul[player_number]) != c_playerStatusActive)) {
+            gv_BeforeStartCounterDialogNum = 0;
+            break;
+        }
+        Wait(1.0, c_timeReal);
+    }
+    libNtve_gf_SetDialogItemText(gv_BeforeStartCounterDialogLabel[0], (StringExternal("Param/Value/5C0B98B5") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/CEFBE5DF")), PlayerGroupAll());
+    Wait(0.05, c_timeReal);
+    // Disable the countdown
+    DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), false);
+    // Ban a random character if not chosen
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 0)) {
+        while ((flag > 0)) {
+            gv_SelectedCharNum[gv_PlayerBayul[player_number]] = RandomInt(1, gv_TotalHeroNum);
+            flag = 0;
+            for (i = 0; i < 6; i += 1) {
+                if (gv_SelectedCharNum[gv_PlayerBayul[player_number]] == gv_BannedCharNum[i]) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 1) {
+                continue;
+            }
+            Wait(0.01, c_timeReal);
+        }
+    }
+    gv_BannedCharNum[ban_number] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
+    DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
+    DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
+    gv_SelectedCharNum[gv_PlayerBayul[player_number]] = 0;
+    // "Waiting" under the portrait
+    libNtve_gf_SetDialogItemText(
+        gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
+        (StringExternal("Param/Value/47A1E486") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/A5530891")),
+        PlayerGroupAll()
+    );
+    // Pass the choice
+    gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = false;
+}
+
 bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int i = 1;
     int flag = 1;
+    int ban_number;
     // Actions
     if (!runActions) {
         return true;
@@ -15393,6 +15465,18 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     for (i = 0; i < 4; i += 1) {
         DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[i], PlayerGroupAll(), false);
         DialogControlSetEnabled(gv_CharChooseWindowRandomImage[i], PlayerGroupAll(), false);
+    }
+    // Bans
+    ban_number = 0;
+    for (i = 0; i < 3; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[1]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[1]) == c_playerStatusActive)) {
+            lf_PlayerBan(1, ban_number);
+            ban_number += 1;
+        }
+        if ((PlayerType(gv_PlayerBayul[5]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[5]) == c_playerStatusActive)) {
+            lf_PlayerBan(5, ban_number);
+            ban_number += 1;
+        }
     }
     // Hero select
     for (i = 1 ; i <= 8 ; i += 1 ) {
