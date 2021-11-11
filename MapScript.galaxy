@@ -15421,7 +15421,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     Wait(0.05, c_timeReal);
     // Disable the countdown
     DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), false);
-    // Ban a random character if not chosen
+    // Choose a random unbanned character if time's up
     if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 0)) {
         while ((flag > 0)) {
             gv_SelectedCharNum[gv_PlayerBayul[player_number]] = RandomInt(1, gv_TotalHeroNum);
@@ -15438,9 +15438,13 @@ static void lf_PlayerBan(int player_number, int ban_number) {
             Wait(0.01, c_timeReal);
         }
     }
+    // Ban it for everyone
     gv_BannedCharNum[ban_number] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
+    // Reset the chosen character portrait, name and number
+    gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
+    gv_CharSelectedName[EventPlayer()] = StringToText("");
     gv_SelectedCharNum[gv_PlayerBayul[player_number]] = 0;
     // "Waiting" under the portrait
     libNtve_gf_SetDialogItemText(
