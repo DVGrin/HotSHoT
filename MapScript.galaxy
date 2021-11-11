@@ -15396,8 +15396,6 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         ),
         PlayerGroupAll()
     );
-    // Play the sound
-    SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0); // TODO: Choose a fitting sound
     // "Banning" under the portrait
     libNtve_gf_SetDialogItemText(
         gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
@@ -15449,6 +15447,8 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     gv_BannedCharNum[ban_number] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
+    // Play the sound
+    SoundPlay(SoundLink("Hero62_Death", -1), PlayerGroupAll(), 100.0, 0.0); // TODO: Choose a fitting sound
     // Display the message for everyone
     UIDisplayMessage(
         PlayerGroupAll(),
@@ -15491,6 +15491,7 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
         DialogControlSetEnabled(gv_CharChooseWindowRandomImage[i], PlayerGroupAll(), false);
     }
     // Bans
+    SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
     ban_number = 0;
     for (i = 0; i < 3; i += 1) {
         if ((PlayerType(gv_PlayerBayul[1]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[1]) == c_playerStatusActive)) {
