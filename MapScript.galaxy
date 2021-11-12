@@ -29,10 +29,16 @@ struct ShopItem {
     funcref<fn_prototype> increase_function;
 };
 
+const int c_abilityResourceMana = 0;
+const int c_abilityResourceEnergy = 1;
+const int c_abilityResourceNone = 2;
+const int c_abilityResourceHeat = 3;
+
 struct HeroInfo {
     int number;
     text name;
     string image;
+    int ability_resource;
 };
 
 //--------------------------------------------------------------------------------------------------
@@ -59,8 +65,8 @@ text[11] gv_SelectedSpellName2;
 string[11] gv_SelectedSpellImage1;
 string[11] gv_SelectedSpellImage2;
 text[11][2] gv_SpellToolTip;
-int[11] gv_CharNoMana;
-bool[11] gv_MageAssassinTrue;
+// int[11] gv_CharNoMana;  // TODO: Delete after testing
+// bool[11] gv_MageAssassinTrue; // Not used anywhere
 string[11] gv_PlayerReadyUnit;
 unit[11] gv_PlayerHero;
 bool[11] gv_ReadyRandomBoolean;
@@ -240,7 +246,6 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_TeamPlayerGroup[init_i] = PlayerGroupEmpty();
     }
-    gv_TotalHeroNum = 73;
     for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_CharSelectedImage[init_i] = "Assets\\InviButton.dds";
     }
@@ -1116,224 +1121,372 @@ void ShopInit() {
 }
 
 void HeroInfoInit() {
+    gv_TotalHeroNum = 73;
+
+    // Benderzone
     gv_HeroInformation[0].image = "Assets\\Textures\\btn-unit-terran-tosh.dds";
-    gv_HeroInformation[0].name = StringExternal("Param/Value/C288054C");
+    gv_HeroInformation[0].name = StringExternal("Unit/Name/Tosh");
+    gv_HeroInformation[0].ability_resource = c_abilityResourceMana;
 
+    // Blane
     gv_HeroInformation[1].image = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
-    gv_HeroInformation[1].name = StringExternal("Param/Value/94E56AC8");
+    gv_HeroInformation[1].name = StringExternal("Unit/Name/Zeratul");
+    gv_HeroInformation[1].ability_resource = c_abilityResourceNone;
 
+    // Gianter
     gv_HeroInformation[2].image = "Assets\\Textures\\btn-unit-zerg-ultralisk.dds";
-    gv_HeroInformation[2].name = StringExternal("Param/Value/6EA4D943");
+    gv_HeroInformation[2].name = StringExternal("Unit/Name/Ultralisk");
+    gv_HeroInformation[2].ability_resource = c_abilityResourceMana;
 
+    // Obos
     gv_HeroInformation[3].image = "Assets\\Textures\\btn-unit-protoss-archon.dds";
-    gv_HeroInformation[3].name = StringExternal("Param/Value/B62F8A41");
+    gv_HeroInformation[3].name = StringExternal("Unit/Name/Archon");
+    gv_HeroInformation[3].ability_resource = c_abilityResourceMana;
 
+    // Xolus
     gv_HeroInformation[4].image = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
-    gv_HeroInformation[4].name = StringExternal("Param/Value/98871FB0");
+    gv_HeroInformation[4].name = StringExternal("Unit/Name/Hero5");
+    gv_HeroInformation[4].ability_resource = c_abilityResourceNone;
 
+    // Edburn
     gv_HeroInformation[5].image = "Assets\\AddIcon\\btn-hero6.dds";
-    gv_HeroInformation[5].name = StringExternal("Param/Value/16323C2D");
+    gv_HeroInformation[5].name = StringExternal("Unit/Name/Hero6");
+    gv_HeroInformation[5].ability_resource = c_abilityResourceMana;
 
+    // Metel
     gv_HeroInformation[6].image = "Assets\\Textures\\btn-unit-terran-medic.dds";
-    gv_HeroInformation[6].name = StringExternal("Param/Value/2C7640E2");
+    gv_HeroInformation[6].name = StringExternal("Unit/Name/Hero7");
+    gv_HeroInformation[6].ability_resource = c_abilityResourceMana;
 
+    // Jade
     gv_HeroInformation[7].image = "Assets\\Textures\\btn-unit-terran-reaper.dds";
-    gv_HeroInformation[7].name = StringExternal("Param/Value/1B924B46");
+    gv_HeroInformation[7].name = StringExternal("Unit/Name/Hero8");
+    gv_HeroInformation[7].ability_resource = c_abilityResourceMana;
 
+    // Leinard
     gv_HeroInformation[8].image = "Assets\\Textures\\btn-unit-terran-nova.dds";
-    gv_HeroInformation[8].name = StringExternal("Param/Value/2CBED175");
+    gv_HeroInformation[8].name = StringExternal("Unit/Name/Hero9");
+    gv_HeroInformation[8].ability_resource = c_abilityResourceMana;
 
+    // Venom Bug
     gv_HeroInformation[9].image = "Assets\\Textures\\btn-unit-zerg-baneling.dds";
-    gv_HeroInformation[9].name = StringExternal("Param/Value/6B64D2D4");
+    gv_HeroInformation[9].name = StringExternal("Unit/Name/Hero10");
+    gv_HeroInformation[9].ability_resource = c_abilityResourceMana;
 
+    // Galaxia
     gv_HeroInformation[10].image = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
-    gv_HeroInformation[10].name = StringExternal("Param/Value/8E305690");
+    gv_HeroInformation[10].name = StringExternal("Unit/Name/Hero11");
+    gv_HeroInformation[10].ability_resource = c_abilityResourceMana;
 
+    // Tangky
     gv_HeroInformation[11].image = "Assets\\AddIcon\\btn-hero12.dds";
-    gv_HeroInformation[11].name = StringExternal("Param/Value/91A55FB7");
+    gv_HeroInformation[11].name = StringExternal("Unit/Name/Hero12");
+    gv_HeroInformation[11].ability_resource = c_abilityResourceEnergy;
 
+    // Pyron
     gv_HeroInformation[12].image = "Assets\\AddIcon\\btn-hero13.dds";
-    gv_HeroInformation[12].name = StringExternal("Param/Value/E2CAE691");
+    gv_HeroInformation[12].name = StringExternal("Unit/Name/Hero13");
+    gv_HeroInformation[12].ability_resource = c_abilityResourceMana;
 
+    // Magner
     gv_HeroInformation[13].image = "Assets\\Textures\\btn-unit-terran-marauderswann.dds";
-    gv_HeroInformation[13].name = StringExternal("Param/Value/A984F6E1");
+    gv_HeroInformation[13].name = StringExternal("Unit/Name/Hero14");
+    gv_HeroInformation[13].ability_resource = c_abilityResourceMana;
 
+    // Moria
     gv_HeroInformation[14].image = "Assets\\AddIcon\\btn-hero15.dds";
-    gv_HeroInformation[14].name = StringExternal("Param/Value/8F9EECBD");
+    gv_HeroInformation[14].name = StringExternal("Unit/Name/Hero15");
+    gv_HeroInformation[14].ability_resource = c_abilityResourceMana;
 
+    // Niglos
     gv_HeroInformation[15].image = "Assets\\Textures\\btn-unit-zerg-roach.dds";
-    gv_HeroInformation[15].name = StringExternal("Param/Value/7D71EAA9");
+    gv_HeroInformation[15].name = StringExternal("Unit/Name/Hero16");
+    gv_HeroInformation[15].ability_resource = c_abilityResourceMana;
 
+    // Kelro
     gv_HeroInformation[16].image = "Assets\\Textures\\btn-unit-zerg-aberration.dds";
-    gv_HeroInformation[16].name = StringExternal("Param/Value/D8595B5D");
+    gv_HeroInformation[16].name = StringExternal("Unit/Name/Hero17");
+    gv_HeroInformation[16].ability_resource = c_abilityResourceMana;
 
+    // Devola
     gv_HeroInformation[17].image = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
-    gv_HeroInformation[17].name = StringExternal("Param/Value/F1EF2546");
+    gv_HeroInformation[17].name = StringExternal("Unit/Name/Hero18");
+    gv_HeroInformation[17].ability_resource = c_abilityResourceNone;
 
+    // Proward
     gv_HeroInformation[18].image = "Assets\\AddIcon\\btn-hero19.dds";
-    gv_HeroInformation[18].name = StringExternal("Param/Value/0F666ECB");
+    gv_HeroInformation[18].name = StringExternal("Unit/Name/Hero19");
+    gv_HeroInformation[18].ability_resource = c_abilityResourceMana;
 
+    // Netero
     gv_HeroInformation[19].image = "Assets\\Textures\\btn-unit-protoss-darktemplar.dds";
-    gv_HeroInformation[19].name = StringExternal("Param/Value/A4CF4CC2");
+    gv_HeroInformation[19].name = StringExternal("Unit/Name/Hero20");
+    gv_HeroInformation[19].ability_resource = c_abilityResourceMana;
 
+    // Celin
     gv_HeroInformation[20].image = "Assets\\AddIcon\\btn-hero21.dds";
-    gv_HeroInformation[20].name = StringExternal("Param/Value/A99152CE");
+    gv_HeroInformation[20].name = StringExternal("Unit/Name/Hero21");
+    gv_HeroInformation[20].ability_resource = c_abilityResourceMana;
 
+    // Land Baron
     gv_HeroInformation[21].image = "Assets\\Textures\\btn-unit-terran-thor.dds";
-    gv_HeroInformation[21].name = StringExternal("Param/Value/886847CC");
+    gv_HeroInformation[21].name = StringExternal("Unit/Name/Hero22");
+    gv_HeroInformation[21].ability_resource = c_abilityResourceMana;
 
+    // Garp
     gv_HeroInformation[22].image = "Assets\\AddIcon\\btn-hero23.dds";
-    gv_HeroInformation[22].name = StringExternal("Param/Value/FF6CAED4");
+    gv_HeroInformation[22].name = StringExternal("Unit/Name/Hero23");
+    gv_HeroInformation[22].ability_resource = c_abilityResourceMana;
 
+    // Kaion
     gv_HeroInformation[23].image = "Assets\\AddIcon\\btn-hero24.dds";
-    gv_HeroInformation[23].name = StringExternal("Param/Value/0271FB40");
+    gv_HeroInformation[23].name = StringExternal("Unit/Name/Hero24");
+    gv_HeroInformation[23].ability_resource = c_abilityResourceMana;
 
+    // Basilisk
     gv_HeroInformation[24].image = "Assets\\Textures\\btn-unit-zerg-hydralisk.dds";
-    gv_HeroInformation[24].name = StringExternal("Param/Value/E086630B");
+    gv_HeroInformation[24].name = StringExternal("Unit/Name/Hero25");
+    gv_HeroInformation[24].ability_resource = c_abilityResourceMana;
 
+    // Michael
     gv_HeroInformation[25].image = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
-    gv_HeroInformation[25].name = StringExternal("Param/Value/1C3CADC7");
+    gv_HeroInformation[25].name = StringExternal("Unit/Name/Hero26");
+    gv_HeroInformation[25].ability_resource = c_abilityResourceMana;
 
+    // Kerberos
     gv_HeroInformation[26].image = "Assets\\Textures\\btn-unit-terran-predator.dds";
-    gv_HeroInformation[26].name = StringExternal("Param/Value/A71D7690");
+    gv_HeroInformation[26].name = StringExternal("Unit/Name/Hero27");
+    gv_HeroInformation[26].ability_resource = c_abilityResourceEnergy;
 
+    // Duke
     gv_HeroInformation[27].image = "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds";
-    gv_HeroInformation[27].name = StringExternal("Param/Value/78ADF72F");
+    gv_HeroInformation[27].name = StringExternal("Unit/Name/Hero28");
+    gv_HeroInformation[27].ability_resource = c_abilityResourceMana;
 
+    // Neherenia
     gv_HeroInformation[28].image = "Assets\\Textures\\btn-unit-zerg-queen.dds";
-    gv_HeroInformation[28].name = StringExternal("Param/Value/A14F5A20");
+    gv_HeroInformation[28].name = StringExternal("Unit/Name/Hero29");
+    gv_HeroInformation[28].ability_resource = c_abilityResourceMana;
 
+    // Xion
     gv_HeroInformation[29].image = "Assets\\AddIcon\\btn-hero30.dds";
-    gv_HeroInformation[29].name = StringExternal("Param/Value/A297FD3C");
+    gv_HeroInformation[29].name = StringExternal("Unit/Name/Hero30");
+    gv_HeroInformation[29].ability_resource = c_abilityResourceMana;
 
+    // Bloodius
     gv_HeroInformation[30].image = "Assets\\AddIcon\\btn-hero31.dds";
-    gv_HeroInformation[30].name = StringExternal("Param/Value/8BDD7925");
+    gv_HeroInformation[30].name = StringExternal("Unit/Name/Hero31");
+    gv_HeroInformation[30].ability_resource = c_abilityResourceMana;
 
+    // Galvaron
     gv_HeroInformation[31].image = "Assets\\Textures\\btn-unit-zerg-zergling.dds";
-    gv_HeroInformation[31].name = StringExternal("Param/Value/1736D2B2");
+    gv_HeroInformation[31].name = StringExternal("Unit/Name/Hero32");
+    gv_HeroInformation[31].ability_resource = c_abilityResourceMana;
 
+    // Jernigan
     gv_HeroInformation[32].image = "Assets\\Textures\\btn-unit-rifleman.dds";
-    gv_HeroInformation[32].name = StringExternal("Param/Value/CDE734C1");
+    gv_HeroInformation[32].name = StringExternal("Unit/Name/Hero33");
+    gv_HeroInformation[32].ability_resource = c_abilityResourceMana;
 
+    // Chorus
     gv_HeroInformation[33].image = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
-    gv_HeroInformation[33].name = StringExternal("Param/Value/38C5EAD6");
+    gv_HeroInformation[33].name = StringExternal("Unit/Name/Hero34");
+    gv_HeroInformation[33].ability_resource = c_abilityResourceMana;
 
+    // Soul Kaiser
     gv_HeroInformation[34].image = "Assets\\Textures\\btn-unit-protos-soulhunter.dds";
-    gv_HeroInformation[34].name = StringExternal("Param/Value/B4CE8A7B");
+    gv_HeroInformation[34].name = StringExternal("Unit/Name/Hero35");
+    gv_HeroInformation[34].ability_resource = c_abilityResourceMana;
 
+    // Valkyria
     gv_HeroInformation[35].image = "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds";
-    gv_HeroInformation[35].name = StringExternal("Param/Value/5F9C3F9B");
+    gv_HeroInformation[35].name = StringExternal("Unit/Name/Hero36");
+    gv_HeroInformation[35].ability_resource = c_abilityResourceMana;
 
+    // Elzard
     gv_HeroInformation[36].image = "Assets\\AddIcon\\btn-hero37.dds";
-    gv_HeroInformation[36].name = StringExternal("Param/Value/7DBCF431");
+    gv_HeroInformation[36].name = StringExternal("Unit/Name/Hero37");
+    gv_HeroInformation[36].ability_resource = c_abilityResourceMana;
 
+    // Warcorn
     gv_HeroInformation[37].image = "Assets\\AddIcon\\btn-hero38.dds";
-    gv_HeroInformation[37].name = StringExternal("Param/Value/02CDF0CF");
+    gv_HeroInformation[37].name = StringExternal("Unit/Name/Hero38");
+    gv_HeroInformation[37].ability_resource = c_abilityResourceMana;
 
+    // Dark Ray
     gv_HeroInformation[38].image = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
-    gv_HeroInformation[38].name = StringExternal("Param/Value/FCF7F56F");
+    gv_HeroInformation[38].name = StringExternal("Unit/Name/Hero39");
+    gv_HeroInformation[38].ability_resource = c_abilityResourceMana;
 
+    // Lecthor
     gv_HeroInformation[39].image = "Assets\\AddIcon\\btn-hero40.dds";
-    gv_HeroInformation[39].name = StringExternal("Param/Value/68D2A524");
+    gv_HeroInformation[39].name = StringExternal("Unit/Name/Hero40");
+    gv_HeroInformation[39].ability_resource = c_abilityResourceMana;
 
+    // Haemosu
     gv_HeroInformation[40].image = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
-    gv_HeroInformation[40].name = StringExternal("Param/Value/CB418C32");
+    gv_HeroInformation[40].name = StringExternal("Unit/Name/Hero41");
+    gv_HeroInformation[40].ability_resource = c_abilityResourceMana;
 
+    // Hera
     gv_HeroInformation[41].image = "Assets\\AddIcon\\btn-hero42.dds";
-    gv_HeroInformation[41].name = StringExternal("Param/Value/C7184FD5");
+    gv_HeroInformation[41].name = StringExternal("Unit/Name/Hero42");
+    gv_HeroInformation[41].ability_resource = c_abilityResourceNone;
 
+    // Zonda
     gv_HeroInformation[42].image = "Assets\\AddIcon\\btn-hero43.dds";
-    gv_HeroInformation[42].name = StringExternal("Param/Value/87BE6F8B");
+    gv_HeroInformation[42].name = StringExternal("Unit/Name/Hero43");
+    gv_HeroInformation[42].ability_resource = c_abilityResourceMana;
 
+    // Liria
     gv_HeroInformation[43].image = "Assets\\AddIcon\\btn-hero44.dds";
-    gv_HeroInformation[43].name = StringExternal("Param/Value/3DBECD60");
+    gv_HeroInformation[43].name = StringExternal("Unit/Name/Hero44");
+    gv_HeroInformation[43].ability_resource = c_abilityResourceMana;
 
+    // Jelquus
     gv_HeroInformation[44].image = "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds";
-    gv_HeroInformation[44].name = StringExternal("Param/Value/B2BD02D8");
+    gv_HeroInformation[44].name = StringExternal("Unit/Name/Hero45");
+    gv_HeroInformation[44].ability_resource = c_abilityResourceMana;
 
+    // Shuirin
     gv_HeroInformation[45].image = "Assets\\AddIcon\\btn-hero46.dds";
-    gv_HeroInformation[45].name = StringExternal("Param/Value/DCC7A0CD");
+    gv_HeroInformation[45].name = StringExternal("Unit/Name/Hero46");
+    gv_HeroInformation[45].ability_resource = c_abilityResourceMana;
 
+    // Govan
     gv_HeroInformation[46].image = "Assets\\AddIcon\\btn-hero47.dds";
-    gv_HeroInformation[46].name = StringExternal("Param/Value/06AE8A13");
+    gv_HeroInformation[46].name = StringExternal("Unit/Name/Hero47");
+    gv_HeroInformation[46].ability_resource = c_abilityResourceMana;
 
+    // Bay Arc
     gv_HeroInformation[47].image = "Assets\\Textures\\btn-unit-protoss-colossus.dds";
-    gv_HeroInformation[47].name = StringExternal("Param/Value/B66E022D");
+    gv_HeroInformation[47].name = StringExternal("Unit/Name/Hero48");
+    gv_HeroInformation[47].ability_resource = c_abilityResourceMana;
 
+    // Deken
     gv_HeroInformation[48].image = "Assets\\AddIcon\\btn-hero49.dds";
-    gv_HeroInformation[48].name = StringExternal("Param/Value/EBB23FBF");
+    gv_HeroInformation[48].name = StringExternal("Unit/Name/Hero49");
+    gv_HeroInformation[48].ability_resource = c_abilityResourceEnergy;
 
+    // Zero
     gv_HeroInformation[49].image = "Assets\\AddIcon\\btn-hero50.dds";
-    gv_HeroInformation[49].name = StringExternal("Param/Value/D513332C");
+    gv_HeroInformation[49].name = StringExternal("Unit/Name/Hero50");
+    gv_HeroInformation[49].ability_resource = c_abilityResourceMana;
 
+    // Sibarun
     gv_HeroInformation[50].image = "Assets\\AddIcon\\btn-hero51.dds";
-    gv_HeroInformation[50].name = StringExternal("Param/Value/F18A84D5");
+    gv_HeroInformation[50].name = StringExternal("Unit/Name/Hero51");
+    gv_HeroInformation[50].ability_resource = c_abilityResourceMana;
 
+    // Daisy
     gv_HeroInformation[51].image = "Assets\\AddIcon\\btn-hero52.dds";
-    gv_HeroInformation[51].name = StringExternal("Param/Value/3258C638");
+    gv_HeroInformation[51].name = StringExternal("Unit/Name/Hero52");
+    gv_HeroInformation[51].ability_resource = c_abilityResourceMana;
 
+    // Glan
     gv_HeroInformation[52].image = "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds";
-    gv_HeroInformation[52].name = StringExternal("Param/Value/F384DEA4");
+    gv_HeroInformation[52].name = StringExternal("Unit/Name/Hero53");
+    gv_HeroInformation[52].ability_resource = c_abilityResourceMana;
 
+    // Voltma
     gv_HeroInformation[53].image = "Assets\\AddIcon\\btn-hero54.dds";
-    gv_HeroInformation[53].name = StringExternal("Param/Value/BC02BDD0");
+    gv_HeroInformation[53].name = StringExternal("Unit/Name/Hero54");
+    gv_HeroInformation[53].ability_resource = c_abilityResourceMana;
 
+    // Bax
     gv_HeroInformation[54].image = "Assets\\AddIcon\\btn-hero55.dds";
-    gv_HeroInformation[54].name = StringExternal("Param/Value/41A20DCD");
+    gv_HeroInformation[54].name = StringExternal("Unit/Name/Hero55");
+    gv_HeroInformation[54].ability_resource = c_abilityResourceMana;
 
+    // Grunt
     gv_HeroInformation[55].image = "Assets\\AddIcon\\btn-hero56.dds";
-    gv_HeroInformation[55].name = StringExternal("Param/Value/6B49299D");
+    gv_HeroInformation[55].name = StringExternal("Unit/Name/Hero56");
+    gv_HeroInformation[55].ability_resource = c_abilityResourceMana;
 
+    // Lene
     gv_HeroInformation[56].image = "Assets\\AddIcon\\btn-hero57.dds";
-    gv_HeroInformation[56].name = StringExternal("Param/Value/F7723747");
+    gv_HeroInformation[56].name = StringExternal("Unit/Name/Hero57");
+    gv_HeroInformation[56].ability_resource = c_abilityResourceMana;
 
+    // Jango
     gv_HeroInformation[57].image = "Assets\\AddIcon\\btn-hero58.dds";
-    gv_HeroInformation[57].name = StringExternal("Param/Value/D6B3C783");
+    gv_HeroInformation[57].name = StringExternal("Unit/Name/Hero58");
+    gv_HeroInformation[57].ability_resource = c_abilityResourceMana;
 
+    // Burndress
     gv_HeroInformation[58].image = "Assets\\AddIcon\\btn-hero59.dds";
-    gv_HeroInformation[58].name = StringExternal("Param/Value/748312A9");
+    gv_HeroInformation[58].name = StringExternal("Unit/Name/Hero59");
+    gv_HeroInformation[58].ability_resource = c_abilityResourceMana;
 
+    // Bison
     gv_HeroInformation[59].image = "Assets\\AddIcon\\btn-hero60.dds";
-    gv_HeroInformation[59].name = StringExternal("Param/Value/42B5C261");
+    gv_HeroInformation[59].name = StringExternal("Unit/Name/Hero60");
+    gv_HeroInformation[59].ability_resource = c_abilityResourceHeat;
 
+    // Musashi
     gv_HeroInformation[60].image = "Assets\\AddIcon\\btn-hero61.dds";
-    gv_HeroInformation[60].name = StringExternal("Param/Value/7C05A1CB");
+    gv_HeroInformation[60].name = StringExternal("Unit/Name/Hero61");
+    gv_HeroInformation[60].ability_resource = c_abilityResourceMana;
 
+    // Daboto
     gv_HeroInformation[61].image = "Assets\\AddIcon\\btn-hero62.dds";
-    gv_HeroInformation[61].name = StringExternal("Param/Value/FD9B1FC8");
+    gv_HeroInformation[61].name = StringExternal("Unit/Name/Hero62");
+    gv_HeroInformation[61].ability_resource = c_abilityResourceMana;
 
+    // Galleon
     gv_HeroInformation[62].image = "Assets\\AddIcon\\btn-hero63.dds";
-    gv_HeroInformation[62].name = StringExternal("Param/Value/E65FD848");
+    gv_HeroInformation[62].name = StringExternal("Unit/Name/Hero63");
+    gv_HeroInformation[62].ability_resource = c_abilityResourceMana;
 
+    // Wiz
     gv_HeroInformation[63].image = "Assets\\AddIcon\\btn-hero64.dds";
-    gv_HeroInformation[63].name = StringExternal("Param/Value/0BE358E4");
+    gv_HeroInformation[63].name = StringExternal("Unit/Name/Hero64");
+    gv_HeroInformation[63].ability_resource = c_abilityResourceMana;
 
+    // Mordin
     gv_HeroInformation[64].image = "Assets\\AddIcon\\btn-hero65.dds";
-    gv_HeroInformation[64].name = StringExternal("Param/Value/F50E9985");
+    gv_HeroInformation[64].name = StringExternal("Unit/Name/Hero65");
+    gv_HeroInformation[64].ability_resource = c_abilityResourceMana;
 
+    // Demol
     gv_HeroInformation[65].image = "Assets\\AddIcon\\btn-hero66.dds";
-    gv_HeroInformation[65].name = StringExternal("Param/Value/4DCCFF5E");
+    gv_HeroInformation[65].name = StringExternal("Unit/Name/Hero66");
+    gv_HeroInformation[65].ability_resource = c_abilityResourceMana;
 
+    // Desilba
     gv_HeroInformation[66].image = "Assets\\AddIcon\\btn-hero67.dds";
-    gv_HeroInformation[66].name = StringExternal("Param/Value/76CFC2E9");
+    gv_HeroInformation[66].name = StringExternal("Unit/Name/Hero67");
+    gv_HeroInformation[66].ability_resource = c_abilityResourceMana;
 
+    // Sieger
     gv_HeroInformation[67].image = "Assets\\AddIcon\\btn-hero68.dds";
-    gv_HeroInformation[67].name = StringExternal("Param/Value/697320AC");
+    gv_HeroInformation[67].name = StringExternal("Unit/Name/Hero68");
+    gv_HeroInformation[67].ability_resource = c_abilityResourceMana;
 
+    // Margon
     gv_HeroInformation[68].image = "Assets\\AddIcon\\btn-hero69.dds";
-    gv_HeroInformation[68].name = StringExternal("Param/Value/A7558D1B");
+    gv_HeroInformation[68].name = StringExternal("Unit/Name/Hero69");
+    gv_HeroInformation[68].ability_resource = c_abilityResourceMana;
 
+    // Drager
     gv_HeroInformation[69].image = "Assets\\AddIcon\\btn-hero70.dds";
-    gv_HeroInformation[69].name = StringExternal("Param/Value/67F4EFB9");
+    gv_HeroInformation[69].name = StringExternal("Unit/Name/Hero70");
+    gv_HeroInformation[69].ability_resource = c_abilityResourceMana;
 
+    // Lucifer
     gv_HeroInformation[70].image = "Assets\\AddIcon\\btn-hero71.dds";
-    gv_HeroInformation[70].name = StringExternal("Param/Value/CE4BE3FF");
+    gv_HeroInformation[70].name = StringExternal("Unit/Name/Hero71");
+    gv_HeroInformation[70].ability_resource = c_abilityResourceMana;
 
+    // Eren
     gv_HeroInformation[71].image = "Assets\\AddIcon\\btn-hero72.dds";
-    gv_HeroInformation[71].name = StringExternal("Param/Value/642683E0");
+    gv_HeroInformation[71].name = StringExternal("Unit/Name/Hero72");
+    gv_HeroInformation[71].ability_resource = c_abilityResourceNone;
 
+    // Luna
     gv_HeroInformation[72].image = "Assets\\AddIcon\\btn-hero73.dds";
-    gv_HeroInformation[72].name = StringExternal("Param/Value/4EAB037A");
+    gv_HeroInformation[72].name = StringExternal("Unit/Name/Hero73");
+    gv_HeroInformation[72].ability_resource = c_abilityResourceMana;
 }
 
 void InitGameParameters() {
@@ -1529,10 +1682,13 @@ void gf_HrSpellMake1 () {
                 }
             }
             else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 8)) {
-                if ((gv_CharNoMana[gv_PlayerBayul[i]] == 0)) {
+                if (gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[i]] - 1].ability_resource == c_abilityResourceMana) {
                     UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong5", gv_PlayerBayul[i], 1);
                 }
-            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp223", 1);
+                // if ((gv_CharNoMana[gv_PlayerBayul[i]] == 0)) {
+                //     UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong5", gv_PlayerBayul[i], 1);
+                // }
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp223", 1);
                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                     gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[7], gv_PlayerBayul[i]);
                 }
@@ -1618,9 +1774,12 @@ void gf_HrSpellMake2 () {
                 }
             }
             else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 8)) {
-                if ((gv_CharNoMana[gv_PlayerBayul[i]] == 0)) {
+                if (gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[i]] - 1].ability_resource == c_abilityResourceMana) {
                     UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong5", gv_PlayerBayul[i], 1);
                 }
+                // if ((gv_CharNoMana[gv_PlayerBayul[i]] == 0)) {
+                //     UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong5", gv_PlayerBayul[i], 1);
+                // }
                 libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp223", 2);
                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                     gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[7], gv_PlayerBayul[i]);
@@ -1672,7 +1831,7 @@ void gf_HrCharMake1 () {
             else {
                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 2)) {
                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Zeratul";
-                    gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                    // gv_CharNoMana[gv_PlayerBayul[i]] = 2;
                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/348FB89C");
                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
@@ -1691,7 +1850,7 @@ void gf_HrCharMake1 () {
                     else {
                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 4)) {
                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Archon";
-                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                            // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/4BEC7649");
                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-archon.dds";
@@ -1701,7 +1860,7 @@ void gf_HrCharMake1 () {
                         else {
                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 5)) {
                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero5";
-                                gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                // gv_CharNoMana[gv_PlayerBayul[i]] = 2;
                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/17CCBFBB");
                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
@@ -1724,7 +1883,7 @@ void gf_HrCharMake1 () {
                                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero7";
                                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/6F90726C");
-                                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                            // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-medic.dds";
                                         }
 
@@ -1734,7 +1893,7 @@ void gf_HrCharMake1 () {
                                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero8";
                                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/562DDE9C");
-                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-reaper.dds";
                                             }
 
@@ -1763,7 +1922,7 @@ void gf_HrCharMake1 () {
                                                 else {
                                                     if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 11)) {
                                                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero11";
-                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                        // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/EAA46C46");
                                                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
@@ -1773,7 +1932,7 @@ void gf_HrCharMake1 () {
                                                     else {
                                                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 12)) {
                                                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero12";
-                                                            gv_CharNoMana[gv_PlayerBayul[i]] = 1;
+                                                            // gv_CharNoMana[gv_PlayerBayul[i]] = 1;
                                                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/CE4C02FA");
                                                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero12.dds";
@@ -1783,7 +1942,7 @@ void gf_HrCharMake1 () {
                                                         else {
                                                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 13)) {
                                                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero13";
-                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/99D4E8B5");
                                                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero13.dds";
@@ -1803,7 +1962,7 @@ void gf_HrCharMake1 () {
                                                                 else {
                                                                     if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 15)) {
                                                                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero15";
-                                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                        // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/103861F8");
                                                                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero15.dds";
@@ -1832,7 +1991,7 @@ void gf_HrCharMake1 () {
                                                                             else {
                                                                                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 18)) {
                                                                                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero18";
-                                                                                    gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                                                                    // gv_CharNoMana[gv_PlayerBayul[i]] = 2;
                                                                                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/81E6A9DA");
                                                                                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
@@ -1842,7 +2001,7 @@ void gf_HrCharMake1 () {
                                                                                 else {
                                                                                     if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 19)) {
                                                                                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero19";
-                                                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                        // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/FDE28F66");
                                                                                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero19.dds";
@@ -1889,7 +2048,7 @@ void gf_HrCharMake1 () {
                                                                                                     else {
                                                                                                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 24)) {
                                                                                                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero24";
-                                                                                                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                                            // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                                                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/3605261D");
                                                                                                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero24.dds";
@@ -1943,7 +2102,7 @@ void gf_HrCharMake2 () {
             else {
                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 26)) {
                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero26";
-                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/3A14CCFA");
                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
@@ -1953,7 +2112,7 @@ void gf_HrCharMake2 () {
                 else {
                     if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 27)) {
                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero27";
-                        gv_CharNoMana[gv_PlayerBayul[i]] = 1;
+                        // gv_CharNoMana[gv_PlayerBayul[i]] = 1;
                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/66CC77E3");
                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-predator.dds";
@@ -1972,7 +2131,7 @@ void gf_HrCharMake2 () {
                         else {
                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 29)) {
                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero29";
-                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/AD2CFA93");
                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-queen.dds";
@@ -1982,7 +2141,7 @@ void gf_HrCharMake2 () {
                             else {
                                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 30)) {
                                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero30";
-                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/4534815E");
                                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero30.dds";
@@ -2022,7 +2181,7 @@ void gf_HrCharMake2 () {
                                             else {
                                                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 34)) {
                                                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero34";
-                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/827A053B");
                                                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
@@ -2051,7 +2210,7 @@ void gf_HrCharMake2 () {
                                                         else {
                                                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 37)) {
                                                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero37";
-                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/91B24EA1");
                                                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero37.dds";
@@ -2070,7 +2229,7 @@ void gf_HrCharMake2 () {
                                                                 else {
                                                                     if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 39)) {
                                                                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero39";
-                                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                        // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/C88E439F");
                                                                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
@@ -2099,8 +2258,8 @@ void gf_HrCharMake2 () {
                                                                             else {
                                                                                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 42)) {
                                                                                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero42";
-                                                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
-                                                                                    gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                                                                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                    // gv_CharNoMana[gv_PlayerBayul[i]] = 2;
                                                                                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B2541477");
                                                                                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero42.dds";
@@ -2119,7 +2278,7 @@ void gf_HrCharMake2 () {
                                                                                     else {
                                                                                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 44)) {
                                                                                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero44";
-                                                                                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                            // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/0C8E771D");
                                                                                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero44.dds";
@@ -2138,7 +2297,7 @@ void gf_HrCharMake2 () {
                                                                                             else {
                                                                                                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 46)) {
                                                                                                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero46";
-                                                                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                                                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/ADC0D235");
                                                                                                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero46.dds";
@@ -2201,7 +2360,7 @@ void gf_HrCharMake3 () {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[i]] >= 49) && (gv_SelectedCharNum[gv_PlayerBayul[i]] <= 72))) {
             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 49)) {
                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero49";
-                gv_CharNoMana[gv_PlayerBayul[i]] = 1;
+                // gv_CharNoMana[gv_PlayerBayul[i]] = 1;
                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/EAAA8BCF");
                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero49.dds";
@@ -2211,7 +2370,7 @@ void gf_HrCharMake3 () {
             else {
                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 50)) {
                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero50";
-                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/E9FD22C6");
                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero50.dds";
@@ -2230,7 +2389,7 @@ void gf_HrCharMake3 () {
                     else {
                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 52)) {
                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero52";
-                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                            // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/CC177A31");
                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero52.dds";
@@ -2258,7 +2417,7 @@ void gf_HrCharMake3 () {
                                 else {
                                     if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 55)) {
                                         gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero55";
-                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                        // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                         if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                             gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B7DD71BF");
                                             gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero55.dds";
@@ -2277,7 +2436,7 @@ void gf_HrCharMake3 () {
                                         else {
                                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 57)) {
                                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero57";
-                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/27C10E34");
                                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero57.dds";
@@ -2306,7 +2465,7 @@ void gf_HrCharMake3 () {
                                                     else {
                                                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 60)) {
                                                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero60";
-                                                            gv_CharNoMana[gv_PlayerBayul[i]] = 3;
+                                                            // gv_CharNoMana[gv_PlayerBayul[i]] = 3;
                                                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/356DCDEC");
                                                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero60.dds";
@@ -2316,7 +2475,7 @@ void gf_HrCharMake3 () {
                                                         else {
                                                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 61)) {
                                                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero61";
-                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/C2511753");
                                                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero61.dds";
@@ -2326,7 +2485,7 @@ void gf_HrCharMake3 () {
                                                             else {
                                                                 if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 62)) {
                                                                     gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero62";
-                                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                    // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                     if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                         gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/17EAA0CA");
                                                                         gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero62.dds";
@@ -2393,7 +2552,7 @@ void gf_HrCharMake3 () {
                                                                                         else {
                                                                                             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 69)) {
                                                                                                 gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero69";
-                                                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                                // gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
                                                                                                 if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                                     gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/246B157B");
                                                                                                     gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero69.dds";
@@ -2421,7 +2580,7 @@ void gf_HrCharMake3 () {
                                                                                                     else {
                                                                                                         if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 72)) {
                                                                                                             gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero72";
-                                                                                                            gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                                                                                            // gv_CharNoMana[gv_PlayerBayul[i]] = 2;
                                                                                                             if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
                                                                                                                 gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/97DE05EF");
                                                                                                                 gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero72.dds";
@@ -10649,7 +10808,8 @@ void gf_HrStat5 () {
 
 void gf_HrStat6 () {
     const int shop_index = 5;
-    if ((gv_CharNoMana[EventPlayer()] == 0)) {
+    // if ((gv_CharNoMana[EventPlayer()] == 0)) {
+    if (gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].ability_resource == c_abilityResourceMana) {
         // Upgrade
         UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, c_unitPropCurrent) + 75.0));
         TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42", 1);
@@ -10678,7 +10838,8 @@ void gf_HrStat7 () {
 
 void gf_HrStat8 () {
     const int shop_index = 7;
-    if ((gv_CharNoMana[EventPlayer()] == 0)) {
+    if (gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].ability_resource == c_abilityResourceMana) {
+    // if ((gv_CharNoMana[EventPlayer()] == 0)) {
         // Upgrade
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong2422", gv_PlayerHero[EventPlayer()], 1);
         // Shop Changes
@@ -11231,10 +11392,10 @@ void gf_HrMonsterBuffPickUp2 () {
     // Implementation
     gv_HeroBuffIng[libNtve_gf_KillingPlayer()][0] = 1;
     PlayerCreateEffectUnit(libNtve_gf_KillingPlayer(), "HealingLifeH33", gv_PlayerHero[libNtve_gf_KillingPlayer()]);
-    if ((gv_CharNoMana[libNtve_gf_KillingPlayer()] != 3)) {
+    if (gv_HeroInformation[gv_SelectedCharNum[libNtve_gf_KillingPlayer()] - 1].ability_resource != c_abilityResourceHeat) {
+    // if ((gv_CharNoMana[libNtve_gf_KillingPlayer()] != 3)) {
         UnitBehaviorAdd(gv_PlayerHero[libNtve_gf_KillingPlayer()], "SpellDong24242", gv_PlayerHero[libNtve_gf_KillingPlayer()], 1);
-    }
-    else {
+    } else {
         UnitBehaviorAdd(gv_PlayerHero[libNtve_gf_KillingPlayer()], "SpellDong242424", gv_PlayerHero[libNtve_gf_KillingPlayer()], 1);
     }
 }
@@ -11951,10 +12112,10 @@ void gf_HrHeroBuffPut () {
         PlayerCreateEffectPoint(EventPlayer(), "HeroOkGi22232222", PointFromId(1));
         if ((PlayerType(gv_HeroKillPlayer[EventPlayer()]) == c_playerTypeUser) && (gv_HeroDeathBoolean[gv_HeroKillPlayer[EventPlayer()]] == false)) {
             gv_HeroBuffIng[gv_HeroKillPlayer[EventPlayer()]][0] = 1;
-            if ((gv_CharNoMana[gv_HeroKillPlayer[EventPlayer()]] != 3)) {
+            if (gv_HeroInformation[gv_SelectedCharNum[gv_HeroKillPlayer[EventPlayer()]] - 1].ability_resource != c_abilityResourceHeat) {
+            // if ((gv_CharNoMana[gv_HeroKillPlayer[EventPlayer()]] != 3)) {
                 UnitBehaviorAdd(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "SpellDong24242", gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], 1);
-            }
-            else {
+            } else {
                 UnitBehaviorAdd(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "SpellDong242424", gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], 1);
             }
         }
@@ -23654,18 +23815,15 @@ bool gt_TrHeroReviveStand_Func (bool testConds, bool runActions) {
             UnitSetPosition(gv_PlayerHero[EventPlayer()], PointFromId(194), false);
             UnitRevive(gv_PlayerHero[EventPlayer()]);
         }
-        else {
-            if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (PlayerStatus(EventPlayer()) == c_playerStatusActive)) {
-                UnitSetPosition(gv_PlayerHero[EventPlayer()], PointFromId(195), false);
-                UnitRevive(gv_PlayerHero[EventPlayer()]);
-            }
-
+        else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (PlayerStatus(EventPlayer()) == c_playerStatusActive)) {
+            UnitSetPosition(gv_PlayerHero[EventPlayer()], PointFromId(195), false);
+            UnitRevive(gv_PlayerHero[EventPlayer()]);
         }
         UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifePercent, 100.0);
-        if ((gv_CharNoMana[EventPlayer()] != 3)) {
+        if (gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].ability_resource != c_abilityResourceHeat) {
+        // if ((gv_CharNoMana[EventPlayer()] != 3)) {
             UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyPercent, 100.0);
-        }
-        else {
+        } else {
             UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyPercent, 0.0);
         }
         Wait(0.1, c_timeReal);
