@@ -14489,7 +14489,7 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     // Hero select
     for (i = 0 ; i < 8 ; i += 1 ) {
         selecting_hero = gv_DraftChoiceOrder[i];
-        if ((PlayerType(selecting_hero) == c_playerTypeUser) && (PlayerStatus(selecting_hero) == c_playerStatusActive)) {
+        if ((PlayerType(gv_PlayerBayul[selecting_hero]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[selecting_hero]) == c_playerStatusActive)) {
             lf_PlayerHeroChoice(selecting_hero);
         }
     }
