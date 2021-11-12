@@ -40,6 +40,7 @@ struct HeroInfo {
     text name;
     string image;
     int ability_resource;
+    string levelup_link;
 };
 
 //--------------------------------------------------------------------------------------------------
@@ -518,6 +519,7 @@ void gf_HrSpellMake1 ();
 void gf_HrSpellMake2 ();
 void gf_HrCharMake ();
 void gf_HrCleanUpHeroSelectDialogs ();
+void gf_HrHeroLevelUpLink ();
 void gf_HrHeroLevelUpLink1 ();
 void gf_HrHeroLevelUpLink2 ();
 void gf_HrHeroLevelUpLink3 ();
@@ -1124,438 +1126,511 @@ void HeroInfoInit() {
     // Benderzone
     gv_HeroInformation[0].image = "Assets\\Textures\\btn-unit-terran-tosh.dds";
     gv_HeroInformation[0].unitname = "Tosh";
+    gv_HeroInformation[0].levelup_link = "HeroLvUp";
     gv_HeroInformation[0].name = StringExternal("Unit/Name/Tosh");
     gv_HeroInformation[0].ability_resource = c_abilityResourceMana;
 
     // Blane
     gv_HeroInformation[1].image = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
     gv_HeroInformation[1].unitname = "Zeratul";
+    gv_HeroInformation[1].levelup_link = "HeroLvUp2";
     gv_HeroInformation[1].name = StringExternal("Unit/Name/Zeratul");
     gv_HeroInformation[1].ability_resource = c_abilityResourceNone;
 
     // Gianter
     gv_HeroInformation[2].image = "Assets\\Textures\\btn-unit-zerg-ultralisk.dds";
     gv_HeroInformation[2].unitname = "Ultralisk";
+    gv_HeroInformation[2].levelup_link = "HeroLvUp3";
     gv_HeroInformation[2].name = StringExternal("Unit/Name/Ultralisk");
     gv_HeroInformation[2].ability_resource = c_abilityResourceMana;
 
     // Obos
     gv_HeroInformation[3].image = "Assets\\Textures\\btn-unit-protoss-archon.dds";
     gv_HeroInformation[3].unitname = "Archon";
+    gv_HeroInformation[3].levelup_link = "HeroLvUp4";
     gv_HeroInformation[3].name = StringExternal("Unit/Name/Archon");
     gv_HeroInformation[3].ability_resource = c_abilityResourceMana;
 
     // Xolus
     gv_HeroInformation[4].image = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
     gv_HeroInformation[4].unitname = "Hero5";
+    gv_HeroInformation[4].levelup_link = "HeroLvUp22";
     gv_HeroInformation[4].name = StringExternal("Unit/Name/Hero5");
     gv_HeroInformation[4].ability_resource = c_abilityResourceNone;
 
     // Edburn
     gv_HeroInformation[5].image = "Assets\\AddIcon\\btn-hero6.dds";
     gv_HeroInformation[5].unitname = "Hero6";
+    gv_HeroInformation[5].levelup_link = "HeroLvUp5";
     gv_HeroInformation[5].name = StringExternal("Unit/Name/Hero6");
     gv_HeroInformation[5].ability_resource = c_abilityResourceMana;
 
     // Metel
     gv_HeroInformation[6].image = "Assets\\Textures\\btn-unit-terran-medic.dds";
     gv_HeroInformation[6].unitname = "Hero7";
+    gv_HeroInformation[6].levelup_link = "HeroLvUp43";
     gv_HeroInformation[6].name = StringExternal("Unit/Name/Hero7");
     gv_HeroInformation[6].ability_resource = c_abilityResourceMana;
 
     // Jade
     gv_HeroInformation[7].image = "Assets\\Textures\\btn-unit-terran-reaper.dds";
     gv_HeroInformation[7].unitname = "Hero8";
+    gv_HeroInformation[7].levelup_link = "HeroLvUp52";
     gv_HeroInformation[7].name = StringExternal("Unit/Name/Hero8");
     gv_HeroInformation[7].ability_resource = c_abilityResourceMana;
 
     // Leinard
     gv_HeroInformation[8].image = "Assets\\Textures\\btn-unit-terran-nova.dds";
     gv_HeroInformation[8].unitname = "Hero9";
+    gv_HeroInformation[8].levelup_link = "HeroLvUp9";
     gv_HeroInformation[8].name = StringExternal("Unit/Name/Hero9");
     gv_HeroInformation[8].ability_resource = c_abilityResourceMana;
 
     // Venom Bug
     gv_HeroInformation[9].image = "Assets\\Textures\\btn-unit-zerg-baneling.dds";
     gv_HeroInformation[9].unitname = "Hero10";
+    gv_HeroInformation[9].levelup_link = "HeroLvUp522";
     gv_HeroInformation[9].name = StringExternal("Unit/Name/Hero10");
     gv_HeroInformation[9].ability_resource = c_abilityResourceMana;
 
     // Galaxia
     gv_HeroInformation[10].image = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
     gv_HeroInformation[10].unitname = "Hero11";
+    gv_HeroInformation[10].levelup_link = "HeroLvUp5222";
     gv_HeroInformation[10].name = StringExternal("Unit/Name/Hero11");
     gv_HeroInformation[10].ability_resource = c_abilityResourceMana;
 
     // Tangky
     gv_HeroInformation[11].image = "Assets\\AddIcon\\btn-hero12.dds";
     gv_HeroInformation[11].unitname = "Hero12";
+    gv_HeroInformation[11].levelup_link = "HeroLvUp32";
     gv_HeroInformation[11].name = StringExternal("Unit/Name/Hero12");
     gv_HeroInformation[11].ability_resource = c_abilityResourceEnergy;
 
     // Pyron
     gv_HeroInformation[12].image = "Assets\\AddIcon\\btn-hero13.dds";
     gv_HeroInformation[12].unitname = "Hero13";
+    gv_HeroInformation[12].levelup_link = "HeroLvUp33";
     gv_HeroInformation[12].name = StringExternal("Unit/Name/Hero13");
     gv_HeroInformation[12].ability_resource = c_abilityResourceMana;
 
     // Magner
     gv_HeroInformation[13].image = "Assets\\Textures\\btn-unit-terran-marauderswann.dds";
     gv_HeroInformation[13].unitname = "Hero14";
+    gv_HeroInformation[13].levelup_link = "HeroLvUp92";
     gv_HeroInformation[13].name = StringExternal("Unit/Name/Hero14");
     gv_HeroInformation[13].ability_resource = c_abilityResourceMana;
 
     // Moria
     gv_HeroInformation[14].image = "Assets\\AddIcon\\btn-hero15.dds";
     gv_HeroInformation[14].unitname = "Hero15";
+    gv_HeroInformation[14].levelup_link = "HeroLvUp52222";
     gv_HeroInformation[14].name = StringExternal("Unit/Name/Hero15");
     gv_HeroInformation[14].ability_resource = c_abilityResourceMana;
 
     // Niglos
     gv_HeroInformation[15].image = "Assets\\Textures\\btn-unit-zerg-roach.dds";
     gv_HeroInformation[15].unitname = "Hero16";
+    gv_HeroInformation[15].levelup_link = "HeroLvUp52223";
     gv_HeroInformation[15].name = StringExternal("Unit/Name/Hero16");
     gv_HeroInformation[15].ability_resource = c_abilityResourceMana;
 
     // Kelro
     gv_HeroInformation[16].image = "Assets\\Textures\\btn-unit-zerg-aberration.dds";
     gv_HeroInformation[16].unitname = "Hero17";
+    gv_HeroInformation[16].levelup_link = "HeroLvUp52224";
     gv_HeroInformation[16].name = StringExternal("Unit/Name/Hero17");
     gv_HeroInformation[16].ability_resource = c_abilityResourceMana;
 
     // Devola
     gv_HeroInformation[17].image = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
     gv_HeroInformation[17].unitname = "Hero18";
+    gv_HeroInformation[17].levelup_link = "HeroLvUp52225";
     gv_HeroInformation[17].name = StringExternal("Unit/Name/Hero18");
     gv_HeroInformation[17].ability_resource = c_abilityResourceNone;
 
     // Proward
     gv_HeroInformation[18].image = "Assets\\AddIcon\\btn-hero19.dds";
     gv_HeroInformation[18].unitname = "Hero19";
+    gv_HeroInformation[18].levelup_link = "HeroLvUp52226";
     gv_HeroInformation[18].name = StringExternal("Unit/Name/Hero19");
     gv_HeroInformation[18].ability_resource = c_abilityResourceMana;
 
     // Netero
     gv_HeroInformation[19].image = "Assets\\Textures\\btn-unit-protoss-darktemplar.dds";
     gv_HeroInformation[19].unitname = "Hero20";
+    gv_HeroInformation[19].levelup_link = "HeroLvUp52227";
     gv_HeroInformation[19].name = StringExternal("Unit/Name/Hero20");
     gv_HeroInformation[19].ability_resource = c_abilityResourceMana;
 
     // Celin
     gv_HeroInformation[20].image = "Assets\\AddIcon\\btn-hero21.dds";
     gv_HeroInformation[20].unitname = "Hero21";
+    gv_HeroInformation[20].levelup_link = "HeroLvUp332";
     gv_HeroInformation[20].name = StringExternal("Unit/Name/Hero21");
     gv_HeroInformation[20].ability_resource = c_abilityResourceMana;
 
     // Land Baron
     gv_HeroInformation[21].image = "Assets\\Textures\\btn-unit-terran-thor.dds";
     gv_HeroInformation[21].unitname = "Hero22";
+    gv_HeroInformation[21].levelup_link = "HeroLvUp52228";
     gv_HeroInformation[21].name = StringExternal("Unit/Name/Hero22");
     gv_HeroInformation[21].ability_resource = c_abilityResourceMana;
 
     // Garp
     gv_HeroInformation[22].image = "Assets\\AddIcon\\btn-hero23.dds";
     gv_HeroInformation[22].unitname = "Hero23";
+    gv_HeroInformation[22].levelup_link = "HeroLvUp522232";
     gv_HeroInformation[22].name = StringExternal("Unit/Name/Hero23");
     gv_HeroInformation[22].ability_resource = c_abilityResourceMana;
 
     // Kaion
     gv_HeroInformation[23].image = "Assets\\AddIcon\\btn-hero24.dds";
     gv_HeroInformation[23].unitname = "Hero24";
+    gv_HeroInformation[23].levelup_link = "HeroLvUp523";
     gv_HeroInformation[23].name = StringExternal("Unit/Name/Hero24");
     gv_HeroInformation[23].ability_resource = c_abilityResourceMana;
 
     // Basilisk
     gv_HeroInformation[24].image = "Assets\\Textures\\btn-unit-zerg-hydralisk.dds";
     gv_HeroInformation[24].unitname = "Hero25";
+    gv_HeroInformation[24].levelup_link = "HeroLvUp5223";
     gv_HeroInformation[24].name = StringExternal("Unit/Name/Hero25");
     gv_HeroInformation[24].ability_resource = c_abilityResourceMana;
 
     // Michael
     gv_HeroInformation[25].image = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
     gv_HeroInformation[25].unitname = "Hero26";
+    gv_HeroInformation[25].levelup_link = "HeroLvUp432";
     gv_HeroInformation[25].name = StringExternal("Unit/Name/Hero26");
     gv_HeroInformation[25].ability_resource = c_abilityResourceMana;
 
     // Kerberos
     gv_HeroInformation[26].image = "Assets\\Textures\\btn-unit-terran-predator.dds";
     gv_HeroInformation[26].unitname = "Hero27";
+    gv_HeroInformation[26].levelup_link = "HeroLvUp322";
     gv_HeroInformation[26].name = StringExternal("Unit/Name/Hero27");
     gv_HeroInformation[26].ability_resource = c_abilityResourceEnergy;
 
     // Duke
     gv_HeroInformation[27].image = "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds";
     gv_HeroInformation[27].unitname = "Hero28";
+    gv_HeroInformation[27].levelup_link = "HeroLvUp522233";
     gv_HeroInformation[27].name = StringExternal("Unit/Name/Hero28");
     gv_HeroInformation[27].ability_resource = c_abilityResourceMana;
 
     // Neherenia
     gv_HeroInformation[28].image = "Assets\\Textures\\btn-unit-zerg-queen.dds";
     gv_HeroInformation[28].unitname = "Hero29";
+    gv_HeroInformation[28].levelup_link = "HeroLvUp522272";
     gv_HeroInformation[28].name = StringExternal("Unit/Name/Hero29");
     gv_HeroInformation[28].ability_resource = c_abilityResourceMana;
 
     // Xion
     gv_HeroInformation[29].image = "Assets\\AddIcon\\btn-hero30.dds";
     gv_HeroInformation[29].unitname = "Hero30";
+    gv_HeroInformation[29].levelup_link = "HeroLvUp3322";
     gv_HeroInformation[29].name = StringExternal("Unit/Name/Hero30");
     gv_HeroInformation[29].ability_resource = c_abilityResourceMana;
 
     // Bloodius
     gv_HeroInformation[30].image = "Assets\\AddIcon\\btn-hero31.dds";
     gv_HeroInformation[30].unitname = "Hero31";
+    gv_HeroInformation[30].levelup_link = "HeroLvUp5224";
     gv_HeroInformation[30].name = StringExternal("Unit/Name/Hero31");
     gv_HeroInformation[30].ability_resource = c_abilityResourceMana;
 
     // Galvaron
     gv_HeroInformation[31].image = "Assets\\Textures\\btn-unit-zerg-zergling.dds";
     gv_HeroInformation[31].unitname = "Hero32";
+    gv_HeroInformation[31].levelup_link = "HeroLvUp52229";
     gv_HeroInformation[31].name = StringExternal("Unit/Name/Hero32");
     gv_HeroInformation[31].ability_resource = c_abilityResourceMana;
 
     // Jernigan
     gv_HeroInformation[32].image = "Assets\\Textures\\btn-unit-rifleman.dds";
     gv_HeroInformation[32].unitname = "Hero33";
+    gv_HeroInformation[32].levelup_link = "HeroLvUp34";
     gv_HeroInformation[32].name = StringExternal("Unit/Name/Hero33");
     gv_HeroInformation[32].ability_resource = c_abilityResourceMana;
 
     // Chorus
     gv_HeroInformation[33].image = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
     gv_HeroInformation[33].unitname = "Hero34";
+    gv_HeroInformation[33].levelup_link = "HeroLvUp5232";
     gv_HeroInformation[33].name = StringExternal("Unit/Name/Hero34");
     gv_HeroInformation[33].ability_resource = c_abilityResourceMana;
 
     // Soul Kaiser
     gv_HeroInformation[34].image = "Assets\\Textures\\btn-unit-protos-soulhunter.dds";
     gv_HeroInformation[34].unitname = "Hero35";
+    gv_HeroInformation[34].levelup_link = "HeroLvUp3323";
     gv_HeroInformation[34].name = StringExternal("Unit/Name/Hero35");
     gv_HeroInformation[34].ability_resource = c_abilityResourceMana;
 
     // Valkyria
     gv_HeroInformation[35].image = "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds";
     gv_HeroInformation[35].unitname = "Hero36";
+    gv_HeroInformation[35].levelup_link = "HeroLvUp52232";
     gv_HeroInformation[35].name = StringExternal("Unit/Name/Hero36");
     gv_HeroInformation[35].ability_resource = c_abilityResourceMana;
 
     // Elzard
     gv_HeroInformation[36].image = "Assets\\AddIcon\\btn-hero37.dds";
     gv_HeroInformation[36].unitname = "Hero37";
+    gv_HeroInformation[36].levelup_link = "HeroLvUp222";
     gv_HeroInformation[36].name = StringExternal("Unit/Name/Hero37");
     gv_HeroInformation[36].ability_resource = c_abilityResourceMana;
 
     // Warcorn
     gv_HeroInformation[37].image = "Assets\\AddIcon\\btn-hero38.dds";
     gv_HeroInformation[37].unitname = "Hero38";
+    gv_HeroInformation[37].levelup_link = "HeroLvUp44";
     gv_HeroInformation[37].name = StringExternal("Unit/Name/Hero38");
     gv_HeroInformation[37].ability_resource = c_abilityResourceMana;
 
     // Dark Ray
     gv_HeroInformation[38].image = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
     gv_HeroInformation[38].unitname = "Hero39";
+    gv_HeroInformation[38].levelup_link = "HeroLvUp522234";
     gv_HeroInformation[38].name = StringExternal("Unit/Name/Hero39");
     gv_HeroInformation[38].ability_resource = c_abilityResourceMana;
 
     // Lecthor
     gv_HeroInformation[39].image = "Assets\\AddIcon\\btn-hero40.dds";
     gv_HeroInformation[39].unitname = "Hero40";
+    gv_HeroInformation[39].levelup_link = "HeroLvUp93";
     gv_HeroInformation[39].name = StringExternal("Unit/Name/Hero40");
     gv_HeroInformation[39].ability_resource = c_abilityResourceMana;
 
     // Haemosu
     gv_HeroInformation[40].image = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
     gv_HeroInformation[40].unitname = "Hero41";
+    gv_HeroInformation[40].levelup_link = "HeroLvUp522262";
     gv_HeroInformation[40].name = StringExternal("Unit/Name/Hero41");
     gv_HeroInformation[40].ability_resource = c_abilityResourceMana;
 
     // Hera
     gv_HeroInformation[41].image = "Assets\\AddIcon\\btn-hero42.dds";
     gv_HeroInformation[41].unitname = "Hero42";
+    gv_HeroInformation[41].levelup_link = "HeroLvUp5222622";
     gv_HeroInformation[41].name = StringExternal("Unit/Name/Hero42");
     gv_HeroInformation[41].ability_resource = c_abilityResourceNone;
 
     // Zonda
     gv_HeroInformation[42].image = "Assets\\AddIcon\\btn-hero43.dds";
     gv_HeroInformation[42].unitname = "Hero43";
+    gv_HeroInformation[42].levelup_link = "HeroLvUp342";
     gv_HeroInformation[42].name = StringExternal("Unit/Name/Hero43");
     gv_HeroInformation[42].ability_resource = c_abilityResourceMana;
 
     // Liria
     gv_HeroInformation[43].image = "Assets\\AddIcon\\btn-hero44.dds";
     gv_HeroInformation[43].unitname = "Hero44";
+    gv_HeroInformation[43].levelup_link = "HeroLvUp932";
     gv_HeroInformation[43].name = StringExternal("Unit/Name/Hero44");
     gv_HeroInformation[43].ability_resource = c_abilityResourceMana;
 
     // Jelquus
     gv_HeroInformation[44].image = "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds";
     gv_HeroInformation[44].unitname = "Hero45";
+    gv_HeroInformation[44].levelup_link = "HeroLvUp524";
     gv_HeroInformation[44].name = StringExternal("Unit/Name/Hero45");
     gv_HeroInformation[44].ability_resource = c_abilityResourceMana;
 
     // Shuirin
     gv_HeroInformation[45].image = "Assets\\AddIcon\\btn-hero46.dds";
     gv_HeroInformation[45].unitname = "Hero46";
+    gv_HeroInformation[45].levelup_link = "HeroLvUp3324";
     gv_HeroInformation[45].name = StringExternal("Unit/Name/Hero46");
     gv_HeroInformation[45].ability_resource = c_abilityResourceMana;
 
     // Govan
     gv_HeroInformation[46].image = "Assets\\AddIcon\\btn-hero47.dds";
     gv_HeroInformation[46].unitname = "Hero47";
+    gv_HeroInformation[46].levelup_link = "HeroLvUp5222322";
     gv_HeroInformation[46].name = StringExternal("Unit/Name/Hero47");
     gv_HeroInformation[46].ability_resource = c_abilityResourceMana;
 
     // Bay Arc
     gv_HeroInformation[47].image = "Assets\\Textures\\btn-unit-protoss-colossus.dds";
     gv_HeroInformation[47].unitname = "Hero48";
+    gv_HeroInformation[47].levelup_link = "HeroLvUp5225";
     gv_HeroInformation[47].name = StringExternal("Unit/Name/Hero48");
     gv_HeroInformation[47].ability_resource = c_abilityResourceMana;
 
     // Deken
     gv_HeroInformation[48].image = "Assets\\AddIcon\\btn-hero49.dds";
     gv_HeroInformation[48].unitname = "Hero49";
+    gv_HeroInformation[48].levelup_link = "HeroLvUp5222342";
     gv_HeroInformation[48].name = StringExternal("Unit/Name/Hero49");
     gv_HeroInformation[48].ability_resource = c_abilityResourceEnergy;
 
     // Zero
     gv_HeroInformation[49].image = "Assets\\AddIcon\\btn-hero50.dds";
     gv_HeroInformation[49].unitname = "Hero50";
+    gv_HeroInformation[49].levelup_link = "HeroLvUp5242";
     gv_HeroInformation[49].name = StringExternal("Unit/Name/Hero50");
     gv_HeroInformation[49].ability_resource = c_abilityResourceMana;
 
     // Sibarun
     gv_HeroInformation[50].image = "Assets\\AddIcon\\btn-hero51.dds";
     gv_HeroInformation[50].unitname = "Hero51";
+    gv_HeroInformation[50].levelup_link = "HeroLvUp33222";
     gv_HeroInformation[50].name = StringExternal("Unit/Name/Hero51");
     gv_HeroInformation[50].ability_resource = c_abilityResourceMana;
 
     // Daisy
     gv_HeroInformation[51].image = "Assets\\AddIcon\\btn-hero52.dds";
     gv_HeroInformation[51].unitname = "Hero52";
+    gv_HeroInformation[51].levelup_link = "HeroLvUp52223422";
     gv_HeroInformation[51].name = StringExternal("Unit/Name/Hero52");
     gv_HeroInformation[51].ability_resource = c_abilityResourceMana;
 
     // Glan
     gv_HeroInformation[52].image = "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds";
     gv_HeroInformation[52].unitname = "Hero53";
+    gv_HeroInformation[52].levelup_link = "HeroLvUp52223222";
     gv_HeroInformation[52].name = StringExternal("Unit/Name/Hero53");
     gv_HeroInformation[52].ability_resource = c_abilityResourceMana;
 
     // Voltma
     gv_HeroInformation[53].image = "Assets\\AddIcon\\btn-hero54.dds";
     gv_HeroInformation[53].unitname = "Hero54";
+    gv_HeroInformation[53].levelup_link = "HeroLvUp6";
     gv_HeroInformation[53].name = StringExternal("Unit/Name/Hero54");
     gv_HeroInformation[53].ability_resource = c_abilityResourceMana;
 
     // Bax
     gv_HeroInformation[54].image = "Assets\\AddIcon\\btn-hero55.dds";
     gv_HeroInformation[54].unitname = "Hero55";
+    gv_HeroInformation[54].levelup_link = "HeroLvUp522322";
     gv_HeroInformation[54].name = StringExternal("Unit/Name/Hero55");
     gv_HeroInformation[54].ability_resource = c_abilityResourceMana;
 
     // Grunt
     gv_HeroInformation[55].image = "Assets\\AddIcon\\btn-hero56.dds";
     gv_HeroInformation[55].unitname = "Hero56";
+    gv_HeroInformation[55].levelup_link = "HeroLvUp522232222";
     gv_HeroInformation[55].name = StringExternal("Unit/Name/Hero56");
     gv_HeroInformation[55].ability_resource = c_abilityResourceMana;
 
     // Lene
     gv_HeroInformation[56].image = "Assets\\AddIcon\\btn-hero57.dds";
     gv_HeroInformation[56].unitname = "Hero57";
+    gv_HeroInformation[56].levelup_link = "HeroLvUp33242";
     gv_HeroInformation[56].name = StringExternal("Unit/Name/Hero57");
     gv_HeroInformation[56].ability_resource = c_abilityResourceMana;
 
     // Jango
     gv_HeroInformation[57].image = "Assets\\AddIcon\\btn-hero58.dds";
     gv_HeroInformation[57].unitname = "Hero58";
+    gv_HeroInformation[57].levelup_link = "HeroLvUp35";
     gv_HeroInformation[57].name = StringExternal("Unit/Name/Hero58");
     gv_HeroInformation[57].ability_resource = c_abilityResourceMana;
 
     // Burndress
     gv_HeroInformation[58].image = "Assets\\AddIcon\\btn-hero59.dds";
     gv_HeroInformation[58].unitname = "Hero59";
+    gv_HeroInformation[58].levelup_link = "HeroLvUp5223222";
     gv_HeroInformation[58].name = StringExternal("Unit/Name/Hero59");
     gv_HeroInformation[58].ability_resource = c_abilityResourceMana;
 
     // Bison
     gv_HeroInformation[59].image = "Assets\\AddIcon\\btn-hero60.dds";
     gv_HeroInformation[59].unitname = "Hero60";
+    gv_HeroInformation[59].levelup_link = "HeroLvUp52233";
     gv_HeroInformation[59].name = StringExternal("Unit/Name/Hero60");
     gv_HeroInformation[59].ability_resource = c_abilityResourceHeat;
 
     // Musashi
     gv_HeroInformation[60].image = "Assets\\AddIcon\\btn-hero61.dds";
     gv_HeroInformation[60].unitname = "Hero61";
+    gv_HeroInformation[60].levelup_link = "HeroLvUp433";
     gv_HeroInformation[60].name = StringExternal("Unit/Name/Hero61");
     gv_HeroInformation[60].ability_resource = c_abilityResourceMana;
 
     // Daboto
     gv_HeroInformation[61].image = "Assets\\AddIcon\\btn-hero62.dds";
     gv_HeroInformation[61].unitname = "Hero62";
+    gv_HeroInformation[61].levelup_link = "HeroLvUp2222";
     gv_HeroInformation[61].name = StringExternal("Unit/Name/Hero62");
     gv_HeroInformation[61].ability_resource = c_abilityResourceMana;
 
     // Galleon
     gv_HeroInformation[62].image = "Assets\\AddIcon\\btn-hero63.dds";
     gv_HeroInformation[62].unitname = "Hero63";
+    gv_HeroInformation[62].levelup_link = "HeroLvUp522292";
     gv_HeroInformation[62].name = StringExternal("Unit/Name/Hero63");
     gv_HeroInformation[62].ability_resource = c_abilityResourceMana;
 
     // Wiz
     gv_HeroInformation[63].image = "Assets\\AddIcon\\btn-hero64.dds";
     gv_HeroInformation[63].unitname = "Hero64";
+    gv_HeroInformation[63].levelup_link = "HeroLvUp442";
     gv_HeroInformation[63].name = StringExternal("Unit/Name/Hero64");
     gv_HeroInformation[63].ability_resource = c_abilityResourceMana;
 
     // Mordin
     gv_HeroInformation[64].image = "Assets\\AddIcon\\btn-hero65.dds";
     gv_HeroInformation[64].unitname = "Hero65";
+    gv_HeroInformation[64].levelup_link = "HeroLvUp434";
     gv_HeroInformation[64].name = StringExternal("Unit/Name/Hero65");
     gv_HeroInformation[64].ability_resource = c_abilityResourceMana;
 
     // Demol
     gv_HeroInformation[65].image = "Assets\\AddIcon\\btn-hero66.dds";
     gv_HeroInformation[65].unitname = "Hero66";
+    gv_HeroInformation[65].levelup_link = "HeroLvUp5222332";
     gv_HeroInformation[65].name = StringExternal("Unit/Name/Hero66");
     gv_HeroInformation[65].ability_resource = c_abilityResourceMana;
 
     // Desilba
     gv_HeroInformation[66].image = "Assets\\AddIcon\\btn-hero67.dds";
     gv_HeroInformation[66].unitname = "Hero67";
+    gv_HeroInformation[66].levelup_link = "HeroLvUp5222333";
     gv_HeroInformation[66].name = StringExternal("Unit/Name/Hero67");
     gv_HeroInformation[66].ability_resource = c_abilityResourceMana;
 
     // Sieger
     gv_HeroInformation[67].image = "Assets\\AddIcon\\btn-hero68.dds";
     gv_HeroInformation[67].unitname = "Hero68";
+    gv_HeroInformation[67].levelup_link = "HeroLvUp33223";
     gv_HeroInformation[67].name = StringExternal("Unit/Name/Hero68");
     gv_HeroInformation[67].ability_resource = c_abilityResourceMana;
 
     // Margon
     gv_HeroInformation[68].image = "Assets\\AddIcon\\btn-hero69.dds";
     gv_HeroInformation[68].unitname = "Hero69";
+    gv_HeroInformation[68].levelup_link = "HeroLvUp4322";
     gv_HeroInformation[68].name = StringExternal("Unit/Name/Hero69");
     gv_HeroInformation[68].ability_resource = c_abilityResourceMana;
 
     // Drager
     gv_HeroInformation[69].image = "Assets\\AddIcon\\btn-hero70.dds";
     gv_HeroInformation[69].unitname = "Hero70";
+    gv_HeroInformation[69].levelup_link = "HeroLvUp933";
     gv_HeroInformation[69].name = StringExternal("Unit/Name/Hero70");
     gv_HeroInformation[69].ability_resource = c_abilityResourceMana;
 
     // Lucifer
     gv_HeroInformation[70].image = "Assets\\AddIcon\\btn-hero71.dds";
     gv_HeroInformation[70].unitname = "Hero71";
+    gv_HeroInformation[70].levelup_link = "HeroLvUp5222334";
     gv_HeroInformation[70].name = StringExternal("Unit/Name/Hero71");
     gv_HeroInformation[70].ability_resource = c_abilityResourceMana;
 
     // Eren
     gv_HeroInformation[71].image = "Assets\\AddIcon\\btn-hero72.dds";
     gv_HeroInformation[71].unitname = "Hero72";
+    gv_HeroInformation[71].levelup_link = "Hero72Levelup";
     gv_HeroInformation[71].name = StringExternal("Unit/Name/Hero72");
     gv_HeroInformation[71].ability_resource = c_abilityResourceNone;
 
     // Luna
     gv_HeroInformation[72].image = "Assets\\AddIcon\\btn-hero73.dds";
     gv_HeroInformation[72].unitname = "Hero73";
+    gv_HeroInformation[72].levelup_link = "HeroLvUp4422";
     gv_HeroInformation[72].name = StringExternal("Unit/Name/Hero73");
     gv_HeroInformation[72].ability_resource = c_abilityResourceMana;
 }
@@ -2023,396 +2098,27 @@ void gf_HrCleanUpHeroSelectDialogs () {
     }
 }
 
-void gf_HrHeroLevelUpLink1 () {
-    if ((gv_SelectedCharNum[EventPlayer()] == 1)) {
-        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp", 1);
-    }
-    else {
-        if ((gv_SelectedCharNum[EventPlayer()] == 2)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp2", 1);
-        }
-        else {
-            if ((gv_SelectedCharNum[EventPlayer()] == 3)) {
-                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp3", 1);
-            }
-            else {
-                if ((gv_SelectedCharNum[EventPlayer()] == 4)) {
-                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4", 1);
-                }
-                else {
-                    if ((gv_SelectedCharNum[EventPlayer()] == 5)) {
-                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp22", 1);
-                    }
-                    else {
-                        if ((gv_SelectedCharNum[EventPlayer()] == 6)) {
-                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5", 1);
-                            UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "DefensePower", EventPlayer(), 1);
-                        }
-                        else {
-                            if ((gv_SelectedCharNum[EventPlayer()] == 7)) {
-                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp43", 1);
-                            }
-                            else {
-                                if ((gv_SelectedCharNum[EventPlayer()] == 8)) {
-                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52", 1);
-                                }
-                                else {
-                                    if ((gv_SelectedCharNum[EventPlayer()] == 9)) {
-                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp9", 1);
-                                    }
-                                    else {
-                                        if ((gv_SelectedCharNum[EventPlayer()] == 10)) {
-                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522", 1);
-                                        }
-                                        else {
-                                            if ((gv_SelectedCharNum[EventPlayer()] == 11)) {
-                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222", 1);
-                                            }
-                                            else {
-                                                if ((gv_SelectedCharNum[EventPlayer()] == 12)) {
-                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp32", 1);
-                                                }
-                                                else {
-                                                    if ((gv_SelectedCharNum[EventPlayer()] == 13)) {
-                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp33", 1);
-                                                    }
-                                                    else {
-                                                        if ((gv_SelectedCharNum[EventPlayer()] == 14)) {
-                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp92", 1);
-                                                            UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "Amor2", EventPlayer(), 1);
-                                                        }
-                                                        else {
-                                                            if ((gv_SelectedCharNum[EventPlayer()] == 15)) {
-                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52222", 1);
-                                                            }
-                                                            else {
-                                                                if ((gv_SelectedCharNum[EventPlayer()] == 16)) {
-                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52223", 1);
-                                                                }
-                                                                else {
-                                                                    if ((gv_SelectedCharNum[EventPlayer()] == 17)) {
-                                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52224", 1);
-                                                                    }
-                                                                    else {
-                                                                        if ((gv_SelectedCharNum[EventPlayer()] == 18)) {
-                                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52225", 1);
-                                                                        }
-                                                                        else {
-                                                                            if ((gv_SelectedCharNum[EventPlayer()] == 19)) {
-                                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52226", 1);
-                                                                            }
-                                                                            else {
-                                                                                if ((gv_SelectedCharNum[EventPlayer()] == 20)) {
-                                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52227", 1);
-                                                                                }
-                                                                                else {
-                                                                                    if ((gv_SelectedCharNum[EventPlayer()] == 21)) {
-                                                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp332", 1);
-                                                                                    }
-                                                                                    else {
-                                                                                        if ((gv_SelectedCharNum[EventPlayer()] == 22)) {
-                                                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52228", 1);
-                                                                                        }
-                                                                                        else {
-                                                                                            if ((gv_SelectedCharNum[EventPlayer()] == 23)) {
-                                                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522232", 1);
-                                                                                            }
-                                                                                            else {
-                                                                                                if ((gv_SelectedCharNum[EventPlayer()] == 24)) {
-                                                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp523", 1);
-                                                                                                }
-                                                                                                else {
-                                                                                                    if (((gv_SelectedCharNum[EventPlayer()] >= 25) && (gv_SelectedCharNum[EventPlayer()] <= 48))) {
-                                                                                                        gf_HrHeroLevelUpLink2();
-                                                                                                    }
-                                                                                                    else {
-                                                                                                        if (((gv_SelectedCharNum[EventPlayer()] >= 49) && (gv_SelectedCharNum[EventPlayer()] <= 72))) {
-                                                                                                            gf_HrHeroLevelUpLink3();
-                                                                                                        }
-                                                                                                        else {
-                                                                                                            if (((gv_SelectedCharNum[EventPlayer()] >= 73) && (gv_SelectedCharNum[EventPlayer()] <= 96))) {
-                                                                                                                gf_HrHeroLevelUpLink4();
-                                                                                                            }
+void gf_HrHeroLevelUpLink() {
+    int i;
 
-                                                                                                        }
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    for (i = 0; i < gv_TotalHeroNum; i += 1) {
+        if ((gv_SelectedCharNum[EventPlayer()] == gv_HeroInformation[i].number)) {
+            TechTreeUpgradeAddLevel(EventPlayer(), gv_HeroInformation[i].levelup_link, 1);
         }
     }
-}
 
-void gf_HrHeroLevelUpLink2 () {
-    if ((gv_SelectedCharNum[EventPlayer()] == 25)) {
-        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5223", 1);
+    if ((gv_SelectedCharNum[EventPlayer()] == 6)) {
+        UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "DefensePower", EventPlayer(), 1);
     }
-    else {
-        if ((gv_SelectedCharNum[EventPlayer()] == 26)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp432", 1);
-        }
-        else {
-            if ((gv_SelectedCharNum[EventPlayer()] == 27)) {
-                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp322", 1);
-            }
-            else {
-                if ((gv_SelectedCharNum[EventPlayer()] == 28)) {
-                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522233", 1);
-                }
-                else {
-                    if ((gv_SelectedCharNum[EventPlayer()] == 29)) {
-                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522272", 1);
-                    }
-                    else {
-                        if ((gv_SelectedCharNum[EventPlayer()] == 30)) {
-                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp3322", 1);
-                            UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "Hero30Passive", EventPlayer(), 1);
-                        }
-                        else {
-                            if ((gv_SelectedCharNum[EventPlayer()] == 31)) {
-                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5224", 1);
-                            }
-                            else {
-                                if ((gv_SelectedCharNum[EventPlayer()] == 32)) {
-                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52229", 1);
-                                }
-                                else {
-                                    if ((gv_SelectedCharNum[EventPlayer()] == 33)) {
-                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp34", 1);
-                                    }
-                                    else {
-                                        if ((gv_SelectedCharNum[EventPlayer()] == 34)) {
-                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5232", 1);
-                                        }
-                                        else {
-                                            if ((gv_SelectedCharNum[EventPlayer()] == 35)) {
-                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp3323", 1);
-                                            }
-                                            else {
-                                                if ((gv_SelectedCharNum[EventPlayer()] == 36)) {
-                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52232", 1);
-                                                }
-                                                else {
-                                                    if ((gv_SelectedCharNum[EventPlayer()] == 37)) {
-                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp222", 1);
-                                                    }
-                                                    else {
-                                                        if ((gv_SelectedCharNum[EventPlayer()] == 38)) {
-                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp44", 1);
-                                                        }
-                                                        else {
-                                                            if ((gv_SelectedCharNum[EventPlayer()] == 39)) {
-                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522234", 1);
-                                                            }
-                                                            else {
-                                                                if ((gv_SelectedCharNum[EventPlayer()] == 40)) {
-                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp93", 1);
-                                                                }
-                                                                else {
-                                                                    if ((gv_SelectedCharNum[EventPlayer()] == 41)) {
-                                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522262", 1);
-                                                                    }
-                                                                    else {
-                                                                        if ((gv_SelectedCharNum[EventPlayer()] == 42)) {
-                                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222622", 1);
-                                                                        }
-                                                                        else {
-                                                                            if ((gv_SelectedCharNum[EventPlayer()] == 43)) {
-                                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp342", 1);
-                                                                            }
-                                                                            else {
-                                                                                if ((gv_SelectedCharNum[EventPlayer()] == 44)) {
-                                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp932", 1);
-                                                                                }
-                                                                                else {
-                                                                                    if ((gv_SelectedCharNum[EventPlayer()] == 45)) {
-                                                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp524", 1);
-                                                                                    }
-                                                                                    else {
-                                                                                        if ((gv_SelectedCharNum[EventPlayer()] == 46)) {
-                                                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp3324", 1);
-                                                                                        }
-                                                                                        else {
-                                                                                            if ((gv_SelectedCharNum[EventPlayer()] == 47)) {
-                                                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222322", 1);
-                                                                                                UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero47Passive", gv_PlayerHero[EventPlayer()], 1);
-                                                                                            }
-                                                                                            else {
-                                                                                                if ((gv_SelectedCharNum[EventPlayer()] == 48)) {
-                                                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5225", 1);
-                                                                                                }
-
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    if ((gv_SelectedCharNum[EventPlayer()] == 14)) {
+        UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "Amor2", EventPlayer(), 1);
     }
-}
-
-void gf_HrHeroLevelUpLink3 () {
-    if ((gv_SelectedCharNum[EventPlayer()] == 49)) {
-        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222342", 1);
+    if ((gv_SelectedCharNum[EventPlayer()] == 30)) {
+        UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "Hero30Passive", EventPlayer(), 1);
     }
-    else {
-        if ((gv_SelectedCharNum[EventPlayer()] == 50)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5242", 1);
-        }
-        else {
-            if ((gv_SelectedCharNum[EventPlayer()] == 51)) {
-                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp33222", 1);
-            }
-            else {
-                if ((gv_SelectedCharNum[EventPlayer()] == 52)) {
-                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52223422", 1);
-                }
-                else {
-                    if ((gv_SelectedCharNum[EventPlayer()] == 53)) {
-                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52223222", 1);
-                    }
-                    else {
-                        if ((gv_SelectedCharNum[EventPlayer()] == 54)) {
-                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp6", 1);
-                        }
-                        else {
-                            if ((gv_SelectedCharNum[EventPlayer()] == 55)) {
-                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522322", 1);
-                            }
-                            else {
-                                if ((gv_SelectedCharNum[EventPlayer()] == 56)) {
-                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522232222", 1);
-                                }
-                                else {
-                                    if ((gv_SelectedCharNum[EventPlayer()] == 57)) {
-                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp33242", 1);
-                                    }
-                                    else {
-                                        if ((gv_SelectedCharNum[EventPlayer()] == 58)) {
-                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp35", 1);
-                                        }
-                                        else {
-                                            if ((gv_SelectedCharNum[EventPlayer()] == 59)) {
-                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5223222", 1);
-                                            }
-                                            else {
-                                                if ((gv_SelectedCharNum[EventPlayer()] == 60)) {
-                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp52233", 1);
-                                                }
-                                                else {
-                                                    if ((gv_SelectedCharNum[EventPlayer()] == 61)) {
-                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp433", 1);
-                                                    }
-                                                    else {
-                                                        if ((gv_SelectedCharNum[EventPlayer()] == 62)) {
-                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp2222", 1);
-                                                        }
-                                                        else {
-                                                            if ((gv_SelectedCharNum[EventPlayer()] == 63)) {
-                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp522292", 1);
-                                                            }
-                                                            else {
-                                                                if ((gv_SelectedCharNum[EventPlayer()] == 64)) {
-                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp442", 1);
-                                                                }
-                                                                else {
-                                                                    if ((gv_SelectedCharNum[EventPlayer()] == 65)) {
-                                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp434", 1);
-                                                                    }
-                                                                    else {
-                                                                        if ((gv_SelectedCharNum[EventPlayer()] == 66)) {
-                                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222332", 1);
-                                                                        }
-                                                                        else {
-                                                                            if ((gv_SelectedCharNum[EventPlayer()] == 67)) {
-                                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222333", 1);
-                                                                            }
-                                                                            else {
-                                                                                if ((gv_SelectedCharNum[EventPlayer()] == 68)) {
-                                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp33223", 1);
-                                                                                }
-                                                                                else {
-                                                                                    if ((gv_SelectedCharNum[EventPlayer()] == 69)) {
-                                                                                        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4322", 1);
-                                                                                    }
-                                                                                    else {
-                                                                                        if ((gv_SelectedCharNum[EventPlayer()] == 70)) {
-                                                                                            TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp933", 1);
-                                                                                        }
-                                                                                        else {
-                                                                                            if ((gv_SelectedCharNum[EventPlayer()] == 71)) {
-                                                                                                TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222334", 1);
-                                                                                            }
-                                                                                            else {
-                                                                                                if ((gv_SelectedCharNum[EventPlayer()] == 72)) {
-                                                                                                    TechTreeUpgradeAddLevel(EventPlayer(), "Hero72Levelup", 1);
-                                                                                                }
-
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    if ((gv_SelectedCharNum[EventPlayer()] == 47)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero47Passive", gv_PlayerHero[EventPlayer()], 1);
     }
-}
-
-void gf_HrHeroLevelUpLink4 () {
-    if ((gv_SelectedCharNum[EventPlayer()] == 73)) {
-        TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4422", 1);
-    }
-
 }
 
 void gf_HrSkillLearnDialogMake () {
