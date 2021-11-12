@@ -14249,6 +14249,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 0)) {
         while ((flag > 0)) {
             gv_SelectedCharNum[gv_PlayerBayul[player_number]] = RandomInt(1, gv_TotalHeroNum);
+            gv_CharSelectedName[gv_PlayerBayul[player_number]] = gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[player_number]] - 1].name;
             flag = 0;
             for (i = 0; i < 6; i += 1) {
                 if (gv_SelectedCharNum[gv_PlayerBayul[player_number]] == gv_BannedCharNum[i]) {
