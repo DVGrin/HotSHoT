@@ -1585,15 +1585,12 @@ void gf_HrHeroSelect() {
 }
 
 void gf_HrHeroTeamSelectSave () {
-    // Variable Declarations
     int i;
     int j;
 
-    // Automatic Variable Declarations
     const int total_players = 8;
     const int players_in_team = 4;
 
-    // Implementation
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true)) {
         for (i = 1 ; i <= players_in_team ; i += 1 ) {
             if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && 
@@ -1648,12 +1645,10 @@ void gf_HrHeroTeamSelectSave () {
 }
 
 void gf_HrHeroTeamSelectSave2 () {
-    // Variable Declarations
     int i;
     int j;
     bool banned;
 
-    // Implementation
     if ((gv_GameModeVoteValue == true)) {
         DialogControlSetEnabled(gv_CharChooseWindowBtn[(gv_SelectedCharNum[EventPlayer()] - 1)], PlayerGroupAll(), false);
         DialogControlSetEnabled(gv_CharChooseWindowImage[(gv_SelectedCharNum[EventPlayer()] - 1)], PlayerGroupAll(), false);
@@ -1701,7 +1696,6 @@ void gf_HrDraftSelectRandomRefresh() {
 }
 
 void gf_HrSpellMake1 () {
-    // Variable Declarations
     int i;
 
     for (i = 1 ; i <= 8 ; i += 1 ) {
@@ -1793,7 +1787,6 @@ void gf_HrSpellMake1 () {
 }
 
 void gf_HrSpellMake2 () {
-    // Variable Declarations
     int i;
 
     for (i = 1 ; i <= 8 ; i += 1 ) {
@@ -1953,10 +1946,8 @@ void gf_HrCharMake() {
 }
 
 void gf_HrCleanUpHeroSelectDialogs () {
-    // Variable Declarations
     int i;
 
-    // Implementation
     DialogDestroy(gv_BeforeStartCounterDialog[0]);
     DialogDestroy(gv_BeforeStartCounterDialog[1]);
     DialogDestroy(gv_CharChooseFullDialog);
@@ -2033,8 +2024,6 @@ void gf_HrCleanUpHeroSelectDialogs () {
 }
 
 void gf_HrHeroLevelUpLink1 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 1)) {
         TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp", 1);
     }
@@ -2174,8 +2163,6 @@ void gf_HrHeroLevelUpLink1 () {
 }
 
 void gf_HrHeroLevelUpLink2 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 25)) {
         TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5223", 1);
     }
@@ -2300,8 +2287,6 @@ void gf_HrHeroLevelUpLink2 () {
 }
 
 void gf_HrHeroLevelUpLink3 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 49)) {
         TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp5222342", 1);
     }
@@ -2424,8 +2409,6 @@ void gf_HrHeroLevelUpLink3 () {
 }
 
 void gf_HrHeroLevelUpLink4 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 73)) {
         TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4422", 1);
     }
@@ -2433,17 +2416,13 @@ void gf_HrHeroLevelUpLink4 () {
 }
 
 void gf_HrSkillLearnDialogMake () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoB908CBE4_ae = 8;
     const int autoB908CBE4_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Implementation
     DialogCreate(385, 115, c_anchorRight, 93, 294, true);
     gv_SkillLearnWindow = DialogLastCreated();
     DialogSetImageVisible(gv_SkillLearnWindow, false);
@@ -2486,8 +2465,6 @@ void gf_HrSkillLearnDialogMake () {
 }
 
 void gf_HrSkillLearnHeroCategoryLink () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 1)) {
         gf_HrSkillLearnHero1();
     }
@@ -2625,8 +2602,6 @@ void gf_HrSkillLearnHeroCategoryLink () {
 }
 
 void gf_HrSkillLearnHeroCategoryLink2 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 25)) {
         gf_HrSkillLearnHero25();
     }
@@ -2749,8 +2724,6 @@ void gf_HrSkillLearnHeroCategoryLink2 () {
 }
 
 void gf_HrSkillLearnHeroCategoryLink3 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 49)) {
         gf_HrSkillLearnHero49();
     }
@@ -2873,8 +2846,6 @@ void gf_HrSkillLearnHeroCategoryLink3 () {
 }
 
 void gf_HrSkillLearnHeroCategoryLink4 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 73)) {
         gf_HrSkillLearnHero73();
     }
@@ -2882,8 +2853,6 @@ void gf_HrSkillLearnHeroCategoryLink4 () {
 }
 
 void gf_HrSkillLearnWindowOpen () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_SetDialogItemText(gv_SkillLearnWindowNum[EventPlayer()], (StringExternal("Param/Value/BF05A81F") + IntToText(gv_SkillLearnPossibleStat[EventPlayer()]) + StringExternal("Param/Value/731A1880")), PlayerGroupSingle(EventPlayer()));
     if ((gv_SelectedCharNum[EventPlayer()] != 60)) {
         if ((gv_SkillLearnPossibleStat[EventPlayer()] > 0)) {
@@ -2949,8 +2918,6 @@ void gf_HrSkillLearnWindowOpen () {
 }
 
 void gf_HrSkillLearnWindowClose () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_SetDialogItemText(gv_SkillLearnWindowNum[EventPlayer()], (StringExternal("Param/Value/5910D4FA") + IntToText(gv_SkillLearnPossibleStat[EventPlayer()]) + StringExternal("Param/Value/0FF38FCB")), PlayerGroupSingle(EventPlayer()));
     if ((gv_SelectedCharNum[EventPlayer()] != 60)) {
         if ((gv_SkillLearnPossibleStat[EventPlayer()] > 0)) {
@@ -3032,8 +2999,6 @@ void gf_HrSkillLearnWindowClose () {
 }
 
 void gf_HrSkillLearnHero1 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333", 1);
@@ -3125,8 +3090,6 @@ void gf_HrSkillLearnHero1 () {
 }
 
 void gf_HrSkillLearnHero2 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223335", 1);
@@ -3203,8 +3166,6 @@ void gf_HrSkillLearnHero2 () {
 }
 
 void gf_HrSkillLearnHero3 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233354", 1);
@@ -3313,8 +3274,6 @@ void gf_HrSkillLearnHero3 () {
 }
 
 void gf_HrSkillLearnHero4 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223335233", 1);
@@ -3406,8 +3365,6 @@ void gf_HrSkillLearnHero4 () {
 }
 
 void gf_HrSkillLearnHero5 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333524", 1);
@@ -3500,8 +3457,6 @@ void gf_HrSkillLearnHero5 () {
 }
 
 void gf_HrSkillLearnHero6 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223336", 1);
@@ -3564,8 +3519,6 @@ void gf_HrSkillLearnHero6 () {
 }
 
 void gf_HrSkillLearnHero7 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233364", 1);
@@ -3643,8 +3596,6 @@ void gf_HrSkillLearnHero7 () {
 }
 
 void gf_HrSkillLearnHero8 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp8", 1);
@@ -3726,8 +3677,6 @@ void gf_HrSkillLearnHero8 () {
 }
 
 void gf_HrSkillLearnHero9 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223337", 1);
@@ -3819,8 +3768,6 @@ void gf_HrSkillLearnHero9 () {
 }
 
 void gf_HrSkillLearnHero10 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333622", 1);
@@ -3904,8 +3851,6 @@ void gf_HrSkillLearnHero10 () {
 }
 
 void gf_HrSkillLearnHero11 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233365", 1);
@@ -3982,8 +3927,6 @@ void gf_HrSkillLearnHero11 () {
 }
 
 void gf_HrSkillLearnHero12 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223338", 1);
@@ -4060,8 +4003,6 @@ void gf_HrSkillLearnHero12 () {
 }
 
 void gf_HrSkillLearnHero13 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233374", 1);
@@ -4138,8 +4079,6 @@ void gf_HrSkillLearnHero13 () {
 }
 
 void gf_HrSkillLearnHero14 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333744", 1);
@@ -4226,8 +4165,6 @@ void gf_HrSkillLearnHero14 () {
 }
 
 void gf_HrSkillLearnHero15 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233366", 1);
@@ -4289,8 +4226,6 @@ void gf_HrSkillLearnHero15 () {
 }
 
 void gf_HrSkillLearnHero16 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233367", 1);
@@ -4367,8 +4302,6 @@ void gf_HrSkillLearnHero16 () {
 }
 
 void gf_HrSkillLearnHero17 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233368", 1);
@@ -4445,8 +4378,6 @@ void gf_HrSkillLearnHero17 () {
 }
 
 void gf_HrSkillLearnHero18 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233369", 1);
@@ -4538,8 +4469,6 @@ void gf_HrSkillLearnHero18 () {
 }
 
 void gf_HrSkillLearnHero19 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333610", 1);
@@ -4616,8 +4545,6 @@ void gf_HrSkillLearnHero19 () {
 }
 
 void gf_HrSkillLearnHero20 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233355", 1);
@@ -4700,8 +4627,6 @@ void gf_HrSkillLearnHero20 () {
 }
 
 void gf_HrSkillLearnHero21 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223336104", 1);
@@ -4793,8 +4718,6 @@ void gf_HrSkillLearnHero21 () {
 }
 
 void gf_HrSkillLearnHero22 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223336105", 1);
@@ -4896,8 +4819,6 @@ void gf_HrSkillLearnHero22 () {
 }
 
 void gf_HrSkillLearnHero23 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223339", 1);
@@ -4994,8 +4915,6 @@ void gf_HrSkillLearnHero23 () {
 }
 
 void gf_HrSkillLearnHero24 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333611", 1);
@@ -5077,8 +4996,6 @@ void gf_HrSkillLearnHero24 () {
 }
 
 void gf_HrSkillLearnHero25 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero25Skill12", gv_PlayerHero[EventPlayer()], 1);
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
@@ -5156,8 +5073,6 @@ void gf_HrSkillLearnHero25 () {
 }
 
 void gf_HrSkillLearnHero26 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233375", 1);
@@ -5254,8 +5169,6 @@ void gf_HrSkillLearnHero26 () {
 }
 
 void gf_HrSkillLearnHero27 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233356", 1);
@@ -5352,8 +5265,6 @@ void gf_HrSkillLearnHero27 () {
 }
 
 void gf_HrSkillLearnHero28 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333612", 1);
@@ -5420,8 +5331,6 @@ void gf_HrSkillLearnHero28 () {
 }
 
 void gf_HrSkillLearnHero29 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333613", 1);
@@ -5498,8 +5407,6 @@ void gf_HrSkillLearnHero29 () {
 }
 
 void gf_HrSkillLearnHero30 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333745", 1);
@@ -5576,8 +5483,6 @@ void gf_HrSkillLearnHero30 () {
 }
 
 void gf_HrSkillLearnHero31 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333554", 1);
@@ -5654,8 +5559,6 @@ void gf_HrSkillLearnHero31 () {
 }
 
 void gf_HrSkillLearnHero32 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223339224", 1);
@@ -5752,8 +5655,6 @@ void gf_HrSkillLearnHero32 () {
 }
 
 void gf_HrSkillLearnHero33 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233311", 1);
@@ -5845,8 +5746,6 @@ void gf_HrSkillLearnHero33 () {
 }
 
 void gf_HrSkillLearnHero34 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333546", 1);
@@ -5938,8 +5837,6 @@ void gf_HrSkillLearnHero34 () {
 }
 
 void gf_HrSkillLearnHero35 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333614", 1);
@@ -6031,8 +5928,6 @@ void gf_HrSkillLearnHero35 () {
 }
 
 void gf_HrSkillLearnHero36 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333615", 1);
@@ -6109,8 +6004,6 @@ void gf_HrSkillLearnHero36 () {
 }
 
 void gf_HrSkillLearnHero37 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333922425", 1);
@@ -6172,8 +6065,6 @@ void gf_HrSkillLearnHero37 () {
 }
 
 void gf_HrSkillLearnHero38 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333555", 1);
@@ -6266,8 +6157,6 @@ void gf_HrSkillLearnHero38 () {
 }
 
 void gf_HrSkillLearnHero39 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233312", 1);
@@ -6344,8 +6233,6 @@ void gf_HrSkillLearnHero39 () {
 }
 
 void gf_HrSkillLearnHero40 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333556", 1);
@@ -6437,8 +6324,6 @@ void gf_HrSkillLearnHero40 () {
 }
 
 void gf_HrSkillLearnHero41 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333616", 1);
@@ -6524,8 +6409,6 @@ void gf_HrSkillLearnHero41 () {
 }
 
 void gf_HrSkillLearnHero42 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333617", 1);
@@ -6592,8 +6475,6 @@ void gf_HrSkillLearnHero42 () {
 }
 
 void gf_HrSkillLearnHero43 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333618", 1);
@@ -6690,8 +6571,6 @@ void gf_HrSkillLearnHero43 () {
 }
 
 void gf_HrSkillLearnHero44 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333619", 1);
@@ -6758,8 +6637,6 @@ void gf_HrSkillLearnHero44 () {
 }
 
 void gf_HrSkillLearnHero45 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333223", 1);
@@ -6841,8 +6718,6 @@ void gf_HrSkillLearnHero45 () {
 }
 
 void gf_HrSkillLearnHero46 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332234", 1);
@@ -6919,8 +6794,6 @@ void gf_HrSkillLearnHero46 () {
 }
 
 void gf_HrSkillLearnHero47 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223335544", 1);
@@ -7017,8 +6890,6 @@ void gf_HrSkillLearnHero47 () {
 }
 
 void gf_HrSkillLearnHero48 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333224", 1);
@@ -7119,8 +6990,6 @@ void gf_HrSkillLearnHero48 () {
 }
 
 void gf_HrSkillLearnHero49 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233376", 1);
@@ -7212,8 +7081,6 @@ void gf_HrSkillLearnHero49 () {
 }
 
 void gf_HrSkillLearnHero50 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223336184", 1);
@@ -7290,8 +7157,6 @@ void gf_HrSkillLearnHero50 () {
 }
 
 void gf_HrSkillLearnHero51 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233313", 1);
@@ -7383,8 +7248,6 @@ void gf_HrSkillLearnHero51 () {
 }
 
 void gf_HrSkillLearnHero52 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333655", 1);
@@ -7481,8 +7344,6 @@ void gf_HrSkillLearnHero52 () {
 }
 
 void gf_HrSkillLearnHero53 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333620", 1);
@@ -7579,8 +7440,6 @@ void gf_HrSkillLearnHero53 () {
 }
 
 void gf_HrSkillLearnHero54 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333557", 1);
@@ -7677,8 +7536,6 @@ void gf_HrSkillLearnHero54 () {
 }
 
 void gf_HrSkillLearnHero55 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233352334", 1);
@@ -7755,8 +7612,6 @@ void gf_HrSkillLearnHero55 () {
 }
 
 void gf_HrSkillLearnHero56 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333623", 1);
@@ -7848,8 +7703,6 @@ void gf_HrSkillLearnHero56 () {
 }
 
 void gf_HrSkillLearnHero57 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333624", 1);
@@ -7911,8 +7764,6 @@ void gf_HrSkillLearnHero57 () {
 }
 
 void gf_HrSkillLearnHero58 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333225", 1);
@@ -7989,8 +7840,6 @@ void gf_HrSkillLearnHero58 () {
 }
 
 void gf_HrSkillLearnHero59 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333625", 1);
@@ -8082,8 +7931,6 @@ void gf_HrSkillLearnHero59 () {
 }
 
 void gf_HrSkillLearnHero60 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 6)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223336124", 1);
@@ -8130,8 +7977,6 @@ void gf_HrSkillLearnHero60 () {
 }
 
 void gf_HrSkillLearnHero61 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333626", 1);
@@ -8208,8 +8053,6 @@ void gf_HrSkillLearnHero61 () {
 }
 
 void gf_HrSkillLearnHero62 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333627", 1);
@@ -8271,21 +8114,17 @@ void gf_HrSkillLearnHero62 () {
 }
 
 void gf_HrSkillLearnHero63 () {
-    // Variable Declarations
     int lv_GPlayerNum1;
     int lv_GPlayerNum2;
 
-    // Automatic Variable Declarations
     const int autoFE58B061_ae = 8;
     const int autoFE58B061_ai = 1;
     const int auto2DB3F367_ae = 4;
     const int auto2DB3F367_ai = 1;
 
-    // Variable Initialization
     lv_GPlayerNum1 = 1;
     lv_GPlayerNum2 = 5;
 
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333558", 1);
@@ -8407,8 +8246,6 @@ void gf_HrSkillLearnHero63 () {
 }
 
 void gf_HrSkillLearnHero64 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333226", 1);
@@ -8485,8 +8322,6 @@ void gf_HrSkillLearnHero64 () {
 }
 
 void gf_HrSkillLearnHero65 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233357", 1);
@@ -8578,8 +8413,6 @@ void gf_HrSkillLearnHero65 () {
 }
 
 void gf_HrSkillLearnHero66 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333227", 1);
@@ -8657,8 +8490,6 @@ void gf_HrSkillLearnHero66 () {
 }
 
 void gf_HrSkillLearnHero67 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333559", 1);
@@ -8765,8 +8596,6 @@ void gf_HrSkillLearnHero67 () {
 }
 
 void gf_HrSkillLearnHero68 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333114", 1);
@@ -8879,8 +8708,6 @@ void gf_HrSkillLearnHero68 () {
 }
 
 void gf_HrSkillLearnHero69 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333629", 1);
@@ -8972,8 +8799,6 @@ void gf_HrSkillLearnHero69 () {
 }
 
 void gf_HrSkillLearnHero70 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223335510", 1);
@@ -9065,8 +8890,6 @@ void gf_HrSkillLearnHero70 () {
 }
 
 void gf_HrSkillLearnHero71 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223335511", 1);
@@ -9158,8 +8981,6 @@ void gf_HrSkillLearnHero71 () {
 }
 
 void gf_HrSkillLearnHero72 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "Hero72Skill1Learn", 1);
@@ -9221,8 +9042,6 @@ void gf_HrSkillLearnHero72 () {
 }
 
 void gf_HrSkillLearnHero73 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SkillLearnSwitchQ[EventPlayer()] == true) && (gv_SkillQLevel[EventPlayer()] < 5)) {
         if ((gv_SkillQLevel[EventPlayer()] == 0)) {
             TechTreeUpgradeAddLevel(EventPlayer(), "Hero73SkillLearn", 1);
@@ -9284,18 +9103,14 @@ void gf_HrSkillLearnHero73 () {
 }
 
 void gf_HrStatDialogMake1a () {
-    // Variable Declarations
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 29;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 134;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 20;
 
-    // Implementation
     DialogCreate(270, 284, c_anchorBottomRight, 408, -10, true);
     gv_StatusWindow = DialogLastCreated();
     DialogSetImageVisible(gv_StatusWindow, false);
@@ -9384,23 +9199,19 @@ void gf_HrStatDialogMake1a () {
 }
 
 void gf_HrStatDialogMake1b () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoD947F2D3_ae = 8;
     const int autoD947F2D3_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 97;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 202;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 45;
 
-    // Implementation
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for ( ; ( (autoD947F2D3_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= autoD947F2D3_ae) || (autoD947F2D3_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= autoD947F2D3_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += autoD947F2D3_ai ) {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
@@ -9446,18 +9257,14 @@ void gf_HrStatDialogMake1b () {
 }
 
 void gf_HrStatDialogMake2a () {
-    // Variable Declarations
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 29;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 134;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 20;
 
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, lv_eC84A4ECA095xECB695EBB380EC8898ECA28C, lv_eC84A4ECA095yECB695EBB380EC8898, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/105F4D99") + IntToText(gv_StatHowMoney[6][0]) + StringExternal("Param/Value/71ED1578")), PlayerGroupAll());
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
@@ -9517,23 +9324,19 @@ void gf_HrStatDialogMake2a () {
 }
 
 void gf_HrStatDialogMake2b () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto39686EB8_ae = 8;
     const int auto39686EB8_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 97;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 202;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 45;
 
-    // Implementation
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for ( ; ( (auto39686EB8_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= auto39686EB8_ae) || (auto39686EB8_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= auto39686EB8_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += auto39686EB8_ai ) {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
@@ -9579,18 +9382,14 @@ void gf_HrStatDialogMake2b () {
 }
 
 void gf_HrStatDialogMake3a2 () {
-    // Variable Declarations
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 29;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 134;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 20;
 
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, lv_eC84A4ECA095xECB695EBB380EC8898ECA28C, lv_eC84A4ECA095yECB695EBB380EC8898, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/FED2E4BB") + IntToText(gv_StatHowMoney[12][0]) + StringExternal("Param/Value/5BD409C6")), PlayerGroupAll());
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
@@ -9650,23 +9449,19 @@ void gf_HrStatDialogMake3a2 () {
 }
 
 void gf_HrStatDialogMake3b2 () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto9FB9DA07_ae = 8;
     const int auto9FB9DA07_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 97;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 202;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 45;
 
-    // Implementation
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for ( ; ( (auto9FB9DA07_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= auto9FB9DA07_ae) || (auto9FB9DA07_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= auto9FB9DA07_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += auto9FB9DA07_ai ) {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
@@ -9712,18 +9507,14 @@ void gf_HrStatDialogMake3b2 () {
 }
 
 void gf_HrStatDialogMake3a () {
-    // Variable Declarations
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 29;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 134;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 20;
 
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, lv_eC84A4ECA095xECB695EBB380EC8898ECA28C, lv_eC84A4ECA095yECB695EBB380EC8898, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/2E68C9BA") + IntToText(gv_StatHowMoney[18][0]) + StringExternal("Param/Value/11CDAC01")), PlayerGroupAll());
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
@@ -9783,23 +9574,19 @@ void gf_HrStatDialogMake3a () {
 }
 
 void gf_HrStatDialogMake3b () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoA4E55CF4_ae = 8;
     const int autoA4E55CF4_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 97;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 202;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 45;
 
-    // Implementation
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for ( ; ( (autoA4E55CF4_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= autoA4E55CF4_ae) || (autoA4E55CF4_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= autoA4E55CF4_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += autoA4E55CF4_ai ) {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
@@ -9845,18 +9632,14 @@ void gf_HrStatDialogMake3b () {
 }
 
 void gf_HrStatDialogMake4a () {
-    // Variable Declarations
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 29;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 134;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 20;
 
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, lv_eC84A4ECA095xECB695EBB380EC8898ECA28C, lv_eC84A4ECA095yECB695EBB380EC8898, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/E8EEDC9A") + IntToText(gv_StatHowMoney[24][0]) + StringExternal("Param/Value/F921592A")), PlayerGroupAll());
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
@@ -9916,23 +9699,19 @@ void gf_HrStatDialogMake4a () {
 }
 
 void gf_HrStatDialogMake4b () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
     int lv_eC84A4ECA095yECB695EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoE259EDEB_ae = 8;
     const int autoE259EDEB_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095xECB695EBB380EC8898ECA28C = 97;
     lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0 = 202;
     lv_eC84A4ECA095yECB695EBB380EC8898 = 45;
 
-    // Implementation
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for ( ; ( (autoE259EDEB_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= autoE259EDEB_ae) || (autoE259EDEB_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= autoE259EDEB_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += autoE259EDEB_ai ) {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
@@ -10368,7 +10147,6 @@ void gf_HrStat20 () {
 
 void gf_HrStat21 () {
     const int shop_index = 26;
-    // Implementation
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "Gamsi", c_unitCreateIgnorePlacement, EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]));
     UnitGroupAdd(gv_WardGroup[EventPlayer()], UnitLastCreated());
     UnitControlGroupAddUnit(EventPlayer(), 3, UnitLastCreated());
@@ -10413,7 +10191,6 @@ void gf_HrStat24 () {
 }
 
 void gf_HrAttackSpeedLevelIncrease () {
-    // Implementation
     if ((gv_StatusWindowNum[EventPlayer()][8] == 1)) {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed", gv_PlayerHero[EventPlayer()], 1);
     }
@@ -10456,7 +10233,6 @@ void gf_HrAttackSpeedLevelIncrease () {
 }
 
 void gf_HrEvasionLevelIncrease () {
-    // Implementation
     if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong24232") == true)) { // 10%
         UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "SpellDong24232", EventPlayer(), 1);
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong242323", gv_PlayerHero[EventPlayer()], 1);
@@ -10475,7 +10251,6 @@ void gf_HrEvasionLevelIncrease () {
 }
 
 void gf_HrCriticalChanceLevelIncrease () {
-    // Implementation
     if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical") == true)) {
         UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical", EventPlayer(), 1);
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical2", gv_PlayerHero[EventPlayer()], 1);
@@ -10518,7 +10293,6 @@ void gf_HrCriticalChanceLevelIncrease () {
 }
 
 void gf_HrCooldownReductionLevelIncrease () {
-    // Implementation
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222332", 2);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222332222", 2);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222332222222", 2);
@@ -10527,7 +10301,6 @@ void gf_HrCooldownReductionLevelIncrease () {
 }
 
 void gf_HrStatTooltip1 () {
-    // Implementation
     gv_PlayerProfileAddToolTip[EventPlayer()][0] = (StringExternal("Param/Value/454F0C48") + IntToText(gv_StatusWindowNum[EventPlayer()][0]) + StringExternal("Param/Value/B3285745") + IntToText(gv_StatusWindowNum[EventPlayer()][1]) + StringExternal("Param/Value/BD6955AB") + IntToText(gv_StatusWindowNum[EventPlayer()][2]) + StringExternal("Param/Value/A45AC4F5") + IntToText(gv_StatusWindowNum[EventPlayer()][3]) + StringExternal("Param/Value/BC19B8D0") + IntToText(gv_StatusWindowNum[EventPlayer()][4]) + StringExternal("Param/Value/A99A4175") + IntToText(gv_StatusWindowNum[EventPlayer()][5]));
     gv_PlayerProfileAddToolTip[EventPlayer()][1] = (StringExternal("Param/Value/8BBB5E19") + IntToText(gv_StatusWindowNum[EventPlayer()][6]) + StringExternal("Param/Value/1823CFAF") + IntToText(gv_StatusWindowNum[EventPlayer()][7]) + StringExternal("Param/Value/2885836E") + IntToText(gv_StatusWindowNum[EventPlayer()][8]) + StringExternal("Param/Value/A2FB0C3E") + IntToText(gv_StatusWindowNum[EventPlayer()][9]) + StringExternal("Param/Value/10B42239") + IntToText(gv_StatusWindowNum[EventPlayer()][10]) + StringExternal("Param/Value/50FB32FE") + IntToText(gv_StatusWindowNum[EventPlayer()][11]));
     gv_PlayerProfileAddToolTip[EventPlayer()][2] = (StringExternal("Param/Value/DD0C5473") + IntToText(gv_StatusWindowNum[EventPlayer()][18]) + StringExternal("Param/Value/B70D348E") + IntToText(gv_StatusWindowNum[EventPlayer()][19]) + StringExternal("Param/Value/B4D33109") + IntToText(gv_StatusWindowNum[EventPlayer()][20]) + StringExternal("Param/Value/6245E433") + IntToText(gv_StatusWindowNum[EventPlayer()][21]) + StringExternal("Param/Value/5B340842") + IntToText(gv_StatusWindowNum[EventPlayer()][22]) + StringExternal("Param/Value/B9C2BC99") + IntToText(gv_StatusWindowNum[EventPlayer()][23]));
@@ -10537,8 +10310,6 @@ void gf_HrStatTooltip1 () {
 }
 
 void gf_HrItemUseComplete () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_StatusWindowNum[EventPlayer()][28] != 0)) {
         gv_StatusWindowNum[EventPlayer()][28] = 0;
         DialogControlSetEnabled(gv_StatusWindowBtn[28], PlayerGroupSingle(EventPlayer()), true);
@@ -10555,8 +10326,6 @@ void gf_HrItemUseComplete () {
 }
 
 void gf_HrAssistSystemAdd2 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((EventPlayer() == gv_PlayerBayul[1])) {
         UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist23", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
     }
@@ -10599,8 +10368,6 @@ void gf_HrAssistSystemAdd2 () {
 }
 
 void gf_HrHeroBSpawnH1 () {
-    // Automatic Variable Declarations
-    // Implementation
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropLifeMax, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropEnergyMax, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropLife, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLife, c_unitPropCurrent));
@@ -10617,8 +10384,6 @@ void gf_HrHeroBSpawnH1 () {
 }
 
 void gf_HrHeroBSpawnH2 () {
-    // Automatic Variable Declarations
-    // Implementation
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropLifeMax, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropEnergyMax, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropLife, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLife, c_unitPropCurrent));
@@ -10636,8 +10401,6 @@ void gf_HrHeroBSpawnH2 () {
 }
 
 void gf_HrMonsterBuffPickUp1 () {
-    // Automatic Variable Declarations
-    // Implementation
     gv_HeroBuffIng[libNtve_gf_KillingPlayer()][1] = 1;
     if ((UnitHasBehavior(gv_PlayerHero[libNtve_gf_KillingPlayer()], "SpellDong242423") == true)) {
         PlayerCreateEffectUnit(libNtve_gf_KillingPlayer(), "HealingLifeH33", gv_PlayerHero[libNtve_gf_KillingPlayer()]);
@@ -10654,8 +10417,6 @@ void gf_HrMonsterBuffPickUp1 () {
 }
 
 void gf_HrMonsterBuffPickUp2 () {
-    // Automatic Variable Declarations
-    // Implementation
     gv_HeroBuffIng[libNtve_gf_KillingPlayer()][0] = 1;
     PlayerCreateEffectUnit(libNtve_gf_KillingPlayer(), "HealingLifeH33", gv_PlayerHero[libNtve_gf_KillingPlayer()]);
     if (gv_HeroInformation[gv_SelectedCharNum[libNtve_gf_KillingPlayer()] - 1].ability_resource != c_abilityResourceHeat) {
@@ -10667,21 +10428,17 @@ void gf_HrMonsterBuffPickUp2 () {
 }
 
 void gf_HrMonsterBuffPickUp4 () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int auto8631C532_ae = 4;
     const int auto8631C532_ai = 1;
     const int auto47A23E18_ae = 8;
     const int auto47A23E18_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
-    // Implementation
     if ((gv_MonsterKillOnlyOne[0] == false)) {
         gv_MonsterKillOnlyOne[0] = true;
         SoundPlay(SoundLink("Ursula_Death", -1), PlayerGroupAll(), 200.0, 0.0);
@@ -10756,21 +10513,17 @@ void gf_HrMonsterBuffPickUp4 () {
 }
 
 void gf_HrMonsterBuffPickUp3 () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int auto266A3258_ae = 4;
     const int auto266A3258_ai = 1;
     const int auto4270D250_ae = 8;
     const int auto4270D250_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
-    // Implementation
     if ((gv_MonsterKillOnlyOne[1] == false)) {
         gv_MonsterKillOnlyOne[1] = true;
         SoundPlay(SoundLink("Ursula_Death", -1), PlayerGroupAll(), 200.0, 0.0);
@@ -10803,8 +10556,6 @@ void gf_HrMonsterBuffPickUp3 () {
 }
 
 void gf_HrMonsterBirdRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterBirdGroup[0], EventUnit()) == true) && (gv_RegenNewTimerBirdBoolean[0] == false)) {
         gv_RegenNewTimerBirdBoolean[0] = true;
         if ((gv_RegenNewTimerBirdStrong[0] < 20)) {
@@ -10829,8 +10580,6 @@ void gf_HrMonsterBirdRegenTimerStart () {
 }
 
 void gf_HrMonsterDogRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterDogGroup[0], EventUnit()) == true) && (gv_RegenNewTimerDogBoolean[0] == false)) {
         gv_RegenNewTimerDogBoolean[0] = true;
         if ((gv_RegenNewTimerDogStrong[0] < 20)) {
@@ -10855,8 +10604,6 @@ void gf_HrMonsterDogRegenTimerStart () {
 }
 
 void gf_HrMonsterCowRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterCowGroup[0], EventUnit()) == true) && (gv_RegenNewTimerCowBoolean[0] == false)) {
         gv_RegenNewTimerCowBoolean[0] = true;
         if ((gv_RegenNewTimerCowStrong[0] < 20)) {
@@ -10881,8 +10628,6 @@ void gf_HrMonsterCowRegenTimerStart () {
 }
 
 void gf_HrMonsterGarlicRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterGalicGroup[0], EventUnit()) == true) && (gv_RegenNewTimerGalicBoolean[0] == false)) {
         gv_RegenNewTimerGalicBoolean[0] = true;
         if ((gv_RegenNewTimerGalicStrong[0] < 20)) {
@@ -10907,8 +10652,6 @@ void gf_HrMonsterGarlicRegenTimerStart () {
 }
 
 void gf_HrMonsterScorpionRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterScolpionGroup[0], EventUnit()) == true) && (gv_RegenNewTimerScolpionBoolean[0] == false)) {
         gv_RegenNewTimerScolpionBoolean[0] = true;
         if ((gv_RegenNewTimerScolpionStrong[0] < 20)) {
@@ -10933,8 +10676,6 @@ void gf_HrMonsterScorpionRegenTimerStart () {
 }
 
 void gf_HrMonsterIceBugRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterIceBugGroup[0], EventUnit()) == true) && (gv_RegenNewTimerIceBugBoolean[0] == false)) {
         gv_RegenNewTimerIceBugBoolean[0] = true;
         if ((gv_RegenNewTimerIceBugStrong[0] < 20)) {
@@ -10981,8 +10722,6 @@ void gf_HrMonsterIceBugRegenTimerStart () {
 }
 
 void gf_HrMonsterBossRegenTimerStart () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitGroupHasUnit(gv_MonsterBossGroup[0], EventUnit()) == true) && (gv_RegenNewTimerIceBossBoolean[0] == false)) {
         gv_RegenNewTimerIceBossBoolean[0] = true;
         if ((gv_RegenNewTimerIceBossStrong[0] < 5)) {
@@ -11007,17 +10746,13 @@ void gf_HrMonsterBossRegenTimerStart () {
 }
 
 void gf_HrHeroReviveWindowMake () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
 
-    // Automatic Variable Declarations
     const int auto569A25A6_ae = 8;
     const int auto569A25A6_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
-    // Implementation
     DialogCreate(850, 400, c_anchorCenter, 0, -100, true);
     gv_HeroReviveWindow = DialogLastCreated();
     DialogSetImageVisible(gv_HeroReviveWindow, false);
@@ -11039,8 +10774,6 @@ void gf_HrHeroReviveWindowMake () {
 }
 
 void gf_HrHeroSkillIncreaseEffect () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[gv_HeroKillPlayer[EventPlayer()]] == 32) && (gv_SkillWLevel[gv_HeroKillPlayer[EventPlayer()]] >= 1)) {
         PlayerCreateEffectPoint(gv_HeroKillPlayer[EventPlayer()], "Hero32Skill2G22", PointFromId(1));
     }
@@ -11068,8 +10801,6 @@ void gf_HrHeroSkillIncreaseEffect () {
 }
 
 void gf_HrHeroSkillIncreaseEffect2 () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_SelectedCharNum[EventPlayer()] == 24)) {
         PlayerCreateEffectPoint(EventPlayer(), "Hero24Death", UnitGetPosition(EventUnit()));
     }
@@ -11085,8 +10816,6 @@ void gf_HrHeroSkillIncreaseEffect2 () {
 }
 
 void gf_HrHeroAllKillMessage () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_GameEndBoolean == false) && (((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[1]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[2]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[3]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[4]] == true) && (gv_HeroAllKill[0] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[0]) >= 2)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[5]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[6]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[7]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[8]] == true) && (gv_HeroAllKill[1] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[1]) >= 2)))) {
         Wait(1.0, c_timeReal);
         if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroAllKill[0] == false)) {
@@ -11111,8 +10840,6 @@ void gf_HrHeroAllKillMessage () {
 }
 
 void gf_HrHeroAddKillMessage () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill") == true) && (UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == true)) {
         if ((UnitBehaviorCount(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == 2)) {
             SoundPlay(SoundLink("SystemSound3", -1), PlayerGroupAll(), 200.0, 0.0);
@@ -11184,23 +10911,19 @@ void gf_HrHeroAddKillMessage () {
 void gf_HrAssistantBonusTeam1 () {
     int init_i;
 
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     text[12] lv_eC84A4ECA095EBB3B4EC97ACECA788ED948CEBA088EC9DB4EC96B4EC9DB4EBA684EBB380EC8898;
     bool[12] lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8EC9DB8ECA69DED948CEBA088EC9DB4EC96B4;
     int lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8ECB69CEBA0A5EC97ACEBB680EC88ABEC9E90;
 
-    // Automatic Variable Declarations
     const int auto6FD40A14_ae = 4;
     const int auto6FD40A14_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for (init_i = 0; init_i <= 11; init_i += 1) {
         lv_eC84A4ECA095EBB3B4EC97ACECA788ED948CEBA088EC9DB4EC96B4EC9DB4EBA684EBB380EC8898[init_i] = StringToText("");
     }
 
-    // Implementation
     if ((PlayerType(gv_PlayerBayul[1]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[1]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerBayul[1]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist") == true)) {
         lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8EC9DB8ECA69DED948CEBA088EC9DB4EC96B4[gv_PlayerBayul[1]] = true;
         lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8ECB69CEBA0A5EC97ACEBB680EC88ABEC9E90 += 1;
@@ -11279,23 +11002,19 @@ void gf_HrAssistantBonusTeam1 () {
 void gf_HrAssistantBonusTeam2 () {
     int init_i;
 
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     text[12] lv_eC84A4ECA095EBB3B4EC97ACECA788ED948CEBA088EC9DB4EC96B4EC9DB4EBA684EBB380EC8898;
     bool[12] lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8EC9DB8ECA69DED948CEBA088EC9DB4EC96B4;
     int lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8ECB69CEBA0A5EC97ACEBB680EC88ABEC9E90;
 
-    // Automatic Variable Declarations
     const int auto5F196C6B_ae = 8;
     const int auto5F196C6B_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 5;
     for (init_i = 0; init_i <= 11; init_i += 1) {
         lv_eC84A4ECA095EBB3B4EC97ACECA788ED948CEBA088EC9DB4EC96B4EC9DB4EBA684EBB380EC8898[init_i] = StringToText("");
     }
 
-    // Implementation
     if ((PlayerType(gv_PlayerBayul[5]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[5]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerBayul[5]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222") == true)) {
         lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8EC9DB8ECA69DED948CEBA088EC9DB4EC96B4[gv_PlayerBayul[5]] = true;
         lv_eC84A4ECA095EC96B4EC8B9CEC8AA4ED8AB8ECB69CEBA0A5EC97ACEBB680EC88ABEC9E90 += 1;
@@ -11372,8 +11091,6 @@ void gf_HrAssistantBonusTeam2 () {
 }
 
 void gf_HrHeroBuffPut () {
-    // Automatic Variable Declarations
-    // Implementation
     if ((gv_HeroBuffIng[EventPlayer()][0] >= 1)) {
         PlayerCreateEffectPoint(EventPlayer(), "HeroOkGi22232222", PointFromId(1));
         if ((PlayerType(gv_HeroKillPlayer[EventPlayer()]) == c_playerTypeUser) && (gv_HeroDeathBoolean[gv_HeroKillPlayer[EventPlayer()]] == false)) {
@@ -11409,8 +11126,6 @@ void gf_HrHeroBuffPut () {
 }
 
 void gf_HrHeroPassiveRepair () {
-    // Automatic Variable Declarations
-    // Implementation
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Toherodamage", gv_PlayerHero[EventPlayer()], 1);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical3", gv_PlayerHero[EventPlayer()], 1);
     if ((gv_StatusWindowNum[EventPlayer()][22] >= 1)) {
@@ -11476,8 +11191,6 @@ void gf_HrHeroPassiveRepair () {
 }
 
 void gf_HrStartBeforeCounterMake () {
-    // Automatic Variable Declarations
-    // Implementation
     DialogCreate(250, 150, c_anchorCenter, 0, -200, true);
     gv_BeforeStartCounterDialog[0] = DialogLastCreated();
     DialogSetImageVisible(gv_BeforeStartCounterDialog[0], false);
@@ -11501,8 +11214,6 @@ void gf_HrStartBeforeCounterMake () {
 }
 
 void gf_HrStartBeforeCounterMake2 () {
-    // Automatic Variable Declarations
-    // Implementation
     DialogCreate(550, 120, c_anchorTop, 0, 70, true);
     gv_BeforeStartCounterWindow = DialogLastCreated();
     DialogSetImageVisible(gv_BeforeStartCounterWindow, false);
@@ -11515,14 +11226,10 @@ void gf_HrStartBeforeCounterMake2 () {
 }
 
 void gf_HrStartBeforeCounterMake3 () {
-    // Variable Declarations
     int lv_GPlayerNum1;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_GPlayerNum1 = 1;
 
-    // Implementation
     DialogCreate(685, 455, c_anchorCenter, 0, -123, true);
     gv_CharChooseDialog[0] = DialogLastCreated();
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 685, 455, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_armory_text_outerframe.dds", c_triggerImageTypeHorizontalBorder, false, Color(0.00, 50.20, 100.00), c_triggerBlendModeNormal);
@@ -11661,8 +11368,6 @@ void gf_HrStartBeforeCounterMake3 () {
 }
 
 void gf_HrCharSelectDialogHeroBtnMake1 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/2494C124"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -11774,8 +11479,6 @@ void gf_HrCharSelectDialogHeroBtnMake1 () {
 }
 
 void gf_HrCharSelectDialogHeroBtnMake2 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/1878496C"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -11887,8 +11590,6 @@ void gf_HrCharSelectDialogHeroBtnMake2 () {
 }
 
 void gf_HrCharSelectDialogHeroBtnMake3 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/12AE0B68"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -12000,8 +11701,6 @@ void gf_HrCharSelectDialogHeroBtnMake3 () {
 }
 
 void gf_HrCharSelectDialogHeroBtnMake4 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/3EC1BF6D"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -12113,8 +11812,6 @@ void gf_HrCharSelectDialogHeroBtnMake4 () {
 }
 
 void gf_HrCharSelectDialogHeroBtnMake5 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/29858E35"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -12238,8 +11935,6 @@ void gf_HrCharSelectDialogHeroBtnMake5 () {
 }
 
 void gf_HrCharSelectDialogSpellBtnMake1 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[2], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/4EC2F48A"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -12283,8 +11978,6 @@ void gf_HrCharSelectDialogSpellBtnMake1 () {
 }
 
 void gf_HrCharSelectDialogSpellBtnMake2 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[2], 100, 100, c_anchorTopLeft, 30, 180, StringExternal("Param/Value/ABD6B75E"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -12324,14 +12017,10 @@ void gf_HrCharSelectDialogSpellBtnMake2 () {
 }
 
 void gf_HrTeamSelectDialogMake () {
-    // Variable Declarations
     int lv_GPlayerNum1;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_GPlayerNum1 = 1;
 
-    // Implementation
     DialogCreate(375, 720, c_anchorCenter, -520, 5, true);
     gv_TeamSelectDialog[0] = DialogLastCreated();
     DialogSetImageVisible(DialogLastCreated(), false);
@@ -12425,8 +12114,6 @@ void gf_HrTeamSelectDialogMake () {
 }
 
 void gf_HrTeamSelectDialogTeam1Make () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemImage(gv_TeamSelectDialog[0], 70, 70, c_anchorTop, -65, 105, StringToText(""), "Assets\\InviButton.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
     gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[1]] = DialogControlLastCreated();
     DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
@@ -12564,8 +12251,6 @@ void gf_HrTeamSelectDialogTeam1Make () {
 }
 
 void gf_HrTeamSelectDialogTeam1Make2 () {
-    // Automatic Variable Declarations
-    // Implementation
     libNtve_gf_CreateDialogItemImage(gv_TeamSelectDialog[1], 70, 70, c_anchorTop, -65, 105, StringToText(""), "Assets\\InviButton.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
     gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[5]] = DialogControlLastCreated();
     DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
@@ -12703,25 +12388,21 @@ void gf_HrTeamSelectDialogTeam1Make2 () {
 }
 
 void gf_HrScoreDialogMake () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
     int lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092;
     int lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092;
 
-    // Automatic Variable Declarations
     const int auto06B3226E_ae = 4;
     const int auto06B3226E_ai = 1;
     const int auto68E48430_ae = 8;
     const int auto68E48430_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
     lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092 = 75;
     lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 = 87;
 
-    // Implementation
     DialogCreate(650, 490, c_anchorTopRight, 10, 30, true);
     gv_ScoreDialog[0] = DialogLastCreated();
     DialogSetImageVisible(gv_ScoreDialog[0], false);
@@ -12866,17 +12547,13 @@ void gf_HrScoreDialogMake () {
 }
 
 void gf_HrScoreDialogStatToolTip () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto0455B201_ae = 8;
     const int auto0455B201_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Implementation
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     for ( ; ( (auto0455B201_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= auto0455B201_ae) || (auto0455B201_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= auto0455B201_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += auto0455B201_ai ) {
         if ((((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) == c_playerStatusActive)) || (PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) == c_playerTypeComputer))) {
@@ -12892,8 +12569,6 @@ void gf_HrScoreDialogStatToolTip () {
 }
 
 void gf_HrSurrenderDialogMake () {
-    // Automatic Variable Declarations
-    // Implementation
     DialogCreate(360, 275, c_anchorBottomRight, 20, 340, true);
     gv_SurrenderDialog = DialogLastCreated();
     DialogSetImageVisible(gv_SurrenderDialog, false);
@@ -12951,17 +12626,13 @@ void gf_HrSurrenderDialogMake () {
 }
 
 void gf_HrDrawGame () {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
 
-    // Automatic Variable Declarations
     const int auto5BD62B6F_ae = 8;
     const int auto5BD62B6F_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
-    // Implementation
     TriggerEnable(gt_TrNexusDestroyTeam1, false);
     TriggerEnable(gt_TrNexusDestroyTeam2, false);
     Wait(5.0, c_timeReal);
@@ -13043,7 +12714,6 @@ bool gf_HotkeyStatIncreaseTestConditions() {
 // Trigger: ?????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStartGame_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -13068,7 +12738,6 @@ void gt_TrStartGame_Init () {
 // Trigger: 1 - ???????????? ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr1FullscreenSetting_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -13103,7 +12772,6 @@ void gt_Tr1FullscreenSetting_Init () {
 // Trigger: 2 - ?????? ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr2GameSetting_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -13164,7 +12832,6 @@ void gt_Tr2GameSetting_Init () {
 // Trigger: 3 - ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_GPlayerNum1;
     int lv_GPlayerNum2;
     int lv_GPlayerNum3;
@@ -13173,7 +12840,6 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
     int lv_GPlayerNum6;
     int lv_GPlayerNum323;
 
-    // Automatic Variable Declarations
     const int auto85437FDC_ae = 4;
     const int auto85437FDC_ai = 1;
     const int auto85AD0959_ae = 4;
@@ -13185,7 +12851,6 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
     const int auto95DBE328_ae = 8;
     const int auto95DBE328_ai = 1;
 
-    // Variable Initialization
     lv_GPlayerNum1 = 1;
     lv_GPlayerNum2 = 1;
     lv_GPlayerNum3 = 5;
@@ -13335,7 +13000,6 @@ void gt_Tr3PlayerSetting_Init () {
 // Trigger: 5 - ?????? ???????????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr5AllDialogInit_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -13372,15 +13036,12 @@ void gt_Tr5AllDialogInit_Init () {
 // Trigger: 6 - ???????????? ???????????? ?????? ??? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr6PlayerDialogAddorView_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
     text[11] lv_eC84A4ECA095EAB384EAB889ED858DEC8AA4ED8AB8;
 
-    // Automatic Variable Declarations
     const int auto1CD1493C_ae = 8;
     const int auto1CD1493C_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
     // Actions
@@ -13432,14 +13093,11 @@ void gt_Tr6PlayerDialogAddorView_Init () {
 // Trigger: 8 - ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr8VoteScreenView_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_GPlayerNum1;
 
-    // Automatic Variable Declarations
     const int autoFA2DE727_ae = 8;
     const int autoFA2DE727_ai = 1;
 
-    // Variable Initialization
     lv_GPlayerNum1 = 1;
 
     // Actions
@@ -13532,7 +13190,6 @@ static void lf_PlayerHeroChoice(int player_number) {
     int team_number;
     int dialog_x_position;
     int player_index_in_team;
-    // Variable Initialization
     flag = 1;
     team_number = 1;
     if (player_number > 4) {
@@ -13611,7 +13268,6 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     int team_number;
     int dialog_x_position;
     int player_index_in_team;
-    // Variable Initialization
     flag = 1;
     team_number = 1;
     if (player_number > 4) {
@@ -13725,7 +13381,6 @@ static void lf_PlayerBan(int player_number, int ban_number) {
 }
 
 bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int i = 1;
     int flag = 1;
     int ban_number;
@@ -13823,16 +13478,13 @@ void gt_TrCharSelectDraft_Init () {
 // Trigger: ????????? ?????? ?????? - ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrCharSelectBlind_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
     int lv_eC84A4ECA095ECBA90EBA6ADEC84A0ED839DEC9984EBA38CEC9DB8EC8B9D;
     int[12] lv_eC84A4ECA095ECBA90EBA6ADEB9E9CEB8DA4EBB288ED98B8ECA084ECB2B4ECBA90EBA6ADED84B0EC8898;
 
-    // Automatic Variable Declarations
     const int auto47DE61EC_ae = 8;
     const int auto47DE61EC_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095ECBA90EBA6ADEC84A0ED839DEC9984EBA38CEC9DB8EC8B9D = 1;
 
@@ -13917,7 +13569,6 @@ void gt_TrCharSelectBlind_Init () {
 // Trigger: ????????? ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrCharSelectPageNext_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -14032,14 +13683,11 @@ void gt_TrCharSelectPageNext_Init () {
 // Trigger: ????????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrCharSelect_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ECA095EC8898;
 
-    // Automatic Variable Declarations
     const int autoB98F1D8E_ae = 4;
     const int autoB98F1D8E_ai = 1;
 
-    // Variable Initialization
 
     // Conditions
     if (testConds) {
@@ -14139,14 +13787,11 @@ void gt_TrCharSelect_Init () {
 // Trigger: ????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrCharSelectRandom_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ECA095EC8898;
 
-    // Automatic Variable Declarations
     const int auto7563DA08_ae = 4;
     const int auto7563DA08_ai = 1;
 
-    // Variable Initialization
 
     // Conditions
     if (testConds) {
@@ -14236,7 +13881,6 @@ void gt_TrCharSelectRandom_Init () {
 // Trigger: ?????? ?????? ????????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrDraftSelectRandomRefreash1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -14266,11 +13910,8 @@ void gt_TrDraftSelectRandomRefreash1_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(1)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[1];
 
     // Conditions
@@ -14339,11 +13980,8 @@ void gt_TrTeamSelectDialogHeroSwap1_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(2)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[2];
 
     // Conditions
@@ -14412,11 +14050,8 @@ void gt_TrTeamSelectDialogHeroSwap2_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(3)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap3_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[3];
 
     // Conditions
@@ -14485,11 +14120,8 @@ void gt_TrTeamSelectDialogHeroSwap3_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(4)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap4_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[4];
 
     // Conditions
@@ -14558,11 +14190,8 @@ void gt_TrTeamSelectDialogHeroSwap4_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(5)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap5_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[5];
 
     // Conditions
@@ -14631,11 +14260,8 @@ void gt_TrTeamSelectDialogHeroSwap5_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(6)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap6_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[6];
 
     // Conditions
@@ -14704,11 +14330,8 @@ void gt_TrTeamSelectDialogHeroSwap6_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(7)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap7_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[7];
 
     // Conditions
@@ -14777,11 +14400,8 @@ void gt_TrTeamSelectDialogHeroSwap7_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(8)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwap8_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[8];
 
     // Conditions
@@ -14852,14 +14472,11 @@ void gt_TrTeamSelectDialogHeroSwap8_Init () {
 bool gt_TrTeamSelectDialogHeroSwapSuggestOkTeam1_Func (bool testConds, bool runActions) {
     int init_i;
 
-    // Variable Declarations
     text[2] lv_eC84A4ECA095EC9881EC9B85EC9DB4EBA684EC9E84EC8B9CECA080EC9EA5;
     string[2] lv_eC84A4ECA095EC9881EC9B85EC9DB4EBAFB8ECA780EC9E84EC8B9CECA080EC9EA5;
     int[2] lv_eC84A4ECA095EC9881EC9B85EBB288ED98B8EC9E84EC8B9CECA080EC9EA5;
     int lv_eC84A4ECA095EC8381EB8C80ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     for (init_i = 0; init_i <= 1; init_i += 1) {
         lv_eC84A4ECA095EC9881EC9B85EC9DB4EBAFB8ECA780EC9E84EC8B9CECA080EC9EA5[init_i] = "Assets\\InviButton.dds";
     }
@@ -14983,11 +14600,8 @@ void gt_TrTeamSelectDialogHeroSwapSuggestOkTeam1_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(1???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwapSuggestNoTeam1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC8381EB8C80ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
 
     // Conditions
     if (testConds) {
@@ -15094,14 +14708,11 @@ void gt_TrTeamSelectDialogHeroSwapSuggestNoTeam1_Init () {
 bool gt_TrTeamSelectDialogHeroSwapSuggestOkTeam2_Func (bool testConds, bool runActions) {
     int init_i;
 
-    // Variable Declarations
     text[2] lv_eC84A4ECA095EC9881EC9B85EC9DB4EBA684EC9E84EC8B9CECA080EC9EA5;
     string[2] lv_eC84A4ECA095EC9881EC9B85EC9DB4EBAFB8ECA780EC9E84EC8B9CECA080EC9EA5;
     int[2] lv_eC84A4ECA095EC9881EC9B85EBB288ED98B8EC9E84EC8B9CECA080EC9EA5;
     int lv_eC84A4ECA095EC8381EB8C80ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     for (init_i = 0; init_i <= 1; init_i += 1) {
         lv_eC84A4ECA095EC9881EC9B85EC9DB4EBAFB8ECA780EC9E84EC8B9CECA080EC9EA5[init_i] = "Assets\\InviButton.dds";
     }
@@ -15225,11 +14836,8 @@ void gt_TrTeamSelectDialogHeroSwapSuggestOkTeam2_Init () {
 // Trigger: ??? ?????? ????????? ?????? ?????? ??????(2???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTeamSelectDialogHeroSwapSuggestNoTeam2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC8381EB8C80ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
 
     // Conditions
     if (testConds) {
@@ -15334,7 +14942,6 @@ void gt_TrTeamSelectDialogHeroSwapSuggestNoTeam2_Init () {
 // Trigger: ?????? ??????(1)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSpellSelect1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -15482,7 +15089,6 @@ void gt_TrSpellSelect1_Init () {
 // Trigger: ?????? ??????(2)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSpellSelect2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -15630,7 +15236,6 @@ void gt_TrSpellSelect2_Init () {
 // Trigger: ?????? ?????? ??????(?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrGameModeSelect_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -15686,7 +15291,6 @@ void gt_TrGameModeSelect_Init () {
 // Trigger: ?????? ?????? ??????(?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -15742,14 +15346,11 @@ void gt_TrReadyOkSelect_Init () {
 // Trigger: ????????? ??? ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrBeforeSpellRandomSelect_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto04EE0DBA_ae = 8;
     const int auto04EE0DBA_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
     // Actions
@@ -15799,17 +15400,14 @@ void gt_TrBeforeSpellRandomSelect_Init () {
 // Trigger: ???????????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrPlayersAllCreate_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int autoEF89B667_ae = 4;
     const int autoEF89B667_ai = 1;
     const int autoC64E302D_ae = 8;
     const int autoC64E302D_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
 
@@ -15922,14 +15520,11 @@ void gt_TrPlayersAllCreate_Init () {
 // Trigger: ?????? ??? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto589485A8_ae = 8;
     const int auto589485A8_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
     // Actions
@@ -15984,14 +15579,11 @@ void gt_TrRankDialogView_Init () {
 // Trigger: ?????? ?????? ?????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrGameStartCounter_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoC99EEBBC_ae = 8;
     const int autoC99EEBBC_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
     // Actions
@@ -16041,7 +15633,6 @@ void gt_TrGameStartCounter_Init () {
 // Trigger: ??????????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16082,7 +15673,6 @@ void gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16132,7 +15722,6 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Init () {
 // Trigger: ?????? ?????? ?????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16186,7 +15775,6 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventUnit() == gv_PlayerHero[EventPlayer()]))) {
@@ -16227,7 +15815,6 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Init () {
 // Trigger: ?????? - ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHelpText_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16258,14 +15845,11 @@ void gt_TrHelpText_Init () {
 // Trigger: ?????? - ??????????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrViewHandler_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
 
-    // Automatic Variable Declarations
     const int auto22FE6F65_ae = 8;
     const int auto22FE6F65_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
     // Conditions
@@ -16300,7 +15884,6 @@ void gt_TrViewHandler_Init () {
 // Trigger: ?????? - ??? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetMoney_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16345,7 +15928,6 @@ void gt_TrSingleCheetMoney_Init () {
 // Trigger: ?????? - ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetLevel_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16393,7 +15975,6 @@ void gt_TrSingleCheetLevel_Init () {
 // Trigger: ?????? - ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetTestUnit_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -16437,15 +16018,12 @@ void gt_TrSingleCheetTestUnit_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetDPup_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     string lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898;
     int lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898;
 
-    // Automatic Variable Declarations
     int auto663B6F6C_n;
     int auto663B6F6C_i;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
     // Conditions
@@ -16500,15 +16078,12 @@ void gt_TrSingleCheetDPup_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetDPdown_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     string lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898;
     int lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898;
 
-    // Automatic Variable Declarations
     int auto07C9C4F2_n;
     int auto07C9C4F2_i;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
     // Conditions
@@ -16563,15 +16138,12 @@ void gt_TrSingleCheetDPdown_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetRPup_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     string lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898;
     int lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898;
 
-    // Automatic Variable Declarations
     int auto3BC73287_n;
     int auto3BC73287_i;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
     // Conditions
@@ -16626,15 +16198,12 @@ void gt_TrSingleCheetRPup_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetRPdown_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     string lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898;
     int lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898;
 
-    // Automatic Variable Declarations
     int auto848786CF_n;
     int auto848786CF_i;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
     // Conditions
@@ -16689,13 +16258,10 @@ void gt_TrSingleCheetRPdown_Init () {
 // Trigger: ?????? ??? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_Trgametipbtn_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 21;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
@@ -16730,16 +16296,13 @@ void gt_Trgametipbtn_Init () {
 // Trigger: ????????? ?????? ??? ?????? (??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMinionMake_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
 
-    // Automatic Variable Declarations
     const int autoF427485B_n = 3;
     int autoF427485B_i;
     const int auto5C95C87E_n = 3;
     int auto5C95C87E_i;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
     // Actions
@@ -16920,7 +16483,6 @@ void gt_TrMinionMake_Init () {
 // Trigger: ?????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHeroLevelUp_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -17019,7 +16581,6 @@ void gt_TrHeroLevelUp_Init () {
 // Trigger: ?????? ????????? (?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnBtnClick_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
@@ -17104,7 +16665,6 @@ void gt_TrSkillLearnBtnClick_Init () {
 // Trigger: ?????? ????????? (?????????F1)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
@@ -17157,7 +16717,6 @@ void gt_TrSkillLearnHotKey1_Init () {
 // Trigger: ?????? ????????? (?????????F2)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
@@ -17210,7 +16769,6 @@ void gt_TrSkillLearnHotKey2_Init () {
 // Trigger: ?????? ????????? (?????????F3)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey3_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
@@ -17263,7 +16821,6 @@ void gt_TrSkillLearnHotKey3_Init () {
 // Trigger: ?????? ????????? (?????????F4)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey4_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
@@ -17316,14 +16873,12 @@ void gt_TrSkillLearnHotKey4_Init () {
 // Trigger: ????????? ????????? ????????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogPageNext_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA09505EBB380EC8898;
     int lv_eC84A4ECA095611EBB380EC8898;
     int lv_eC84A4ECA0951217EBB380EC8898;
     int lv_eC84A4ECA0951823EBB380EC8898;
     int lv_eC84A4ECA0952429EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto556A72A9_ae = 5;
     const int auto556A72A9_ai = 1;
     const int auto0301499D_ae = 11;
@@ -17375,7 +16930,6 @@ bool gt_TrStatDialogPageNext_Func (bool testConds, bool runActions) {
     const int autoCB318EA8_ae = 29;
     const int autoCB318EA8_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095611EBB380EC8898 = 6;
     lv_eC84A4ECA0951217EBB380EC8898 = 12;
     lv_eC84A4ECA0951823EBB380EC8898 = 18;
@@ -17616,14 +17170,12 @@ void gt_TrStatDialogPageNext_Init () {
 // Trigger: ????????? ????????? ????????? ?????????(?????????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogPageNextHotKey_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA09505EBB380EC8898;
     int lv_eC84A4ECA095611EBB380EC8898;
     int lv_eC84A4ECA0951217EBB380EC8898;
     int lv_eC84A4ECA0951823EBB380EC8898;
     int lv_eC84A4ECA0952429EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto2206D0AC_ae = 5;
     const int auto2206D0AC_ai = 1;
     const int auto40BCBC35_ae = 11;
@@ -17675,7 +17227,6 @@ bool gt_TrStatDialogPageNextHotKey_Func (bool testConds, bool runActions) {
     const int autoC7BD72F0_ae = 29;
     const int autoC7BD72F0_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095611EBB380EC8898 = 6;
     lv_eC84A4ECA0951217EBB380EC8898 = 12;
     lv_eC84A4ECA0951823EBB380EC8898 = 18;
@@ -17996,7 +17547,6 @@ void gt_TrStatDialogStatIncrease_Init () {
 // Trigger: ????????? ????????? ??????(????????? Z)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     int i;
     // Conditions
     if (testConds) {
@@ -18039,7 +17589,6 @@ void gt_TrStatDialogStatIncreaseHotKeyZ_Init () {
 // Trigger: ????????? ????????? ??????(????????? X)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     int i;
     // Conditions
     if (testConds) {
@@ -18082,7 +17631,6 @@ void gt_TrStatDialogStatIncreaseHotKeyX_Init () {
 // Trigger: ????????? ????????? ??????(????????? C)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     int i;
     // Conditions
     if (testConds) {
@@ -18125,7 +17673,6 @@ void gt_TrStatDialogStatIncreaseHotKeyC_Init () {
 // Trigger: ????????? ????????? ??????(????????? V)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     int i;
     // Conditions
     if (testConds) {
@@ -18168,7 +17715,6 @@ void gt_TrStatDialogStatIncreaseHotKeyV_Init () {
 // Trigger: ????????? ????????? ??????(????????? B)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     int i;
     // Conditions
     if (testConds) {
@@ -18211,7 +17757,6 @@ void gt_TrStatDialogStatIncreaseHotKeyB_Init () {
 // Trigger: ????????? ????????? ??????(????????? N)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     int i;
     // Conditions
     if (testConds) {
@@ -18254,7 +17799,6 @@ void gt_TrStatDialogStatIncreaseHotKeyN_Init () {
 // Trigger: ?????? ????????????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHealingPosionUseComplete_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18291,7 +17835,6 @@ void gt_TrHealingPosionUseComplete_Init () {
 // Trigger: ?????? ????????????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrManaPosionUseComplete_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18328,7 +17871,6 @@ void gt_TrManaPosionUseComplete_Init () {
 // Trigger: ????????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrWardUseComplete_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18366,7 +17908,6 @@ void gt_TrWardUseComplete_Init () {
 // Trigger: ????????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrWardUseComplete2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18404,7 +17945,6 @@ void gt_TrWardUseComplete2_Init () {
 // Trigger: ?????? ?????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrUnitBoodeSet_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18453,7 +17993,6 @@ void gt_TrUnitBoodeSet_Init () {
 // Trigger: ?????? - ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseCritical_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -18485,7 +18024,6 @@ void gt_TrTextTailUseCritical_Init () {
 // Trigger: ?????? - ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseHyepi_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18525,7 +18063,6 @@ void gt_TrTextTailUseHyepi_Init () {
 // Trigger: ?????? - ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSpellTeleportUse_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18556,7 +18093,6 @@ void gt_TrSpellTeleportUse_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrPortalUse_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18597,7 +18133,6 @@ void gt_TrPortalUse_Init () {
 // Trigger: ??????????????? ????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMissileOutDestroy_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18624,7 +18159,6 @@ void gt_TrMissileOutDestroy_Init () {
 // Trigger: ???????????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseHero5Skill4_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     const int auto6337BFF8_n = 5;
     int auto6337BFF8_i;
 
@@ -18679,7 +18213,6 @@ void gt_TrTextTailUseHero5Skill4_Init () {
 // Trigger: ???????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseHero9AttackImpact_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -18712,7 +18245,6 @@ void gt_TrTextTailUseHero9AttackImpact_Init () {
 // Trigger: ?????? ?????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero10Skill4On_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18766,7 +18298,6 @@ void gt_TrHero10Skill4On_Init () {
 // Trigger: ?????? ?????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero10Skill4Off_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18803,7 +18334,6 @@ void gt_TrHero10Skill4Off_Init () {
 // Trigger: ????????? Q?????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero15Skill4Use_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18843,7 +18373,6 @@ void gt_TrHero15Skill4Use_Init () {
 // Trigger: ???????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero19Death_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18918,7 +18447,6 @@ void gt_TrHero19Death_Init () {
 // Trigger: ???????????? R?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetRPdown2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -18962,7 +18490,6 @@ void gt_TrSingleCheetRPdown2_Init () {
 // Trigger: ????????? W?????? ?????? ?????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero32Skill2Up_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19010,7 +18537,6 @@ void gt_TrHero32Skill2Up_Init () {
 // Trigger: ????????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero32Skill4On_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19064,7 +18590,6 @@ void gt_TrHero32Skill4On_Init () {
 // Trigger: ????????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero32Skill4Off_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19101,7 +18626,6 @@ void gt_TrHero32Skill4Off_Init () {
 // Trigger: ?????? ?????? R?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero39Skill4On_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19147,12 +18671,9 @@ void gt_TrHero39Skill4On_Init () {
 // Trigger: ???????????? Q?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero59Skill1Use_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     fixed lv_eC84A4ECA095ECB69CECB298EBB0A9ED96A5;
     point lv_eC84A4ECA095ECB69CECB298ECA780ECA090;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095ECB69CECB298EBB0A9ED96A5 = UnitGetFacing(EventUnitDamageSourceUnit());
 
     // Conditions
@@ -19259,7 +18780,6 @@ void gt_TrHero59Skill1Use_Init () {
 // Trigger: ????????? E?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero62Skill3Start_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19296,7 +18816,6 @@ void gt_TrHero62Skill3Start_Init () {
 // Trigger: ????????? E?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero62Skill3On_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19336,7 +18855,6 @@ void gt_TrHero62Skill3On_Init () {
 // Trigger: ????????? E?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero62Skill3End_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19373,7 +18891,6 @@ void gt_TrHero62Skill3End_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero66PassiveOn_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19433,7 +18950,6 @@ void gt_TrHero66PassiveOn_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero66PassiveOn2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -19461,14 +18977,11 @@ void gt_TrHero66PassiveOn2_Init () {
 // Trigger: ????????? ??????/??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrScoreDialogBtnOpen_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto25DFB6EB_ae = 8;
     const int auto25DFB6EB_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
     // Conditions
@@ -19526,14 +19039,11 @@ void gt_TrScoreDialogBtnOpen_Init () {
 // Trigger: ????????? ??????/??????(?????????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrScoreDialogHotKeyOpen_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto52CE2790_ae = 8;
     const int auto52CE2790_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
     // Conditions
@@ -19587,7 +19097,6 @@ void gt_TrScoreDialogHotKeyOpen_Init () {
 // Trigger: ????????? ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMinionNotStop_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!(((EventPlayer() == 12) || (EventPlayer() == 13)))) {
@@ -19630,7 +19139,6 @@ void gt_TrMinionNotStop_Init () {
 // Trigger: ?????? ????????? ??????1
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -19715,7 +19223,6 @@ void gt_TrMonsterMake1_Init () {
 // Trigger: ?????? ????????? ??????2
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -19778,7 +19285,6 @@ void gt_TrMonsterMake2_Init () {
 // Trigger: ?????? ????????? ??????3
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake3_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -19827,7 +19333,6 @@ void gt_TrMonsterMake3_Init () {
 // Trigger: ?????? ????????? ??????4
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake4_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -19876,7 +19381,6 @@ void gt_TrMonsterMake4_Init () {
 // Trigger: ?????? ????????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake5_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -19917,7 +19421,6 @@ void gt_TrMonsterMake5_Init () {
 // Trigger: ?????? ????????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffPickUp_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!(((UnitGetType(EventUnit()) == "Inunit") || (UnitGetType(EventUnit()) == "Inunit5") || (UnitGetType(EventUnit()) == "SpineCrawler") || (UnitGetType(EventUnit()) == "SporeCrawler")))) {
@@ -19974,7 +19477,6 @@ void gt_TrMonsterBuffPickUp_Init () {
 // Trigger: ????????? ?????? ???
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffEnd1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -20009,7 +19511,6 @@ void gt_TrMonsterBuffEnd1_Init () {
 // Trigger: ????????? ?????? ???
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffEnd2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -20048,7 +19549,6 @@ void gt_TrMonsterBuffEnd2_Init () {
 // Trigger: ????????? ?????? ???
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffEnd3_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -20094,14 +19594,11 @@ void gt_TrMonsterBuffEnd3_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBird1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto5392BCE5_ae = 1;
     const int auto5392BCE5_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20156,14 +19653,11 @@ void gt_TrMonsterAttackBird1_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBird2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto6A86B69C_ae = 1;
     const int auto6A86B69C_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20218,7 +19712,6 @@ void gt_TrMonsterAttackBird2_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBird1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -20264,7 +19757,6 @@ void gt_TrMonsterBackBird1_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBird2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -20310,14 +19802,11 @@ void gt_TrMonsterBackBird2_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackDog1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto7BC9AC54_ae = 4;
     const int auto7BC9AC54_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20372,14 +19861,11 @@ void gt_TrMonsterAttackDog1_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackDog2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto548EEC79_ae = 4;
     const int auto548EEC79_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20434,7 +19920,6 @@ void gt_TrMonsterAttackDog2_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackDog1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -20510,7 +19995,6 @@ void gt_TrMonsterBackDog1_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackDog2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -20586,14 +20070,11 @@ void gt_TrMonsterBackDog2_Init () {
 // Trigger: ?????? ??? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackCow1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoD02C6489_ae = 2;
     const int autoD02C6489_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20648,14 +20129,11 @@ void gt_TrMonsterAttackCow1_Init () {
 // Trigger: ?????? ??? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackCow2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoF4F9856B_ae = 2;
     const int autoF4F9856B_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20710,7 +20188,6 @@ void gt_TrMonsterAttackCow2_Init () {
 // Trigger: ?????? ??? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackCow1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -20764,7 +20241,6 @@ void gt_TrMonsterBackCow1_Init () {
 // Trigger: ?????? ??? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackCow2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -20818,14 +20294,11 @@ void gt_TrMonsterBackCow2_Init () {
 // Trigger: ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackGalic1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto8360D47A_ae = 3;
     const int auto8360D47A_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20880,14 +20353,11 @@ void gt_TrMonsterAttackGalic1_Init () {
 // Trigger: ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackGalic2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto60FAD14F_ae = 3;
     const int auto60FAD14F_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -20942,7 +20412,6 @@ void gt_TrMonsterAttackGalic2_Init () {
 // Trigger: ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackGalic1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21006,7 +20475,6 @@ void gt_TrMonsterBackGalic1_Init () {
 // Trigger: ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackGalic2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21070,14 +20538,11 @@ void gt_TrMonsterBackGalic2_Init () {
 // Trigger: ????????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackScolpion1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoEC18A498_ae = 3;
     const int autoEC18A498_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21132,14 +20597,11 @@ void gt_TrMonsterAttackScolpion1_Init () {
 // Trigger: ????????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackScolpion2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto44DBE076_ae = 3;
     const int auto44DBE076_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21194,7 +20656,6 @@ void gt_TrMonsterAttackScolpion2_Init () {
 // Trigger: ????????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackScolpion1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21258,7 +20719,6 @@ void gt_TrMonsterBackScolpion1_Init () {
 // Trigger: ????????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackScolpion2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21322,14 +20782,11 @@ void gt_TrMonsterBackScolpion2_Init () {
 // Trigger: ?????? ??????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto5F6E5706_ae = 2;
     const int auto5F6E5706_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21384,14 +20841,11 @@ void gt_TrMonsterAttackIceBug1_Init () {
 // Trigger: ?????? ??????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoD5DBEE6E_ae = 2;
     const int autoD5DBEE6E_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21446,14 +20900,11 @@ void gt_TrMonsterAttackIceBug2_Init () {
 // Trigger: ?????? ??????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug3_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int auto09B391FF_ae = 2;
     const int auto09B391FF_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21508,14 +20959,11 @@ void gt_TrMonsterAttackIceBug3_Init () {
 // Trigger: ?????? ??????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug4_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
     const int autoBF82A815_ae = 2;
     const int autoBF82A815_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21570,7 +21018,6 @@ void gt_TrMonsterAttackIceBug4_Init () {
 // Trigger: ?????? ???????????????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21624,7 +21071,6 @@ void gt_TrMonsterBackIceBug1_Init () {
 // Trigger: ?????? ???????????????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21678,7 +21124,6 @@ void gt_TrMonsterBackIceBug2_Init () {
 // Trigger: ?????? ???????????????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug3_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21732,7 +21177,6 @@ void gt_TrMonsterBackIceBug3_Init () {
 // Trigger: ?????? ???????????????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug4_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21786,11 +21230,8 @@ void gt_TrMonsterBackIceBug4_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBoss1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21838,11 +21279,8 @@ void gt_TrMonsterAttackBoss1_Init () {
 // Trigger: ?????? ?????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBoss2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
     // Conditions
@@ -21890,7 +21328,6 @@ void gt_TrMonsterAttackBoss2_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBoss1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21936,7 +21373,6 @@ void gt_TrMonsterBackBoss1_Init () {
 // Trigger: ?????? ?????? ???????????????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBoss2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
@@ -21982,7 +21418,6 @@ void gt_TrMonsterBackBoss2_Init () {
 // Trigger: ?????? ????????? ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterRegenTimerStart_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22050,7 +21485,6 @@ void gt_TrMonsterRegenTimerStart_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBirdRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22101,7 +21535,6 @@ void gt_TrMonsterBirdRegen_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterDogRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22170,7 +21603,6 @@ void gt_TrMonsterDogRegen_Init () {
 // Trigger: ?????? ??? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterCowRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22227,7 +21659,6 @@ void gt_TrMonsterCowRegen_Init () {
 // Trigger: ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterGalicRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22290,7 +21721,6 @@ void gt_TrMonsterGalicRegen_Init () {
 // Trigger: ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterScolpionRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22353,7 +21783,6 @@ void gt_TrMonsterScolpionRegen_Init () {
 // Trigger: ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterIceBugRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22442,7 +21871,6 @@ void gt_TrMonsterIceBugRegen_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterIceBossRegen_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -22495,17 +21923,14 @@ void gt_TrMonsterIceBossRegen_Init () {
 // Trigger: ????????? ????????????(?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrBuildingDestroyMoojuck_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int autoE3D34D39_ae = 4;
     const int autoE3D34D39_ai = 1;
     const int auto54FB806B_ae = 8;
     const int auto54FB806B_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
 
@@ -22629,7 +22054,6 @@ void gt_TrBuildingDestroyMoojuck_Init () {
 // Trigger: ????????? ????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSinhoBuildingReviveTimerStart_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -22708,7 +22132,6 @@ void gt_TrSinhoBuildingReviveTimerStart_Init () {
 // Trigger: ????????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSinhoBuildingRevive_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -22831,12 +22254,9 @@ void gt_TrSinhoBuildingRevive_Init () {
 // Trigger: ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ECB694EAB080EAB491EBACBC;
     int lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
 
     // Conditions
     if (testConds) {
@@ -23044,7 +22464,6 @@ void gt_TrHeroDeath_Init () {
 // Trigger: ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHeroReviveStand_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -23129,13 +22548,11 @@ void gt_TrHeroReviveStand_Init () {
 // Trigger: ????????? ??????(1???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
     int lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80;
     int lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80;
     int lv_eC84A4ECA095EAB480ECA084ED8C80;
 
-    // Automatic Variable Declarations
     const int autoDBF70087_ae = 8;
     const int autoDBF70087_ai = 1;
     const int auto2C7DE2FE_ae = 8;
@@ -23145,7 +22562,6 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     const int auto786128E9_ae = 10;
     const int auto786128E9_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
     lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 = 1;
     lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
@@ -23230,13 +22646,11 @@ void gt_TrNexusDestroyTeam1_Init () {
 // Trigger: ????????? ??????(2???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
     int lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80;
     int lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80;
     int lv_eC84A4ECA095EAB480ECA084ED8C80;
 
-    // Automatic Variable Declarations
     const int autoBC6B57BC_ae = 8;
     const int autoBC6B57BC_ai = 1;
     const int auto5843AE30_ae = 4;
@@ -23246,7 +22660,6 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     const int auto3CD08627_ae = 10;
     const int auto3CD08627_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
     lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 = 1;
     lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
@@ -23331,7 +22744,6 @@ void gt_TrNexusDestroyTeam2_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSignOk_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -23368,7 +22780,6 @@ void gt_TrSurrenderSignOk_Init () {
 // Trigger: ?????? ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderReTimer_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -23397,18 +22808,15 @@ void gt_TrSurrenderReTimer_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int autoDAE24574_ae = 4;
     const int autoDAE24574_ai = 1;
     const int autoDC750E18_ae = 8;
     const int autoDC750E18_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 21;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
@@ -23559,18 +22967,15 @@ void gt_TrSurrenderSystemStart_Init () {
 // Trigger: ?????? ????????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int autoA9127715_ae = 4;
     const int autoA9127715_ai = 1;
     const int auto255BF192_ae = 8;
     const int auto255BF192_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 21;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
@@ -23722,7 +23127,6 @@ void gt_TrSurrenderSystemStartBtn_Init () {
 // Trigger: ?????? ????????? ??????(1???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -23781,7 +23185,6 @@ void gt_TrSurrenderOkTeam1_Init () {
 // Trigger: ?????? ????????? ??????(2???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -23840,7 +23243,6 @@ void gt_TrSurrenderOkTeam2_Init () {
 // Trigger: ?????? ????????? ??????(1???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderNoTeam1_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -23899,7 +23301,6 @@ void gt_TrSurrenderNoTeam1_Init () {
 // Trigger: ?????? ????????? ??????(2???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderNoTeam2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -23958,13 +23359,11 @@ void gt_TrSurrenderNoTeam2_Init () {
 // Trigger: ?????? ??????(1??? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
     int lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80;
     int lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80;
     int lv_eC84A4ECA095EAB480ECA084ED8C80;
 
-    // Automatic Variable Declarations
     const int auto3A0F5E69_ae = 8;
     const int auto3A0F5E69_ai = 1;
     const int auto556C66B4_ae = 8;
@@ -23974,7 +23373,6 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     const int auto0AE045BC_ae = 10;
     const int auto0AE045BC_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
     lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 = 1;
     lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
@@ -24061,13 +23459,11 @@ void gt_TrSurrenderOkTeam1Win_Init () {
 // Trigger: ?????? ??????(2??? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
     int lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80;
     int lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80;
     int lv_eC84A4ECA095EAB480ECA084ED8C80;
 
-    // Automatic Variable Declarations
     const int autoAC2DFF61_ae = 8;
     const int autoAC2DFF61_ai = 1;
     const int auto2CA68AA5_ae = 4;
@@ -24077,7 +23473,6 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     const int auto06A1C434_ae = 10;
     const int auto06A1C434_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
     lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 = 1;
     lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
@@ -24164,17 +23559,14 @@ void gt_TrSurrenderOkTeam2Win_Init () {
 // Trigger: ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
-    // Variable Declarations
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
-    // Automatic Variable Declarations
     const int auto9387ADE0_ae = 8;
     const int auto9387ADE0_ai = 1;
     const int auto10251A8B_ae = 4;
     const int auto10251A8B_ai = 1;
 
-    // Variable Initialization
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
