@@ -1478,521 +1478,421 @@ void gf_HrDraftSelectRandomRefresh() {
 
 void gf_HrSpellMake1 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
+    int i;
 
-    // Automatic Variable Declarations
-    const int autoDE5D84D8_ae = 8;
-    const int autoDE5D84D8_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-
-    // Implementation
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (autoDE5D84D8_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= autoDE5D84D8_ae) || (autoDE5D84D8_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= autoDE5D84D8_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += autoDE5D84D8_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive)) {
-            if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 1)) {
-                UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], "SpellDong", gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], 1);
-                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp", 1);
-                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp4", 1);
-                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                    gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[0], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
+    for (i = 1 ; i <= 8 ; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 1)) {
+                UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong", gv_PlayerBayul[i], 1);
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp", 1);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp4", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[0], gv_PlayerBayul[i]);
                 }
-
             }
-            else {
-                if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 2)) {
-                    libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2", 1);
-                    TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp24", 1);
-                    UnitSetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], c_unitPropLifeMax, c_unitPropCurrent) * 1.3));
-                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                        gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[1], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                    }
-
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 2)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp2", 1);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp24", 1);
+                UnitSetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[i]], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[i]], c_unitPropLifeMax, c_unitPropCurrent) * 1.3));
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[1], gv_PlayerBayul[i]);
                 }
-                else {
-                    if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 3)) {
-                        libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22", 1);
-                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                            gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[2], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                        }
-
-                    }
-                    else {
-                        if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 4)) {
-                            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222", 1);
-                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[3], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                            }
-
-                        }
-                        else {
-                            if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 5)) {
-                                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2222", 1);
-                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                    gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[4], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                }
-
-                            }
-                            else {
-                                if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 6)) {
-                                    libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22222", 1);
-                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                        gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[5], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                    }
-
-                                }
-                                else {
-                                    if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 7)) {
-                                        libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22223", 1);
-                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                            gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[6], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                        }
-
-                                    }
-                                    else {
-                                        if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 8)) {
-                                            if ((gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 0)) {
-                                                UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], "SpellDong5", gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], 1);
-                                            }
-
-                                            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp223", 1);
-                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[7], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                            }
-
-                                        }
-                                        else {
-                                            if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 9)) {
-                                                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222232", 1);
-                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                    gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[8], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                }
-
-                                            }
-                                            else {
-                                                if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 10)) {
-                                                    libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222233", 1);
-                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                        gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[9], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                    }
-
-                                                }
-                                                else {
-                                                    if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 11)) {
-                                                        libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2222332", 1);
-                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                            gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[10], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                        }
-
-                                                    }
-                                                    else {
-                                                        if ((gv_SelectedSpellNum1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 12)) {
-                                                            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22223322", 1);
-                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[11], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                            }
-
-                                                        }
-
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 3)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[2], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 4)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp222", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[3], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 5)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp2222", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[4], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 6)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22222", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[5], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 7)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22223", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[6], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 8)) {
+                if ((gv_CharNoMana[gv_PlayerBayul[i]] == 0)) {
+                    UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong5", gv_PlayerBayul[i], 1);
+                }
+            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp223", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[7], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 9)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp222232", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[8], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 10)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp222233", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[9], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 11)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp2222332", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[10], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 12)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22223322", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][0] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[11], gv_PlayerBayul[i]);
                 }
             }
         }
-
     }
 }
 
 void gf_HrSpellMake2 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
+    int i;
 
-    // Automatic Variable Declarations
-    const int autoAFFC0A42_ae = 8;
-    const int autoAFFC0A42_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-
-    // Implementation
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (autoAFFC0A42_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= autoAFFC0A42_ae) || (autoAFFC0A42_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= autoAFFC0A42_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += autoAFFC0A42_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive)) {
-            if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 1)) {
-                UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], "SpellDong", gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], 1);
-                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp", 2);
-                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp4", 1);
-                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                    gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[0], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
+    for (i = 1 ; i <= 8 ; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 1)) {
+                UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong", gv_PlayerBayul[i], 1);
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp", 2);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp4", 1);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[0], gv_PlayerBayul[i]);
                 }
-
             }
-            else {
-                if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 2)) {
-                    libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2", 2);
-                    TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp24", 1);
-                    UnitSetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], c_unitPropLifeMax, c_unitPropCurrent) * 1.3));
-                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                        gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[1], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                    }
-
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 2)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp2", 2);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp24", 1);
+                UnitSetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[i]], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[gv_PlayerBayul[i]], c_unitPropLifeMax, c_unitPropCurrent) * 1.3));
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[1], gv_PlayerBayul[i]);
                 }
-                else {
-                    if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 3)) {
-                        libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22", 2);
-                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                            gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[2], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                        }
-
-                    }
-                    else {
-                        if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 4)) {
-                            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222", 2);
-                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[3], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                            }
-
-                        }
-                        else {
-                            if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 5)) {
-                                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2222", 2);
-                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                    gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[4], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                }
-
-                            }
-                            else {
-                                if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 6)) {
-                                    libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22222", 2);
-                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                        gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[5], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                    }
-
-                                }
-                                else {
-                                    if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 7)) {
-                                        libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22223", 2);
-                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                            gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[6], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                        }
-
-                                    }
-                                    else {
-                                        if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 8)) {
-                                            if ((gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 0)) {
-                                                UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], "SpellDong5", gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], 1);
-                                            }
-
-                                            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp223", 2);
-                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[7], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                            }
-
-                                        }
-                                        else {
-                                            if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 9)) {
-                                                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222232", 2);
-                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                    gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[8], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                }
-
-                                            }
-                                            else {
-                                                if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 10)) {
-                                                    libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222233", 2);
-                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                        gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[9], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                    }
-
-                                                }
-                                                else {
-                                                    if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 11)) {
-                                                        libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2222332", 2);
-                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                            gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[10], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                        }
-
-                                                    }
-                                                    else {
-                                                        if ((gv_SelectedSpellNum2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 12)) {
-                                                            libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp22223322", 2);
-                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[11], gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]);
-                                                            }
-
-                                                        }
-
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 3)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[2], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 4)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp222", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[3], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 5)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp2222", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[4], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 6)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22222", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[5], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 7)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22223", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[6], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 8)) {
+                if ((gv_CharNoMana[gv_PlayerBayul[i]] == 0)) {
+                    UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong5", gv_PlayerBayul[i], 1);
+                }
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp223", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[7], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 9)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp222232", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[8], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 10)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp222233", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[9], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 11)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp2222332", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[10], gv_PlayerBayul[i]);
+                }
+            }
+            else if ((gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 12)) {
+                libNtve_gf_SetUpgradeLevelForPlayer(gv_PlayerBayul[i], "SpellUp22223322", 2);
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_SpellToolTip[gv_PlayerBayul[i]][1] = libNtve_gf_DialogItemTooltip(gv_CharChooseWindowSpellBtn[11], gv_PlayerBayul[i]);
                 }
             }
         }
-
     }
 }
 
 void gf_HrCharMake1 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    // Automatic Variable Declarations
-    const int autoE8A17486_ae = 8;
-    const int autoE8A17486_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     // Implementation
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (autoE8A17486_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= autoE8A17486_ae) || (autoE8A17486_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= autoE8A17486_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += autoE8A17486_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] >= 1) && (gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] <= 24))) {
-            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 1)) {
-                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Tosh";
-                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/66518BEB");
-                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-tosh.dds";
+    for (i = 1 ; i <= 8 ; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[i]] >= 1) && (gv_SelectedCharNum[gv_PlayerBayul[i]] <= 24))) {
+            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 1)) {
+                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Tosh";
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/66518BEB");
+                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-tosh.dds";
                 }
 
             }
             else {
-                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 2)) {
-                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Zeratul";
-                    gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 2;
-                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/348FB89C");
-                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
+                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 2)) {
+                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Zeratul";
+                    gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/348FB89C");
+                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
                     }
 
                 }
                 else {
-                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 3)) {
-                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Ultralisk";
-                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/236EE5F1");
-                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-ultralisk.dds";
+                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 3)) {
+                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Ultralisk";
+                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/236EE5F1");
+                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-ultralisk.dds";
                         }
 
                     }
                     else {
-                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 4)) {
-                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Archon";
-                            gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/4BEC7649");
-                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protoss-archon.dds";
+                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 4)) {
+                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Archon";
+                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/4BEC7649");
+                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-archon.dds";
                             }
 
                         }
                         else {
-                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 5)) {
-                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero5";
-                                gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 2;
-                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/17CCBFBB");
-                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
+                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 5)) {
+                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero5";
+                                gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/17CCBFBB");
+                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
                                 }
 
                                 TriggerEnable(gt_TrTextTailUseHero5Skill4, true);
                             }
                             else {
-                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 6)) {
-                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero6";
-                                    TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp222233322234", 1);
-                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/5C10FE14");
-                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero6.dds";
+                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 6)) {
+                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero6";
+                                    TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp222233322234", 1);
+                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/5C10FE14");
+                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero6.dds";
                                     }
 
                                 }
                                 else {
-                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 7)) {
-                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero7";
-                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/6F90726C");
-                                            gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-medic.dds";
+                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 7)) {
+                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero7";
+                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/6F90726C");
+                                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-medic.dds";
                                         }
 
                                     }
                                     else {
-                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 8)) {
-                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero8";
-                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/562DDE9C");
-                                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-reaper.dds";
+                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 8)) {
+                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero8";
+                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/562DDE9C");
+                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-reaper.dds";
                                             }
 
                                         }
                                         else {
-                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 9)) {
-                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero9";
-                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/5CE66447");
-                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-nova.dds";
+                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 9)) {
+                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero9";
+                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/5CE66447");
+                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-nova.dds";
                                                 }
 
                                                 TriggerEnable(gt_TrTextTailUseHero9AttackImpact, true);
                                             }
                                             else {
-                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 10)) {
-                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero10";
-                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/B10E8BFD");
-                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-baneling.dds";
+                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 10)) {
+                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero10";
+                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B10E8BFD");
+                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-baneling.dds";
                                                     }
 
                                                     TriggerEnable(gt_TrHero10Skill4On, true);
                                                     TriggerEnable(gt_TrHero10Skill4Off, true);
                                                 }
                                                 else {
-                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 11)) {
-                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero11";
-                                                        gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/EAA46C46");
-                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
+                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 11)) {
+                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero11";
+                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/EAA46C46");
+                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
                                                         }
 
                                                     }
                                                     else {
-                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 12)) {
-                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero12";
-                                                            gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 1;
-                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/CE4C02FA");
-                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero12.dds";
+                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 12)) {
+                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero12";
+                                                            gv_CharNoMana[gv_PlayerBayul[i]] = 1;
+                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/CE4C02FA");
+                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero12.dds";
                                                             }
 
                                                         }
                                                         else {
-                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 13)) {
-                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero13";
-                                                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/99D4E8B5");
-                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero13.dds";
+                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 13)) {
+                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero13";
+                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/99D4E8B5");
+                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero13.dds";
                                                                 }
 
                                                             }
                                                             else {
-                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 14)) {
-                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero14";
-                                                                    TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "SpellUp2222333222342", 1);
-                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/206B55A6");
-                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-marauderswann.dds";
+                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 14)) {
+                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero14";
+                                                                    TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp2222333222342", 1);
+                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/206B55A6");
+                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-marauderswann.dds";
                                                                     }
 
                                                                 }
                                                                 else {
-                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 15)) {
-                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero15";
-                                                                        gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/103861F8");
-                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero15.dds";
+                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 15)) {
+                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero15";
+                                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/103861F8");
+                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero15.dds";
                                                                         }
 
                                                                         TriggerEnable(gt_TrHero15Skill4Use, true);
                                                                     }
                                                                     else {
-                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 16)) {
-                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero16";
-                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/2F0FBECA");
-                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-roach.dds";
+                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 16)) {
+                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero16";
+                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/2F0FBECA");
+                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-roach.dds";
                                                                             }
 
                                                                         }
                                                                         else {
-                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 17)) {
-                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero17";
-                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/DCD9B61B");
-                                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-aberration.dds";
+                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 17)) {
+                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero17";
+                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/DCD9B61B");
+                                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-aberration.dds";
                                                                                 }
 
                                                                             }
                                                                             else {
-                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 18)) {
-                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero18";
-                                                                                    gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 2;
-                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/81E6A9DA");
-                                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
+                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 18)) {
+                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero18";
+                                                                                    gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/81E6A9DA");
+                                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
                                                                                     }
 
                                                                                 }
                                                                                 else {
-                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 19)) {
-                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero19";
-                                                                                        gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/FDE28F66");
-                                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero19.dds";
+                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 19)) {
+                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero19";
+                                                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/FDE28F66");
+                                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero19.dds";
                                                                                         }
 
                                                                                         TriggerEnable(gt_TrHero19Death, true);
                                                                                     }
                                                                                     else {
-                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 20)) {
-                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero20";
-                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/38A61BC4");
-                                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protoss-darktemplar.dds";
+                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 20)) {
+                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero20";
+                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/38A61BC4");
+                                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-darktemplar.dds";
                                                                                             }
 
                                                                                         }
                                                                                         else {
-                                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 21)) {
-                                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero21";
-                                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/BA69C4A8");
-                                                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero21.dds";
+                                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 21)) {
+                                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero21";
+                                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/BA69C4A8");
+                                                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero21.dds";
                                                                                                 }
 
                                                                                             }
                                                                                             else {
-                                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 22)) {
-                                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero22";
-                                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/CEF60FEC");
-                                                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-thor.dds";
+                                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 22)) {
+                                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero22";
+                                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/CEF60FEC");
+                                                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-thor.dds";
                                                                                                     }
 
                                                                                                 }
                                                                                                 else {
-                                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 23)) {
-                                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero23";
-                                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/CD036D58");
-                                                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero23.dds";
+                                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 23)) {
+                                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero23";
+                                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/CD036D58");
+                                                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero23.dds";
                                                                                                         }
 
                                                                                                     }
                                                                                                     else {
-                                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 24)) {
-                                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero24";
-                                                                                                            gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/3605261D");
-                                                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero24.dds";
+                                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 24)) {
+                                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero24";
+                                                                                                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/3605261D");
+                                                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero24.dds";
                                                                                                             }
 
                                                                                                         }
@@ -2027,91 +1927,83 @@ void gf_HrCharMake1 () {
 
 void gf_HrCharMake2 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    // Automatic Variable Declarations
-    const int autoA7BF39AC_ae = 8;
-    const int autoA7BF39AC_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     // Implementation
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (autoA7BF39AC_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= autoA7BF39AC_ae) || (autoA7BF39AC_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= autoA7BF39AC_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += autoA7BF39AC_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] >= 25) && (gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] <= 48))) {
-            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 25)) {
-                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero25";
-                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/854FD8A2");
-                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-hydralisk.dds";
+    for (i = 1 ; i <= 8 ; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[i]] >= 25) && (gv_SelectedCharNum[gv_PlayerBayul[i]] <= 48))) {
+            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 25)) {
+                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero25";
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/854FD8A2");
+                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-hydralisk.dds";
                 }
 
             }
             else {
-                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 26)) {
-                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero26";
-                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/3A14CCFA");
-                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
+                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 26)) {
+                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero26";
+                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/3A14CCFA");
+                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
                     }
 
                 }
                 else {
-                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 27)) {
-                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero27";
-                        gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 1;
-                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/66CC77E3");
-                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-predator.dds";
+                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 27)) {
+                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero27";
+                        gv_CharNoMana[gv_PlayerBayul[i]] = 1;
+                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/66CC77E3");
+                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-predator.dds";
                         }
 
                     }
                     else {
-                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 28)) {
-                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero28";
-                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/D5A2362F");
-                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds";
+                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 28)) {
+                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero28";
+                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/D5A2362F");
+                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds";
                             }
 
                         }
                         else {
-                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 29)) {
-                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero29";
-                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/AD2CFA93");
-                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-queen.dds";
+                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 29)) {
+                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero29";
+                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/AD2CFA93");
+                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-queen.dds";
                                 }
 
                             }
                             else {
-                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 30)) {
-                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero30";
-                                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/4534815E");
-                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero30.dds";
+                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 30)) {
+                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero30";
+                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/4534815E");
+                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero30.dds";
                                     }
 
                                 }
                                 else {
-                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 31)) {
-                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero31";
-                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/5FF2E35B");
-                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero31.dds";
+                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 31)) {
+                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero31";
+                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/5FF2E35B");
+                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero31.dds";
                                         }
 
                                     }
                                     else {
-                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 32)) {
-                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero32";
-                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/4AC7CCB9");
-                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-zergling.dds";
+                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 32)) {
+                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero32";
+                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/4AC7CCB9");
+                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-zergling.dds";
                                             }
 
                                             TriggerEnable(gt_TrHero32Skill2Up, true);
@@ -2119,155 +2011,155 @@ void gf_HrCharMake2 () {
                                             TriggerEnable(gt_TrHero32Skill4Off, true);
                                         }
                                         else {
-                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 33)) {
-                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero33";
-                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/E5B2A90C");
-                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-rifleman.dds";
+                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 33)) {
+                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero33";
+                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/E5B2A90C");
+                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-rifleman.dds";
                                                 }
 
                                             }
                                             else {
-                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 34)) {
-                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero34";
-                                                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/827A053B");
-                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
+                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 34)) {
+                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero34";
+                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/827A053B");
+                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
                                                     }
 
                                                 }
                                                 else {
-                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 35)) {
-                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero35";
-                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/BCE73537");
-                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protos-soulhunter.dds";
+                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 35)) {
+                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero35";
+                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/BCE73537");
+                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protos-soulhunter.dds";
                                                         }
 
                                                     }
                                                     else {
-                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 36)) {
-                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero36";
-                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/A67C4EDB");
-                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds";
+                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 36)) {
+                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero36";
+                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/A67C4EDB");
+                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds";
                                                             }
 
                                                             TriggerEnable(gt_TrSingleCheetRPdown2, true);
                                                         }
                                                         else {
-                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 37)) {
-                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero37";
-                                                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/91B24EA1");
-                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero37.dds";
+                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 37)) {
+                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero37";
+                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/91B24EA1");
+                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero37.dds";
                                                                 }
 
                                                             }
                                                             else {
-                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 38)) {
-                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero38";
-                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/AF20B339");
-                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero38.dds";
+                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 38)) {
+                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero38";
+                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/AF20B339");
+                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero38.dds";
                                                                     }
 
                                                                 }
                                                                 else {
-                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 39)) {
-                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero39";
-                                                                        gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/C88E439F");
-                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
+                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 39)) {
+                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero39";
+                                                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/C88E439F");
+                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
                                                                         }
 
                                                                         TriggerEnable(gt_TrHero39Skill4On, true);
                                                                     }
                                                                     else {
-                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 40)) {
-                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero40";
-                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/0028B92D");
-                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero40.dds";
+                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 40)) {
+                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero40";
+                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/0028B92D");
+                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero40.dds";
                                                                             }
 
                                                                         }
                                                                         else {
-                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 41)) {
-                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero41";
-                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/0D5AF1AF");
-                                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
+                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 41)) {
+                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero41";
+                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/0D5AF1AF");
+                                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
                                                                                 }
 
                                                                             }
                                                                             else {
-                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 42)) {
-                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero42";
-                                                                                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                                    gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 2;
-                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/B2541477");
-                                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero42.dds";
+                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 42)) {
+                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero42";
+                                                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                    gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B2541477");
+                                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero42.dds";
                                                                                     }
 
                                                                                 }
                                                                                 else {
-                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 43)) {
-                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero43";
-                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/FB4A3C98");
-                                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero43.dds";
+                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 43)) {
+                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero43";
+                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/FB4A3C98");
+                                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero43.dds";
                                                                                         }
 
                                                                                     }
                                                                                     else {
-                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 44)) {
-                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero44";
-                                                                                            gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/0C8E771D");
-                                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero44.dds";
+                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 44)) {
+                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero44";
+                                                                                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/0C8E771D");
+                                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero44.dds";
                                                                                             }
 
                                                                                         }
                                                                                         else {
-                                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 45)) {
-                                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero45";
-                                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/C484B204");
-                                                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds";
+                                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 45)) {
+                                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero45";
+                                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/C484B204");
+                                                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds";
                                                                                                 }
 
                                                                                             }
                                                                                             else {
-                                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 46)) {
-                                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero46";
-                                                                                                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/ADC0D235");
-                                                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero46.dds";
+                                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 46)) {
+                                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero46";
+                                                                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/ADC0D235");
+                                                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero46.dds";
                                                                                                     }
 
                                                                                                 }
                                                                                                 else {
-                                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 47)) {
-                                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero47";
-                                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/0A0254E3");
-                                                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero47.dds";
+                                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 47)) {
+                                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero47";
+                                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/0A0254E3");
+                                                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero47.dds";
                                                                                                         }
 
                                                                                                     }
                                                                                                     else {
-                                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 48)) {
-                                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero48";
-                                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/106EFAA6");
-                                                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-protoss-colossus.dds";
+                                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 48)) {
+                                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero48";
+                                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/106EFAA6");
+                                                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-protoss-colossus.dds";
                                                                                                             }
 
                                                                                                         }
@@ -2302,245 +2194,237 @@ void gf_HrCharMake2 () {
 
 void gf_HrCharMake3 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    // Automatic Variable Declarations
-    const int auto52ED7886_ae = 8;
-    const int auto52ED7886_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     // Implementation
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (auto52ED7886_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= auto52ED7886_ae) || (auto52ED7886_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= auto52ED7886_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += auto52ED7886_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] >= 49) && (gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] <= 72))) {
-            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 49)) {
-                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero49";
-                gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 1;
-                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/EAAA8BCF");
-                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero49.dds";
+    for (i = 1 ; i <= 8 ; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[i]] >= 49) && (gv_SelectedCharNum[gv_PlayerBayul[i]] <= 72))) {
+            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 49)) {
+                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero49";
+                gv_CharNoMana[gv_PlayerBayul[i]] = 1;
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/EAAA8BCF");
+                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero49.dds";
                 }
 
             }
             else {
-                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 50)) {
-                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero50";
-                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/E9FD22C6");
-                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero50.dds";
+                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 50)) {
+                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero50";
+                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/E9FD22C6");
+                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero50.dds";
                     }
 
                 }
                 else {
-                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 51)) {
-                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero51";
-                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/BDDF50CD");
-                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero51.dds";
+                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 51)) {
+                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero51";
+                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/BDDF50CD");
+                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero51.dds";
                         }
 
                     }
                     else {
-                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 52)) {
-                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero52";
-                            gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/CC177A31");
-                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero52.dds";
+                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 52)) {
+                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero52";
+                            gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/CC177A31");
+                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero52.dds";
                             }
 
                         }
                         else {
-                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 53)) {
-                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero53";
-                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/B80260FA");
-                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds";
+                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 53)) {
+                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero53";
+                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B80260FA");
+                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds";
                                 }
 
                             }
                             else {
-                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 54)) {
-                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero54";
-                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/B611A8A9");
-                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero54.dds";
+                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 54)) {
+                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero54";
+                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B611A8A9");
+                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero54.dds";
                                     }
 
                                 }
                                 else {
-                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 55)) {
-                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero55";
-                                        gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/B7DD71BF");
-                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero55.dds";
+                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 55)) {
+                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero55";
+                                        gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/B7DD71BF");
+                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero55.dds";
                                         }
 
                                     }
                                     else {
-                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 56)) {
-                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero56";
-                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/F87B4AFA");
-                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero56.dds";
+                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 56)) {
+                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero56";
+                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/F87B4AFA");
+                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero56.dds";
                                             }
 
                                         }
                                         else {
-                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 57)) {
-                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero57";
-                                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/27C10E34");
-                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero57.dds";
+                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 57)) {
+                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero57";
+                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/27C10E34");
+                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero57.dds";
                                                 }
 
                                             }
                                             else {
-                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 58)) {
-                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero58";
-                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/97ED007B");
-                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero58.dds";
+                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 58)) {
+                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero58";
+                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/97ED007B");
+                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero58.dds";
                                                     }
 
                                                 }
                                                 else {
-                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 59)) {
-                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero59";
-                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/8A306380");
-                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero59.dds";
+                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 59)) {
+                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero59";
+                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/8A306380");
+                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero59.dds";
                                                         }
 
                                                         TriggerEnable(gt_TrHero59Skill1Use, true);
                                                     }
                                                     else {
-                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 60)) {
-                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero60";
-                                                            gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 3;
-                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/356DCDEC");
-                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero60.dds";
+                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 60)) {
+                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero60";
+                                                            gv_CharNoMana[gv_PlayerBayul[i]] = 3;
+                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/356DCDEC");
+                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero60.dds";
                                                             }
 
                                                         }
                                                         else {
-                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 61)) {
-                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero61";
-                                                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/C2511753");
-                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero61.dds";
+                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 61)) {
+                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero61";
+                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/C2511753");
+                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero61.dds";
                                                                 }
 
                                                             }
                                                             else {
-                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 62)) {
-                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero62";
-                                                                    gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/17EAA0CA");
-                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero62.dds";
+                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 62)) {
+                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero62";
+                                                                    gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/17EAA0CA");
+                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero62.dds";
                                                                     }
 
                                                                     TriggerEnable(gt_TrHero62Skill3Start, true);
                                                                     TriggerEnable(gt_TrHero62Skill3End, true);
                                                                 }
                                                                 else {
-                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 63)) {
-                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero63";
-                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/C774509A");
-                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero63.dds";
+                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 63)) {
+                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero63";
+                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/C774509A");
+                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero63.dds";
                                                                         }
 
                                                                     }
                                                                     else {
-                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 64)) {
-                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero64";
-                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/75A3C705");
-                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero64.dds";
+                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 64)) {
+                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero64";
+                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/75A3C705");
+                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero64.dds";
                                                                             }
 
                                                                         }
                                                                         else {
-                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 65)) {
-                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero65";
-                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/64F63D49");
-                                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero65.dds";
+                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 65)) {
+                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero65";
+                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/64F63D49");
+                                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero65.dds";
                                                                                 }
 
                                                                             }
                                                                             else {
-                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 66)) {
-                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero66";
-                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/D7D256FD");
-                                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero66.dds";
+                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 66)) {
+                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero66";
+                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/D7D256FD");
+                                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero66.dds";
                                                                                     }
 
                                                                                     TriggerEnable(gt_TrHero66PassiveOn, true);
                                                                                 }
                                                                                 else {
-                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 67)) {
-                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero67";
-                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/DCDE3A35");
-                                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero67.dds";
+                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 67)) {
+                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero67";
+                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/DCDE3A35");
+                                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero67.dds";
                                                                                         }
 
                                                                                     }
                                                                                     else {
-                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 68)) {
-                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero68";
-                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/14924507");
-                                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero68.dds";
+                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 68)) {
+                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero68";
+                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/14924507");
+                                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero68.dds";
                                                                                             }
 
                                                                                         }
                                                                                         else {
-                                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 69)) {
-                                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero69";
-                                                                                                gv_MageAssassinTrue[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = true;
-                                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/246B157B");
-                                                                                                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero69.dds";
+                                                                                            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 69)) {
+                                                                                                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero69";
+                                                                                                gv_MageAssassinTrue[gv_PlayerBayul[i]] = true;
+                                                                                                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/246B157B");
+                                                                                                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero69.dds";
                                                                                                 }
 
                                                                                             }
                                                                                             else {
-                                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 70)) {
-                                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero70";
-                                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                        gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/FD165A5D");
-                                                                                                        gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero70.dds";
+                                                                                                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 70)) {
+                                                                                                    gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero70";
+                                                                                                    if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                        gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/FD165A5D");
+                                                                                                        gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero70.dds";
                                                                                                     }
 
                                                                                                 }
                                                                                                 else {
-                                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 71)) {
-                                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero71";
-                                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                            gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/FE34BD60");
-                                                                                                            gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero71.dds";
+                                                                                                    if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 71)) {
+                                                                                                        gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero71";
+                                                                                                        if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                            gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/FE34BD60");
+                                                                                                            gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero71.dds";
                                                                                                         }
 
                                                                                                     }
                                                                                                     else {
-                                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 72)) {
-                                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero72";
-                                                                                                            gv_CharNoMana[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 2;
-                                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                                                                                                                gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/97DE05EF");
-                                                                                                                gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero72.dds";
+                                                                                                        if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 72)) {
+                                                                                                            gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero72";
+                                                                                                            gv_CharNoMana[gv_PlayerBayul[i]] = 2;
+                                                                                                            if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                                                                                                                gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/97DE05EF");
+                                                                                                                gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero72.dds";
                                                                                                             }
 
                                                                                                             TriggerEnable(gt_TrHero66PassiveOn2, true);
@@ -2576,31 +2460,20 @@ void gf_HrCharMake3 () {
 
 void gf_HrCharMake4 () {
     // Variable Declarations
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    // Automatic Variable Declarations
-    const int autoCA58B850_ae = 8;
-    const int autoCA58B850_ai = 1;
-
-    // Variable Initialization
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     // Implementation
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (autoCA58B850_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= autoCA58B850_ae) || (autoCA58B850_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= autoCA58B850_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += autoCA58B850_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] >= 73) && (gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] <= 96))) {
-            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == 73)) {
-                gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Hero73";
-                PlayerCreateEffectPoint(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], "Hero73Skill1G", PointFromId(578));
-                if ((gv_ReadyClickBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] == false)) {
-                    gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = StringExternal("Param/Value/6952E7F9");
-                    gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = "Assets\\AddIcon\\btn-hero73.dds";
+    for (i = 1 ; i <= 8 ; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && ((gv_SelectedCharNum[gv_PlayerBayul[i]] >= 73) && (gv_SelectedCharNum[gv_PlayerBayul[i]] <= 96))) {
+            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 73)) {
+                gv_PlayerReadyUnit[gv_PlayerBayul[i]] = "Hero73";
+                PlayerCreateEffectPoint(gv_PlayerBayul[i], "Hero73Skill1G", PointFromId(578));
+                if ((gv_ReadyClickBoolean[gv_PlayerBayul[i]] == false)) {
+                    gv_CharSelectedName[gv_PlayerBayul[i]] = StringExternal("Param/Value/6952E7F9");
+                    gv_CharSelectedImage[gv_PlayerBayul[i]] = "Assets\\AddIcon\\btn-hero73.dds";
                 }
-
             }
-
         }
-
     }
 }
 
@@ -14333,8 +14206,8 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         (
             StringExternal("Param/Value/1F62248E") +
             TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
-            TextWithColor(StringToText("'s ban"), Color(100.00, 100.00, 100.00)) // TODO: move to external string
-            // TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00))
+            // TextWithColor(StringToText("'s ban"), Color(100.00, 100.00, 100.00))
+            TextWithColor(StringExternal("DOCSTR_Banning2"), Color(100.00, 100.00, 100.00))
         ),
         PlayerGroupAll()
     );
@@ -14344,8 +14217,8 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         (
             StringExternal("Param/Value/DBADF006") + 
             PlayerName(gv_PlayerBayul[player_number]) + 
-            StringToText("(</c><c val=\"ff4444\">Banning</c>)</s>") // TODO: Move to external string
-            // StringExternal("Param/Value/0FA3FB8C")
+            // StringToText("(</c><c val=\"ff4444\">Banning</c>)</s>")
+            StringExternal("DOCSTR_Banning1")
         ),
         PlayerGroupAll()
     );
@@ -14394,14 +14267,15 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     // Play the sound
-    SoundPlay(SoundLink("Hero62_Death", -1), PlayerGroupAll(), 100.0, 0.0); // TODO: Choose a fitting sound
+    SoundPlay(SoundLink("Hero62_Death", -1), PlayerGroupAll(), 100.0, 0.0);
     // Display the message for everyone
     UIDisplayMessage(
         PlayerGroupAll(),
         c_messageAreaSubtitle,
         (
             TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
-            StringToText(" has banned ") + // TODO: Move to external string
+            // StringToText(" has banned ") + 
+            StringExternal("DOCSTR_Banning3") +
             gv_CharSelectedName[gv_PlayerBayul[player_number]]
         )
     );
