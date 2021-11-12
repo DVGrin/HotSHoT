@@ -517,7 +517,7 @@ void gf_HrDraftSelectRandomRefresh ();
 void gf_HrSpellMake1 ();
 void gf_HrSpellMake2 ();
 void gf_HrCharMake ();
-void gf_HrAssistSystemAdd3 ();
+void gf_HrCleanUpHeroSelectDialogs ();
 void gf_HrHeroLevelUpLink1 ();
 void gf_HrHeroLevelUpLink2 ();
 void gf_HrHeroLevelUpLink3 ();
@@ -1952,134 +1952,84 @@ void gf_HrCharMake() {
     }
 }
 
-void gf_HrAssistSystemAdd3 () {
+void gf_HrCleanUpHeroSelectDialogs () {
     // Variable Declarations
-    int lv_eC84A4ECA095ECA095EC8898;
-
-    // Automatic Variable Declarations
-    const int autoB7FEB2D3_ae = 14;
-    const int autoB7FEB2D3_ai = 1;
-    const int auto7CE88E88_ae = 84;
-    const int auto7CE88E88_ai = 1;
-    const int autoDEA0CF90_ae = 4;
-    const int autoDEA0CF90_ai = 1;
-    const int auto9C1DA608_ae = 11;
-    const int auto9C1DA608_ai = 1;
-    const int auto9A65E712_ae = 13;
-    const int auto9A65E712_ai = 1;
-    const int auto288AB2CD_ae = 3;
-    const int auto288AB2CD_ai = 1;
-    const int autoCDDB3A86_ae = 23;
-    const int autoCDDB3A86_ai = 1;
-    const int auto31C92194_ae = 11;
-    const int auto31C92194_ai = 1;
-    const int auto73608C52_ae = 10;
-    const int auto73608C52_ai = 1;
-
-    // Variable Initialization
+    int i;
 
     // Implementation
     DialogDestroy(gv_BeforeStartCounterDialog[0]);
     DialogDestroy(gv_BeforeStartCounterDialog[1]);
     DialogDestroy(gv_CharChooseFullDialog);
-    DialogDestroy(gv_CharChooseDialog[0]);
-    DialogDestroy(gv_CharChooseDialog[1]);
-    DialogDestroy(gv_CharChooseDialog[2]);
-    DialogDestroy(gv_CharChooseDialog[3]);
-    DialogDestroy(gv_CharChooseDialog[4]);
-    DialogDestroy(gv_CharChooseDialog[5]);
-    DialogDestroy(gv_CharChooseDialog[6]);
-    DialogDestroy(gv_CharChooseDialog[7]);
+    for (i = 0; i <= 7; i += 1) {
+        DialogDestroy(gv_CharChooseDialog[i]);
+    }
     DialogDestroy(gv_TeamSelectDialog[0]);
     DialogDestroy(gv_TeamSelectDialog[1]);
+
     gv_BeforeStartCounterDialog[0] = c_invalidDialogId;
     gv_BeforeStartCounterDialog[1] = c_invalidDialogId;
     gv_BeforeStartCounterDialogLabel[0] = c_invalidDialogControlId;
     gv_BeforeStartCounterDialogLabel[1] = c_invalidDialogControlId;
     gv_BeforeStartCounterDialogImage = c_invalidDialogControlId;
     gv_BeforeStartCounterDialogNum = 0;
+
     gv_CharChooseFullDialog = c_invalidDialogId;
     gv_CharChooseFullDialogImage[0] = c_invalidDialogControlId;
     gv_CharChooseFullDialogImage[1] = c_invalidDialogControlId;
     gv_CharChooseFullDialogLabel = c_invalidDialogControlId;
-    gv_CharChooseDialog[0] = c_invalidDialogId;
-    gv_CharChooseDialog[1] = c_invalidDialogId;
-    gv_CharChooseDialog[2] = c_invalidDialogId;
-    gv_CharChooseDialog[3] = c_invalidDialogId;
-    gv_CharChooseDialog[4] = c_invalidDialogId;
-    gv_CharChooseDialog[5] = c_invalidDialogId;
-    gv_CharChooseDialog[6] = c_invalidDialogId;
-    gv_CharChooseDialog[7] = c_invalidDialogId;
-    gv_CharChooseDialogReadyBtn = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[0] = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[1] = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[2] = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[3] = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[4] = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[5] = c_invalidDialogControlId;
-    gv_CharChooseDialogLabel[6] = c_invalidDialogControlId;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (autoB7FEB2D3_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= autoB7FEB2D3_ae) || (autoB7FEB2D3_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= autoB7FEB2D3_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += autoB7FEB2D3_ai ) {
-        gv_CharChooseDialogImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 7; i += 1) {
+        gv_CharChooseDialog[i] = c_invalidDialogId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
+    gv_CharChooseDialogReadyBtn = c_invalidDialogControlId;
+    for (i = 0; i <= 6; i += 1) {
+        gv_CharChooseDialogLabel[0] = c_invalidDialogControlId;
+    }
+    for (i = 0; i <= 14; i += 1) {
+        gv_CharChooseDialogImage[i] = c_invalidDialogControlId;
+    }
     gv_CharChooseDialogNextBtn[0] = c_invalidDialogControlId;
     gv_CharChooseDialogNextBtn[1] = c_invalidDialogControlId;
     gv_CharChooseDialogNextImage[0] = c_invalidDialogControlId;
     gv_CharChooseDialogNextImage[1] = c_invalidDialogControlId;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (auto7CE88E88_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= auto7CE88E88_ae) || (auto7CE88E88_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= auto7CE88E88_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += auto7CE88E88_ai ) {
-        gv_CharChooseWindowBtn[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_CharChooseWindowImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 84; i += 1) {
+        gv_CharChooseWindowBtn[i] = c_invalidDialogControlId;
+        gv_CharChooseWindowImage[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (autoDEA0CF90_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= autoDEA0CF90_ae) || (autoDEA0CF90_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= autoDEA0CF90_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += autoDEA0CF90_ai ) {
-        gv_CharChooseWindowRandomBtn[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_CharChooseWindowRandomImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 4; i += 1) {
+        gv_CharChooseWindowRandomBtn[i] = c_invalidDialogControlId;
+        gv_CharChooseWindowRandomImage[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (auto9C1DA608_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= auto9C1DA608_ae) || (auto9C1DA608_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= auto9C1DA608_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += auto9C1DA608_ai ) {
-        gv_CharChooseWindowSpellBtn[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_CharChooseWindowSpellImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 11; i += 1) {
+        gv_CharChooseWindowSpellBtn[i] = c_invalidDialogControlId;
+        gv_CharChooseWindowSpellImage[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
+
     gv_GameModeBtn[0] = c_invalidDialogControlId;
     gv_GameModeBtn[1] = c_invalidDialogControlId;
     gv_GameModeLabel[0] = c_invalidDialogControlId;
     gv_GameModeLabel[1] = c_invalidDialogControlId;
+    
     gv_TeamSelectDialog[0] = c_invalidDialogId;
     gv_TeamSelectDialog[1] = c_invalidDialogId;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (auto9A65E712_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= auto9A65E712_ae) || (auto9A65E712_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= auto9A65E712_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += auto9A65E712_ai ) {
-        gv_TeamSelectDialogImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 13; i += 1) {
+        gv_TeamSelectDialogImage[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (auto288AB2CD_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= auto288AB2CD_ae) || (auto288AB2CD_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= auto288AB2CD_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += auto288AB2CD_ai ) {
-        gv_TeamSelectDialogLabel[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 3; i += 1) {
+        gv_TeamSelectDialogLabel[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (autoCDDB3A86_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= autoCDDB3A86_ae) || (autoCDDB3A86_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= autoCDDB3A86_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += autoCDDB3A86_ai ) {
-        gv_TeamSelectDialogNemoImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 23; i += 1) {
+        gv_TeamSelectDialogNemoImage[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (auto31C92194_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= auto31C92194_ae) || (auto31C92194_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= auto31C92194_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += auto31C92194_ai ) {
-        gv_TeamSelectBtn[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 11 ; i += 1) {
+        gv_TeamSelectBtn[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    lv_eC84A4ECA095ECA095EC8898 = 0;
-    for ( ; ( (auto73608C52_ai >= 0 && lv_eC84A4ECA095ECA095EC8898 <= auto73608C52_ae) || (auto73608C52_ai < 0 && lv_eC84A4ECA095ECA095EC8898 >= auto73608C52_ae) ) ; lv_eC84A4ECA095ECA095EC8898 += auto73608C52_ai ) {
-        gv_TeamSelectDialogPlayerHeroImage[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_TeamSelectDialogPlayerName[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_TeamSelectDialogPlayerBorder[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_TeamSelectDialogPlayerSpellImage1[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
-        gv_TeamSelectDialogPlayerSpellImage2[lv_eC84A4ECA095ECA095EC8898] = c_invalidDialogControlId;
+    for (i = 0; i <= 10; i += 1) {
+        gv_TeamSelectDialogPlayerHeroImage[i] = c_invalidDialogControlId;
+        gv_TeamSelectDialogPlayerName[i] = c_invalidDialogControlId;
+        gv_TeamSelectDialogPlayerBorder[i] = c_invalidDialogControlId;
+        gv_TeamSelectDialogPlayerSpellImage1[i] = c_invalidDialogControlId;
+        gv_TeamSelectDialogPlayerSpellImage2[i] = c_invalidDialogControlId;
     }
-    lv_eC84A4ECA095ECA095EC8898 = 0;
 }
 
 void gf_HrHeroLevelUpLink1 () {
@@ -16017,7 +15967,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), true);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), true);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), true);
-    gf_HrAssistSystemAdd3();
+    gf_HrCleanUpHeroSelectDialogs();
     HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal("Param/Value/AD868381"), libNtve_ge_TipType_NormalTip), StringExternal("Param/Value/7B165D99"), StringExternal("Param/Value/4F1F220A"), "Assets\\AddIcon\\btn-achievement-00-beta.dds");
     UISetGameMenuItemText(PlayerGroupAll(), c_gameMenuDialogGenericButton2, StringExternal("Param/Value/46682880"));
     UISetGameMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogGenericButton2, true);
