@@ -520,10 +520,6 @@ void gf_HrSpellMake2 ();
 void gf_HrCharMake ();
 void gf_HrCleanUpHeroSelectDialogs ();
 void gf_HrHeroLevelUpLink ();
-void gf_HrHeroLevelUpLink1 ();
-void gf_HrHeroLevelUpLink2 ();
-void gf_HrHeroLevelUpLink3 ();
-void gf_HrHeroLevelUpLink4 ();
 void gf_HrSkillLearnDialogMake ();
 void gf_HrSkillLearnHeroCategoryLink ();
 void gf_HrSkillLearnHeroCategoryLink2 ();
@@ -16262,7 +16258,7 @@ bool gt_TrHeroLevelUp_Func (bool testConds, bool runActions) {
     gv_AllyGiveMoney[EventPlayer()] += 50;
     libNtve_gf_SetDialogItemText(gv_ScoreDialogLevel[EventPlayer()], (StringExternal("Param/Value/6ADB3997") + IntToText(gv_PlayerLevel[EventPlayer()][0]) + StringExternal("Param/Value/DDE5A5FD")), PlayerGroupAll());
     gf_HrSkillLearnWindowOpen();
-    gf_HrHeroLevelUpLink1();
+    gf_HrHeroLevelUpLink();
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellLvUp", 1);
     if ((UnitFilterMatch(EventUnit(), EventPlayer(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterHallucination - 32)))) == true)) {
         PlayerCreateEffectUnit(EventPlayer(), "ApplyIncapBehavior2222", gv_PlayerHero[EventPlayer()]);
