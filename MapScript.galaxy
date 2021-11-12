@@ -14349,6 +14349,10 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         ),
         PlayerGroupAll()
     );
+    for (i = 0; i <= 4; i += 1) {
+        DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[i], PlayerGroupAll(), false);
+        DialogControlSetEnabled(gv_CharChooseWindowRandomImage[i], PlayerGroupAll(), false);
+    }
     // Countdown ticks
     gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = true;
     while ((gv_BeforeStartCounterDialogNum > 0)) {
@@ -14423,12 +14427,13 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     int i = 1;
     int flag = 1;
     int ban_number;
+    int selecting_hero;
     // Actions
     if (!runActions) {
         return true;
     }
     TriggerEnable(TriggerGetCurrent(), false);
-    for (i = 0; i < 4; i += 1) {
+    for (i = 0; i <= 4; i += 1) {
         DialogControlSetEnabled(gv_CharChooseWindowRandomBtn[i], PlayerGroupAll(), false);
         DialogControlSetEnabled(gv_CharChooseWindowRandomImage[i], PlayerGroupAll(), false);
     }
@@ -14446,9 +14451,10 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
         }
     }
     // Hero select
-    for (i = 1 ; i <= 8 ; i += 1 ) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
-            lf_PlayerHeroChoice(gv_DraftChoiceOrder[i - 1]);
+    for (i = 0 ; i < 8 ; i += 1 ) {
+        selecting_hero = gv_DraftChoiceOrder[i];
+        if ((PlayerType(selecting_hero) == c_playerTypeUser) && (PlayerStatus(selecting_hero) == c_playerStatusActive)) {
+            lf_PlayerHeroChoice(selecting_hero);
         }
     }
     // Character swapping
