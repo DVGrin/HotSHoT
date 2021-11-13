@@ -2063,1319 +2063,1319 @@ void SkillsInit() {
 
     i += 1;
     // Devola
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233369";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333693";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336932";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233369322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333693222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333692";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223336923";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223336923";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336923";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223336923";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223336922";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233369223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333692232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223336922322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233369223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233369222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333692222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333692222";
 
     i += 1;
     // Proward
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333610";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336103";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336102";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361023";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333610232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336102322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361023222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361022";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333610223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333610223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333610223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333610223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333610222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336102222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336102222";
 
     i += 1;
     // Netero
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233355";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333553";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333552";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355232";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223335523";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233355233";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333552332";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223335522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233355223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233355223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233355223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233355223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233355222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333552222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335522222";
 
     i += 1;
     // Celin
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223336104";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233361043";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333610432";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336104322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233361043222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233361042";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333610423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223336104232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361042322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333610423222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333610422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223336104223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336104223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223336104223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223336104223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223336104222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233361042222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361042222";
 
     i += 1;
     // Land Baron
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223336105";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233361053";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233361053";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233361053";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233361053";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233361052";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333610523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223336105232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361052322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333610523222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333610522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223336105223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233361052232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333610522322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223336105223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223336105222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233361052222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361052222";
 
     i += 1;
     // Garp
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223339";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233393";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233393";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233393";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233393";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233392";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333923";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223339232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233392322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333923222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333922";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223339223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233392232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333922322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223339223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223339222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233392222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333922222";
 
     i += 1;
     // Kaion
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333611";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336113";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336113";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336113";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336113";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336112";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361123";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233361123";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361123";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361123";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361122";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333611223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336112232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233361122322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333611223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333611222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336112222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361122222";
 
     i += 1;
     // Basilisk
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233310";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333103";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333102";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223331023";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223331023";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223331023";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223331023";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223331022";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233310223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333102232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223331022322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233310223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233310222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333102222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333102222";
 
     i += 1;
     // Michael
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233375";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333753";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223337532";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233375322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333753222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333752";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223337523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223337523";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223337523";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223337523";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223337522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233375223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333752232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223337522322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233375223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233375222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333752222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223337522222";
 
     i += 1;
     // Kerberos
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233356";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333563";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223335632";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233356322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333563222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333562";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223335623";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233356232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333562322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223335623222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223335622";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233356223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233356223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233356223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233356223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233356222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333562222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335622222";
 
     i += 1;
     // Duke
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333612";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336123";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336123";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336123";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336123";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336122";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361223";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233361223";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361223";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361223";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361222";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333612223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333612223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333612223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333612223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333612222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336122222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361222222";
 
     i += 1;
     // Neherenia
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333613";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336133";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336133";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336133";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336133";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336132";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361323";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233361323";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361323";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361323";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361322";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333613223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336132232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233361322322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333613223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333613222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336132222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336132222";
 
     i += 1;
     // Xion
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333745";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223337453";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233374532";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333745322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223337453222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223337452";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233374523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233374523";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233374523";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233374523";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233374522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333745223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333745223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333745223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333745223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333745222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223337452222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223337452222";
 
     i += 1;
     // Bloodius
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333554";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223335543";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233355432";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333554322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223335543222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335542";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233355423";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233355423";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233355423";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233355422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333554223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333554223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333554223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333554223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333554222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335542222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335542222";
 
     i += 1;
     // Galvaron
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223339224";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233392243";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333922432";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223339224322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233392243222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233392242";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333922424";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333922424";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333922424";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333922424";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333922423";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223339224233";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233392242332";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333922423322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223339224233222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223339224232";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233392242322";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333922423222";
 
     i += 1;
     // Jernigan
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233311";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333113";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333113";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333113";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333113";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333112";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223331123";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233311232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333112322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223331123222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223331122";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233311223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333112232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223331122322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233311223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233311222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333112222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333112222";
 
     i += 1;
     // Chorus
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333546";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223335463";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233354632";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333546322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223335463222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335462";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233354623";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233354623";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233354623";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233354623";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233354622";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333546223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223335462232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233354622322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333546223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333546222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335462222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335462222";
 
     i += 1;
     // Soul Kaiser
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333614";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336143";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336143";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336143";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336143";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336142";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333614232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336142322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361423222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333614223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336142232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233361422322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333614223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333614222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336142222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336142222";
 
     i += 1;
     // Valkyria
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333615";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336153";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336153";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336153";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336153";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336152";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333615232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336152322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361523222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333615223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333615223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333615223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333615223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333615222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336152222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336152222";
 
     i += 1;
     // Elzard
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333922425";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223339224253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223339224253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223339224253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223339224253";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223339224252";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233392242523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233392242523";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233392242523";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233392242523";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233392242522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333922425223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333922425223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333922425223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333922425223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333922425222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223339224252222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223339224252222";
 
     i += 1;
     // Warcorn
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333555";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223335553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223335553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223335553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223335553";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335552";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333555232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223335552322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233355523222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233355522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333555223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223335552232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233355522322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333555223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333555222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335552222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335552222";
 
     i += 1;
     // Dark Ray
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233312";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333123";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333123";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333123";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333123";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333122";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223331223";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223331223";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223331223";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223331223";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223331222";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233312223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333122232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223331222322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233312223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233312222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333122222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333122222";
 
     i += 1;
     // Lecthor
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333556";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223335563";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223335563";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223335563";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223335563";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335562";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355623";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333556232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223335562322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233355623222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233355622";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333556223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223335562232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233355622322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333556223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333556222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335562222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335562222";
 
     i += 1;
     // Haemosu
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333616";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336164";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336164";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336164";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336164";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336162";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361622";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333616222";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336162222";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361622222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223336163";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233361633";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233361633";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233361633";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233361633";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233361632";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333616322";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336163222";
 
     i += 1;
     // Hera
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333617";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336173";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336173";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336173";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336173";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336172";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361723";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233361723";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361723";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361723";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361722";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333617223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333617223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333617223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333617223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333617222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336172222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361722222";
 
     i += 1;
     // Zonda
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333618";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336183";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233361832";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333618322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336183222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336182";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361823";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333618232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336182322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361823222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361822";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333618223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333618223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333618223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333618223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333618222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336182222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361822222";
 
     i += 1;
     // Liria
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333619";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336193";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336193";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336193";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336193";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336192";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233361923";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233361923";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233361923";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233361923";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361922";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333619223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333619223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333619223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333619223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333619222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336192222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361922222";
 
     i += 1;
     // Jelquus
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333223";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223332233";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223332233";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223332233";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223332233";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223332232";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233322323";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233322323";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233322323";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233322323";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233322322";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333223223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223332232232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233322322322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333223223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333223222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223332232222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233322322222";
 
     i += 1;
     // Shuirin
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223332234";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233322344";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233322344";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233322344";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233322344";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233322342";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333223423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp22223332234232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233322342322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333223423222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333223422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223332234223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223332234223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223332234223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223332234223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223332234222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233322342222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233322342222";
 
     i += 1;
     // Govan
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223335544";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233355443";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333554432";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223335544322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233355443222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233355442";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333554423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333554423";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333554423";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333554423";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333554422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223335544223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233355442232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333554422322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223335544223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223335544222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233355442222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333554422222";
 
     i += 1;
     // Bay Arc
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333224";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223332243";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233322432";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333224322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223332243222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223332242";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233322423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333224232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223332242322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233322423222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233322422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333224223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333224223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333224223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333224223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333224222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223332242222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233322422222";
 
     i += 1;
     // Deken
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233376";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333763";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333763";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333763";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333763";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333762";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223337624";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233376242";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333762422";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223337624222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223337622";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233376222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333762222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223337622222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233376222222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223337623";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233376232";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233376232";
 
     i += 1;
     // Zero
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223336184";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233361843";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233361843";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233361843";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233361843";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233361842";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333618423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333618423";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333618423";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333618423";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333618422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223336184223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233361842232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333618422322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223336184223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223336184222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233361842222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233361842222";
 
     i += 1;
     // Sibarun
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233313";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333133";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333133";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333133";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333133";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333132";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223331323";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233313232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333132322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223331323222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223331322";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233313223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333132232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223331322322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233313223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233313222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333132222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333132222";
 
     i += 1;
     // Daisy
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333655";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336553";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233365532";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333655322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336553222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336552";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233365523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333655232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336552322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233365523222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233365522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333655223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333655223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333655223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333655223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333655222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336552222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233365522222";
 
     i += 1;
     // Glan
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333620";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336203";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336203";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336203";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336203";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336202";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362023";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333620232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336202322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362023222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362022";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333620223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336202232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233362022322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333620223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333620222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336202222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233362022222";
 
     i += 1;
     // Voltma
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333557";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223335573";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233355732";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333557322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223335573222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335572";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355722";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233355722";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233355722";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233355722";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333621";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223336213";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233362132";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333621322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223336213222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223336212";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233362122";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333621222";
 
     i += 1;
     // Bax
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233352334";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333523344";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333523344";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333523344";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333523344";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333523342";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223335233423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233352334232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333523342322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223335233423222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223335233422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233352334222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233352334222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233352334222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233352334222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333523343";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335233432";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335233432";
 
     i += 1;
     // Grunt
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333623";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336233";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336233";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336233";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336233";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336232";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362323";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333623232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336232322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362323222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362322";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333623223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336232232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233362322322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333623223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333623222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336232222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336232222";
 
     i += 1;
     // Lene
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333624";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336243";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336243";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336243";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336243";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336242";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233362423";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233362423";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362423";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333624223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333624223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333624223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333624223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333624222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336242222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336242222";
 
     i += 1;
     // Jango
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333225";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223332253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233322532";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333225322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223332253222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223332252";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233322523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233322523";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233322523";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233322523";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233322522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333225223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333225223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333225223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333225223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333225222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223332252222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223332252222";
 
     i += 1;
     // Burndress
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333625";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336253";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336253";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336252";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333625232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336252322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362523222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333625223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223336252232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233362522322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333625223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333625222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336252222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336252222";
 
     i += 1;
     // Bison
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223336124";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233361244";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233361244";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233361244";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233361244";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233361242";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333612422";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333612422";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333612422";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333612422";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233361243";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333612432";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333612432";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333612432";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333612432";
 
     i += 1;
     // Musashi
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333626";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336263";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233362632";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333626322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336263222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336262";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362623";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233362623";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233362623";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362623";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362622";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333626223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333626223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333626223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333626223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333626222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336262222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336262222";
 
     i += 1;
     // Daboto
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333627";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336273";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223336273";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223336273";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336273";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336272";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362723";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233362723";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233362723";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362723";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362722";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333627223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333627223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333627223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333627223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333627222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336272222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336272222";
 
     i += 1;
     // Galleon
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333558";
     gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
     gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
     gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
     gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335582";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355824";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333558242";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223335582422";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233355824222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233355822";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333558222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223335582222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233355822222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333558222222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233355823";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333558232";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335582322";
 
     i += 1;
     // Wiz
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333226";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223332262";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223332262";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223332262";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223332262";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333628";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223336283";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233362832";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333628322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223336283222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223336282";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233362823";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233362823";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233362823";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233362823";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233362822";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333628222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333628222";
 
     i += 1;
     // Mordin
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233357";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333573";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223335732";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233357322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333573222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333572";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223335723";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233357232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333572322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223335723222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp22223335722";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp222233357223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233357223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233357223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp222233357223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233357222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333572222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333572222";
 
     i += 1;
     // Demol
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333227";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223332273";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233322732";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333227322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223332273222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223332272";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233322723";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233322723";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp222233322723";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233322723";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233322722";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333227222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333227222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333227222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333227222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333227223";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223332272232";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223332272232";
 
     i += 1;
     // Desilba
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333559";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223335593";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233355932";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333559322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223335593222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223335592";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233355923";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333559232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223335592322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233355923222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233355922";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333559223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223335592232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233355922322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333559223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333559222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335592222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335592222";
 
     i += 1;
     // Sieger
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333114";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223331143";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233311432";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333114322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223331143222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223331142";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233311423";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333114232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223331142322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233311423222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233311422";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333114223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223331142232";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233311422322";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333114223222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333114222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223331142222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233311422222";
 
     i += 1;
     // Margon
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333629";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223336293";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp222233362932";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp2222333629322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223336293222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223336292";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233362923";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333629232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223336292322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233362923222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233362922";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333629223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp2222333629223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333629223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333629223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333629222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223336292222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223336292222";
 
     i += 1;
     // Drager
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223335510";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233355103";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333551032";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223335510322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233355103222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233355102";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333551024";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333551024";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333551024";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333551024";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333551022";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223335510222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233355102222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333551022222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223335510222222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333551023";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp22223335510232";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp22223335510232";
 
     i += 1;
     // Lucifer
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223335511";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233355112";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333551122";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223335511222";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233355112222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233355113";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333551132";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333551132";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333551132";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333551132";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333551133";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223335511332";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233355113322";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333551133222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223335511332222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp222233355114";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp2222333551142";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp2222333551142";
 
     i += 1;
     // Eren
-    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "Hero72Skill1LearnHero73SkillLearn";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "Hero72Skill1UpHero73SkillLearn2";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "Hero72Skill1UpHero73SkillLearn2";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "Hero72Skill1UpHero73SkillLearn2";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "Hero72Skill1UpHero73SkillLearn2";
 
-    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "Hero72Skill2LearnHero73SkillLearn3";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "Hero72Skill2UpHero73SkillLearn22";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "Hero72Skill2UpHero73SkillLearn22";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "Hero72Skill2UpHero73SkillLearn22";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "Hero72Skill2UpHero73SkillLearn22";
 
-    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "Hero72Skill3LearnHero73SkillLearn32";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "Hero72Skill3UpHero73SkillLearn222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "Hero72Skill3UpHero73SkillLearn222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "Hero72Skill3UpHero73SkillLearn222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "Hero72Skill3UpHero73SkillLearn222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "Hero72Skill4LearnHero73SkillLearn4";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "Hero72Skill4UpHero73SkillLearn223";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "Hero72Skill4UpHero73SkillLearn223";
 
     i += 1;
     // Luna
@@ -3941,6 +3941,8 @@ void gf_LearnSkill(int player_number, int skill) {
             TechTreeUpgradeAddLevel(player_number, gv_SkillLevelUpgrades[hero_number][skill][4], 1);
             gv_SkillLevels[player_number][skill] += 1;
             gv_SkillLearnPossibleStat[EventPlayer()] -= 1;
+            gf_HrSkillLearnWindowClose();
+            return;
         }
     }
 
@@ -3948,6 +3950,8 @@ void gf_LearnSkill(int player_number, int skill) {
     if (current_skill_level >= gv_MaxSkillLevel[hero_level][skill]) {
         return;
     }
+
+    // TODO: Galleon Q (with closing window and return)
 
     TechTreeUpgradeAddLevel(player_number, gv_SkillLevelUpgrades[hero_number][skill][current_skill_level], 1);
     gv_SkillLevels[player_number][skill] += 1;
@@ -5823,8 +5827,6 @@ void gf_HrSkillLearnHero17 () {
         gv_SkillWLevel[EventPlayer()] += 1;
         gv_SkillLearnPossibleStat[EventPlayer()] -= 1;
     }
-
-
 
     if ((gv_SkillLearnSwitchE[EventPlayer()] == true) && (gv_SkillELevel[EventPlayer()] < 5)) {
         if ((gv_SkillELevel[EventPlayer()] == 0)) {
