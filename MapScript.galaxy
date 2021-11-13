@@ -663,7 +663,7 @@ trigger gt_TrSingleCheetDPdown;
 trigger gt_TrSingleCheetRPup;
 trigger gt_TrSingleCheetRPdown;
 trigger gt_Trgametipbtn;
-trigger gt_TrMinionMagt_TrHeroLevelUpke;
+trigger gt_TrMinionMake;
 trigger gt_TrHeroLevelUp;
 trigger gt_TrSkillLearnBtnClick;
 trigger gt_TrSkillLearnHotKey1;
@@ -3905,10 +3905,10 @@ void gf_LearnSkill(int player_number, int skill) {
         if (current_skill_level == 0) {
             UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero14Skill4Passive", gv_PlayerHero[player_number], 1);
         } else if (current_skill_level == 1) {
-            UnitBehaviorRemovePlayer(gv_PlayerHero[player_number], "Hero14Skill4Passive", gv_PlayerHero[player_number], 1);
+            UnitBehaviorRemovePlayer(gv_PlayerHero[player_number], "Hero14Skill4Passive", player_number, 1);
             UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero14Skill4Passive2", gv_PlayerHero[player_number], 1);
         } else if (current_skill_level == 2) {
-            UnitBehaviorRemovePlayer(gv_PlayerHero[player_number], "Hero14Skill4Passive2", gv_PlayerHero[player_number], 1);
+            UnitBehaviorRemovePlayer(gv_PlayerHero[player_number], "Hero14Skill4Passive2", player_number, 1);
             UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero14Skill4Passive22", gv_PlayerHero[player_number], 1);
         }
     }
@@ -11169,21 +11169,14 @@ void gt_Trgametipbtn_Init () {
 // Trigger: ????????? ?????? ??? ?????? (??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMinionMake_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    const int autoF427485B_n = 3;
-    int autoF427485B_i;
-    const int auto5C95C87E_n = 3;
-    int auto5C95C87E_i;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     if (!runActions) {
         return true;
     }
 
     if ((gv_GameEndBoolean == false)) {
-        for (autoF427485B_i = 1; autoF427485B_i <= autoF427485B_n; autoF427485B_i += 1) {
+        for (i = 1; i <= 3; i += 1) {
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "PreserverA", 0, 12, PointFromId(123));
             UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("move", 3), PointFromId(208)), c_orderQueueReplace);
             UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("move", 3), PointFromId(210)), c_orderQueueAddToEnd);
@@ -11206,7 +11199,7 @@ bool gt_TrMinionMake_Func (bool testConds, bool runActions) {
             UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("move", 3), PointFromId(108)), c_orderQueueAddToEnd);
             Wait(0.5, c_timeReal);
         }
-        for (auto5C95C87E_i = 1; auto5C95C87E_i <= auto5C95C87E_n; auto5C95C87E_i += 1) {
+        for (i = 1; i <= 3; i += 1) {
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "HighTemplar", 0, 12, PointFromId(123));
             UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("move", 3), PointFromId(208)), c_orderQueueReplace);
             UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("move", 3), PointFromId(210)), c_orderQueueAddToEnd);
