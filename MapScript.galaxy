@@ -237,12 +237,14 @@ bool[11] gv_SealBought;
 int[6] gv_BannedCharNum;
 HeroInfo[100] gv_HeroInformation;
 int[11][4] gv_SkillLevels;
-int[18][4] gv_MaxSkillLevel;
+int[19][4] gv_MaxSkillLevel;
 string[100][4][5] gv_SkillLevelUpgrades;
 
 void InitGlobals () {
     int init_i;
     int init_j;
+
+    gv_TotalHeroNum = 73;
 
     gv_AllPlayerGroup = PlayerGroupEmpty();
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -1036,8 +1038,6 @@ void ShopInit() {
 }
 
 void HeroInfoInit() {
-    gv_TotalHeroNum = 73;
-
     // Benderzone
     gv_HeroInformation[0].image = "Assets\\Textures\\btn-unit-terran-tosh.dds";
     gv_HeroInformation[0].unitname = "Tosh";
@@ -1554,7 +1554,7 @@ void SkillsInit() {
     int i;
     int j;
 
-    for (i = 0; i < 18; i += 1) {
+    for (i = 0; i <= 18; i += 1) {
         for (j = 0; j < 3; j += 1) {
             gv_MaxSkillLevel[i][j] = libNtve_gf_ArithmeticIntClamp(((i + 1) / 2), 1, 5);
         }
@@ -3983,6 +3983,18 @@ void gf_HrSkillLearnWindowOpen () {
         return;
     }
     // Enable every button if skill is available for level up
+    if (gv_SkillLevels[EventPlayer()][c_SkillQ] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_SkillQ]) {
+        DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), true);
+    }
+    if (gv_SkillLevels[EventPlayer()][c_SkillW] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_SkillW]) {
+        DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), true);
+    }
+    if (gv_SkillLevels[EventPlayer()][c_SkillE] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_SkillE]) {
+        DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
+    }
+    if (gv_SkillLevels[EventPlayer()][c_SkillR] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_SkillR]) {
+        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), true);
+    }
 
     // Bison can level up skills to 6
     if (gv_SelectedCharNum[EventPlayer()] == 60) {
