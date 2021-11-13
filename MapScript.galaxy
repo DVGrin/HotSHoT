@@ -248,7 +248,7 @@ int[6] gv_BannedCharNum;
 HeroInfo[100] gv_HeroInformation;
 int[11][4] gv_SkillLevels;
 int[18][4] gv_MaxSkillLevel;
-string[100][5] gv_SkillLevelUpgrades;
+string[100][4][5] gv_SkillLevelUpgrades;
 
 void InitGlobals () {
     int init_i;
@@ -1655,1751 +1655,1751 @@ void SkillsInit() {
 
     i = 0;
     // Benderzone
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp2222333";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp22223334";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223334";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223334";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp22223334";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp22223332";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp222233323";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333232";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp22223332322";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp222233323222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp222233322";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp2222333222";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223332222";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp222233322222";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp2222333222222";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223333";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233332";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233332";
 
     i += 1;
     // Blane
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp22223335";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp222233353";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp2222333532";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp22223335322";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp222233353222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp222233352";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp2222333523";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp2222333523";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333523";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp2222333523";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333522";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223335223";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp22223335223";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp22223335223";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223335223";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp22223335222";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233352222";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233352222";
 
     i += 1;
     // Gianter
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "SpellUp222233354";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "SpellUp2222333545";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "SpellUp22223335452";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "SpellUp222233354522";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "SpellUp2222333545222";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "SpellUp2222333542";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "SpellUp22223335422";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "SpellUp222233354222";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "SpellUp2222333542222";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "SpellUp22223335422222";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "SpellUp2222333543";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "SpellUp22223335432";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "SpellUp222233354323";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "SpellUp2222333543232";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "SpellUp22223335432322";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "SpellUp2222333544";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "SpellUp222233354322";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "SpellUp222233354322";
 
     i += 1;
     // Obos
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Xolus
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Edburn
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Metel
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Jade
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Leinard
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Venom Bug
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Galaxia
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Tangky
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Pyron
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Magner
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Moria
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Niglos
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Kelro
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Devola
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Proward
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Netero
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Celin
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Land Baron
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Garp
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Kaion
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Basilisk
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Michael
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Kerberos
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Duke
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Neherenia
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Xion
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Bloodius
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Galvaron
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Jernigan
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Chorus
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Soul Kaiser
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Valkyria
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Elzard
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Warcorn
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Dark Ray
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Lecthor
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Haemosu
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Hera
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Zonda
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Liria
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Jelquus
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Shuirin
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Govan
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Bay Arc
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Deken
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Zero
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Sibarun
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Daisy
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Glan
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Voltma
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Bax
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Grunt
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Lene
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Jango
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Burndress
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Bison
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
     i += 1;
     // Musashi
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Daboto
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Galleon
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Wiz
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Mordin
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Demol
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Desilba
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Sieger
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Margon
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Drager
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Lucifer
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Eren
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 
     i += 1;
     // Luna
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
-    gv_SkillLevelUpgrades[i][c_SkillQ] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillQ][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
-    gv_SkillLevelUpgrades[i][c_SkillW] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillW][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
-    gv_SkillLevelUpgrades[i][c_SkillE] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_SkillE][4] = "";
 
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
-    gv_SkillLevelUpgrades[i][c_SkillR] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_SkillR][2] = "";
 }
 
 void InitGameParameters() {
@@ -3952,6 +3952,8 @@ void gf_LearnSkill(int player_number, int skill) {
     TechTreeUpgradeAddLevel(player_number, gv_SkillLevelUpgrades[hero_number][current_skill_level], 1);
     gv_SkillLevels[player_number][skill] += 1;
     gv_SkillLearnPossibleStat[EventPlayer()] -= 1;
+
+    // TODO: Add special cases
 
     gf_HrSkillLearnWindowClose();
 }
