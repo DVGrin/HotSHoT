@@ -14305,7 +14305,6 @@ bool gf_HotkeyStatIncreaseTestConditions() {
 // Trigger: ?????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStartGame_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14329,7 +14328,6 @@ void gt_TrStartGame_Init () {
 // Trigger: 1 - ???????????? ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr1FullscreenSetting_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14363,7 +14361,6 @@ void gt_Tr1FullscreenSetting_Init () {
 // Trigger: 2 - ?????? ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr2GameSetting_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14450,7 +14447,6 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
     lv_GPlayerNum6 = 1;
     lv_GPlayerNum323 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14591,7 +14587,6 @@ void gt_Tr3PlayerSetting_Init () {
 // Trigger: 5 - ?????? ???????????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_Tr5AllDialogInit_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14635,7 +14630,6 @@ bool gt_Tr6PlayerDialogAddorView_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14691,7 +14685,6 @@ bool gt_Tr8VoteScreenView_Func (bool testConds, bool runActions) {
 
     lv_GPlayerNum1 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -14976,7 +14969,6 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     int flag = 1;
     int ban_number;
     int selecting_hero;
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15079,7 +15071,6 @@ bool gt_TrCharSelectBlind_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
     lv_eC84A4ECA095ECBA90EBA6ADEC84A0ED839DEC9984EBA38CEC9DB8EC8B9D = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15160,7 +15151,6 @@ void gt_TrCharSelectBlind_Init () {
 // Trigger: ????????? ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrCharSelectPageNext_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -15171,7 +15161,6 @@ bool gt_TrCharSelectPageNext_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15280,7 +15269,6 @@ bool gt_TrCharSelect_Func (bool testConds, bool runActions) {
     const int autoB98F1D8E_ai = 1;
 
 
-    // Conditions
     if (testConds) {
         if (!((((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_CharSelectedDelay[0] == false)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_CharSelectedDelay[1] == false))))) {
             return false;
@@ -15307,7 +15295,6 @@ bool gt_TrCharSelect_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15384,7 +15371,6 @@ bool gt_TrCharSelectRandom_Func (bool testConds, bool runActions) {
     const int auto7563DA08_ai = 1;
 
 
-    // Conditions
     if (testConds) {
         if (!((((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_CharSelectedDelay[0] == false)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_CharSelectedDelay[1] == false))))) {
             return false;
@@ -15403,7 +15389,6 @@ bool gt_TrCharSelectRandom_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15472,14 +15457,12 @@ void gt_TrCharSelectRandom_Init () {
 // Trigger: ?????? ?????? ????????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrDraftSelectRandomRefreash1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15505,7 +15488,6 @@ bool gt_TrTeamSelectDialogHeroSwap1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[1];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
@@ -15536,7 +15518,6 @@ bool gt_TrTeamSelectDialogHeroSwap1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15575,7 +15556,6 @@ bool gt_TrTeamSelectDialogHeroSwap2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[2];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
@@ -15606,7 +15586,6 @@ bool gt_TrTeamSelectDialogHeroSwap2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15645,7 +15624,6 @@ bool gt_TrTeamSelectDialogHeroSwap3_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[3];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
@@ -15676,7 +15654,6 @@ bool gt_TrTeamSelectDialogHeroSwap3_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15715,7 +15692,6 @@ bool gt_TrTeamSelectDialogHeroSwap4_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[4];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
@@ -15746,7 +15722,6 @@ bool gt_TrTeamSelectDialogHeroSwap4_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15785,7 +15760,6 @@ bool gt_TrTeamSelectDialogHeroSwap5_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[5];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
@@ -15816,7 +15790,6 @@ bool gt_TrTeamSelectDialogHeroSwap5_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15855,7 +15828,6 @@ bool gt_TrTeamSelectDialogHeroSwap6_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[6];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
@@ -15886,7 +15858,6 @@ bool gt_TrTeamSelectDialogHeroSwap6_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15925,7 +15896,6 @@ bool gt_TrTeamSelectDialogHeroSwap7_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[7];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
@@ -15956,7 +15926,6 @@ bool gt_TrTeamSelectDialogHeroSwap7_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -15995,7 +15964,6 @@ bool gt_TrTeamSelectDialogHeroSwap8_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9B90ECA090ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[8];
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
@@ -16026,7 +15994,6 @@ bool gt_TrTeamSelectDialogHeroSwap8_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16072,7 +16039,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestOkTeam1_Func (bool testConds, bool runA
         lv_eC84A4ECA095EC9881EC9B85EC9DB4EBAFB8ECA780EC9E84EC8B9CECA080EC9EA5[init_i] = "Assets\\InviButton.dds";
     }
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
@@ -16087,7 +16053,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestOkTeam1_Func (bool testConds, bool runA
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16194,7 +16159,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestNoTeam1_Func (bool testConds, bool runA
     int lv_eC84A4ECA095EC8381EB8C80ED948CEBA088EC9DB4EC96B4;
 
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
@@ -16209,7 +16173,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestNoTeam1_Func (bool testConds, bool runA
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16308,7 +16271,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestOkTeam2_Func (bool testConds, bool runA
         lv_eC84A4ECA095EC9881EC9B85EC9DB4EBAFB8ECA780EC9E84EC8B9CECA080EC9EA5[init_i] = "Assets\\InviButton.dds";
     }
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
@@ -16323,7 +16285,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestOkTeam2_Func (bool testConds, bool runA
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16430,7 +16391,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestNoTeam2_Func (bool testConds, bool runA
     int lv_eC84A4ECA095EC8381EB8C80ED948CEBA088EC9DB4EC96B4;
 
 
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
@@ -16445,7 +16405,6 @@ bool gt_TrTeamSelectDialogHeroSwapSuggestNoTeam2_Func (bool testConds, bool runA
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16533,7 +16492,6 @@ void gt_TrTeamSelectDialogHeroSwapSuggestNoTeam2_Init () {
 // Trigger: ?????? ??????(1)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSpellSelect1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -16552,7 +16510,6 @@ bool gt_TrSpellSelect1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16680,7 +16637,6 @@ void gt_TrSpellSelect1_Init () {
 // Trigger: ?????? ??????(2)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSpellSelect2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -16699,7 +16655,6 @@ bool gt_TrSpellSelect2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16827,7 +16782,6 @@ void gt_TrSpellSelect2_Init () {
 // Trigger: ?????? ?????? ??????(?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrGameModeSelect_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -16846,7 +16800,6 @@ bool gt_TrGameModeSelect_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16882,7 +16835,6 @@ void gt_TrGameModeSelect_Init () {
 // Trigger: ?????? ?????? ??????(?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -16905,7 +16857,6 @@ bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -16944,7 +16895,6 @@ bool gt_TrBeforeSpellRandomSelect_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17002,7 +16952,6 @@ bool gt_TrPlayersAllCreate_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17118,7 +17067,6 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17177,7 +17125,6 @@ bool gt_TrGameStartCounter_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17224,7 +17171,6 @@ void gt_TrGameStartCounter_Init () {
 // Trigger: ??????????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17239,7 +17185,6 @@ bool gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Func (bool testCo
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17264,7 +17209,6 @@ void gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17275,7 +17219,6 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, b
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17313,7 +17256,6 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Init () {
 // Trigger: ?????? ?????? ?????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17328,7 +17270,6 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool 
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17366,7 +17307,6 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventUnit() == gv_PlayerHero[EventPlayer()]))) {
             return false;
@@ -17385,7 +17325,6 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Func (bool testConds, b
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17406,7 +17345,6 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Init () {
 // Trigger: ?????? - ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHelpText_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17417,7 +17355,6 @@ bool gt_TrHelpText_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17443,14 +17380,12 @@ bool gt_TrViewHandler_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17475,7 +17410,6 @@ void gt_TrViewHandler_Init () {
 // Trigger: ?????? - ??? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetMoney_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17498,7 +17432,6 @@ bool gt_TrSingleCheetMoney_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17519,7 +17452,6 @@ void gt_TrSingleCheetMoney_Init () {
 // Trigger: ?????? - ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetLevel_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17546,7 +17478,6 @@ bool gt_TrSingleCheetLevel_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17566,7 +17497,6 @@ void gt_TrSingleCheetLevel_Init () {
 // Trigger: ?????? - ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetTestUnit_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17589,7 +17519,6 @@ bool gt_TrSingleCheetTestUnit_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17617,7 +17546,6 @@ bool gt_TrSingleCheetDPup_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17640,7 +17568,6 @@ bool gt_TrSingleCheetDPup_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17677,7 +17604,6 @@ bool gt_TrSingleCheetDPdown_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17700,7 +17626,6 @@ bool gt_TrSingleCheetDPdown_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17737,7 +17662,6 @@ bool gt_TrSingleCheetRPup_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17760,7 +17684,6 @@ bool gt_TrSingleCheetRPup_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17797,7 +17720,6 @@ bool gt_TrSingleCheetRPdown_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17820,7 +17742,6 @@ bool gt_TrSingleCheetRPdown_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17857,7 +17778,6 @@ bool gt_Trgametipbtn_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -17868,7 +17788,6 @@ bool gt_Trgametipbtn_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -17896,7 +17815,6 @@ bool gt_TrMinionMake_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -18074,7 +17992,6 @@ void gt_TrMinionMake_Init () {
 // Trigger: ?????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHeroLevelUp_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -18101,7 +18018,6 @@ bool gt_TrHeroLevelUp_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -18172,77 +18088,52 @@ void gt_TrHeroLevelUp_Init () {
 // Trigger: ?????? ????????? (?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnBtnClick_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
-        if (!(((EventDialogControl() == gv_SkillLearnWindowBtn[0]) || (EventDialogControl() == gv_SkillLearnWindowBtn[1]) || (EventDialogControl() == gv_SkillLearnWindowBtn[2]) || (EventDialogControl() == gv_SkillLearnWindowBtn[3])))) {
+        if (!(
+                (EventDialogControl() == gv_SkillLearnWindowBtn[0]) || 
+                (EventDialogControl() == gv_SkillLearnWindowBtn[1]) || 
+                (EventDialogControl() == gv_SkillLearnWindowBtn[2]) ||
+                (EventDialogControl() == gv_SkillLearnWindowBtn[3])
+            )) {
             return false;
         }
-
         if (!((gv_SkillLearnPossibleStat[EventPlayer()] > 0))) {
-            return false;
-        }
-
-        if (!(((gv_SkillLearnSwitchQ[EventPlayer()] == false) && (gv_SkillLearnSwitchW[EventPlayer()] == false) && (gv_SkillLearnSwitchE[EventPlayer()] == false) && (gv_SkillLearnSwitchR[EventPlayer()] == false)))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
 
-    if ((EventDialogControl() == gv_SkillLearnWindowBtn[0])) {
-        gv_SkillLearnSwitchQ[EventPlayer()] = true;
+    // Learn the skill
+    if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_SkillQ])) {
+        gf_LearnSkill(EventPlayer(), c_SkillQ);
+    } else if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_SkillW])) {
+        gf_LearnSkill(EventPlayer(), c_SkillW);
+    } else if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_SkillE])) {
+        gf_LearnSkill(EventPlayer(), c_SkillE);
+    } else if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_SkillR])) {
+        gf_LearnSkill(EventPlayer(), c_SkillR);
     }
-    else {
-        if ((EventDialogControl() == gv_SkillLearnWindowBtn[1])) {
-            gv_SkillLearnSwitchW[EventPlayer()] = true;
-        }
-        else {
-            if ((EventDialogControl() == gv_SkillLearnWindowBtn[2])) {
-                gv_SkillLearnSwitchE[EventPlayer()] = true;
-            }
-            else {
-                if ((EventDialogControl() == gv_SkillLearnWindowBtn[3])) {
-                    gv_SkillLearnSwitchR[EventPlayer()] = true;
-                }
 
-            }
-        }
-    }
-    gf_HrSkillLearnHeroCategoryLink();
-    gv_SkillLearnSwitchQ[EventPlayer()] = false;
-    gv_SkillLearnSwitchW[EventPlayer()] = false;
-    gv_SkillLearnSwitchE[EventPlayer()] = false;
-    gv_SkillLearnSwitchR[EventPlayer()] = false;
-    if ((gv_SkillQLevel[EventPlayer()] == 1)) {
+    // Update the tooltip from "learn" to "upgrade"
+    if ((gv_SkillLevels[EventPlayer()][c_SkillQ] == 1)) {
         libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[0], StringExternal("Param/Value/12A551AB"), PlayerGroupSingle(EventPlayer()));
+    } else if ((gv_SkillLevels[EventPlayer()][c_SkillW] == 1)) {
+        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[c_SkillW], StringExternal("Param/Value/7B3AD691"), PlayerGroupSingle(EventPlayer()));
+    } else if ((gv_SkillLevels[EventPlayer()][c_SkillE] == 1)) {
+        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[c_SkillE], StringExternal("Param/Value/BA3F12C4"), PlayerGroupSingle(EventPlayer()));
+    } else if ((gv_SkillLevels[EventPlayer()][c_SkillR] == 1)) {
+        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[c_SkillR], StringExternal("Param/Value/3323CBC3"), PlayerGroupSingle(EventPlayer()));
     }
-    else {
-        if ((gv_SkillWLevel[EventPlayer()] == 1)) {
-            libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[1], StringExternal("Param/Value/7B3AD691"), PlayerGroupSingle(EventPlayer()));
-        }
-        else {
-            if ((gv_SkillELevel[EventPlayer()] == 1)) {
-                libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[2], StringExternal("Param/Value/BA3F12C4"), PlayerGroupSingle(EventPlayer()));
-            }
-            else {
-                if ((gv_SkillRLevel[EventPlayer()] == 1)) {
-                    libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[3], StringExternal("Param/Value/3323CBC3"), PlayerGroupSingle(EventPlayer()));
-                }
 
-            }
-        }
-    }
     return true;
 }
 
@@ -18256,42 +18147,31 @@ void gt_TrSkillLearnBtnClick_Init () {
 // Trigger: ?????? ????????? (?????????F1)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((gv_SkillLearnPossibleStat[EventPlayer()] > 0))) {
             return false;
         }
-
-        if (!((gv_SkillLearnSwitchQ[EventPlayer()] == false))) {
-            return false;
-        }
-
         if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_SkillLearnSwitchKey[EventPlayer()][0] == true))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
 
-    gv_SkillLearnSwitchQ[EventPlayer()] = true;
-    gf_HrSkillLearnHeroCategoryLink();
-    gv_SkillLearnSwitchQ[EventPlayer()] = false;
-    if ((gv_SkillQLevel[EventPlayer()] == 1)) {
+    gf_LearnSkill(EventPlayer(), c_SkillQ);
+
+    if ((gv_SkillLevels[EventPlayer()][c_SkillQ] == 1)) {
         libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[0], StringExternal("Param/Value/166EDB1E"), PlayerGroupSingle(EventPlayer()));
     }
 
@@ -18308,42 +18188,31 @@ void gt_TrSkillLearnHotKey1_Init () {
 // Trigger: ?????? ????????? (?????????F2)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((gv_SkillLearnPossibleStat[EventPlayer()] > 0))) {
             return false;
         }
-
-        if (!((gv_SkillLearnSwitchW[EventPlayer()] == false))) {
-            return false;
-        }
-
         if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_SkillLearnSwitchKey[EventPlayer()][1] == true))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
 
-    gv_SkillLearnSwitchW[EventPlayer()] = true;
-    gf_HrSkillLearnHeroCategoryLink();
-    gv_SkillLearnSwitchW[EventPlayer()] = false;
-    if ((gv_SkillWLevel[EventPlayer()] == 1)) {
+    gf_LearnSkill(EventPlayer(), c_SkillW);
+
+    if ((gv_SkillLevels[EventPlayer()][c_SkillW] == 1)) {
         libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[1], StringExternal("Param/Value/4813E63B"), PlayerGroupSingle(EventPlayer()));
     }
 
@@ -18360,42 +18229,31 @@ void gt_TrSkillLearnHotKey2_Init () {
 // Trigger: ?????? ????????? (?????????F3)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey3_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((gv_SkillLearnPossibleStat[EventPlayer()] > 0))) {
             return false;
         }
-
-        if (!((gv_SkillLearnSwitchE[EventPlayer()] == false))) {
-            return false;
-        }
-
         if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_SkillLearnSwitchKey[EventPlayer()][2] == true))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
 
-    gv_SkillLearnSwitchE[EventPlayer()] = true;
-    gf_HrSkillLearnHeroCategoryLink();
-    gv_SkillLearnSwitchE[EventPlayer()] = false;
-    if ((gv_SkillELevel[EventPlayer()] == 1)) {
+    gf_LearnSkill(EventPlayer(), c_SkillE);
+
+    if ((gv_SkillLevels[EventPlayer()][c_SkillE] == 1)) {
         libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[2], StringExternal("Param/Value/4D8E6CEE"), PlayerGroupSingle(EventPlayer()));
     }
 
@@ -18412,7 +18270,6 @@ void gt_TrSkillLearnHotKey3_Init () {
 // Trigger: ?????? ????????? (?????????F4)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSkillLearnHotKey4_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
@@ -18439,15 +18296,13 @@ bool gt_TrSkillLearnHotKey4_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
 
-    gv_SkillLearnSwitchR[EventPlayer()] = true;
-    gf_HrSkillLearnHeroCategoryLink();
-    gv_SkillLearnSwitchR[EventPlayer()] = false;
-    if ((gv_SkillRLevel[EventPlayer()] == 1)) {
+    gf_LearnSkill(EventPlayer(), c_SkillR);
+
+    if ((gv_SkillLevels[EventPlayer()][c_SkillR] == 1)) {
         libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[3], StringExternal("Param/Value/6175D150"), PlayerGroupSingle(EventPlayer()));
     }
 
@@ -18526,7 +18381,6 @@ bool gt_TrStatDialogPageNext_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA0951823EBB380EC8898 = 18;
     lv_eC84A4ECA0952429EBB380EC8898 = 24;
 
-    // Conditions
     if (testConds) {
         if (!(((EventDialogControl() == gv_StatusWindowPageBtn[0]) || (EventDialogControl() == gv_StatusWindowPageBtn[1]) || (EventDialogControl() == gv_StatusWindowPageBtn[2]) || (EventDialogControl() == gv_StatusWindowPageBtn[3]) || (EventDialogControl() == gv_StatusWindowPageBtn[4])))) {
             return false;
@@ -18541,7 +18395,6 @@ bool gt_TrStatDialogPageNext_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -18823,7 +18676,6 @@ bool gt_TrStatDialogPageNextHotKey_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA0951823EBB380EC8898 = 18;
     lv_eC84A4ECA0952429EBB380EC8898 = 24;
 
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
@@ -18842,7 +18694,6 @@ bool gt_TrStatDialogPageNextHotKey_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19076,7 +18927,6 @@ static bool lf_StatEligibleForBuying (int stat_index) {
 bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     int i;
     bool flag;
-    // Conditions
     if (testConds) {
         // Only for human players
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -19102,7 +18952,6 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
             return false;
         }
     }
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19139,14 +18988,12 @@ void gt_TrStatDialogStatIncrease_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
     int i;
-    // Conditions
     if (testConds) {
         if (!(gf_HotkeyStatIncreaseTestConditions())) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19181,14 +19028,12 @@ void gt_TrStatDialogStatIncreaseHotKeyZ_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
     int i;
-    // Conditions
     if (testConds) {
         if (!(gf_HotkeyStatIncreaseTestConditions())) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19223,14 +19068,12 @@ void gt_TrStatDialogStatIncreaseHotKeyX_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
     int i;
-    // Conditions
     if (testConds) {
         if (!(gf_HotkeyStatIncreaseTestConditions())) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19265,14 +19108,12 @@ void gt_TrStatDialogStatIncreaseHotKeyC_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
     int i;
-    // Conditions
     if (testConds) {
         if (!(gf_HotkeyStatIncreaseTestConditions())) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19307,14 +19148,12 @@ void gt_TrStatDialogStatIncreaseHotKeyV_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
     int i;
-    // Conditions
     if (testConds) {
         if (!(gf_HotkeyStatIncreaseTestConditions())) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19349,14 +19188,12 @@ void gt_TrStatDialogStatIncreaseHotKeyB_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
     int i;
-    // Conditions
     if (testConds) {
         if (!(gf_HotkeyStatIncreaseTestConditions())) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19390,7 +19227,6 @@ void gt_TrStatDialogStatIncreaseHotKeyN_Init () {
 // Trigger: ?????? ????????????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHealingPosionUseComplete_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19405,7 +19241,6 @@ bool gt_TrHealingPosionUseComplete_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19426,7 +19261,6 @@ void gt_TrHealingPosionUseComplete_Init () {
 // Trigger: ?????? ????????????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrManaPosionUseComplete_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19441,7 +19275,6 @@ bool gt_TrManaPosionUseComplete_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19462,7 +19295,6 @@ void gt_TrManaPosionUseComplete_Init () {
 // Trigger: ????????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrWardUseComplete_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19477,7 +19309,6 @@ bool gt_TrWardUseComplete_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19499,7 +19330,6 @@ void gt_TrWardUseComplete_Init () {
 // Trigger: ????????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrWardUseComplete2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19514,7 +19344,6 @@ bool gt_TrWardUseComplete2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19536,7 +19365,6 @@ void gt_TrWardUseComplete2_Init () {
 // Trigger: ?????? ?????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrUnitBoodeSet_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19555,7 +19383,6 @@ bool gt_TrUnitBoodeSet_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19584,14 +19411,12 @@ void gt_TrUnitBoodeSet_Init () {
 // Trigger: ?????? - ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseCritical_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19615,7 +19440,6 @@ void gt_TrTextTailUseCritical_Init () {
 // Trigger: ?????? - ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseHyepi_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19630,7 +19454,6 @@ bool gt_TrTextTailUseHyepi_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19654,7 +19477,6 @@ void gt_TrTextTailUseHyepi_Init () {
 // Trigger: ?????? - ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSpellTeleportUse_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19665,7 +19487,6 @@ bool gt_TrSpellTeleportUse_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19684,7 +19505,6 @@ void gt_TrSpellTeleportUse_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrPortalUse_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19695,7 +19515,6 @@ bool gt_TrPortalUse_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19724,14 +19543,12 @@ void gt_TrPortalUse_Init () {
 // Trigger: ??????????????? ????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMissileOutDestroy_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19753,7 +19570,6 @@ bool gt_TrTextTailUseHero5Skill4_Func (bool testConds, bool runActions) {
     const int auto6337BFF8_n = 5;
     int auto6337BFF8_i;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19768,7 +19584,6 @@ bool gt_TrTextTailUseHero5Skill4_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19804,14 +19619,12 @@ void gt_TrTextTailUseHero5Skill4_Init () {
 // Trigger: ???????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrTextTailUseHero9AttackImpact_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19836,7 +19649,6 @@ void gt_TrTextTailUseHero9AttackImpact_Init () {
 // Trigger: ?????? ?????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero10Skill4On_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19851,7 +19663,6 @@ bool gt_TrHero10Skill4On_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19889,7 +19700,6 @@ void gt_TrHero10Skill4On_Init () {
 // Trigger: ?????? ?????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero10Skill4Off_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19904,7 +19714,6 @@ bool gt_TrHero10Skill4Off_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19925,7 +19734,6 @@ void gt_TrHero10Skill4Off_Init () {
 // Trigger: ????????? Q?????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero15Skill4Use_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19944,7 +19752,6 @@ bool gt_TrHero15Skill4Use_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -19964,7 +19771,6 @@ void gt_TrHero15Skill4Use_Init () {
 // Trigger: ???????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero19Death_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -19975,7 +19781,6 @@ bool gt_TrHero19Death_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20038,7 +19843,6 @@ void gt_TrHero19Death_Init () {
 // Trigger: ???????????? R?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetRPdown2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20061,7 +19865,6 @@ bool gt_TrSingleCheetRPdown2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20081,7 +19884,6 @@ void gt_TrSingleCheetRPdown2_Init () {
 // Trigger: ????????? W?????? ?????? ?????? ????????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero32Skill2Up_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20100,7 +19902,6 @@ bool gt_TrHero32Skill2Up_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20128,7 +19929,6 @@ void gt_TrHero32Skill2Up_Init () {
 // Trigger: ????????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero32Skill4On_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20143,7 +19943,6 @@ bool gt_TrHero32Skill4On_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20181,7 +19980,6 @@ void gt_TrHero32Skill4On_Init () {
 // Trigger: ????????? R?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero32Skill4Off_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20196,7 +19994,6 @@ bool gt_TrHero32Skill4Off_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20217,7 +20014,6 @@ void gt_TrHero32Skill4Off_Init () {
 // Trigger: ?????? ?????? R?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero39Skill4On_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20232,7 +20028,6 @@ bool gt_TrHero39Skill4On_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20267,7 +20062,6 @@ bool gt_TrHero59Skill1Use_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ECB69CECB298EBB0A9ED96A5 = UnitGetFacing(EventUnitDamageSourceUnit());
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventUnitDamageSourcePlayer()) == c_playerTypeUser))) {
             return false;
@@ -20282,7 +20076,6 @@ bool gt_TrHero59Skill1Use_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20371,7 +20164,6 @@ void gt_TrHero59Skill1Use_Init () {
 // Trigger: ????????? E?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero62Skill3Start_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20386,7 +20178,6 @@ bool gt_TrHero62Skill3Start_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20407,7 +20198,6 @@ void gt_TrHero62Skill3Start_Init () {
 // Trigger: ????????? E?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero62Skill3On_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20426,7 +20216,6 @@ bool gt_TrHero62Skill3On_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20446,7 +20235,6 @@ void gt_TrHero62Skill3On_Init () {
 // Trigger: ????????? E?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero62Skill3End_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20461,7 +20249,6 @@ bool gt_TrHero62Skill3End_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20482,7 +20269,6 @@ void gt_TrHero62Skill3End_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero66PassiveOn_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20497,7 +20283,6 @@ bool gt_TrHero66PassiveOn_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20541,14 +20326,12 @@ void gt_TrHero66PassiveOn_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHero66PassiveOn2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20575,7 +20358,6 @@ bool gt_TrScoreDialogBtnOpen_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20590,7 +20372,6 @@ bool gt_TrScoreDialogBtnOpen_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20637,7 +20418,6 @@ bool gt_TrScoreDialogHotKeyOpen_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -20648,7 +20428,6 @@ bool gt_TrScoreDialogHotKeyOpen_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20688,7 +20467,6 @@ void gt_TrScoreDialogHotKeyOpen_Init () {
 // Trigger: ????????? ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMinionNotStop_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!(((EventPlayer() == 12) || (EventPlayer() == 13)))) {
             return false;
@@ -20703,7 +20481,6 @@ bool gt_TrMinionNotStop_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20730,14 +20507,12 @@ void gt_TrMinionNotStop_Init () {
 // Trigger: ?????? ????????? ??????1
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20814,14 +20589,12 @@ void gt_TrMonsterMake1_Init () {
 // Trigger: ?????? ????????? ??????2
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20876,14 +20649,12 @@ void gt_TrMonsterMake2_Init () {
 // Trigger: ?????? ????????? ??????3
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake3_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20924,14 +20695,12 @@ void gt_TrMonsterMake3_Init () {
 // Trigger: ?????? ????????? ??????4
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake4_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -20972,14 +20741,12 @@ void gt_TrMonsterMake4_Init () {
 // Trigger: ?????? ????????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterMake5_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21012,7 +20779,6 @@ void gt_TrMonsterMake5_Init () {
 // Trigger: ?????? ????????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffPickUp_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!(((UnitGetType(EventUnit()) == "Inunit") || (UnitGetType(EventUnit()) == "Inunit5") || (UnitGetType(EventUnit()) == "SpineCrawler") || (UnitGetType(EventUnit()) == "SporeCrawler")))) {
             return false;
@@ -21031,7 +20797,6 @@ bool gt_TrMonsterBuffPickUp_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21068,7 +20833,6 @@ void gt_TrMonsterBuffPickUp_Init () {
 // Trigger: ????????? ?????? ???
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffEnd1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -21083,7 +20847,6 @@ bool gt_TrMonsterBuffEnd1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21102,7 +20865,6 @@ void gt_TrMonsterBuffEnd1_Init () {
 // Trigger: ????????? ?????? ???
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffEnd2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -21117,7 +20879,6 @@ bool gt_TrMonsterBuffEnd2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21140,7 +20901,6 @@ void gt_TrMonsterBuffEnd2_Init () {
 // Trigger: ????????? ?????? ???
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBuffEnd3_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -21155,7 +20915,6 @@ bool gt_TrMonsterBuffEnd3_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21192,7 +20951,6 @@ bool gt_TrMonsterAttackBird1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21215,7 +20973,6 @@ bool gt_TrMonsterAttackBird1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21251,7 +21008,6 @@ bool gt_TrMonsterAttackBird2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21274,7 +21030,6 @@ bool gt_TrMonsterAttackBird2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21303,7 +21058,6 @@ void gt_TrMonsterAttackBird2_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBird1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21322,7 +21076,6 @@ bool gt_TrMonsterBackBird1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21348,7 +21101,6 @@ void gt_TrMonsterBackBird1_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBird2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21367,7 +21119,6 @@ bool gt_TrMonsterBackBird2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21400,7 +21151,6 @@ bool gt_TrMonsterAttackDog1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21423,7 +21173,6 @@ bool gt_TrMonsterAttackDog1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21459,7 +21208,6 @@ bool gt_TrMonsterAttackDog2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21482,7 +21230,6 @@ bool gt_TrMonsterAttackDog2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21511,7 +21258,6 @@ void gt_TrMonsterAttackDog2_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackDog1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21530,7 +21276,6 @@ bool gt_TrMonsterBackDog1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21586,7 +21331,6 @@ void gt_TrMonsterBackDog1_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackDog2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21605,7 +21349,6 @@ bool gt_TrMonsterBackDog2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21668,7 +21411,6 @@ bool gt_TrMonsterAttackCow1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21691,7 +21433,6 @@ bool gt_TrMonsterAttackCow1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21727,7 +21468,6 @@ bool gt_TrMonsterAttackCow2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21750,7 +21490,6 @@ bool gt_TrMonsterAttackCow2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21779,7 +21518,6 @@ void gt_TrMonsterAttackCow2_Init () {
 // Trigger: ?????? ??? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackCow1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21798,7 +21536,6 @@ bool gt_TrMonsterBackCow1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21832,7 +21569,6 @@ void gt_TrMonsterBackCow1_Init () {
 // Trigger: ?????? ??? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackCow2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21851,7 +21587,6 @@ bool gt_TrMonsterBackCow2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21892,7 +21627,6 @@ bool gt_TrMonsterAttackGalic1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21915,7 +21649,6 @@ bool gt_TrMonsterAttackGalic1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -21951,7 +21684,6 @@ bool gt_TrMonsterAttackGalic2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -21974,7 +21706,6 @@ bool gt_TrMonsterAttackGalic2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22003,7 +21734,6 @@ void gt_TrMonsterAttackGalic2_Init () {
 // Trigger: ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackGalic1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22022,7 +21752,6 @@ bool gt_TrMonsterBackGalic1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22066,7 +21795,6 @@ void gt_TrMonsterBackGalic1_Init () {
 // Trigger: ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackGalic2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22085,7 +21813,6 @@ bool gt_TrMonsterBackGalic2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22136,7 +21863,6 @@ bool gt_TrMonsterAttackScolpion1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22159,7 +21885,6 @@ bool gt_TrMonsterAttackScolpion1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22195,7 +21920,6 @@ bool gt_TrMonsterAttackScolpion2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22218,7 +21942,6 @@ bool gt_TrMonsterAttackScolpion2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22247,7 +21970,6 @@ void gt_TrMonsterAttackScolpion2_Init () {
 // Trigger: ????????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackScolpion1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22266,7 +21988,6 @@ bool gt_TrMonsterBackScolpion1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22310,7 +22031,6 @@ void gt_TrMonsterBackScolpion1_Init () {
 // Trigger: ????????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackScolpion2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22329,7 +22049,6 @@ bool gt_TrMonsterBackScolpion2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22380,7 +22099,6 @@ bool gt_TrMonsterAttackIceBug1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22403,7 +22121,6 @@ bool gt_TrMonsterAttackIceBug1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22439,7 +22156,6 @@ bool gt_TrMonsterAttackIceBug2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22462,7 +22178,6 @@ bool gt_TrMonsterAttackIceBug2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22498,7 +22213,6 @@ bool gt_TrMonsterAttackIceBug3_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22521,7 +22235,6 @@ bool gt_TrMonsterAttackIceBug3_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22557,7 +22270,6 @@ bool gt_TrMonsterAttackIceBug4_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22580,7 +22292,6 @@ bool gt_TrMonsterAttackIceBug4_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22609,7 +22320,6 @@ void gt_TrMonsterAttackIceBug4_Init () {
 // Trigger: ?????? ???????????????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22628,7 +22338,6 @@ bool gt_TrMonsterBackIceBug1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22662,7 +22371,6 @@ void gt_TrMonsterBackIceBug1_Init () {
 // Trigger: ?????? ???????????????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22681,7 +22389,6 @@ bool gt_TrMonsterBackIceBug2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22715,7 +22422,6 @@ void gt_TrMonsterBackIceBug2_Init () {
 // Trigger: ?????? ???????????????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug3_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22734,7 +22440,6 @@ bool gt_TrMonsterBackIceBug3_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22768,7 +22473,6 @@ void gt_TrMonsterBackIceBug3_Init () {
 // Trigger: ?????? ???????????????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackIceBug4_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22787,7 +22491,6 @@ bool gt_TrMonsterBackIceBug4_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22825,7 +22528,6 @@ bool gt_TrMonsterAttackBoss1_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22844,7 +22546,6 @@ bool gt_TrMonsterAttackBoss1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22874,7 +22575,6 @@ bool gt_TrMonsterAttackBoss2_Func (bool testConds, bool runActions) {
 
     lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
 
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22893,7 +22593,6 @@ bool gt_TrMonsterAttackBoss2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22919,7 +22618,6 @@ void gt_TrMonsterAttackBoss2_Init () {
 // Trigger: ?????? ?????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBoss1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22938,7 +22636,6 @@ bool gt_TrMonsterBackBoss1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -22964,7 +22661,6 @@ void gt_TrMonsterBackBoss1_Init () {
 // Trigger: ?????? ?????? ???????????????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBackBoss2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
@@ -22983,7 +22679,6 @@ bool gt_TrMonsterBackBoss2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23009,7 +22704,6 @@ void gt_TrMonsterBackBoss2_Init () {
 // Trigger: ?????? ????????? ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterRegenTimerStart_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
@@ -23024,7 +22718,6 @@ bool gt_TrMonsterRegenTimerStart_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23076,14 +22769,12 @@ void gt_TrMonsterRegenTimerStart_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterBirdRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23126,14 +22817,12 @@ void gt_TrMonsterBirdRegen_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterDogRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23194,14 +22883,12 @@ void gt_TrMonsterDogRegen_Init () {
 // Trigger: ?????? ??? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterCowRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23250,14 +22937,12 @@ void gt_TrMonsterCowRegen_Init () {
 // Trigger: ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterGalicRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23312,14 +22997,12 @@ void gt_TrMonsterGalicRegen_Init () {
 // Trigger: ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterScolpionRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23374,14 +23057,12 @@ void gt_TrMonsterScolpionRegen_Init () {
 // Trigger: ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterIceBugRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23462,14 +23143,12 @@ void gt_TrMonsterIceBugRegen_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterIceBossRegen_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23525,14 +23204,12 @@ bool gt_TrBuildingDestroyMoojuck_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
 
-    // Conditions
     if (testConds) {
         if (!(((EventPlayer() == 12) || (EventPlayer() == 13)))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23645,7 +23322,6 @@ void gt_TrBuildingDestroyMoojuck_Init () {
 // Trigger: ????????? ????????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSinhoBuildingReviveTimerStart_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23723,7 +23399,6 @@ void gt_TrSinhoBuildingReviveTimerStart_Init () {
 // Trigger: ????????? ?????????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSinhoBuildingRevive_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -23849,7 +23524,6 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     int lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4;
 
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -23868,7 +23542,6 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24055,14 +23728,12 @@ void gt_TrHeroDeath_Init () {
 // Trigger: ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHeroReviveStand_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24157,14 +23828,12 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
     lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
 
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24255,14 +23924,12 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
     lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
 
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24334,7 +24001,6 @@ void gt_TrNexusDestroyTeam2_Init () {
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSignOk_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24370,7 +24036,6 @@ void gt_TrSurrenderSignOk_Init () {
 // Trigger: ?????? ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderReTimer_Func (bool testConds, bool runActions) {
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24411,7 +24076,6 @@ bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -24430,7 +24094,6 @@ bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24570,7 +24233,6 @@ bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -24589,7 +24251,6 @@ bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24717,7 +24378,6 @@ void gt_TrSurrenderSystemStartBtn_Init () {
 // Trigger: ?????? ????????? ??????(1???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -24748,7 +24408,6 @@ bool gt_TrSurrenderOkTeam1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24775,7 +24434,6 @@ void gt_TrSurrenderOkTeam1_Init () {
 // Trigger: ?????? ????????? ??????(2???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -24806,7 +24464,6 @@ bool gt_TrSurrenderOkTeam2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24833,7 +24490,6 @@ void gt_TrSurrenderOkTeam2_Init () {
 // Trigger: ?????? ????????? ??????(1???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderNoTeam1_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -24864,7 +24520,6 @@ bool gt_TrSurrenderNoTeam1_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24891,7 +24546,6 @@ void gt_TrSurrenderNoTeam1_Init () {
 // Trigger: ?????? ????????? ??????(2???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderNoTeam2_Func (bool testConds, bool runActions) {
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -24922,7 +24576,6 @@ bool gt_TrSurrenderNoTeam2_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -24968,14 +24621,12 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
     lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
 
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -25068,14 +24719,12 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
     lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
 
-    // Conditions
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -25160,7 +24809,6 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
-    // Conditions
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -25179,7 +24827,6 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
