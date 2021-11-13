@@ -4007,6 +4007,7 @@ void gf_HrSkillLearnWindowOpen () {
         if ((gv_SkillLevels[EventPlayer()][c_SkillE] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
         }
+        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
     }
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(EventPlayer()), true);
 }
@@ -4069,6 +4070,7 @@ void gf_HrSkillLearnWindowClose () {
         if ((gv_SkillLevels[EventPlayer()][c_SkillE] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
         }
+        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
     }
 }
 
