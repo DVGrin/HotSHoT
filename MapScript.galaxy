@@ -239,6 +239,8 @@ HeroInfo[100] gv_HeroInformation;
 int[11][4] gv_SkillLevels;
 int[19][4] gv_MaxSkillLevel;
 string[100][4][5] gv_SkillLevelUpgrades;
+bool[11] gv_TestModeVotes;
+bool[11][11] gv_VotedToKick;
 
 void InitGlobals () {
     int init_i;
@@ -657,6 +659,7 @@ trigger gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC;
 trigger gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99;
 trigger gt_TrHelpText;
 trigger gt_TrViewHandler;
+trigger gt_TrChatCommandHandler;
 trigger gt_TrSingleCheetMoney;
 trigger gt_TrSingleCheetLevel;
 trigger gt_TrSingleCheetTestUnit;
@@ -7830,7 +7833,7 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
 
     TriggerEnable(TriggerGetCurrent(), false);
     lv_GPlayerNum1 = 1;
-    for ( ; ( (auto85437FDC_ai >= 0 && lv_GPlayerNum1 <= auto85437FDC_ae) || (auto85437FDC_ai < 0 && lv_GPlayerNum1 >= auto85437FDC_ae) ) ; lv_GPlayerNum1 += auto85437FDC_ai ) {
+    for ( ; lv_GPlayerNum1 <= auto85437FDC_ae ; lv_GPlayerNum1 += auto85437FDC_ai ) {
         if ((PlayerType(PlayerGroupPlayer(GameAttributePlayersForTeam(1), lv_GPlayerNum1)) == c_playerTypeUser) && (PlayerStatus(PlayerGroupPlayer(GameAttributePlayersForTeam(1), lv_GPlayerNum1)) == c_playerStatusActive)) {
             gv_PlayerBayul[lv_GPlayerNum1] = PlayerGroupPlayer(GameAttributePlayersForTeam(1), lv_GPlayerNum1);
             CameraPan(PlayerGroupPlayer(GameAttributePlayersForTeam(1), lv_GPlayerNum1), PointFromId(1), 0.0, -1, 0, false);
@@ -10718,6 +10721,235 @@ void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Init () {
     TriggerAddEventUnitSelected(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99, null, c_playerAny, false);
 }
 
+bool lf_TestModeVotedFor() {
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
+        if (gv_TestModeVotes[PlayerGroupLoopCurrent()] == false) {
+            return false;
+        }
+    }
+    PlayerGroupLoopEnd();
+    return true;
+}
+
+bool lf_EnoughVotesToKick(int player) {
+    int active_players = 0;
+    int votes = 0;
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
+        active_players += 1;
+        if (gv_VotedToKick[PlayerGroupLoopCurrent()][player] == true) {
+            votes += 1;
+        }
+    }
+    PlayerGroupLoopEnd();
+
+    if (active_players <= 2) {
+        return false;
+    }
+
+    if (votes >= ((active_players / 2) + 1)) {
+        return true;
+    }
+
+    return false;
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Chat command handler
+//--------------------------------------------------------------------------------------------------
+bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
+    int i;
+    int number;
+    fixed numberf;
+    fixed current_level;
+    string command;
+    string[5] arguments;
+    text message;
+
+    if (testConds) {
+        if (PlayerType(EventPlayer()) != c_playerTypeUser) {
+            return false;
+        }
+
+        if ((gv_GameStartBoolean == false) || (gv_GameEndBoolean == true)) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    // Command parsing
+    command = StringWord(EventChatMessage(false), 1);
+    for (i = 0; i < 5; i += 1) {
+        arguments[i] = StringWord(EventChatMessage(false), i + 2);
+        if (arguments[i] == "No String") {
+            arguments[i] = "";
+            break;
+        }
+    }
+
+    // Here are the commands available to observers
+    if (StringEqual(command, "-help", true)) {
+        return true; // TODO
+    }
+
+    if (StringEqual(command, "-players", true)) {
+        message = StringToText("Player list:\n"); // TODO: Move to external string
+        PlayerGroupLoopBegin(PlayerGroupActive());
+        for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+            if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+                continue;
+            }
+            message += IntToText(PlayerGroupLoopCurrent());
+            message += StringToText(". ");
+            message += TextWithColor(
+                PlayerName(EventPlayer()),
+                libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))
+            );
+            message += StringToText("\n");
+        }
+        PlayerGroupLoopEnd();
+
+        UIDisplayMessage(
+            PlayerGroupAll(),
+            c_messageAreaSubtitle,
+            message
+        );
+        return true;
+    }
+
+    if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
+        return false;
+    }
+
+    // Here are the commands available in multiplayer
+    if (StringEqual(command, "-testmode", true)) {
+        gv_TestModeVotes[EventPlayer()] = true;
+        if (lf_TestModeVotedFor()) {
+            UIDisplayMessage(
+                PlayerGroupAll(),
+                c_messageAreaSubtitle,
+                StringToText("Test mode activated. Cheats enabled for everyone") // TODO: Move to external string
+            );
+        }
+        return true;
+    }
+
+    if (StringEqual(command, "-votekick", true)) {
+        number = StringToInt(arguments[0]);
+        if ((number <= 0) || (number >= 11)) {
+            return true;
+        }
+        if (!(PlayerGroupHasPlayer(PlayerGroupActive(), number))) {
+            return true;
+        }
+        gv_VotedToKick[EventPlayer()][number] = true;
+        UIDisplayMessage(
+            PlayerGroupAll(),
+            c_messageAreaSubtitle,
+            (
+                TextWithColor(
+                    PlayerName(EventPlayer()),
+                    libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))
+                ) +
+                StringToText(" has voted to kick ") + // TODO: Move to external string
+                TextWithColor(
+                    PlayerName(number),
+                    libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(number, false))
+                )
+            )
+        );
+        if (lf_EnoughVotesToKick(number)) {
+            KickFromGame(PlayerGroupSingle(number));
+        }
+    }
+
+    if ((PlayerGroupCount(gv_AllPlayerGroup) != 1) && !(lf_TestModeVotedFor())) {
+        return false;
+    }
+
+    // Here are the singleplayer and testmode commands
+    if (StringEqual(command, "-minerals", true)) {
+        number = StringToInt(arguments[0]);
+        if (number == 0) {
+            number = 10000;
+        }
+        PlayerModifyPropertyInt(
+            EventPlayer(),
+            c_playerPropMinerals,
+            c_playerPropOperSetTo,
+            number
+        );
+        return true;
+    }
+
+    if (StringEqual(command, "-gas", true)) {
+        number = StringToInt(arguments[0]);
+        if (number == 0) {
+            number = 100;
+        }
+        PlayerModifyPropertyInt(
+            EventPlayer(),
+            c_playerPropVespene,
+            c_playerPropOperSetTo,
+            number
+        );
+        return true;
+    }
+
+    if (StringEqual(command, "-levelup", true)) {
+        current_level = UnitGetPropertyFixed(
+            gv_PlayerHero[EventPlayer()],
+            c_unitPropLevel,
+            c_unitPropCurrent
+        );
+        numberf = StringToFixed(arguments[0]);
+        if (numberf == 0.0) {
+            numberf = 1.0;
+        }
+        UnitSetPropertyFixed(
+            gv_PlayerHero[EventPlayer()],
+            c_unitPropLevel,
+            MinF((current_level + numberf), 18.0)
+        );
+        return true;
+    }
+
+    if (StringEqual(command, "-testunit", true)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(
+            1,
+            "Hydralisk",
+            0,
+            11,
+            UnitGetPosition(gv_PlayerHero[EventPlayer()])
+        );
+        return true;
+    }
+
+    return false;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_TrChatCommandHandler_Init () {
+    gt_TrChatCommandHandler = TriggerCreate("gt_TrChatCommandHandler_Func");
+    TriggerAddEventChatMessage(gt_TrChatCommandHandler, c_playerAny, "", false);
+}
+
 //--------------------------------------------------------------------------------------------------
 // Trigger: ?????? - ????????? ??????
 //--------------------------------------------------------------------------------------------------
@@ -10750,12 +10982,7 @@ void gt_TrHelpText_Init () {
 // Trigger: ?????? - ??????????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrViewHandler_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    const int auto22FE6F65_ae = 8;
-    const int auto22FE6F65_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -10767,10 +10994,9 @@ bool gt_TrViewHandler_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (auto22FE6F65_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= auto22FE6F65_ae) || (auto22FE6F65_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= auto22FE6F65_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += auto22FE6F65_ai ) {
-        if ((gv_PlayerHandlerNumber[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] != "")) {
-            UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaDebug, (StringExternal("Param/Value/3F77CCA3") + TextWithColor(PlayerName(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], false))) + StringExternal("Param/Value/044239AC") + StringToText(gv_PlayerHandlerNumber[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]]) + StringExternal("Param/Value/76CFE4EE")));
+    for (i = 1; i <= 8; i += 1) {
+        if ((gv_PlayerHandlerNumber[gv_PlayerBayul[i]] != "")) {
+            UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaDebug, (StringExternal("Param/Value/3F77CCA3") + TextWithColor(PlayerName(gv_PlayerBayul[i]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[i], false))) + StringExternal("Param/Value/044239AC") + StringToText(gv_PlayerHandlerNumber[gv_PlayerBayul[i]]) + StringExternal("Param/Value/76CFE4EE")));
         }
 
     }
@@ -10915,13 +11141,13 @@ void gt_TrSingleCheetTestUnit_Init () {
 // Trigger: ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSingleCheetDPup_Func (bool testConds, bool runActions) {
-    string lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898;
-    int lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898;
+    string argument;
+    int num;
 
-    int auto663B6F6C_n;
-    int auto663B6F6C_i;
+    int n;
+    int i;
 
-    lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = "";
+    argument = "";
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -10949,11 +11175,11 @@ bool gt_TrSingleCheetDPup_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898 = StringWord(EventChatMessage(false), 2);
-    lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898 = StringToInt(lv_eC84A4ECA095EC9E85EBA0A5ED858DEC8AA4ED8AB8EBB380EC8898);
-    if ((lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898 <= 20)) {
-        auto663B6F6C_n = lv_eC84A4ECA095EC9E85EBA0A5EC88ABEC9E90EBB380EC8898;
-        for (auto663B6F6C_i = 1; auto663B6F6C_i <= auto663B6F6C_n; auto663B6F6C_i += 1) {
+    argument = StringWord(EventChatMessage(false), 2);
+    num = StringToInt(argument);
+    if ((num <= 20)) {
+        n = num;
+        for (i = 1; i <= n; i += 1) {
             PlayerCreateEffectPoint(EventPlayer(), "dparmorsr", PointFromId(1));
             Wait(0.01, c_timeReal);
         }
@@ -17408,7 +17634,7 @@ void gt_TrSurrenderReTimer_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084;
+    int countdown;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
     int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
 
@@ -17417,7 +17643,7 @@ bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
     const int autoDC750E18_ae = 8;
     const int autoDC750E18_ai = 1;
 
-    lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 21;
+    countdown = 21;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
     lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
 
@@ -17450,14 +17676,14 @@ bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
             DialogControlSetEnabled(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(1), true);
             DialogControlSetVisible(gv_SurrenderDialogBtn[0], GameAttributePlayersForTeam(1), true);
             DialogControlSetVisible(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(1), true);
-            libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(1));
+            libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(countdown), GameAttributePlayersForTeam(1));
             UIDisplayMessage(GameAttributePlayersForTeam(2), c_messageAreaDebug, (StringExternal("Param/Value/5500CD13") + TextWithColor((StringExternal("Param/Value/0B70DF5D")), Color(100.00, 90.20, 0.00)) + StringExternal("Param/Value/7955829C")));
             DialogSetVisible(gv_SurrenderDialog, GameAttributePlayersForTeam(1), true);
-            while ((lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 > 0)) {
-                lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 -= 1;
-                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(1));
+            while ((countdown > 0)) {
+                countdown -= 1;
+                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(countdown), GameAttributePlayersForTeam(1));
                 if ((gv_SurrenderPlayerNum1 == 0)) {
-                    lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 0;
+                    countdown = 0;
                 }
 
                 Wait(1.0, c_timeReal);
@@ -17491,14 +17717,14 @@ bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
                 DialogControlSetEnabled(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(2), true);
                 DialogControlSetVisible(gv_SurrenderDialogBtn[0], GameAttributePlayersForTeam(2), true);
                 DialogControlSetVisible(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(2), true);
-                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(2));
+                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(countdown), GameAttributePlayersForTeam(2));
                 UIDisplayMessage(GameAttributePlayersForTeam(1), c_messageAreaDebug, (StringExternal("Param/Value/19592732") + TextWithColor((StringExternal("Param/Value/DBC7F3A8")), Color(100.00, 90.20, 0.00)) + StringExternal("Param/Value/7850E154")));
                 DialogSetVisible(gv_SurrenderDialog, GameAttributePlayersForTeam(2), true);
-                while ((lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 > 0)) {
-                    lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 -= 1;
-                    libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(2));
+                while ((countdown > 0)) {
+                    countdown -= 1;
+                    libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(countdown), GameAttributePlayersForTeam(2));
                     if ((gv_SurrenderPlayerNum2 == 0)) {
-                        lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 0;
+                        countdown = 0;
                     }
 
                     Wait(1.0, c_timeReal);
@@ -18478,6 +18704,7 @@ void InitTriggers () {
     gt_TrSurrenderOkTeam1Win_Init();
     gt_TrSurrenderOkTeam2Win_Init();
     gt_TrPlayerOut_Init();
+    gt_TrChatCommandHandler_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
