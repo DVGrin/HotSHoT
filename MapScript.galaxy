@@ -612,6 +612,7 @@ void gf_HrScoreDialogStatToolTip ();
 void gf_HrSurrenderDialogMake ();
 void gf_HrDrawGame ();
 void gf_LearnSkill(int player_number, int skill);
+void gf_SpawnHero(int player_number, int hero_number);
 // Utility functions
 int gf_ShopWindowByIndex(int shop_index);
 bool gf_EligibleForBuyingHotkey(int shop_index);
@@ -4077,6 +4078,106 @@ void gf_HrSkillLearnWindowClose () {
     }
 }
 
+void gf_SpawnHero(int player_number, int hero_number) {
+    int i;
+    int position = 194;
+    string[8] assist_upgrade;
+    string[8] recall_upgrade;
+
+    if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), player_number)) {
+        position = 195;
+    }
+
+    gv_SelectedCharNum[gv_PlayerBayul[player_number]] = hero_number;
+    gv_PlayerReadyUnit[gv_PlayerBayul[player_number]] = gv_HeroInformation[hero_number - 1].unitname;
+    gv_CharSelectedName[gv_PlayerBayul[player_number]] = gv_HeroInformation[hero_number - 1].name;
+    gv_CharSelectedImage[gv_PlayerBayul[player_number]] = gv_HeroInformation[hero_number - 1].image;
+
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 5)) {
+        TriggerEnable(gt_TrTextTailUseHero5Skill4, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 6)) {
+        TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], "SpellUp222233322234", 1);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 9)) {
+        TriggerEnable(gt_TrTextTailUseHero9AttackImpact, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 10)) {
+        TriggerEnable(gt_TrHero10Skill4On, true);
+        TriggerEnable(gt_TrHero10Skill4Off, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 14)) {
+        TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], "SpellUp2222333222342", 1);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 15)) {
+        TriggerEnable(gt_TrHero15Skill4Use, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 19)) {
+        TriggerEnable(gt_TrHero19Death, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 32)) {
+        TriggerEnable(gt_TrHero32Skill2Up, true);
+        TriggerEnable(gt_TrHero32Skill4On, true);
+        TriggerEnable(gt_TrHero32Skill4Off, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 36)) {
+        TriggerEnable(gt_TrSingleCheetRPdown2, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 39)) {
+        TriggerEnable(gt_TrHero39Skill4On, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 59)) {
+        TriggerEnable(gt_TrHero59Skill1Use, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 62)) {
+        TriggerEnable(gt_TrHero62Skill3Start, true);
+        TriggerEnable(gt_TrHero62Skill3End, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 66)) {
+        TriggerEnable(gt_TrHero66PassiveOn, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 72)) {
+        TriggerEnable(gt_TrHero66PassiveOn2, true);
+    }
+    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 73)) {
+        PlayerCreateEffectPoint(gv_PlayerBayul[player_number], "Hero73Skill1G", PointFromId(578));
+    }
+
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[gv_PlayerBayul[player_number]], 0, gv_PlayerBayul[player_number], PointFromId(position));
+    gv_PlayerHero[gv_PlayerBayul[player_number]] = UnitLastCreated();
+    CameraPan(gv_PlayerBayul[player_number], PointFromId(position), 0.0, -1, 10, false);
+    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[player_number]], 2);
+    // TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], "SpellUp222233322232222", 2);
+
+    if ((gv_SelectedSpellNum1[gv_PlayerBayul[player_number]] == 8) || (gv_SelectedSpellNum2[gv_PlayerBayul[player_number]] == 8)) {
+        if (gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[player_number]] - 1].ability_resource == c_abilityResourceMana) {
+            UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong5", gv_PlayerBayul[player_number], 1);
+        }
+    }
+
+    assist_upgrade[0] = "Player1Assist2";
+    assist_upgrade[1] = "Player1Assist22";
+    assist_upgrade[2] = "Player1Assist222";
+    assist_upgrade[3] = "Player1Assist2222";
+    assist_upgrade[4] = "Player1Assist22222";
+    assist_upgrade[5] = "Player1Assist222222";
+    assist_upgrade[6] = "Player1Assist2222222";
+    assist_upgrade[7] = "Player1Assist22222222";
+
+    recall_upgrade[0] = "PortalBuy23";
+    recall_upgrade[1] = "PortalBuy232";
+    recall_upgrade[2] = "PortalBuy2322";
+    recall_upgrade[3] = "PortalBuy23222";
+    recall_upgrade[4] = "PortalBuy232222";
+    recall_upgrade[5] = "PortalBuy2322222";
+    recall_upgrade[6] = "PortalBuy23222222";
+    recall_upgrade[7] = "PortalBuy232222222";
+
+    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], assist_upgrade[player_number - 1], gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+    TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], recall_upgrade[player_number - 1], 1);
+}
+
 void gf_HrStatDialogMake1a () {
     int lv_eC84A4ECA095xECB695EBB380EC8898ECA28C;
     int lv_eC84A4ECA095xECB695EBB380EC8898EC9AB0;
@@ -4736,8 +4837,8 @@ void gf_HrStatMoneySet () {
     int j;
 
     for (i = 0; i < 30; i += 1) {
-        for (j = 0; j <= 8 ; j += 1 ) {
-            gv_StatHowMoney[i][gv_PlayerBayul[j]] = gv_ShopItemParameters[i].minerals_cost;
+        for (j = 0; j < 12 ; j += 1 ) {
+            gv_StatHowMoney[i][j] = gv_ShopItemParameters[i].minerals_cost;
         }
     }
 }
@@ -10321,16 +10422,7 @@ void gt_TrBeforeSpellRandomSelect_Init () {
 // Trigger: ???????????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrPlayersAllCreate_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80;
-
-    const int autoEF89B667_ae = 4;
-    const int autoEF89B667_ai = 1;
-    const int autoC64E302D_ae = 8;
-    const int autoC64E302D_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
+    int i;
 
     if (!runActions) {
         return true;
@@ -10338,27 +10430,25 @@ bool gt_TrPlayersAllCreate_Func (bool testConds, bool runActions) {
 
     TriggerEnable(TriggerGetCurrent(), false);
     gf_HrCharMake();
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 = 1;
-    for ( ; ( (autoEF89B667_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 <= autoEF89B667_ae) || (autoEF89B667_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 >= autoEF89B667_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80 += autoEF89B667_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]) == c_playerStatusActive)) {
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]], 0, gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80], PointFromId(194));
-            gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]] = UnitLastCreated();
-            CameraPan(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80], PointFromId(194), 0.0, -1, 10, false);
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]], 1);
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80]], 2);
-            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88981ED8C80], "SpellUp222233322232222", 2);
+    for (i = 1; i <= 4; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[gv_PlayerBayul[i]], 0, gv_PlayerBayul[i], PointFromId(194));
+            gv_PlayerHero[gv_PlayerBayul[i]] = UnitLastCreated();
+            CameraPan(gv_PlayerBayul[i], PointFromId(194), 0.0, -1, 10, false);
+            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[i]], 1);
+            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[i]], 2);
+            TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp222233322232222", 2);
         }
 
     }
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 = 5;
-    for ( ; ( (autoC64E302D_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 <= autoC64E302D_ae) || (autoC64E302D_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 >= autoC64E302D_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80 += autoC64E302D_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]) == c_playerStatusActive)) {
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]], 0, gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80], PointFromId(195));
-            gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]] = UnitLastCreated();
-            CameraPan(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80], PointFromId(195), 0.0, -1, 10, false);
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]], 1);
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80]], 2);
-            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC88982ED8C80], "SpellUp222233322232222", 2);
+    for (i = 5; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[gv_PlayerBayul[i]], 0, gv_PlayerBayul[i], PointFromId(195));
+            gv_PlayerHero[gv_PlayerBayul[i]] = UnitLastCreated();
+            CameraPan(gv_PlayerBayul[i], PointFromId(195), 0.0, -1, 10, false);
+            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[i]], 1);
+            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[i]], 2);
+            TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp222233322232222", 2);
         }
 
     }
@@ -10853,10 +10943,10 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
     if (StringEqual(command, "-votekick", true)) {
         number = StringToInt(arguments[0]);
         if ((number <= 0) || (number >= 11)) {
-            return true;
+            return false;
         }
         if (!(PlayerGroupHasPlayer(PlayerGroupActive(), number))) {
-            return true;
+            return false;
         }
         gv_VotedToKick[EventPlayer()][number] = true;
         UIDisplayMessage(
@@ -10877,6 +10967,7 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         if (lf_EnoughVotesToKick(number)) {
             KickFromGame(PlayerGroupSingle(number));
         }
+        return true;
     }
 
     if ((PlayerGroupCount(gv_AllPlayerGroup) != 1) && !(lf_TestModeVotedFor())) {
@@ -10939,6 +11030,31 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
             UnitGetPosition(gv_PlayerHero[EventPlayer()])
         );
         return true;
+    }
+
+    if (StringEqual(command, "-changehero", true)) {
+        number = 0;
+        number = StringToInt(arguments[0]);
+        if (number == 0) {
+            return false;
+        }
+        if (gv_HeroDeathBoolean[EventPlayer()]) {
+            return false;
+        }
+        UnitRemove(gv_PlayerHero[EventPlayer()]);
+        for (i = 0; i < 4; i += 1) {
+            gv_SkillLevels[EventPlayer()][i] = 0;
+        }
+        gv_HeroReviveCountNum[EventPlayer()][0] = 10;
+        gv_HeroReviveCountNum[EventPlayer()][1] = 10;
+        gv_PlayerLevel[EventPlayer()][0] = 1;
+        gv_HeroKillMoney[EventPlayer()][0] = 60;
+        gv_HeroKillMoney[EventPlayer()][1] = 12;
+        gv_HeroKillMoney[EventPlayer()][2] = 20;
+        gv_AllyGiveMoney[EventPlayer()] = 500;
+        gv_AvailableSkillPoints[EventPlayer()] = 1;
+        gf_SpawnHero(EventPlayer(), number);
+        gf_HrSkillLearnWindowOpen();
     }
 
     return false;
