@@ -259,32 +259,25 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_TeamPlayerGroup[init_i] = PlayerGroupEmpty();
     }
+
     for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_CharSelectedImage[init_i] = "Assets\\InviButton.dds";
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_CharSelectedName[init_i] = StringToText("");
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_SelectedSpellName1[init_i] = StringToText("");
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_SelectedSpellName2[init_i] = StringToText("");
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_SelectedSpellImage1[init_i] = "Assets\\InviButton.dds";
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_SelectedSpellImage2[init_i] = "Assets\\InviButton.dds";
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         for (init_j = 0; init_j <= 1; init_j += 1) {
             gv_SpellToolTip[init_i][init_j] = StringToText("");
         }
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_PlayerHandlerNumber[init_i] = "";
+        gv_AvailableSkillPoints[init_i] = 1;
+        gv_WardGroup[init_i] = UnitGroupEmpty();
+        gv_HeroDeathBoolean[init_i] = true;
+        gv_CharSelectWindowSpellImage1[init_i] = c_invalidDialogControlId;
+        gv_CharSelectWindowSpellImage2[init_i] = c_invalidDialogControlId;
     }
+
     gv_SkillLearnWindow = c_invalidDialogId;
     for (init_i = 0; init_i <= 7; init_i += 1) {
         gv_SkillLearnWindowImage[init_i] = c_invalidDialogControlId;
@@ -298,9 +291,7 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 11; init_i += 1) {
         gv_SkillLearnWindowNum[init_i] = c_invalidDialogControlId;
     }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_AvailableSkillPoints[init_i] = 1;
-    }
+
     gv_StatusWindow = c_invalidDialogId;
     gv_StatusWindow2 = c_invalidDialogId;
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -320,41 +311,29 @@ void InitGlobals () {
             gv_StatusWindowLabel[init_i][init_j] = c_invalidDialogControlId;
         }
     }
+
     gv_HeroFixedBtnWindow = c_invalidDialogId;
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_HeroFixedBtnWindowBtn[init_i] = c_invalidDialogControlId;
     }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_WardGroup[init_i] = UnitGroupEmpty();
-    }
+
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterGalicGroup[init_i] = UnitGroupEmpty();
-    }
-    for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterDogGroup[init_i] = UnitGroupEmpty();
-    }
-    for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterScolpionGroup[init_i] = UnitGroupEmpty();
-    }
-    for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterBirdGroup[init_i] = UnitGroupEmpty();
-    }
-    for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterCowGroup[init_i] = UnitGroupEmpty();
+        gv_MonsterBossGroup[init_i] = UnitGroupEmpty();
     }
     for (init_i = 0; init_i <= 3; init_i += 1) {
         gv_MonsterIceBugGroup[init_i] = UnitGroupEmpty();
     }
-    for (init_i = 0; init_i <= 1; init_i += 1) {
-        gv_MonsterBossGroup[init_i] = UnitGroupEmpty();
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_HeroDeathBoolean[init_i] = true;
-    }
+
     gv_HeroReviveWindow = c_invalidDialogId;
     for (init_i = 0; init_i <= 11; init_i += 1) {
         gv_HeroReviveWindowTime[init_i] = c_invalidDialogControlId;
     }
+
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_BeforeStartCounterDialog[init_i] = c_invalidDialogId;
     }
@@ -366,6 +345,7 @@ void InitGlobals () {
     gv_BeforeStartCounterWindow = c_invalidDialogId;
     gv_BeforeStartCounterWindowNum = c_invalidDialogControlId;
     gv_BeforeStartCounterWindowVar = 35;
+
     gv_CharChooseFullDialog = c_invalidDialogId;
     gv_CharChooseFullDialogLabel = c_invalidDialogControlId;
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -405,18 +385,14 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 11; init_i += 1) {
         gv_CharChooseWindowSpellImage[init_i] = c_invalidDialogControlId;
     }
+
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_GameModeBtn[init_i] = c_invalidDialogControlId;
     }
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_GameModeLabel[init_i] = c_invalidDialogControlId;
     }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_CharSelectWindowSpellImage1[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_CharSelectWindowSpellImage2[init_i] = c_invalidDialogControlId;
-    }
+
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_TeamSelectDialog[init_i] = c_invalidDialogId;
     }
@@ -434,19 +410,12 @@ void InitGlobals () {
     }
     for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_TeamSelectDialogPlayerHeroImage[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_TeamSelectDialogPlayerBorder[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_TeamSelectDialogPlayerSpellImage1[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_TeamSelectDialogPlayerSpellImage2[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_TeamSelectDialogPlayerName[init_i] = c_invalidDialogControlId;
     }
+
     for (init_i = 0; init_i <= 3; init_i += 1) {
         gv_ScoreDialog[init_i] = c_invalidDialogId;
     }
@@ -465,6 +434,18 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 5; init_i += 1) {
         gv_ScoreDialogTextB[init_i] = c_invalidDialogControlId;
     }
+    for (init_i = 0; init_i <= 10; init_i += 1) {
+        gv_ScoreDialogHeroImage[init_i] = c_invalidDialogControlId;
+        gv_ScoreDialogName[init_i] = c_invalidDialogControlId;
+        gv_ScoreDialogLevel[init_i] = c_invalidDialogControlId;
+        for (init_j = 0; init_j <= 1; init_j += 1) {
+            gv_ScoreDialogSpell[init_i][init_j] = c_invalidDialogControlId;
+        }
+        gv_ScoreDialogTotalScore[init_i] = c_invalidDialogControlId;
+        gv_ScoreDialogFarming[init_i] = c_invalidDialogControlId;
+        gv_ScoreDialogReviveTime[init_i] = c_invalidDialogControlId;
+    }
+
     for (init_i = 0; init_i <= 2; init_i += 1) {
         gv_PlayerProfileImage[init_i] = c_invalidDialogControlId;
     }
@@ -472,33 +453,11 @@ void InitGlobals () {
         gv_PlayerProfileText[init_i] = c_invalidDialogControlId;
     }
     for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_ScoreDialogHeroImage[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_ScoreDialogName[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_ScoreDialogLevel[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        for (init_j = 0; init_j <= 1; init_j += 1) {
-            gv_ScoreDialogSpell[init_i][init_j] = c_invalidDialogControlId;
-        }
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_ScoreDialogTotalScore[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_ScoreDialogFarming[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        gv_ScoreDialogReviveTime[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
         for (init_j = 0; init_j <= 5; init_j += 1) {
             gv_PlayerProfileAddToolTip[init_i][init_j] = StringToText("");
         }
     }
+
     gv_SurrenderDialog = c_invalidDialogId;
     for (init_i = 0; init_i <= 10; init_i += 1) {
         gv_SurrenderDialogLabel[init_i] = c_invalidDialogControlId;
@@ -509,6 +468,7 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_SurrenderDialogBtn[init_i] = c_invalidDialogControlId;
     }
+
     for (init_i = 0; init_i < gv_TotalHeroNum; init_i += 1) {
         gv_HeroInformation[init_i].number = init_i + 1;
     }
