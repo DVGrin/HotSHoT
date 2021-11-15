@@ -1,8 +1,9 @@
 //==================================================================================================
 // 
-// Generated Map Script
+// Map Script for HotSHoT (Hero Battle) 2.0
 // 
-// Name:   HotSHoT (Hero Battle)
+// Original map version by MaxStorm (KR server)
+// Code mostly rewritten by Dgrin (EU server)
 // 
 //==================================================================================================
 include "TriggerLibs/NativeLib"
@@ -87,7 +88,7 @@ bool[11] gv_ReadyRandomBoolean;
 bool[11] gv_ReadyClickBoolean;
 int gv_ReadyBoolean;
 bool[11] gv_ReadyErrorDelay;
-int[11] gv_HeroSelectionLockEnabled;
+bool[11] gv_HeroSelectionLockEnabled;
 string[11] gv_PlayerHandlerNumber;
 int gv_StrongUnitCount;
 int[4] gv_MinionMonsterStronger;
@@ -10815,8 +10816,8 @@ bool gt_HeroSelectionLockHotkey_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 0)) {
-        gv_HeroSelectionLockEnabled[EventPlayer()] = 1;
+    if ((gv_HeroSelectionLockEnabled[EventPlayer()] == false)) {
+        gv_HeroSelectionLockEnabled[EventPlayer()] = true;
         if ((gv_GameStartBoolean == true) && (gv_HeroDeathBoolean[EventPlayer()] == false)) {
             CameraPan(EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]), 0.0, -1, 10.0, false);
             UnitClearSelection(EventPlayer());
@@ -10827,8 +10828,8 @@ bool gt_HeroSelectionLockHotkey_Func (bool testConds, bool runActions) {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/1D454413"));
     }
     else {
-        if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 1)) {
-            gv_HeroSelectionLockEnabled[EventPlayer()] = 0;
+        if ((gv_HeroSelectionLockEnabled[EventPlayer()] == true)) {
+            gv_HeroSelectionLockEnabled[EventPlayer()] = false;
             UIClearMessages(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle);
             UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/0CDF17E9"));
         }
@@ -10866,8 +10867,8 @@ bool gt_HeroSelectionLockBtn_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 0)) {
-        gv_HeroSelectionLockEnabled[EventPlayer()] = 1;
+    if ((gv_HeroSelectionLockEnabled[EventPlayer()] == false)) {
+        gv_HeroSelectionLockEnabled[EventPlayer()] = true;
         if ((gv_GameStartBoolean == true) && (gv_HeroDeathBoolean[EventPlayer()] == false)) {
             CameraPan(EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]), 0.0, -1, 10.0, false);
             UnitClearSelection(EventPlayer());
@@ -10878,8 +10879,8 @@ bool gt_HeroSelectionLockBtn_Func (bool testConds, bool runActions) {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/C5D49D43"));
     }
     else {
-        if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 1)) {
-            gv_HeroSelectionLockEnabled[EventPlayer()] = 0;
+        if ((gv_HeroSelectionLockEnabled[EventPlayer()] == true)) {
+            gv_HeroSelectionLockEnabled[EventPlayer()] = false;
             UIClearMessages(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle);
             UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/97F72AA9"));
         }
@@ -10904,7 +10905,7 @@ bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((gv_HeroSelectionLockEnabled[EventPlayer()] == 1))) {
+        if (!((gv_HeroSelectionLockEnabled[EventPlayer()] == true))) {
             return false;
         }
 
