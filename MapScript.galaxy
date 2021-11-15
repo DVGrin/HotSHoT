@@ -10819,8 +10819,17 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
     }
 
     // Here are the commands available to observers
-    if (StringEqual(command, "-help", true)) {
-        return true; // TODO
+    if (StringEqual(command, "-list", true)) {
+        UIDisplayMessage(
+            PlayerGroupSingle(EventPlayer()),
+            c_messageAreaDebug,
+            (  // TODO: Move to external string
+                StringExternal("Param/Value/89E47C85") + 
+                TextWithColor(StringToText("<Chat commands:><n/> -players: Show the numbered list of all players<n/> -testmode: Vote to enable the test mode. If everyone agrees, test mode commands will be enabled<n/> -votekick [X]: Vote to kick player number [X] from the game. Needs everyone else to agree<n/><n/>Singleplayer/testmode commands<n/> -minerals [X]: Set your minerals to [X] (default: 10000)<n/> -gas [X]: Set your gas to [X] (default: 100)<n/> -levelup [X]: Your hero instantly gains [X] levels (default: 1)<n/> -testunit: Spawn a test unit at your position<n/> -changehero [X]: Change your hero to hero number [X]. Does not reset stat upgrades"), Color(100.00, 100.00, 50.20)) +
+                StringExternal("Param/Value/CC7276AB")
+            )
+        );
+        return true;
     }
 
     if (StringEqual(command, "-players", true)) {
