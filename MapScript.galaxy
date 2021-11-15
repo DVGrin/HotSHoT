@@ -53,10 +53,9 @@ const int c_skillE = 2;
 const int c_skillR = 3;
 
 const int c_primaryObjectiveDestroyNexus = 0;
-const int c_primaryObjectiveDefendNexus = 1;
-const int c_secondaryObjectiveMinions = 2;
-const int c_secondaryObjectiveShop = 3;
-const int c_secondaryObjectiveLevels = 4;
+const int c_secondaryObjectiveMinions = 1;
+const int c_secondaryObjectiveShop = 2;
+const int c_secondaryObjectiveLevels = 3;
 
 //--------------------------------------------------------------------------------------------------
 // Global Variables
@@ -88,7 +87,7 @@ bool[11] gv_ReadyRandomBoolean;
 bool[11] gv_ReadyClickBoolean;
 int gv_ReadyBoolean;
 bool[11] gv_ReadyErrorDelay;
-int[11] gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880;
+int[11] gv_HeroSelectionLockEnabled;
 string[11] gv_PlayerHandlerNumber;
 int gv_StrongUnitCount;
 int[4] gv_MinionMonsterStronger;
@@ -661,10 +660,10 @@ trigger gt_TrBeforeSpellRandomSelect;
 trigger gt_TrPlayersAllCreate;
 trigger gt_TrRankDialogView;
 trigger gt_TrGameStartCounter;
-trigger gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090;
-trigger gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880;
-trigger gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC;
-trigger gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99;
+trigger gt_CenterCameraOnHero;
+trigger gt_HeroSelectionLockHotkey;
+trigger gt_HeroSelectionLockBtn;
+trigger gt_HeroSelectionLockAction;
 trigger gt_TrHelpText;
 trigger gt_TrViewHandler;
 trigger gt_TrChatCommandHandler;
@@ -3784,22 +3783,20 @@ void gf_CreateObjectives() {
     int j;
     bool primary = true;
 
-    text[5] objectives;
-    text[5] descriptions;
+    text[4] objectives;
+    text[4] descriptions;
 
     objectives[c_primaryObjectiveDestroyNexus] = StringToText("Destroy the enemy Nexus"); // TODO: Move to external string
-    objectives[c_primaryObjectiveDefendNexus] = StringToText("Don't let your Nexus be destroyed"); // TODO: Move to external string
 
-    objectives[c_secondaryObjectiveMinions] = StringToText("Kill minions to receive minerals and experience"); // TODO: Move to external string
+    objectives[c_secondaryObjectiveMinions] = StringToText("Kill minions to receive minerals"); // TODO: Move to external string
     objectives[c_secondaryObjectiveShop] = StringToText("Use minerals and gas to buy stats in the shop"); // TODO: Move to external string
-    objectives[c_secondaryObjectiveLevels] = StringToText("Level up to upgrade your skills and get gas"); // TODO: Move to external string
+    objectives[c_secondaryObjectiveLevels] = StringToText("Level up to upgrade your skills"); // TODO: Move to external string
 
-    descriptions[c_primaryObjectiveDestroyNexus] = StringToText("");
-    descriptions[c_primaryObjectiveDefendNexus] = StringToText("");
+    descriptions[c_primaryObjectiveDestroyNexus] = StringToText("The Nexus is immune until all the structures in a lane are destroyed"); // TODO: Move to external string
 
-    descriptions[c_secondaryObjectiveMinions] = StringToText("");
-    descriptions[c_secondaryObjectiveShop] = StringToText("");
-    descriptions[c_secondaryObjectiveLevels] = StringToText("");
+    descriptions[c_secondaryObjectiveMinions] = StringToText("Your hero also receives experience if you stay close to the minion dying"); // TODO: Move to external string
+    descriptions[c_secondaryObjectiveShop] = StringToText("The shop is located at the bottom right of your screen, next to the ability card"); // TODO: Move to external string
+    descriptions[c_secondaryObjectiveLevels] = StringToText("You also get vespene gas for every level"); // TODO: Move to external string
 
     for (i = 0; i < 11; i += 1) {
         if (!((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive))) {
@@ -3808,8 +3805,8 @@ void gf_CreateObjectives() {
         if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), gv_PlayerBayul[i])) {
             continue;
         }
-        for (j = 0; j < 5; j += 1) {
-            if (j >= 2) {
+        for (j = 0; j < 4; j += 1) {
+            if (j >= 1) {
                 primary = false;
             }
             gv_PlayerObjectives[gv_PlayerBayul[i]][j] = ObjectiveCreateForPlayers(
@@ -7811,7 +7808,11 @@ void gf_RemoveCompletedSecondaryObjectives() {
         if (ObjectiveGetState(gv_PlayerObjectives[player][c_secondaryObjectiveLevels]) != c_objectiveStateCompleted) {
             continue;
         }
-        Wait(3.0, c_timeReal);
+        Wait(5.0, c_timeReal);
+        ObjectiveSetState(gv_PlayerObjectives[player][c_secondaryObjectiveMinions], c_objectiveStateHidden);
+        ObjectiveSetState(gv_PlayerObjectives[player][c_secondaryObjectiveShop], c_objectiveStateHidden);
+        ObjectiveSetState(gv_PlayerObjectives[player][c_secondaryObjectiveLevels], c_objectiveStateHidden);
+        Wait(5.0, c_timeReal);
         ObjectiveDestroy(gv_PlayerObjectives[player][c_secondaryObjectiveMinions]);
         ObjectiveDestroy(gv_PlayerObjectives[player][c_secondaryObjectiveShop]);
         ObjectiveDestroy(gv_PlayerObjectives[player][c_secondaryObjectiveLevels]);
@@ -7916,7 +7917,7 @@ bool gt_Tr1FullscreenSetting_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
-    TriggerEnable(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880, true);
+    TriggerEnable(gt_HeroSelectionLockHotkey, true);
     DialogCreate(500, 400, c_anchorCenter, 0, 0, true);
     gv_CharChooseFullDialog = DialogLastCreated();
     DialogSetImageVisible(DialogLastCreated(), false);
@@ -10644,9 +10645,9 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
-    TriggerEnable(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99, true);
-    TriggerEnable(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC, true);
-    TriggerEnable(gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090, true);
+    TriggerEnable(gt_HeroSelectionLockAction, true);
+    TriggerEnable(gt_HeroSelectionLockBtn, true);
+    TriggerEnable(gt_CenterCameraOnHero, true);
     gf_HrScoreDialogMake();
     gf_HrScoreDialogStatToolTip();
     Wait(1.0, c_timeReal);
@@ -10761,7 +10762,7 @@ void gt_TrGameStartCounter_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ??????????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
-bool gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Func (bool testConds, bool runActions) {
+bool gt_CenterCameraOnHero_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -10790,16 +10791,16 @@ bool gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Func (bool testCo
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Init () {
-    gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090 = TriggerCreate("gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Func");
-    TriggerEnable(gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090, false);
-    TriggerAddEventKeyPressed(gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090, c_playerAny, c_keySpace, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
+void gt_CenterCameraOnHero_Init () {
+    gt_CenterCameraOnHero = TriggerCreate("gt_CenterCameraOnHero_Func");
+    TriggerEnable(gt_CenterCameraOnHero, false);
+    TriggerAddEventKeyPressed(gt_CenterCameraOnHero, c_playerAny, c_keySpace, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
-bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, bool runActions) {
+bool gt_HeroSelectionLockHotkey_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -10814,8 +10815,8 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, b
         return true;
     }
 
-    if ((gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] == 0)) {
-        gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] = 1;
+    if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 0)) {
+        gv_HeroSelectionLockEnabled[EventPlayer()] = 1;
         if ((gv_GameStartBoolean == true) && (gv_HeroDeathBoolean[EventPlayer()] == false)) {
             CameraPan(EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]), 0.0, -1, 10.0, false);
             UnitClearSelection(EventPlayer());
@@ -10826,8 +10827,8 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, b
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/1D454413"));
     }
     else {
-        if ((gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] == 1)) {
-            gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] = 0;
+        if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 1)) {
+            gv_HeroSelectionLockEnabled[EventPlayer()] = 0;
             UIClearMessages(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle);
             UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/0CDF17E9"));
         }
@@ -10837,16 +10838,16 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func (bool testConds, b
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Init () {
-    gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880 = TriggerCreate("gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Func");
-    TriggerEnable(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880, false);
-    TriggerAddEventKeyPressed(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880, c_playerAny, c_keyF5, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
+void gt_HeroSelectionLockHotkey_Init () {
+    gt_HeroSelectionLockHotkey = TriggerCreate("gt_HeroSelectionLockHotkey_Func");
+    TriggerEnable(gt_HeroSelectionLockHotkey, false);
+    TriggerAddEventKeyPressed(gt_HeroSelectionLockHotkey, c_playerAny, c_keyF5, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ?????? ?????? ?????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
-bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool testConds, bool runActions) {
+bool gt_HeroSelectionLockBtn_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -10865,8 +10866,8 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool 
         return true;
     }
 
-    if ((gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] == 0)) {
-        gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] = 1;
+    if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 0)) {
+        gv_HeroSelectionLockEnabled[EventPlayer()] = 1;
         if ((gv_GameStartBoolean == true) && (gv_HeroDeathBoolean[EventPlayer()] == false)) {
             CameraPan(EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]), 0.0, -1, 10.0, false);
             UnitClearSelection(EventPlayer());
@@ -10877,8 +10878,8 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool 
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/C5D49D43"));
     }
     else {
-        if ((gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] == 1)) {
-            gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] = 0;
+        if ((gv_HeroSelectionLockEnabled[EventPlayer()] == 1)) {
+            gv_HeroSelectionLockEnabled[EventPlayer()] = 0;
             UIClearMessages(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle);
             UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/97F72AA9"));
         }
@@ -10888,22 +10889,22 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func (bool 
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Init () {
-    gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC = TriggerCreate("gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Func");
-    TriggerEnable(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC, false);
-    TriggerAddEventDialogControl(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+void gt_HeroSelectionLockBtn_Init () {
+    gt_HeroSelectionLockBtn = TriggerCreate("gt_HeroSelectionLockBtn_Func");
+    TriggerEnable(gt_HeroSelectionLockBtn, false);
+    TriggerAddEventDialogControl(gt_HeroSelectionLockBtn, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ?????? ?????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
-bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Func (bool testConds, bool runActions) {
+bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((EventUnit() == gv_PlayerHero[EventPlayer()]))) {
             return false;
         }
 
-        if (!((gv_eC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880[EventPlayer()] == 1))) {
+        if (!((gv_HeroSelectionLockEnabled[EventPlayer()] == 1))) {
             return false;
         }
 
@@ -10926,10 +10927,10 @@ bool gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Func (bool testConds, b
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Init () {
-    gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99 = TriggerCreate("gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Func");
-    TriggerEnable(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99, false);
-    TriggerAddEventUnitSelected(gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99, null, c_playerAny, false);
+void gt_HeroSelectionLockAction_Init () {
+    gt_HeroSelectionLockAction = TriggerCreate("gt_HeroSelectionLockAction_Func");
+    TriggerEnable(gt_HeroSelectionLockAction, false);
+    TriggerAddEventUnitSelected(gt_HeroSelectionLockAction, null, c_playerAny, false);
 }
 
 bool lf_TestModeVotedFor() {
@@ -11068,6 +11069,9 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         }
         if (!(PlayerGroupHasPlayer(PlayerGroupActive(), number))) {
             return false;
+        }
+        if (gv_VotedToKick[EventPlayer()][number] == true) {
+            return true;
         }
         gv_VotedToKick[EventPlayer()][number] = true;
         UIDisplayMessage(
@@ -17653,9 +17657,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     TriggerStop(gt_TrMinionMake);
     for (i = 1; i <= 4; i += 1) {
         ObjectiveSetState(gv_PlayerObjectives[i + 4][c_primaryObjectiveDestroyNexus], c_objectiveStateCompleted);
-        ObjectiveSetState(gv_PlayerObjectives[i + 4][c_primaryObjectiveDefendNexus], c_objectiveStateCompleted);
         ObjectiveSetState(gv_PlayerObjectives[i][c_primaryObjectiveDestroyNexus], c_objectiveStateFailed);
-        ObjectiveSetState(gv_PlayerObjectives[i][c_primaryObjectiveDefendNexus], c_objectiveStateFailed);
     }
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
     UISetDragSelectEnabled(PlayerGroupAll(), false);
@@ -17754,9 +17756,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     TriggerStop(gt_TrMinionMake);
     for (i = 1; i <= 4; i += 1) {
         ObjectiveSetState(gv_PlayerObjectives[i][c_primaryObjectiveDestroyNexus], c_objectiveStateCompleted);
-        ObjectiveSetState(gv_PlayerObjectives[i][c_primaryObjectiveDefendNexus], c_objectiveStateCompleted);
         ObjectiveSetState(gv_PlayerObjectives[i + 4][c_primaryObjectiveDestroyNexus], c_objectiveStateFailed);
-        ObjectiveSetState(gv_PlayerObjectives[i + 4][c_primaryObjectiveDefendNexus], c_objectiveStateFailed);
     }
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
     UISetDragSelectEnabled(PlayerGroupAll(), false);
@@ -18873,10 +18873,10 @@ void InitTriggers () {
     gt_TrPlayersAllCreate_Init();
     gt_TrRankDialogView_Init();
     gt_TrGameStartCounter_Init();
-    gt_EC8AA4ED8E98EC9DB4EC8AA4EBB094EC9881EC9B85EC8B9CECA090_Init();
-    gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880_Init();
-    gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADED86A0EAB880EBB284ED8ABC_Init();
-    gt_EC9881EC9B85ED95ADEC8381ED81B4EBA6ADEC9E91EB8F99_Init();
+    gt_CenterCameraOnHero_Init();
+    gt_HeroSelectionLockHotkey_Init();
+    gt_HeroSelectionLockBtn_Init();
+    gt_HeroSelectionLockAction_Init();
     gt_TrHelpText_Init();
     gt_TrViewHandler_Init();
     gt_TrSingleCheetMoney_Init();
