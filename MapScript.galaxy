@@ -534,7 +534,7 @@ void gf_HrAttackSpeedLevelIncrease ();
 void gf_HrEvasionLevelIncrease ();
 void gf_HrCriticalChanceLevelIncrease ();
 void gf_HrCooldownReductionLevelIncrease ();
-void gf_HrStatTooltip1 (); // Maybe seal as separate line
+void gf_HrStatTooltip1 (); // TODO: Maybe seal as separate line
 void gf_HrItemUseComplete ();
 void gf_HrAssistSystemAdd2 ();
 void gf_HrHeroBSpawnH1 ();
@@ -5297,104 +5297,73 @@ void gf_HrStat24 () {
 }
 
 void gf_HrAttackSpeedLevelIncrease () {
-    if ((gv_StatusWindowNum[EventPlayer()][8] == 1)) {
-    UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed", gv_PlayerHero[EventPlayer()], 1);
+    string[10] upgrade_names;
+    int current_upgrade = gv_StatusWindowNum[EventPlayer()][8];
+
+    upgrade_names[0] = "AttackSpeed";
+    upgrade_names[1] = "AttackSpeed2";
+    upgrade_names[2] = "AttackSpeed22";
+    upgrade_names[3] = "AttackSpeed222";
+    upgrade_names[4] = "AttackSpeed2222";
+    upgrade_names[5] = "AttackSpeed22222";
+    upgrade_names[6] = "AttackSpeed222222";
+    upgrade_names[7] = "AttackSpeed2222222";
+    upgrade_names[8] = "AttackSpeed22222222";
+    upgrade_names[9] = "AttackSpeed222222222";
+
+    if (current_upgrade >= 2) {
+        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], upgrade_names[current_upgrade - 2], EventPlayer(), 1);
     }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 2)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed2", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 3)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed2", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed22", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 4)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed22", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 5)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed2222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 6)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed2222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed22222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 7)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed22222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed222222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 8)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed222222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed2222222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 9)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed2222222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed22222222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((gv_StatusWindowNum[EventPlayer()][8] == 10)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "AttackSpeed22222222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "AttackSpeed222222222", gv_PlayerHero[EventPlayer()], 1);
-    }
+    UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[current_upgrade - 1], gv_PlayerHero[EventPlayer()], 1);
 }
 
 void gf_HrEvasionLevelIncrease () {
-    if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong24232") == true)) { // 10%
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "SpellDong24232", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong242323", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong242323") == true)) { // 20%
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "SpellDong242323", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong2423232", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "SpellDong2423232") == true)) { // 30%
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "SpellDong2423232", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24232322", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else {
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24232", gv_PlayerHero[EventPlayer()], 1);
+    int i;
+    string[4] upgrade_names;
+
+    upgrade_names[0] = "SpellDong24232";
+    upgrade_names[1] = "SpellDong242323";
+    upgrade_names[2] = "SpellDong2423232";
+    upgrade_names[3] = "SpellDong24232322";
+
+    for (i = 0; i < 4; i += 1) {
+        if ((i == 3) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == false)) {
+            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[0], gv_PlayerHero[EventPlayer()], 1);
+            break;
+        }
+        if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == true)) {
+            UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], upgrade_names[i], EventPlayer(), 1);
+            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[i + 1], gv_PlayerHero[EventPlayer()], 1);
+            break;
+        }
     }
 }
 
 void gf_HrCriticalChanceLevelIncrease () {
-    if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical2", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical2") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical2", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical22", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical22") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical22", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical222") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical2222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical2222") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical2222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical22222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical22222") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical22222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical222223", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical222223") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical222223", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical222222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical222222") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical222222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical2222222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Critical2222222") == true)) {
-        UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], "Critical2222222", EventPlayer(), 1);
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical22222222", gv_PlayerHero[EventPlayer()], 1);
-    }
-    else {
-        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical", gv_PlayerHero[EventPlayer()], 1);
+    int i;
+    string[10] upgrade_names;
+
+    upgrade_names[0] = "Critical";
+    upgrade_names[1] = "Critical2";
+    upgrade_names[2] = "Critical22";
+    upgrade_names[3] = "Critical222";
+    upgrade_names[4] = "Critical2222";
+    upgrade_names[5] = "Critical22222";
+    upgrade_names[6] = "Critical222223";
+    upgrade_names[7] = "Critical222222";
+    upgrade_names[8] = "Critical2222222";
+    upgrade_names[9] = "Critical22222222";
+
+    for (i = 0; i < 10; i += 1) {
+        if ((i == 9) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == false)) {
+            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[0], gv_PlayerHero[EventPlayer()], 1);
+            break;
+        }
+        if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == true)) {
+            UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], upgrade_names[i], EventPlayer(), 1);
+            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[i + 1], gv_PlayerHero[EventPlayer()], 1);
+            break;
+        }
     }
 }
 
@@ -5432,43 +5401,21 @@ void gf_HrItemUseComplete () {
 }
 
 void gf_HrAssistSystemAdd2 () {
-    if ((EventPlayer() == gv_PlayerBayul[1])) {
-        UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist23", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-    }
-    else {
-        if ((EventPlayer() == gv_PlayerBayul[2])) {
-            UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist223", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-        }
-        else {
-            if ((EventPlayer() == gv_PlayerBayul[3])) {
-                UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist2223", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-            }
-            else {
-                if ((EventPlayer() == gv_PlayerBayul[4])) {
-                    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist22223", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-                }
-                else {
-                    if ((EventPlayer() == gv_PlayerBayul[5])) {
-                        UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist222223", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-                    }
-                    else {
-                        if ((EventPlayer() == gv_PlayerBayul[6])) {
-                            UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist2222223", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-                        }
-                        else {
-                            if ((EventPlayer() == gv_PlayerBayul[7])) {
-                                UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist22222223", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-                            }
-                            else {
-                                if ((EventPlayer() == gv_PlayerBayul[8])) {
-                                    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Player1Assist222222222", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
-                                }
+    int i;
+    string[8] upgrade_names;
 
-                            }
-                        }
-                    }
-                }
-            }
+    upgrade_names[0] = "Player1Assist23";
+    upgrade_names[1] = "Player1Assist223";
+    upgrade_names[2] = "Player1Assist2223";
+    upgrade_names[3] = "Player1Assist22223";
+    upgrade_names[4] = "Player1Assist222223";
+    upgrade_names[5] = "Player1Assist2222223";
+    upgrade_names[6] = "Player1Assist22222223";
+    upgrade_names[7] = "Player1Assist222222222";
+
+    for (i = 0; i < 8; i += 1) {
+        if ((EventPlayer() == gv_PlayerBayul[i + 1])) {
+            UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), upgrade_names[i], EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
         }
     }
 }
@@ -5533,128 +5480,73 @@ void gf_HrMonsterBuffPickUp2 () {
 }
 
 void gf_HrMonsterBuffPickUp4 () {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
-
-    const int auto8631C532_ae = 4;
-    const int auto8631C532_ai = 1;
-    const int auto47A23E18_ae = 8;
-    const int auto47A23E18_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
+    int i;
+    int n;
 
     if ((gv_MonsterKillOnlyOne[0] == false)) {
         gv_MonsterKillOnlyOne[0] = true;
         SoundPlay(SoundLink("Ursula_Death", -1), PlayerGroupAll(), 200.0, 0.0);
         UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/99A72CA0") + TextWithColor(StringExternal("Param/Value/A641DDBE"), Color(100.00, 100.00, 0.00)) + StringExternal("Param/Value/E82D3D1F")));
+
         if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), libNtve_gf_KillingPlayer()) == true)) {
-            lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-            for ( ; ( (auto8631C532_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 <= auto8631C532_ae) || (auto8631C532_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 >= auto8631C532_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 += auto8631C532_ai ) {
-                if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerStatusActive)) {
-                    UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]), c_messageAreaSubtitle, (StringExternal("Param/Value/384EF115") + TextWithColor(StringExternal("Param/Value/72EB257C"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C728AE8E")));
-                    PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], c_playerPropMinerals, c_playerPropOperAdd, 400);
-                    if ((UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "SpellDong2424") == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] == false)) {
-                        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "SpellDong2424", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], 1);
-                    }
-                    else {
-                        if ((UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "SpellDong2424") == false) && (gv_HeroDeathBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] == false)) {
-                            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "SpellDong2424", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], 1);
-                            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], "SpellUp222233322232", 3);
-                            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], "SpellUp2222333222323", 3);
-                            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], "SpellUp2222333222322", 3);
-                            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], "SpellUp22223332223", 3);
-                            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], "SpellUp222233322233", 3);
-                            TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], "SpellUp2222333222333", 3);
-                            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "SpellDong24", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], 3);
-                            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "SpellDong24233", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], 3);
-                            if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] == 71)) {
-                                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], "Hero71Passive", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], 3);
-                            }
-
-                        }
-
-                    }
-                }
-
-            }
+            i = 1;
+            n = 4;
+        } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), libNtve_gf_KillingPlayer()) == true)) {
+            i = 5;
+            n = 8;
         }
-        else {
-            if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), libNtve_gf_KillingPlayer()) == true)) {
-                lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-                for ( ; ( (auto47A23E18_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 <= auto47A23E18_ae) || (auto47A23E18_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 >= auto47A23E18_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 += auto47A23E18_ai ) {
-                    if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerStatusActive)) {
-                        UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]), c_messageAreaSubtitle, (StringExternal("Param/Value/28830AB3") + TextWithColor(StringExternal("Param/Value/389DCFE8"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C1BDEC9F")));
-                        PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], c_playerPropMinerals, c_playerPropOperAdd, 400);
-                        if ((UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "SpellDong2424") == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] == false)) {
-                            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "SpellDong2424", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], 1);
-                        }
-                        else {
-                            if ((UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "SpellDong2424") == false) && (gv_HeroDeathBoolean[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] == false)) {
-                                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "SpellDong2424", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], 1);
-                                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], "SpellUp222233322232", 3);
-                                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], "SpellUp2222333222323", 3);
-                                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], "SpellUp2222333222322", 3);
-                                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], "SpellUp22223332223", 3);
-                                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], "SpellUp222233322233", 3);
-                                TechTreeUpgradeAddLevel(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], "SpellUp2222333222333", 3);
-                                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "SpellDong24", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], 3);
-                                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "SpellDong24233", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], 3);
-                                if ((gv_SelectedCharNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] == 71)) {
-                                    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], "Hero71Passive", gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], 3);
-                                }
 
-                            }
-
-                        }
-                    }
-
+        for (; i <= n; i += 1) {
+            if (!((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive))) {
+                continue;
+            }
+            UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/384EF115") + TextWithColor(StringExternal("Param/Value/72EB257C"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C728AE8E")));
+            PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, 400);
+            if ((UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong2424") == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[i]] == false)) {
+                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong2424", gv_PlayerHero[gv_PlayerBayul[i]], 1);
+            }
+            else if ((UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong2424") == false) && (gv_HeroDeathBoolean[gv_PlayerBayul[i]] == false)) {
+                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong2424", gv_PlayerHero[gv_PlayerBayul[i]], 1);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp222233322232", 3);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp2222333222323", 3);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp2222333222322", 3);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp22223332223", 3);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp222233322233", 3);
+                TechTreeUpgradeAddLevel(gv_PlayerBayul[i], "SpellUp2222333222333", 3);
+                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong24", gv_PlayerHero[gv_PlayerBayul[i]], 3);
+                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong24233", gv_PlayerHero[gv_PlayerBayul[i]], 3);
+                if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 71)) {
+                    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[i]], "Hero71Passive", gv_PlayerHero[gv_PlayerBayul[i]], 3);
                 }
             }
-
         }
     }
-
 }
 
 void gf_HrMonsterBuffPickUp3 () {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
-
-    const int auto266A3258_ae = 4;
-    const int auto266A3258_ai = 1;
-    const int auto4270D250_ae = 8;
-    const int auto4270D250_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
+    int i;
+    int n;
 
     if ((gv_MonsterKillOnlyOne[1] == false)) {
         gv_MonsterKillOnlyOne[1] = true;
         SoundPlay(SoundLink("Ursula_Death", -1), PlayerGroupAll(), 200.0, 0.0);
         UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/5F908B50") + TextWithColor(StringExternal("Param/Value/E5AC2DF6"), Color(100.00, 100.00, 0.00)) + StringExternal("Param/Value/11A402F4")));
+
         if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), libNtve_gf_KillingPlayer()) == true)) {
-            lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-            for ( ; ( (auto266A3258_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 <= auto266A3258_ae) || (auto266A3258_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 >= auto266A3258_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 += auto266A3258_ai ) {
-                if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerStatusActive)) {
-                    UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]), c_messageAreaSubtitle, (StringExternal("Param/Value/0B2706A5") + TextWithColor(StringExternal("Param/Value/C825D102"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/0B1E7918")));
-                    PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], c_playerPropMinerals, c_playerPropOperAdd, 350);
-                }
-
-            }
+            i = 1;
+            n = 4;
+        } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), libNtve_gf_KillingPlayer()) == true)) {
+            i = 5;
+            n = 8;
         }
-        else {
-            if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), libNtve_gf_KillingPlayer()) == true)) {
-                lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-                for ( ; ( (auto4270D250_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 <= auto4270D250_ae) || (auto4270D250_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 >= auto4270D250_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 += auto4270D250_ai ) {
-                    if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerStatusActive)) {
-                        UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]), c_messageAreaSubtitle, (StringExternal("Param/Value/23CF5BBC") + TextWithColor(StringExternal("Param/Value/4415B380"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C9C7F429")));
-                        PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], c_playerPropMinerals, c_playerPropOperAdd, 350);
-                    }
 
+        if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), libNtve_gf_KillingPlayer()) == true)) {
+            for (; i <= n; i += 1) {
+                if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+                    UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/23CF5BBC") + TextWithColor(StringExternal("Param/Value/4415B380"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C9C7F429")));
+                    PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, 350);
                 }
             }
-
         }
     }
 
@@ -5851,12 +5743,7 @@ void gf_HrMonsterBossRegenTimerStart () {
 }
 
 void gf_HrHeroReviveWindowMake () {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    const int auto569A25A6_ae = 8;
-    const int auto569A25A6_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     DialogCreate(850, 400, c_anchorCenter, 0, -100, true);
     gv_HeroReviveWindow = DialogLastCreated();
@@ -5866,15 +5753,14 @@ void gf_HrHeroReviveWindowMake () {
     DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, 0, -100);
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), StringExternal("Param/Value/781CCDB4"), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (auto569A25A6_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= auto569A25A6_ae) || (auto569A25A6_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= auto569A25A6_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += auto569A25A6_ai ) {
+    for (i = 1; i <= 8; i += 1) {
         DialogControlCreate(gv_HeroReviveWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupAll(), 500, 80);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorCenter, 0, 30);
         libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/C2E7A3BA") + IntToText(20) + StringExternal("Param/Value/254C3E7A")), PlayerGroupAll());
         libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-        gv_HeroReviveWindowTime[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = DialogControlLastCreated();
+        gv_HeroReviveWindowTime[gv_PlayerBayul[i]] = DialogControlLastCreated();
     }
 }
 
@@ -6243,53 +6129,33 @@ void gf_HrHeroPassiveRepair () {
     if ((gv_SelectedCharNum[EventPlayer()] == 10)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroDeathPrevention23", gv_PlayerHero[EventPlayer()], 1);
     }
-    else {
-        if ((gv_SelectedCharNum[EventPlayer()] == 17)) {
-            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroDeathPrevention24", gv_PlayerHero[EventPlayer()], 1);
-        }
-        else {
-            if ((gv_SelectedCharNum[EventPlayer()] == 20)) {
-                UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong322222262", gv_PlayerHero[EventPlayer()], 1);
-            }
-            else {
-                if ((gv_SelectedCharNum[EventPlayer()] == 21)) {
-                    UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "Hero21Skill122", EventPlayer(), 1);
-                }
-                else {
-                    if ((gv_SelectedCharNum[EventPlayer()] == 34)) {
-                        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero34PassiveSlow2", gv_PlayerHero[EventPlayer()], 1);
-                    }
-                    else {
-                        if ((gv_SelectedCharNum[EventPlayer()] == 35)) {
-                            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero35Passive", gv_PlayerHero[EventPlayer()], 1);
-                        }
-                        else {
-                            if ((gv_SelectedCharNum[EventPlayer()] == 39)) {
-                                UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero39PassiveCool", gv_PlayerHero[EventPlayer()], 1);
-                            }
-                            else {
-                                if ((gv_SelectedCharNum[EventPlayer()] == 48)) {
-                                    UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero48Passive", gv_PlayerHero[EventPlayer()], 1);
-                                }
-                                else {
-                                    if ((gv_SelectedCharNum[EventPlayer()] == 52)) {
-                                        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero52Skill4222", gv_PlayerHero[EventPlayer()], 1);
-                                    }
-                                    else {
-                                        if ((gv_SelectedCharNum[EventPlayer()] == 68)) {
-                                            if ((gv_SkillLevels[EventPlayer()][c_skillW] >= 1)) {
-                                                UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero68Skill2", gv_PlayerHero[EventPlayer()], 1);
-                                            }
-
-                                        }
-
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 17)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroDeathPrevention24", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 20)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong322222262", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 21)) {
+        UnitBehaviorAddPlayer(gv_PlayerHero[EventPlayer()], "Hero21Skill122", EventPlayer(), 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 34)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero34PassiveSlow2", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 35)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero35Passive", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 39)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero39PassiveCool", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 48)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero48Passive", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 52)) {
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero52Skill4222", gv_PlayerHero[EventPlayer()], 1);
+    }
+    else if ((gv_SelectedCharNum[EventPlayer()] == 68)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillW] >= 1)) {
+            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero68Skill2", gv_PlayerHero[EventPlayer()], 1);
         }
     }
 }
@@ -7492,20 +7358,12 @@ void gf_HrTeamSelectDialogTeam1Make2 () {
 }
 
 void gf_HrScoreDialogMake () {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
-    int lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092;
-    int lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092;
+    int i;
+    int Y_offset;
+    int inner_Y_offset;
 
-    const int auto06B3226E_ae = 4;
-    const int auto06B3226E_ai = 1;
-    const int auto68E48430_ae = 8;
-    const int auto68E48430_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-    lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092 = 75;
-    lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 = 87;
+    Y_offset = 75;
+    inner_Y_offset = 87;
 
     DialogCreate(650, 490, c_anchorTopRight, 10, 30, true);
     gv_ScoreDialog[0] = DialogLastCreated();
@@ -7544,79 +7402,77 @@ void gf_HrScoreDialogMake () {
     DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 565, 32);
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/66AF2A19") + TextWithColor(StringExternal("Param/Value/1869B959"), Color(50.20, 100.00, 100.00)) + StringExternal("Param/Value/E71D8A26")), PlayerGroupAll());
     gv_ScoreDialogTextB[2] = DialogControlLastCreated();
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    for ( ; ( (auto06B3226E_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 <= auto06B3226E_ae) || (auto06B3226E_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 >= auto06B3226E_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 += auto06B3226E_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerStatusActive)) {
-            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 45, 45, c_anchorTopLeft, 18, lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092, StringToText(""), gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-            libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], PlayerGroupAll());
-            gv_ScoreDialogHeroImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 70, 40, c_anchorTopLeft, 9, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 + 1), (StringExternal("Param/Value/DA83442E") + TextWithColor(IntToText(gv_HeroReviveCountNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]][0]), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/1CA5CA1D")), Color(100,100,100), false, 2.0);
+    for (i = 1; i <= 4; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 45, 45, c_anchorTopLeft, 18, Y_offset, StringToText(""), gv_CharSelectedImage[gv_PlayerBayul[i]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+            libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), gv_CharSelectedName[gv_PlayerBayul[i]], PlayerGroupAll());
+            gv_ScoreDialogHeroImage[gv_PlayerBayul[i]] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 70, 40, c_anchorTopLeft, 9, (inner_Y_offset + 1), (StringExternal("Param/Value/DA83442E") + TextWithColor(IntToText(gv_HeroReviveCountNum[gv_PlayerBayul[i]][0]), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/1CA5CA1D")), Color(100,100,100), false, 2.0);
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogReviveTime[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] = DialogControlLastCreated();
+            gv_ScoreDialogReviveTime[gv_PlayerBayul[i]] = DialogControlLastCreated();
             DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
             DialogControlCreate(DialogLastCreated(), c_triggerControlTypeLabel);
             DialogControlSetSize(DialogControlLastCreated(), PlayerGroupAll(), 165, 30);
-            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 65, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 + 1));
-            libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/0242BE2E") + PlayerName(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) + StringExternal("Param/Value/B2A8CA94")), PlayerGroupAll());
-            gv_ScoreDialogName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] = DialogControlLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 65, (inner_Y_offset + 1));
+            libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/0242BE2E") + PlayerName(gv_PlayerBayul[i]) + StringExternal("Param/Value/B2A8CA94")), PlayerGroupAll());
+            gv_ScoreDialogName[gv_PlayerBayul[i]] = DialogControlLastCreated();
             DialogControlCreate(DialogLastCreated(), c_triggerControlTypeLabel);
             DialogControlSetSize(DialogControlLastCreated(), PlayerGroupAll(), 90, 50);
-            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 187, lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092);
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 187, inner_Y_offset);
             libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/5C4D70F1") + StringExternal("Param/Value/33DB673C")), PlayerGroupAll());
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogLevel[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 283, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 - 9), gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]][0], gv_SelectedSpellImage1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-            gv_ScoreDialogSpell[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]][0] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 335, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 - 9), gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]][1], gv_SelectedSpellImage2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-            gv_ScoreDialogSpell[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]][1] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 250, 50, c_anchorTopLeft, 348, lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092, (StringExternal("Param/Value/89DC04EE") + StringExternal("Param/Value/202109D2") + StringExternal("Param/Value/F8B82F92") + StringExternal("Param/Value/2C590C6B") + StringExternal("Param/Value/2C75B07D") + StringExternal("Param/Value/B5F15C9E") + StringExternal("Param/Value/68C7A1D1")), Color(100,100,100), false, 2.0);
+            gv_ScoreDialogLevel[gv_PlayerBayul[i]] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 283, (inner_Y_offset - 9), gv_SpellToolTip[gv_PlayerBayul[i]][0], gv_SelectedSpellImage1[gv_PlayerBayul[i]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+            gv_ScoreDialogSpell[gv_PlayerBayul[i]][0] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 335, (inner_Y_offset - 9), gv_SpellToolTip[gv_PlayerBayul[i]][1], gv_SelectedSpellImage2[gv_PlayerBayul[i]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+            gv_ScoreDialogSpell[gv_PlayerBayul[i]][1] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 250, 50, c_anchorTopLeft, 348, inner_Y_offset, (StringExternal("Param/Value/89DC04EE") + StringExternal("Param/Value/202109D2") + StringExternal("Param/Value/F8B82F92") + StringExternal("Param/Value/2C590C6B") + StringExternal("Param/Value/2C75B07D") + StringExternal("Param/Value/B5F15C9E") + StringExternal("Param/Value/68C7A1D1")), Color(100,100,100), false, 2.0);
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogTotalScore[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 150, 50, c_anchorTopLeft, 511, lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092, (StringExternal("Param/Value/12BFE644") + StringExternal("Param/Value/A39E6E4E") + StringExternal("Param/Value/E1D3B8E7")), Color(100,100,100), false, 2.0);
+            gv_ScoreDialogTotalScore[gv_PlayerBayul[i]] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 150, 50, c_anchorTopLeft, 511, inner_Y_offset, (StringExternal("Param/Value/12BFE644") + StringExternal("Param/Value/A39E6E4E") + StringExternal("Param/Value/E1D3B8E7")), Color(100,100,100), false, 2.0);
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogFarming[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]] = DialogControlLastCreated();
+            gv_ScoreDialogFarming[gv_PlayerBayul[i]] = DialogControlLastCreated();
         }
-
-        lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092 += 45;
-        lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 += 45;
+        Y_offset += 45;
+        inner_Y_offset += 45;
     }
-    lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092 += 28;
-    lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 += 28;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-    for ( ; ( (auto68E48430_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 <= auto68E48430_ae) || (auto68E48430_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 >= auto68E48430_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 += auto68E48430_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerStatusActive)) {
-            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 45, 45, c_anchorTopLeft, 18, lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092, StringToText(""), gv_CharSelectedImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-            libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), gv_CharSelectedName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], PlayerGroupAll());
-            gv_ScoreDialogHeroImage[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 70, 40, c_anchorTopLeft, 9, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 + 1), (StringExternal("Param/Value/B461337D") + TextWithColor(IntToText(gv_HeroReviveCountNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]][0]), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/AB10F1DB")), Color(100,100,100), false, 2.0);
+
+    Y_offset += 28;
+    inner_Y_offset += 28;
+
+    for (i = 5; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 45, 45, c_anchorTopLeft, 18, Y_offset, StringToText(""), gv_CharSelectedImage[gv_PlayerBayul[i]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+            libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), gv_CharSelectedName[gv_PlayerBayul[i]], PlayerGroupAll());
+            gv_ScoreDialogHeroImage[gv_PlayerBayul[i]] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 70, 40, c_anchorTopLeft, 9, (inner_Y_offset + 1), (StringExternal("Param/Value/B461337D") + TextWithColor(IntToText(gv_HeroReviveCountNum[gv_PlayerBayul[i]][0]), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/AB10F1DB")), Color(100,100,100), false, 2.0);
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogReviveTime[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] = DialogControlLastCreated();
+            gv_ScoreDialogReviveTime[gv_PlayerBayul[i]] = DialogControlLastCreated();
             DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
             DialogControlCreate(DialogLastCreated(), c_triggerControlTypeLabel);
             DialogControlSetSize(DialogControlLastCreated(), PlayerGroupAll(), 165, 30);
-            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 65, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 + 1));
-            libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/CB10884F") + PlayerName(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) + StringExternal("Param/Value/8E58A3DB")), PlayerGroupAll());
-            gv_ScoreDialogName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] = DialogControlLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 65, (inner_Y_offset + 1));
+            libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/CB10884F") + PlayerName(gv_PlayerBayul[i]) + StringExternal("Param/Value/8E58A3DB")), PlayerGroupAll());
+            gv_ScoreDialogName[gv_PlayerBayul[i]] = DialogControlLastCreated();
             DialogControlCreate(DialogLastCreated(), c_triggerControlTypeLabel);
             DialogControlSetSize(DialogControlLastCreated(), PlayerGroupAll(), 90, 50);
-            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 187, lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092);
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 187, inner_Y_offset);
             libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/55933A8E") + StringExternal("Param/Value/0E8E2B11")), PlayerGroupAll());
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogLevel[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 283, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 - 9), gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]][0], gv_SelectedSpellImage1[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-            gv_ScoreDialogSpell[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]][0] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 335, (lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 - 9), gv_SpellToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]][1], gv_SelectedSpellImage2[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-            gv_ScoreDialogSpell[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]][1] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 250, 50, c_anchorTopLeft, 348, lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092, (StringExternal("Param/Value/C4F0A208") + StringExternal("Param/Value/6E817AF4") + StringExternal("Param/Value/35C0AEE2") + StringExternal("Param/Value/18401CFC") + StringExternal("Param/Value/189B2D59") + StringExternal("Param/Value/45634DA7") + StringExternal("Param/Value/576F378C")), Color(100,100,100), false, 2.0);
+            gv_ScoreDialogLevel[gv_PlayerBayul[i]] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 283, (inner_Y_offset - 9), gv_SpellToolTip[gv_PlayerBayul[i]][0], gv_SelectedSpellImage1[gv_PlayerBayul[i]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+            gv_ScoreDialogSpell[gv_PlayerBayul[i]][0] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 40, 40, c_anchorTopLeft, 335, (inner_Y_offset - 9), gv_SpellToolTip[gv_PlayerBayul[i]][1], gv_SelectedSpellImage2[gv_PlayerBayul[i]], c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+            gv_ScoreDialogSpell[gv_PlayerBayul[i]][1] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 250, 50, c_anchorTopLeft, 348, inner_Y_offset, (StringExternal("Param/Value/C4F0A208") + StringExternal("Param/Value/6E817AF4") + StringExternal("Param/Value/35C0AEE2") + StringExternal("Param/Value/18401CFC") + StringExternal("Param/Value/189B2D59") + StringExternal("Param/Value/45634DA7") + StringExternal("Param/Value/576F378C")), Color(100,100,100), false, 2.0);
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogTotalScore[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] = DialogControlLastCreated();
-            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 150, 50, c_anchorTopLeft, 511, lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092, (StringExternal("Param/Value/5F369222") + StringExternal("Param/Value/CD2BC030") + StringExternal("Param/Value/986825E8")), Color(100,100,100), false, 2.0);
+            gv_ScoreDialogTotalScore[gv_PlayerBayul[i]] = DialogControlLastCreated();
+            libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 150, 50, c_anchorTopLeft, 511, inner_Y_offset, (StringExternal("Param/Value/5F369222") + StringExternal("Param/Value/CD2BC030") + StringExternal("Param/Value/986825E8")), Color(100,100,100), false, 2.0);
             libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-            gv_ScoreDialogFarming[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]] = DialogControlLastCreated();
+            gv_ScoreDialogFarming[gv_PlayerBayul[i]] = DialogControlLastCreated();
         }
-
-        lv_eC84A4ECA095EC8389EC9DB4EBAFB8ECA780yECB695EAB092 += 45;
-        lv_eC84A4ECA095EB8298EBA8B8ECA780EBB380EC8898yECB695EAB092 += 45;
+        Y_offset += 45;
+        inner_Y_offset += 45;
     }
     DialogCreate(490, 550, c_anchorTopRight, -25, 30, true);
     gv_ScoreDialog[1] = DialogLastCreated();
@@ -7651,24 +7507,17 @@ void gf_HrScoreDialogMake () {
 }
 
 void gf_HrScoreDialogStatToolTip () {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898;
+    int i;
 
-    const int auto0455B201_ae = 8;
-    const int auto0455B201_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 = 1;
-    for ( ; ( (auto0455B201_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 <= auto0455B201_ae) || (auto0455B201_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 >= auto0455B201_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898 += auto0455B201_ai ) {
-        if ((((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) == c_playerStatusActive)) || (PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) == c_playerTypeComputer))) {
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][0] = (StringExternal("Param/Value/81A9C3B5") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][0]) + StringExternal("Param/Value/9FE47CA9") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][1]) + StringExternal("Param/Value/2C177B25") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][2]) + StringExternal("Param/Value/4D3F19E1") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][3]) + StringExternal("Param/Value/B77D00F4") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][4]) + StringExternal("Param/Value/0356181F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][5]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][1] = (StringExternal("Param/Value/960331B1") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][6]) + StringExternal("Param/Value/5B4C54DB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][7]) + StringExternal("Param/Value/467DB79F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][8]) + StringExternal("Param/Value/5578FBCC") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][9]) + StringExternal("Param/Value/7F061B37") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][10]) + StringExternal("Param/Value/0B992D42") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][11]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][2] = (StringExternal("Param/Value/90876E5C") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][18]) + StringExternal("Param/Value/26BDC60F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][19]) + StringExternal("Param/Value/735882AB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][20]) + StringExternal("Param/Value/807F018B") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][21]) + StringExternal("Param/Value/34C78D1C") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][22]) + StringExternal("Param/Value/50E69310") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][23]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][3] = (StringExternal("Param/Value/6FA179B7") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][12]) + StringExternal("Param/Value/BCCAD295") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][13]) + StringExternal("Param/Value/F4470E72") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][14]) + StringExternal("Param/Value/AC4756DD") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][15]) + StringExternal("Param/Value/53E2AE88") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][16]) + StringExternal("Param/Value/2C838535") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][17]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][4] = (StringExternal("Param/Value/42695A32") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][27]) + StringExternal("Param/Value/777EA2D4") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][28]) + StringExternal("Param/Value/7A9FD794") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][29]));
-            libNtve_gf_SetDialogItemTooltip(gv_ScoreDialogName[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]], (StringExternal("Param/Value/954454BA") + PlayerName(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]) + StringExternal("Param/Value/C04E72F0") + StringExternal("Param/Value/A62B9A29") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][0] + StringExternal("Param/Value/36B27B0D") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][1] + StringExternal("Param/Value/C32C435A") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][2] + StringExternal("Param/Value/7623F55B") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][3] + StringExternal("Param/Value/871824A9") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC8898]][4] + StringExternal("Param/Value/68E866B6")), PlayerGroupAll());
+    for (i = 1; i <= 8; i += 1) {
+        if ((((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) || (PlayerType(gv_PlayerBayul[i]) == c_playerTypeComputer))) {
+            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][0] = (StringExternal("Param/Value/81A9C3B5") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][0]) + StringExternal("Param/Value/9FE47CA9") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/2C177B25") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/4D3F19E1") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/B77D00F4") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][4]) + StringExternal("Param/Value/0356181F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][5]));
+            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][1] = (StringExternal("Param/Value/960331B1") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][6]) + StringExternal("Param/Value/5B4C54DB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][7]) + StringExternal("Param/Value/467DB79F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][8]) + StringExternal("Param/Value/5578FBCC") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][9]) + StringExternal("Param/Value/7F061B37") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][10]) + StringExternal("Param/Value/0B992D42") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][11]));
+            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][2] = (StringExternal("Param/Value/90876E5C") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][18]) + StringExternal("Param/Value/26BDC60F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][19]) + StringExternal("Param/Value/735882AB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][20]) + StringExternal("Param/Value/807F018B") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][21]) + StringExternal("Param/Value/34C78D1C") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][22]) + StringExternal("Param/Value/50E69310") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][23]));
+            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][3] = (StringExternal("Param/Value/6FA179B7") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][12]) + StringExternal("Param/Value/BCCAD295") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][13]) + StringExternal("Param/Value/F4470E72") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][14]) + StringExternal("Param/Value/AC4756DD") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][15]) + StringExternal("Param/Value/53E2AE88") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][16]) + StringExternal("Param/Value/2C838535") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][17]));
+            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][4] = (StringExternal("Param/Value/42695A32") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][27]) + StringExternal("Param/Value/777EA2D4") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][28]) + StringExternal("Param/Value/7A9FD794") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][29]));
+            libNtve_gf_SetDialogItemTooltip(gv_ScoreDialogName[gv_PlayerBayul[i]], (StringExternal("Param/Value/954454BA") + PlayerName(gv_PlayerBayul[i]) + StringExternal("Param/Value/C04E72F0") + StringExternal("Param/Value/A62B9A29") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][0] + StringExternal("Param/Value/36B27B0D") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][1] + StringExternal("Param/Value/C32C435A") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][2] + StringExternal("Param/Value/7623F55B") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][3] + StringExternal("Param/Value/871824A9") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][4] + StringExternal("Param/Value/68E866B6")), PlayerGroupAll());
         }
-
     }
 }
 
@@ -7730,22 +7579,15 @@ void gf_HrSurrenderDialogMake () {
 }
 
 void gf_HrDrawGame () {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-
-    const int auto5BD62B6F_ae = 8;
-    const int auto5BD62B6F_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
+    int i;
 
     TriggerEnable(gt_TrNexusDestroyTeam1, false);
     TriggerEnable(gt_TrNexusDestroyTeam2, false);
     Wait(5.0, c_timeReal);
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (auto5BD62B6F_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= auto5BD62B6F_ae) || (auto5BD62B6F_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= auto5BD62B6F_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += auto5BD62B6F_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], c_gameOverTie, true, true);
+    for (i = 1; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
         }
-
     }
 }
 
