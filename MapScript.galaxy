@@ -120,7 +120,7 @@ int gv_Hero39Skill4Save;
 int gv_Hero62Skill3Save;
 unitgroup[2] gv_MonsterGalicGroup;
 unitgroup[2] gv_MonsterDogGroup;
-unitgroup[2] gv_MonsterScolpionGroup;
+unitgroup[2] gv_MonsterScorpionGroup;
 unitgroup[2] gv_MonsterBirdGroup;
 unitgroup[2] gv_MonsterCowGroup;
 unitgroup[4] gv_MonsterIceBugGroup;
@@ -134,8 +134,8 @@ bool[2] gv_MonsterCowSwitch;
 unit[2] gv_MonsterCowPing1;
 bool[2] gv_MonsterGalicSwitch;
 unit[2] gv_MonsterGalicPing1;
-bool[2] gv_MonsterScolpionSwitch;
-unit[2] gv_MonsterScolpionPing1;
+bool[2] gv_MonsterScorpionSwitch;
+unit[2] gv_MonsterScorpionPing1;
 bool[4] gv_MonsterIceBugSwitch;
 unit[4] gv_MonsterIceBugPing1;
 bool[2] gv_MonsterIceBossSwitch;
@@ -148,8 +148,8 @@ bool[2] gv_RegenNewTimerCowBoolean;
 int[2] gv_RegenNewTimerCowStrong;
 bool[2] gv_RegenNewTimerGalicBoolean;
 int[2] gv_RegenNewTimerGalicStrong;
-bool[2] gv_RegenNewTimerScolpionBoolean;
-int[2] gv_RegenNewTimerScolpionStrong;
+bool[2] gv_RegenNewTimerScorpionBoolean;
+int[2] gv_RegenNewTimerScorpionStrong;
 bool[4] gv_RegenNewTimerIceBugBoolean;
 int[4] gv_RegenNewTimerIceBugStrong;
 bool[4] gv_RegenNewTimerIceBossBoolean;
@@ -320,7 +320,7 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterGalicGroup[init_i] = UnitGroupEmpty();
         gv_MonsterDogGroup[init_i] = UnitGroupEmpty();
-        gv_MonsterScolpionGroup[init_i] = UnitGroupEmpty();
+        gv_MonsterScorpionGroup[init_i] = UnitGroupEmpty();
         gv_MonsterBirdGroup[init_i] = UnitGroupEmpty();
         gv_MonsterCowGroup[init_i] = UnitGroupEmpty();
         gv_MonsterBossGroup[init_i] = UnitGroupEmpty();
@@ -707,10 +707,10 @@ trigger gt_TrMonsterAttackGalic1;
 trigger gt_TrMonsterAttackGalic2;
 trigger gt_TrMonsterBackGalic1;
 trigger gt_TrMonsterBackGalic2;
-trigger gt_TrMonsterAttackScolpion1;
-trigger gt_TrMonsterAttackScolpion2;
-trigger gt_TrMonsterBackScolpion1;
-trigger gt_TrMonsterBackScolpion2;
+trigger gt_TrMonsterAttackScorpion1;
+trigger gt_TrMonsterAttackScorpion2;
+trigger gt_TrMonsterBackScorpion1;
+trigger gt_TrMonsterBackScorpion2;
 trigger gt_TrMonsterAttackIceBug1;
 trigger gt_TrMonsterAttackIceBug2;
 trigger gt_TrMonsterAttackIceBug3;
@@ -728,7 +728,7 @@ trigger gt_TrMonsterBirdRegen;
 trigger gt_TrMonsterDogRegen;
 trigger gt_TrMonsterCowRegen;
 trigger gt_TrMonsterGalicRegen;
-trigger gt_TrMonsterScolpionRegen;
+trigger gt_TrMonsterScorpionRegen;
 trigger gt_TrMonsterIceBugRegen;
 trigger gt_TrMonsterIceBossRegen;
 trigger gt_TrBuildingDestroyMoojuck;
@@ -5632,23 +5632,23 @@ void gf_HrMonsterGarlicRegenTimerStart () {
 }
 
 void gf_HrMonsterScorpionRegenTimerStart () {
-    if ((UnitGroupHasUnit(gv_MonsterScolpionGroup[0], EventUnit()) == true) && (gv_RegenNewTimerScolpionBoolean[0] == false)) {
-        gv_RegenNewTimerScolpionBoolean[0] = true;
-        if ((gv_RegenNewTimerScolpionStrong[0] < 20)) {
-            gv_RegenNewTimerScolpionStrong[0] += 1;
+    if ((UnitGroupHasUnit(gv_MonsterScorpionGroup[0], EventUnit()) == true) && (gv_RegenNewTimerScorpionBoolean[0] == false)) {
+        gv_RegenNewTimerScorpionBoolean[0] = true;
+        if ((gv_RegenNewTimerScorpionStrong[0] < 20)) {
+            gv_RegenNewTimerScorpionStrong[0] += 1;
         }
 
         PlayerCreateEffectPoint(11, "MonsterMakeTimerG32222", PointFromId(564));
-        UnitRemove(gv_MonsterScolpionPing1[0]);
+        UnitRemove(gv_MonsterScorpionPing1[0]);
     }
-    else if ((UnitGroupHasUnit(gv_MonsterScolpionGroup[1], EventUnit()) == true) && (gv_RegenNewTimerScolpionBoolean[1] == false)) {
-        gv_RegenNewTimerScolpionBoolean[1] = true;
-        if ((gv_RegenNewTimerScolpionStrong[1] < 20)) {
-            gv_RegenNewTimerScolpionStrong[1] += 1;
+    else if ((UnitGroupHasUnit(gv_MonsterScorpionGroup[1], EventUnit()) == true) && (gv_RegenNewTimerScorpionBoolean[1] == false)) {
+        gv_RegenNewTimerScorpionBoolean[1] = true;
+        if ((gv_RegenNewTimerScorpionStrong[1] < 20)) {
+            gv_RegenNewTimerScorpionStrong[1] += 1;
         }
 
         PlayerCreateEffectPoint(11, "MonsterMakeTimerG32222", PointFromId(567));
-        UnitRemove(gv_MonsterScolpionPing1[1]);
+        UnitRemove(gv_MonsterScorpionPing1[1]);
     }
 }
 
@@ -13981,26 +13981,26 @@ bool gt_TrMonsterMake4_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
-    if ((UnitGroupCount(gv_MonsterScolpionGroup[0], c_unitCountAlive) == 0)) {
+    if ((UnitGroupCount(gv_MonsterScorpionGroup[0], c_unitCountAlive) == 0)) {
         UnitCreate(1, "Inunit5", c_unitCreateIgnorePlacement, 11, PointFromId(564), 325.0);
-        UnitGroupAdd(gv_MonsterScolpionGroup[0], UnitLastCreated());
+        UnitGroupAdd(gv_MonsterScorpionGroup[0], UnitLastCreated());
         UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(565), 325.0);
-        UnitGroupAdd(gv_MonsterScolpionGroup[0], UnitLastCreated());
+        UnitGroupAdd(gv_MonsterScorpionGroup[0], UnitLastCreated());
         UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(566), 325.0);
-        UnitGroupAdd(gv_MonsterScolpionGroup[0], UnitLastCreated());
+        UnitGroupAdd(gv_MonsterScorpionGroup[0], UnitLastCreated());
         UnitCreate(1, "MonsterDumit2", c_unitCreateIgnorePlacement, 11, PointFromId(564), 270.0);
-        gv_MonsterScolpionPing1[0] = UnitLastCreated();
+        gv_MonsterScorpionPing1[0] = UnitLastCreated();
     }
 
-    if ((UnitGroupCount(gv_MonsterScolpionGroup[1], c_unitCountAlive) == 0)) {
+    if ((UnitGroupCount(gv_MonsterScorpionGroup[1], c_unitCountAlive) == 0)) {
         UnitCreate(1, "Inunit5", c_unitCreateIgnorePlacement, 11, PointFromId(567), 145.0);
-        UnitGroupAdd(gv_MonsterScolpionGroup[1], UnitLastCreated());
+        UnitGroupAdd(gv_MonsterScorpionGroup[1], UnitLastCreated());
         UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(568), 145.0);
-        UnitGroupAdd(gv_MonsterScolpionGroup[1], UnitLastCreated());
+        UnitGroupAdd(gv_MonsterScorpionGroup[1], UnitLastCreated());
         UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(569), 145.0);
-        UnitGroupAdd(gv_MonsterScolpionGroup[1], UnitLastCreated());
+        UnitGroupAdd(gv_MonsterScorpionGroup[1], UnitLastCreated());
         UnitCreate(1, "MonsterDumit2", c_unitCreateIgnorePlacement, 11, PointFromId(567), 270.0);
-        gv_MonsterScolpionPing1[1] = UnitLastCreated();
+        gv_MonsterScorpionPing1[1] = UnitLastCreated();
     }
 
     return true;
@@ -14213,30 +14213,19 @@ void gt_TrMonsterBuffEnd3_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBird1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto5392BCE5_ae = 1;
-    const int auto5392BCE5_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterBirdGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(107), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterBirdSwitch[0] == false))) {
             return false;
         }
@@ -14247,13 +14236,10 @@ bool gt_TrMonsterAttackBird1_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterBirdSwitch[0] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto5392BCE5_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto5392BCE5_ae) || (auto5392BCE5_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto5392BCE5_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto5392BCE5_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBirdGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBirdGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBirdGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
-        }
-
+    if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBirdGroup[0], 1), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBirdGroup[0], 1)) == true)) {
+        UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBirdGroup[0], 1), "Notauto", 1);
     }
+
     UnitGroupIssueOrder(gv_MonsterBirdGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterBirdGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(554)), c_orderQueueAddToEnd);
     gv_MonsterBirdSwitch[0] = false;
@@ -14270,30 +14256,19 @@ void gt_TrMonsterAttackBird1_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBird2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto6A86B69C_ae = 1;
-    const int auto6A86B69C_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterBirdGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(127), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterBirdSwitch[1] == false))) {
             return false;
         }
@@ -14304,12 +14279,8 @@ bool gt_TrMonsterAttackBird2_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterBirdSwitch[1] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto6A86B69C_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto6A86B69C_ae) || (auto6A86B69C_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto6A86B69C_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto6A86B69C_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBirdGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBirdGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBirdGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
-        }
-
+    if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBirdGroup[1], 1), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBirdGroup[1], 1)) == true)) {
+        UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBirdGroup[1], 1), "Notauto", 1);
     }
     UnitGroupIssueOrder(gv_MonsterBirdGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterBirdGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(555)), c_orderQueueAddToEnd);
@@ -14331,15 +14302,12 @@ bool gt_TrMonsterBackBird1_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterBirdGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterBirdSwitch[0] == false))) {
             return false;
         }
@@ -14374,15 +14342,12 @@ bool gt_TrMonsterBackBird2_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterBirdGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterBirdSwitch[1] == false))) {
             return false;
         }
@@ -14413,30 +14378,21 @@ void gt_TrMonsterBackBird2_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackDog1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto7BC9AC54_ae = 4;
-    const int auto7BC9AC54_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterDogGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(132), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterDogSwitch[0] == false))) {
             return false;
         }
@@ -14447,10 +14403,9 @@ bool gt_TrMonsterAttackDog1_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterDogSwitch[0] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto7BC9AC54_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto7BC9AC54_ae) || (auto7BC9AC54_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto7BC9AC54_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto7BC9AC54_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterDogGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterDogGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterDogGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 4; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterDogGroup[0], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterDogGroup[0], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterDogGroup[0], i), "Notauto", 1);
         }
 
     }
@@ -14470,30 +14425,21 @@ void gt_TrMonsterAttackDog1_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackDog2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto548EEC79_ae = 4;
-    const int auto548EEC79_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterDogGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(133), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterDogSwitch[1] == false))) {
             return false;
         }
@@ -14504,10 +14450,9 @@ bool gt_TrMonsterAttackDog2_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterDogSwitch[1] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto548EEC79_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto548EEC79_ae) || (auto548EEC79_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto548EEC79_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto548EEC79_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterDogGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterDogGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterDogGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 4; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterDogGroup[1], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterDogGroup[1], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterDogGroup[1], i), "Notauto", 1);
         }
 
     }
@@ -14531,15 +14476,12 @@ bool gt_TrMonsterBackDog1_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterDogGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterDogSwitch[0] == false))) {
             return false;
         }
@@ -14598,15 +14540,12 @@ bool gt_TrMonsterBackDog2_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterDogGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterDogSwitch[1] == false))) {
             return false;
         }
@@ -14661,30 +14600,21 @@ void gt_TrMonsterBackDog2_Init () {
 // Trigger: ?????? ??? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackCow1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int autoD02C6489_ae = 2;
-    const int autoD02C6489_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterCowGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(98), 7.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterCowSwitch[0] == false))) {
             return false;
         }
@@ -14695,13 +14625,12 @@ bool gt_TrMonsterAttackCow1_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterCowSwitch[0] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (autoD02C6489_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= autoD02C6489_ae) || (autoD02C6489_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= autoD02C6489_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += autoD02C6489_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterCowGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterCowGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterCowGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 2; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterCowGroup[0], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterCowGroup[0], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterCowGroup[0], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterCowGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterCowGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(234)), c_orderQueueAddToEnd);
     gv_MonsterCowSwitch[0] = false;
@@ -14718,30 +14647,21 @@ void gt_TrMonsterAttackCow1_Init () {
 // Trigger: ?????? ??? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackCow2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int autoF4F9856B_ae = 2;
-    const int autoF4F9856B_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterCowGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(102), 7.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterCowSwitch[1] == false))) {
             return false;
         }
@@ -14752,13 +14672,12 @@ bool gt_TrMonsterAttackCow2_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterCowSwitch[1] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (autoF4F9856B_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= autoF4F9856B_ae) || (autoF4F9856B_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= autoF4F9856B_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += autoF4F9856B_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterCowGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterCowGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterCowGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 2; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterCowGroup[1], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterCowGroup[1], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterCowGroup[1], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterCowGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterCowGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(157)), c_orderQueueAddToEnd);
     gv_MonsterCowSwitch[1] = false;
@@ -14779,15 +14698,12 @@ bool gt_TrMonsterBackCow1_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterCowGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterCowSwitch[0] == false))) {
             return false;
         }
@@ -14828,15 +14744,12 @@ bool gt_TrMonsterBackCow2_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterCowGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterCowSwitch[1] == false))) {
             return false;
         }
@@ -14873,30 +14786,21 @@ void gt_TrMonsterBackCow2_Init () {
 // Trigger: ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackGalic1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto8360D47A_ae = 3;
-    const int auto8360D47A_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterGalicGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(134), 7.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterGalicSwitch[0] == false))) {
             return false;
         }
@@ -14907,13 +14811,12 @@ bool gt_TrMonsterAttackGalic1_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterGalicSwitch[0] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto8360D47A_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto8360D47A_ae) || (auto8360D47A_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto8360D47A_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto8360D47A_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterGalicGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterGalicGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterGalicGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 3; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterGalicGroup[0], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterGalicGroup[0], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterGalicGroup[0], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterGalicGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterGalicGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(548)), c_orderQueueAddToEnd);
     gv_MonsterGalicSwitch[0] = false;
@@ -14930,30 +14833,21 @@ void gt_TrMonsterAttackGalic1_Init () {
 // Trigger: ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackGalic2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto60FAD14F_ae = 3;
-    const int auto60FAD14F_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterGalicGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(135), 7.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterGalicSwitch[1] == false))) {
             return false;
         }
@@ -14964,13 +14858,12 @@ bool gt_TrMonsterAttackGalic2_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterGalicSwitch[1] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto60FAD14F_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto60FAD14F_ae) || (auto60FAD14F_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto60FAD14F_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto60FAD14F_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterGalicGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterGalicGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterGalicGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 3; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterGalicGroup[1], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterGalicGroup[1], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterGalicGroup[1], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterGalicGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterGalicGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(551)), c_orderQueueAddToEnd);
     gv_MonsterGalicSwitch[1] = false;
@@ -14991,15 +14884,12 @@ bool gt_TrMonsterBackGalic1_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterGalicGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterGalicSwitch[0] == false))) {
             return false;
         }
@@ -15048,15 +14938,12 @@ bool gt_TrMonsterBackGalic2_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterGalicGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterGalicSwitch[1] == false))) {
             return false;
         }
@@ -15100,32 +14987,23 @@ void gt_TrMonsterBackGalic2_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ??????(???)
 //--------------------------------------------------------------------------------------------------
-bool gt_TrMonsterAttackScolpion1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int autoEC18A498_ae = 3;
-    const int autoEC18A498_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+bool gt_TrMonsterAttackScorpion1_Func (bool testConds, bool runActions) {
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
-        if (!((UnitGroupHasUnit(gv_MonsterScolpionGroup[0], EventUnit()) == true))) {
+        if (!((UnitGroupHasUnit(gv_MonsterScorpionGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(137), 8.0)) == true))) {
             return false;
         }
-
-        if (!((gv_MonsterScolpionSwitch[0] == false))) {
+        if (!((gv_MonsterScorpionSwitch[0] == false))) {
             return false;
         }
     }
@@ -15134,55 +15012,45 @@ bool gt_TrMonsterAttackScolpion1_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_MonsterScolpionSwitch[0] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (autoEC18A498_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= autoEC18A498_ae) || (autoEC18A498_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= autoEC18A498_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += autoEC18A498_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterScolpionGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterScolpionGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterScolpionGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    gv_MonsterScorpionSwitch[0] = true;
+    for (i = 1; i <= 3; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterScorpionGroup[0], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterScorpionGroup[0], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterScorpionGroup[0], i), "Notauto", 1);
         }
-
     }
-    UnitGroupIssueOrder(gv_MonsterScolpionGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterScolpionGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueAddToEnd);
-    gv_MonsterScolpionSwitch[0] = false;
+
+    UnitGroupIssueOrder(gv_MonsterScorpionGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
+    UnitGroupIssueOrder(gv_MonsterScorpionGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueAddToEnd);
+    gv_MonsterScorpionSwitch[0] = false;
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrMonsterAttackScolpion1_Init () {
-    gt_TrMonsterAttackScolpion1 = TriggerCreate("gt_TrMonsterAttackScolpion1_Func");
-    TriggerAddEventUnitDamaged(gt_TrMonsterAttackScolpion1, null, c_unitDamageTypeAny, c_unitDamageEither, "ToHeroDamage2");
+void gt_TrMonsterAttackScorpion1_Init () {
+    gt_TrMonsterAttackScorpion1 = TriggerCreate("gt_TrMonsterAttackScorpion1_Func");
+    TriggerAddEventUnitDamaged(gt_TrMonsterAttackScorpion1, null, c_unitDamageTypeAny, c_unitDamageEither, "ToHeroDamage2");
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ??????(???)
 //--------------------------------------------------------------------------------------------------
-bool gt_TrMonsterAttackScolpion2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto44DBE076_ae = 3;
-    const int auto44DBE076_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+bool gt_TrMonsterAttackScorpion2_Func (bool testConds, bool runActions) {
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
-        if (!((UnitGroupHasUnit(gv_MonsterScolpionGroup[1], EventUnit()) == true))) {
+        if (!((UnitGroupHasUnit(gv_MonsterScorpionGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(138), 8.0)) == true))) {
             return false;
         }
-
-        if (!((gv_MonsterScolpionSwitch[1] == false))) {
+        if (!((gv_MonsterScorpionSwitch[1] == false))) {
             return false;
         }
     }
@@ -15191,44 +15059,40 @@ bool gt_TrMonsterAttackScolpion2_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_MonsterScolpionSwitch[1] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto44DBE076_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto44DBE076_ae) || (auto44DBE076_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto44DBE076_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto44DBE076_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterScolpionGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterScolpionGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterScolpionGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    gv_MonsterScorpionSwitch[1] = true;
+    for (i = 1; i <= 3; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterScorpionGroup[1], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterScorpionGroup[1], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterScorpionGroup[1], i), "Notauto", 1);
         }
-
     }
-    UnitGroupIssueOrder(gv_MonsterScolpionGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterScolpionGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueAddToEnd);
-    gv_MonsterScolpionSwitch[1] = false;
+
+    UnitGroupIssueOrder(gv_MonsterScorpionGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
+    UnitGroupIssueOrder(gv_MonsterScorpionGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueAddToEnd);
+    gv_MonsterScorpionSwitch[1] = false;
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrMonsterAttackScolpion2_Init () {
-    gt_TrMonsterAttackScolpion2 = TriggerCreate("gt_TrMonsterAttackScolpion2_Func");
-    TriggerAddEventUnitDamaged(gt_TrMonsterAttackScolpion2, null, c_unitDamageTypeAny, c_unitDamageEither, "ToHeroDamage2");
+void gt_TrMonsterAttackScorpion2_Init () {
+    gt_TrMonsterAttackScorpion2 = TriggerCreate("gt_TrMonsterAttackScorpion2_Func");
+    TriggerAddEventUnitDamaged(gt_TrMonsterAttackScorpion2, null, c_unitDamageTypeAny, c_unitDamageEither, "ToHeroDamage2");
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
-bool gt_TrMonsterBackScolpion1_Func (bool testConds, bool runActions) {
+bool gt_TrMonsterBackScorpion1_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
-        if (!((UnitGroupHasUnit(gv_MonsterScolpionGroup[0], EventUnit()) == true))) {
+        if (!((UnitGroupHasUnit(gv_MonsterScorpionGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
-        if (!((gv_MonsterScolpionSwitch[0] == false))) {
+        if (!((gv_MonsterScorpionSwitch[0] == false))) {
             return false;
         }
     }
@@ -15237,55 +15101,52 @@ bool gt_TrMonsterBackScolpion1_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_MonsterScolpionSwitch[0] = true;
-    if ((UnitGroupCount(gv_MonsterScolpionGroup[0], c_unitCountAlive) == 1)) {
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[0], 1));
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[0], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueReplace);
+    gv_MonsterScorpionSwitch[0] = true;
+    if ((UnitGroupCount(gv_MonsterScorpionGroup[0], c_unitCountAlive) == 1)) {
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[0], 1));
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueReplace);
     }
-    else if ((UnitGroupCount(gv_MonsterScolpionGroup[0], c_unitCountAlive) == 2)) {
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[0], 1));
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[0], 2));
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[0], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueReplace);
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[0], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(565)), c_orderQueueReplace);
+    else if ((UnitGroupCount(gv_MonsterScorpionGroup[0], c_unitCountAlive) == 2)) {
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[0], 1));
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[0], 2));
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueReplace);
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(565)), c_orderQueueReplace);
     }
-    else if ((UnitGroupCount(gv_MonsterScolpionGroup[0], c_unitCountAlive) == 3)) {
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[0], 1));
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[0], 2));
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[0], 3));
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[0], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueReplace);
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[0], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(565)), c_orderQueueReplace);
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[0], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(566)), c_orderQueueReplace);
+    else if ((UnitGroupCount(gv_MonsterScorpionGroup[0], c_unitCountAlive) == 3)) {
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[0], 1));
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[0], 2));
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[0], 3));
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueReplace);
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(565)), c_orderQueueReplace);
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(566)), c_orderQueueReplace);
     }
 
     Wait(2.0, c_timeReal);
-    gv_MonsterScolpionSwitch[0] = false;
+    gv_MonsterScorpionSwitch[0] = false;
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrMonsterBackScolpion1_Init () {
-    gt_TrMonsterBackScolpion1 = TriggerCreate("gt_TrMonsterBackScolpion1_Func");
-    TriggerAddEventUnitRangePoint(gt_TrMonsterBackScolpion1, null, PointFromId(137), 8.0, false);
+void gt_TrMonsterBackScorpion1_Init () {
+    gt_TrMonsterBackScorpion1 = TriggerCreate("gt_TrMonsterBackScorpion1_Func");
+    TriggerAddEventUnitRangePoint(gt_TrMonsterBackScorpion1, null, PointFromId(137), 8.0, false);
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ???????????????(???)
 //--------------------------------------------------------------------------------------------------
-bool gt_TrMonsterBackScolpion2_Func (bool testConds, bool runActions) {
+bool gt_TrMonsterBackScorpion2_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
-        if (!((UnitGroupHasUnit(gv_MonsterScolpionGroup[1], EventUnit()) == true))) {
+        if (!((UnitGroupHasUnit(gv_MonsterScorpionGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
-        if (!((gv_MonsterScolpionSwitch[1] == false))) {
+        if (!((gv_MonsterScorpionSwitch[1] == false))) {
             return false;
         }
     }
@@ -15294,65 +15155,56 @@ bool gt_TrMonsterBackScolpion2_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_MonsterScolpionSwitch[1] = true;
-    if ((UnitGroupCount(gv_MonsterScolpionGroup[1], c_unitCountAlive) == 1)) {
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[1], 1));
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[1], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueReplace);
+    gv_MonsterScorpionSwitch[1] = true;
+    if ((UnitGroupCount(gv_MonsterScorpionGroup[1], c_unitCountAlive) == 1)) {
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[1], 1));
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueReplace);
     }
-    else if ((UnitGroupCount(gv_MonsterScolpionGroup[1], c_unitCountAlive) == 2)) {
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[1], 1));
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[1], 2));
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[1], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueReplace);
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[1], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(568)), c_orderQueueReplace);
+    else if ((UnitGroupCount(gv_MonsterScorpionGroup[1], c_unitCountAlive) == 2)) {
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[1], 1));
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[1], 2));
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueReplace);
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(568)), c_orderQueueReplace);
     }
-    else if ((UnitGroupCount(gv_MonsterScolpionGroup[1], c_unitCountAlive) == 3)) {
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[1], 1));
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[1], 2));
-        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScolpionGroup[1], 3));
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[1], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueReplace);
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[1], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(568)), c_orderQueueReplace);
-        UnitIssueOrder(UnitGroupUnit(gv_MonsterScolpionGroup[1], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(569)), c_orderQueueReplace);
+    else if ((UnitGroupCount(gv_MonsterScorpionGroup[1], c_unitCountAlive) == 3)) {
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[1], 1));
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[1], 2));
+        PlayerCreateEffectUnit(11, "ApplyIncapBehavior22222223", UnitGroupUnit(gv_MonsterScorpionGroup[1], 3));
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 1), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueReplace);
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(568)), c_orderQueueReplace);
+        UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(569)), c_orderQueueReplace);
     }
 
     Wait(2.0, c_timeReal);
-    gv_MonsterScolpionSwitch[1] = false;
+    gv_MonsterScorpionSwitch[1] = false;
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrMonsterBackScolpion2_Init () {
-    gt_TrMonsterBackScolpion2 = TriggerCreate("gt_TrMonsterBackScolpion2_Func");
-    TriggerAddEventUnitRangePoint(gt_TrMonsterBackScolpion2, null, PointFromId(138), 8.0, false);
+void gt_TrMonsterBackScorpion2_Init () {
+    gt_TrMonsterBackScorpion2 = TriggerCreate("gt_TrMonsterBackScorpion2_Func");
+    TriggerAddEventUnitRangePoint(gt_TrMonsterBackScorpion2, null, PointFromId(138), 8.0, false);
 }
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: ?????? ??????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto5F6E5706_ae = 2;
-    const int auto5F6E5706_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(141), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[0] == false))) {
             return false;
         }
@@ -15363,13 +15215,12 @@ bool gt_TrMonsterAttackIceBug1_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterIceBugSwitch[0] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto5F6E5706_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto5F6E5706_ae) || (auto5F6E5706_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto5F6E5706_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto5F6E5706_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 2; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[0], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[0], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[0], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[0] = false;
@@ -15386,30 +15237,21 @@ void gt_TrMonsterAttackIceBug1_Init () {
 // Trigger: ?????? ??????(???-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int autoD5DBEE6E_ae = 2;
-    const int autoD5DBEE6E_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(145), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[1] == false))) {
             return false;
         }
@@ -15420,13 +15262,12 @@ bool gt_TrMonsterAttackIceBug2_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterIceBugSwitch[1] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (autoD5DBEE6E_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= autoD5DBEE6E_ae) || (autoD5DBEE6E_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= autoD5DBEE6E_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += autoD5DBEE6E_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 2; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[1], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[1], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[1], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[1] = false;
@@ -15443,30 +15284,21 @@ void gt_TrMonsterAttackIceBug2_Init () {
 // Trigger: ?????? ??????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug3_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int auto09B391FF_ae = 2;
-    const int auto09B391FF_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[2], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(146), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[2] == false))) {
             return false;
         }
@@ -15477,13 +15309,12 @@ bool gt_TrMonsterAttackIceBug3_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterIceBugSwitch[2] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (auto09B391FF_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= auto09B391FF_ae) || (auto09B391FF_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= auto09B391FF_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += auto09B391FF_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[2], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[2], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[2], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 2; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[2], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[2], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[2], i), "Notauto", 1);
         }
-
     }
+
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[2], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[2], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[2] = false;
@@ -15500,30 +15331,21 @@ void gt_TrMonsterAttackIceBug3_Init () {
 // Trigger: ?????? ??????(??????-???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackIceBug4_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    const int autoBF82A815_ae = 2;
-    const int autoBF82A815_ai = 1;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int i;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[3], EventUnit()) == true))) {
             return false;
         }
-
         if (!((libNtve_gf_UnitInRegion(EventUnit(), RegionCircle(PointFromId(147), 8.0)) == true))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[3] == false))) {
             return false;
         }
@@ -15534,10 +15356,9 @@ bool gt_TrMonsterAttackIceBug4_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterIceBugSwitch[3] = true;
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
-    for ( ; ( (autoBF82A815_ai >= 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 <= autoBF82A815_ae) || (autoBF82A815_ai < 0 && lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 >= autoBF82A815_ae) ) ; lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 += autoBF82A815_ai ) {
-        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[3], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[3], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
-            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[3], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898), "Notauto", 1);
+    for (i = 1; i <= 2; i += 1) {
+        if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterIceBugGroup[3], i), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterIceBugGroup[3], i)) == true)) {
+            UnitBehaviorRemove(UnitGroupUnit(gv_MonsterIceBugGroup[3], i), "Notauto", 1);
         }
 
     }
@@ -15561,15 +15382,12 @@ bool gt_TrMonsterBackIceBug1_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[0] == false))) {
             return false;
         }
@@ -15610,15 +15428,12 @@ bool gt_TrMonsterBackIceBug2_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[1] == false))) {
             return false;
         }
@@ -15659,15 +15474,12 @@ bool gt_TrMonsterBackIceBug3_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[2], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[2] == false))) {
             return false;
         }
@@ -15708,15 +15520,12 @@ bool gt_TrMonsterBackIceBug4_Func (bool testConds, bool runActions) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterIceBugGroup[3], EventUnit()) == true))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == false))) {
             return false;
         }
-
         if (!((gv_MonsterIceBugSwitch[3] == false))) {
             return false;
         }
@@ -15753,23 +15562,18 @@ void gt_TrMonsterBackIceBug4_Init () {
 // Trigger: ?????? ?????? ??????(???)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBoss1_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int index_in_group = 1;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterBossGroup[0], EventUnit()) == true))) {
             return false;
         }
-
         if (!((gv_MonsterIceBossSwitch[0] == false))) {
             return false;
         }
@@ -15780,7 +15584,7 @@ bool gt_TrMonsterAttackBoss1_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterIceBossSwitch[0] = true;
-    if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBossGroup[0], 1), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBossGroup[0], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
+    if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBossGroup[0], 1), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBossGroup[0], index_in_group)) == true)) {
         UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBossGroup[0], 1), "Notauto", 1);
     }
 
@@ -15800,23 +15604,18 @@ void gt_TrMonsterAttackBoss1_Init () {
 // Trigger: ?????? ?????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrMonsterAttackBoss2_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898;
-
-    lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898 = 1;
+    int index_in_group = 1;
 
     if (testConds) {
         if (!((EventPlayer() == 11))) {
             return false;
         }
-
         if (!((UnitHasBehavior(EventUnit(), "Notauto") == true))) {
             return false;
         }
-
         if (!((UnitGroupHasUnit(gv_MonsterBossGroup[1], EventUnit()) == true))) {
             return false;
         }
-
         if (!((gv_MonsterIceBossSwitch[1] == false))) {
             return false;
         }
@@ -15827,7 +15626,7 @@ bool gt_TrMonsterAttackBoss2_Func (bool testConds, bool runActions) {
     }
 
     gv_MonsterIceBossSwitch[1] = true;
-    if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBossGroup[1], 1), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBossGroup[1], lv_eC84A4ECA095EC9CA0EB8B9BEC8898EBB380EC8898)) == true)) {
+    if ((UnitHasBehavior(UnitGroupUnit(gv_MonsterBossGroup[1], 1), "Notauto") == true) && (UnitIsAlive(UnitGroupUnit(gv_MonsterBossGroup[1], index_in_group)) == true)) {
         UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBossGroup[1], 1), "Notauto", 1);
     }
 
@@ -15942,7 +15741,7 @@ bool gt_TrMonsterRegenTimerStart_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((((UnitGetType(EventUnit()) == "Inunit6") && (((UnitGroupCount(gv_MonsterBirdGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerBirdBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterBirdGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerBirdBoolean[1] == false)))) || ((UnitGetType(EventUnit()) == "Inunit3") && (((UnitGroupCount(gv_MonsterDogGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerDogBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterDogGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerDogBoolean[1] == false)))) || ((UnitGetType(EventUnit()) == "Inunit8") && (((UnitGroupCount(gv_MonsterCowGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerCowBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterCowGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerCowBoolean[1] == false)))) || ((UnitGetType(EventUnit()) == "Inunit7") && (((UnitGroupCount(gv_MonsterIceBugGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterIceBugGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[1] == false)) || ((UnitGroupCount(gv_MonsterIceBugGroup[2], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[2] == false)) || ((UnitGroupCount(gv_MonsterIceBugGroup[3], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[3] == false)))) || (((UnitGetType(EventUnit()) == "Inunit") || (UnitGetType(EventUnit()) == "Inunit2")) && (((UnitGroupCount(gv_MonsterGalicGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerGalicBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterGalicGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerGalicBoolean[1] == false)))) || (((UnitGetType(EventUnit()) == "Inunit5") || (UnitGetType(EventUnit()) == "Inunit4")) && (((UnitGroupCount(gv_MonsterScolpionGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerScolpionBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterScolpionGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerScolpionBoolean[1] == false)))) || (((UnitGetType(EventUnit()) == "SpineCrawler") || (UnitGetType(EventUnit()) == "SporeCrawler")) && (((UnitGroupCount(gv_MonsterBossGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBossBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterBossGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBossBoolean[1] == false))))))) {
+        if (!((((UnitGetType(EventUnit()) == "Inunit6") && (((UnitGroupCount(gv_MonsterBirdGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerBirdBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterBirdGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerBirdBoolean[1] == false)))) || ((UnitGetType(EventUnit()) == "Inunit3") && (((UnitGroupCount(gv_MonsterDogGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerDogBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterDogGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerDogBoolean[1] == false)))) || ((UnitGetType(EventUnit()) == "Inunit8") && (((UnitGroupCount(gv_MonsterCowGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerCowBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterCowGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerCowBoolean[1] == false)))) || ((UnitGetType(EventUnit()) == "Inunit7") && (((UnitGroupCount(gv_MonsterIceBugGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterIceBugGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[1] == false)) || ((UnitGroupCount(gv_MonsterIceBugGroup[2], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[2] == false)) || ((UnitGroupCount(gv_MonsterIceBugGroup[3], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBugBoolean[3] == false)))) || (((UnitGetType(EventUnit()) == "Inunit") || (UnitGetType(EventUnit()) == "Inunit2")) && (((UnitGroupCount(gv_MonsterGalicGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerGalicBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterGalicGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerGalicBoolean[1] == false)))) || (((UnitGetType(EventUnit()) == "Inunit5") || (UnitGetType(EventUnit()) == "Inunit4")) && (((UnitGroupCount(gv_MonsterScorpionGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerScorpionBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterScorpionGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerScorpionBoolean[1] == false)))) || (((UnitGetType(EventUnit()) == "SpineCrawler") || (UnitGetType(EventUnit()) == "SporeCrawler")) && (((UnitGroupCount(gv_MonsterBossGroup[0], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBossBoolean[0] == false)) || ((UnitGroupCount(gv_MonsterBossGroup[1], c_unitCountAlive) == 0) && (gv_RegenNewTimerIceBossBoolean[1] == false))))))) {
             return false;
         }
     }
@@ -16199,7 +15998,7 @@ void gt_TrMonsterGalicRegen_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ?????? ??????
 //--------------------------------------------------------------------------------------------------
-bool gt_TrMonsterScolpionRegen_Func (bool testConds, bool runActions) {
+bool gt_TrMonsterScorpionRegen_Func (bool testConds, bool runActions) {
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
@@ -16211,35 +16010,35 @@ bool gt_TrMonsterScolpionRegen_Func (bool testConds, bool runActions) {
     }
 
     if ((EventPlayerEffectUsedPoint(c_effectLocationTargetPoint) == PointFromId(564))) {
-        gv_RegenNewTimerScolpionBoolean[0] = false;
-        if ((UnitGroupCount(gv_MonsterScolpionGroup[0], c_unitCountAlive) == 0)) {
+        gv_RegenNewTimerScorpionBoolean[0] = false;
+        if ((UnitGroupCount(gv_MonsterScorpionGroup[0], c_unitCountAlive) == 0)) {
             UnitCreate(1, "Inunit5", c_unitCreateIgnorePlacement, 11, PointFromId(564), 325.0);
-            UnitGroupAdd(gv_MonsterScolpionGroup[0], UnitLastCreated());
-            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking23223222222", 11, gv_RegenNewTimerScolpionStrong[0]);
+            UnitGroupAdd(gv_MonsterScorpionGroup[0], UnitLastCreated());
+            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking23223222222", 11, gv_RegenNewTimerScorpionStrong[0]);
             UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(565), 325.0);
-            UnitGroupAdd(gv_MonsterScolpionGroup[0], UnitLastCreated());
-            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScolpionStrong[0]);
+            UnitGroupAdd(gv_MonsterScorpionGroup[0], UnitLastCreated());
+            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScorpionStrong[0]);
             UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(566), 325.0);
-            UnitGroupAdd(gv_MonsterScolpionGroup[0], UnitLastCreated());
-            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScolpionStrong[0]);
+            UnitGroupAdd(gv_MonsterScorpionGroup[0], UnitLastCreated());
+            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScorpionStrong[0]);
             UnitCreate(1, "MonsterDumit2", c_unitCreateIgnorePlacement, 11, PointFromId(564), 270.0);
-            gv_MonsterScolpionPing1[0] = UnitLastCreated();
+            gv_MonsterScorpionPing1[0] = UnitLastCreated();
         }
     }
     else if ((EventPlayerEffectUsedPoint(c_effectLocationTargetPoint) == PointFromId(567))) {
-        gv_RegenNewTimerScolpionBoolean[1] = false;
-        if ((UnitGroupCount(gv_MonsterScolpionGroup[1], c_unitCountAlive) == 0)) {
+        gv_RegenNewTimerScorpionBoolean[1] = false;
+        if ((UnitGroupCount(gv_MonsterScorpionGroup[1], c_unitCountAlive) == 0)) {
             UnitCreate(1, "Inunit5", c_unitCreateIgnorePlacement, 11, PointFromId(567), 315.0);
-            UnitGroupAdd(gv_MonsterScolpionGroup[1], UnitLastCreated());
-            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking23223222222", 11, gv_RegenNewTimerScolpionStrong[1]);
+            UnitGroupAdd(gv_MonsterScorpionGroup[1], UnitLastCreated());
+            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking23223222222", 11, gv_RegenNewTimerScorpionStrong[1]);
             UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(568), 315.0);
-            UnitGroupAdd(gv_MonsterScolpionGroup[1], UnitLastCreated());
-            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScolpionStrong[1]);
+            UnitGroupAdd(gv_MonsterScorpionGroup[1], UnitLastCreated());
+            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScorpionStrong[1]);
             UnitCreate(1, "Inunit4", c_unitCreateIgnorePlacement, 11, PointFromId(569), 315.0);
-            UnitGroupAdd(gv_MonsterScolpionGroup[1], UnitLastCreated());
-            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScolpionStrong[1]);
+            UnitGroupAdd(gv_MonsterScorpionGroup[1], UnitLastCreated());
+            UnitBehaviorAddPlayer(UnitLastCreated(), "PhotonAttacking232232222222", 11, gv_RegenNewTimerScorpionStrong[1]);
             UnitCreate(1, "MonsterDumit2", c_unitCreateIgnorePlacement, 11, PointFromId(567), 270.0);
-            gv_MonsterScolpionPing1[1] = UnitLastCreated();
+            gv_MonsterScorpionPing1[1] = UnitLastCreated();
         }
     }
 
@@ -16247,9 +16046,9 @@ bool gt_TrMonsterScolpionRegen_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrMonsterScolpionRegen_Init () {
-    gt_TrMonsterScolpionRegen = TriggerCreate("gt_TrMonsterScolpionRegen_Func");
-    TriggerAddEventPlayerEffectUsed(gt_TrMonsterScolpionRegen, 11, "MonsterMakeTimerG23222");
+void gt_TrMonsterScorpionRegen_Init () {
+    gt_TrMonsterScorpionRegen = TriggerCreate("gt_TrMonsterScorpionRegen_Func");
+    TriggerAddEventPlayerEffectUsed(gt_TrMonsterScorpionRegen, 11, "MonsterMakeTimerG23222");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -16639,23 +16438,19 @@ void gt_TrSinhoBuildingRevive_Init () {
 // Trigger: ?????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ECB694EAB080EAB491EBACBC;
-    int lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4;
-
+    int bounty;
+    int killing_player;
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((EventUnit() == gv_PlayerHero[EventPlayer()]))) {
             return false;
         }
-
         if (!((gv_HeroDeathBoolean[EventPlayer()] == false))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
@@ -16678,46 +16473,46 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
 
     Wait(0.05, c_timeReal);
     if ((PlayerType(libNtve_gf_KillingPlayer()) == c_playerTypeUser)) {
-        lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = libNtve_gf_KillingPlayer();
+        killing_player = libNtve_gf_KillingPlayer();
     }
     else if ((PlayerType(libNtve_gf_KillingPlayer()) == c_playerTypeHostile) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true)) {
         if ((PlayerStatus(gv_PlayerBayul[5]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32223") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[5];
+            killing_player = gv_PlayerBayul[5];
         }
         else if ((PlayerStatus(gv_PlayerBayul[6]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322223") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[6];
+            killing_player = gv_PlayerBayul[6];
         }
         else if ((PlayerStatus(gv_PlayerBayul[7]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222223") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[7];
+            killing_player = gv_PlayerBayul[7];
         }
         else if ((PlayerStatus(gv_PlayerBayul[8]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32222222") == true)) {
-                lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[8];
+                killing_player = gv_PlayerBayul[8];
             }
         else {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = 13;
+            killing_player = 13;
         }
     }
     else if ((PlayerType(libNtve_gf_KillingPlayer()) == c_playerTypeHostile) && (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true)) {
         if ((PlayerStatus(gv_PlayerBayul[1]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist4") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[1];
+            killing_player = gv_PlayerBayul[1];
         }
         else if ((PlayerStatus(gv_PlayerBayul[2]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist33") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[2];
+            killing_player = gv_PlayerBayul[2];
         }
         else if ((PlayerStatus(gv_PlayerBayul[3]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist323") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[3];
+            killing_player = gv_PlayerBayul[3];
         }
         else if ((PlayerStatus(gv_PlayerBayul[4]) == c_playerStatusActive) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3223") == true)) {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = gv_PlayerBayul[4];
+            killing_player = gv_PlayerBayul[4];
         } else {
-            lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = 12;
+            killing_player = 12;
         }
     }
     else {
-        lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4 = libNtve_gf_KillingPlayer();
+        killing_player = libNtve_gf_KillingPlayer();
     }
 
-    gv_HeroKillPlayer[EventPlayer()] = lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4;
+    gv_HeroKillPlayer[EventPlayer()] = killing_player;
     if (((gv_HeroBuffIng[EventPlayer()][0] >= 1) || (gv_HeroBuffIng[EventPlayer()][1] >= 1))) {
         gf_HrHeroBuffPut();
     }
@@ -16726,64 +16521,64 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
         gf_HrHeroSkillIncreaseEffect2();
     }
 
-    if ((gv_HeroFirstKill == false) && (PlayerType(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4) == c_playerTypeUser)) {
+    if ((gv_HeroFirstKill == false) && (PlayerType(killing_player) == c_playerTypeUser)) {
         gv_HeroFirstKill = true;
-        gv_HeroNonStopKill[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] += 1;
-        UnitBehaviorAdd(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], "PlayerGKill2", gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], 1);
+        gv_HeroNonStopKill[killing_player] += 1;
+        UnitBehaviorAdd(gv_PlayerHero[killing_player], "PlayerGKill2", gv_PlayerHero[killing_player], 1);
         SoundPlay(SoundLink("SystemSound", -1), PlayerGroupAll(), 200.0, 0.0);
         UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/05F62168") + TextWithColor(StringExternal("Param/Value/30CA022A"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/483452C5")));
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/F0789BD4") + TextWithColor(PlayerName(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4, false))) + StringExternal("Param/Value/B26CD418") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/461FD990") + StringExternal("Param/Value/1EE0001D") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/20DC55D5") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/3667E8C1") + StringExternal("Param/Value/E3F67346")));
-        UnitBehaviorAdd(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], "PlayerGKill", gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], 1);
-        lv_eC84A4ECA095ECB694EAB080EAB491EBACBC += 100;
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/F0789BD4") + TextWithColor(PlayerName(killing_player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killing_player, false))) + StringExternal("Param/Value/B26CD418") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[killing_player])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/461FD990") + StringExternal("Param/Value/1EE0001D") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/20DC55D5") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/3667E8C1") + StringExternal("Param/Value/E3F67346")));
+        UnitBehaviorAdd(gv_PlayerHero[killing_player], "PlayerGKill", gv_PlayerHero[killing_player], 1);
+        bounty += 100;
     }
-    else if ((gv_HeroFirstKill == true) && (PlayerType(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4) == c_playerTypeUser)) {
-        gv_HeroNonStopKill[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] += 1;
-        UnitBehaviorAdd(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], "PlayerGKill2", gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], 1);
-        if ((gv_HeroNonStopKill[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] >= 2) && (gv_HeroDeathBoolean[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] == false)) {
+    else if ((gv_HeroFirstKill == true) && (PlayerType(killing_player) == c_playerTypeUser)) {
+        gv_HeroNonStopKill[killing_player] += 1;
+        UnitBehaviorAdd(gv_PlayerHero[killing_player], "PlayerGKill2", gv_PlayerHero[killing_player], 1);
+        if ((gv_HeroNonStopKill[killing_player] >= 2) && (gv_HeroDeathBoolean[killing_player] == false)) {
             gf_HrHeroAddKillMessage();
         } else {
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/CC7197B9") + TextWithColor(PlayerName(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4, false))) + StringExternal("Param/Value/6EFE0FE7") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/B485FF4F") + StringExternal("Param/Value/927B1316") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/F22C6985") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/3081669B") + StringExternal("Param/Value/7C3AB27A")));
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/CC7197B9") + TextWithColor(PlayerName(killing_player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killing_player, false))) + StringExternal("Param/Value/6EFE0FE7") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[killing_player])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/B485FF4F") + StringExternal("Param/Value/927B1316") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/F22C6985") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/3081669B") + StringExternal("Param/Value/7C3AB27A")));
         }
-        UnitBehaviorAdd(gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], "PlayerGKill", gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], 1);
+        UnitBehaviorAdd(gv_PlayerHero[killing_player], "PlayerGKill", gv_PlayerHero[killing_player], 1);
     } else {
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/4705CBEA") + TextWithColor(PlayerName(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4, false))) + StringExternal("Param/Value/E07DC5E9") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/6B4135A4") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/120F00B3") + StringExternal("Param/Value/D963676D")));
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/4705CBEA") + TextWithColor(PlayerName(killing_player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killing_player, false))) + StringExternal("Param/Value/E07DC5E9") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/6B4135A4") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/120F00B3") + StringExternal("Param/Value/D963676D")));
     }
 
-    if ((PlayerType(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4) == c_playerTypeUser)) {
-        gv_PlayerLevel[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4][1] += 1;
+    if ((PlayerType(killing_player) == c_playerTypeUser)) {
+        gv_PlayerLevel[killing_player][1] += 1;
         if (((gv_SelectedSpellNum1[gv_HeroKillPlayer[EventPlayer()]] == 4) || (gv_SelectedSpellNum2[gv_HeroKillPlayer[EventPlayer()]] == 4)) && (UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "SpellDong4") == true)) {
             UnitCreateEffectUnit(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "Spelldong22", gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]]);
         }
 
         if (((gv_HeroNonStopKill[EventPlayer()] >= 2) && (gv_HeroNonStopKill[EventPlayer()] <= 5))) {
-            lv_eC84A4ECA095ECB694EAB080EAB491EBACBC += (25 * (gv_HeroNonStopKill[EventPlayer()] - 1));
+            bounty += (25 * (gv_HeroNonStopKill[EventPlayer()] - 1));
         }
         else if ((gv_HeroNonStopKill[EventPlayer()] >= 6)) {
-            lv_eC84A4ECA095ECB694EAB080EAB491EBACBC += (25 * (gv_HeroNonStopKill[EventPlayer()] + 1));
+            bounty += (25 * (gv_HeroNonStopKill[EventPlayer()] + 1));
         }
 
-        if ((gv_PlayerLevel[EventPlayer()][0] > gv_PlayerLevel[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4][0])) {
-            UIDisplayMessage(PlayerGroupSingle(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4), c_messageAreaSubtitle, (StringExternal("Param/Value/FAB94D7C") + TextWithColor(StringExternal("Param/Value/E161D6C8"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + gv_HeroKillMoney[EventPlayer()][1] + lv_eC84A4ECA095ECB694EAB080EAB491EBACBC)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/089F3CD4"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/2D044E80")));
-            PlayerModifyPropertyInt(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4, c_playerPropMinerals, c_playerPropOperAdd, (gv_HeroKillMoney[EventPlayer()][1] + lv_eC84A4ECA095ECB694EAB080EAB491EBACBC));
+        if ((gv_PlayerLevel[EventPlayer()][0] > gv_PlayerLevel[killing_player][0])) {
+            UIDisplayMessage(PlayerGroupSingle(killing_player), c_messageAreaSubtitle, (StringExternal("Param/Value/FAB94D7C") + TextWithColor(StringExternal("Param/Value/E161D6C8"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + gv_HeroKillMoney[EventPlayer()][1] + bounty)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/089F3CD4"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/2D044E80")));
+            PlayerModifyPropertyInt(killing_player, c_playerPropMinerals, c_playerPropOperAdd, (gv_HeroKillMoney[EventPlayer()][1] + bounty));
         } else {
-            UIDisplayMessage(PlayerGroupSingle(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4), c_messageAreaSubtitle, (StringExternal("Param/Value/FB1959EE") + TextWithColor(StringExternal("Param/Value/772AC933"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + lv_eC84A4ECA095ECB694EAB080EAB491EBACBC)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/FABCA002"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/3453FA0E")));
-            PlayerModifyPropertyInt(lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4, c_playerPropMinerals, c_playerPropOperAdd, lv_eC84A4ECA095ECB694EAB080EAB491EBACBC);
+            UIDisplayMessage(PlayerGroupSingle(killing_player), c_messageAreaSubtitle, (StringExternal("Param/Value/FB1959EE") + TextWithColor(StringExternal("Param/Value/772AC933"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + bounty)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/FABCA002"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/3453FA0E")));
+            PlayerModifyPropertyInt(killing_player, c_playerPropMinerals, c_playerPropOperAdd, bounty);
         }
 
-        if (((gv_SelectedCharNum[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] == 32) || (gv_SelectedCharNum[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] == 46) || (gv_SelectedCharNum[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] == 66) || (gv_SelectedCharNum[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4] == 70))) {
+        if (((gv_SelectedCharNum[killing_player] == 32) || (gv_SelectedCharNum[killing_player] == 46) || (gv_SelectedCharNum[killing_player] == 66) || (gv_SelectedCharNum[killing_player] == 70))) {
             gf_HrHeroSkillIncreaseEffect();
         }
 
-        PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo", gv_PlayerHero[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4]);
-        libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4], (StringExternal("Param/Value/6B201FB2") + IntToText(gv_PlayerLevel[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4][1]) + StringExternal("Param/Value/D24522CA") + IntToText(gv_PlayerLevel[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4][2]) + StringExternal("Param/Value/B3E4C0D7") + IntToText(gv_PlayerLevel[lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4][3]) + StringExternal("Param/Value/0D0DA65C")), PlayerGroupAll());
+        PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo", gv_PlayerHero[killing_player]);
+        libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[killing_player], (StringExternal("Param/Value/6B201FB2") + IntToText(gv_PlayerLevel[killing_player][1]) + StringExternal("Param/Value/D24522CA") + IntToText(gv_PlayerLevel[killing_player][2]) + StringExternal("Param/Value/B3E4C0D7") + IntToText(gv_PlayerLevel[killing_player][3]) + StringExternal("Param/Value/0D0DA65C")), PlayerGroupAll());
     }
 
     gv_HeroNonStopKill[EventPlayer()] = 0;
-    if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4) == true)) {
+    if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), killing_player) == true)) {
         gv_PlayerProfileTeamKillNum[0] += 1;
         libNtve_gf_SetDialogItemText(gv_ScoreDialogTextB[4], (StringExternal("Param/Value/46715145") + IntToText(gv_PlayerProfileTeamKillNum[0]) + StringExternal("Param/Value/211C87AC")), PlayerGroupAll());
     }
-    else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), lv_eC84A4ECA095EBA789ED8380ED948CEBA088EC9DB4EC96B4) == true)) {
+    else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), killing_player) == true)) {
         gv_PlayerProfileTeamKillNum[1] += 1;
         libNtve_gf_SetDialogItemText(gv_ScoreDialogTextB[5], (StringExternal("Param/Value/1CD6E931") + IntToText(gv_PlayerProfileTeamKillNum[1]) + StringExternal("Param/Value/B521C143")), PlayerGroupAll());
     }
@@ -16901,23 +16696,6 @@ void gt_TrHeroReviveStand_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     int i;
-    int lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80;
-    int lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80;
-    int lv_eC84A4ECA095EAB480ECA084ED8C80;
-
-    const int autoDBF70087_ae = 8;
-    const int autoDBF70087_ai = 1;
-    const int auto2C7DE2FE_ae = 8;
-    const int auto2C7DE2FE_ai = 1;
-    const int auto8ABF4070_ae = 4;
-    const int auto8ABF4070_ai = 1;
-    const int auto786128E9_ae = 10;
-    const int auto786128E9_ai = 1;
-
-    i = 1;
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 = 1;
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
 
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -16947,8 +16725,8 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-    i = 1;
-    for ( ; ( (autoDBF70087_ai >= 0 && i <= autoDBF70087_ae) || (autoDBF70087_ai < 0 && i >= autoDBF70087_ae) ) ; i += autoDBF70087_ai ) {
+
+    for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             CameraLockInput(gv_PlayerBayul[i], true);
             CameraPan(gv_PlayerBayul[i], PointFromId(293), 0.0, -1, 10, false);
@@ -16965,27 +16743,25 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     Wait(2.0, c_timeReal);
     UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
-    for ( ; ( (auto2C7DE2FE_ai >= 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 <= auto2C7DE2FE_ae) || (auto2C7DE2FE_ai < 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 >= auto2C7DE2FE_ae) ) ; lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 += auto2C7DE2FE_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80], c_gameOverVictory, true, true);
-        }
 
-    }
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 = 1;
-    for ( ; ( (auto8ABF4070_ai >= 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 <= auto8ABF4070_ae) || (auto8ABF4070_ai < 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 >= auto8ABF4070_ae) ) ; lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 += auto8ABF4070_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80], c_gameOverDefeat, true, true);
+    for (i = 5; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
         }
-
     }
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
-    for ( ; ( (auto786128E9_ai >= 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 <= auto786128E9_ae) || (auto786128E9_ai < 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 >= auto786128E9_ae) ) ; lv_eC84A4ECA095EAB480ECA084ED8C80 += auto786128E9_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80], c_gameOverTie, true, true);
+
+    for (i = 1; i <= 4; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
         }
-
     }
+
+    for (i = 9; i <= 10; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
+        }
+    }
+
     return true;
 }
 
@@ -17000,23 +16776,6 @@ void gt_TrNexusDestroyTeam1_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     int i;
-    int lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80;
-    int lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80;
-    int lv_eC84A4ECA095EAB480ECA084ED8C80;
-
-    const int autoBC6B57BC_ae = 8;
-    const int autoBC6B57BC_ai = 1;
-    const int auto5843AE30_ae = 4;
-    const int auto5843AE30_ai = 1;
-    const int autoAA6E906E_ae = 8;
-    const int autoAA6E906E_ai = 1;
-    const int auto3CD08627_ae = 10;
-    const int auto3CD08627_ai = 1;
-
-    i = 1;
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 = 1;
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
 
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -17046,8 +16805,8 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-    i = 1;
-    for ( ; ( (autoBC6B57BC_ai >= 0 && i <= autoBC6B57BC_ae) || (autoBC6B57BC_ai < 0 && i >= autoBC6B57BC_ae) ) ; i += autoBC6B57BC_ai ) {
+
+    for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             CameraLockInput(gv_PlayerBayul[i], true);
             CameraPan(gv_PlayerBayul[i], PointFromId(266), 0.0, -1, 10, false);
@@ -17056,35 +16815,33 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
         }
-
     }
+
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     Wait(2.0, c_timeReal);
     UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 = 1;
-    for ( ; ( (auto5843AE30_ai >= 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 <= auto5843AE30_ae) || (auto5843AE30_ai < 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 >= auto5843AE30_ae) ) ; lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 += auto5843AE30_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80], c_gameOverVictory, true, true);
-        }
 
-    }
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
-    for ( ; ( (autoAA6E906E_ai >= 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 <= autoAA6E906E_ae) || (autoAA6E906E_ai < 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 >= autoAA6E906E_ae) ) ; lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 += autoAA6E906E_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80], c_gameOverDefeat, true, true);
+    for (i = 1; i <= 4; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
         }
-
     }
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
-    for ( ; ( (auto3CD08627_ai >= 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 <= auto3CD08627_ae) || (auto3CD08627_ai < 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 >= auto3CD08627_ae) ) ; lv_eC84A4ECA095EAB480ECA084ED8C80 += auto3CD08627_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80], c_gameOverTie, true, true);
+
+    for (i = 5; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
         }
-
     }
+
+    for (i = 9; i <= 10; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
+        }
+    }
+
     return true;
 }
 
@@ -17158,32 +16915,19 @@ void gt_TrSurrenderReTimer_Init () {
 // Trigger: ?????? ????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
-    int countdown;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
-
-    const int autoDAE24574_ae = 4;
-    const int autoDAE24574_ai = 1;
-    const int autoDC750E18_ae = 8;
-    const int autoDC750E18_ai = 1;
-
-    countdown = 21;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
+    int i;
+    int countdown = 21;
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((DialogIsVisible(gv_SurrenderDialog, EventPlayer()) == false))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
@@ -17271,19 +17015,16 @@ bool gt_TrSurrenderSystemStart_Func (bool testConds, bool runActions) {
             PlayerCreateEffectPoint(13, "SurrenderTimer", PointFromId(195));
         }
 
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-        for ( ; ( (autoDAE24574_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 <= autoDAE24574_ae) || (autoDAE24574_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 >= autoDAE24574_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 += autoDAE24574_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerStatusActive)) {
+        for (i = 1; i <= 4; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
                 gv_SurrenderPlayerNum1 += 1;
             }
-
         }
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-        for ( ; ( (autoDC750E18_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 <= autoDC750E18_ae) || (autoDC750E18_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 >= autoDC750E18_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 += autoDC750E18_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerStatusActive)) {
+
+        for (i = 5; i <= 8; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
                 gv_SurrenderPlayerNum2 += 1;
             }
-
         }
     }
     else if ((GameGetMissionTime() <= 1200.0)) {
@@ -17308,32 +17049,19 @@ void gt_TrSurrenderSystemStart_Init () {
 // Trigger: ?????? ????????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
-
-    const int autoA9127715_ae = 4;
-    const int autoA9127715_ai = 1;
-    const int auto255BF192_ae = 8;
-    const int auto255BF192_ai = 1;
-
-    lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 21;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
+    int i;
+    int countdown = 21;
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((DialogIsVisible(gv_SurrenderDialog, EventPlayer()) == false))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
@@ -17350,14 +17078,14 @@ bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
             DialogControlSetEnabled(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(1), true);
             DialogControlSetVisible(gv_SurrenderDialogBtn[0], GameAttributePlayersForTeam(1), true);
             DialogControlSetVisible(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(1), true);
-            libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(1));
+            libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(countdown), GameAttributePlayersForTeam(1));
             UIDisplayMessage(GameAttributePlayersForTeam(2), c_messageAreaDebug, (StringExternal("Param/Value/FA6E8A44") + TextWithColor((StringExternal("Param/Value/05B30B49")), Color(100.00, 90.20, 0.00)) + StringExternal("Param/Value/F485EF06")));
             DialogSetVisible(gv_SurrenderDialog, GameAttributePlayersForTeam(1), true);
-            while ((lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 > 0)) {
-                lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 -= 1;
-                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(1));
+            while ((countdown > 0)) {
+                countdown -= 1;
+                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[0], IntToFixed(countdown), GameAttributePlayersForTeam(1));
                 if ((gv_SurrenderPlayerNum1 == 0)) {
-                    lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 0;
+                    countdown = 0;
                 }
 
                 Wait(1.0, c_timeReal);
@@ -17388,14 +17116,14 @@ bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
             DialogControlSetEnabled(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(2), true);
             DialogControlSetVisible(gv_SurrenderDialogBtn[0], GameAttributePlayersForTeam(2), true);
             DialogControlSetVisible(gv_SurrenderDialogBtn[1], GameAttributePlayersForTeam(2), true);
-            libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(2));
+            libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(countdown), GameAttributePlayersForTeam(2));
             UIDisplayMessage(GameAttributePlayersForTeam(1), c_messageAreaDebug, (StringExternal("Param/Value/F69E1C8C") + TextWithColor((StringExternal("Param/Value/A5B378CC")), Color(100.00, 90.20, 0.00)) + StringExternal("Param/Value/C2612890")));
             DialogSetVisible(gv_SurrenderDialog, GameAttributePlayersForTeam(2), true);
-            while ((lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 > 0)) {
-                lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 -= 1;
-                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084), GameAttributePlayersForTeam(2));
+            while ((countdown > 0)) {
+                countdown -= 1;
+                libNtve_gf_SetDialogItemCurrentValue(gv_SurrenderDialogBar[1], IntToFixed(countdown), GameAttributePlayersForTeam(2));
                 if ((gv_SurrenderPlayerNum2 == 0)) {
-                    lv_eC84A4ECA095ED95ADEBB3B5ECA09CED959CEC8B9CEAB084 = 0;
+                    countdown = 0;
                 }
 
                 Wait(1.0, c_timeReal);
@@ -17421,16 +17149,14 @@ bool gt_TrSurrenderSystemStartBtn_Func (bool testConds, bool runActions) {
             PlayerCreateEffectPoint(13, "SurrenderTimer", PointFromId(195));
         }
 
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-        for ( ; ( (autoA9127715_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 <= autoA9127715_ae) || (autoA9127715_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 >= autoA9127715_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 += autoA9127715_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerStatusActive)) {
+        for (i = 1; i <= 4; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
                 gv_SurrenderPlayerNum1 += 1;
             }
 
         }
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-        for ( ; ( (auto255BF192_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 <= auto255BF192_ae) || (auto255BF192_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 >= auto255BF192_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 += auto255BF192_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerStatusActive)) {
+        for (i = 5; i <= 8; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
                 gv_SurrenderPlayerNum2 += 1;
             }
         }
@@ -17463,27 +17189,21 @@ bool gt_TrSurrenderOkTeam1_Func (bool testConds, bool runActions) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((DialogIsVisible(gv_SurrenderDialog, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((EventDialogControl() == gv_SurrenderDialogBtn[0]))) {
             return false;
         }
-
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
-
         if (!((gv_SurrenderBtnDelay[EventPlayer()] == false))) {
             return false;
         }
@@ -17519,27 +17239,21 @@ bool gt_TrSurrenderOkTeam2_Func (bool testConds, bool runActions) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((DialogIsVisible(gv_SurrenderDialog, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((EventDialogControl() == gv_SurrenderDialogBtn[0]))) {
             return false;
         }
-
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
-
         if (!((gv_SurrenderBtnDelay[EventPlayer()] == false))) {
             return false;
         }
@@ -17575,27 +17289,21 @@ bool gt_TrSurrenderNoTeam1_Func (bool testConds, bool runActions) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((DialogIsVisible(gv_SurrenderDialog, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((EventDialogControl() == gv_SurrenderDialogBtn[1]))) {
             return false;
         }
-
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
-
         if (!((gv_SurrenderBtnDelay[EventPlayer()] == false))) {
             return false;
         }
@@ -17631,27 +17339,21 @@ bool gt_TrSurrenderNoTeam2_Func (bool testConds, bool runActions) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
         }
-
         if (!((DialogIsVisible(gv_SurrenderDialog, EventPlayer()) == true))) {
             return false;
         }
-
         if (!((EventDialogControl() == gv_SurrenderDialogBtn[1]))) {
             return false;
         }
-
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
-
         if (!((gv_SurrenderBtnDelay[EventPlayer()] == false))) {
             return false;
         }
@@ -17683,24 +17385,7 @@ void gt_TrSurrenderNoTeam2_Init () {
 // Trigger: ?????? ??????(1??? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-    int lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80;
-    int lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80;
-    int lv_eC84A4ECA095EAB480ECA084ED8C80;
-
-    const int auto3A0F5E69_ae = 8;
-    const int auto3A0F5E69_ai = 1;
-    const int auto556C66B4_ae = 8;
-    const int auto556C66B4_ai = 1;
-    const int auto09E72BF3_ae = 4;
-    const int auto09E72BF3_ai = 1;
-    const int auto0AE045BC_ae = 10;
-    const int auto0AE045BC_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 = 1;
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
+    int i;
 
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -17726,19 +17411,19 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (auto3A0F5E69_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= auto3A0F5E69_ae) || (auto3A0F5E69_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= auto3A0F5E69_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += auto3A0F5E69_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive)) {
-            CameraLockInput(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], true);
-            CameraPan(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], PointFromId(293), 0.0, -1, 10, false);
-            CameraShakeStart(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], c_cameraPositionTarget, c_cameraDirectionXYZ, 1.0, 1.5, 100.0, 2.5);
-            DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], PlayerGroupSingle(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]), false);
-            gv_AvailableSkillPoints[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 0;
-            libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], true);
-            VisRevealArea(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], RegionCircle(PointFromId(293), 20.0), 20.0, false);
-        }
 
+    for (i = 1; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            CameraLockInput(gv_PlayerBayul[i], true);
+            CameraPan(gv_PlayerBayul[i], PointFromId(293), 0.0, -1, 10, false);
+            CameraShakeStart(gv_PlayerBayul[i], c_cameraPositionTarget, c_cameraDirectionXYZ, 1.0, 1.5, 100.0, 2.5);
+            DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), false);
+            gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
+            libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
+            VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(293), 20.0), 20.0, false);
+        }
     }
+
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(109));
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -17747,27 +17432,23 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     Wait(2.0, c_timeReal);
     UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 = 5;
-    for ( ; ( (auto556C66B4_ai >= 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 <= auto556C66B4_ae) || (auto556C66B4_ai < 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 >= auto556C66B4_ae) ) ; lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80 += auto556C66B4_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C802ED8C80], c_gameOverVictory, true, true);
-        }
 
-    }
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 = 1;
-    for ( ; ( (auto09E72BF3_ai >= 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 <= auto09E72BF3_ae) || (auto09E72BF3_ai < 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 >= auto09E72BF3_ae) ) ; lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80 += auto09E72BF3_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C801ED8C80], c_gameOverDefeat, true, true);
+    for (i = 5; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
         }
-
     }
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
-    for ( ; ( (auto0AE045BC_ai >= 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 <= auto0AE045BC_ae) || (auto0AE045BC_ai < 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 >= auto0AE045BC_ae) ) ; lv_eC84A4ECA095EAB480ECA084ED8C80 += auto0AE045BC_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80], c_gameOverTie, true, true);
+    for (i = 1; i <= 4; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
         }
-
     }
+    for (i = 9; i <= 10; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
+        }
+    }
+
     return true;
 }
 
@@ -17780,24 +17461,7 @@ void gt_TrSurrenderOkTeam1Win_Init () {
 // Trigger: ?????? ??????(2??? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898;
-    int lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80;
-    int lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80;
-    int lv_eC84A4ECA095EAB480ECA084ED8C80;
-
-    const int autoAC2DFF61_ae = 8;
-    const int autoAC2DFF61_ai = 1;
-    const int auto2CA68AA5_ae = 4;
-    const int auto2CA68AA5_ai = 1;
-    const int auto37557BFF_ae = 8;
-    const int auto37557BFF_ai = 1;
-    const int auto06A1C434_ae = 10;
-    const int auto06A1C434_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 = 1;
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
+    int i;
 
     if (testConds) {
         if (!((gv_GameEndBoolean == false))) {
@@ -17823,19 +17487,19 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 = 1;
-    for ( ; ( (autoAC2DFF61_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 <= autoAC2DFF61_ae) || (autoAC2DFF61_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 >= autoAC2DFF61_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898 += autoAC2DFF61_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]) == c_playerStatusActive)) {
-            CameraLockInput(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], true);
-            CameraPan(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], PointFromId(266), 0.0, -1, 10, false);
-            CameraShakeStart(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], c_cameraPositionTarget, c_cameraDirectionXYZ, 1.0, 1.5, 100.0, 2.5);
-            DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], PlayerGroupSingle(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]), false);
-            gv_AvailableSkillPoints[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]] = 0;
-            libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898]], true);
-            VisRevealArea(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4ECA095EC8898], RegionCircle(PointFromId(266), 20.0), 20.0, false);
-        }
 
+    for (i = 1; i <= 8; i += 1) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+            CameraLockInput(gv_PlayerBayul[i], true);
+            CameraPan(gv_PlayerBayul[i], PointFromId(266), 0.0, -1, 10, false);
+            CameraShakeStart(gv_PlayerBayul[i], c_cameraPositionTarget, c_cameraDirectionXYZ, 1.0, 1.5, 100.0, 2.5);
+            DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), false);
+            gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
+            libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
+            VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(266), 20.0), 20.0, false);
+        }
     }
+
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(112));
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -17844,27 +17508,23 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     Wait(2.0, c_timeReal);
     UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-    lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 = 1;
-    for ( ; ( (auto2CA68AA5_ai >= 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 <= auto2CA68AA5_ae) || (auto2CA68AA5_ai < 0 && lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 >= auto2CA68AA5_ae) ) ; lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80 += auto2CA68AA5_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EC8AB9EBA6ACED8C801ED8C80], c_gameOverVictory, true, true);
-        }
 
-    }
-    lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 = 5;
-    for ( ; ( (auto37557BFF_ai >= 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 <= auto37557BFF_ae) || (auto37557BFF_ai < 0 && lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 >= auto37557BFF_ae) ) ; lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80 += auto37557BFF_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095ED8CA8EBB0B0ED8C802ED8C80], c_gameOverDefeat, true, true);
+    for (i = 1; i <= 4; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
         }
-
     }
-    lv_eC84A4ECA095EAB480ECA084ED8C80 = 9;
-    for ( ; ( (auto06A1C434_ai >= 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 <= auto06A1C434_ae) || (auto06A1C434_ai < 0 && lv_eC84A4ECA095EAB480ECA084ED8C80 >= auto06A1C434_ae) ) ; lv_eC84A4ECA095EAB480ECA084ED8C80 += auto06A1C434_ai ) {
-        if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[lv_eC84A4ECA095EAB480ECA084ED8C80], c_gameOverTie, true, true);
+    for (i = 5; i <= 8; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
         }
-
     }
+    for (i = 9; i <= 10; i += 1 ) {
+        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
+            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
+        }
+    }
+
     return true;
 }
 
@@ -17877,16 +17537,7 @@ void gt_TrSurrenderOkTeam2Win_Init () {
 // Trigger: ???????????? ??????
 //--------------------------------------------------------------------------------------------------
 bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80;
-    int lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80;
-
-    const int auto9387ADE0_ae = 8;
-    const int auto9387ADE0_ai = 1;
-    const int auto10251A8B_ae = 4;
-    const int auto10251A8B_ai = 1;
-
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-    lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
+    int i;
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -17917,11 +17568,10 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true)) {
         gv_SurrenderPlayerNum1 -= 1;
         PlayerGroupRemove(gv_TeamPlayerGroup[0], EventPlayer());
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 = 1;
-        for ( ; ( (auto10251A8B_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 <= auto10251A8B_ae) || (auto10251A8B_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 >= auto10251A8B_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80 += auto10251A8B_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80]) == c_playerStatusActive) && (gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80] != EventPlayer())) {
-                PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], c_playerPropMinerals, c_playerPropOperAdd, gv_AllyGiveMoney[EventPlayer()]);
-                PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88981ED8C80], c_playerPropVespene, c_playerPropOperAdd, 10);
+        for (i = 1 ; i <= 4; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && (gv_PlayerBayul[i] != EventPlayer())) {
+                PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, gv_AllyGiveMoney[EventPlayer()]);
+                PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropVespene, c_playerPropOperAdd, 10);
             }
 
         }
@@ -17944,11 +17594,10 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
     else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true)) {
         gv_SurrenderPlayerNum2 -= 1;
         PlayerGroupRemove(gv_TeamPlayerGroup[1], EventPlayer());
-        lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 = 5;
-        for ( ; ( (auto9387ADE0_ai >= 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 <= auto9387ADE0_ae) || (auto9387ADE0_ai < 0 && lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 >= auto9387ADE0_ae) ) ; lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80 += auto9387ADE0_ai ) {
-            if ((PlayerType(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80]) == c_playerStatusActive) && (gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80] != EventPlayer())) {
-                PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], c_playerPropMinerals, c_playerPropOperAdd, gv_AllyGiveMoney[EventPlayer()]);
-                PlayerModifyPropertyInt(gv_PlayerBayul[lv_eC84A4ECA095ED948CEBA088EC9DB4EC96B4EBB380EC88982ED8C80], c_playerPropVespene, c_playerPropOperAdd, 10);
+        for (i = 5; i <= 8; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && (gv_PlayerBayul[i] != EventPlayer())) {
+                PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, gv_AllyGiveMoney[EventPlayer()]);
+                PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropVespene, c_playerPropOperAdd, 10);
             }
 
         }
@@ -18206,10 +17855,10 @@ void InitTriggers () {
     gt_TrMonsterAttackGalic2_Init();
     gt_TrMonsterBackGalic1_Init();
     gt_TrMonsterBackGalic2_Init();
-    gt_TrMonsterAttackScolpion1_Init();
-    gt_TrMonsterAttackScolpion2_Init();
-    gt_TrMonsterBackScolpion1_Init();
-    gt_TrMonsterBackScolpion2_Init();
+    gt_TrMonsterAttackScorpion1_Init();
+    gt_TrMonsterAttackScorpion2_Init();
+    gt_TrMonsterBackScorpion1_Init();
+    gt_TrMonsterBackScorpion2_Init();
     gt_TrMonsterAttackIceBug1_Init();
     gt_TrMonsterAttackIceBug2_Init();
     gt_TrMonsterAttackIceBug3_Init();
@@ -18227,7 +17876,7 @@ void InitTriggers () {
     gt_TrMonsterDogRegen_Init();
     gt_TrMonsterCowRegen_Init();
     gt_TrMonsterGalicRegen_Init();
-    gt_TrMonsterScolpionRegen_Init();
+    gt_TrMonsterScorpionRegen_Init();
     gt_TrMonsterIceBugRegen_Init();
     gt_TrMonsterIceBossRegen_Init();
     gt_TrBuildingDestroyMoojuck_Init();
