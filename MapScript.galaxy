@@ -39,6 +39,13 @@ struct HeroInfo {
     string levelup_upgrade;
 };
 
+struct PlayerStatistics {
+    int damage_dealt;
+    int damage_absorbed;
+    int healing_done;
+    int self_healing;
+};
+
 //--------------------------------------------------------------------------------------------------
 // Constants
 //--------------------------------------------------------------------------------------------------
@@ -248,6 +255,7 @@ string[100][4][5] gv_SkillLevelUpgrades;
 bool[11] gv_TestModeVotes;
 bool[11][11] gv_VotedToKick;
 int[11][5] gv_PlayerObjectives;
+PlayerStatistics[11] gv_PlayerStatistics;
 
 void InitGlobals () {
     int init_i;
@@ -580,6 +588,7 @@ void gf_LearnSkill(int player_number, int skill);
 void gf_SpawnHero(int player_number, int hero_number);
 void gf_CreateObjectives();
 void gf_RemoveCompletedSecondaryObjectives();
+void gf_ShowPlayerStatistics();
 // Utility functions
 int gf_ShopWindowByIndex(int shop_index);
 bool gf_EligibleForBuyingHotkey(int shop_index);
@@ -750,6 +759,8 @@ trigger gt_TrSurrenderOkTeam1Win;
 trigger gt_TrSurrenderOkTeam2Win;
 trigger gt_TrPlayerOut;
 trigger gt_MinionObjectiveCompleted;
+trigger gt_TrackHeroDamage;
+trigger gt_TrackHeroHealing;
 
 //--------------------------------------------------------------------------------------------------
 // Game Parameters
@@ -7531,6 +7542,53 @@ void gf_RemoveCompletedSecondaryObjectives() {
     PlayerGroupLoopEnd();
 }
 
+void gf_ShowPlayerStatistics() {
+    int player;
+    fixed deaths;
+    fixed kda;
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
+
+        deaths = IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][2]);
+        if (deaths == 0) {
+            deaths = 1;
+        }
+        player = PlayerGroupLoopCurrent();
+        kda = (
+            (IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][1]) + 
+            IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][3])) / deaths
+        );
+
+        UIDisplayMessage(
+            PlayerGroupSingle(player),
+            c_messageAreaDebug,
+            (
+                StringExternal("Param/Value/89E47C85") + 
+                StringToText("KDA: ") +
+                FixedToText(kda, 2) +
+                StringToText("<n/>CS: ") +
+                IntToText(UnitGetPropertyInt(gv_PlayerHero[player], c_unitPropKills, true)) +
+                StringToText("<n/>Hero damage dealt: ") +
+                IntToText(gv_PlayerStatistics[player].damage_dealt) +
+                StringToText("<n/>Hero damage absorbed: ") +
+                IntToText(gv_PlayerStatistics[player].damage_absorbed) +
+                StringToText("<n/>Healing done: ") +
+                IntToText(gv_PlayerStatistics[player].healing_done) +
+                StringToText("<n/>Self-healing done: ") +
+                IntToText(gv_PlayerStatistics[player].self_healing) +
+                StringExternal("Param/Value/CC7276AB")
+            )
+        );
+    }
+    PlayerGroupLoopEnd();
+}
+
 // Utility finctions
 
 int gf_ShopWindowByIndex(int shop_index) {
@@ -10249,6 +10307,8 @@ bool gt_TrGameStartCounter_Func (bool testConds, bool runActions) {
         }
         reference = UnitRefFromUnit(gv_PlayerHero[gv_PlayerBayul[i]]);
         TriggerAddEventUnitProperty(gt_MinionObjectiveCompleted, reference, c_unitPropKills);
+        TriggerAddEventUnitDamaged(gt_TrackHeroDamage, reference, c_unitDamageTypeAny, c_unitDamageEither, null);
+        TriggerAddEventUnitHealed(gt_TrackHeroHealing, reference, c_unitVitalLife, null);
     }
 
     while ((gv_BeforeStartCounterWindowVar > 0)) {
@@ -16735,8 +16795,10 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
         }
-
     }
+
+    gf_ShowPlayerStatistics();
+
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
@@ -16816,6 +16878,8 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
         }
     }
+
+    gf_ShowPlayerStatistics();
 
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
@@ -17424,6 +17488,8 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
         }
     }
 
+    gf_ShowPlayerStatistics();
+
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(109));
     DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -17499,6 +17565,8 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
             VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(266), 20.0), 20.0, false);
         }
     }
+
+    gf_ShowPlayerStatistics();
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(112));
@@ -17734,6 +17802,77 @@ void gt_MinionObjectiveCompleted_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Hero damage tracking for statistics
+//--------------------------------------------------------------------------------------------------
+bool gt_TrackHeroDamage_Func (bool testConds, bool runActions) {
+    if (testConds) {
+        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
+            return false;
+        }
+        if (!((PlayerType(EventUnitDamageSourcePlayer()) == c_playerTypeUser))) {
+            return false;
+        }
+        if (!((gv_GameStartBoolean == true))) {
+            return false;
+        }
+        if (!((gv_GameEndBoolean == false))) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    gv_PlayerStatistics[EventUnitDamageSourcePlayer()].damage_dealt += FixedToInt(EventUnitDamageAmount());
+    gv_PlayerStatistics[EventPlayer()].damage_absorbed += FixedToInt(EventUnitDamageAbsorbed());
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_TrackHeroDamage_Init () {
+    gt_TrackHeroDamage = TriggerCreate("gt_TrackHeroDamage_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Healing tracking for statistics
+//--------------------------------------------------------------------------------------------------
+bool gt_TrackHeroHealing_Func (bool testConds, bool runActions) {
+    if (testConds) {
+        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
+            return false;
+        }
+        if (!((PlayerType(EventUnitHealLaunchPlayer()) == c_playerTypeUser))) {
+            return false;
+        }
+        if (!((gv_GameStartBoolean == true))) {
+            return false;
+        }
+        if (!((gv_GameEndBoolean == false))) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    if (EventPlayer() == EventUnitHealLaunchPlayer()) {
+        gv_PlayerStatistics[EventUnitHealLaunchPlayer()].self_healing += FixedToInt(EventUnitHealAmount());
+    } else {
+        gv_PlayerStatistics[EventUnitHealLaunchPlayer()].healing_done += FixedToInt(EventUnitHealAmount());
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_TrackHeroHealing_Init () {
+    gt_TrackHeroHealing = TriggerCreate("gt_TrackHeroHealing_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -17899,6 +18038,8 @@ void InitTriggers () {
     gt_TrPlayerOut_Init();
     gt_TrChatCommandHandler_Init();
     gt_MinionObjectiveCompleted_Init();
+    gt_TrackHeroDamage_Init();
+    gt_TrackHeroHealing_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
