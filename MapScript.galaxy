@@ -588,7 +588,7 @@ void gf_LearnSkill(int player_number, int skill);
 void gf_SpawnHero(int player_number, int hero_number);
 void gf_CreateObjectives();
 void gf_RemoveCompletedSecondaryObjectives();
-void gf_ShowPlayerStatistics();
+void gf_ShowPlayerStatistics(int player);
 // Utility functions
 int gf_ShopWindowByIndex(int shop_index);
 bool gf_EligibleForBuyingHotkey(int shop_index);
@@ -5305,6 +5305,7 @@ void gf_HrStat24 () {
 }
 
 void gf_HrAttackSpeedLevelIncrease () {
+    int i;
     string[10] upgrade_names;
     int current_upgrade = gv_StatusWindowNum[EventPlayer()][8];
 
@@ -7571,7 +7572,7 @@ void gf_ShowPlayerStatistics(int player) {
     if (deaths == 0) {
         deaths = 1;
     }
-    player = PlayerGroupLoopCurrent();
+
     kda = (
         (IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][1]) + 
         IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][3])) / deaths
@@ -7582,7 +7583,7 @@ void gf_ShowPlayerStatistics(int player) {
         c_messageAreaDebug,
         (
             StringExternal("Param/Value/89E47C85") + 
-            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            TextWithColor(PlayerName(gv_PlayerBayul[player]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player], false))) +
             StringToText("<n/>KDA: ") +
             FixedToText(kda, 2) +
             StringToText("<n/>CS: ") +
