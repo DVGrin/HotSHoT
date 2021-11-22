@@ -230,7 +230,6 @@ int[11] gv_ScoreDialogTotalScore;
 int[11] gv_ScoreDialogFarming;
 int[11] gv_ScoreDialogReviveTime;
 int[2] gv_PlayerProfileTeamKillNum;
-text[11][6] gv_PlayerProfileAddToolTip;
 bool gv_GameEndBoolean;
 int gv_SurrenderDialog;
 int[11] gv_SurrenderDialogLabel;
@@ -459,11 +458,6 @@ void InitGlobals () {
     }
     for (init_i = 0; init_i <= 19; init_i += 1) {
         gv_PlayerProfileText[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 10; init_i += 1) {
-        for (init_j = 0; init_j <= 5; init_j += 1) {
-            gv_PlayerProfileAddToolTip[init_i][init_j] = StringToText("");
-        }
     }
 
     gv_SurrenderDialog = c_invalidDialogId;
