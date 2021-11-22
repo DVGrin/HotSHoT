@@ -585,12 +585,6 @@ void gf_HrTeamSelectDialogMake ();
 void gf_HrTeamSelectDialogTeam1Make ();
 void gf_HrTeamSelectDialogTeam1Make2 ();
 void gf_HrScoreDialogMake ();
-// Updates all the tooltips with players' stats in the stat window
-//
-// Calls **gf_StatWindowUpdatePlayer**
-// Uses **gv_StatusWindowNum** and **gv_ShopItemParameters**
-// Changes the tooltip for players' **gv_ScoreDialogName**
-void gf_StatWindowUpdateAllTooltips ();
 void gf_HrSurrenderDialogMake ();
 void gf_HrDrawGame ();
 void gf_LearnSkill(int player_number, int skill);
@@ -7464,20 +7458,6 @@ void gf_HrScoreDialogMake () {
     gv_ScoreDialogTextB[5] = DialogControlLastCreated();
 }
 
-void gf_StatWindowUpdateAllTooltips () {
-    int i;
-
-    for (i = 1; i <= 8; i += 1) {
-        if (PlayerType(gv_PlayerBayul[i]) != c_playerTypeUser) {
-            continue;
-        }
-        if (PlayerStatus(gv_PlayerBayul[i]) != c_playerStatusActive) {
-            continue;
-        }
-        gf_StatWindowUpdatePlayer(gv_PlayerBayul[i]);
-    }
-}
-
 void gf_HrSurrenderDialogMake () {
     DialogCreate(360, 275, c_anchorBottomRight, 20, 340, true);
     gv_SurrenderDialog = DialogLastCreated();
@@ -10171,8 +10151,18 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     TriggerEnable(gt_HeroSelectionLockAction, true);
     TriggerEnable(gt_HeroSelectionLockBtn, true);
     TriggerEnable(gt_CenterCameraOnHero, true);
+
     gf_HrScoreDialogMake();
-    gf_StatWindowUpdateAllTooltips();
+    for (i = 1; i <= 8; i += 1) {
+        if (PlayerType(gv_PlayerBayul[i]) != c_playerTypeUser) {
+            continue;
+        }
+        if (PlayerStatus(gv_PlayerBayul[i]) != c_playerStatusActive) {
+            continue;
+        }
+        gf_StatWindowUpdatePlayer(gv_PlayerBayul[i]);
+    }
+
     Wait(1.0, c_timeReal);
     UISetMode(PlayerGroupAll(), c_uiModeConsole, c_transitionDurationImmediate);
     CinematicFade(true, 1.0, c_fadeStyleNormal, Color(0.00, 0.00, 0.00), 0.0, true);
