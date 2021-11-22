@@ -5381,15 +5381,16 @@ void gf_StatWindowUpdatePlayer (int player) {
     color stat_name_color;
     bool first_in_column = true;
 
-    const color AD_COLOR = "ff9999";
-    const color AP_COLOR = "99ffcc";
-    const color SEAL_COLOR = "995555";
-    const color DEFAULT_COLOR = "6699ff";
-    const color NUMBER_COLOR = "ffffff";
+    const color AD_COLOR = Color(255.0, 150.0, 150.0);
+    const color AP_COLOR = Color(150.0, 255.0, 205.0);
+    const color SEAL_COLOR = Color(0.0, 190.0, 30.0);
+    const color DEFAULT_COLOR = Color(100.0, 150.0, 255.0);
+    const color NUMBER_COLOR = Color(255.0, 255.0, 255.0);
+    const color PLAYERNAME_COLOR = Color(120.0, 180.0, 255.0);
 
     tooltip_text += (
         StringToText("<s val=\"PurchasePanelGroupName\">") +
-        TextWithColor(PlayerName(player) + StringToText("'s current stats:"), "78b8ff") + // TODO: Move to external string
+        TextWithColor(PlayerName(player) + StringToText("'s current stats:"), PLAYERNAME_COLOR) + // TODO: Move to external string
         StringToText("</s>") +
         StringToText("<n/><n/>") +
         StringToText("<s val=\"Header18\">")
