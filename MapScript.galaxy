@@ -5377,30 +5377,35 @@ void gf_HrCooldownReductionLevelIncrease () {
 
 void gf_StatWindowUpdatePlayer (int player) {
     int i;
+    int stat_sum = 0;
     text tooltip_text;
     color stat_name_color;
-    bool first_in_column = true;
 
     const color AD_COLOR = Color(100.0, 60.0, 60.0);
     const color AP_COLOR = Color(60.0, 100.0, 80.0);
-    const color SEAL_COLOR = Color(0.0, 75.0, 12.0);
+    const color SEAL_COLOR = Color(100.0, 50.0, 0.0);
     const color DEFAULT_COLOR = Color(40.0, 60.0, 100.0);
     const color NUMBER_COLOR = Color(100.0, 100.0, 100.0);
     const color PLAYERNAME_COLOR = Color(50.0, 70.0, 100.0);
 
-    tooltip_text += (
+    const color CONSUMABLE_LABEL_COLOR = Color(100.0, 90.0, 55.0);
+    const color ACTIVE_CONSUMABLE_COLOR = Color(80.0, 80.0, 80.0);
+    const color NONACTIVE_CONSUMABLE_COLOR = Color(30.0, 30.0, 30.0);
+
+    tooltip_text = (
         StringToText("<s val=\"PurchasePanelGroupName\">") +
-        TextWithColor(PlayerName(player) + StringToText("'s current stats:"), PLAYERNAME_COLOR) + // TODO: Move to external string
+        TextWithColor(PlayerName(player) + StringToText("'s stats:"), PLAYERNAME_COLOR) + // TODO: Move to external string
         StringToText("</s>") +
         StringToText("<n/><n/>") +
         StringToText("<s val=\"Header18\">")
     );
 
-    for (i = 0; i < 30; i += 1) {
+    for (i = 0; i < 24; i += 1) {
         if ((i >= 12) && (i <= 17)) {  // Seals
             continue;
         }
-        if ((i >= 24) && (i <= 26)) {  // Consumables
+
+        if (gv_StatusWindowNum[player][i] == 0) { // Only show bought stats
             continue;
         }
 
@@ -5414,31 +5419,48 @@ void gf_StatWindowUpdatePlayer (int player) {
             stat_name_color = DEFAULT_COLOR;
         }
 
+        stat_sum += 1;
         tooltip_text += TextWithColor(
-            (gv_ShopItemParameters[i].name + StringToText(": ")),
+            (StringToText("  ") + gv_ShopItemParameters[i].name + StringToText(": ")),
             stat_name_color
         );
 
         tooltip_text += TextWithColor(IntToText(gv_StatusWindowNum[player][i]), NUMBER_COLOR);
-        if (first_in_column) {
-            tooltip_text += StringToText("   ");
-        } else {
-            tooltip_text += StringToText("<n/>");
-        }
-        first_in_column = !first_in_column;
+        tooltip_text += StringToText("<n/>");
+    }
+
+    if (stat_sum == 0) {
+        tooltip_text += StringToText("  ");
+        tooltip_text += TextWithColor(StringToText("No stats bought yet"), DEFAULT_COLOR); // TODO: Move to external string
+        tooltip_text += StringToText("<n/>");
     }
 
     tooltip_text += StringToText("<n/>");
-    tooltip_text += TextWithColor(StringToText("Seal: "), SEAL_COLOR); // TODO: Move to external string
     if (gv_SealBought[player]) {
         for (i = 12; i <= 17; i += 1) {
             if (gv_StatusWindowNum[player][i] == 1) {
+                tooltip_text += StringToText("  ");
                 tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, SEAL_COLOR);
                 break;
             }
         }
     } else {
-        tooltip_text += TextWithColor(StringToText("None"), SEAL_COLOR); // TODO: Move to external string
+        tooltip_text += StringToText("  ");
+        tooltip_text += TextWithColor(StringToText("No Seal"), SEAL_COLOR); // TODO: Move to external string
+    }
+
+    tooltip_text += StringToText("<n/><n/>  ");
+    tooltip_text += TextWithColor(StringToText("Consumables:"), CONSUMABLE_LABEL_COLOR); // TODO: Move to external string
+
+    for (i = 27; i < 30; i += 1) {
+        if (gv_StatusWindowNum[player][i] == 0) {
+            stat_name_color = NONACTIVE_CONSUMABLE_COLOR;
+        } else {
+            stat_name_color = ACTIVE_CONSUMABLE_COLOR;
+        }
+
+        tooltip_text += StringToText("<n/>  ");
+        tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, stat_name_color);
     }
 
     tooltip_text += StringToText("</s>");  // Header18
