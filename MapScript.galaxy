@@ -5381,12 +5381,12 @@ void gf_StatWindowUpdatePlayer (int player) {
     color stat_name_color;
     bool first_in_column = true;
 
-    const color AD_COLOR = Color(255.0, 150.0, 150.0);
-    const color AP_COLOR = Color(150.0, 255.0, 205.0);
-    const color SEAL_COLOR = Color(0.0, 190.0, 30.0);
-    const color DEFAULT_COLOR = Color(100.0, 150.0, 255.0);
-    const color NUMBER_COLOR = Color(255.0, 255.0, 255.0);
-    const color PLAYERNAME_COLOR = Color(120.0, 180.0, 255.0);
+    const color AD_COLOR = Color(100.0, 60.0, 60.0);
+    const color AP_COLOR = Color(60.0, 100.0, 80.0);
+    const color SEAL_COLOR = Color(0.0, 75.0, 12.0);
+    const color DEFAULT_COLOR = Color(40.0, 60.0, 100.0);
+    const color NUMBER_COLOR = Color(100.0, 100.0, 100.0);
+    const color PLAYERNAME_COLOR = Color(50.0, 70.0, 100.0);
 
     tooltip_text += (
         StringToText("<s val=\"PurchasePanelGroupName\">") +
