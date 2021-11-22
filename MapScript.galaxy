@@ -21,7 +21,7 @@ void InitLibs () {
 void fn_prototype();
 
 struct ShopItem {
-    string name;
+    text name;
     int minerals_cost;
     int minerals_increase;
     int gas_cost;
@@ -542,7 +542,11 @@ void gf_HrAttackSpeedLevelIncrease ();
 void gf_HrEvasionLevelIncrease ();
 void gf_HrCriticalChanceLevelIncrease ();
 void gf_HrCooldownReductionLevelIncrease ();
-void gf_HrStatTooltip1 (); // TODO: Maybe seal as separate line
+// Updates the particular player's stats in the stat window
+//
+// Uses **gv_StatusWindowNum** and **gv_ShopItemParameters**
+// Changes the tooltip for player's **gv_ScoreDialogName**
+void gf_StatWindowUpdatePlayer (int player);
 void gf_HrItemUseComplete ();
 void gf_HrAssistSystemAdd2 ();
 void gf_HrHeroBSpawnH1 ();
@@ -581,7 +585,12 @@ void gf_HrTeamSelectDialogMake ();
 void gf_HrTeamSelectDialogTeam1Make ();
 void gf_HrTeamSelectDialogTeam1Make2 ();
 void gf_HrScoreDialogMake ();
-void gf_HrScoreDialogStatToolTip ();
+// Updates all the tooltips with players' stats in the stat window
+//
+// Calls **gf_StatWindowUpdatePlayer**
+// Uses **gv_StatusWindowNum** and **gv_ShopItemParameters**
+// Changes the tooltip for players' **gv_ScoreDialogName**
+void gf_StatWindowUpdateAllTooltips ();
 void gf_HrSurrenderDialogMake ();
 void gf_HrDrawGame ();
 void gf_LearnSkill(int player_number, int skill);
@@ -777,7 +786,7 @@ void SetDraftChoiceOrder() {
 }
 
 void ShopInit() {
-    gv_ShopItemParameters[0].name = "AD";
+    gv_ShopItemParameters[0].name = StringToText("Attack Damage"); // TODO: Move all names to external strings
     gv_ShopItemParameters[0].minerals_cost = 225;
     gv_ShopItemParameters[0].minerals_increase = 25;
     gv_ShopItemParameters[0].gas_cost = 1;
@@ -785,7 +794,7 @@ void ShopInit() {
     gv_ShopItemParameters[0].max_upgrades = 25;
     gv_ShopItemParameters[0].increase_function = gf_HrStat1;
 
-    gv_ShopItemParameters[1].name = "AP";
+    gv_ShopItemParameters[1].name = StringToText("Ability Power");
     gv_ShopItemParameters[1].minerals_cost = 200;
     gv_ShopItemParameters[1].minerals_increase = 10;
     gv_ShopItemParameters[1].gas_cost = 1;
@@ -793,7 +802,7 @@ void ShopInit() {
     gv_ShopItemParameters[1].max_upgrades = 30;
     gv_ShopItemParameters[1].increase_function = gf_HrStat2;
 
-    gv_ShopItemParameters[2].name = "DP";
+    gv_ShopItemParameters[2].name = StringToText("Physical Defense");
     gv_ShopItemParameters[2].minerals_cost = 100;
     gv_ShopItemParameters[2].minerals_increase = 35;
     gv_ShopItemParameters[2].gas_cost = 1;
@@ -801,7 +810,7 @@ void ShopInit() {
     gv_ShopItemParameters[2].max_upgrades = 20;
     gv_ShopItemParameters[2].increase_function = gf_HrStat3;
 
-    gv_ShopItemParameters[3].name = "RP";
+    gv_ShopItemParameters[3].name = StringToText("Magical Defense");
     gv_ShopItemParameters[3].minerals_cost = 100;
     gv_ShopItemParameters[3].minerals_increase = 35;
     gv_ShopItemParameters[3].gas_cost = 1;
@@ -809,7 +818,7 @@ void ShopInit() {
     gv_ShopItemParameters[3].max_upgrades = 20;
     gv_ShopItemParameters[3].increase_function = gf_HrStat4;
 
-    gv_ShopItemParameters[4].name = "HP";
+    gv_ShopItemParameters[4].name = StringToText("Maximum Health");
     gv_ShopItemParameters[4].minerals_cost = 230;
     gv_ShopItemParameters[4].minerals_increase = 20;
     gv_ShopItemParameters[4].gas_cost = 1;
@@ -817,7 +826,7 @@ void ShopInit() {
     gv_ShopItemParameters[4].max_upgrades = 25;
     gv_ShopItemParameters[4].increase_function = gf_HrStat5;
 
-    gv_ShopItemParameters[5].name = "Mana";
+    gv_ShopItemParameters[5].name = StringToText("Maximum Mana");
     gv_ShopItemParameters[5].minerals_cost = 85;
     gv_ShopItemParameters[5].minerals_increase = 15;
     gv_ShopItemParameters[5].gas_cost = 0;
@@ -825,7 +834,7 @@ void ShopInit() {
     gv_ShopItemParameters[5].max_upgrades = 25;
     gv_ShopItemParameters[5].increase_function = gf_HrStat6;
 
-    gv_ShopItemParameters[6].name = "HP Regen";
+    gv_ShopItemParameters[6].name = StringToText("Health Regeneration");
     gv_ShopItemParameters[6].minerals_cost = 60;
     gv_ShopItemParameters[6].minerals_increase = 10;
     gv_ShopItemParameters[6].gas_cost = 0;
@@ -833,7 +842,7 @@ void ShopInit() {
     gv_ShopItemParameters[6].max_upgrades = 20;
     gv_ShopItemParameters[6].increase_function = gf_HrStat7;
 
-    gv_ShopItemParameters[7].name = "Mana Regen";
+    gv_ShopItemParameters[7].name = StringToText("Mana Regeneration");
     gv_ShopItemParameters[7].minerals_cost = 50;
     gv_ShopItemParameters[7].minerals_increase = 5;
     gv_ShopItemParameters[7].gas_cost = 0;
@@ -841,7 +850,7 @@ void ShopInit() {
     gv_ShopItemParameters[7].max_upgrades = 20;
     gv_ShopItemParameters[7].increase_function = gf_HrStat8;
 
-    gv_ShopItemParameters[8].name = "Attack Speed";
+    gv_ShopItemParameters[8].name = StringToText("Attack Speed");
     gv_ShopItemParameters[8].minerals_cost = 180;
     gv_ShopItemParameters[8].minerals_increase = 40;
     gv_ShopItemParameters[8].gas_cost = 1;
@@ -849,7 +858,7 @@ void ShopInit() {
     gv_ShopItemParameters[8].max_upgrades = 10;
     gv_ShopItemParameters[8].increase_function = gf_HrStat9;
 
-    gv_ShopItemParameters[9].name = "Penetration";
+    gv_ShopItemParameters[9].name = StringToText("Penetration");
     gv_ShopItemParameters[9].minerals_cost = 150;
     gv_ShopItemParameters[9].minerals_increase = 50;
     gv_ShopItemParameters[9].gas_cost = 1;
@@ -857,7 +866,7 @@ void ShopInit() {
     gv_ShopItemParameters[9].max_upgrades = 3;
     gv_ShopItemParameters[9].increase_function = gf_HrStat10;
 
-    gv_ShopItemParameters[10].name = "Evasion";
+    gv_ShopItemParameters[10].name = StringToText("Evasion Chance");
     gv_ShopItemParameters[10].minerals_cost = 225;
     gv_ShopItemParameters[10].minerals_increase = 100;
     gv_ShopItemParameters[10].gas_cost = 1;
@@ -865,7 +874,7 @@ void ShopInit() {
     gv_ShopItemParameters[10].max_upgrades = 3;
     gv_ShopItemParameters[10].increase_function = gf_HrStat11;
 
-    gv_ShopItemParameters[11].name = "Crit Chance";
+    gv_ShopItemParameters[11].name = StringToText("Critical Hit Chance");
     gv_ShopItemParameters[11].minerals_cost = 300;
     gv_ShopItemParameters[11].minerals_increase = 100;
     gv_ShopItemParameters[11].gas_cost = 1;
@@ -873,7 +882,7 @@ void ShopInit() {
     gv_ShopItemParameters[11].max_upgrades = 5;
     gv_ShopItemParameters[11].increase_function = gf_HrStat12;
 
-    gv_ShopItemParameters[12].name = "Seal of Execution";
+    gv_ShopItemParameters[12].name = StringToText("Seal of Execution");
     gv_ShopItemParameters[12].minerals_cost = 400;
     gv_ShopItemParameters[12].minerals_increase = 0;
     gv_ShopItemParameters[12].gas_cost = 1;
@@ -881,7 +890,7 @@ void ShopInit() {
     gv_ShopItemParameters[12].max_upgrades = 1;
     gv_ShopItemParameters[12].increase_function = gf_HrStat25;
 
-    gv_ShopItemParameters[13].name = "Seal of Curse";
+    gv_ShopItemParameters[13].name = StringToText("Seal of Curse");
     gv_ShopItemParameters[13].minerals_cost = 450;
     gv_ShopItemParameters[13].minerals_increase = 0;
     gv_ShopItemParameters[13].gas_cost = 1;
@@ -889,7 +898,7 @@ void ShopInit() {
     gv_ShopItemParameters[13].max_upgrades = 1;
     gv_ShopItemParameters[13].increase_function = gf_HrStat26;
 
-    gv_ShopItemParameters[14].name = "Seal of Destruction";
+    gv_ShopItemParameters[14].name = StringToText("Seal of Destruction");
     gv_ShopItemParameters[14].minerals_cost = 350;
     gv_ShopItemParameters[14].minerals_increase = 0;
     gv_ShopItemParameters[14].gas_cost = 1;
@@ -897,7 +906,7 @@ void ShopInit() {
     gv_ShopItemParameters[14].max_upgrades = 1;
     gv_ShopItemParameters[14].increase_function = gf_HrStat27;
 
-    gv_ShopItemParameters[15].name = "Demon Seal";
+    gv_ShopItemParameters[15].name = StringToText("Demon Seal");
     gv_ShopItemParameters[15].minerals_cost = 400;
     gv_ShopItemParameters[15].minerals_increase = 0;
     gv_ShopItemParameters[15].gas_cost = 1;
@@ -905,7 +914,7 @@ void ShopInit() {
     gv_ShopItemParameters[15].max_upgrades = 1;
     gv_ShopItemParameters[15].increase_function = gf_HrStat28;
 
-    gv_ShopItemParameters[16].name = "Seal of Iron";
+    gv_ShopItemParameters[16].name = StringToText("Seal of Iron");
     gv_ShopItemParameters[16].minerals_cost = 350;
     gv_ShopItemParameters[16].minerals_increase = 0;
     gv_ShopItemParameters[16].gas_cost = 1;
@@ -913,7 +922,7 @@ void ShopInit() {
     gv_ShopItemParameters[16].max_upgrades = 1;
     gv_ShopItemParameters[16].increase_function = gf_HrStat29;
 
-    gv_ShopItemParameters[17].name = "Seal of Resistance";
+    gv_ShopItemParameters[17].name = StringToText("Seal of Resistance");
     gv_ShopItemParameters[17].minerals_cost = 325;
     gv_ShopItemParameters[17].minerals_increase = 0;
     gv_ShopItemParameters[17].gas_cost = 1;
@@ -921,7 +930,7 @@ void ShopInit() {
     gv_ShopItemParameters[17].max_upgrades = 1;
     gv_ShopItemParameters[17].increase_function = gf_HrStat30;
 
-    gv_ShopItemParameters[18].name = "Life Steal";
+    gv_ShopItemParameters[18].name = StringToText("Lifesteal");
     gv_ShopItemParameters[18].minerals_cost = 275;
     gv_ShopItemParameters[18].minerals_increase = 85;
     gv_ShopItemParameters[18].gas_cost = 1;
@@ -929,7 +938,7 @@ void ShopInit() {
     gv_ShopItemParameters[18].max_upgrades = 3;
     gv_ShopItemParameters[18].increase_function = gf_HrStat13;
 
-    gv_ShopItemParameters[19].name = "Spell Vamp";
+    gv_ShopItemParameters[19].name = StringToText("Spell Vampirism");
     gv_ShopItemParameters[19].minerals_cost = 325;
     gv_ShopItemParameters[19].minerals_increase = 100;
     gv_ShopItemParameters[19].gas_cost = 1;
@@ -937,7 +946,7 @@ void ShopInit() {
     gv_ShopItemParameters[19].max_upgrades = 3;
     gv_ShopItemParameters[19].increase_function = gf_HrStat14;
 
-    gv_ShopItemParameters[20].name = "Cooldown Reduction";
+    gv_ShopItemParameters[20].name = StringToText("Cooldown Reduction");
     gv_ShopItemParameters[20].minerals_cost = 200;
     gv_ShopItemParameters[20].minerals_increase = 60;
     gv_ShopItemParameters[20].gas_cost = 1;
@@ -945,7 +954,7 @@ void ShopInit() {
     gv_ShopItemParameters[20].max_upgrades = 3;
     gv_ShopItemParameters[20].increase_function = gf_HrStat15;
 
-    gv_ShopItemParameters[21].name = "Booster";
+    gv_ShopItemParameters[21].name = StringToText("Booster");
     gv_ShopItemParameters[21].minerals_cost = 200;
     gv_ShopItemParameters[21].minerals_increase = 0;
     gv_ShopItemParameters[21].gas_cost = 1;
@@ -953,7 +962,7 @@ void ShopInit() {
     gv_ShopItemParameters[21].max_upgrades = 1;
     gv_ShopItemParameters[21].increase_function = gf_HrStat16;
 
-    gv_ShopItemParameters[22].name = "Spell Shield";
+    gv_ShopItemParameters[22].name = StringToText("Spell Shield");
     gv_ShopItemParameters[22].minerals_cost = 375;
     gv_ShopItemParameters[22].minerals_increase = 0;
     gv_ShopItemParameters[22].gas_cost = 1;
@@ -961,7 +970,7 @@ void ShopInit() {
     gv_ShopItemParameters[22].max_upgrades = 1;
     gv_ShopItemParameters[22].increase_function = gf_HrStat17;
 
-    gv_ShopItemParameters[23].name = "Lava of Parts";
+    gv_ShopItemParameters[23].name = StringToText("Body of Lava");
     gv_ShopItemParameters[23].minerals_cost = 285;
     gv_ShopItemParameters[23].minerals_increase = 0;
     gv_ShopItemParameters[23].gas_cost = 1;
@@ -969,7 +978,7 @@ void ShopInit() {
     gv_ShopItemParameters[23].max_upgrades = 1;
     gv_ShopItemParameters[23].increase_function = gf_HrStat18;
 
-    gv_ShopItemParameters[24].name = "HP Potion";
+    gv_ShopItemParameters[24].name = StringToText("Health Potion");
     gv_ShopItemParameters[24].minerals_cost = 35;
     gv_ShopItemParameters[24].minerals_increase = 0;
     gv_ShopItemParameters[24].gas_cost = 0;
@@ -977,7 +986,7 @@ void ShopInit() {
     gv_ShopItemParameters[24].max_upgrades = 1;
     gv_ShopItemParameters[24].increase_function = gf_HrStat19;
 
-    gv_ShopItemParameters[25].name = "Mana Potion";
+    gv_ShopItemParameters[25].name = StringToText("Mana Potion");
     gv_ShopItemParameters[25].minerals_cost = 30;
     gv_ShopItemParameters[25].minerals_increase = 0;
     gv_ShopItemParameters[25].gas_cost = 0;
@@ -985,7 +994,7 @@ void ShopInit() {
     gv_ShopItemParameters[25].max_upgrades = 1;
     gv_ShopItemParameters[25].increase_function = gf_HrStat20;
 
-    gv_ShopItemParameters[26].name = "Ward";
+    gv_ShopItemParameters[26].name = StringToText("Ward");
     gv_ShopItemParameters[26].minerals_cost = 70;
     gv_ShopItemParameters[26].minerals_increase = 0;
     gv_ShopItemParameters[26].gas_cost = 0;
@@ -993,7 +1002,7 @@ void ShopInit() {
     gv_ShopItemParameters[26].max_upgrades = 1;
     gv_ShopItemParameters[26].increase_function = gf_HrStat21;
 
-    gv_ShopItemParameters[27].name = "Eye";
+    gv_ShopItemParameters[27].name = StringToText("Hawk Eye");
     gv_ShopItemParameters[27].minerals_cost = 225;
     gv_ShopItemParameters[27].minerals_increase = 0;
     gv_ShopItemParameters[27].gas_cost = 0;
@@ -1001,7 +1010,7 @@ void ShopInit() {
     gv_ShopItemParameters[27].max_upgrades = 1;
     gv_ShopItemParameters[27].increase_function = gf_HrStat22;
 
-    gv_ShopItemParameters[28].name = "Fiery Flask";
+    gv_ShopItemParameters[28].name = StringToText("Fiery Flask");
     gv_ShopItemParameters[28].minerals_cost = 350;
     gv_ShopItemParameters[28].minerals_increase = 0;
     gv_ShopItemParameters[28].gas_cost = 0;
@@ -1009,7 +1018,7 @@ void ShopInit() {
     gv_ShopItemParameters[28].max_upgrades = 1;
     gv_ShopItemParameters[28].increase_function = gf_HrStat23;
 
-    gv_ShopItemParameters[29].name = "Devil Elixir";
+    gv_ShopItemParameters[29].name = StringToText("Devil Elixir");
     gv_ShopItemParameters[29].minerals_cost = 400;
     gv_ShopItemParameters[29].minerals_increase = 0;
     gv_ShopItemParameters[29].gas_cost = 0;
@@ -5378,13 +5387,74 @@ void gf_HrCooldownReductionLevelIncrease () {
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223322222222222", 2);
 }
 
-void gf_HrStatTooltip1 () {
-    gv_PlayerProfileAddToolTip[EventPlayer()][0] = (StringExternal("Param/Value/454F0C48") + IntToText(gv_StatusWindowNum[EventPlayer()][0]) + StringExternal("Param/Value/B3285745") + IntToText(gv_StatusWindowNum[EventPlayer()][1]) + StringExternal("Param/Value/BD6955AB") + IntToText(gv_StatusWindowNum[EventPlayer()][2]) + StringExternal("Param/Value/A45AC4F5") + IntToText(gv_StatusWindowNum[EventPlayer()][3]) + StringExternal("Param/Value/BC19B8D0") + IntToText(gv_StatusWindowNum[EventPlayer()][4]) + StringExternal("Param/Value/A99A4175") + IntToText(gv_StatusWindowNum[EventPlayer()][5]));
-    gv_PlayerProfileAddToolTip[EventPlayer()][1] = (StringExternal("Param/Value/8BBB5E19") + IntToText(gv_StatusWindowNum[EventPlayer()][6]) + StringExternal("Param/Value/1823CFAF") + IntToText(gv_StatusWindowNum[EventPlayer()][7]) + StringExternal("Param/Value/2885836E") + IntToText(gv_StatusWindowNum[EventPlayer()][8]) + StringExternal("Param/Value/A2FB0C3E") + IntToText(gv_StatusWindowNum[EventPlayer()][9]) + StringExternal("Param/Value/10B42239") + IntToText(gv_StatusWindowNum[EventPlayer()][10]) + StringExternal("Param/Value/50FB32FE") + IntToText(gv_StatusWindowNum[EventPlayer()][11]));
-    gv_PlayerProfileAddToolTip[EventPlayer()][2] = (StringExternal("Param/Value/DD0C5473") + IntToText(gv_StatusWindowNum[EventPlayer()][18]) + StringExternal("Param/Value/B70D348E") + IntToText(gv_StatusWindowNum[EventPlayer()][19]) + StringExternal("Param/Value/B4D33109") + IntToText(gv_StatusWindowNum[EventPlayer()][20]) + StringExternal("Param/Value/6245E433") + IntToText(gv_StatusWindowNum[EventPlayer()][21]) + StringExternal("Param/Value/5B340842") + IntToText(gv_StatusWindowNum[EventPlayer()][22]) + StringExternal("Param/Value/B9C2BC99") + IntToText(gv_StatusWindowNum[EventPlayer()][23]));
-    gv_PlayerProfileAddToolTip[EventPlayer()][3] = (StringExternal("Param/Value/3D45FE00") + IntToText(gv_StatusWindowNum[EventPlayer()][12]) + StringExternal("Param/Value/534A9DE2") + IntToText(gv_StatusWindowNum[EventPlayer()][13]) + StringExternal("Param/Value/EB492814") + IntToText(gv_StatusWindowNum[EventPlayer()][14]) + StringExternal("Param/Value/3AE29E15") + IntToText(gv_StatusWindowNum[EventPlayer()][15]) + StringExternal("Param/Value/9C0DD5D0") + IntToText(gv_StatusWindowNum[EventPlayer()][16]) + StringExternal("Param/Value/551BCA61") + IntToText(gv_StatusWindowNum[EventPlayer()][17]));
-    gv_PlayerProfileAddToolTip[EventPlayer()][4] = (StringExternal("Param/Value/55551A0E") + IntToText(gv_StatusWindowNum[EventPlayer()][27]) + StringExternal("Param/Value/D611CB56") + IntToText(gv_StatusWindowNum[EventPlayer()][28]) + StringExternal("Param/Value/56E9B7F1") + IntToText(gv_StatusWindowNum[EventPlayer()][29]));
-    libNtve_gf_SetDialogItemTooltip(gv_ScoreDialogName[EventPlayer()], (StringExternal("Param/Value/7E3ED890") + PlayerName(EventPlayer()) + StringExternal("Param/Value/CBC26373") + StringExternal("Param/Value/FB232C25") + gv_PlayerProfileAddToolTip[EventPlayer()][0] + StringExternal("Param/Value/8E22CA11") + gv_PlayerProfileAddToolTip[EventPlayer()][1] + StringExternal("Param/Value/3102855D") + gv_PlayerProfileAddToolTip[EventPlayer()][2] + StringExternal("Param/Value/33A342C6") + gv_PlayerProfileAddToolTip[EventPlayer()][3] + StringExternal("Param/Value/9CF05C59") + gv_PlayerProfileAddToolTip[EventPlayer()][4] + StringExternal("Param/Value/91926A18")), PlayerGroupAll());
+void gf_StatWindowUpdatePlayer (int player) {
+    int i;
+    text tooltip_text;
+    color stat_name_color;
+    bool first_in_column = true;
+
+    const color AD_COLOR = "ff9999";
+    const color AP_COLOR = "99ffcc";
+    const color SEAL_COLOR = "995555";
+    const color DEFAULT_COLOR = "6699ff";
+    const color NUMBER_COLOR = "ffffff";
+
+    tooltip_text += (
+        StringToText("<s val=\"PurchasePanelGroupName\">") +
+        TextWithColor(PlayerName(player) + StringToText("'s current stats:"), "78b8ff") + // TODO: Move to external string
+        StringToText("</s>") +
+        StringToText("<n/><n/>") +
+        StringToText("<s val=\"Header18\">")
+    );
+
+    for (i = 0; i < 30; i += 1) {
+        if ((i >= 12) && (i <= 17)) {  // Seals
+            continue;
+        }
+        if ((i >= 24) && (i <= 26)) {  // Consumables
+            continue;
+        }
+
+        if ((i == 0) || (i == 2)) { // AD and DP
+            stat_name_color = AD_COLOR;
+        }
+        else if ((i == 1) || (i == 3)) { // AP and RP
+            stat_name_color = AP_COLOR;
+        }
+        else {
+            stat_name_color = DEFAULT_COLOR;
+        }
+
+        tooltip_text += TextWithColor(
+            (gv_ShopItemParameters[i].name + StringToText(": ")),
+            stat_name_color
+        );
+
+        tooltip_text += TextWithColor(IntToText(gv_StatusWindowNum[player][i]), NUMBER_COLOR);
+        if (first_in_column) {
+            tooltip_text += StringToText("   ");
+        } else {
+            tooltip_text += StringToText("<n/>");
+        }
+        first_in_column = !first_in_column;
+    }
+
+    tooltip_text += StringToText("<n/>");
+    tooltip_text += TextWithColor(StringToText("Seal: "), SEAL_COLOR); // TODO: Move to external string
+    if (gv_SealBought[player]) {
+        for (i = 12; i <= 17; i += 1) {
+            if (gv_StatusWindowNum[player][i] == 1) {
+                tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, SEAL_COLOR);
+                break;
+            }
+        }
+    } else {
+        tooltip_text += TextWithColor(StringToText("None"), SEAL_COLOR); // TODO: Move to external string
+    }
+
+    tooltip_text += StringToText("</s>");  // Header18
+
+    libNtve_gf_SetDialogItemTooltip(gv_ScoreDialogName[player], tooltip_text, PlayerGroupAll());
 }
 
 void gf_HrItemUseComplete () {
@@ -5400,7 +5470,7 @@ void gf_HrItemUseComplete () {
         libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][29], (StringExternal("Param/Value/5A294C24") + IntToText(gv_StatusWindowNum[EventPlayer()][29]) + StringExternal("Param/Value/4C29070D")), PlayerGroupSingle(EventPlayer()));
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
 }
 
 void gf_HrAssistSystemAdd2 () {
@@ -7394,18 +7464,17 @@ void gf_HrScoreDialogMake () {
     gv_ScoreDialogTextB[5] = DialogControlLastCreated();
 }
 
-void gf_HrScoreDialogStatToolTip () {
+void gf_StatWindowUpdateAllTooltips () {
     int i;
 
     for (i = 1; i <= 8; i += 1) {
-        if ((((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) || (PlayerType(gv_PlayerBayul[i]) == c_playerTypeComputer))) {
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][0] = (StringExternal("Param/Value/81A9C3B5") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][0]) + StringExternal("Param/Value/9FE47CA9") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/2C177B25") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/4D3F19E1") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/B77D00F4") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][4]) + StringExternal("Param/Value/0356181F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][5]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][1] = (StringExternal("Param/Value/960331B1") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][6]) + StringExternal("Param/Value/5B4C54DB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][7]) + StringExternal("Param/Value/467DB79F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][8]) + StringExternal("Param/Value/5578FBCC") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][9]) + StringExternal("Param/Value/7F061B37") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][10]) + StringExternal("Param/Value/0B992D42") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][11]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][2] = (StringExternal("Param/Value/90876E5C") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][18]) + StringExternal("Param/Value/26BDC60F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][19]) + StringExternal("Param/Value/735882AB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][20]) + StringExternal("Param/Value/807F018B") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][21]) + StringExternal("Param/Value/34C78D1C") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][22]) + StringExternal("Param/Value/50E69310") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][23]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][3] = (StringExternal("Param/Value/6FA179B7") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][12]) + StringExternal("Param/Value/BCCAD295") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][13]) + StringExternal("Param/Value/F4470E72") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][14]) + StringExternal("Param/Value/AC4756DD") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][15]) + StringExternal("Param/Value/53E2AE88") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][16]) + StringExternal("Param/Value/2C838535") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][17]));
-            gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][4] = (StringExternal("Param/Value/42695A32") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][27]) + StringExternal("Param/Value/777EA2D4") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][28]) + StringExternal("Param/Value/7A9FD794") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][29]));
-            libNtve_gf_SetDialogItemTooltip(gv_ScoreDialogName[gv_PlayerBayul[i]], (StringExternal("Param/Value/954454BA") + PlayerName(gv_PlayerBayul[i]) + StringExternal("Param/Value/C04E72F0") + StringExternal("Param/Value/A62B9A29") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][0] + StringExternal("Param/Value/36B27B0D") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][1] + StringExternal("Param/Value/C32C435A") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][2] + StringExternal("Param/Value/7623F55B") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][3] + StringExternal("Param/Value/871824A9") + gv_PlayerProfileAddToolTip[gv_PlayerBayul[i]][4] + StringExternal("Param/Value/68E866B6")), PlayerGroupAll());
+        if (PlayerType(gv_PlayerBayul[i]) != c_playerTypeUser) {
+            continue;
         }
+        if (PlayerStatus(gv_PlayerBayul[i]) != c_playerStatusActive) {
+            continue;
+        }
+        gf_StatWindowUpdatePlayer(gv_PlayerBayul[i]);
     }
 }
 
@@ -7969,15 +8038,16 @@ bool gt_Tr8VoteScreenView_Func (bool testConds, bool runActions) {
     Wait(0.5, c_timeReal);
     DialogSetVisible(gv_CharChooseDialog[1], PlayerGroupAll(), true);
     DialogSetVisible(gv_BeforeStartCounterDialog[0], PlayerGroupAll(), true);
+
     while ((gv_BeforeStartCounterDialogNum > 0)) {
         libNtve_gf_SetDialogItemText(gv_BeforeStartCounterDialogLabel[0], (StringExternal("Param/Value/24BC1DB5") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/9138AB48")), PlayerGroupAll());
         gv_BeforeStartCounterDialogNum -= 1;
         if (((gv_ReadyBoolean == 0) || ((gv_GameModeVoteInt[0] > gv_GameModeVoteInt[1]) && ((gv_GameModeVoteInt[0] - gv_GameModeVoteInt[1]) >= 3)) || ((gv_GameModeVoteInt[1] > gv_GameModeVoteInt[0]) && ((gv_GameModeVoteInt[1] - gv_GameModeVoteInt[0]) >= 3)))) {
             gv_BeforeStartCounterDialogNum = 0;
         }
-
         Wait(1.0, c_timeReal);
     }
+
     libNtve_gf_SetDialogItemText(gv_BeforeStartCounterDialogLabel[0], (StringExternal("Param/Value/4CA2C74C") + IntToText(gv_BeforeStartCounterDialogNum) + StringExternal("Param/Value/8B9FA8FC")), PlayerGroupAll());
     Wait(1.0, c_timeReal);
     gv_ReadyBoolean = 0;
@@ -7997,10 +8067,9 @@ bool gt_Tr8VoteScreenView_Func (bool testConds, bool runActions) {
                 DialogControlSetVisible(gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[lv_GPlayerNum1]], PlayerGroupAll(), true);
                 libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[gv_PlayerBayul[lv_GPlayerNum1]], (StringExternal("Param/Value/47A1E486") + PlayerName(gv_PlayerBayul[lv_GPlayerNum1]) + StringExternal("Param/Value/A5530891")), PlayerGroupAll());
             }
-
         }
-
     }
+
     Wait(0.25, c_timeReal);
     DialogSetVisible(gv_CharChooseDialog[0], PlayerGroupAll(), true);
     DialogSetVisible(gv_BeforeStartCounterDialog[0], PlayerGroupAll(), true);
@@ -8008,11 +8077,11 @@ bool gt_Tr8VoteScreenView_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_CharChooseDialog[4], PlayerGroupAll(), true);
     DialogSetVisible(gv_TeamSelectDialog[0], PlayerGroupAll(), true);
     DialogSetVisible(gv_TeamSelectDialog[1], PlayerGroupAll(), true);
+
     if ((gv_GameModeVoteValue == true)) {
         TriggerEnable(gt_TrCharSelectDraft, true);
         TriggerExecute(gt_TrCharSelectDraft, true, false);
-    }
-    else {
+    } else {
         TriggerEnable(gt_TrCharSelectBlind, true);
         TriggerExecute(gt_TrCharSelectBlind, true, false);
     }
@@ -8039,6 +8108,7 @@ static bool lf_CharacterNotChosen(int player_number) {
     }
     return true;
 }
+
 static void lf_PlayerHeroChoice(int player_number) {
     int flag;
     int team_number;
@@ -10102,7 +10172,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     TriggerEnable(gt_HeroSelectionLockBtn, true);
     TriggerEnable(gt_CenterCameraOnHero, true);
     gf_HrScoreDialogMake();
-    gf_HrScoreDialogStatToolTip();
+    gf_StatWindowUpdateAllTooltips();
     Wait(1.0, c_timeReal);
     UISetMode(PlayerGroupAll(), c_uiModeConsole, c_transitionDurationImmediate);
     CinematicFade(true, 1.0, c_fadeStyleNormal, Color(0.00, 0.00, 0.00), 0.0, true);
@@ -12035,7 +12105,7 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
         }
     }
     Wait(0.1, c_timeReal);
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
 }
@@ -12073,7 +12143,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyZ_Func (bool testConds, bool runActions) {
         }
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     Wait(0.1, c_timeReal);
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
@@ -12113,7 +12183,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyX_Func (bool testConds, bool runActions) {
         }
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     Wait(0.1, c_timeReal);
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
@@ -12153,7 +12223,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyC_Func (bool testConds, bool runActions) {
         }
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     Wait(0.1, c_timeReal);
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
@@ -12193,7 +12263,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyV_Func (bool testConds, bool runActions) {
         }
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     Wait(0.1, c_timeReal);
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
@@ -12233,7 +12303,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyB_Func (bool testConds, bool runActions) {
         }
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     Wait(0.1, c_timeReal);
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
@@ -12273,7 +12343,7 @@ bool gt_TrStatDialogStatIncreaseHotKeyN_Func (bool testConds, bool runActions) {
         }
     }
 
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     Wait(0.1, c_timeReal);
     gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
@@ -12378,7 +12448,7 @@ bool gt_TrWardUseComplete_Func (bool testConds, bool runActions) {
     gv_StatusWindowNum[EventPlayer()][26] = 0;
     DialogControlSetEnabled(gv_StatusWindowBtn[26], PlayerGroupSingle(EventPlayer()), true);
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][26], (StringExternal("Param/Value/D68A9FC5") + IntToText(gv_StatusWindowNum[EventPlayer()][26]) + StringExternal("Param/Value/C65A8CFA")), PlayerGroupSingle(EventPlayer()));
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     return true;
 }
 
@@ -12413,7 +12483,7 @@ bool gt_TrWardUseComplete2_Func (bool testConds, bool runActions) {
     gv_StatusWindowNum[EventPlayer()][27] = 0;
     DialogControlSetEnabled(gv_StatusWindowBtn[27], PlayerGroupSingle(EventPlayer()), true);
     libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][27], (StringExternal("Param/Value/7D0E738D") + IntToText(gv_StatusWindowNum[EventPlayer()][27]) + StringExternal("Param/Value/417CE63D")), PlayerGroupSingle(EventPlayer()));
-    gf_HrStatTooltip1();
+    gf_StatWindowUpdatePlayer(EventPlayer());
     return true;
 }
 
