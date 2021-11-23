@@ -71,7 +71,6 @@ const int c_secondaryObjectiveLevels = 3;
 int[11] gv_PlayerBayul;
 playergroup gv_AllPlayerGroup;
 playergroup[2] gv_TeamPlayerGroup;
-bool gv_SingleAccess;
 int gv_TotalHeroNum;
 int[11] gv_SelectedCharNum;
 int[4] gv_Team1CharNum;
@@ -80,7 +79,6 @@ string[11] gv_CharSelectedImage;
 text[11] gv_CharSelectedName;
 bool[2] gv_CharSelectedDelay;
 bool[11] gv_CharRandomBoolean;
-bool[11] gv_CharSelectNothing;
 int[11] gv_SelectedSpellNum1;
 int[11] gv_SelectedSpellNum2;
 bool[11] gv_SpellToggle;
@@ -94,7 +92,6 @@ unit[11] gv_PlayerHero;
 bool[11] gv_ReadyRandomBoolean;
 bool[11] gv_ReadyClickBoolean;
 int gv_ReadyBoolean;
-bool[11] gv_ReadyErrorDelay;
 bool[11] gv_HeroSelectionLockEnabled;
 string[11] gv_PlayerHandlerNumber;
 int gv_StrongUnitCount;
@@ -220,8 +217,6 @@ int[8] gv_ScoreDialogImage;
 int[4] gv_ScoreDialogImageB;
 int[20] gv_ScoreDialogText;
 int[6] gv_ScoreDialogTextB;
-int[3] gv_PlayerProfileImage;
-int[20] gv_PlayerProfileText;
 int[11] gv_ScoreDialogHeroImage;
 int[11] gv_ScoreDialogName;
 int[11] gv_ScoreDialogLevel;
@@ -456,13 +451,6 @@ void InitGlobals () {
         gv_ScoreDialogTotalScore[init_i] = c_invalidDialogControlId;
         gv_ScoreDialogFarming[init_i] = c_invalidDialogControlId;
         gv_ScoreDialogReviveTime[init_i] = c_invalidDialogControlId;
-    }
-
-    for (init_i = 0; init_i <= 2; init_i += 1) {
-        gv_PlayerProfileImage[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 19; init_i += 1) {
-        gv_PlayerProfileText[init_i] = c_invalidDialogControlId;
     }
 
     gv_SurrenderDialog = c_invalidDialogId;
@@ -4179,7 +4167,6 @@ void gf_SpawnHero(int player_number, int hero_number) {
     CameraPan(gv_PlayerBayul[player_number], PointFromId(position), 0.0, -1, 10, false);
     UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
     UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[player_number]], 2);
-    // TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], "SpellUp222233322232222", 2);
 
     if ((gv_SelectedSpellNum1[gv_PlayerBayul[player_number]] == 8) || (gv_SelectedSpellNum2[gv_PlayerBayul[player_number]] == 8)) {
         if (gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[player_number]] - 1].ability_resource == c_abilityResourceMana) {
@@ -7953,7 +7940,6 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
     UISetCommandAllowed(GameAttributePlayersForTeam(3), c_uiCommandAllowInfoPanel, false);
     UISetFrameVisible(GameAttributePlayersForTeam(3), c_syncFrameTypeInventoryPanel, false);
     if ((PlayerGroupCount(gv_AllPlayerGroup) == 1)) {
-        gv_SingleAccess = true;
         TriggerEnable(gt_TrSingleCheetMoney, true);
         TriggerEnable(gt_TrSingleCheetLevel, true);
         TriggerEnable(gt_TrSingleCheetTestUnit, true);
@@ -10004,10 +9990,6 @@ bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
         }
 
         if (!((EventDialogControl() == gv_CharChooseDialogReadyBtn))) {
-            return false;
-        }
-
-        if (!((gv_ReadyErrorDelay[EventPlayer()] == false))) {
             return false;
         }
 
