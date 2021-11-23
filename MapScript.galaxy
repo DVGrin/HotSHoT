@@ -69,7 +69,6 @@ const int c_secondaryObjectiveLevels = 3;
 // Global Variables
 //--------------------------------------------------------------------------------------------------
 int[11] gv_PlayerBayul;
-playergroup gv_AllPlayerGroup;
 playergroup[2] gv_TeamPlayerGroup;
 int gv_TotalHeroNum;
 int[11] gv_SelectedCharNum;
@@ -259,7 +258,6 @@ void InitGlobals () {
 
     gv_TotalHeroNum = 73;
 
-    gv_AllPlayerGroup = PlayerGroupEmpty();
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_TeamPlayerGroup[init_i] = PlayerGroupEmpty();
     }
@@ -7834,7 +7832,6 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             gv_HeroDeathBoolean[gv_PlayerBayul[lv_GPlayerNum1]] = false;
             gv_PlayerHandlerNumber[gv_PlayerBayul[lv_GPlayerNum1]] = PlayerHandle(gv_PlayerBayul[lv_GPlayerNum1]);
             gv_ReadyBoolean += 1;
-            PlayerGroupAdd(gv_AllPlayerGroup, gv_PlayerBayul[lv_GPlayerNum1]);
             PlayerGroupAdd(gv_TeamPlayerGroup[0], gv_PlayerBayul[lv_GPlayerNum1]);
             gv_SurrenderPlayerNum1 += 1;
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "simplecommandcard", "0");
@@ -7866,7 +7863,6 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             gv_HeroDeathBoolean[gv_PlayerBayul[lv_GPlayerNum3]] = false;
             gv_PlayerHandlerNumber[gv_PlayerBayul[lv_GPlayerNum3]] = PlayerHandle(gv_PlayerBayul[lv_GPlayerNum3]);
             gv_ReadyBoolean += 1;
-            PlayerGroupAdd(gv_AllPlayerGroup, gv_PlayerBayul[lv_GPlayerNum3]);
             PlayerGroupAdd(gv_TeamPlayerGroup[1], gv_PlayerBayul[lv_GPlayerNum3]);
             gv_SurrenderPlayerNum2 += 1;
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "simplecommandcard", "0");
@@ -10677,7 +10673,7 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((PlayerGroupCount(gv_AllPlayerGroup) != 1) && !(lf_TestModeVotedFor())) {
+    if ((PlayerGroupCount(PlayerGroupActive()) != 1) && !(lf_TestModeVotedFor())) {
         return false;
     }
 
@@ -17009,10 +17005,6 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((PlayerGroupCount(gv_AllPlayerGroup) > 1))) {
-            return false;
-        }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
@@ -17022,7 +17014,6 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    PlayerGroupRemove(gv_AllPlayerGroup, EventPlayer());
     gv_HeroDeathBoolean[EventPlayer()] = true;
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSetTo, 0);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSetTo, 0);
