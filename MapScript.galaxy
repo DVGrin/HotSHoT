@@ -255,6 +255,8 @@ bool[11] gv_TestModeVotes;
 bool[11][11] gv_VotedToKick;
 int[11][5] gv_PlayerObjectives;
 PlayerStatistics[11] gv_PlayerStatistics;
+int gv_RemoveObjectivesButtonWindow;
+int gv_RemoveObjectivesButtonWindowButton;
 
 void InitGlobals () {
     int init_i;
@@ -323,6 +325,9 @@ void InitGlobals () {
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_HeroFixedBtnWindowBtn[init_i] = c_invalidDialogControlId;
     }
+
+    gv_RemoveObjectivesButtonWindow = c_invalidDialogId;
+    gv_RemoveObjectivesButtonWindowButton = c_invalidDialogId;
 
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterGalicGroup[init_i] = UnitGroupEmpty();
@@ -758,6 +763,7 @@ trigger gt_TrPlayerOut;
 trigger gt_MinionObjectiveCompleted;
 trigger gt_TrackHeroDamage;
 trigger gt_TrackHeroHealing;
+trigger gt_RemoveObjectivesButton;
 
 //--------------------------------------------------------------------------------------------------
 // Game Parameters
@@ -4290,6 +4296,7 @@ void gf_HrStatDialogMake1a () {
     libNtve_gf_CreateDialogItemImage(gv_StatusWindow2, 170, 45, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_ingame_gameclock_protoss.dds", c_triggerImageTypeEndCap, false, Color(100,100,100), c_triggerBlendModeNormal);
     libNtve_gf_CreateDialogItemLabel(gv_StatusWindow2, 180, 45, c_anchorCenter, 0, 12, StringExternal("Param/Value/EF8CF166"), Color(100,100,100), false, 2.0);
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
+
     DialogCreate(255, 60, c_anchorBottomLeft, 12, 304, true);
     gv_HeroFixedBtnWindow = DialogLastCreated();
     DialogSetImageVisible(gv_HeroFixedBtnWindow, false);
@@ -4297,6 +4304,36 @@ void gf_HrStatDialogMake1a () {
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_void_storybutton_small_normalpressed.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
     gv_HeroFixedBtnWindowBtn[0] = DialogControlLastCreated();
+
+    DialogCreate(255, 60, c_anchorBottomLeft, 12, 374, true);
+    gv_RemoveObjectivesButtonWindow = DialogLastCreated();
+    DialogSetImageVisible(gv_RemoveObjectivesButtonWindow, false);
+    libNtve_gf_CreateDialogItemButton(
+        gv_RemoveObjectivesButtonWindow,
+        255, 60, c_anchorCenter, 0, 0,
+        (
+            StringToText("<s val=\"Header18\">") + 
+            TextWithColor(StringToText("Removes the objectives and this button"), Color(100.0, 100.0, 100.0)) +  // TODO: Move to external string
+            StringToText("<s/>")
+        ),
+        (
+            StringToText("<s val=\"Header18\">") + 
+            TextWithColor(StringToText("Remove the objectives"), Color(100.0, 100.0, 100.0)) +  // TODO: Move to external string
+            StringToText("<s/>")
+        ),
+        "Assets\\Textures\\ui_void_storybutton_small_normaloverpressedover.dds"
+    );
+    gv_RemoveObjectivesButtonWindowButton = DialogControlLastCreated();
+    libNtve_gf_SetDialogItemImage(
+        gv_RemoveObjectivesButtonWindowButton,
+        "Assets\\Textures\\ui_void_storybutton_small_normalpressed.dds",
+        PlayerGroupAll()
+    );
+    libNtve_gf_SetDialogItemImageType(
+        gv_RemoveObjectivesButtonWindowButton,
+        c_triggerImageTypeEndCap,
+        PlayerGroupAll()
+    );
 }
 
 void gf_HrStatDialogMake1b () {
@@ -10167,6 +10204,9 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerEnable(gt_HeroSelectionLockAction, true);
     TriggerEnable(gt_HeroSelectionLockBtn, true);
+    TriggerAddEventDialogControl(gt_HeroSelectionLockBtn, c_playerAny, gv_HeroFixedBtnWindowBtn[0], c_triggerControlEventTypeClick);
+    TriggerEnable(gt_RemoveObjectivesButton, true);
+    TriggerAddEventDialogControl(gt_RemoveObjectivesButton, c_playerAny, gv_RemoveObjectivesButtonWindowButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_CenterCameraOnHero, true);
 
     gf_HrScoreDialogMake();
@@ -10204,6 +10244,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), true);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), true);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), true);
+    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), true);
     gf_HrCleanUpHeroSelectDialogs();
     HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal("Param/Value/AD868381"), libNtve_ge_TipType_NormalTip), StringExternal("Param/Value/7B165D99"), StringExternal("Param/Value/4F1F220A"), "Assets\\AddIcon\\btn-achievement-00-beta.dds");
     UISetGameMenuItemText(PlayerGroupAll(), c_gameMenuDialogGenericButton2, StringExternal("Param/Value/46682880"));
@@ -10413,7 +10454,35 @@ bool gt_HeroSelectionLockBtn_Func (bool testConds, bool runActions) {
 void gt_HeroSelectionLockBtn_Init () {
     gt_HeroSelectionLockBtn = TriggerCreate("gt_HeroSelectionLockBtn_Func");
     TriggerEnable(gt_HeroSelectionLockBtn, false);
-    TriggerAddEventDialogControl(gt_HeroSelectionLockBtn, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+bool gt_RemoveObjectivesButton_Func (bool testConds, bool runActions) {
+    if (testConds) {
+        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
+            return false;
+        }
+        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
+            return false;
+        }
+        if (!((EventDialogControl() == gv_RemoveObjectivesButtonWindowButton))) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    ObjectiveDestroyAll(PlayerGroupSingle(EventPlayer()));
+    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupSingle(EventPlayer()), false);
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_RemoveObjectivesButton_Init () {
+    gt_RemoveObjectivesButton = TriggerCreate("gt_RemoveObjectivesButton_Func");
+    TriggerEnable(gt_RemoveObjectivesButton, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -16538,6 +16607,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
+    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -16619,6 +16689,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
+    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -17226,6 +17297,7 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
+    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -17303,6 +17375,7 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroFixedBtnWindow, PlayerGroupAll(), false);
+    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -17794,6 +17867,7 @@ void InitTriggers () {
     gt_MinionObjectiveCompleted_Init();
     gt_TrackHeroDamage_Init();
     gt_TrackHeroHealing_Init();
+    gt_RemoveObjectivesButton_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
