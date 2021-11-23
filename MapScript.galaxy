@@ -10784,10 +10784,12 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         if (gv_HeroDeathBoolean[EventPlayer()]) {
             return false;
         }
+
         UnitRemove(gv_PlayerHero[EventPlayer()]);
         for (i = 0; i < 4; i += 1) {
             gv_SkillLevels[EventPlayer()][i] = 0;
         }
+
         gv_HeroReviveCountNum[EventPlayer()][0] = 10;
         gv_HeroReviveCountNum[EventPlayer()][1] = 10;
         gv_PlayerLevel[EventPlayer()][0] = 1;
@@ -10796,8 +10798,15 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         gv_HeroKillMoney[EventPlayer()][2] = 20;
         gv_AllyGiveMoney[EventPlayer()] = 500;
         gv_AvailableSkillPoints[EventPlayer()] = 1;
+
         gf_SpawnHero(EventPlayer(), number);
+        reference = UnitRefFromUnit(gv_PlayerHero[EventPlayer()]);
+        TriggerAddEventUnitProperty(gt_MinionObjectiveCompleted, reference, c_unitPropKills);
+        TriggerAddEventUnitDamaged(gt_TrackHeroDamage, reference, c_unitDamageTypeAny, c_unitDamageEither, null);
+        TriggerAddEventUnitHealed(gt_TrackHeroHealing, reference, c_unitVitalLife, null);
         gf_HrSkillLearnWindowOpen();
+        UnitClearSelection(EventPlayer());
+        UnitSelect(gv_PlayerHero[EventPlayer()], EventPlayer(), true);
     }
 
     return false;
