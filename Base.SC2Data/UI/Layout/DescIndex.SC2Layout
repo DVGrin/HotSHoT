@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-    <Include path="UI/Layout/CustomUI.SC2Layout"/>
+    <Include path="UI/Layout/Constants.SC2Layout"/>
+
+    <!-- Templates -->
+    <Include path="UI/Layout/MyButtonTemplate.SC2Layout"/>
+
+    <!-- Loading Screen -->
+    <Include path="UI/Layout/LoadingScreen.SC2Layout" requiredtoload="IS_EDITOR"/>
+
+    <!-- Layouts -->
+    <Include path="UI/Layout/SelectionLockButton.SC2Layout"/>
 </Desc>

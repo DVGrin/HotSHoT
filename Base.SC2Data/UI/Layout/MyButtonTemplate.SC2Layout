@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Button" name="ButtonTemplate" template="StandardTemplates/StandardButtonTemplate">
+        <Width val="255"/>
+        <Height val="60"/>
+
+        <Frame type="Label" name="Label">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+
+            <Style val="MyButtonLabel"/>
+        </Frame>
+
+        <Frame type="Image" name="HoverImage">
+            <Texture val="Assets/Textures/ui_void_storybutton_small_normaloverpressedover.dds"/>
+        </Frame>
+
+        <Frame type="Image" name="NormalImage">
+            <Texture val="Assets/Textures/ui_void_storybutton_small_normalpressed.dds"/>
+        </Frame>
+    </Frame>
+</Desc>

@@ -392,3 +392,4 @@ Button/Hotkey/HeroSkillBtn82=W
 Button/Hotkey/HeroSkillBtn822=R
 Button/Hotkey/HeroSkillBtn83=E
 Button/Hotkey/Portal=G
+UI/Hotkey/SelectionLock=F5

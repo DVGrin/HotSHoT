@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Button" name="SelectionLockButton" template="MyButtonTemplate/ButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-304"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="12"/>
+
+            <Frame type="Label" name="Label">
+                <Text val="Hero lock on/off [F5]"/>
+            </Frame>
+
+            <Tooltip val="Enable this to prevent other unit selection"/>
+
+            <Visible val="False"/>
+
+            <Shortcut val="@UI/Hotkey/SelectionLock"/>
+        </Frame>
+    </Frame>
+</Desc>
