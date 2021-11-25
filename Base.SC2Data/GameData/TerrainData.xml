@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTerrain id="Monlyth">
+        <Lighting value="Agria"/>
+        <Ambience value=""/>
+        <ReverbAmbient value=""/>
+        <FogEnabled value="0"/>
+        <FogDensity value="0.000000"/>
+        <FogFalloff value="0.000000"/>
+        <FogStartingHeight value="0.000000"/>
+    </CTerrain>
+</Catalog>

@@ -1,0 +1,1578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="Hero29Skill4Jang">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="LTCountUnitHero29S4QueuedOrBetterAtUnit10"/>
+    </CRequirement>
+    <CRequirement id="Hero72Skill2Use">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero72Skill2LearnCompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="Hero72Skill3Use">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero72Skill3LearnCompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="Hero72Skill4Use">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero72Skill4LearnCompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUpCompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse2">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUpCompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse3">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp2CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse32">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp2CompleteOnlyTechTreeCheat2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse33">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22222CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse333">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22223CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse3332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22223CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse42">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse432">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp222CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse433">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp2222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp2222CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse434">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp222232CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4342">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp222232CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse435">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp222233CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4352">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp222233CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4353">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp2222332CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43532">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp2222332CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse436">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22223322CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4362">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp22223322CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorSpellDong23InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero1Skill1coolInProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233322CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333223CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332232CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233322322CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437222222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333223222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332234CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233322342CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437222322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333223422CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372223222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332234222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero46Skill2impact2InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722232222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332234222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero46Skill2impact2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233311CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333112CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223331122CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437223222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233311222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372233">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233312CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333122CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437223322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223331222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372233222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233312222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero39Skill4sInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722332222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero39Skill4sInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372234">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333114CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722342">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223331142CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437223422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233311422CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372234222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333114222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437224">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333224CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372242">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332242CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233322422CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437224222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333224222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437225">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333225CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372252">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332252CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722522">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233322522CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437225222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333225222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437226">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333226CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372262">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333628CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336282CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437226222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362822CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero64Skill4Impact2InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372262222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362822CompleteOnly1"/>
+        <NodeArray index="Show" Link="GTECountBehaviorHero64Skill4Impact2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437227">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333227CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4372272">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223332272CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43722722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233322722CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437227222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333227223CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223333CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero2Skill1coolInProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorSpellDong234InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorSpellDong2344InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorSpellDong23442InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorSpellDong234422InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorSpellDong2344222InProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233352CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333522CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorSpellDong2343InProgressOrBetterAtUnit0EqCountBehaviorHero2Skill3coolInProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333522CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero2Skill3cool2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437322222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333554222CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero31Skill4coolInProgressOrBetterAtUnitTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335542CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355422CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437322322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333554222CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero31Skill4InProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732233">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335544CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero47Skill1Dong33InProgressOrBetterAtUnit0EqCountBehaviorHero1Skill1cool2InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437322332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355442CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373223322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333554422CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732233222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335544222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437322333">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq122267250CountUpgradeSpellUp22223335544CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero1Skill1cool2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437323">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437324">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233354CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373242">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333542CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373243">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333543CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732432">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333544CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373244">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333546CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732442">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335462CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437324422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233354622CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373244222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333546222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437325">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335233CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373252">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233352332CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732522">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333523322CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437325222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335233222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373253">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233352334CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero55Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732532">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233352334CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero55Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437325322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333523342CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero55Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373253222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335233422CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero55Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732533">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333523342CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero55Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437325332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335233422CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero55Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732534">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333523343CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437326">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333524CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373262">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335242CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233352422CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437326222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333524222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorSpellDong322222263InProgressOrBetterAtUnit0EqCountBehaviorHero20Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373272">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333552CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335522CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333555CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373272232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335552CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732722322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355522CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327223222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333555222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732723">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp22223335511CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233355113CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero71Skill132InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373272322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233355113CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero71Skill132InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327233">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333551133CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327234">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233355114CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373273">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333554CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorSpellDong3222222636InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero31Skill1coolInProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373274">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333556CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero40Skill1InProgressOrBetterAtUnit0EqCountBehaviorHero40Skill1CoolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373275">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333557CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero54Skill1InProgressOrBetterAtUnit0EqCountBehaviorHero54Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732752">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335572CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero54Skill2InProgressOrBetterAtUnit0EqCountBehaviorHero54Skill2coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373276">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333558CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero63Skill1BInProgressOrBetterAtUnit0EqCountBehaviorHero63Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732762">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335582CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355822CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero63Skill3InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373276222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355823CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373276223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq122267250CountUpgradeSpellUp222233355822CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero63Skill3impact2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373277">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233357CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero65Skill1BInProgressOrBetterAtUnit0EqCountBehaviorHero65Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732772">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333572CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335722CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373277222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233357222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373278">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333559CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero67Skill1InProgressOrBetterAtUnit0EqCountBehaviorHero67Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732782">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335592CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355922CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373278222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333559222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero67Skill4cool2InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732782222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq122267250CountUpgradeSpellUp2222333559222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero67Skill4cool2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373279">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335510CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero70Skill1InProgressOrBetterAtUnit0EqCountBehaviorHero70Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732792">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233355102CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero70Skill2cool2InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327922">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333551022CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373279222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333551023CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437327923">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355102CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero70Skill2cool2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437328">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233356CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373282">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333562CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335622CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437328222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233356222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437329">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333626CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero61Skill1CoolInProgressOrBetterAtUnit0EqCountBehaviorHero61Skill1InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373292">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero61Skill1CoolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373293">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336262CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732932">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362622CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43732933">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333626222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373310">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333610CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733102">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336102CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331022">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361022CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373310222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333610222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733103">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq3539303062CountBehaviorSpellDong32222226InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733104">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336105CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331042">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361052CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373310422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333610522CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733104222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336105222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733105">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333745CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331052">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337452CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373310522">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233374522CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733105222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333745222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733106">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333922425CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331062">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223339224252CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373310622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233392242522CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733106222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333922425222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373311">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333611CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733112">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336112CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331122">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361122CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero24Skill3coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373311222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333611222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373312">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333612CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733122">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336122CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373312222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333612222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733123">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336124CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero60Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336124CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero60Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331233">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361242CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero60Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373312332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361242CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero60Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331234">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361243CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero60Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373312342">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361243CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero60Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373313">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333613CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733132">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336132CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361322CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373313222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333613222CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero29Skill4InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero29Skill4exitInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733132222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq122267250CountUpgradeSpellUp2222333613222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero29Skill4exitInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373314">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333614CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733142">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336142CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361422CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero35Skill3InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero35Skill3coolInProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331423">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333614222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373315">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333615CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733152">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336152CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero36Skill2InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero36Skill2coolInProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733153">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361522CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331532">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333615222CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero36Skill42InProgressOrBetterAtUnit0EqCountBehaviorHero36Skill4coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373315322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333615222CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero36Skill42InProgressOrBetterAtUnit1EqCountBehaviorHero36Skill4coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373316">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333616CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733162">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336162CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336163CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373316222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233361632CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero41Skill4c3InProgressOrBetterAtUnit0EqCountBehaviorHero41Skill4c322InProgressOrBetterAtUnit0EqCountBehaviorHero41Skill4c32InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733162222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361632CompleteOnly1"/>
+        <NodeArray index="Show" Link="OrEqCountBehaviorHero41Skill4c3InProgressOrBetterAtUnit1EqCountBehaviorHero41Skill4c322InProgressOrBetterAtUnit1EqCountBehaviorHero41Skill4c32InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733163">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorSpellDong2425232392InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331632">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorSpellDong2425232392InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373317">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333617CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733172">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336172CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq122267250CountUpgradeSpellUp222233361722CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373317222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333617222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373318">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333618CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733182">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336182CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361822CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373318222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333618222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733183">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336184CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero50Skill1Impact3InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331832">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336184CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero50Skill1Impact3InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331833">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361842CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373318332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333618422CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733183322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336184222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373319">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333619CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733192">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336192CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331922">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361922CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero44Skill4222InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373319222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233361922CompleteOnly1"/>
+        <NodeArray index="Show" Link="GTECountBehaviorHero44Skill4222InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437331923">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333619222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233363CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373320">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333620CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733202">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336202CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332022">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362022CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373320222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333620222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373321">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333621CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733212">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336212CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333632CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336323CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223335562CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373322222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355622CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733222222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333556222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373323">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333634CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733232">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336343CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233363432CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373324">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333623CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733242">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336232CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362322CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373324222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333623222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373325">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333624CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733252">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336242CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332522">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362422CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373325222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333624222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373326">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333625CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733262">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336252CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362522CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373326222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333625222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373327">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333627CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733272">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336272CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362722CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373327222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333627222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373328">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333629CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733282">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336292CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437332822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362922CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373328222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333629222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437333">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233364CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333642CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336423CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437333222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp23CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437334">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333622CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero10Skill1FastInProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero10Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373342">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero10Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero2Skill3coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373342222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero20Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437334222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero2Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero31Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero40Skill1CoolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422224">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero54Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437334222242">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero54Skill2coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422225">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero63Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373342222422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero54Skill2cool2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437334222252">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero49Skill1Impact22InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422226">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero65Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422227">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero67Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422228">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero70Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373342223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero24Skill3coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373342224">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero35Skill3coolInProgressOrBetterAtUnitTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733422242">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero36Skill2coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437334222422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero36Skill4coolInProgressOrBetterAtUnit1EqCountBehaviorHero36Skill42InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733423">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero10Skill1cool2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373343">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336223CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733432">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333622333CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733433">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="GTE122267250CountBehaviorDobalInProgressOrBetterAtUnit1"/>
+        <NodeArray index="Show" Link="GTECountBehaviorDobalInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437334332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorDobalInProgressOrBetterAtUnit0EqCountBehaviorHero59Skill4ImInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373344">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362233CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero10Skill3InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero10Skill1cool2InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373345">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333622CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero10Skill1exitInProgressOrBetterAtUnitTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437335">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233365CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373352">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333652CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733522">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333654CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437335222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336542CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373353">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333655CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733532">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336552CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437335322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233365522CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373353222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333655222CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero52Skill422InProgressOrBetterAtUnit0EqCountBehaviorHero52Skill4coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733532222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333655222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero52Skill422InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733532223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333655222CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero52Skill4coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437336">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233366CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373362">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333664CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336642CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437336222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233366422CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437337">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233367CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437338">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233368CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373382">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333682CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336822CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437338222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233368222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437339">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233369CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373392">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333692CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero18Skill22InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733922">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero18Skill22InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373393">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336922CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43733932">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233369222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43734">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223338CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437342">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233382CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233383CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43734222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333832CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43734223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorSpellDong253InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437343">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223339224CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373432">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountBehaviorHero32Skill2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4373433">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233392242CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43734332">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333922423CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437343322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223339224232CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43742">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233372CompleteOnly1"/>
+        <NodeArray index="Show" Link="LTCountUnitHero9Skill2DummyCompleteOnly6"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43743">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333722CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437432">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43744">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233374CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437442">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333743CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337432CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43744222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337434CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437443">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333744CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374432">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337442CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43744322">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337444CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437443222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233374442CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437444">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336104CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero21Skill12InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero21Skill1InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero21Skill122InProgressOrBetterAtUnitTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374442">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336104CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero21Skill12InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero21Skill1InProgressOrBetterAtUnitTechTreeCheat1EqCountBehaviorHero21Skill122InProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43744422">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336104CompleteOnlyTechTreeCheat1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero21Skill12InProgressOrBetterAtUnitTechTreeCheat1EqCountBehaviorHero21Skill1InProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero21Skill122InProgressOrBetterAtUnitTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437444222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233361042CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374442222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333610422CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43744422222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223336104222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="Hero72Skill1Use">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero72Skill1LearnCompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43745">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233375CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437452">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333752CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374522">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337522CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43745222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233375222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43746">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233376CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero49Skill1Impact2InProgressOrBetterAtUnit0EqCountBehaviorHero49Skill1Impact22InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437462">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333762CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337622CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43746222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223337623CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437463">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233376CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero49Skill1Impact2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43747">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero73SkillLearnCompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437472">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero73SkillLearn3CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4374722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero73SkillLearn32CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero73Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43747222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero73SkillLearn4CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero73Skill4InProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437472222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero73SkillLearn4CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero73Skill42InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43747223">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeHero73SkillLearn32CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero73Skill4InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4375">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero1Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43752">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero51Skill1coolInProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4376">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223339CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43762">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233392CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437622">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333922CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4376222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223339222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4377">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233310CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43772">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333102CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437722">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223331022CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4377222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233310222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4378">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233313CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero51Skill1InProgressOrBetterAtUnit0EqCountBehaviorHero51Skill1coolInProgressOrBetterAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="SpellUse43782">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333132CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse437822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp22223331322CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse4378222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233313222CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse8">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp8CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse44">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp223CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse442">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Show" Link="EqCountUpgradeSpellUp223CompleteOnly2"/>
+    </CRequirement>
+    <CRequirement id="SpellUse82">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp82CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse822">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp822CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="SpellUse8222">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp8222CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+</Catalog>

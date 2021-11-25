@@ -1,0 +1,1829 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="AcidSpew">
+        <Range value="9"/>
+        <TargetFilters value="Heroic,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2"/>
+        <Effect value="HeroOkGi222222"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DisruptionBeam">
+        <Icon value="Assets\Textures\btn-building-protoss-darkshrine.dds"/>
+        <Range value="13.5"/>
+        <TargetFilters value="-;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Arc value="360"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero12Weapon2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero12AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero12AttackG22"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero73Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero73AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <Effect value="Hero73AttackG"/>
+        <RandomDelayMin value="-0.063"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero72Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero72AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="Hero72AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero71Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero71AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.5"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi2377"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero70Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero70AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.6"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero70AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero69Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero69AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.25"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero69AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero66Weapon2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero66AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="3.5"/>
+        <Range value="2.49"/>
+        <MinimumRange value="1"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero66AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero66Weapon22">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero66AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.99"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero66AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero67Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero67AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.35"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero67AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero66Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero66AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4.5"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero66AttackG"/>
+        <MinimumRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero65Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero65AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.45"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero65AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero63Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero63AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.6"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="Hero63AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero62Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero62AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4.5"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero62AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero61Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero61AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero61AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero60Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero60AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.9"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero60AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero60Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero60AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.2"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero60Skill2G"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero60Weapon3">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero60AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4.5"/>
+        <Marker Link="Weapon/Hero60Skill4">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero60Skill4Mo"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero60Weapon32">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero60AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Marker Link="Weapon/Hero60Skill4b">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero60Skill4Mo2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero61Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero61AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.3"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero61Skill1Mo3"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero61Weapon3">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero61AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero61AttackG2"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero63Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero63AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.2"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="Hero63Skill1G"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero65Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero65AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.9"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero65AttackG2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero65Weapon3">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero65Skill3D"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero65Skill3G"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero67Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero67AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero67Skill1G"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero70Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero70AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="1.2"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero70Skill1G"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero71Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero71AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="1"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi23774"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero71Weapon3">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero71AttackD2"/>
+        <TargetFilters value="Heroic,Visible;Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2.5"/>
+        <Range value="0.75"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero71AttackD2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PhotonCannon">
+        <TargetFilters value="-;Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <Range value="9"/>
+        <Period value="2"/>
+        <Effect value="GuardTowerGi"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TestHeroWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero12AttackD"/>
+        <TargetFilters value="-;Missile,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="0"/>
+        <Range value="2.5"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero12AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero15Weapon2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero15AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero15AttackMissile2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero20Weapon3">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero20AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi237"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero31Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero31AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.2"/>
+        <Effect value="HeroOkGi2376"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero36Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero36AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.8"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1"/>
+        <Effect value="Hero36AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero32Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero32AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.9"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="Hero32AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero19Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero19AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="HeroOkGi2363"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero20Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero20Skill3D2"/>
+        <TargetFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.05"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi2372"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero31Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero31AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.2"/>
+        <Effect value="HeroOkGi2376"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero29Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero29AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.85"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1"/>
+        <Effect value="HeroOkGi2375"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero28Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero28AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.5"/>
+        <Effect value="Hero28AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero27Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero27AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.6"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi2374"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero24Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero24AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.65"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi2373"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero25Skill3">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\AddIcon\btn-hero25-skill3.dds"/>
+        <DisplayEffect value="Hero25AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero25Skill3Mo"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero29WeaponS1">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero29Skill1sD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.15"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1"/>
+        <Effect value="HeroOkGi23752"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero29WeaponS3">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero29Skill3sD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.2"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.3"/>
+        <Effect value="HeroOkGi237522"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero29Weapons4d">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero29Skill4D"/>
+        <DisplayAttackCount value="10"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="HeroOkGi237532"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero35Weapon2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero35AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero35AttackMo3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero35Weapon22">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero35AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero35AttackMo3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero36Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero36AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.5"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1"/>
+        <Effect value="Hero36Skill2G"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero38Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero38AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.55"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero38AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero38Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero38AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="5000"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero38Skill4G"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero39Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero39AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.95"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0"/>
+        <Effect value="Hero39AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero40Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero40AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.6"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero40AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero40Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero40AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.2"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero40AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero41Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero41AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.25"/>
+        <Effect value="Hero41AttackMo"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero42Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="Hero42AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4.5"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero42AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero43Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero43AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.75"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.25"/>
+        <Effect value="Hero43AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero45Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero45AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.55"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero45AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero46Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero46AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.55"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero46AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero46Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero46AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.65"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero46Skill1G"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero49Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero49AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.35"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero49AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero50Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero50AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="Hero50AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero53Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero53AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.4"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero53AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero54Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero54AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero54AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero54Weapon2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero54AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.4"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="Hero54Skill1G"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero55Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero55AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero55AttackMissile"/>
+        <Range value="4.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero56Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero56AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.75"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero56AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero57Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero57AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.35"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.25"/>
+        <Effect value="Hero57PassiveMo"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero58Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero58AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero58AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero59Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero59AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.4"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero59AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero6Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero6AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.4"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="HeroOkGi2342"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero15Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero15AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero15AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero16Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero16AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.4"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="HeroOkGi23426"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero18Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero18AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.5"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="HeroOkGi23427"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero26Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero26AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4.5"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero26AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero8Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero8AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.7"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="HeroOkGi23425"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero11Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="Hero11AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="HeroOkGi236"/>
+        <Range value="4.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ImpalerTentacle">
+        <TargetFilters value="Heroic,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2"/>
+        <Range value="8"/>
+    </CWeaponLegacy>
+    <CWeaponStrafe id="Hero29Weapons4">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero29Skill4D"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <Range value="0.75"/>
+        <Arc value="19.6875"/>
+        <Marker Link="Weapon/InterceptorBeam"/>
+        <Cost>
+            <Cooldown Link="Weapon/InterceptorBeam"/>
+        </Cost>
+        <Period value="2.15"/>
+        <LoiterRadius value="3"/>
+        <Effect value="HeroOkGi23753"/>
+    </CWeaponStrafe>
+    <CWeaponLegacy id="InunitWeapon">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.75"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="3"/>
+        <Effect value="InunitD"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon2">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD2"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.4"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="3"/>
+        <Effect value="InunitD2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon3">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD3"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.2"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="InunitD3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon32">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD4"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.75"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="InunitD4"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon322">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD5"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="InunitD5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon3222">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD6"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.4"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="InunitD6"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon32222">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD8"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.3"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="InunitD8"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InunitWeapon4">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="InunitD7"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="2"/>
+        <Marker Link="Weapon/Claws"/>
+        <Cost>
+            <Cooldown Link="Weapon/Claws"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="InunitD7"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="KaiserBlades">
+        <Options index="Melee" value="0"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByDistance"/>
+        <Period value="2.15"/>
+        <Effect value="HeroOkGi233"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NeedleSpines">
+        <Range value="9"/>
+        <Period value="5"/>
+        <Effect value="Hero14Skill1G23"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PhaseDisruptors">
+        <Range value="2.5"/>
+        <Period value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PsiDischarge">
+        <Period value="2"/>
+        <Range value="5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PsiDischarge2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="PsiDischargeDamage2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Marker Link="Weapon/PsiDischarge"/>
+        <Cost>
+            <Cooldown Link="Weapon/PsiDischarge"/>
+        </Cost>
+        <Period value="1.5"/>
+        <Effect value="PsiDischargeLaunchMissile2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PsionicShockwave">
+        <DisplayEffect value="Hero4Attack"/>
+        <Range value="5"/>
+        <Period value="2.15"/>
+        <Effect value="Hero4Missile"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Tosh">
+        <Period value="2.15"/>
+        <Effect value="Hero1AttackG"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero44Weapon" parent="Tosh">
+        <Name value="Weapon/Name/Hero44Weapon"/>
+        <Tip value="Weapon/Tip/Hero44Weapon"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero44AttackD"/>
+        <Effect value="Hero44AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero44Weapon2" parent="Tosh">
+        <Name value="Weapon/Name/Hero44Weapon2"/>
+        <Tip value="Weapon/Tip/Hero44Weapon2"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero44Skill2D"/>
+        <TargetFilters value="-;Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="9"/>
+        <Range value="0.25"/>
+        <Effect value="Hero44Skill2G"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero47Weapon" parent="Tosh">
+        <Name value="Weapon/Name/Hero47Weapon"/>
+        <Tip value="Weapon/Tip/Hero47Weapon"/>
+        <DisplayEffect value="Hero47AttackD"/>
+        <Effect value="Hero47AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero47Weapon2" parent="Tosh">
+        <Name value="Weapon/Name/Hero47Weapon2"/>
+        <Tip value="Weapon/Tip/Hero47Weapon2"/>
+        <DisplayEffect value="Hero47AttackD"/>
+        <Effect value="Hero47Skill1Missile"/>
+        <Range value="6"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero47Weapon22" parent="Tosh">
+        <Name value="Weapon/Name/Hero47Weapon22"/>
+        <Tip value="Weapon/Tip/Hero47Weapon22"/>
+        <DisplayEffect value="Hero47Skill4D"/>
+        <Effect value="Hero47Skill4Missile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero48Weapon" parent="Tosh">
+        <Name value="Weapon/Name/Hero48Weapon"/>
+        <Tip value="Weapon/Tip/Hero48Weapon"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero48AttackD"/>
+        <Effect value="Hero48AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero51Weapon" parent="Tosh">
+        <Name value="Weapon/Name/Hero51Weapon"/>
+        <Tip value="Weapon/Tip/Hero51Weapon"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero51AttackD"/>
+        <Effect value="Hero51AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero51Weapon2" parent="Tosh">
+        <Name value="Weapon/Name/Hero51Weapon2"/>
+        <Tip value="Weapon/Tip/Hero51Weapon2"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero51AttackD"/>
+        <Effect value="Hero51Skill1Missile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero52Weapon" parent="Tosh">
+        <Name value="Weapon/Name/Hero52Weapon"/>
+        <Tip value="Weapon/Tip/Hero52Weapon"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero52AttackD"/>
+        <Range value="4.5"/>
+        <Backswing value="0.1"/>
+        <Effect value="Hero52AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero7Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero7AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero7AttackMissile"/>
+        <Range value="4.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero9Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero9AttackD2"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6.5"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero9AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero12Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero12AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero12AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero13Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero13AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero13AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero17Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero17AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero17AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero21Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero21AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero21AttackG"/>
+        <Range value="5.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero22Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero22AttackD2"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero22AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero25Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero25AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero25AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero29Weapons2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero29Skill2sD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero29Skill2Missile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero30Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero30AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero30AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero33Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero33AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.25"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero33AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Tosh2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="ToshU"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero1AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero34Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="Hero34AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero34AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero35Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero35AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero35AttackMo3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero37Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero37AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero37AttackMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero64Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero64AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero64AttackG"/>
+        <Range value="5.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero68Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero68AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker Link="Weapon/Tosh"/>
+        <Cost>
+            <Cooldown Link="Weapon/Tosh"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.083"/>
+        <Backswing value="0.867"/>
+        <RandomDelayMin value="-0.063"/>
+        <Effect value="Hero68AttackG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WarpBlades2">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.125"/>
+        <Marker Link="Weapon/WarpBlades"/>
+        <Cost>
+            <Cooldown Link="Weapon/WarpBlades"/>
+        </Cost>
+        <Period value="2"/>
+        <DamagePoint value="0.361"/>
+        <Backswing value="1.333"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Zeratul">
+        <Options index="Melee" value="0"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.55"/>
+        <Effect value="HeroOkGi23"/>
+        <Period value="2.15"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero5Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero5AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.5"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.2"/>
+        <Effect value="HeroOkGi234"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero10Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero10AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.75"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi235"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero14Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="Hero14AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.55"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero14AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero20Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero20AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.5"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi237"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero23Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Hero23AttackD"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.55"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="Hero23AttackG"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Hero2Skill1Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Zeratul"/>
+        <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1.1"/>
+        <Marker Link="Weapon/Zeratul"/>
+        <Cost>
+            <Cooldown Link="Weapon/Zeratul"/>
+        </Cost>
+        <Period value="2.15"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="1.333"/>
+        <Effect value="HeroOkGi23"/>
+        <MinScanRange value="2.5"/>
+    </CWeaponLegacy>
+</Catalog>

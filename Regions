@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+    <region id="1">
+        <name value="미사일 나감 구역"/>
+        <shape type="rect">
+            <quad value="0.0202,148.9941,207.9758,159.9057"/>
+        </shape>
+        <shape type="rect">
+            <quad value="0,0,5.5852,159.9633"/>
+        </shape>
+        <shape type="rect">
+            <quad value="0.0502,0,208,10.6484"/>
+        </shape>
+        <shape type="rect">
+            <quad value="202.3005,0.1345,208,159.9953"/>
+        </shape>
+    </region>
+</Regions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTurret id="Hero30Skill4P" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawIdleRate value="109.8632"/>
+    </CTurret>
+    <CTurret id="SiegeTank">
+        <Fidget DelayMax="0" DelayMin="0" TurnAngle="0">
+            <ChanceArray index="Anim" value="0"/>
+            <ChanceArray index="Idle" value="100"/>
+            <ChanceArray index="Turn" value="0"/>
+        </Fidget>
+    </CTurret>
+</Catalog>

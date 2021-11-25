@@ -1,0 +1,4277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking2">
+        <AbilLink value="move"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking22">
+        <AbilLink value="move"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking222">
+        <AbilLink value="stop"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking2222">
+        <AbilLink value="stop"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking2223">
+        <AbilLink value="MaxAttackStop"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking22232">
+        <AbilLink value="Portal"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking222322">
+        <AbilLink value="Hero21Skill3"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking223">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="move"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking23">
+        <AbilLink value="attack"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking232">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="attack"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking233">
+        <AbilLink value="attack"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking25">
+        <AbilLink value="move"/>
+        <AbilCmdIndex value="2"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin52">
+        <Behavior value="Hero42Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero52Skill4Gyul2">
+        <WhichLocation Effect="Hero52Skill4G3"/>
+        <Compare value="GE"/>
+        <Range value="12"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationEnumArea id="EnemiesNearby22">
+        <AreaArray Compare="GE" Count="1" Radius="8"/>
+        <SearchFilters value="Heroic,Visible;Self,Neutral,Enemy,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby2222">
+        <AreaArray Count="1" Radius="1.2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby22222">
+        <AreaArray Count="1" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby222222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <AreaArray Compare="GE" Count="1" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby22223">
+        <AreaArray Count="1" Radius="2.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby222232">
+        <AreaArray Compare="GT" Count="1" Radius="2.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby22224">
+        <AreaArray Compare="GT" Count="1" Radius="1.2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby22225">
+        <AreaArray Count="0" Radius="6"/>
+        <SearchFilters value="Heroic;Self,Neutral,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby2223">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <AreaArray Count="1" Radius="5"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby22232">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <AreaArray Count="2" Radius="5"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby222322">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <AreaArray Count="3" Radius="5"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby2223222">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <AreaArray Count="4" Radius="5"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby22232222">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <AreaArray Compare="GE" Count="5" Radius="5"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby23">
+        <AreaArray Compare="GT" Count="0" Radius="12"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby232">
+        <AreaArray Compare="LE" Count="3" Radius="15"/>
+        <SearchFilters value="Light;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby233">
+        <AreaArray Count="0" Radius="50"/>
+        <LaunchLocation Value="TargetUnit"/>
+        <SearchFilters value="Heroic;Ally,Neutral,Enemy,Missile,Dead,Hidden,Invulnerable"/>
+        <CombinedVitalUnit Value="Target"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby234">
+        <AreaArray Compare="GE" Count="1" Radius="5"/>
+        <SearchFilters value="Heroic;Self,Player,Neutral,Enemy,Missile,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby3222">
+        <AreaArray Count="5" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby32222">
+        <AreaArray Compare="GE" Count="5" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitFilters id="EnemyTarget23">
+        <Filters value="-;Missile,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorLocationCompareRange id="HealTargetInRange2">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="3"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange22">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="3"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="6"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange2222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="6"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange22222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="15"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange2222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="25"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange22222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="25"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange22222223">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="35"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange222222232">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="35"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange222222233">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="45"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange2222222332">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="45"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange2222223">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="15"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange2222242">
+        <ResultFailed value="Error,HeroLongSkillError"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GT"/>
+        <Range value="3"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero36Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero36Skill4cool"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero36Skill4cool"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero41Mana25Up">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Value value="15"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero32Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero32Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero32Skill422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero41Skill4InTotal22">
+        <CombineArray value="Hero41Skill4InTotal"/>
+        <CombineArray value="Hero41Skill4InTotal222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero41Skill4InTotal222">
+        <Type value="And"/>
+        <CombineArray value="Hero41Skill4InTotal2"/>
+        <CombineArray value="HealTargetInRange2222242"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In2222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero44Skill42222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In22222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero44Skill42222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill1Dongin">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill1Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill1Dongin2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill1Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill1Dongin22">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill1Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero52PassiveDongIn22">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero52Skill422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill3DongIn3">
+        <Behavior value="Hero63Passive23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill3DongIn32">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero63Passive23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill3DongIn33">
+        <Behavior value="Hero63Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero73PassiveDongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero73Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="3"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong23">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="3"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong232">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="2"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong233">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="4"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72Skill1Dong">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero72Skill1Dong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero71Nomana">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="100"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero70PassiveIn">
+        <Behavior value="Hero70PassiveImpact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero68Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero68Skill4In">
+        <CombineArray value="Hero68Skill4In2"/>
+        <CombineArray value="Hero68Skill4In22"/>
+        <CombineArray value="Hero68Skill4In222"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill2In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero68Skill22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero65Skill4in">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="2.25"/>
+        <Value Effect="Hero65Skill4G2" Value="TargetPoint"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero65Skill4in2">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="2.25"/>
+        <Value Effect="Hero65Skill4G2" Value="TargetPoint"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="Hero67Skill4In3">
+        <CombineArray value="Hero67Skill4In"/>
+        <CombineArray value="Hero67Skill4In2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero67Skill1DongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero67Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero67PassiveIn">
+        <CombineArray value="NotHeroic2"/>
+        <CombineArray value="NotStructure2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero57Skill1In2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Behavior value="Hero57Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero57Skill1In22">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Behavior value="Hero57Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero57Skill1In3">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero57Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero66Skill4In2">
+        <Type value="And"/>
+        <CombineArray value="PickupCheck2222223"/>
+        <CombineArray value="PickupCheck22222"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="Hero66Skill4In">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="2.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In">
+        <Behavior value="Hero65Skill1B232"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero64Skill3DongIn2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero64Skill3Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero64Skill3InGyul">
+        <CombineArray value="Hero64Skill3DongIn"/>
+        <CombineArray value="Hero64Skill3DongIn2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero64Skill3DongIn">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero64Skill3Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero64Skill1In">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="3"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange222223">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HealTargetInRange222224">
+        <ResultFailed value="Error,HeroLongSkillError"/>
+        <Compare value="GT"/>
+        <Range value="3"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong322222243"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn22">
+        <Value value="1"/>
+        <Behavior value="SpellDong322222244222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn222">
+        <Value value="2"/>
+        <Behavior value="SpellDong322222244222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn2222">
+        <Value value="3"/>
+        <Behavior value="SpellDong322222244222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn22222">
+        <Value value="4"/>
+        <Behavior value="SpellDong322222244222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn222222">
+        <Value value="5"/>
+        <Behavior value="SpellDong322222244222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Passivein">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong23222222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero21AttackIn">
+        <CombineArray value="Hero21Skill1Choong2"/>
+        <CombineArray value="Hero21Mana92"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareVital id="Hero21Mana92">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="8"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorCombine id="Hero21Skill1Choong2">
+        <Type value="And"/>
+        <CombineArray value="Hero21SkillIn3"/>
+        <CombineArray value="Hero21SkillIn23"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero21SkillIn23">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero21Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero21SkillIn3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero21Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero31DongIn23">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero37Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero64Skill1In2">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="4.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In22">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="6"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="7.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In2222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In22222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="10.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="12"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In2222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="13.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In22222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="14.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In222222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GE"/>
+        <Range value="15.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In2222222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="15.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In3">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="4.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In32">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="6"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In322">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="7.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In3222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In32222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="10.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In322222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="12"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In3222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="13.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="Hero64Skill1In32222222">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="14.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="Hero64Skill4DongIn">
+        <Behavior value="Hero64Skill4Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero64Skill4DongIn2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero64Skill4Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero64PassiveDongIn">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero64Passive22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In2">
+        <Behavior value="Hero65Skill1B2322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In22">
+        <Behavior value="Hero65Skill1B23222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In222">
+        <Behavior value="Hero65Skill1B232222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero65Skill1B22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In32">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero65Skill1B222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In322">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero65Skill1B2222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero65Skill1In3222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero65Skill1B22222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero66Skill1In2">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="GT"/>
+        <Value value="2000"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero66Skill1In22">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Value value="2000"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero66Skill4In3">
+        <Behavior value="Hero66Skill4"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero67Skill2DongIn">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero67Skill22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero67Skill2DongIn2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero67Skill222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero67Skill2DongIn22">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero67Skill2222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero67Skill2DongIn222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero67Skill22222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="Hero67Skill4In2">
+        <Value value="Hero67Skill4Dummy2"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill2In2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero68Skill22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill2In22">
+        <Behavior value="Hero68Skill4impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill2In222">
+        <Behavior value="Hero68Skill4impact22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero68Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero68Skill4In222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero68Skill422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero69Skill2In">
+        <Behavior value="Hero69Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero69Skill4In">
+        <Behavior value="Hero69Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero70Skill2In2">
+        <Behavior value="Hero70Skill43"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero70Skill3In">
+        <Behavior value="Hero70Skill3impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero70Skill2In">
+        <Behavior value="Hero70Skill2cool2"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero70Skill4In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero70Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero70Skill4In2">
+        <Behavior value="Hero70Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72Skill1Dong2">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="Hero72Skill1Dong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72Skill1Dong22">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="Hero72Skill1Dong4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72Skill1Dong3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero72Skill1Dong4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72PassiveDong">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero72PassiveDong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero72Skill1Dong4">
+        <Behavior value="Hero72Skil1Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero73Skill1Dong">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero73Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero73Skill4Dong">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero73Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero73Skill4Dong2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero73Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero73Skill3Dong">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero73Skill122"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit322">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="HeroLevelup22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423222">
+        <Value value="1"/>
+        <Behavior value="HeroGainHP"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4232222">
+        <Value value="2"/>
+        <Behavior value="HeroGainHP"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42322222">
+        <Value value="3"/>
+        <Behavior value="HeroGainHP"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4232223">
+        <Value value="1"/>
+        <Behavior value="HeroGainHP2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42322232">
+        <Value value="2"/>
+        <Behavior value="HeroGainHP2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423222322">
+        <Value value="3"/>
+        <Behavior value="HeroGainHP2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42322233">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="HeroGainHP3233"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423222332">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="HeroGainHP323"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4234222">
+        <Behavior value="SpellDong24243"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroHellFirein23">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="HeroMinusHp4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn224">
+        <Behavior value="SpellDong2347"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="LifeGEHalf2223">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.15"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22232">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.125"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222322">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2223222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.075"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorCombine id="PickupCheck22222222222">
+        <CombineArray value="ThisUnit2222222223112"/>
+        <CombineArray value="Hero72"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="GuardTowerAttackYu">
+        <Type value="And"/>
+        <CombineArray value="Hero32Skill2Dongin52"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck22222252">
+        <Type value="And"/>
+        <CombineArray value="ThisUnit22222222231123"/>
+        <CombineArray value="ThisUnit222222222311232"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Tentacleyohyo1">
+        <CombineArray value="ThisUnit"/>
+        <CombineArray value="ThisUnit2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn">
+        <Compare value="LT"/>
+        <Value value="8"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22">
+        <Compare value="GE"/>
+        <Value value="12"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222">
+        <Compare value="GE"/>
+        <Value value="16"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222">
+        <Compare value="GE"/>
+        <Value value="20"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222">
+        <Compare value="GE"/>
+        <Value value="24"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222">
+        <Compare value="GE"/>
+        <Value value="28"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222">
+        <Compare value="GE"/>
+        <Value value="32"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222">
+        <Compare value="GE"/>
+        <Value value="36"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222">
+        <Compare value="GE"/>
+        <Value value="40"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222">
+        <Compare value="GE"/>
+        <Value value="44"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222222">
+        <Compare value="GE"/>
+        <Value value="48"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222222">
+        <Compare value="GE"/>
+        <Value value="52"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222222">
+        <Compare value="GE"/>
+        <Value value="56"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222222222">
+        <Compare value="GE"/>
+        <Value value="60"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222222222">
+        <Compare value="GE"/>
+        <Value value="64"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222222222">
+        <Compare value="GE"/>
+        <Value value="68"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222222222222">
+        <Compare value="GE"/>
+        <Value value="72"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222222222222">
+        <Compare value="GE"/>
+        <Value value="76"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222222222222">
+        <Compare value="GE"/>
+        <Value value="80"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222222222222222">
+        <Compare value="LT"/>
+        <Value value="80"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222222222223">
+        <Compare value="LT"/>
+        <Value value="76"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222222222223">
+        <Compare value="LT"/>
+        <Value value="72"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222222222223">
+        <Compare value="LT"/>
+        <Value value="68"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222222223">
+        <Compare value="LT"/>
+        <Value value="64"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222222223">
+        <Compare value="LT"/>
+        <Value value="60"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222222223">
+        <Compare value="LT"/>
+        <Value value="56"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222222223">
+        <Compare value="LT"/>
+        <Value value="52"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222222223">
+        <Compare value="LT"/>
+        <Value value="48"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222222223">
+        <Compare value="LT"/>
+        <Value value="44"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222222223">
+        <Compare value="LT"/>
+        <Value value="40"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222222223">
+        <Compare value="LT"/>
+        <Value value="36"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22222223">
+        <Compare value="LT"/>
+        <Value value="32"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2222223">
+        <Compare value="LT"/>
+        <Value value="28"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn222223">
+        <Compare value="LT"/>
+        <Value value="24"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn22223">
+        <Compare value="LT"/>
+        <Value value="20"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn2223">
+        <Compare value="LT"/>
+        <Value value="16"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn223">
+        <Compare value="LT"/>
+        <Value value="12"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn3">
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4">
+        <Compare value="LT"/>
+        <Value value="8"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42">
+        <Compare value="GE"/>
+        <Value value="8"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422">
+        <Compare value="GE"/>
+        <Value value="12"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222">
+        <Compare value="GE"/>
+        <Value value="16"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222">
+        <Compare value="GE"/>
+        <Value value="20"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222">
+        <Compare value="GE"/>
+        <Value value="24"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222">
+        <Compare value="GE"/>
+        <Value value="28"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222">
+        <Compare value="GE"/>
+        <Value value="32"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222">
+        <Compare value="GE"/>
+        <Value value="36"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222">
+        <Compare value="GE"/>
+        <Value value="40"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222">
+        <Compare value="GE"/>
+        <Value value="44"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222222">
+        <Compare value="GE"/>
+        <Value value="48"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222222">
+        <Compare value="GE"/>
+        <Value value="52"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222222">
+        <Compare value="GE"/>
+        <Value value="56"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222222222">
+        <Compare value="GE"/>
+        <Value value="60"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222222222">
+        <Compare value="GE"/>
+        <Value value="64"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222222222">
+        <Compare value="GE"/>
+        <Value value="68"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222222222222">
+        <Compare value="GE"/>
+        <Value value="72"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222222222222">
+        <Compare value="GE"/>
+        <Value value="76"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222222222222">
+        <Compare value="GE"/>
+        <Value value="80"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222222222222222">
+        <Compare value="LT"/>
+        <Value value="80"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222222222223">
+        <Compare value="LT"/>
+        <Value value="76"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222222222223">
+        <Compare value="LT"/>
+        <Value value="72"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222222222223">
+        <Compare value="LT"/>
+        <Value value="68"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222222223">
+        <Compare value="LT"/>
+        <Value value="64"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222222223">
+        <Compare value="LT"/>
+        <Value value="60"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222222223">
+        <Compare value="LT"/>
+        <Value value="56"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222222223">
+        <Compare value="LT"/>
+        <Value value="52"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222222223">
+        <Compare value="LT"/>
+        <Value value="48"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222222223">
+        <Compare value="LT"/>
+        <Value value="44"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222222223">
+        <Compare value="LT"/>
+        <Value value="40"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222222223">
+        <Compare value="LT"/>
+        <Value value="36"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422222223">
+        <Compare value="LT"/>
+        <Value value="32"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42222223">
+        <Compare value="LT"/>
+        <Value value="28"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4222223">
+        <Compare value="LT"/>
+        <Value value="24"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn422223">
+        <Compare value="LT"/>
+        <Value value="20"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn42223">
+        <Compare value="LT"/>
+        <Value value="16"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn4223">
+        <Compare value="LT"/>
+        <Value value="12"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn43">
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="Amor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroArmorIn5">
+        <Compare value="GE"/>
+        <Value value="8"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="HeroDie232">
+        <WhichUnit Value="Caster"/>
+        <Filters value="-;Cloaked"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn223">
+        <Behavior value="Hero71Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2232">
+        <Behavior value="Hero71Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn22322">
+        <Behavior value="Hero71Skill122"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn223222">
+        <Behavior value="Hero71Skill1222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2232222">
+        <Behavior value="Hero71Skill12222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2233">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero71Skill132"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero71Skill2in">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="3"/>
+        <Behavior value="Hero71Skill13"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn22332">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero71Skill132"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn223322">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero71Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2233222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero71Skill32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn22332222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero71Skill322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn223322222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero71Skill3222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2233222222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero71Skill32222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn29">
+        <Behavior value="SpellDong323"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn322223">
+        <Behavior value="Hero22Skill3impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Monstersysin">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Notauto"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero62Nomana">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="25"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero62PassiveDongin">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="3"/>
+        <Behavior value="Hero62Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin3">
+        <Behavior value="Hero32Skill4Start"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin32">
+        <Behavior value="Hero53Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin4">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero32Skill2Target"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin5">
+        <Behavior value="Hero42Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero61Skill1In222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero61Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="Hero61Skill2In">
+        <AreaArray Count="1" Radius="3.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="Hero61Skill1In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="Hero61Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36PassiveIn2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero36Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill1In">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero36Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero33Skill1Rangein2">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GT"/>
+        <Range value="2.65"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero35Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero35Skill23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero35Skill32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero35Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In2222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero35Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In223">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="Hero35Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill1In23">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero35Skill23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero35Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero35Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36PassiveIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero36Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill1In2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero36Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill2In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero36Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero36Skill2In2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero36Skill3Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero38Skill4In">
+        <ResultNoUnit value="CantTargetInvulnerableUnits"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero38Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero38Skill4In2">
+        <Behavior value="Hero38Skill4g"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero38Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero38Skill4g"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero39Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn2">
+        <Behavior value="Hero39Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn22">
+        <Behavior value="Hero39Skill1impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero39Skill4s"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn2222">
+        <ResultFailed value="Error,Hero39Skill4Error2"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero39Skill4impact22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn2223">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero39Skill4impact222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn23">
+        <Behavior value="Hero39Skill4impact222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero39PassiveIn3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero39PassiveCool"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero41Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero41Skill4c3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero41Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero41Skill4c3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero41Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero41Skill4c322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero41Skill4In222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero41Skill4c32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero41Skill4In3">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero41Skill4c322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero41Skill4In32">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero41Skill4c32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero41Skill4InTotal">
+        <Type value="And"/>
+        <CombineArray value="Hero41Skill4In2"/>
+        <CombineArray value="Hero41Skill4In22"/>
+        <CombineArray value="Hero41Skill4In222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero41Skill4InTotal2">
+        <CombineArray value="Hero41Skill4In"/>
+        <CombineArray value="Hero41Skill4In3"/>
+        <CombineArray value="Hero41Skill4In32"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero43Skill2In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero43Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero43Skill2In2">
+        <Behavior value="Hero43Skill2in"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero43Skill2In3">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero43Skill23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero38Skill4InGyul2">
+        <Type value="And"/>
+        <CombineArray value="PickupCheck22222"/>
+        <CombineArray value="HeroDie"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero60Skill1In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero60Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero43Skill2total">
+        <CombineArray value="Hero43Skill2In3"/>
+        <CombineArray value="Hero43Skill2In"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero43Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero43Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero43Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero43Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero43Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero43Skill422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero43Skill4total">
+        <CombineArray value="Hero43Skill4In"/>
+        <CombineArray value="Hero43Skill4In2"/>
+        <CombineArray value="Hero43Skill4In22"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareVital id="Hero44Passivein">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.9"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein2">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.8"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein22">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.7"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.6"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein2222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein22222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.4"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein222222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.3"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein2222222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.2"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero44Passivein22222222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.1"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero44Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero44Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero44Skill422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero44Skill4222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In23">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero44Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In232">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero44Skill422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In2322">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero44Skill4222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero44Skill4In3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero44Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero45PassiveIn">
+        <Behavior value="Hero45Passivein"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="Hero45Skill2Do">
+        <WhichLocation Effect="Hero45Skill2G"/>
+        <AreaArray Count="0" Radius="0.25"/>
+        <SearchFilters value="Self,Heroic;Ally,Neutral,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="Hero45Skill2In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero45Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero47Skill2In">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero47Skill2Dong"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero47Skill2In2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="Hero47Skill2Dong2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero47Skill4In">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero47Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero47Skill4In2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero47Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero48Passivein">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero48Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero48Skill4In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero48Skill4Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero48Skill4In2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero48Skill4Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero48Skill4mo">
+        <CombineArray value="Hero48Skill4In2"/>
+        <CombineArray value="Hero48Skill4In"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill2Dongin">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill2Dongin2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill2Dongin22">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill2Dongin222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill2222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero49Skill2Dongin2222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero49Skill22222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero49Skill2InGyul">
+        <CombineArray value="Hero49Skill2Dongin"/>
+        <CombineArray value="Hero49Skill2Dongin2"/>
+        <CombineArray value="Hero49Skill2Dongin22"/>
+        <CombineArray value="Hero49Skill2Dongin222"/>
+        <CombineArray value="Hero49Skill2Dongin2222"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero50PassiveIn">
+        <Behavior value="Hero50PassiveImpact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero50Skill1In">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero50Skill1Impact3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero51PassiveIn">
+        <Behavior value="Hero51Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero51Skill4Gyul">
+        <Type value="And"/>
+        <CombineArray value="Hero51Skill4din2"/>
+        <CombineArray value="Hero51Skill4din22"/>
+        <CombineArray value="Hero51Skill4din222"/>
+        <CombineArray value="Hero51Skill4din2222"/>
+    </CValidatorCombine>
+    <CValidatorLocationEnumArea id="Hero51Skill4In">
+        <AreaArray Count="1" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero51Skill4In2">
+        <AreaArray Count="2" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero51Skill4In22">
+        <AreaArray Count="3" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero51Skill4In222">
+        <AreaArray Count="4" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero51Skill4In2222">
+        <AreaArray Compare="GE" Count="5" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="Hero51Skill4din">
+        <Behavior value="Hero51Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero51Skill4din2">
+        <Behavior value="Hero51Skill4Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero51Skill4din22">
+        <Behavior value="Hero51Skill4Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero51Skill4din222">
+        <Behavior value="Hero51Skill4Impact22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero51Skill4din2222">
+        <Behavior value="Hero51Skill4Impact222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero52Nomana">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="30"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero60Nomana">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero52PassiveDongIn">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero52Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero52PassiveDongIn2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Behavior value="Hero52Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero52Skill4Gyul">
+        <CombineArray value="Hero52Skill4Gyul2"/>
+        <CombineArray value="Hero52Nomana"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="Hero52Skill4Remove">
+        <Value value="Hero52Skill4Dummy"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="30"/>
+        <Behavior value="Hero54Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="30"/>
+        <Behavior value="Hero54Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="35"/>
+        <Behavior value="Hero54Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="40"/>
+        <Behavior value="Hero54Passive22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn3">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="35"/>
+        <Behavior value="Hero54Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn32">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="40"/>
+        <Behavior value="Hero54Passive22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero54PassiveDongIn322">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="45"/>
+        <Behavior value="Hero54Passive222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero56Skill1Rangein">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GT"/>
+        <Range value="3.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="Hero56Skill3In">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero56Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero56Skill3In2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero56Skill32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero56Skill3In3">
+        <CombineArray value="Hero56Skill3In"/>
+        <CombineArray value="Hero56Skill3In2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero57PassiveIn2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero57Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero57PassiveIn22">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero57Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero57Skill1In">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero57Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero58Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In2">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In22">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero58Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In23">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In232">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="3"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In2322">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In23222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="5"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In232222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="6"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In2322222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="7"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In23222222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="8"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In232222222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="9"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero58Skill2In2322222222">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <Compare value="GE"/>
+        <Value value="10"/>
+        <Behavior value="Hero58Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero59Skill4In">
+        <Behavior value="Hero59Skill4Im"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero59Skill4In2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero59Skill4Im"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero60Skill1In2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero60Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero60Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero60Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero60Skill4In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero60Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero60Skill3In">
+        <Behavior value="Hero60Skill3impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero61Skill1In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="2"/>
+        <Behavior value="Hero61Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero61PassiveIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero61Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero61Skill1In22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero61Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="Hero61Skill2In2">
+        <AreaArray Count="2" Radius="3.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero61Skill2In22">
+        <AreaArray Count="3" Radius="3.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero61Skill2In222">
+        <AreaArray Count="4" Radius="3.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="Hero61Skill2In2222">
+        <AreaArray Compare="GE" Count="5" Radius="3.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="Hero62PassiveDongin2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero62Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero62PassiveDongin3">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="3"/>
+        <Behavior value="Hero62Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill1DongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero63Skill1B"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill3DongIn">
+        <Behavior value="Hero63Skill3impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill2DongIn">
+        <Behavior value="Hero63Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero63Skill3DongIn2">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="Hero63Skill3"/>
+        <Compare value="GE"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42342">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong253"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423422">
+        <Behavior value="SpellDong253"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4235">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero46Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42352">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero46Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423522">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero46Skill3impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4235222">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero46Skill2impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42352222">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero46Skill2impact22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42352223">
+        <ResultFailed value="Error,Hero26Skill4In"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero46Skill2impact23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit46">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero17Skill2Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit462">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero17Skill2Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323233">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong232222224"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2333">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero8Cloak"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23333">
+        <WhichUnit Value="Caster"/>
+        <Value value="3"/>
+        <Behavior value="Hero40Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn233332">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero40Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2333322">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero40Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2333323">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero40Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn243">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong322222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn244">
+        <Behavior value="SpellDong3223"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="MonsterDamageIn2">
+        <CombineArray value="ThisUnit22232222"/>
+        <CombineArray value="ThisUnit222322222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="MonsterDamageIn22">
+        <CombineArray value="ThisUnit2223"/>
+        <CombineArray value="ThisUnit22232"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn322222">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero22Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="LifeGEHalf2222222222333">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Maximum"/>
+        <Value value="1250"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222223332">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="GT"/>
+        <Type value="Maximum"/>
+        <Value value="1250"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222222222233322">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Value value="10"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.7"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2232">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.7"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf224">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.2"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2242">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.3"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="MagicSin">
+        <Behavior value="MagicShield"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="MinionNotmove">
+        <CombineArray value="CasterNotAttacking22"/>
+        <CombineArray value="CasterNotAttacking233"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="NotDead2222">
+        <WhichUnit Value="Caster"/>
+        <Filters value="Self;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotDead22222">
+        <Filters value="-;Self"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotDead23">
+        <Filters value="-;Cloaked"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotDead232">
+        <Filters value="Visible;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareVital id="NotMaxHP222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.85"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2223">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.75"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22232">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.65"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222322">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.55"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2223222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.45"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22232222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.35"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222322222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.25"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2223222222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.15"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22232222223">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.05"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2223223">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22232232">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222322322">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2223223222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2224">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.95"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Onikin">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="PickupCheck2222222222">
+        <CombineArray value="ThisUnit22222222235"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Herobooin">
+        <CombineArray value="ThisUnit22222532"/>
+        <CombineArray value="ThisUnit22222222231122"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero57Skill1Gyul">
+        <CombineArray value="Hero57Skill1In"/>
+        <CombineArray value="Hero57Skill1In3"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222222223">
+        <CombineArray value="HeroSkillIn32222"/>
+        <CombineArray value="HeroSkillIn322222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero66Skill1In">
+        <CombineArray value="NotHeroic2"/>
+        <CombineArray value="Hero66Skill1In22"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero32Skill4Gyul">
+        <CombineArray value="Hero32Skill4In"/>
+        <CombineArray value="Hero32Skill4In2"/>
+        <CombineArray value="Hero32Skill4In22"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero71Skill3In">
+        <CombineArray value="HeroSkillIn223322"/>
+        <CombineArray value="HeroSkillIn2233222"/>
+        <CombineArray value="HeroSkillIn22332222"/>
+        <CombineArray value="HeroSkillIn223322222"/>
+        <CombineArray value="HeroSkillIn2233222222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Targetmonster">
+        <CombineArray value="ThisUnit2223"/>
+        <CombineArray value="ThisUnit222322222"/>
+        <CombineArray value="ThisUnit2223222222"/>
+        <CombineArray value="ThisUnit22232222222"/>
+        <CombineArray value="ThisUnit22232223"/>
+        <CombineArray value="ThisUnit2223222"/>
+        <CombineArray value="ThisUnit22232"/>
+        <CombineArray value="ThisUnit22232222223"/>
+        <CombineArray value="ThisUnit222322"/>
+        <CombineArray value="ThisUnit22232222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222222224">
+        <CombineArray value="NotHeroic2"/>
+        <CombineArray value="LifeGEHalf2222222222333"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2222222242">
+        <CombineArray value="NotHeroic2"/>
+        <CombineArray value="NotStructure2"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero60Skill1InGyul">
+        <CombineArray value="Hero60Skill1In"/>
+        <CombineArray value="Hero60Skill1In2"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2222226">
+        <Type value="And"/>
+        <CombineArray value="HeroHellFirein2"/>
+        <CombineArray value="Hero32Skill2Dongin5"/>
+        <CombineArray value="Hero51PassiveIn"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222233">
+        <CombineArray value="NotDead23"/>
+        <CombineArray value="NotDead232"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2343">
+        <Type value="And"/>
+        <CombineArray value="Hero36Skill1In"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck23432">
+        <CombineArray value="Hero36PassiveIn2"/>
+        <CombineArray value="HeroSkillIn243"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero34PassiveIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero34PassiveSlow22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="Hero33Skill1Rangein">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="2.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="Hero13Skill4Gyul2">
+        <Type value="And"/>
+        <CombineArray value="HeroSkillIn27"/>
+    </CValidatorCombine>
+    <CValidatorUnitOrderQueue id="Hero15SkillUse">
+        <AbilLink value="Hero15Skill1"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="CasterNotAttacking24">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="move"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareDamageTakenTime id="CasterNotInCombat2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareDamageTakenTime>
+    <CValidatorLocationCompareCliffLevel id="CliffLevelGE1">
+        <Compare value="LT"/>
+        <Value value="3"/>
+    </CValidatorLocationCompareCliffLevel>
+    <CValidatorLocationEnumArea id="EnemiesNearby2">
+        <AreaArray Compare="GE" Count="1" Radius="3.5"/>
+        <SearchFilters value="-;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby222">
+        <AreaArray Count="1" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby3">
+        <AreaArray Count="2" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby32">
+        <AreaArray Count="3" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="EnemiesNearby322">
+        <AreaArray Count="4" Radius="2"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitFilters id="EnemyTarget2">
+        <Filters value="-;Self,Player,Ally"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="EnemyTarget22">
+        <Filters value="-;Neutral,Enemy"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitOrderQueue id="Hero15SkillUse2">
+        <AbilLink value="Hero15Skill3"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="Hero15SkillUse22">
+        <AbilLink value="Hero15Skill4"/>
+        <Find value="0"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In2">
+        <Behavior value="SpellDong2425232393"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In22">
+        <Behavior value="SpellDong24252323932"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In222">
+        <Behavior value="SpellDong242523239322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In2222">
+        <Behavior value="SpellDong2425232393222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero19Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In32">
+        <ResultFailed value="Error,Hero19Skill4Error"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero19Skill33"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In33">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero19Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill4In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero19Skill32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero31DongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong3222222636"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero29Mana25Up">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Value value="5"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero28Skill1In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero28Skill1B"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero27Skill1In">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong23454"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero28Skill1In2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero28Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero28Skill1In3">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero28Skill1B"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero28Skill1In32">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero28Skill2impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero28Skill1In322">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero28Skill2impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero31DongIn2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero31Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero31DongIn22">
+        <Behavior value="Hero31Skill4Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero32Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero32Skill2Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero34PassiveIn2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero34PassiveSlow22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit432">
+        <Value value="3"/>
+        <Behavior value="SpellDong2425232352"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroHellFirein2">
+        <Behavior value="SpellDong3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroHellFirein22">
+        <Behavior value="SpellDong255"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero32Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323232">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2423"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232322">
+        <WhichUnit Value="Caster"/>
+        <Value value="2"/>
+        <Behavior value="SpellDong2423"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232323222">
+        <WhichUnit Value="Caster"/>
+        <Value value="3"/>
+        <Behavior value="SpellDong2423"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232323">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="BoosterItem2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232324">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232323242">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323232422">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232324222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232323242222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed2222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323232422222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed22222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232324222222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed222222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232323242222222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed2222222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323232422222222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed22222222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232324222222222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AttackSpeed222222222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232325">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero29Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232323252">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero29Skill4target"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn27">
+        <Behavior value="Hero26Skill3impact3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn28">
+        <Behavior value="Hero23Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn282">
+        <Behavior value="Hero23Skill43"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2822">
+        <Behavior value="Hero23Skill432"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero34Skill1in">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.75"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorCombine id="PickupCheck22222232">
+        <Type value="And"/>
+        <CombineArray value="NotDead22"/>
+        <CombineArray value="HeroDie"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareOrderCount id="TargetHasNoOrders23" parent="CasterHasOrders"/>
+    <CValidatorUnitCompareBehaviorCount id="Teleinsik2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Teleinsik22">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Tentacleyohyo12">
+        <CombineArray value="ThisUnit22"/>
+        <CombineArray value="ThisUnit225"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Tentacleyohyo122">
+        <CombineArray value="ThisUnit222"/>
+        <CombineArray value="ThisUnit2224"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Tentacleyohyo1222">
+        <CombineArray value="ThisUnit2222"/>
+        <CombineArray value="ThisUnit22223"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Tentacleyohyo13">
+        <CombineArray value="ThisUnit"/>
+        <CombineArray value="ThisUnit2"/>
+        <CombineArray value="ThisUnit22"/>
+        <CombineArray value="ThisUnit225"/>
+        <CombineArray value="ThisUnit222"/>
+        <CombineArray value="ThisUnit2224"/>
+        <CombineArray value="ThisUnit2222"/>
+        <CombineArray value="ThisUnit22223"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="ThisUnit22222222222">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero27"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222310">
+        <Value value="Hero35"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222223102">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero35"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222311">
+        <Value value="Hero37"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222223112">
+        <Value value="Hero38"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222231122">
+        <Value value="Hero61Skill4Unit"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="Hero72">
+        <Value value="Hero72"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222231123">
+        <Value value="Hero38"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222311232">
+        <Value value="Hero72"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222312">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero13"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222235">
+        <Value value="Hero29"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222236">
+        <Value value="Hero29S4"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222237">
+        <Value value="Hero31"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222238">
+        <Value value="Hero33"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222382">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero33"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222239">
+        <Value value="Hero34"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222242">
+        <Value value="Hero47"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222422">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero47"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222224222">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero68"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222242222">
+        <Value value="Hero68"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222423">
+        <Value value="Hero51"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222224232">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero51"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222424">
+        <Value value="Hero66"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222243">
+        <Value value="Hero59"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222244">
+        <Value value="Hero71"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222442">
+        <Value value="Hero70"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222224422">
+        <Value value="Hero69"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222225">
+        <Value value="Hero25"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222252">
+        <Value value="Hero49"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222522">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero49"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222225222">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero60"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222252222">
+        <Value value="Hero60"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222522222">
+        <Value value="Hero60"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222523">
+        <Value value="Hero52"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222225232">
+        <Value value="Hero73"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222253">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero25"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222226">
+        <Value value="Hero26"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222227">
+        <Value value="Hero27"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222322">
+        <Value value="Hero30"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222223222">
+        <Value value="Hero44"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222422">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero17"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222243222">
+        <Value value="Hero32"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222432222">
+        <Value value="Hero56Skill1Dummy"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222432223">
+        <Value value="Hero63"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222432224">
+        <Value value="Hero65"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222243223">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero21"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222224323">
+        <Value value="Hero28"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222243232">
+        <Value value="Hero41"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222432322">
+        <Value value="Hero43"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222224324">
+        <Value value="Hero36"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222224342">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero18"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222442">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero39"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222443">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero20"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222245">
+        <Value value="Hero48"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222226">
+        <WhichUnit Value="Caster"/>
+        <Value value="Ultralisk"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222233">
+        <WhichUnit Value="Caster"/>
+        <Value value="Archon"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222234">
+        <Value value="Hero56"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222254">
+        <Value value="Hero9Skill4Dummy"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222263">
+        <Value value="Hero53"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222227">
+        <WhichUnit Value="Caster"/>
+        <Value value="Tosh"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22223">
+        <Value value="Immortal2team"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22232223">
+        <Value value="Inunit8"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="Hero67Skill4In">
+        <Value value="Hero67Skill4Dummy"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2224">
+        <Value value="Sentry2team"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit225">
+        <Value value="HighTemplar2team"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="duttarget">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill3Slow2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero24Skill2In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero24Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="Hero21Mana93">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="68"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero21Mana932">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="68"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="Hero21PassiveIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero21Passive2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In22">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong235"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In23">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong232"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In232">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong2322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In2322">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong23222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In23222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong232222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In232222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong2322222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero12SkillIn">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong322222243"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero19Skill2In">
+        <Behavior value="SpellDong242523239"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In3">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong235"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In4">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2345"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero20PassiveDongIn2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong32222226"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero20Skill1DongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong322222263"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero21Skill1Choong22">
+        <CombineArray value="Hero21Skill1Choong2"/>
+        <CombineArray value="Hero21Mana932"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="Hero21SkillIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero21Skill12"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero21SkillIn2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero21Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero21SkillIn22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero21Skill122"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero24Skill2In2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero24Skill3Ok"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong24242"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit2">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="BoosterItem"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit22">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="BoosterItem22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit3">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong242423"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4">
+        <Value value="1"/>
+        <Behavior value="SpellDong2425232352"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42">
+        <Behavior value="SpellDong2425232352"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4223">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Agrosystem32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42232">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Agrosystem322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit422322">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Agrosystem322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2425232352233"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4232">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Dobal"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42322">
+        <Behavior value="Dobal"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4233">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero18Skill23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42332">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="Hero18Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit423322">
+        <WhichUnit Value="Caster"/>
+        <Value value="2"/>
+        <Behavior value="Hero18Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4233222">
+        <WhichUnit Value="Caster"/>
+        <Value value="3"/>
+        <Behavior value="Hero18Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42332222">
+        <WhichUnit Value="Caster"/>
+        <Value value="4"/>
+        <Behavior value="Hero18Skill4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit42333">
+        <ResultFailed value="Error,Hero17SkillIn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero18Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit4234">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong253"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero20PassiveDongIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong32222226"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit43">
+        <Value value="2"/>
+        <Behavior value="SpellDong2425232352"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit44">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2425232352"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit45">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong242523235223"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="HeroDie22">
+        <WhichUnit Value="Caster"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDie23">
+        <WhichUnit Value="Caster"/>
+        <Filters value="Cloaked;Hallucination"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDie24">
+        <WhichUnit Value="Caster"/>
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDie25">
+        <WhichUnit Value="Caster"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDie3">
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDie4">
+        <WhichUnit Value="Source"/>
+        <Filters value="-;Dead,Hidden,Hallucination"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2346"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill4In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong233"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="HeroDie">
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDie2">
+        <WhichUnit Value="Caster"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="Hero1Skill1In">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2">
+        <Behavior value="SpellDong32"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn22">
+        <Behavior value="SpellDong3222222634"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn222">
+        <Behavior value="SpellDong32222226342"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2222">
+        <Behavior value="SpellDong322222263422"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong242522"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong2425243"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2322">
+        <Behavior value="Player1Assist4"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23222">
+        <Behavior value="Player1Assist33"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232222">
+        <Behavior value="Player1Assist323"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2322222">
+        <Behavior value="Player1Assist3223"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23222222">
+        <Behavior value="Player1Assist32223"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232222222">
+        <Behavior value="Player1Assist322223"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2322222222">
+        <Behavior value="Player1Assist3222223"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23222222222">
+        <Behavior value="Player1Assist32222222"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill3impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill4target"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232322">
+        <Behavior value="Hero13Skill4Impact"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323222">
+        <Behavior value="Hero13Skill4Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232222">
+        <Behavior value="Hero13Skill4Impact22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232322222">
+        <Behavior value="Hero13Skill4Impact222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323222222">
+        <Behavior value="Hero13Skill4Impact2222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23232222222">
+        <Behavior value="Hero13Skill4Impact22222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232323">
+        <Behavior value="SpellDong23222222422"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23233">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill3impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232332">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill3impact22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2323322">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill3impact222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23233222">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero9Skill3impact2222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2324">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="Hero10Skill1Fast"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23242">
+        <Compare value="GE"/>
+        <Value value="3"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232422">
+        <Compare value="GE"/>
+        <Value value="5"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2324222">
+        <Compare value="GE"/>
+        <Value value="7"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23242222">
+        <Compare value="GE"/>
+        <Value value="9"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232422222">
+        <Compare value="GE"/>
+        <Value value="11"/>
+        <Behavior value="DefensePower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn232423">
+        <Compare value="LT"/>
+        <Value value="80"/>
+        <Behavior value="DefensePower2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2324232">
+        <Compare value="LT"/>
+        <Value value="80"/>
+        <Behavior value="Amor22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23243">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="Hero10Skill3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn233">
+        <Behavior value="Hero8Slow"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2332">
+        <Behavior value="Hero8Slow"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23322">
+        <Behavior value="Hero8Skill22"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23323">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero14Skill1Impact2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23332">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero13Passive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2334">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero8Skill2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23342">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero8Skill23"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn233422">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero8Skill232"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn2334222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero8Skill2322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn23342222">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Hero8Skill23222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn24">
+        <Behavior value="SpellDong322"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn242">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpellDong32222"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn25">
+        <Behavior value="Hero10Skill42"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn26">
+        <Behavior value="PhotonAttacking2323"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn32222">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero22Skill1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn4">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="5"/>
+        <Behavior value="SpellDong2342"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSkillIn5">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="SpellDong2343"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="LifeGEHalf222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.25"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2222">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.4"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.95"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.85"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.75"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.65"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.55"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.45"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.35"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.25"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2222222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.15"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.05"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222222223">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.15"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222222222222232">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.05"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Hero21Mana9">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="8"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222222224">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.06"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf222222222232">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.7"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf2222222222322">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Type value="Fraction"/>
+        <Value value="0.2"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf22222222223222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf3">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.25"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf32">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.35"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf322">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.45"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf3222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.55"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf32222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.65"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf322222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.75"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf3222222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.85"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="LifeGEHalf32222222">
+        <ResultFailed value="TooMuchEnergy"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="0.95"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitFilters id="NotDead2">
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotDead22">
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotDead222">
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotHeroic2">
+        <Filters value="Heroic;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotHeroic22">
+        <Filters value="-;Heroic"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NotHeroic23">
+        <Filters value="-;Massive"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareVital id="NotMaxHP">
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2">
+        <ResultFailed value="TooMuchLife"/>
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.9"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.8"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.7"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.6"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.4"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.3"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.2"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22222222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.2"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2222222223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.3"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222222223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.4"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22222223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP2222223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.6"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.7"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22223">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.8"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP22232222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="0.1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="NotMaxHP222322222222">
+        <ResultFailed value="TooMuchLife"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Type value="Fraction"/>
+        <Value value="0.1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareSpeed id="NotMoving2">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="2"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="NotMoving22">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="NotMoving222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="3"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="NotMoving2222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="3"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="NotMoving22222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="4"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="NotMoving222222">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="4"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitFilters id="NotStructure2">
+        <Filters value="Structure;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="PickupCheck2222">
+        <CombineArray value="NotMaxEnergy"/>
+        <CombineArray value="NotMaxHP2"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck22222">
+        <CombineArray value="HeroSkillIn29"/>
+        <CombineArray value="HeroSkillIn25"/>
+        <CombineArray value="HeroSkillIn26"/>
+        <CombineArray value="HeroSkillIn28"/>
+        <CombineArray value="HeroSkillIn282"/>
+        <CombineArray value="HeroSkillIn2822"/>
+        <CombineArray value="Hero32Skill2Dongin3"/>
+        <CombineArray value="Hero38Skill4In2"/>
+        <CombineArray value="Hero39PassiveIn2"/>
+        <CombineArray value="Hero39PassiveIn23"/>
+        <CombineArray value="Hero70Skill2In2"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222222">
+        <Type value="And"/>
+        <CombineArray value="HeroSkillIn22"/>
+        <CombineArray value="HeroSkillIn222"/>
+        <CombineArray value="HeroSkillIn2222"/>
+        <CombineArray value="Hero32Skill2Dongin32"/>
+        <CombineArray value="Hero63Skill2DongIn"/>
+        <CombineArray value="HeroSkillIn223"/>
+        <CombineArray value="HeroSkillIn2232"/>
+        <CombineArray value="HeroSkillIn22322"/>
+        <CombineArray value="HeroSkillIn223222"/>
+        <CombineArray value="HeroSkillIn2232222"/>
+        <CombineArray value="HeroSkillIn224"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2222222">
+        <CombineArray value="CasterNotAttacking22"/>
+        <CombineArray value="CasterNotAttacking222"/>
+        <CombineArray value="TargetHasNoOrders22"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck22222222">
+        <Type value="And"/>
+        <CombineArray value="PickupCheck2222223"/>
+        <CombineArray value="PickupCheck22222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222222222">
+        <Type value="And"/>
+        <CombineArray value="ThisUnit2222222224"/>
+        <CombineArray value="ThisUnit22222222234"/>
+        <CombineArray value="ThisUnit22222222237"/>
+        <CombineArray value="ThisUnit22222222238"/>
+        <CombineArray value="ThisUnit22222224324"/>
+        <CombineArray value="ThisUnit222222222311"/>
+        <CombineArray value="ThisUnit2222222432322"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2222223">
+        <Type value="And"/>
+        <CombineArray value="HeroDie"/>
+        <CombineArray value="HeroDie2"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2222224">
+        <Type value="And"/>
+        <CombineArray value="CasterNotAttacking232"/>
+        <CombineArray value="CasterNotAttacking24"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero13Skill4Gyul">
+        <Type value="And"/>
+        <CombineArray value="HeroSkillIn2323222"/>
+        <CombineArray value="HeroSkillIn23232222"/>
+        <CombineArray value="HeroSkillIn232322222"/>
+        <CombineArray value="HeroSkillIn2323222222"/>
+        <CombineArray value="HeroSkillIn23232222222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero21Skill1Choong">
+        <CombineArray value="Hero21SkillIn"/>
+        <CombineArray value="Hero21SkillIn2"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2222225">
+        <Type value="And"/>
+        <CombineArray value="HeroSkillIn2"/>
+        <CombineArray value="HeroSkillIn24"/>
+        <CombineArray value="Hero13Skill4Gyul2"/>
+        <CombineArray value="HeroSkillIn244"/>
+        <CombineArray value="Hero69Skill2In"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck22223">
+        <CombineArray value="NotDead2"/>
+        <CombineArray value="HeroDie3"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222232">
+        <CombineArray value="NotDead2"/>
+        <CombineArray value="HeroDie3"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="Hero9Gyulhap">
+        <CombineArray value="HeroSkillIn2323"/>
+        <CombineArray value="HeroSkillIn23233"/>
+        <CombineArray value="HeroSkillIn232332"/>
+        <CombineArray value="HeroSkillIn2323322"/>
+        <CombineArray value="HeroSkillIn23233222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck23">
+        <Type value="And"/>
+        <CombineArray value="ThisUnit222222222"/>
+        <CombineArray value="ThisUnit2222222227"/>
+        <CombineArray value="ThisUnit22222222252"/>
+        <CombineArray value="ThisUnit22222222252222"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck232">
+        <Type value="And"/>
+        <CombineArray value="ThisUnit2222222222"/>
+        <CombineArray value="ThisUnit22222222222"/>
+        <CombineArray value="ThisUnit222222222522"/>
+        <CombineArray value="ThisUnit2222222225222"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck233">
+        <Type value="And"/>
+        <CombineArray value="NotMoving22"/>
+        <CombineArray value="NotMoving222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck2332">
+        <Type value="And"/>
+        <CombineArray value="NotMoving2222"/>
+        <CombineArray value="NotMoving22222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck234">
+        <Type value="And"/>
+        <CombineArray value="Hero19Skill2In"/>
+        <CombineArray value="Hero19Skill2In2"/>
+        <CombineArray value="Hero19Skill2In22"/>
+        <CombineArray value="Hero19Skill2In222"/>
+        <CombineArray value="Hero19Skill2In2222"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareOrderCount id="TargetHasNoOrders2" parent="CasterHasOrders"/>
+    <CValidatorUnitCompareOrderCount id="TargetHasNoOrders22" parent="CasterHasOrders">
+        <Compare value="Eq"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitCompareOrderCount id="OneOrder" parent="CasterHasOrders">
+        <Compare value="Eq"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitType id="ThisUnit">
+        <Value value="PreserverA"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="PickupCheck2">
+        <CombineArray value="ThisUnit22222"/>
+        <CombineArray value="ThisUnit222222"/>
+        <CombineArray value="ThisUnit222223"/>
+        <CombineArray value="ThisUnit22222222"/>
+        <CombineArray value="ThisUnit22222223"/>
+        <CombineArray value="ThisUnit222224"/>
+        <CombineArray value="ThisUnit28"/>
+        <CombineArray value="ThisUnit222225"/>
+        <CombineArray value="ThisUnit22222224"/>
+        <CombineArray value="ThisUnit222222222"/>
+        <CombineArray value="ThisUnit2222222223"/>
+        <CombineArray value="ThisUnit2222253"/>
+        <CombineArray value="ThisUnit22222532"/>
+        <CombineArray value="ThisUnit222222242"/>
+        <CombineArray value="ThisUnit2222222432"/>
+        <CombineArray value="ThisUnit222222244"/>
+        <CombineArray value="ThisUnit22222224322"/>
+        <CombineArray value="Hero72"/>
+        <CombineArray value="ThisUnit22222222242222"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck22">
+        <CombineArray value="ThisUnit2222"/>
+        <CombineArray value="ThisUnit2223"/>
+        <CombineArray value="ThisUnit22232222"/>
+        <CombineArray value="ThisUnit222226"/>
+        <CombineArray value="ThisUnit2222222"/>
+        <CombineArray value="ThisUnit2222262"/>
+        <CombineArray value="ThisUnit222222243"/>
+        <CombineArray value="ThisUnit22222222233"/>
+        <CombineArray value="ThisUnit222222232"/>
+        <CombineArray value="ThisUnit22222222235"/>
+        <CombineArray value="ThisUnit222222243222"/>
+        <CombineArray value="ThisUnit222222243232"/>
+        <CombineArray value="ThisUnit2222222432322"/>
+        <CombineArray value="ThisUnit222222245"/>
+        <CombineArray value="ThisUnit2222263"/>
+        <CombineArray value="ThisUnit2222234"/>
+        <CombineArray value="ThisUnit22222222243"/>
+        <CombineArray value="ThisUnit2222222432224"/>
+        <CombineArray value="ThisUnit222222222424"/>
+        <CombineArray value="ThisUnit222222222442"/>
+        <CombineArray value="ThisUnit2222222224422"/>
+        <CombineArray value="ThisUnit22222222244"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PickupCheck222">
+        <CombineArray value="ThisUnit223"/>
+        <CombineArray value="ThisUnit2232"/>
+        <CombineArray value="ThisUnit22322"/>
+        <CombineArray value="ThisUnit22323"/>
+        <CombineArray value="ThisUnit2223222222"/>
+        <CombineArray value="ThisUnit22232222222"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="ThisUnit2">
+        <Value value="PreserverB"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22">
+        <Value value="HighTemplar"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222">
+        <Value value="Sentry"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222">
+        <Value value="Immortal"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222">
+        <Value value="Tosh"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222">
+        <Value value="Zeratul"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222">
+        <Value value="Ultralisk"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222">
+        <Value value="Hero5"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222222">
+        <Value value="Hero12"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222222">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero12"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222223">
+        <Value value="Hero13"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222232">
+        <Value value="Gamsi"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222233">
+        <Value value="Hero22"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222222234">
+        <Value value="Hero24"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222224">
+        <Value value="Hero23"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222223">
+        <Value value="Hero6"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222232">
+        <Value value="Hero10"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222224">
+        <Value value="Hero11"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222242">
+        <Value value="Hero17"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222243">
+        <Value value="Hero18"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222222432">
+        <Value value="Hero19"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222224322">
+        <Value value="Hero21"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222222244">
+        <Value value="Hero20"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222225">
+        <Value value="Hero9"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222252">
+        <WhichUnit Value="Caster"/>
+        <Value value="Hero9"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222253">
+        <Value value="Hero15"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22222532">
+        <Value value="Hero15Skill2Unit"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222226">
+        <Value value="Hero14"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2222262">
+        <Value value="Hero16"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit224">
+        <ResultFailed value="Error,NotMeleeHeroAttack"/>
+        <Value value="Hero9Skill2Dummy"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit28">
+        <Value value="Hero8"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222223">
+        <Value value="Archon"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222224">
+        <Value value="Hero7"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2223">
+        <Value value="Inunit"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22232">
+        <Value value="Inunit2"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222322">
+        <Value value="Inunit3"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2223222">
+        <Value value="Inunit6"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22232222">
+        <Value value="Inunit5"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit222322222">
+        <Value value="Inunit4"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2223222222">
+        <Value value="SpineCrawler"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22232222222">
+        <Value value="SporeCrawler"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22232222223">
+        <Value value="Inunit7"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit223">
+        <Value value="PhotonCannon"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit2232">
+        <Value value="FleetBeacon"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22322">
+        <Value value="Nexus"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ThisUnit22323">
+        <Value value="ArtifactVault"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareVital id="hasShields2">
+        <ResultFailed value="NotEnoughShields"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="hasShields22">
+        <ResultFailed value="NotEnoughShields"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="hasjangopoison">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero58Passive"/>
+        <BehaviorAlignment value="Negative"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="hasjangopoison2">
+        <Compare value="GE"/>
+        <Value value="5"/>
+        <Behavior value="Hero58Passive"/>
+        <BehaviorAlignment value="Negative"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="hasjangopoison22">
+        <Compare value="LE"/>
+        <Value value="4"/>
+        <Behavior value="Hero58Passive"/>
+        <BehaviorAlignment value="Negative"/>
+    </CValidatorUnitCompareBehaviorCount>
+</Catalog>

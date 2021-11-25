@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CCursor id="Arrow_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Arrow_Terr">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Arrow_Zerg">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Crosshairs">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Crosshairs_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Crosshairs_Zerg">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="DragScroll">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="DragScroll_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="DragScroll_Zerg">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottom">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottomLeft">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-left-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottomLeft_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-left-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottomRight">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-right-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottomRight_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-right-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottom_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollLeft">
+        <Texture value="Assets\Textures\cursor-edgescroll-left-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollLeft_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-left-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollRight">
+        <Texture value="Assets\Textures\cursor-edgescroll-right-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollRight_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-right-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTop">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTopLeft">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-left-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTopLeft_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-left-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTopRight">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-right-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTopRight_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-right-protoss.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTop_Zerg">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-protoss.dds"/>
+    </CCursor>
+    <CCursor id="GripClosed_Terr">
+        <Texture value="Assets\Textures\cursor-grip-closed-bnet.dds"/>
+    </CCursor>
+    <CCursor id="GripOpen_Terr">
+        <Texture value="Assets\Textures\cursor-grip-open-bnet.dds"/>
+    </CCursor>
+    <CCursor id="ResizeDiagonalLeft_Terr">
+        <Texture value="Assets\Textures\cursor-resize-diagonal-left-bnet.dds"/>
+    </CCursor>
+    <CCursor id="ResizeDiagonalRight_Terr">
+        <Texture value="Assets\Textures\cursor-resize-diagonal-right-bnet.dds"/>
+    </CCursor>
+    <CCursor id="ResizeHorizontal_Terr">
+        <Texture value="Assets\Textures\cursor-resize-horizontal-bnet.dds"/>
+    </CCursor>
+    <CCursor id="ResizeVertical_Terr">
+        <Texture value="Assets\Textures\cursor-resize-vertical-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Wait_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Wait_Terr">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Wait_Zerg">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+</Catalog>

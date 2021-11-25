@@ -1,0 +1,2809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="A_Spell">
+        <Icon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell102">
+        <Icon value="Assets\Textures\btn-tips-defierbones.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-defierbones.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell1022">
+        <Icon value="Assets\Textures\btn-tips-defierbones.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-defierbones.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell103">
+        <Icon value="Assets\Textures\btn-tips-visitthelab.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-visitthelab.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell1032">
+        <Icon value="Assets\Textures\btn-tips-visitthelab.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-visitthelab.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell104">
+        <Icon value="Assets\Textures\btn-tips-walloffire.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-walloffire.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell11">
+        <Icon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero10Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-baneling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-baneling.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero19Passive2">
+        <Icon value="Assets\AddIcon\btn-hero37.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero37.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero19Passive3">
+        <Icon value="Assets\AddIcon\btn-hero38.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero38.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero19Passive4">
+        <Icon value="Assets\AddIcon\btn-hero42.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero42.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero1Passive2">
+        <Icon value="Assets\Textures\btn-unit-protos-soulhunter.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protos-soulhunter.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero1Passive3">
+        <Icon value="Assets\AddIcon\btn-hero68.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero68.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero72Passive">
+        <Icon value="Assets\AddIcon\btn-hero72.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero72.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero71Passive">
+        <Icon value="Assets\AddIcon\btn-hero71.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero71.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero70Passive">
+        <Icon value="Assets\AddIcon\btn-hero70.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero70.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero69Passive">
+        <Icon value="Assets\AddIcon\btn-hero69.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero69.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero67Passive">
+        <Icon value="Assets\AddIcon\btn-hero67.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero67.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero66Passive">
+        <Icon value="Assets\AddIcon\btn-hero66.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero66.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero65Passive">
+        <Icon value="Assets\AddIcon\btn-hero65.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero65.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero64Passive">
+        <Icon value="Assets\AddIcon\btn-hero64.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero64.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero63Passive">
+        <Icon value="Assets\AddIcon\btn-hero63.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero63.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero62Passive">
+        <Icon value="Assets\AddIcon\btn-hero62.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero62.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero61Passive">
+        <Icon value="Assets\AddIcon\btn-hero61.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero61.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero60Passive">
+        <Icon value="Assets\AddIcon\btn-hero60.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero60.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero23Passive">
+        <Icon value="Assets\AddIcon\btn-hero23.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero23.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero32Passive2">
+        <Icon value="Assets\AddIcon\LadyAlexstrasa_Btn.dds"/>
+        <AlertIcon value="Assets\AddIcon\LadyAlexstrasa_Btn.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero34Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero33Passive">
+        <Icon value="Assets\Textures\btn-unit-rifleman.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-rifleman.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero32Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-zergling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-zergling.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero31Passive">
+        <Icon value="Assets\AddIcon\btn-hero31.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero31.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero30Passive">
+        <Icon value="Assets\AddIcon\btn-hero30.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero30.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero13Passive">
+        <Icon value="Assets\AddIcon\btn-hero13.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero13.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero14Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-marauderswann.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauderswann.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero16Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero17Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-aberration.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-aberration.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero20Passive2">
+        <Icon value="Assets\Textures\btn-unit-terran-firebatmercenary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-firebatmercenary.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero27Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-predator.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-predator.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero39Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero3Passive2">
+        <Icon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero3Passive3">
+        <Icon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero40Passive">
+        <Icon value="Assets\AddIcon\btn-hero40.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero40.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero41Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero43Passive">
+        <Icon value="Assets\AddIcon\btn-hero43.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero43.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero44Passive">
+        <Icon value="Assets\AddIcon\btn-hero44.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero44.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero45Passive">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot-nerazim.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot-nerazim.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero45Passive2">
+        <Icon value="Assets\AddIcon\btn-hero46.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero46.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero47Passive">
+        <Icon value="Assets\AddIcon\btn-hero47.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero47.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero48Passive">
+        <Icon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero49Passive">
+        <Icon value="Assets\AddIcon\btn-hero49.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero49.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero50Passive">
+        <Icon value="Assets\AddIcon\btn-hero50.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero50.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero51Passive">
+        <Icon value="Assets\AddIcon\btn-hero51.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero51.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero52Passive">
+        <Icon value="Assets\AddIcon\btn-hero52.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero52.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero53Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-infestedcolonist.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedcolonist.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero54Passive">
+        <Icon value="Assets\AddIcon\btn-hero54.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero54.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero55Passive">
+        <Icon value="Assets\AddIcon\btn-hero55.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero55.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero56Passive">
+        <Icon value="Assets\AddIcon\btn-hero56.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero56.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero57Passive">
+        <Icon value="Assets\AddIcon\btn-hero57.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero57.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero57Skill4btn">
+        <Icon value="Assets\AddIcon\btn-hero57-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero57-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="Hero58Passive">
+        <Icon value="Assets\AddIcon\btn-hero58.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero58.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero6Passive3">
+        <Icon value="Assets\Textures\btn-unit-xelnaga-viper.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero6.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero20Passive">
+        <Icon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero22Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-thor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-thor.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero24Passive">
+        <Icon value="Assets\AddIcon\btn-hero24.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero24.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero26Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-medicstetmann.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-medicstetmann.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero73Passive">
+        <Icon value="Assets\AddIcon\btn-hero73.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero73.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero72SkillBtn2">
+        <Icon value="Assets\AddIcon\btn-hero72-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero72-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="Hero72SkillBtn3">
+        <Icon value="Assets\AddIcon\btn-hero72-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero72-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="Hero72SkillBtn4">
+        <Icon value="Assets\AddIcon\btn-hero72-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero72-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="Hero73Skill1Btn">
+        <Icon value="Assets\AddIcon\btn-hero73-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero73-skill1.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero73Skill2Btn">
+        <Icon value="Assets\AddIcon\btn-hero73-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero73-skill2.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero73Skill3Btn">
+        <Icon value="Assets\AddIcon\btn-hero73-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero73-skill3.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero73Skill4Btn">
+        <Icon value="Assets\AddIcon\btn-hero73-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero73-skill4.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero9Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-nova.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-nova.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero2Passive">
+        <Icon value="Assets\Textures\btn-unit-protoss-zeratul.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zeratul.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero5Passive">
+        <Icon value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-tassadar.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero3Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero6Passive">
+        <Icon value="Assets\AddIcon\btn-hero6.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero6.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero6Passive2">
+        <Icon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero7Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-medic.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-medic.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero11Passive">
+        <Icon value="Assets\Textures\btn-unit-zerg-kerrigan.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-kerrigan.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero9Passive2">
+        <Icon value="Assets\AddIcon\btn-Hero12.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-Hero12.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero9Passive3">
+        <Icon value="Assets\AddIcon\btn-hero15.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero15.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero19Passive">
+        <Icon value="Assets\AddIcon\btn-hero19.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero19.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero21Passive">
+        <Icon value="Assets\AddIcon\btn-hero21.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn5">
+        <Icon value="Assets\AddIcon\btn-hero2-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero2-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn52">
+        <Icon value="Assets\AddIcon\btn-hero2-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero2-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn522">
+        <Icon value="Assets\AddIcon\btn-hero2-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero2-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5222">
+        <Icon value="Assets\AddIcon\btn-hero2-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero2-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5223">
+        <Icon value="Assets\AddIcon\btn-hero2-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero2-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53">
+        <Icon value="Assets\AddIcon\btn-hero3-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero3-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn532">
+        <Icon value="Assets\AddIcon\btn-hero3-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero3-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5322">
+        <Icon value="Assets\AddIcon\btn-hero3-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero3-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53222">
+        <Icon value="Assets\AddIcon\btn-hero3-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero3-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn533">
+        <Icon value="Assets\Textures\btn-unit-protoss-archon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-archon.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn5332">
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53322">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn533222">
+        <Icon value="Assets\Textures\btn-tips-researchunlocked.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-researchunlocked.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn533223">
+        <Icon value="Assets\AddIcon\btn-hero55-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero55-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5332232">
+        <Icon value="Assets\AddIcon\btn-hero55-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero55-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53322322">
+        <Icon value="Assets\AddIcon\btn-hero55-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero55-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53322323">
+        <Icon value="Assets\AddIcon\btn-hero55-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero55-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn533224">
+        <Icon value="Assets\AddIcon\btn-hero59-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero59-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5332242">
+        <Icon value="Assets\AddIcon\btn-hero59-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero59-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5332243">
+        <Icon value="Assets\AddIcon\btn-hero59-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero59-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53322432">
+        <Icon value="Assets\AddIcon\btn-hero59-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero59-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53323">
+        <Icon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5333">
+        <Icon value="Assets\AddIcon\btn-hero59.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero59.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn534">
+        <Icon value="Assets\AddIcon\btn-hero25-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero25-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5342">
+        <Icon value="Assets\AddIcon\btn-hero25-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero25-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53422">
+        <Icon value="Assets\AddIcon\btn-hero25-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero25-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53423">
+        <Icon value="Assets\AddIcon\btn-hero25-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero25-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn535">
+        <Icon value="Assets\AddIcon\btn-hero29-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero29-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5352">
+        <Icon value="Assets\AddIcon\btn-hero29-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero29-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn53522">
+        <Icon value="Assets\AddIcon\btn-hero29-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero29-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn535222">
+        <Icon value="Assets\AddIcon\btn-hero29-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero29-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn536">
+        <Icon value="Assets\AddIcon\btn-hero65-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero65-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5362">
+        <Icon value="Assets\AddIcon\btn-hero65-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero65-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5363">
+        <Icon value="Assets\AddIcon\btn-hero65-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero65-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5364">
+        <Icon value="Assets\AddIcon\btn-hero65-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero65-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn54">
+        <Icon value="Assets\AddIcon\btn-hero5-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero5-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn54222">
+        <Icon value="Assets\AddIcon\btn-hero5-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero5-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn543">
+        <Icon value="Assets\AddIcon\btn-hero5-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero5-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5432">
+        <Icon value="Assets\AddIcon\btn-hero5-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero5-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55">
+        <Icon value="Assets\AddIcon\btn-ability-terran-flamethread.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-ability-terran-flamethread.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5510">
+        <Icon value="Assets\AddIcon\btn-hero36-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero36-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55102">
+        <Icon value="Assets\AddIcon\btn-hero36-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero36-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn551022">
+        <Icon value="Assets\AddIcon\btn-hero36-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero36-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55103">
+        <Icon value="Assets\AddIcon\btn-hero36-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero36-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55104">
+        <Icon value="Assets\AddIcon\btn-hero58-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero58-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn551042">
+        <Icon value="Assets\AddIcon\btn-hero58-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero58-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5510422">
+        <Icon value="Assets\AddIcon\btn-hero58-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero58-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55104222">
+        <Icon value="Assets\AddIcon\btn-hero58-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero58-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn552">
+        <Icon value="Assets\AddIcon\btn-custom-terran-heart.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-terran-heart.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5522">
+        <Icon value="Assets\AddIcon\btn-custom-terran-spectres.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-terran-spectres.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55222">
+        <Icon value="Assets\AddIcon\btn-custom-terran-dropshiprescue.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-terran-dropshiprescue.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553">
+        <Icon value="Assets\AddIcon\btn-hero7-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero7-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5532">
+        <Icon value="Assets\AddIcon\btn-hero7-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero7-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55322">
+        <Icon value="Assets\AddIcon\btn-hero7-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero7-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553222">
+        <Icon value="Assets\AddIcon\btn-hero7-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero7-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533">
+        <Icon value="Assets\AddIcon\btn-hero20-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero20-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553310">
+        <Icon value="Assets\AddIcon\btn-hero50-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero50-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533102">
+        <Icon value="Assets\AddIcon\btn-hero50-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero50-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331022">
+        <Icon value="Assets\AddIcon\btn-hero50-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero50-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553310222">
+        <Icon value="Assets\AddIcon\btn-hero50-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero50-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="Hero72SkillBtn1">
+        <Icon value="Assets\AddIcon\btn-hero72-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero72-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553311">
+        <Icon value="Assets\AddIcon\btn-hero54-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero54-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533112">
+        <Icon value="Assets\AddIcon\btn-hero54-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero54-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331122">
+        <Icon value="Assets\AddIcon\btn-hero54-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero54-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553311222">
+        <Icon value="Assets\AddIcon\btn-hero54-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero54-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331123">
+        <Icon value="Assets\AddIcon\btn-hero54-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero54-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553312">
+        <Icon value="Assets\AddIcon\btn-hero56-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero56-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533122">
+        <Icon value="Assets\AddIcon\btn-hero56-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero56-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331222">
+        <Icon value="Assets\AddIcon\btn-hero56-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero56-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533123">
+        <Icon value="Assets\AddIcon\btn-hero56-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero56-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553313">
+        <Icon value="Assets\AddIcon\btn-hero60-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero60-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533132">
+        <Icon value="Assets\AddIcon\btn-hero60-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero60-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533133">
+        <Icon value="Assets\AddIcon\btn-hero60-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero60-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331332">
+        <Icon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553314">
+        <Icon value="Assets\AddIcon\btn-hero61-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero61-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533142">
+        <Icon value="Assets\AddIcon\btn-hero61-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero61-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331422">
+        <Icon value="Assets\AddIcon\btn-hero61-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero61-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553314222">
+        <Icon value="Assets\AddIcon\btn-hero61-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero61-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553315">
+        <Icon value="Assets\AddIcon\btn-hero69-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero69-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533152">
+        <Icon value="Assets\AddIcon\btn-hero69-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero69-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533153">
+        <Icon value="Assets\AddIcon\btn-hero69-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero69-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331532">
+        <Icon value="Assets\AddIcon\btn-hero69-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero69-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553316">
+        <Icon value="Assets\AddIcon\btn-hero70-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero70-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533162">
+        <Icon value="Assets\AddIcon\btn-hero70-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero70-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331622">
+        <Icon value="Assets\AddIcon\btn-hero70-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero70-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553316222">
+        <Icon value="Assets\AddIcon\btn-hero70-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero70-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553317">
+        <Icon value="Assets\AddIcon\btn-hero71-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero71-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533172">
+        <Icon value="Assets\AddIcon\btn-hero71-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero71-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+        <Universal value="1"/>
+        <HidesForSimpleText value="0"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331722">
+        <Icon value="Assets\AddIcon\btn-hero71-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero71-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553317222">
+        <Icon value="Assets\AddIcon\btn-hero71-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero71-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55331723">
+        <Icon value="Assets\AddIcon\btn-hero71-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero71-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Universal value="1"/>
+        <HidesForSimpleText value="0"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55332">
+        <Icon value="Assets\AddIcon\btn-hero20-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero20-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55333">
+        <Icon value="Assets\AddIcon\btn-hero20-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero20-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553332">
+        <Icon value="Assets\AddIcon\btn-hero20-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero20-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553333">
+        <Icon value="Assets\AddIcon\btn-hero63-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero63-skill1.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533332">
+        <Icon value="Assets\AddIcon\btn-hero63-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero63-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55333322">
+        <Icon value="Assets\AddIcon\btn-hero63-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero63-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553333222">
+        <Icon value="Assets\AddIcon\btn-hero63-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero63-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553333223">
+        <Icon value="Assets\AddIcon\btn-hero63-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero63-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553334">
+        <Icon value="Assets\AddIcon\btn-hero67-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero67-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533342">
+        <Icon value="Assets\AddIcon\btn-hero67-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero67-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533343">
+        <Icon value="Assets\AddIcon\btn-hero67-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero67-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533344">
+        <Icon value="Assets\AddIcon\btn-hero67-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero67-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55333442">
+        <Icon value="Assets\AddIcon\btn-hero67-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero67-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55334">
+        <Icon value="Assets\AddIcon\btn-hero28-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero28-skill1.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553342">
+        <Icon value="Assets\Textures\btn-ability-terran-yamatogun-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-yamatogun-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533422">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55334222">
+        <Icon value="Assets\AddIcon\btn-hero28-Skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero28-Skill4.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55335">
+        <Icon value="Assets\AddIcon\btn-hero31-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero31-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553352">
+        <Icon value="Assets\AddIcon\btn-hero31-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero31-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553353">
+        <Icon value="Assets\Textures\btn-ability-mengsk-earthsplitterordnance-earthsplitterbombardment.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-earthsplitterordnance-earthsplitterbombardment.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533532">
+        <Icon value="Assets\Textures\btn-ability-stetmann-garytravelingdamageorb.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-garytravelingdamageorb.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55335322">
+        <Icon value="Assets\Textures\btn-ability-stetmann-garytravelingdamageorb.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-garytravelingdamageorb.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55336">
+        <Icon value="Assets\AddIcon\btn-hero40-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero40-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553362">
+        <Icon value="Assets\AddIcon\btn-hero40-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero40-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553363">
+        <Icon value="Assets\AddIcon\btn-hero40-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero40-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533632">
+        <Icon value="Assets\AddIcon\btn-hero40-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero40-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553364">
+        <Icon value="Assets\AddIcon\btn-hero45-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero45-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533642">
+        <Icon value="Assets\AddIcon\btn-hero45-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero45-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55336422">
+        <Icon value="Assets\AddIcon\btn-hero45-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero45-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553364222">
+        <Icon value="Assets\AddIcon\btn-hero45-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero45-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55337">
+        <Icon value="Assets\AddIcon\btn-hero41-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero41-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553372">
+        <Icon value="Assets\Textures\btn-unit-terran-spidermine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-spidermine.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533722">
+        <Icon value="Assets\AddIcon\btn-hero41-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero41-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55337222">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetankmercenary-tank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetankmercenary-tank.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553372222">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55338">
+        <Icon value="Assets\AddIcon\btn-hero43-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero43-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553382">
+        <Icon value="Assets\AddIcon\btn-hero43-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero43-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533822">
+        <Icon value="Assets\AddIcon\btn-hero43-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero43-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55338222">
+        <Icon value="Assets\AddIcon\btn-hero43-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero43-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553383">
+        <Icon value="Assets\AddIcon\btn-hero53-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero53-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533832">
+        <Icon value="Assets\AddIcon\btn-hero53-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero53-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55338322">
+        <Icon value="Assets\AddIcon\btn-hero53-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero53-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553383222">
+        <Icon value="Assets\AddIcon\btn-hero53-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero53-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55339">
+        <Icon value="Assets\AddIcon\btn-hero49-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero49-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553392">
+        <Icon value="Assets\AddIcon\btn-hero49-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero49-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553393">
+        <Icon value="Assets\AddIcon\btn-hero49-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero49-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5533932">
+        <Icon value="Assets\AddIcon\btn-hero49-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero49-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5534">
+        <Icon value="Assets\AddIcon\btn-hero23-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero23-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5535">
+        <Icon value="Assets\AddIcon\btn-hero23-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero23-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55352">
+        <Icon value="Assets\AddIcon\btn-hero23-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero23-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553522">
+        <Icon value="Assets\AddIcon\btn-hero23-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero23-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5536">
+        <Icon value="Assets\AddIcon\btn-hero24-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero24-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55362">
+        <Icon value="Assets\AddIcon\btn-hero24-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero24-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55363">
+        <Icon value="Assets\AddIcon\btn-hero24-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero24-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553632">
+        <Icon value="Assets\AddIcon\btn-hero24-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero24-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5537">
+        <Icon value="Assets\Textures\btn-ability-terran-huntermissile-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-huntermissile-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55372">
+        <Icon value="Assets\Textures\btn-tips-starmap.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-starmap.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn553722">
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5537222">
+        <Icon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn554">
+        <Icon value="Assets\AddIcon\btn-hero8-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero8-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5542">
+        <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55422">
+        <Icon value="Assets\AddIcon\btn-hero8-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero8-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn554222">
+        <Icon value="Assets\AddIcon\btn-hero8-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero8-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5543">
+        <Icon value="Assets\AddIcon\btn-hero29-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero29-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn555">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5552">
+        <Icon value="Assets\AddIcon\btn-custom-zerg-acidsaliva.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-zerg-acidsaliva.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55522">
+        <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn555222">
+        <Icon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5553">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5554">
+        <Icon value="Assets\AddIcon\btn-hero48-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero48-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55542">
+        <Icon value="Assets\AddIcon\btn-hero48-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero48-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn555422">
+        <Icon value="Assets\AddIcon\btn-hero48-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero48-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55543">
+        <Icon value="Assets\AddIcon\btn-hero48-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero48-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn556">
+        <Icon value="Assets\AddIcon\btn-hero13-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero13-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5562">
+        <Icon value="Assets\AddIcon\btn-hero13-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero13-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55622">
+        <Icon value="Assets\AddIcon\btn-hero13-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero13-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn556222">
+        <Icon value="Assets\AddIcon\btn-hero13-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero13-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn557">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5572">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55722">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-groovedspines.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-groovedspines.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn557222">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-peristalsis.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-peristalsis.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5573">
+        <Icon value="Assets\AddIcon\btn-hero34-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero34-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55732">
+        <Icon value="Assets\AddIcon\btn-hero34-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero34-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn557322">
+        <Icon value="Assets\AddIcon\btn-hero34-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero34-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5573222">
+        <Icon value="Assets\AddIcon\btn-hero34-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero34-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn558">
+        <Icon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5582">
+        <Icon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55822">
+        <Icon value="Assets\AddIcon\btn-custom-zerg-infestorvents.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-zerg-infestorvents.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn558222">
+        <Icon value="Assets\Textures\btn-ability-zerg-contaminate-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-contaminate-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn559">
+        <Icon value="Assets\AddIcon\btn-hero18-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero18-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5592">
+        <Icon value="Assets\AddIcon\btn-hero18-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero18-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55922">
+        <Icon value="Assets\AddIcon\btn-hero18-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero18-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn559222">
+        <Icon value="Assets\AddIcon\btn-hero18-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero18-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn55923">
+        <Icon value="Assets\AddIcon\btn-hero18-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero18-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn56">
+        <Icon value="Assets\Textures\btn-upgrade-terran-weaponrefit.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-weaponrefit.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn562">
+        <Icon value="Assets\Textures\btn-research-zerg-psidisruptor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-psidisruptor.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5622">
+        <Icon value="Assets\AddIcon\btn-custom-terran-vultureweapon.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-terran-vultureweapon.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn56222">
+        <Icon value="Assets\Textures\btn-tips-terran-energynova.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-terran-energynova.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn563">
+        <Icon value="Assets\AddIcon\btn-hero66-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero66-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5632">
+        <Icon value="Assets\AddIcon\btn-hero66-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero66-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5633">
+        <Icon value="Assets\AddIcon\btn-hero66-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero66-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn56332">
+        <Icon value="Assets\AddIcon\btn-hero66-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero66-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn57">
+        <Icon value="Assets\AddIcon\btn-hero27-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero27-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn572">
+        <Icon value="Assets\AddIcon\btn-hero27-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero27-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn5722">
+        <Icon value="Assets\AddIcon\btn-hero27-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero27-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn57222">
+        <Icon value="Assets\AddIcon\btn-hero27-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero27-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn62">
+        <Icon value="Assets\AddIcon\btn-hero9-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero9-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn622">
+        <Icon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6222">
+        <Icon value="Assets\AddIcon\btn-ability-terran-snipe-upgraded-color.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-ability-terran-snipe-upgraded-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63">
+        <Icon value="Assets\AddIcon\btn-hero11-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero11-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn632">
+        <Icon value="Assets\AddIcon\btn-hero11-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero11-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6322">
+        <Icon value="Assets\AddIcon\btn-hero11-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero11-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63222">
+        <Icon value="Assets\AddIcon\btn-hero11-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero11-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn633">
+        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6332">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6333">
+        <Icon value="Assets\Textures\btn-research-zerg-planetaryfortress.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-planetaryfortress.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63332">
+        <Icon value="Assets\Textures\btn-ability-terran-nuclearstrike-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-nuclearstrike-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn634">
+        <Icon value="Assets\AddIcon\btn-hero30-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero30-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6342">
+        <Icon value="Assets\AddIcon\btn-hero30-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero30-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63422">
+        <Icon value="Assets\AddIcon\btn-hero30-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero30-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn634222">
+        <Icon value="Assets\AddIcon\btn-hero30-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero30-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn635">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6352">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6353">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-adrenalglands.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-adrenalglands.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63532">
+        <Icon value="Assets\AddIcon\btn-custom-zerg-infestorhead.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-zerg-infestorhead.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6354">
+        <Icon value="Assets\AddIcon\btn-hero38-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero38-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63542">
+        <Icon value="Assets\AddIcon\btn-hero38-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero38-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63543">
+        <Icon value="Assets\AddIcon\btn-hero38-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero38-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn635432">
+        <Icon value="Assets\AddIcon\btn-hero38-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero38-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn636">
+        <Icon value="Assets\AddIcon\btn-hero35-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6362">
+        <Icon value="Assets\AddIcon\btn-hero35-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63622">
+        <Icon value="Assets\AddIcon\btn-hero35-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn636222">
+        <Icon value="Assets\AddIcon\btn-hero35-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6363">
+        <Icon value="Assets\AddIcon\btn-hero51-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero51-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63632">
+        <Icon value="Assets\AddIcon\btn-hero51-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero51-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63633">
+        <Icon value="Assets\AddIcon\btn-hero51-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero51-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn636332">
+        <Icon value="Assets\AddIcon\btn-hero51-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero51-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn637">
+        <Icon value="Assets\AddIcon\btn-hero42-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero42-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6372">
+        <Icon value="Assets\AddIcon\btn-hero42-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero42-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63722">
+        <Icon value="Assets\AddIcon\btn-hero42-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero42-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn637222">
+        <Icon value="Assets\AddIcon\btn-hero42-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero42-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6373">
+        <Icon value="Assets\AddIcon\btn-hero44-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero44-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63732">
+        <Icon value="Assets\AddIcon\btn-hero44-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero44-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn637322">
+        <Icon value="Assets\AddIcon\btn-hero44-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero44-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6373222">
+        <Icon value="Assets\AddIcon\btn-hero44-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero44-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63733">
+        <Icon value="Assets\AddIcon\btn-hero46-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero46-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn637332">
+        <Icon value="Assets\AddIcon\btn-hero46-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero46-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6373322">
+        <Icon value="Assets\AddIcon\btn-hero46-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero46-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63733222">
+        <Icon value="Assets\AddIcon\btn-hero46-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero46-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn637333">
+        <Icon value="Assets\AddIcon\btn-hero57-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero57-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6373332">
+        <Icon value="Assets\AddIcon\btn-hero57-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero57-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn63733322">
+        <Icon value="Assets\AddIcon\btn-hero57-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero57-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn64">
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn642">
+        <Icon value="Assets\AddIcon\btn-custom-terran-gaussrifle.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-terran-gaussrifle.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6422">
+        <Icon value="Assets\Textures\btn-research-zerg-fortifiedbunker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-research-zerg-fortifiedbunker.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn64222">
+        <Icon value="Assets\AddIcon\btn-weapon-taurenrifle.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-weapon-taurenrifle.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65">
+        <Icon value="Assets\AddIcon\btn-hero15-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero15-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn652">
+        <Icon value="Assets\AddIcon\btn-hero15-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero15-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6522">
+        <Icon value="Assets\AddIcon\btn-hero15-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero15-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65222">
+        <Icon value="Assets\AddIcon\btn-hero15-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero15-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6523">
+        <Icon value="Assets\AddIcon\btn-hero39-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero39-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65232">
+        <Icon value="Assets\AddIcon\btn-hero39-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero39-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65233">
+        <Icon value="Assets\AddIcon\btn-hero39-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero39-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn652332">
+        <Icon value="Assets\AddIcon\btn-hero39-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero39-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn653">
+        <Icon value="Assets\AddIcon\btn-hero19-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero19-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6532">
+        <Icon value="Assets\AddIcon\btn-hero19-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero19-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6533">
+        <Icon value="Assets\AddIcon\btn-hero19-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero19-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65332">
+        <Icon value="Assets\AddIcon\btn-hero19-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero19-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6534">
+        <Icon value="Assets\AddIcon\btn-hero37-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero37-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65342">
+        <Icon value="Assets\AddIcon\btn-hero37-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero37-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn653422">
+        <Icon value="Assets\AddIcon\btn-hero37-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero37-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6534222">
+        <Icon value="Assets\AddIcon\btn-hero37-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero37-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6535">
+        <Icon value="Assets\AddIcon\btn-hero52-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero52-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65352">
+        <Icon value="Assets\AddIcon\btn-hero52-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero52-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn653522">
+        <Icon value="Assets\AddIcon\btn-hero52-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero52-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6535222">
+        <Icon value="Assets\AddIcon\btn-hero52-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero52-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65352222">
+        <Icon value="Assets\AddIcon\btn-hero52-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero52-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6536">
+        <Icon value="Assets\AddIcon\btn-hero62-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero62-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn65362">
+        <Icon value="Assets\AddIcon\btn-hero62-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero62-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn653622">
+        <Icon value="Assets\AddIcon\btn-hero62-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero62-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn653623">
+        <Icon value="Assets\AddIcon\btn-hero62-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero62-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn66">
+        <Icon value="Assets\AddIcon\btn-hero21-skill1a.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21-skill1a.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn662">
+        <Icon value="Assets\AddIcon\btn-hero21-skill1c.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21-skill1c.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6622">
+        <Icon value="Assets\AddIcon\btn-hero21-skill1b.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21-skill1b.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn66222">
+        <Icon value="Assets\AddIcon\btn-hero21-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn662222">
+        <Icon value="Assets\AddIcon\btn-hero21-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn6622222">
+        <Icon value="Assets\AddIcon\btn-hero21-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero21-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn66223">
+        <Icon value="Assets\AddIcon\btn-hero64-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero64-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn662232">
+        <Icon value="Assets\AddIcon\btn-hero64-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero64-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn662233">
+        <Icon value="Assets\AddIcon\btn-hero64-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero64-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn662234">
+        <Icon value="Assets\AddIcon\btn-hero64-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero64-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn7">
+        <Icon value="Assets\AddIcon\btn-hero33-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero33-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn72">
+        <Icon value="Assets\AddIcon\btn-hero33-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero33-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn73">
+        <Icon value="Assets\AddIcon\btn-hero33-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero33-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn74">
+        <Icon value="Assets\AddIcon\btn-hero33-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero33-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn75">
+        <Icon value="Assets\AddIcon\btn-hero47-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero47-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn752">
+        <Icon value="Assets\AddIcon\btn-hero47-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero47-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn753">
+        <Icon value="Assets\AddIcon\btn-hero47-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero47-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="HeroSkillBtn7532">
+        <Icon value="Assets\AddIcon\btn-hero47-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero47-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn8">
+        <Icon value="Assets\AddIcon\btn-hero68-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero68-skill1.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+    </CButton>
+    <CButton id="HeroSkillBtn82">
+        <Icon value="Assets\AddIcon\btn-hero68-skill2.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero68-skill2.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+    </CButton>
+    <CButton id="HeroSkillBtn822">
+        <Icon value="Assets\AddIcon\btn-hero68-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero68-skill4.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="HeroSkillBtn83">
+        <Icon value="Assets\AddIcon\btn-hero68-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero68-skill3.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+    </CButton>
+    <CButton id="Portal">
+        <Icon value="Assets\AddIcon\btn-custom-artifact-purple.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-artifact-purple.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn">
+        <Icon value="Assets\AddIcon\btn-weapon-newweapon.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-weapon-newweapon.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell2">
+        <Icon value="Assets\Textures\btn-tips-hacking.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-hacking.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell22">
+        <Icon value="Assets\Textures\btn-tips-hacking.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-hacking.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell3">
+        <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell32">
+        <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell42">
+        <Icon value="Assets\Textures\btn-tips-hyperion.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-hyperion.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell52">
+        <Icon value="Assets\Textures\btn-tips-fallenheroes.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-fallenheroes.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell62">
+        <Icon value="Assets\AddIcon\btn-custom-protoss-rapiddeployment.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-protoss-rapiddeployment.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell72">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <Hotkey value="Button/Hotkey/A_Spell92"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell82">
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell9">
+        <Icon value="Assets\Textures\btn-tips-challengecounter.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-challengecounter.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell8">
+        <Icon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-biosample.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell4">
+        <Icon value="Assets\Textures\btn-tips-hyperion.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-hyperion.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell5">
+        <Icon value="Assets\Textures\btn-tips-fallenheroes.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-fallenheroes.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell6">
+        <Icon value="Assets\AddIcon\btn-custom-protoss-rapiddeployment.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-custom-protoss-rapiddeployment.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell7">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <Hotkey value="Button/Hotkey/A_Spell5"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell10">
+        <Icon value="Assets\Textures\btn-tips-walloffire.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-walloffire.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="A_Spell92">
+        <Icon value="Assets\Textures\btn-tips-challengecounter.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-challengecounter.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn2">
+        <Icon value="Assets\AddIcon\btn-weapon-thorshammer.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-weapon-thorshammer.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn3">
+        <Icon value="Assets\AddIcon\btn-ability-terran-raynortossgrenade-color.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-ability-terran-raynortossgrenade-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="HeroSkillBtn4">
+        <Icon value="Assets\AddIcon\btn-weapon-scythepistol.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-weapon-scythepistol.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero1Passive">
+        <Icon value="Assets\Textures\btn-unit-terran-tosh.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-tosh.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero9Skill2Remove">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="Salvage"/>
+    </CButton>
+</Catalog>
