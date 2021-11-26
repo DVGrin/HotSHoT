@@ -11,6 +11,7 @@
     <!-- Layouts -->
     <Include path="UI/Layout/Custom/SelectionLockButton.SC2Layout"/>
     <Include path="UI/Layout/Custom/RemoveObjectivesButton.SC2Layout"/>
+    <Include path="UI/Layout/Custom/CenterCameraDummyButton.SC2Layout"/>
 
     <!-- MaxStorm modifications -->
     <Include path="UI/Layout/MaxStorm/CustomBHeroBar.SC2Layout"/>

@@ -249,6 +249,7 @@ bool[11][11] gv_VotedToKick;
 int[11][5] gv_PlayerObjectives;
 PlayerStatistics[11] gv_PlayerStatistics;
 int gv_RemoveObjectivesButton;
+int gv_CenterCameraOnHeroDummyButton;
 
 void InitGlobals () {
     int init_i;
@@ -313,8 +314,8 @@ void InitGlobals () {
     }
 
     gv_SelectionLockButton = c_invalidDialogId;
-
     gv_RemoveObjectivesButton = c_invalidDialogId;
+    gv_CenterCameraOnHeroDummyButton = c_invalidDialogId;
 
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterGalicGroup[init_i] = UnitGroupEmpty();
@@ -4274,6 +4275,11 @@ void gf_HrStatDialogMake1a () {
     gv_RemoveObjectivesButton = DialogControlHookupStandard(
         c_triggerControlTypeButton,
         "UIContainer/RemoveObjectivesButton"
+    );
+
+    gv_CenterCameraOnHeroDummyButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/CenterCameraDummyButton"
     );
 }
 
@@ -10120,19 +10126,34 @@ void gt_TrPlayersAllCreate_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     int i;
+    unitref reference;
 
     if (!runActions) {
         return true;
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+
     TriggerEnable(gt_HeroSelectionLockAction, true);
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
+        reference = UnitRefFromUnit(gv_PlayerHero[gv_PlayerBayul[PlayerGroupLoopCurrent()]]);
+        TriggerAddEventUnitSelected(gt_HeroSelectionLockAction, reference, gv_PlayerBayul[PlayerGroupLoopCurrent()], false);
+    }
+    PlayerGroupLoopEnd();
+
     TriggerEnable(gt_HeroSelectionLockToggle, true);
     TriggerAddEventDialogControl(gt_HeroSelectionLockToggle, c_playerAny, gv_SelectionLockButton, c_triggerControlEventTypeClick);
-    TriggerAddEventDialogControl(gt_HeroSelectionLockToggle, c_playerAny, gv_SelectionLockButton, c_triggerControlEventTypeHotkeyPressed);
     TriggerEnable(gt_RemoveObjectivesButton, true);
     TriggerAddEventDialogControl(gt_RemoveObjectivesButton, c_playerAny, gv_RemoveObjectivesButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_CenterCameraOnHero, true);
+    TriggerAddEventDialogControl(gt_CenterCameraOnHero, c_playerAny, gv_CenterCameraOnHeroDummyButton, c_triggerControlEventTypeClick);
 
     gf_HrScoreDialogMake();
     for (i = 1; i <= 8; i += 1) {
@@ -10255,14 +10276,9 @@ void gt_TrGameStartCounter_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_CenterCameraOnHero_Func (bool testConds, bool runActions) {
     if (testConds) {
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-
         if (!((gv_GameStartBoolean == true))) {
             return false;
         }
@@ -10285,7 +10301,6 @@ bool gt_CenterCameraOnHero_Func (bool testConds, bool runActions) {
 void gt_CenterCameraOnHero_Init () {
     gt_CenterCameraOnHero = TriggerCreate("gt_CenterCameraOnHero_Func");
     TriggerEnable(gt_CenterCameraOnHero, false);
-    TriggerAddEventKeyPressed(gt_CenterCameraOnHero, c_playerAny, c_keySpace, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -10293,11 +10308,7 @@ void gt_CenterCameraOnHero_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_HeroSelectionLockToggle_Func (bool testConds, bool runActions) {
     if (testConds) {
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer())) {
             return false;
         }
     }
@@ -10337,18 +10348,9 @@ void gt_HeroSelectionLockToggle_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
     if (testConds) {
-        if (!((EventUnit() == gv_PlayerHero[EventPlayer()]))) {
-            return false;
-        }
-
         if (!((gv_HeroSelectionLockEnabled[EventPlayer()] == true))) {
             return false;
         }
-
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
@@ -10367,7 +10369,6 @@ bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
 void gt_HeroSelectionLockAction_Init () {
     gt_HeroSelectionLockAction = TriggerCreate("gt_HeroSelectionLockAction_Func");
     TriggerEnable(gt_HeroSelectionLockAction, false);
-    TriggerAddEventUnitSelected(gt_HeroSelectionLockAction, null, c_playerAny, false);
 }
 
 //--------------------------------------------------------------------------------------------------
