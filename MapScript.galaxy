@@ -248,8 +248,7 @@ bool[11] gv_TestModeVotes;
 bool[11][11] gv_VotedToKick;
 int[11][5] gv_PlayerObjectives;
 PlayerStatistics[11] gv_PlayerStatistics;
-int gv_RemoveObjectivesButtonWindow;
-int gv_RemoveObjectivesButtonWindowButton;
+int gv_RemoveObjectivesButton;
 
 void InitGlobals () {
     int init_i;
@@ -315,8 +314,7 @@ void InitGlobals () {
 
     gv_SelectionLockButton = c_invalidDialogId;
 
-    gv_RemoveObjectivesButtonWindow = c_invalidDialogId;
-    gv_RemoveObjectivesButtonWindowButton = c_invalidDialogId;
+    gv_RemoveObjectivesButton = c_invalidDialogId;
 
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_MonsterGalicGroup[init_i] = UnitGroupEmpty();
@@ -4273,34 +4271,9 @@ void gf_HrStatDialogMake1a () {
         "UIContainer/SelectionLockButton"
     );
 
-    DialogCreate(255, 60, c_anchorBottomLeft, 12, 374, true);
-    gv_RemoveObjectivesButtonWindow = DialogLastCreated();
-    DialogSetImageVisible(gv_RemoveObjectivesButtonWindow, false);
-    libNtve_gf_CreateDialogItemButton(
-        gv_RemoveObjectivesButtonWindow,
-        255, 60, c_anchorCenter, 0, 0,
-        (
-            StringToText("<s val=\"Header18\">") + 
-            TextWithColor(StringToText("Removes the objectives and this button"), Color(100.0, 100.0, 100.0)) +  // TODO: Move to external string
-            StringToText("<s/>")
-        ),
-        (
-            StringToText("<s val=\"Header18\">") + 
-            TextWithColor(StringToText("Remove the objectives"), Color(100.0, 100.0, 100.0)) +  // TODO: Move to external string
-            StringToText("<s/>")
-        ),
-        "Assets\\Textures\\ui_void_storybutton_small_normaloverpressedover.dds"
-    );
-    gv_RemoveObjectivesButtonWindowButton = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemImage(
-        gv_RemoveObjectivesButtonWindowButton,
-        "Assets\\Textures\\ui_void_storybutton_small_normalpressed.dds",
-        PlayerGroupAll()
-    );
-    libNtve_gf_SetDialogItemImageType(
-        gv_RemoveObjectivesButtonWindowButton,
-        c_triggerImageTypeEndCap,
-        PlayerGroupAll()
+    gv_RemoveObjectivesButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/RemoveObjectivesButton"
     );
 }
 
@@ -10158,7 +10131,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     TriggerAddEventDialogControl(gt_HeroSelectionLockToggle, c_playerAny, gv_SelectionLockButton, c_triggerControlEventTypeClick);
     TriggerAddEventDialogControl(gt_HeroSelectionLockToggle, c_playerAny, gv_SelectionLockButton, c_triggerControlEventTypeHotkeyPressed);
     TriggerEnable(gt_RemoveObjectivesButton, true);
-    TriggerAddEventDialogControl(gt_RemoveObjectivesButton, c_playerAny, gv_RemoveObjectivesButtonWindowButton, c_triggerControlEventTypeClick);
+    TriggerAddEventDialogControl(gt_RemoveObjectivesButton, c_playerAny, gv_RemoveObjectivesButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_CenterCameraOnHero, true);
 
     gf_HrScoreDialogMake();
@@ -10196,7 +10169,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), true);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), true);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), true);
-    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), true);
+    DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), true);
     gf_HrCleanUpHeroSelectDialogs();
     HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal("Param/Value/AD868381"), libNtve_ge_TipType_NormalTip), StringExternal("Param/Value/7B165D99"), StringExternal("Param/Value/4F1F220A"), "Assets\\AddIcon\\btn-achievement-00-beta.dds");
     UISetGameMenuItemText(PlayerGroupAll(), c_gameMenuDialogGenericButton2, StringExternal("Param/Value/46682880"));
@@ -10408,7 +10381,7 @@ bool gt_RemoveObjectivesButton_Func (bool testConds, bool runActions) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-        if (!((EventDialogControl() == gv_RemoveObjectivesButtonWindowButton))) {
+        if (!((EventDialogControl() == gv_RemoveObjectivesButton))) {
             return false;
         }
     }
@@ -10418,7 +10391,7 @@ bool gt_RemoveObjectivesButton_Func (bool testConds, bool runActions) {
     }
 
     ObjectiveDestroyAll(PlayerGroupSingle(EventPlayer()));
-    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupSingle(EventPlayer()), false);
+    DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupSingle(EventPlayer()), false);
 
     return true;
 }
@@ -16119,8 +16092,8 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
-    DialogSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
-    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -16201,8 +16174,8 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
-    DialogSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
-    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -16809,8 +16782,8 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
-    DialogSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
-    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
@@ -16887,8 +16860,8 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
-    DialogSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
-    DialogSetVisible(gv_RemoveObjectivesButtonWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {

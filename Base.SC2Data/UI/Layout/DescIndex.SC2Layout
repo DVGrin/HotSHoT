@@ -9,7 +9,8 @@
     <Include path="UI/Layout/LoadingScreen.SC2Layout" requiredtoload="IS_EDITOR"/>
 
     <!-- Layouts -->
-    <Include path="UI/Layout/SelectionLockButton.SC2Layout"/>
+    <Include path="UI/Layout/Custom/SelectionLockButton.SC2Layout"/>
+    <Include path="UI/Layout/Custom/RemoveObjectivesButton.SC2Layout"/>
 
     <!-- MaxStorm modifications -->
     <Include path="UI/Layout/MaxStorm/CustomBHeroBar.SC2Layout"/>

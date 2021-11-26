@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Button" name="RemoveObjectivesButton" template="MyButtonTemplate/ButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-374"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="12"/>
+
+            <Frame type="Label" name="Label">
+                <Text val="Remove all objectives"/>
+            </Frame>
+
+            <Tooltip val="Remove the objectives and this button"/>
+
+            <Visible val="False"/>
+        </Frame>
+    </Frame>
+</Desc>
