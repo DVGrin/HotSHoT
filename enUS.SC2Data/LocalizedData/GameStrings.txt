@@ -7344,9 +7344,9 @@ Param/Value/05CF34C5=Deken
 Param/Value/05DC0F58='s attack<n/> killed 
 Param/Value/05F62168= <s val="HelpPanelListBoxItemTitle">
 Param/Value/05F78DFB=<s val="PlanetPanelPlanetName">
-Param/Value/0602E825=
-Param/Value/06072EE0=
-Param/Value/06123B22=
+Param/Value/0602E825=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your Q skill <c val="ffffff">[F1]</c></c></s>
+Param/Value/06072EE0=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your W skill <c val="ffffff">[F2]</c></c></s>
+Param/Value/06123B22=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your E skill <c val="ffffff">[F3]</c></c></s>
 Param/Value/062C72C1=Beacon
 Param/Value/062D849D=</s>
 Param/Value/0633BE4E=</s>
@@ -7356,7 +7356,7 @@ Param/Value/067028AD=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="
 Param/Value/0683A4DB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/06977E96=/Opposition: 
 Param/Value/069CC3BA=<s val="Header18"><c val="ccffff">
-Param/Value/06A54DC6=
+Param/Value/06A54DC6=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your R skill <c val="ffffff">[F4]</c></c></s>
 Param/Value/06A7E755= <s val="HelpPanelListBoxItemTitle">
 Param/Value/06AE8A13=Govan
 Param/Value/06DE9191=
@@ -9966,7 +9966,7 @@ Param/Value/BEC41A6A=
 Param/Value/BEDAB7D4=<c val="33ccff">Jernigan</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■□□□□□□□</c></s>
 Param/Value/BEEF3FBD=<s val="GameOverDialogTitle">
 Param/Value/BEF8C0B5= is destroyed.
-Param/Value/BF05A81F=<s val="PurchasePanelCost"><c val="ffffff">
+Param/Value/BF05A81F=<s val="SkillPointLabel"><c val="ffffff">
 Param/Value/BF089656=<c val="33ccff">Sibarun</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
 Param/Value/BF1109BC=
 Param/Value/BF3CF5D8=</s>

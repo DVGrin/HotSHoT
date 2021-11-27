@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Button" name="ButtonTemplate" template="StandardTemplates/StandardButtonTemplate">
+        <Width val="75"/>
+        <Height val="75"/>
+
+        <Frame type="Image" name="NormalImage">
+            <Texture val="Assets/Textures/ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds"/>
+            <TextureType val="Normal"/>
+        </Frame>
+
+        <Frame type="Image" name="HoverImage">
+            <Texture val="Assets/Textures/ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds"/>
+            <TextureType val="Normal"/>
+        </Frame>
+
+        <Frame type="Image" name="PlusImage">
+            <Width val="61"/>
+            <Height val="61"/>
+
+            <Anchor side="Left" relative="$parent" pos="Min" offset="7"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="7"/>
+
+            <Texture val="Assets/Textures/btn-ability-terran-heal.dds"/>
+            <RenderPriority val="550"/>
+        </Frame>
+    </Frame>
+</Desc>

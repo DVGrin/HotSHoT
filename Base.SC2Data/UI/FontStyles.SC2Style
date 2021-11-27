@@ -15,4 +15,20 @@
         shadowoffset="2"
         outlinewidth="0"
     />
+
+    <Style name="SkillPointLabel"
+        template="PurchasePanelCost"
+        height="30"
+        vjustify="Middle"
+        hjustify="Center"
+        styleflags="Shadow"
+        textcolor="255,255,255,255"
+        highlightcolor="255,0,0,0"
+        disabledcolor="255,0,0,0"
+        hotkeycolor="255,0,0,0"
+        hyperlinkcolor="255,0,0,0"
+        glowcolor="255,0,0,0"
+        shadowoffset="2"
+        outlinewidth="0"
+    />
 </StyleFile>

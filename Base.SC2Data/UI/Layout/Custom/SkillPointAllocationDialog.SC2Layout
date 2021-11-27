@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Constant name="ButtonSpacing" val="1"/>
+
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Frame" name="SkillPointAllocationWindow">
+            <Width val="400"/>
+            <Height val="115"/>
+
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-93"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-250"/>
+
+            <Frame type="Image" name="Background">
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+
+                <Texture val="Assets/blackbg.tga"/>
+            </Frame>
+
+            <Frame type="Image" name="Border">
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+
+                <Texture val="Assets/Textures/ui_chat_frame_protoss.dds"/>
+                <TextureType val="Border"/>
+            </Frame>
+
+            <Frame type="Label" name="Label">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
+
+                <Width val="80"/>
+                <Height val="95"/>
+
+                <Style val="SkillPointLabel"/>
+                <Color val="ffffff"/>
+                <Text val="1"/>
+            </Frame>
+
+            <Frame type="Button" name="ButtonQ" template="SkillLevelUpButton/ButtonTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+                <Anchor side="Left" relative="$parent" pos="Max" offset="-325"/>
+
+                <Tooltip val="@Param/Value/0602E825"/>
+                <Shortcut val="@UI/Hotkey/LevelUpQ"/>
+            </Frame>
+
+            <Frame type="Button" name="ButtonW" template="SkillLevelUpButton/ButtonTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+                <Anchor side="Left" relative="$parent/ButtonQ" pos="Max" offset="#ButtonSpacing"/>
+
+                <Tooltip val="@Param/Value/06072EE0"/>
+                <Shortcut val="@UI/Hotkey/LevelUpW"/>
+            </Frame>
+
+            <Frame type="Button" name="ButtonE" template="SkillLevelUpButton/ButtonTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+                <Anchor side="Left" relative="$parent/ButtonW" pos="Max" offset="#ButtonSpacing"/>
+
+                <Tooltip val="@Param/Value/06123B22"/>
+                <Shortcut val="@UI/Hotkey/LevelUpE"/>
+            </Frame>
+
+            <Frame type="Button" name="ButtonR" template="SkillLevelUpButton/ButtonTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+                <Anchor side="Left" relative="$parent/ButtonE" pos="Max" offset="#ButtonSpacing"/>
+
+                <Tooltip val="@Param/Value/06A54DC6"/>
+                <Shortcut val="@UI/Hotkey/LevelUpR"/>
+                <Enabled val="False"/>
+            </Frame>
+
+            <Visible val="False"/>
+        </Frame>
+    </Frame>
+</Desc>

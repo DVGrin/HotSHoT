@@ -97,10 +97,8 @@ int gv_StrongUnitCount;
 int[4] gv_MinionMonsterStronger;
 int[11][4] gv_PlayerLevel;
 int gv_SkillLearnWindow;
-int[8] gv_SkillLearnWindowImage;
-int[4] gv_SkillLearnWindowBtn;
-int[4] gv_SkillLearnWindowBtnImage;
-int[12] gv_SkillLearnWindowNum;
+int gv_SkillLearnWindowLabel;
+int[4] gv_SkillLearnWindowButton;
 int[11] gv_AvailableSkillPoints;
 int gv_StatusWindow;
 int gv_StatusWindow2;
@@ -280,17 +278,9 @@ void InitGlobals () {
     }
 
     gv_SkillLearnWindow = c_invalidDialogId;
-    for (init_i = 0; init_i <= 7; init_i += 1) {
-        gv_SkillLearnWindowImage[init_i] = c_invalidDialogControlId;
-    }
+    gv_SkillLearnWindowLabel = c_invalidDialogId;
     for (init_i = 0; init_i <= 3; init_i += 1) {
-        gv_SkillLearnWindowBtn[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 3; init_i += 1) {
-        gv_SkillLearnWindowBtnImage[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 11; init_i += 1) {
-        gv_SkillLearnWindowNum[init_i] = c_invalidDialogControlId;
+        gv_SkillLearnWindowButton[init_i] = c_invalidDialogControlId;
     }
 
     gv_StatusWindow = c_invalidDialogId;
@@ -620,11 +610,7 @@ trigger gt_TrChatCommandHandler;
 trigger gt_Trgametipbtn;
 trigger gt_TrMinionMake;
 trigger gt_TrHeroLevelUp;
-trigger gt_TrSkillLearnBtnClick;
-trigger gt_TrSkillLearnHotKey1;
-trigger gt_TrSkillLearnHotKey2;
-trigger gt_TrSkillLearnHotKey3;
-trigger gt_TrSkillLearnHotKey4;
+trigger gt_SkillPointAllocation;
 trigger gt_TrStatDialogPageNext;
 trigger gt_TrStatDialogPageNextHotKey;
 trigger gt_TrStatDialogStatIncrease;
@@ -3794,46 +3780,56 @@ void gf_HrHeroLevelUpLink() {
 }
 
 void gf_HrSkillLearnDialogMake () {
-    int i;
+    gv_SkillLearnWindow = DialogControlHookupStandard(
+        c_triggerControlTypePanel,
+        "UIContainer/SkillPointAllocationWindow"
+    );
+    gv_SkillLearnWindowButton[c_skillQ] = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/SkillPointAllocationWindow/ButtonQ"
+    );
+    gv_SkillLearnWindowButton[c_skillW] = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/SkillPointAllocationWindow/ButtonW"
+    );
+    gv_SkillLearnWindowButton[c_skillE] = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/SkillPointAllocationWindow/ButtonE"
+    );
+    gv_SkillLearnWindowButton[c_skillR] = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/SkillPointAllocationWindow/ButtonR"
+    );
+    gv_SkillLearnWindowLabel = DialogControlHookupStandard(
+        c_triggerControlTypeLabel,
+        "UIContainer/SkillPointAllocationWindow/Label"
+    );
 
-    DialogCreate(385, 115, c_anchorRight, 93, 294, true);
-    gv_SkillLearnWindow = DialogLastCreated();
-    DialogSetImageVisible(gv_SkillLearnWindow, false);
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 365, 90, c_anchorCenter, 0, -5, StringToText(""), "Assets\\blackbg.tga", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_SkillLearnWindowImage[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 385, 115, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_chat_frame_protoss.dds", c_triggerImageTypeBorder, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_SkillLearnWindowImage[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_SkillLearnWindow, 75, 75, c_anchorLeft, 60, -5, StringExternal("Param/Value/9746353B"), StringToText(""), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_SkillLearnWindowBtn[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_SkillLearnWindow, 60, 60, c_anchorLeft, 67, -5, StringToText(""), "Assets\\Textures\\btn-ability-terran-heal.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_SkillLearnWindowBtnImage[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_SkillLearnWindow, 75, 75, c_anchorLeft, 136, -5, StringExternal("Param/Value/CC8564BC"), StringToText(""), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_SkillLearnWindowBtn[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_SkillLearnWindow, 60, 60, c_anchorLeft, 143, -5, StringToText(""), "Assets\\Textures\\btn-ability-terran-heal.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_SkillLearnWindowBtnImage[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_SkillLearnWindow, 75, 75, c_anchorLeft, 212, -5, StringExternal("Param/Value/5111BB33"), StringToText(""), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_SkillLearnWindowBtn[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_SkillLearnWindow, 60, 60, c_anchorLeft, 219, -5, StringToText(""), "Assets\\Textures\\btn-ability-terran-heal.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_SkillLearnWindowBtnImage[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_SkillLearnWindow, 75, 75, c_anchorLeft, 288, -5, StringExternal("Param/Value/60EE4FA2"), StringToText(""), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    DialogControlSetEnabled(DialogControlLastCreated(), PlayerGroupAll(), false);
-    gv_SkillLearnWindowBtn[3] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_SkillLearnWindow, 60, 60, c_anchorLeft, 293, -5, StringToText(""), "Assets\\Textures\\btn-ability-terran-heal.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_SkillLearnWindowBtnImage[3] = DialogControlLastCreated();
-    for (i = 1; i <= 8 ; i += 1 ) {
-        libNtve_gf_CreateDialogItemLabel(gv_SkillLearnWindow, 100, 60, c_anchorLeft, -4, 10, (StringExternal("Param/Value/CF098128") + IntToText(gv_AvailableSkillPoints[gv_PlayerBayul[i]]) + StringExternal("Param/Value/0915B747")), Color(100,100,100), false, 2.0);
-        libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
-        gv_SkillLearnWindowNum[gv_PlayerBayul[i]] = DialogControlLastCreated();
-        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    }
+    TriggerEnable(gt_SkillPointAllocation, true);
+    TriggerAddEventDialogControl(
+        gt_SkillPointAllocation,
+        c_playerAny,
+        gv_SkillLearnWindowButton[c_skillQ],
+        c_triggerControlEventTypeClick
+    );
+    TriggerAddEventDialogControl(
+        gt_SkillPointAllocation,
+        c_playerAny,
+        gv_SkillLearnWindowButton[c_skillW],
+        c_triggerControlEventTypeClick
+    );
+    TriggerAddEventDialogControl(
+        gt_SkillPointAllocation,
+        c_playerAny,
+        gv_SkillLearnWindowButton[c_skillE],
+        c_triggerControlEventTypeClick
+    );
+    TriggerAddEventDialogControl(
+        gt_SkillPointAllocation,
+        c_playerAny,
+        gv_SkillLearnWindowButton[c_skillR],
+        c_triggerControlEventTypeClick
+    );
 }
 
 void gf_LearnSkill(int player_number, int skill) {
@@ -3976,11 +3972,11 @@ void gf_LearnSkill(int player_number, int skill) {
 void gf_HrSkillLearnWindowOpen () {
     // Display the available skill points
     libNtve_gf_SetDialogItemText(
-        gv_SkillLearnWindowNum[EventPlayer()],
+        gv_SkillLearnWindowLabel,
         (
-            StringExternal("Param/Value/BF05A81F") + 
-            IntToText(gv_AvailableSkillPoints[EventPlayer()]) + 
-            StringExternal("Param/Value/731A1880")
+            StringToText("<s val=\"SkillPointLabel\">") +
+            TextWithColor(IntToText(gv_AvailableSkillPoints[EventPlayer()]), Color(100.0, 100.0, 100.0)) +
+            StringToText("</s>")
         ),
         PlayerGroupSingle(EventPlayer())
     );
@@ -3990,93 +3986,93 @@ void gf_HrSkillLearnWindowOpen () {
     }
     // Enable every button if skill is available for level up
     if (gv_SkillLevels[EventPlayer()][c_skillQ] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillQ]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
     }
     if (gv_SkillLevels[EventPlayer()][c_skillW] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillW]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
     }
     if (gv_SkillLevels[EventPlayer()][c_skillE] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillE]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
     }
     if (gv_SkillLevels[EventPlayer()][c_skillR] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillR]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), true);
     }
 
     // Bison can level up skills to 6
     if (gv_SelectedCharNum[EventPlayer()] == 60) {
         if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
-            DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), true);
+            DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
         }
         if ((gv_SkillLevels[EventPlayer()][c_skillW] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
-            DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), true);
+            DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
         }
         if ((gv_SkillLevels[EventPlayer()][c_skillE] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
-            DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
+            DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
         }
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
     }
-    DialogSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(EventPlayer()), true);
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(EventPlayer()), true);
 }
 
 void gf_HrSkillLearnWindowClose () {
     // Display the available skill points
     libNtve_gf_SetDialogItemText(
-        gv_SkillLearnWindowNum[EventPlayer()],
+        gv_SkillLearnWindowLabel,
         (
-            StringExternal("Param/Value/5910D4FA") + 
-            IntToText(gv_AvailableSkillPoints[EventPlayer()]) +
-            StringExternal("Param/Value/0FF38FCB")
+            StringToText("<s val=\"SkillPointLabel\">") +
+            TextWithColor(IntToText(gv_AvailableSkillPoints[EventPlayer()]), Color(100.0, 100.0, 100.0)) +
+            StringToText("</s>")
         ),
         PlayerGroupSingle(EventPlayer())
     );
 
     // If no more skill points, disable everything and hide the dialog
     if ((gv_AvailableSkillPoints[EventPlayer()] == 0)) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(EventPlayer()), false);
         return;
     }
 
     // Otherwise enable and disable buttons as necessary
     if (gv_SkillLevels[EventPlayer()][c_skillQ] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillQ]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
     } else {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), false);
     }
 
     if (gv_SkillLevels[EventPlayer()][c_skillW] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillW]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
     } else {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), false);
     }
 
     if (gv_SkillLevels[EventPlayer()][c_skillE] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillE]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
     } else {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), false);
     }
 
     if (gv_SkillLevels[EventPlayer()][c_skillR] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillR]) {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), true);
     } else {
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
     }
 
     // Bison can level up skills to 6
     if (gv_SelectedCharNum[EventPlayer()] == 60) {
         if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
-            DialogControlSetEnabled(gv_SkillLearnWindowBtn[0], PlayerGroupSingle(EventPlayer()), true);
+            DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
         }
         if ((gv_SkillLevels[EventPlayer()][c_skillW] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
-            DialogControlSetEnabled(gv_SkillLearnWindowBtn[1], PlayerGroupSingle(EventPlayer()), true);
+            DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
         }
         if ((gv_SkillLevels[EventPlayer()][c_skillE] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
-            DialogControlSetEnabled(gv_SkillLearnWindowBtn[2], PlayerGroupSingle(EventPlayer()), true);
+            DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
         }
-        DialogControlSetEnabled(gv_SkillLearnWindowBtn[3], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
     }
 }
 
@@ -7953,7 +7949,6 @@ bool gt_Tr6PlayerDialogAddorView_Func (bool testConds, bool runActions) {
     TriggerEnable(TriggerGetCurrent(), false);
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
-            DialogControlSetVisible(gv_SkillLearnWindowNum[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), true);
             DialogControlSetVisible(gv_StatusWindowLabel[gv_PlayerBayul[i]][0], PlayerGroupSingle(gv_PlayerBayul[i]), true);
             DialogControlSetVisible(gv_StatusWindowLabel[gv_PlayerBayul[i]][1], PlayerGroupSingle(gv_PlayerBayul[i]), true);
             DialogControlSetVisible(gv_StatusWindowLabel[gv_PlayerBayul[i]][2], PlayerGroupSingle(gv_PlayerBayul[i]), true);
@@ -10180,7 +10175,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
             CameraLockInput(gv_PlayerBayul[i], false);
             UnitControlGroupAddUnit(gv_PlayerBayul[i], 1, gv_PlayerHero[gv_PlayerBayul[i]]);
             UnitSelect(gv_PlayerHero[gv_PlayerBayul[i]], gv_PlayerBayul[i], true);
-            DialogSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(gv_PlayerBayul[i]), true);
+            DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupSingle(gv_PlayerBayul[i]), true);
         }
     }
 
@@ -10991,79 +10986,19 @@ void gt_TrHeroLevelUp_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: ?????? ????????? (?????? ??????)
-//--------------------------------------------------------------------------------------------------
-bool gt_TrSkillLearnBtnClick_Func (bool testConds, bool runActions) {
-    if (testConds) {
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-            return false;
-        }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-        if (!(
-                (EventDialogControl() == gv_SkillLearnWindowBtn[0]) || 
-                (EventDialogControl() == gv_SkillLearnWindowBtn[1]) || 
-                (EventDialogControl() == gv_SkillLearnWindowBtn[2]) ||
-                (EventDialogControl() == gv_SkillLearnWindowBtn[3])
-            )) {
-            return false;
-        }
-        if (!((gv_AvailableSkillPoints[EventPlayer()] > 0))) {
-            return false;
-        }
-    }
-
-    if (!runActions) {
-        return true;
-    }
-
-    // Learn the skill
-    if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_skillQ])) {
-        gf_LearnSkill(EventPlayer(), c_skillQ);
-    } else if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_skillW])) {
-        gf_LearnSkill(EventPlayer(), c_skillW);
-    } else if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_skillE])) {
-        gf_LearnSkill(EventPlayer(), c_skillE);
-    } else if ((EventDialogControl() == gv_SkillLearnWindowBtn[c_skillR])) {
-        gf_LearnSkill(EventPlayer(), c_skillR);
-    }
-
-    // Update the tooltip from "learn" to "upgrade"
-    if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[0], StringExternal("Param/Value/12A551AB"), PlayerGroupSingle(EventPlayer()));
-    } else if ((gv_SkillLevels[EventPlayer()][c_skillW] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[c_skillW], StringExternal("Param/Value/7B3AD691"), PlayerGroupSingle(EventPlayer()));
-    } else if ((gv_SkillLevels[EventPlayer()][c_skillE] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[c_skillE], StringExternal("Param/Value/BA3F12C4"), PlayerGroupSingle(EventPlayer()));
-    } else if ((gv_SkillLevels[EventPlayer()][c_skillR] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[c_skillR], StringExternal("Param/Value/3323CBC3"), PlayerGroupSingle(EventPlayer()));
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TrSkillLearnBtnClick_Init () {
-    gt_TrSkillLearnBtnClick = TriggerCreate("gt_TrSkillLearnBtnClick_Func");
-    TriggerAddEventDialogControl(gt_TrSkillLearnBtnClick, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: ?????? ????????? (?????????F1)
 //--------------------------------------------------------------------------------------------------
-bool gt_TrSkillLearnHotKey1_Func (bool testConds, bool runActions) {
+bool gt_SkillPointAllocation_Func (bool testConds, bool runActions) {
+    int i;
+    int skill;
+    string[4] upgrade_string;
+    string[4] skill_hotkeys;
+
     if (testConds) {
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
         }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
         if (!((gv_AvailableSkillPoints[EventPlayer()] > 0))) {
-            return false;
-        }
-        if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
             return false;
         }
     }
@@ -11072,133 +11007,45 @@ bool gt_TrSkillLearnHotKey1_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gf_LearnSkill(EventPlayer(), c_skillQ);
+    upgrade_string[0] = "Upgrade your Q skill "; // TODO: Move to external strings
+    upgrade_string[1] = "Upgrade your W skill ";
+    upgrade_string[2] = "Upgrade your E skill ";
+    upgrade_string[3] = "Upgrade your R skill ";
 
-    if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[0], StringExternal("Param/Value/166EDB1E"), PlayerGroupSingle(EventPlayer()));
+    skill_hotkeys[0] = "[F1]"; // TODO: Move to external strings
+    skill_hotkeys[1] = "[F2]";
+    skill_hotkeys[2] = "[F3]";
+    skill_hotkeys[3] = "[F4]";
+
+    for (i = 0; i < 4; i += 1) {
+        if (EventDialogControl() == gv_SkillLearnWindowButton[i]) {
+            skill = i;
+            break;
+        }
+    }
+
+    gf_LearnSkill(EventPlayer(), skill);
+
+    if ((gv_SkillLevels[EventPlayer()][skill] == 1)) {
+        libNtve_gf_SetDialogItemTooltip(
+            gv_SkillLearnWindowButton[skill],
+            (
+                StringToText("<s val=\"PurchasePanelGroupName\">") + 
+                StringToText(upgrade_string[skill]) +
+                TextWithColor(StringToText(skill_hotkeys[skill]), Color(100.0, 100.0, 100.0)) +
+                StringToText("</s>")
+            ),
+            PlayerGroupSingle(EventPlayer())
+        );
     }
 
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrSkillLearnHotKey1_Init () {
-    gt_TrSkillLearnHotKey1 = TriggerCreate("gt_TrSkillLearnHotKey1_Func");
-    TriggerAddEventKeyPressed(gt_TrSkillLearnHotKey1, c_playerAny, c_keyF1, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ?????? ????????? (?????????F2)
-//--------------------------------------------------------------------------------------------------
-bool gt_TrSkillLearnHotKey2_Func (bool testConds, bool runActions) {
-    if (testConds) {
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-            return false;
-        }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-        if (!((gv_AvailableSkillPoints[EventPlayer()] > 0))) {
-            return false;
-        }
-        if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
-            return false;
-        }
-    }
-
-    if (!runActions) {
-        return true;
-    }
-
-    gf_LearnSkill(EventPlayer(), c_skillW);
-
-    if ((gv_SkillLevels[EventPlayer()][c_skillW] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[1], StringExternal("Param/Value/4813E63B"), PlayerGroupSingle(EventPlayer()));
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TrSkillLearnHotKey2_Init () {
-    gt_TrSkillLearnHotKey2 = TriggerCreate("gt_TrSkillLearnHotKey2_Func");
-    TriggerAddEventKeyPressed(gt_TrSkillLearnHotKey2, c_playerAny, c_keyF2, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ?????? ????????? (?????????F3)
-//--------------------------------------------------------------------------------------------------
-bool gt_TrSkillLearnHotKey3_Func (bool testConds, bool runActions) {
-    if (testConds) {
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-            return false;
-        }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-        if (!((gv_AvailableSkillPoints[EventPlayer()] > 0))) {
-            return false;
-        }
-        if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
-            return false;
-        }
-    }
-
-    if (!runActions) {
-        return true;
-    }
-
-    gf_LearnSkill(EventPlayer(), c_skillE);
-
-    if ((gv_SkillLevels[EventPlayer()][c_skillE] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[2], StringExternal("Param/Value/4D8E6CEE"), PlayerGroupSingle(EventPlayer()));
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TrSkillLearnHotKey3_Init () {
-    gt_TrSkillLearnHotKey3 = TriggerCreate("gt_TrSkillLearnHotKey3_Func");
-    TriggerAddEventKeyPressed(gt_TrSkillLearnHotKey3, c_playerAny, c_keyF3, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ?????? ????????? (?????????F4)
-//--------------------------------------------------------------------------------------------------
-bool gt_TrSkillLearnHotKey4_Func (bool testConds, bool runActions) {
-    if (testConds) {
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-            return false;
-        }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-        if (!((gv_AvailableSkillPoints[EventPlayer()] > 0))) {
-            return false;
-        }
-        if (!((DialogIsVisible(gv_SkillLearnWindow, EventPlayer()) == true))) {
-            return false;
-        }
-    }
-
-    if (!runActions) {
-        return true;
-    }
-
-    gf_LearnSkill(EventPlayer(), c_skillR);
-
-    if ((gv_SkillLevels[EventPlayer()][c_skillR] == 1)) {
-        libNtve_gf_SetDialogItemTooltip(gv_SkillLearnWindowBtn[3], StringExternal("Param/Value/6175D150"), PlayerGroupSingle(EventPlayer()));
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TrSkillLearnHotKey4_Init () {
-    gt_TrSkillLearnHotKey4 = TriggerCreate("gt_TrSkillLearnHotKey4_Func");
-    TriggerAddEventKeyPressed(gt_TrSkillLearnHotKey4, c_playerAny, c_keyF4, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
+void gt_SkillPointAllocation_Init () {
+    gt_SkillPointAllocation = TriggerCreate("gt_SkillPointAllocation_Func");
+    TriggerEnable(gt_SkillPointAllocation, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -16109,7 +15956,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
         }
     }
 
-    DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
@@ -16191,7 +16038,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
         }
     }
 
-    DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
@@ -16802,7 +16649,7 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(109));
-    DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
@@ -16880,7 +16727,7 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(112));
-    DialogSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
     Wait(6.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
@@ -17214,11 +17061,7 @@ void InitTriggers () {
     gt_Trgametipbtn_Init();
     gt_TrMinionMake_Init();
     gt_TrHeroLevelUp_Init();
-    gt_TrSkillLearnBtnClick_Init();
-    gt_TrSkillLearnHotKey1_Init();
-    gt_TrSkillLearnHotKey2_Init();
-    gt_TrSkillLearnHotKey3_Init();
-    gt_TrSkillLearnHotKey4_Init();
+    gt_SkillPointAllocation_Init();
     gt_TrStatDialogPageNext_Init();
     gt_TrStatDialogPageNextHotKey_Init();
     gt_TrStatDialogStatIncrease_Init();

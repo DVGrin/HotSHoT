@@ -4,6 +4,7 @@
 
     <!-- Templates -->
     <Include path="UI/Layout/Templates/MyButtonTemplate.SC2Layout"/>
+    <Include path="UI/Layout/Templates/SkillLevelUpButton.SC2Layout"/>
 
     <!-- Loading Screen -->
     <Include path="UI/Layout/LoadingScreen.SC2Layout" requiredtoload="IS_EDITOR"/>
@@ -12,6 +13,7 @@
     <Include path="UI/Layout/Custom/SelectionLockButton.SC2Layout"/>
     <Include path="UI/Layout/Custom/RemoveObjectivesButton.SC2Layout"/>
     <Include path="UI/Layout/Custom/CenterCameraDummyButton.SC2Layout"/>
+    <Include path="UI/Layout/Custom/SkillPointAllocationDialog.SC2Layout"/>
 
     <!-- MaxStorm modifications -->
     <Include path="UI/Layout/MaxStorm/CustomBHeroBar.SC2Layout"/>
