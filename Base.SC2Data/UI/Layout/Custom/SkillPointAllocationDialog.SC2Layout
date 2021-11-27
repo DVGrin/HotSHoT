@@ -4,10 +4,10 @@
 
     <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
         <Frame type="Frame" name="SkillPointAllocationWindow">
-            <Width val="400"/>
+            <Width val="410"/>
             <Height val="115"/>
 
-            <Anchor side="Right" relative="$parent" pos="Max" offset="-93"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-83"/>
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="-250"/>
 
             <Frame type="Image" name="Background">
@@ -43,7 +43,7 @@
 
             <Frame type="Button" name="ButtonQ" template="SkillLevelUpButton/ButtonTemplate">
                 <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
-                <Anchor side="Left" relative="$parent" pos="Max" offset="-325"/>
+                <Anchor side="Left" relative="$parent" pos="Max" offset="-335"/>
 
                 <Tooltip val="@Param/Value/0602E825"/>
                 <Shortcut val="@UI/Hotkey/LevelUpQ"/>
