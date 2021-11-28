@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Button" name="ScoreWindowToggleButton" template="MyButtonTemplate/ButtonTemplate">
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="50"/>
+
+            <Frame type="Label" name="Label">
+                <Text val="Open score [TAB]"/>
+            </Frame>
+
+            <Visible val="False"/>
+
+            <Shortcut val="@UI/Hotkey/ToggleStatWindow"/>
+        </Frame>
+    </Frame>
+</Desc>
+
+<!-- DialogCreate(490, 550, c_anchorTopRight, -25, 30, true);
+gv_ScoreDialog[1] = DialogLastCreated();
+DialogSetImageVisible(gv_ScoreDialog[1], false);
+libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 290, 70, c_anchorCenter, 100, -235, StringToText(""), StringExternal("Param/Value/EA9531F2"), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds");
+libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds", PlayerGroupAll());
+libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
+gv_ScoreDialogAddBtn[0] = DialogControlLastCreated();
+libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 220, 70, c_anchorCenter, -75, -235, StringToText(""), StringExternal("Param/Value/807E2BCD"), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds");
+libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds", PlayerGroupAll());
+libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
+DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
+gv_ScoreDialogAddBtn[1] = DialogControlLastCreated(); -->

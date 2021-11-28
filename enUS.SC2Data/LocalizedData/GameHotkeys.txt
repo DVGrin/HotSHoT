@@ -394,6 +394,7 @@ Button/Hotkey/HeroSkillBtn83=E
 Button/Hotkey/Portal=G
 UI/Hotkey/SelectionLock=F5
 UI/Hotkey/CenterCameraOnHero=Space
+UI/Hotkey/ToggleStatWindow=Tab
 UI/Hotkey/LevelUpQ=F1
 UI/Hotkey/LevelUpW=F2
 UI/Hotkey/LevelUpE=F3

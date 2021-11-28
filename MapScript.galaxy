@@ -207,8 +207,8 @@ int[11] gv_TeamSelectDialogPlayerName;
 bool[8] gv_TeamSelectHeroNothing;
 int[8] gv_TeamSelectChangeNum;
 bool[2] gv_TeamSelectChangeDelay;
-int[4] gv_ScoreDialog;
-int[3] gv_ScoreDialogAddBtn;
+int[2] gv_ScoreDialog;
+int gv_ScoreWindowToggleButton;
 int[8] gv_ScoreDialogImage;
 int[4] gv_ScoreDialogImageB;
 int[20] gv_ScoreDialogText;
@@ -406,12 +406,12 @@ void InitGlobals () {
         gv_TeamSelectDialogPlayerName[init_i] = c_invalidDialogControlId;
     }
 
-    for (init_i = 0; init_i <= 3; init_i += 1) {
+    for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_ScoreDialog[init_i] = c_invalidDialogId;
     }
-    for (init_i = 0; init_i <= 2; init_i += 1) {
-        gv_ScoreDialogAddBtn[init_i] = c_invalidDialogControlId;
-    }
+
+    gv_ScoreWindowToggleButton = c_invalidDialogControlId;
+
     for (init_i = 0; init_i <= 7; init_i += 1) {
         gv_ScoreDialogImage[init_i] = c_invalidDialogControlId;
     }
@@ -647,8 +647,7 @@ trigger gt_TrHero62Skill3On;
 trigger gt_TrHero62Skill3End;
 trigger gt_TrHero66PassiveOn;
 trigger gt_TrHero66PassiveOn2;
-trigger gt_TrScoreDialogBtnOpen;
-trigger gt_TrScoreDialogHotKeyOpen;
+trigger gt_ScoreWindowToggle;
 trigger gt_TrMinionNotStop;
 trigger gt_TrMonsterMake1;
 trigger gt_TrMonsterMake2;
@@ -7423,21 +7422,17 @@ void gf_HrScoreDialogMake () {
         Y_offset += 45;
         inner_Y_offset += 45;
     }
-    DialogCreate(490, 550, c_anchorTopRight, -25, 30, true);
+
+    gv_ScoreWindowToggleButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/ScoreWindowToggleButton"
+    );
+    TriggerEnable(gt_ScoreWindowToggle, true);
+    TriggerAddEventDialogControl(gt_ScoreWindowToggle, c_playerAny, gv_ScoreWindowToggleButton, c_triggerControlEventTypeClick);
+
+    DialogCreate(250, 75, c_anchorTop, 0, 5, true);
     gv_ScoreDialog[1] = DialogLastCreated();
     DialogSetImageVisible(gv_ScoreDialog[1], false);
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 290, 70, c_anchorCenter, 100, -235, StringToText(""), StringExternal("Param/Value/EA9531F2"), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
-    gv_ScoreDialogAddBtn[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 220, 70, c_anchorCenter, -75, -235, StringToText(""), StringExternal("Param/Value/807E2BCD"), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    gv_ScoreDialogAddBtn[1] = DialogControlLastCreated();
-    DialogCreate(250, 75, c_anchorTop, 0, 5, true);
-    gv_ScoreDialog[2] = DialogLastCreated();
-    DialogSetImageVisible(gv_ScoreDialog[2], false);
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 250, 75, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_armory_text_innerframe.dds", c_triggerImageTypeHorizontalBorder, false, Color(0.00, 50.20, 100.00), c_triggerBlendModeNormal);
     gv_ScoreDialogImageB[1] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 117, 8, c_anchorBottomLeft, 9, 13, StringToText(""), "Assets\\Textures\\ui_ingame_leaderboard_bar.dds", c_triggerImageTypeBorder, false, Color(50.20, 100.00, 50.20), c_triggerBlendModeLighten);
@@ -10167,8 +10162,8 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     }
 
     DialogSetVisible(gv_ScoreDialog[0], PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), true);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), true);
-    DialogSetVisible(gv_ScoreDialog[2], PlayerGroupAll(), true);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), true);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), true);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), true);
@@ -10200,6 +10195,7 @@ bool gt_TrGameStartCounter_Func (bool testConds, bool runActions) {
     TriggerEnable(TriggerGetCurrent(), false);
 
     gf_CreateObjectives();
+    TriggerEnable(gt_MinionObjectiveCompleted, true);
 
     for (i = 0; i < 11; i += 1) {
         if (!(PlayerStatus(i) == c_playerStatusActive)) {
@@ -12884,18 +12880,10 @@ void gt_TrHero66PassiveOn2_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ??????/??????(??????)
 //--------------------------------------------------------------------------------------------------
-bool gt_TrScoreDialogBtnOpen_Func (bool testConds, bool runActions) {
+bool gt_ScoreWindowToggle_Func (bool testConds, bool runActions) {
     int i;
 
     if (testConds) {
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-
-        if (!((EventDialogControl() == gv_ScoreDialogAddBtn[0]))) {
-            return false;
-        }
-
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
@@ -12907,15 +12895,13 @@ bool gt_TrScoreDialogBtnOpen_Func (bool testConds, bool runActions) {
 
     if ((DialogIsVisible(gv_ScoreDialog[0], EventPlayer()) == true)) {
         DialogSetVisible(gv_ScoreDialog[0], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[0], PlayerGroupSingle(EventPlayer()), c_anchorCenter, 100, -235);
-        libNtve_gf_SetDialogItemText(gv_ScoreDialogAddBtn[0], StringExternal("Param/Value/1C2A4CD4"), PlayerGroupSingle(EventPlayer()));
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[1], PlayerGroupSingle(EventPlayer()), c_anchorCenter, -75, -235);
+        DialogControlSetPosition(gv_ScoreWindowToggleButton, PlayerGroupSingle(EventPlayer()), c_anchorTopRight, 10, 50);
+        libNtve_gf_SetDialogItemText(gv_ScoreWindowToggleButton, StringToText("Open score [TAB]"), PlayerGroupSingle(EventPlayer()));
     }
     else if ((DialogIsVisible(gv_ScoreDialog[0], EventPlayer()) == false)) {
         DialogSetVisible(gv_ScoreDialog[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[0], PlayerGroupSingle(EventPlayer()), c_anchorCenter, 100, 235);
-        libNtve_gf_SetDialogItemText(gv_ScoreDialogAddBtn[0], StringExternal("Param/Value/FC01C398"), PlayerGroupSingle(EventPlayer()));
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[1], PlayerGroupSingle(EventPlayer()), c_anchorCenter, -75, 235);
+        DialogControlSetPosition(gv_ScoreWindowToggleButton, PlayerGroupSingle(EventPlayer()), c_anchorTopRight, 10, 510);
+        libNtve_gf_SetDialogItemText(gv_ScoreWindowToggleButton, StringToText("Close score [TAB]"), PlayerGroupSingle(EventPlayer()));
         for (i = 1; i <= 8; i += 1) {
             if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
                 libNtve_gf_SetDialogItemText(gv_ScoreDialogFarming[gv_PlayerBayul[i]], (StringExternal("Param/Value/2083DE81") + IntToText(libNtve_gf_UnitGetPropertyKills(gv_PlayerHero[gv_PlayerBayul[i]], c_unitPropCurrent)) + StringExternal("Param/Value/6003B0CC")), PlayerGroupAll());
@@ -12927,55 +12913,9 @@ bool gt_TrScoreDialogBtnOpen_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrScoreDialogBtnOpen_Init () {
-    gt_TrScoreDialogBtnOpen = TriggerCreate("gt_TrScoreDialogBtnOpen_Func");
-    TriggerAddEventDialogControl(gt_TrScoreDialogBtnOpen, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ????????? ??????/??????(?????????)
-//--------------------------------------------------------------------------------------------------
-bool gt_TrScoreDialogHotKeyOpen_Func (bool testConds, bool runActions) {
-    int i;
-
-    if (testConds) {
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-
-        if (!((gv_GameEndBoolean == false))) {
-            return false;
-        }
-    }
-
-    if (!runActions) {
-        return true;
-    }
-
-    if ((DialogIsVisible(gv_ScoreDialog[0], EventPlayer()) == true)) {
-        DialogSetVisible(gv_ScoreDialog[0], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[0], PlayerGroupSingle(EventPlayer()), c_anchorCenter, 100, -235);
-        libNtve_gf_SetDialogItemText(gv_ScoreDialogAddBtn[0], StringExternal("Param/Value/33E8ED99"), PlayerGroupSingle(EventPlayer()));
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[1], PlayerGroupSingle(EventPlayer()), c_anchorCenter, -75, -235);
-    }
-    else if ((DialogIsVisible(gv_ScoreDialog[0], EventPlayer()) == false)) {
-        DialogSetVisible(gv_ScoreDialog[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[0], PlayerGroupSingle(EventPlayer()), c_anchorCenter, 100, 235);
-        libNtve_gf_SetDialogItemText(gv_ScoreDialogAddBtn[0], StringExternal("Param/Value/2755242E"), PlayerGroupSingle(EventPlayer()));
-        DialogControlSetPosition(gv_ScoreDialogAddBtn[1], PlayerGroupSingle(EventPlayer()), c_anchorCenter, -75, 235);
-        for (i = 1; i <= 8; i += 1) {
-            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
-                libNtve_gf_SetDialogItemText(gv_ScoreDialogFarming[gv_PlayerBayul[i]], (StringExternal("Param/Value/85719550") + IntToText(libNtve_gf_UnitGetPropertyKills(gv_PlayerHero[gv_PlayerBayul[i]], c_unitPropCurrent)) + StringExternal("Param/Value/6B8CCC58")), PlayerGroupAll());
-            }
-        }
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TrScoreDialogHotKeyOpen_Init () {
-    gt_TrScoreDialogHotKeyOpen = TriggerCreate("gt_TrScoreDialogHotKeyOpen_Func");
-    TriggerAddEventKeyPressed(gt_TrScoreDialogHotKeyOpen, c_playerAny, c_keyTab, true, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
+void gt_ScoreWindowToggle_Init () {
+    gt_ScoreWindowToggle = TriggerCreate("gt_ScoreWindowToggle_Func");
+    TriggerEnable(gt_ScoreWindowToggle, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -15956,8 +15896,8 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     UISetDragSelectEnabled(PlayerGroupAll(), false);
     UISetGameMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogGenericButton1, false);
     DialogSetVisible(gv_ScoreDialog[0], PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
-    DialogSetVisible(gv_ScoreDialog[2], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
@@ -16038,8 +15978,8 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     UISetDragSelectEnabled(PlayerGroupAll(), false);
     UISetGameMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogGenericButton1, false);
     DialogSetVisible(gv_ScoreDialog[0], PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
-    DialogSetVisible(gv_ScoreDialog[2], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
@@ -16646,8 +16586,8 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     UISetDragSelectEnabled(PlayerGroupAll(), false);
     UISetGameMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogGenericButton1, false);
     DialogSetVisible(gv_ScoreDialog[0], PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
-    DialogSetVisible(gv_ScoreDialog[2], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
@@ -16724,8 +16664,8 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     UISetDragSelectEnabled(PlayerGroupAll(), false);
     UISetGameMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogGenericButton1, false);
     DialogSetVisible(gv_ScoreDialog[0], PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
-    DialogSetVisible(gv_ScoreDialog[2], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
     DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
@@ -16962,6 +16902,7 @@ bool gt_MinionObjectiveCompleted_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_MinionObjectiveCompleted_Init () {
     gt_MinionObjectiveCompleted = TriggerCreate("gt_MinionObjectiveCompleted_Func");
+    TriggerEnable(gt_MinionObjectiveCompleted, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -17119,8 +17060,7 @@ void InitTriggers () {
     gt_TrHero62Skill3End_Init();
     gt_TrHero66PassiveOn_Init();
     gt_TrHero66PassiveOn2_Init();
-    gt_TrScoreDialogBtnOpen_Init();
-    gt_TrScoreDialogHotKeyOpen_Init();
+    gt_ScoreWindowToggle_Init();
     gt_TrMinionNotStop_Init();
     gt_TrMonsterMake1_Init();
     gt_TrMonsterMake2_Init();
