@@ -7804,7 +7804,7 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "displayflyerhelper", "None");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "showworkerstatus", "0");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "showcurrentordermodel", "0");
-            PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "selectuncontrolable", "1");
+            // PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "selectuncontrolable", "1");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "teamcoloredlifestatus", "1");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "displayunitstatus", "All");
             gv_HeroReviveCountNum[gv_PlayerBayul[lv_GPlayerNum1]][0] = 10;
@@ -7835,7 +7835,7 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "displayflyerhelper", "None");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "showworkerstatus", "0");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "showcurrentordermodel", "0");
-            PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "selectuncontrolable", "1");
+            // PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "selectuncontrolable", "1");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "teamcoloredlifestatus", "1");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "displayunitstatus", "All");
             gv_HeroReviveCountNum[gv_PlayerBayul[lv_GPlayerNum3]][0] = 10;
@@ -7862,7 +7862,7 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "displayflyerhelper", "None");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "showworkerstatus", "0");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "showcurrentordermodel", "0");
-            PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "selectuncontrolable", "1");
+            // PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "selectuncontrolable", "1");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "teamcoloredlifestatus", "1");
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum5], "displayunitstatus", "All");
             for (lv_GPlayerNum6 = 1; lv_GPlayerNum6 <= 4; lv_GPlayerNum6 += 1) {
@@ -10129,20 +10129,7 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
 
     TriggerEnable(TriggerGetCurrent(), false);
 
-    TriggerEnable(gt_HeroSelectionLockAction, true);
-    PlayerGroupLoopBegin(PlayerGroupActive());
-    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
-        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
-            continue;
-        }
-        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
-            continue;
-        }
-        reference = UnitRefFromUnit(gv_PlayerHero[gv_PlayerBayul[PlayerGroupLoopCurrent()]]);
-        TriggerAddEventUnitSelected(gt_HeroSelectionLockAction, reference, gv_PlayerBayul[PlayerGroupLoopCurrent()], false);
-    }
-    PlayerGroupLoopEnd();
-
+    TriggerAddEventTimePeriodic(gt_HeroSelectionLockAction, 0.0625, c_timeGame);
     TriggerEnable(gt_HeroSelectionLockToggle, true);
     TriggerAddEventDialogControl(gt_HeroSelectionLockToggle, c_playerAny, gv_SelectionLockButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_RemoveObjectivesButton, true);
@@ -10302,6 +10289,7 @@ void gt_CenterCameraOnHero_Init () {
 // Trigger: ?????? ?????? ?????? ??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_HeroSelectionLockToggle_Func (bool testConds, bool runActions) {
+    bool any_lock = false;
     if (testConds) {
         if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer())) {
             return false;
@@ -10313,6 +10301,7 @@ bool gt_HeroSelectionLockToggle_Func (bool testConds, bool runActions) {
     }
 
     if ((gv_HeroSelectionLockEnabled[EventPlayer()] == false)) {
+        // PlayerOptionOverride(EventPlayer(), "selectuncontrolable", "0");
         gv_HeroSelectionLockEnabled[EventPlayer()] = true;
         if ((gv_GameStartBoolean == true) && (gv_HeroDeathBoolean[EventPlayer()] == false)) {
             CameraPan(EventPlayer(), UnitGetPosition(gv_PlayerHero[EventPlayer()]), 0.0, -1, 10.0, false);
@@ -10324,9 +10313,31 @@ bool gt_HeroSelectionLockToggle_Func (bool testConds, bool runActions) {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/C5D49D43"));
     }
     else if ((gv_HeroSelectionLockEnabled[EventPlayer()] == true)) {
+        // PlayerOptionOverride(EventPlayer(), "selectuncontrolable", "1");
         gv_HeroSelectionLockEnabled[EventPlayer()] = false;
         UIClearMessages(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle);
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/97F72AA9"));
+    }
+
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
+        if (gv_HeroSelectionLockEnabled[PlayerGroupLoopCurrent()]) {
+            any_lock = true;
+            break;
+        }
+    }
+    PlayerGroupLoopEnd();
+
+    if (any_lock) {
+        TriggerEnable(gt_HeroSelectionLockAction, true);
+    } else {
+        TriggerEnable(gt_HeroSelectionLockAction, false);
     }
 
     return true;
@@ -10343,10 +10354,7 @@ void gt_HeroSelectionLockToggle_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
     if (testConds) {
-        if (!((gv_HeroSelectionLockEnabled[EventPlayer()] == true))) {
-            return false;
-        }
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
+        if (gv_GameStartBoolean == false) {
             return false;
         }
     }
@@ -10355,8 +10363,21 @@ bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    UnitClearSelection(EventPlayer());
-    UnitSelect(gv_PlayerHero[EventPlayer()], EventPlayer(), true);
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
+        if (!(gv_HeroSelectionLockEnabled[PlayerGroupLoopCurrent()])) {
+            continue;
+        }
+        UnitClearSelection(PlayerGroupLoopCurrent());
+        UnitSelect(gv_PlayerHero[gv_PlayerBayul[PlayerGroupLoopCurrent()]], PlayerGroupLoopCurrent(), true);
+    }
+    PlayerGroupLoopEnd();
     return true;
 }
 

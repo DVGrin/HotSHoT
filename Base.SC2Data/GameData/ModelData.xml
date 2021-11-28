@@ -6558,6 +6558,7 @@
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
         <SelectionRadius value="1.150000"/>
+        <SelectionLayer value="1"/>
     </CModel>
     <CModel id="Hero9Skill2Unit3" parent="Unit" Race="Protoss">
         <Model value="Assets\Units\Terran\NukePack\NukePack.m3"/>
