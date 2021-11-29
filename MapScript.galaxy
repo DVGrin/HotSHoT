@@ -108,6 +108,7 @@ int[30] gv_StatShopItemLabel;
 int gv_StatShopNextPageDummyButton;
 int[5] gv_StatShopPageButton;
 int[11] gv_ActiveShopPage;
+int[11][30] gv_StatIncreasesBought;
 
 int gv_StatusWindow;
 int gv_StatusWindow2;
@@ -116,7 +117,6 @@ int[5] gv_StatusWindowPageBtn;
 int[30] gv_StatusWindowBtn;
 int[30] gv_StatusWindowBtnImage;
 int[11][30] gv_StatusWindowLabel;
-int[11][30] gv_StatusWindowNum;
 int[11] gv_StatusWindowPageSwitch;
 bool[11] gv_StatusWindowAddDelay;
 
@@ -534,7 +534,7 @@ void gf_HrCriticalChanceLevelIncrease ();
 void gf_HrCooldownReductionLevelIncrease ();
 // Updates the particular player's stats in the stat window
 //
-// Uses `gv_StatusWindowNum` and `gv_ShopItemParameters`
+// Uses `gv_StatIncreasesBought` and `gv_ShopItemParameters`
 // Changes the tooltip for player's `gv_ScoreDialogName`
 void gf_StatWindowUpdatePlayer (int player);
 void gf_HrItemUseComplete ();
@@ -4250,6 +4250,10 @@ void gf_HrStatDialogMake1a () {
         TriggerAddEventDialogControl(gt_ChangeShopPage, c_playerAny, gv_StatShopPageButton[i], c_triggerControlEventTypeClick);
     }
 
+    for (i = 0; i < 30; i += 1) {
+        TriggerAddEventDialogControl(gt_TrStatDialogStatIncrease, c_playerAny, gv_StatShopButton[i], c_triggerControlEventTypeClick);
+    }
+
     DialogCreate(270, 284, c_anchorBottomRight, 408, -10, true);
     gv_StatusWindow = DialogLastCreated();
     DialogSetImageVisible(gv_StatusWindow, false);
@@ -4359,39 +4363,39 @@ void gf_HrStatDialogMake1b () {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/760EF0C8") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][0]) + StringExternal("Param/Value/9B6B133F")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/760EF0C8") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][0]) + StringExternal("Param/Value/9B6B133F")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][0] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/02E4C19B") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/15F881BB")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/02E4C19B") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/15F881BB")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][1] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/07A85A9A") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/A6018535")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/07A85A9A") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/A6018535")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][2] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/36A72367") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/2EC8C9E3")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/36A72367") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/2EC8C9E3")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][3] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/A509C15A") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][4]) + StringExternal("Param/Value/F49C874E")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/A509C15A") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][4]) + StringExternal("Param/Value/F49C874E")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][4] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/4F4D4678") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][5]) + StringExternal("Param/Value/3ED8A80C")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/4F4D4678") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][5]) + StringExternal("Param/Value/3ED8A80C")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][5] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset = 45;
@@ -4479,39 +4483,39 @@ void gf_HrStatDialogMake2b () {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/DE594C7B") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][6]) + StringExternal("Param/Value/15CE61F1")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/DE594C7B") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][6]) + StringExternal("Param/Value/15CE61F1")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][6] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/4489B42E") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][7]) + StringExternal("Param/Value/E3E5CF71")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/4489B42E") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][7]) + StringExternal("Param/Value/E3E5CF71")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][7] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/0754513D") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][8]) + StringExternal("Param/Value/25205028")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/0754513D") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][8]) + StringExternal("Param/Value/25205028")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][8] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/78940A81") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][9]) + StringExternal("Param/Value/21CBD8ED")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/78940A81") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][9]) + StringExternal("Param/Value/21CBD8ED")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][9] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/8752F9D5") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][10]) + StringExternal("Param/Value/6C10B44F")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/8752F9D5") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][10]) + StringExternal("Param/Value/6C10B44F")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][10] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/F9DE2DFF") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][11]) + StringExternal("Param/Value/88C5DFE8")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/F9DE2DFF") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][11]) + StringExternal("Param/Value/88C5DFE8")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][11] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset = 45;
@@ -4599,39 +4603,39 @@ void gf_HrStatDialogMake3b2 () {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/A853CE51") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][12]) + StringExternal("Param/Value/01A529CE")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/A853CE51") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][12]) + StringExternal("Param/Value/01A529CE")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][12] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/F2D441BC") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][13]) + StringExternal("Param/Value/1B6B90A9")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/F2D441BC") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][13]) + StringExternal("Param/Value/1B6B90A9")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][13] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/99EB848F") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][14]) + StringExternal("Param/Value/8589AD33")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/99EB848F") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][14]) + StringExternal("Param/Value/8589AD33")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][14] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/8C0DAC01") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][15]) + StringExternal("Param/Value/6C8C01A4")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/8C0DAC01") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][15]) + StringExternal("Param/Value/6C8C01A4")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][15] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/0DEC0E96") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][16]) + StringExternal("Param/Value/279CB271")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/0DEC0E96") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][16]) + StringExternal("Param/Value/279CB271")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][16] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/51AAA6BB") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][17]) + StringExternal("Param/Value/2BF353AB")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/51AAA6BB") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][17]) + StringExternal("Param/Value/2BF353AB")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][17] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset = 45;
@@ -4719,39 +4723,39 @@ void gf_HrStatDialogMake3b () {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/D51AB9EE") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][18]) + StringExternal("Param/Value/9F2C3EA5")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/D51AB9EE") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][18]) + StringExternal("Param/Value/9F2C3EA5")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][18] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/C09BA795") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][19]) + StringExternal("Param/Value/CF3E1C6B")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/C09BA795") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][19]) + StringExternal("Param/Value/CF3E1C6B")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][19] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/FE48A2A8") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][20]) + StringExternal("Param/Value/C6561A10")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/FE48A2A8") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][20]) + StringExternal("Param/Value/C6561A10")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][20] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/4054ACB0") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][21]) + StringExternal("Param/Value/D7ED20C2")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/4054ACB0") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][21]) + StringExternal("Param/Value/D7ED20C2")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][21] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/CD32922B") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][22]) + StringExternal("Param/Value/32E6FC84")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/CD32922B") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][22]) + StringExternal("Param/Value/32E6FC84")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][22] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/02D07892") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][23]) + StringExternal("Param/Value/4AE265E7")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/02D07892") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][23]) + StringExternal("Param/Value/4AE265E7")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][23] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset = 45;
@@ -4839,39 +4843,39 @@ void gf_HrStatDialogMake4b () {
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/9636AB41") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][24]) + StringExternal("Param/Value/DB470392")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/9636AB41") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][24]) + StringExternal("Param/Value/DB470392")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][24] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/D04B2E04") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][25]) + StringExternal("Param/Value/42F55FE5")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/D04B2E04") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][25]) + StringExternal("Param/Value/42F55FE5")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][25] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/AE5AEC1A") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][26]) + StringExternal("Param/Value/E311DC8B")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/AE5AEC1A") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][26]) + StringExternal("Param/Value/E311DC8B")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][26] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/E9FED7E3") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][27]) + StringExternal("Param/Value/49C77318")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/E9FED7E3") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][27]) + StringExternal("Param/Value/49C77318")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][27] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset += 65;
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_left, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/76166ED8") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][28]) + StringExternal("Param/Value/22884353")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/76166ED8") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][28]) + StringExternal("Param/Value/22884353")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][28] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         DialogControlCreate(gv_StatusWindow, c_triggerControlTypeLabel);
         DialogControlSetSize(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), 70, 50);
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(gv_PlayerBayul[i]), c_anchorTopLeft, x_offset_right, y_offset);
-        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/CD472C2A") + IntToText(gv_StatusWindowNum[gv_PlayerBayul[i]][29]) + StringExternal("Param/Value/C25E6834")), PlayerGroupSingle(gv_PlayerBayul[i]));
+        libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/CD472C2A") + IntToText(gv_StatIncreasesBought[gv_PlayerBayul[i]][29]) + StringExternal("Param/Value/C25E6834")), PlayerGroupSingle(gv_PlayerBayul[i]));
         gv_StatusWindowLabel[gv_PlayerBayul[i]][29] = DialogControlLastCreated();
         DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
         y_offset = 45;
@@ -4905,8 +4909,8 @@ static void lf_PayCostsForShopItem(int shop_index) {
 
 static void lf_ShopRelatedChecks(int shop_index) {
     // Disable the button at maximum upgrades
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[shop_index], PlayerGroupSingle(EventPlayer()), false);
+    if ((gv_StatIncreasesBought[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades)) {
+        DialogControlSetEnabled(gv_StatShopButton[shop_index], PlayerGroupSingle(EventPlayer()), false);
     }
     lf_ShopObjectiveCompletion();
 }
@@ -4919,8 +4923,8 @@ void gf_HrStat1 () {
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222323", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222322", 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -4937,8 +4941,8 @@ void gf_HrStat2 () {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero71Passive", gv_PlayerHero[EventPlayer()], 1);
     }
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -4950,8 +4954,8 @@ void gf_HrStat3 () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "DefensePower", gv_PlayerHero[EventPlayer()], 4);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322234", 4);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -4963,8 +4967,8 @@ void gf_HrStat4 () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Amor2", gv_PlayerHero[EventPlayer()], 4);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222342", 4);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -4976,8 +4980,8 @@ void gf_HrStat5 () {
     UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifeMax, c_unitPropCurrent) + 100.0));    
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp422", 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -4990,8 +4994,8 @@ void gf_HrStat6 () {
         UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, (UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyMax, c_unitPropCurrent) + 75.0));
         TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42", 1);
         // Shop Changes
-        gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
+        gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
         libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
         lf_ShopRelatedChecks(shop_index);
@@ -5005,8 +5009,8 @@ void gf_HrStat7 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong24222", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5018,8 +5022,8 @@ void gf_HrStat8 () {
         // Upgrade
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong2422", gv_PlayerHero[EventPlayer()], 1);
         // Shop Changes
-        gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
+        gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
         libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
         lf_ShopRelatedChecks(shop_index);
@@ -5034,8 +5038,8 @@ void gf_HrStat9 () {
     gf_HrAttackSpeedLevelIncrease();
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223222", 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5044,17 +5048,17 @@ void gf_HrStat9 () {
 void gf_HrStat10 () {
     const int shop_index = 9;
     // Upgrade
-    if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 0)) {
+    if ((gv_StatIncreasesBought[EventPlayer()][shop_index] == 0)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Armorbreak", gv_PlayerHero[EventPlayer()], 1);
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Armorbreak2", gv_PlayerHero[EventPlayer()], 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade", 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade3", 1);
     }
-    else if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 1)) {
+    else if ((gv_StatIncreasesBought[EventPlayer()][shop_index] == 1)) {
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade2", 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade32", 1);
     }
-    else if ((gv_StatusWindowNum[EventPlayer()][shop_index] == 2)) {
+    else if ((gv_StatIncreasesBought[EventPlayer()][shop_index] == 2)) {
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade22", 1);
         TechTreeUpgradeAddLevel(EventPlayer(), "Armorbreakupgrade322", 1);
     } else {
@@ -5062,8 +5066,8 @@ void gf_HrStat10 () {
     }
 
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5074,8 +5078,8 @@ void gf_HrStat11 () {
     // Upgrade
     gf_HrEvasionLevelIncrease();
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5086,8 +5090,8 @@ void gf_HrStat12 () {
     // Upgrade
     gf_HrCriticalChanceLevelIncrease();
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5100,7 +5104,7 @@ static void lf_DisableSeals() {
     const int first_seal_index = 12;
     const int last_seal_index = 17;
     for (i = first_seal_index; i <= last_seal_index; i += 1) {
-        DialogControlSetEnabled(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
+        DialogControlSetEnabled(gv_StatShopButton[i], PlayerGroupSingle(EventPlayer()), false);
     }
     gv_SealBought[EventPlayer()] = true;
 }
@@ -5115,8 +5119,8 @@ void gf_HrStat25 () {
     }
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP33", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/8A7F65C7") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/36A17EA3")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/8A7F65C7") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/36A17EA3")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_DisableSeals();
 }
@@ -5126,8 +5130,8 @@ void gf_HrStat26 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4851ADBC") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/DBB538DF")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4851ADBC") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/DBB538DF")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_DisableSeals();
 }
@@ -5138,8 +5142,8 @@ void gf_HrStat27 () {
     gf_HrCriticalChanceLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP3233", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0450D79A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/924BE64C")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0450D79A") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/924BE64C")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_DisableSeals();
 }
@@ -5150,8 +5154,8 @@ void gf_HrStat28 () {
     gf_HrCooldownReductionLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323333", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/7CC06727") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/12C02D1B")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/7CC06727") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/12C02D1B")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_DisableSeals();
 }
@@ -5162,8 +5166,8 @@ void gf_HrStat29 () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP32333", gv_PlayerHero[EventPlayer()], 1);
     gf_HrEvasionLevelIncrease();
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/EAFCB85C") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/0B2277F9")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/EAFCB85C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/0B2277F9")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_DisableSeals();
 }
@@ -5173,8 +5177,8 @@ void gf_HrStat30 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323332", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4CD6BABA") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/0BD69820")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4CD6BABA") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/0BD69820")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_DisableSeals();
 }
@@ -5185,8 +5189,8 @@ void gf_HrStat13 () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4232", 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5202,8 +5206,8 @@ void gf_HrStat14 () {
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp42332222332", 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp423322223322", 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5214,8 +5218,8 @@ void gf_HrStat15 () {
     // Upgrade
     gf_HrCooldownReductionLevelIncrease();
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] += 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
@@ -5227,8 +5231,8 @@ void gf_HrStat16 () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "BoosterItem2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322232222", 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2BBFB346") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/A431C779")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/2BBFB346") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/A431C779")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5238,8 +5242,8 @@ void gf_HrStat17 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E63A395A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/AEFB2F88")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/E63A395A") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/AEFB2F88")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5249,8 +5253,8 @@ void gf_HrStat18 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagmaFire", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F16E4894") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/50B26F7B")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/F16E4894") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/50B26F7B")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5260,8 +5264,8 @@ void gf_HrStat19 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong25", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/97E83587") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E42F4E5")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/97E83587") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E42F4E5")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5271,8 +5275,8 @@ void gf_HrStat20 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong252", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/AA3D08C5") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/2EAA36A2")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/AA3D08C5") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2EAA36A2")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5283,8 +5287,8 @@ void gf_HrStat21 () {
     UnitGroupAdd(gv_WardGroup[EventPlayer()], UnitLastCreated());
     UnitControlGroupAddUnit(EventPlayer(), 3, UnitLastCreated());
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/44B3468A") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/5214615F")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/44B3468A") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/5214615F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5294,8 +5298,8 @@ void gf_HrStat22 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "SpellDong242422", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4792A2C8") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/B2C67E7D")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/4792A2C8") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/B2C67E7D")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5305,8 +5309,8 @@ void gf_HrStat23 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroLevelup2", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0DBB13B3") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/F51317E6")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/0DBB13B3") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/F51317E6")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5316,8 +5320,8 @@ void gf_HrStat24 () {
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroLevelup22", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
-    gv_StatusWindowNum[EventPlayer()][shop_index] = 1;
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/38D5186D") + IntToText(gv_StatusWindowNum[EventPlayer()][shop_index]) + StringExternal("Param/Value/83231539")), PlayerGroupSingle(EventPlayer()));
+    gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][shop_index], (StringExternal("Param/Value/38D5186D") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/83231539")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
@@ -5325,7 +5329,7 @@ void gf_HrStat24 () {
 void gf_HrAttackSpeedLevelIncrease () {
     int i;
     string[10] upgrade_names;
-    int current_upgrade = gv_StatusWindowNum[EventPlayer()][8];
+    int current_upgrade = gv_StatIncreasesBought[EventPlayer()][8];
 
     upgrade_names[0] = "AttackSpeed";
     upgrade_names[1] = "AttackSpeed2";
@@ -5451,7 +5455,7 @@ void gf_StatWindowUpdatePlayer (int player) {
             continue;
         }
 
-        if (gv_StatusWindowNum[player][i] == 0) { // Only show bought stats
+        if (gv_StatIncreasesBought[player][i] == 0) { // Only show bought stats
             continue;
         }
 
@@ -5471,7 +5475,7 @@ void gf_StatWindowUpdatePlayer (int player) {
             stat_name_color
         );
 
-        tooltip_text += TextWithColor(IntToText(gv_StatusWindowNum[player][i]), NUMBER_COLOR);
+        tooltip_text += TextWithColor(IntToText(gv_StatIncreasesBought[player][i]), NUMBER_COLOR);
         tooltip_text += StringToText("<n/>");
     }
 
@@ -5484,7 +5488,7 @@ void gf_StatWindowUpdatePlayer (int player) {
     tooltip_text += StringToText("<n/>");
     if (gv_SealBought[player]) {
         for (i = 12; i <= 17; i += 1) {
-            if (gv_StatusWindowNum[player][i] == 1) {
+            if (gv_StatIncreasesBought[player][i] == 1) {
                 tooltip_text += StringToText("  ");
                 tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, SEAL_COLOR);
                 break;
@@ -5499,7 +5503,7 @@ void gf_StatWindowUpdatePlayer (int player) {
     tooltip_text += TextWithColor(StringToText("Consumables:"), CONSUMABLE_LABEL_COLOR); // TODO: Move to external string
 
     for (i = 27; i < 30; i += 1) {
-        if (gv_StatusWindowNum[player][i] == 0) {
+        if (gv_StatIncreasesBought[player][i] == 0) {
             stat_name_color = NONACTIVE_CONSUMABLE_COLOR;
         } else {
             stat_name_color = ACTIVE_CONSUMABLE_COLOR;
@@ -5515,16 +5519,16 @@ void gf_StatWindowUpdatePlayer (int player) {
 }
 
 void gf_HrItemUseComplete () {
-    if ((gv_StatusWindowNum[EventPlayer()][28] != 0)) {
-        gv_StatusWindowNum[EventPlayer()][28] = 0;
+    if ((gv_StatIncreasesBought[EventPlayer()][28] != 0)) {
+        gv_StatIncreasesBought[EventPlayer()][28] = 0;
         DialogControlSetEnabled(gv_StatusWindowBtn[28], PlayerGroupSingle(EventPlayer()), true);
-        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][28], (StringExternal("Param/Value/68B8F61B") + IntToText(gv_StatusWindowNum[EventPlayer()][28]) + StringExternal("Param/Value/9418664B")), PlayerGroupSingle(EventPlayer()));
+        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][28], (StringExternal("Param/Value/68B8F61B") + IntToText(gv_StatIncreasesBought[EventPlayer()][28]) + StringExternal("Param/Value/9418664B")), PlayerGroupSingle(EventPlayer()));
     }
 
-    if ((gv_StatusWindowNum[EventPlayer()][29] != 0)) {
-        gv_StatusWindowNum[EventPlayer()][29] = 0;
+    if ((gv_StatIncreasesBought[EventPlayer()][29] != 0)) {
+        gv_StatIncreasesBought[EventPlayer()][29] = 0;
         DialogControlSetEnabled(gv_StatusWindowBtn[29], PlayerGroupSingle(EventPlayer()), true);
-        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][29], (StringExternal("Param/Value/5A294C24") + IntToText(gv_StatusWindowNum[EventPlayer()][29]) + StringExternal("Param/Value/4C29070D")), PlayerGroupSingle(EventPlayer()));
+        libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][29], (StringExternal("Param/Value/5A294C24") + IntToText(gv_StatIncreasesBought[EventPlayer()][29]) + StringExternal("Param/Value/4C29070D")), PlayerGroupSingle(EventPlayer()));
     }
 
     gf_StatWindowUpdatePlayer(EventPlayer());
@@ -5558,12 +5562,12 @@ void gf_HrHeroBSpawnH1 () {
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropLevel, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLevel, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropXP, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropXP, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropKills, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropKills, c_unitPropCurrent));
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][0]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24233", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][1]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "DefensePower", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatusWindowNum[EventPlayer()][2] * 4));
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Amor2", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatusWindowNum[EventPlayer()][3] * 4));
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong2423", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][9]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "BoosterItem2", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][15]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][0]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24233", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][1]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "DefensePower", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatIncreasesBought[EventPlayer()][2] * 4));
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Amor2", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatIncreasesBought[EventPlayer()][3] * 4));
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong2423", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][9]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "BoosterItem2", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][15]);
 }
 
 void gf_HrHeroBSpawnH2 () {
@@ -5574,13 +5578,13 @@ void gf_HrHeroBSpawnH2 () {
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropLevel, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLevel, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropXP, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropXP, c_unitPropCurrent));
     UnitSetPropertyFixed(EventPlayerEffectUsedUnit(c_effectUnitTarget), c_unitPropKills, UnitGetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropKills, c_unitPropCurrent));
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][0]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24233", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][1]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "DefensePower", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatusWindowNum[EventPlayer()][2] * 4));
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Amor2", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatusWindowNum[EventPlayer()][3] * 4));
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Hero61Skill4Attackspeed", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][8]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong2423", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][9]);
-    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "BoosterItem2", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatusWindowNum[EventPlayer()][15]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][0]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong24233", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][1]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "DefensePower", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatIncreasesBought[EventPlayer()][2] * 4));
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Amor2", EventPlayerEffectUsedUnit(c_effectUnitTarget), (gv_StatIncreasesBought[EventPlayer()][3] * 4));
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "Hero61Skill4Attackspeed", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][8]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "SpellDong2423", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][9]);
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "BoosterItem2", EventPlayerEffectUsedUnit(c_effectUnitTarget), gv_StatIncreasesBought[EventPlayer()][15]);
 }
 
 void gf_HrMonsterBuffPickUp1 () {
@@ -6003,7 +6007,7 @@ void gf_HrAssistantBonusTeam1 () {
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
             libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/2C3357F5") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/D9E79FA4") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/DC65B07B") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/39AC057A")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/7498FB6B") + TextWithColor(StringExternal("Param/Value/A61AFE81"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/DE3747DD"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/D089DE34")));
-            if ((gv_StatusWindowNum[gv_PlayerBayul[i]][15] == 1)) {
+            if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][15] == 1)) {
                 PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerBayul[i]]);
                 UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/F7E20A48") + TextWithColor(StringExternal("Param/Value/2C30D7B6"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/3BEF4AFB"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/17688C44")));
             }
@@ -6072,7 +6076,7 @@ void gf_HrAssistantBonusTeam2 () {
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
             libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/30C3264C") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/C140D7C8") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/9130939D") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/581A015F")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/878D3123") + TextWithColor(StringExternal("Param/Value/86749EDE"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/F27D4BF3"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/806A603B")));
-            if ((gv_StatusWindowNum[gv_PlayerBayul[i]][15] == 1)) {
+            if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][15] == 1)) {
                 PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerBayul[i]]);
                 UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/0DFFE2F2") + TextWithColor(StringExternal("Param/Value/4B765203"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/602F3107"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/0A4EA953")));
             }
@@ -6141,11 +6145,11 @@ void gf_HrHeroBuffPut () {
 void gf_HrHeroPassiveRepair () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Toherodamage", gv_PlayerHero[EventPlayer()], 1);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical3", gv_PlayerHero[EventPlayer()], 1);
-    if ((gv_StatusWindowNum[EventPlayer()][22] >= 1)) {
+    if ((gv_StatIncreasesBought[EventPlayer()][22] >= 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
     }
 
-    if ((gv_StatusWindowNum[EventPlayer()][23] >= 1)) {
+    if ((gv_StatIncreasesBought[EventPlayer()][23] >= 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagmaFire", gv_PlayerHero[EventPlayer()], 1);
     }
 
@@ -7675,7 +7679,7 @@ bool gf_EligibleForBuyingHotkey(int shop_index) {
     if (gv_ActiveShopPage[EventPlayer()] != gf_ShopWindowByIndex(shop_index)) {
         return false;
     }
-    if (gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades) {
+    if (gv_StatIncreasesBought[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades) {
         return false;
     }
     if ((shop_index >= 12) && (shop_index < 18) && (gv_SealBought[EventPlayer()])) {
@@ -11215,10 +11219,6 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     int i;
     bool flag;
     if (testConds) {
-        // Only for human players
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
         // Not for observers
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
             return false;
@@ -11226,16 +11226,12 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
         // Only if we're on the stat increase button
         flag = false;
         for (i = 0; i < 30; i += 1) {
-            if (EventDialogControl() == gv_StatusWindowBtn[i]) {
+            if (EventDialogControl() == gv_StatShopButton[i]) {
                 flag = true;
                 break;
             }
         }
         if (!flag) {
-            return false;
-        }
-        // Not sure if we need this check but why not
-        if (!((gv_StatusWindowAddDelay[EventPlayer()] == false))) {
             return false;
         }
     }
@@ -11245,7 +11241,7 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     gv_StatusWindowAddDelay[EventPlayer()] = true;
     // Increase the stat if the criteria are met
     for (i = 0; i < 30; i += 1) {
-        if ((EventDialogControl() == gv_StatusWindowBtn[i])) {
+        if ((EventDialogControl() == gv_StatShopButton[i])) {
             if (!(lf_StatEligibleForBuying(i))) {
                 gv_StatusWindowAddDelay[EventPlayer()] = false;
                 return false;
@@ -11267,7 +11263,6 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TrStatDialogStatIncrease_Init () {
     gt_TrStatDialogStatIncrease = TriggerCreate("gt_TrStatDialogStatIncrease_Func");
-    TriggerAddEventDialogControl(gt_TrStatDialogStatIncrease, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -11532,9 +11527,9 @@ bool gt_TrHealingPosionUseComplete_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_StatusWindowNum[EventPlayer()][24] = 0;
+    gv_StatIncreasesBought[EventPlayer()][24] = 0;
     DialogControlSetEnabled(gv_StatusWindowBtn[24], PlayerGroupSingle(EventPlayer()), true);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][24], (StringExternal("Param/Value/96D19A96") + IntToText(gv_StatusWindowNum[EventPlayer()][24]) + StringExternal("Param/Value/458E87A8")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][24], (StringExternal("Param/Value/96D19A96") + IntToText(gv_StatIncreasesBought[EventPlayer()][24]) + StringExternal("Param/Value/458E87A8")), PlayerGroupSingle(EventPlayer()));
     return true;
 }
 
@@ -11566,9 +11561,9 @@ bool gt_TrManaPosionUseComplete_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_StatusWindowNum[EventPlayer()][25] = 0;
+    gv_StatIncreasesBought[EventPlayer()][25] = 0;
     DialogControlSetEnabled(gv_StatusWindowBtn[25], PlayerGroupSingle(EventPlayer()), true);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][25], (StringExternal("Param/Value/696A9ED7") + IntToText(gv_StatusWindowNum[EventPlayer()][25]) + StringExternal("Param/Value/104CC61A")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][25], (StringExternal("Param/Value/696A9ED7") + IntToText(gv_StatIncreasesBought[EventPlayer()][25]) + StringExternal("Param/Value/104CC61A")), PlayerGroupSingle(EventPlayer()));
     return true;
 }
 
@@ -11600,9 +11595,9 @@ bool gt_TrWardUseComplete_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_StatusWindowNum[EventPlayer()][26] = 0;
+    gv_StatIncreasesBought[EventPlayer()][26] = 0;
     DialogControlSetEnabled(gv_StatusWindowBtn[26], PlayerGroupSingle(EventPlayer()), true);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][26], (StringExternal("Param/Value/D68A9FC5") + IntToText(gv_StatusWindowNum[EventPlayer()][26]) + StringExternal("Param/Value/C65A8CFA")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][26], (StringExternal("Param/Value/D68A9FC5") + IntToText(gv_StatIncreasesBought[EventPlayer()][26]) + StringExternal("Param/Value/C65A8CFA")), PlayerGroupSingle(EventPlayer()));
     gf_StatWindowUpdatePlayer(EventPlayer());
     return true;
 }
@@ -11635,9 +11630,9 @@ bool gt_TrWardUseComplete2_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_StatusWindowNum[EventPlayer()][27] = 0;
+    gv_StatIncreasesBought[EventPlayer()][27] = 0;
     DialogControlSetEnabled(gv_StatusWindowBtn[27], PlayerGroupSingle(EventPlayer()), true);
-    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][27], (StringExternal("Param/Value/7D0E738D") + IntToText(gv_StatusWindowNum[EventPlayer()][27]) + StringExternal("Param/Value/417CE63D")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemText(gv_StatusWindowLabel[EventPlayer()][27], (StringExternal("Param/Value/7D0E738D") + IntToText(gv_StatIncreasesBought[EventPlayer()][27]) + StringExternal("Param/Value/417CE63D")), PlayerGroupSingle(EventPlayer()));
     gf_StatWindowUpdatePlayer(EventPlayer());
     return true;
 }
@@ -15536,7 +15531,7 @@ bool gt_TrHeroReviveStand_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupSingle(EventPlayer()), true);
     DialogControlSetVisible(gv_HeroReviveWindowTime[EventPlayer()], PlayerGroupSingle(EventPlayer()), true);
     gv_HeroReviveCountNum[EventPlayer()][0] = gv_HeroReviveCountNum[EventPlayer()][1];
-    if (((gv_StatusWindowNum[EventPlayer()][28] != 0) || (gv_StatusWindowNum[EventPlayer()][29] != 0))) {
+    if (((gv_StatIncreasesBought[EventPlayer()][28] != 0) || (gv_StatIncreasesBought[EventPlayer()][29] != 0))) {
         gf_HrItemUseComplete();
     }
 
@@ -16757,7 +16752,7 @@ void InitTriggers () {
     gt_TrHeroLevelUp_Init();
     gt_SkillPointAllocation_Init();
     gt_ChangeShopPage_Init();
-    // gt_TrStatDialogStatIncrease_Init();
+    gt_TrStatDialogStatIncrease_Init();
     // gt_TrStatDialogStatIncreaseHotKeyZ_Init();
     // gt_TrStatDialogStatIncreaseHotKeyX_Init();
     // gt_TrStatDialogStatIncreaseHotKeyC_Init();
