@@ -72,12 +72,6 @@
                 <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
                 <Anchor side="Right" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
                 <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
-
-                <Frame type="Frame" name="Button1">
-                    <Frame type="Label" name="Label">
-                        <Text val="1"/>
-                    </Frame>
-                </Frame>
             </Frame>
 
             <Frame type="Frame" name="ShopPageFrame2" template="ShopPageTemplate/ShopPageFrame">
@@ -87,12 +81,6 @@
                 <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
 
                 <Visible val="False"/>
-
-                <Frame type="Frame" name="Button1">
-                    <Frame type="Label" name="Label">
-                        <Text val="2"/>
-                    </Frame>
-                </Frame>
             </Frame>
 
             <Frame type="Frame" name="ShopPageFrame3" template="ShopPageTemplate/ShopPageFrame">
@@ -102,12 +90,6 @@
                 <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
 
                 <Visible val="False"/>
-
-                <Frame type="Frame" name="Button1">
-                    <Frame type="Label" name="Label">
-                        <Text val="3"/>
-                    </Frame>
-                </Frame>
             </Frame>
 
             <Frame type="Frame" name="ShopPageFrame4" template="ShopPageTemplate/ShopPageFrame">
@@ -117,12 +99,6 @@
                 <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
 
                 <Visible val="False"/>
-
-                <Frame type="Frame" name="Button1">
-                    <Frame type="Label" name="Label">
-                        <Text val="4"/>
-                    </Frame>
-                </Frame>
             </Frame>
 
             <Frame type="Frame" name="ShopPageFrame5" template="ShopPageTemplate/ShopPageFrame">
@@ -132,12 +108,6 @@
                 <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
 
                 <Visible val="False"/>
-
-                <Frame type="Frame" name="Button1">
-                    <Frame type="Label" name="Label">
-                        <Text val="5"/>
-                    </Frame>
-                </Frame>
             </Frame>
     
             <!-- Page buttons -->
