@@ -100,7 +100,15 @@ int gv_SkillLearnWindow;
 int gv_SkillLearnWindowLabel;
 int[4] gv_SkillLearnWindowButton;
 int[11] gv_AvailableSkillPoints;
+
 int gv_StatShopDialog;
+int[5] gv_StatShopPage;
+int[30] gv_StatShopButton;
+int[30] gv_StatShopItemLabel;
+int gv_StatShopNextPageDummyButton;
+int[5] gv_StatShopPageButton;
+int[11] gv_ActiveShopPage;
+
 int gv_StatusWindow;
 int gv_StatusWindow2;
 int[2] gv_StatusWindowImage;
@@ -110,8 +118,8 @@ int[30] gv_StatusWindowBtnImage;
 int[11][30] gv_StatusWindowLabel;
 int[11][30] gv_StatusWindowNum;
 int[11] gv_StatusWindowPageSwitch;
-bool[11] gv_StatusWindowPageDelay;
 bool[11] gv_StatusWindowAddDelay;
+
 int gv_SelectionLockButton;
 int[30][12] gv_StatHowMoney;
 unitgroup[11] gv_WardGroup;
@@ -285,6 +293,16 @@ void InitGlobals () {
     }
 
     gv_StatShopDialog = c_invalidDialogId;
+    gv_StatShopNextPageDummyButton = c_invalidDialogId;
+    for (init_i = 0; init_i < 5; init_i += 1) {
+        gv_StatShopPage[init_i] = c_invalidDialogControlId;
+        gv_StatShopPageButton[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i < 30; init_i += 1) {
+        gv_StatShopButton[init_i] = c_invalidDialogControlId;
+        gv_StatShopItemLabel[init_i] = c_invalidDialogControlId;
+    }
+
     gv_StatusWindow = c_invalidDialogId;
     gv_StatusWindow2 = c_invalidDialogId;
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -568,6 +586,7 @@ void gf_ShowPlayerStatistics(int player);
 int gf_ShopWindowByIndex(int shop_index);
 bool gf_EligibleForBuyingHotkey(int shop_index);
 bool gf_HotkeyStatIncreaseTestConditions();
+void gf_ChangeStatShopPage(int player, int page);
 
 //--------------------------------------------------------------------------------------------------
 // Trigger Variables
@@ -613,8 +632,7 @@ trigger gt_Trgametipbtn;
 trigger gt_TrMinionMake;
 trigger gt_TrHeroLevelUp;
 trigger gt_SkillPointAllocation;
-trigger gt_TrStatDialogPageNext;
-trigger gt_TrStatDialogPageNextHotKey;
+trigger gt_ChangeShopPage;
 trigger gt_TrStatDialogStatIncrease;
 trigger gt_TrStatDialogStatIncreaseHotKeyZ;
 trigger gt_TrStatDialogStatIncreaseHotKeyX;
@@ -3806,7 +3824,6 @@ void gf_HrSkillLearnDialogMake () {
         "UIContainer/SkillPointAllocationWindow/Label"
     );
 
-    TriggerEnable(gt_SkillPointAllocation, true);
     TriggerAddEventDialogControl(
         gt_SkillPointAllocation,
         c_playerAny,
@@ -4177,9 +4194,14 @@ void gf_SpawnHero(int player_number, int hero_number) {
 }
 
 void gf_HrStatDialogMake1a () {
+    int i;
+    int j;
+    int current_button_num;
     int stat_x_offset_left;
     int stat_x_offset_right;
     int stat_y_offset;
+    string current_page_name;
+    string current_button_name;
 
     stat_x_offset_left = 29;
     stat_x_offset_right = 134;
@@ -4189,6 +4211,44 @@ void gf_HrStatDialogMake1a () {
         c_triggerControlTypePanel,
         "UIContainer/StatShop"
     );
+
+    gv_StatShopNextPageDummyButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/NextPageDummyButton"
+    );
+
+    for (i = 0; i < 5; i += 1) {
+        gv_StatShopPageButton[i] = DialogControlHookupStandard(
+            c_triggerControlTypeButton,
+            "UIContainer/StatShop/PageButton" + IntToString(i + 1)
+        );
+
+        current_page_name = "UIContainer/StatShop/ShopPageFrame" + IntToString(i + 1);
+
+        gv_StatShopPage[i] = DialogControlHookupStandard(
+            c_triggerControlTypePanel,
+            current_page_name
+        );
+
+        for (j = 0; j < 6; j += 1) {
+            current_button_num = i * 6 + j;
+            current_button_name = current_page_name + "/Button" + IntToString(j + 1);
+
+            gv_StatShopButton[current_button_num] = DialogControlHookupStandard(
+                c_triggerControlTypeButton,
+                current_button_name + "/ShopButton"
+            );
+            gv_StatShopItemLabel[current_button_num] = DialogControlHookupStandard(
+                c_triggerControlTypeLabel,
+                current_button_name + "/Label"
+            );
+        }
+    }
+
+    TriggerAddEventDialogControl(gt_ChangeShopPage, c_playerAny, gv_StatShopNextPageDummyButton, c_triggerControlEventTypeClick);
+    for (i = 0; i < 5; i += 1) {
+        TriggerAddEventDialogControl(gt_ChangeShopPage, c_playerAny, gv_StatShopPageButton[i], c_triggerControlEventTypeClick);
+    }
 
     DialogCreate(270, 284, c_anchorBottomRight, 408, -10, true);
     gv_StatusWindow = DialogLastCreated();
@@ -7434,8 +7494,6 @@ void gf_HrScoreDialogMake () {
         c_triggerControlTypeButton,
         "UIContainer/ScoreWindowToggleButton"
     );
-    TriggerEnable(gt_ScoreWindowToggle, true);
-    TriggerAddEventDialogControl(gt_ScoreWindowToggle, c_playerAny, gv_ScoreWindowToggleButton, c_triggerControlEventTypeClick);
 
     DialogCreate(250, 75, c_anchorTop, 0, 5, true);
     gv_ScoreDialog[1] = DialogLastCreated();
@@ -7614,7 +7672,7 @@ int gf_ShopWindowByIndex(int shop_index) {
 }
 
 bool gf_EligibleForBuyingHotkey(int shop_index) {
-    if (gv_StatusWindowPageSwitch[EventPlayer()] != gf_ShopWindowByIndex(shop_index)) {
+    if (gv_ActiveShopPage[EventPlayer()] != gf_ShopWindowByIndex(shop_index)) {
         return false;
     }
     if (gv_StatusWindowNum[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades) {
@@ -7655,6 +7713,19 @@ bool gf_HotkeyStatIncreaseTestConditions() {
         return false;
     }
     return true;
+}
+
+void gf_ChangeStatShopPage(int player, int page) {
+    int i;
+
+    gv_ActiveShopPage[player] = page;
+
+    for (i = 0; i < 5; i += 1) {
+        DialogControlSetEnabled(gv_StatShopPageButton[i], PlayerGroupSingle(player), true);
+        DialogControlSetVisible(gv_StatShopPage[i], PlayerGroupSingle(player), false);
+    }
+    DialogControlSetEnabled(gv_StatShopPageButton[page], PlayerGroupSingle(player), false);
+    DialogControlSetVisible(gv_StatShopPage[page], PlayerGroupSingle(player), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -10138,8 +10209,13 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     TriggerAddEventDialogControl(gt_RemoveObjectivesButton, c_playerAny, gv_RemoveObjectivesButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_CenterCameraOnHero, true);
     TriggerAddEventDialogControl(gt_CenterCameraOnHero, c_playerAny, gv_CenterCameraOnHeroDummyButton, c_triggerControlEventTypeClick);
+    TriggerEnable(gt_SkillPointAllocation, true);
+    TriggerEnable(gt_ScoreWindowToggle, true);
+    TriggerEnable(gt_ChangeShopPage, true);
 
     gf_HrScoreDialogMake();
+    TriggerAddEventDialogControl(gt_ScoreWindowToggle, c_playerAny, gv_ScoreWindowToggleButton, c_triggerControlEventTypeClick);
+
     for (i = 1; i <= 8; i += 1) {
         if (PlayerType(gv_PlayerBayul[i]) != c_playerTypeUser) {
             continue;
@@ -11076,17 +11152,15 @@ void gt_SkillPointAllocation_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ????????? ????????? ?????????
 //--------------------------------------------------------------------------------------------------
-bool gt_TrStatDialogPageNext_Func (bool testConds, bool runActions) {
+bool gt_ChangeShopPage_Func (bool testConds, bool runActions) {
     int i;
+    int current_page;
 
     if (testConds) {
-        if (!(((EventDialogControl() == gv_StatusWindowPageBtn[0]) || (EventDialogControl() == gv_StatusWindowPageBtn[1]) || (EventDialogControl() == gv_StatusWindowPageBtn[2]) || (EventDialogControl() == gv_StatusWindowPageBtn[3]) || (EventDialogControl() == gv_StatusWindowPageBtn[4])))) {
+        if (!gv_GameStartBoolean) {
             return false;
         }
-        if (!((gv_StatusWindowPageDelay[EventPlayer()] == false))) {
-            return false;
-        }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
+        if (gv_GameEndBoolean) {
             return false;
         }
     }
@@ -11095,385 +11169,30 @@ bool gt_TrStatDialogPageNext_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_StatusWindowPageDelay[EventPlayer()] = true;
-    if ((EventDialogControl() == gv_StatusWindowPageBtn[0]) && (gv_StatusWindowPageSwitch[EventPlayer()] != 0)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 0;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((EventDialogControl() == gv_StatusWindowPageBtn[1]) && (gv_StatusWindowPageSwitch[EventPlayer()] != 1)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 1;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((EventDialogControl() == gv_StatusWindowPageBtn[2]) && (gv_StatusWindowPageSwitch[EventPlayer()] != 2)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 2;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((EventDialogControl() == gv_StatusWindowPageBtn[3]) && (gv_StatusWindowPageSwitch[EventPlayer()] != 3)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 3;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((EventDialogControl() == gv_StatusWindowPageBtn[4]) && (gv_StatusWindowPageSwitch[EventPlayer()] != 4)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 4;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), false);
-    }
+    current_page = gv_ActiveShopPage[EventPlayer()];
 
-    Wait(0.1, c_timeReal);
-    gv_StatusWindowPageDelay[EventPlayer()] = false;
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TrStatDialogPageNext_Init () {
-    gt_TrStatDialogPageNext = TriggerCreate("gt_TrStatDialogPageNext_Func");
-    TriggerAddEventDialogControl(gt_TrStatDialogPageNext, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ????????? ????????? ????????? ?????????(?????????)
-//--------------------------------------------------------------------------------------------------
-bool gt_TrStatDialogPageNextHotKey_Func (bool testConds, bool runActions) {
-    int i;
-
-    if (testConds) {
-        if (!((gv_GameEndBoolean == false))) {
-            return false;
+    if (EventDialogControl() == gv_StatShopNextPageDummyButton) {
+        if (current_page == 4) {
+            gf_ChangeStatShopPage(EventPlayer(), 0);
+            return true;
         }
-        if (!((gv_BeforeStartCounterDialogNum == 0))) {
-            return false;
-        }
-        if (!((gv_StatusWindowPageDelay[EventPlayer()] == false))) {
-            return false;
-        }
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-    }
-
-    if (!runActions) {
+        gf_ChangeStatShopPage(EventPlayer(), current_page + 1);
         return true;
     }
 
-    gv_StatusWindowPageDelay[EventPlayer()] = true;
-    if ((gv_StatusWindowPageSwitch[EventPlayer()] == 4)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
+    for (i = 0; i < 5; i += 1) {
+        if (EventDialogControl() == gv_StatShopPageButton[i]) {
+            gf_ChangeStatShopPage(EventPlayer(), i);
         }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 0;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((gv_StatusWindowPageSwitch[EventPlayer()] == 0)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 1;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((gv_StatusWindowPageSwitch[EventPlayer()] == 1)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 2;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((gv_StatusWindowPageSwitch[EventPlayer()] == 2)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 3;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), false);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), true);
-    }
-    else if ((gv_StatusWindowPageSwitch[EventPlayer()] == 3)) {
-        for (i = 0; i <= 5; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 6; i <= 11; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 12; i <= 17; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 18; i <= 23; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), false);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), false);
-        }
-        for (i = 24; i <= 29; i += 1) {
-            DialogControlSetVisible(gv_StatusWindowBtnImage[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowBtn[i], PlayerGroupSingle(EventPlayer()), true);
-            DialogControlSetVisible(gv_StatusWindowLabel[EventPlayer()][i], PlayerGroupSingle(EventPlayer()), true);
-        }
-        gv_StatusWindowPageSwitch[EventPlayer()] = 4;
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[1], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[2], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[3], PlayerGroupSingle(EventPlayer()), true);
-        DialogControlSetEnabled(gv_StatusWindowPageBtn[4], PlayerGroupSingle(EventPlayer()), false);
     }
 
-    Wait(0.1, c_timeReal);
-    gv_StatusWindowPageDelay[EventPlayer()] = false;
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_TrStatDialogPageNextHotKey_Init () {
-    gt_TrStatDialogPageNextHotKey = TriggerCreate("gt_TrStatDialogPageNextHotKey_Func");
-    TriggerAddEventKeyPressed(gt_TrStatDialogPageNextHotKey, c_playerAny, c_keyGrave, true, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
+void gt_ChangeShopPage_Init () {
+    gt_ChangeShopPage = TriggerCreate("gt_ChangeShopPage_Func");
+    TriggerEnable(gt_ChangeShopPage, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -11491,6 +11210,7 @@ static bool lf_StatEligibleForBuying (int stat_index) {
     }
     return true;
 }
+
 bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     int i;
     bool flag;
@@ -15907,8 +15627,9 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
-    DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
-    DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
@@ -15989,8 +15710,9 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
-    DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
-    DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
@@ -16597,8 +16319,9 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
-    DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
-    DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
@@ -16675,8 +16398,9 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), false);
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
-    DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
-    DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), false);
+    // DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
@@ -17032,15 +16756,14 @@ void InitTriggers () {
     gt_TrMinionMake_Init();
     gt_TrHeroLevelUp_Init();
     gt_SkillPointAllocation_Init();
-    gt_TrStatDialogPageNext_Init();
-    gt_TrStatDialogPageNextHotKey_Init();
-    gt_TrStatDialogStatIncrease_Init();
-    gt_TrStatDialogStatIncreaseHotKeyZ_Init();
-    gt_TrStatDialogStatIncreaseHotKeyX_Init();
-    gt_TrStatDialogStatIncreaseHotKeyC_Init();
-    gt_TrStatDialogStatIncreaseHotKeyV_Init();
-    gt_TrStatDialogStatIncreaseHotKeyB_Init();
-    gt_TrStatDialogStatIncreaseHotKeyN_Init();
+    gt_ChangeShopPage_Init();
+    // gt_TrStatDialogStatIncrease_Init();
+    // gt_TrStatDialogStatIncreaseHotKeyZ_Init();
+    // gt_TrStatDialogStatIncreaseHotKeyX_Init();
+    // gt_TrStatDialogStatIncreaseHotKeyC_Init();
+    // gt_TrStatDialogStatIncreaseHotKeyV_Init();
+    // gt_TrStatDialogStatIncreaseHotKeyB_Init();
+    // gt_TrStatDialogStatIncreaseHotKeyN_Init();
     gt_TrHealingPosionUseComplete_Init();
     gt_TrManaPosionUseComplete_Init();
     gt_TrWardUseComplete_Init();
