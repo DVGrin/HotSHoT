@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Frame" name="StatShop">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="20"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-418"/>
+
+            <Width val="250"/>
+            <Height val="390"/>
+
+            <Visible val="False"/>
+
+            <Frame type="Frame" name="BackgroundFrame">
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+    
+                <Width val="250"/>
+                <Height val="290"/>
+    
+                <Frame type="Image" name="Background">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+    
+                    <Texture val="Assets/blackbg.tga"/>
+                </Frame>
+    
+                <Frame type="Image" name="Border">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+    
+                    <Texture val="Assets/Textures/ui_chat_frame_protoss.dds"/>
+                    <TextureType val="Border"/>
+                </Frame>
+            </Frame>
+    
+            <Frame type="Frame" name="Header">
+                <Width val="160"/>
+                <Height val="45"/>
+    
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Min" offset="15"/>
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="10"/>
+    
+                <Frame type="Image" name="Background">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+    
+                    <Texture val="Assets/Textures/ui_ingame_gameclock_protoss.dds"/>
+                    <TextureType val="EndCap"/>
+                </Frame>
+    
+                <Frame type="Label" name="Label">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+    
+                    <Style val="SecurityButton"/>
+                    <Color val="ffffff"/>
+                    <Text val="Shop"/>
+                </Frame>
+            </Frame>
+    
+            <!-- Shop pages -->
+            <Frame type="Frame" name="ShopPageFrame1" template="ShopPageTemplate/ShopPageFrame">
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+            </Frame>
+
+            <Frame type="Frame" name="ShopPageFrame2" template="ShopPageTemplate/ShopPageFrame">
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+
+                <Visible val="False"/>
+            </Frame>
+
+            <Frame type="Frame" name="ShopPageFrame3" template="ShopPageTemplate/ShopPageFrame">
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+
+                <Visible val="False"/>
+            </Frame>
+
+            <Frame type="Frame" name="ShopPageFrame4" template="ShopPageTemplate/ShopPageFrame">
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+
+                <Visible val="False"/>
+            </Frame>
+
+            <Frame type="Frame" name="ShopPageFrame5" template="ShopPageTemplate/ShopPageFrame">
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/BackgroundFrame" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/BackgroundFrame" pos="Min" offset="0"/>
+
+                <Visible val="False"/>
+            </Frame>
+    
+            <!-- Page buttons -->
+            <Frame type="Button" name="PageButton1" template="ShopPageTemplate/ShopPageButton">
+                <Anchor side="Left" relative="$parent/BackgroundFrame" pos="Min" offset="20"/>
+                <Anchor side="Bottom" relative="$parent/BackgroundFrame" pos="Max" offset="-30"/>
+    
+                <Frame type="Label" name="Label">
+                    <Text val="1"/>
+                </Frame>
+            </Frame>
+    
+            <Frame type="Button" name="PageButton2" template="ShopPageTemplate/ShopPageButton">
+                <Anchor side="Left" relative="$parent/PageButton1" pos="Max" offset="#PageButtonSpacingX"/>
+                <Anchor side="Top" relative="$parent/PageButton1" pos="Min" offset="0"/>
+    
+                <Frame type="Label" name="Label">
+                    <Text val="2"/>
+                </Frame>
+            </Frame>
+    
+            <Frame type="Button" name="PageButton3" template="ShopPageTemplate/ShopPageButton">
+                <Anchor side="Left" relative="$parent/PageButton2" pos="Max" offset="#PageButtonSpacingX"/>
+                <Anchor side="Top" relative="$parent/PageButton1" pos="Min" offset="0"/>
+    
+                <Frame type="Label" name="Label">
+                    <Text val="3"/>
+                </Frame>
+            </Frame>
+    
+            <Frame type="Button" name="PageButton4" template="ShopPageTemplate/ShopPageButton">
+                <Anchor side="Left" relative="$parent/PageButton3" pos="Max" offset="#PageButtonSpacingX"/>
+                <Anchor side="Top" relative="$parent/PageButton1" pos="Min" offset="0"/>
+    
+                <Frame type="Label" name="Label">
+                    <Text val="4"/>
+                </Frame>
+            </Frame>
+    
+            <Frame type="Button" name="PageButton5" template="ShopPageTemplate/ShopPageButton">
+                <Anchor side="Left" relative="$parent/PageButton4" pos="Max" offset="#PageButtonSpacingX"/>
+                <Anchor side="Top" relative="$parent/PageButton1" pos="Min" offset="0"/>
+    
+                <Frame type="Label" name="Label">
+                    <Text val="5"/>
+                </Frame>
+            </Frame>
+        </Frame>
+
+        <Frame type="Button" name="NextPageDummyButton">
+            <Width val="1"/>
+            <Height val="1"/>
+    
+            <RenderType val="Offscreen"/>
+            <Shortcut val="@UI/Hotkey/NextShopPage"/>
+        </Frame>
+    </Frame>
+</Desc>

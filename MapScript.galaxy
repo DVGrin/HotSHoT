@@ -100,6 +100,7 @@ int gv_SkillLearnWindow;
 int gv_SkillLearnWindowLabel;
 int[4] gv_SkillLearnWindowButton;
 int[11] gv_AvailableSkillPoints;
+int gv_StatShopDialog;
 int gv_StatusWindow;
 int gv_StatusWindow2;
 int[2] gv_StatusWindowImage;
@@ -283,6 +284,7 @@ void InitGlobals () {
         gv_SkillLearnWindowButton[init_i] = c_invalidDialogControlId;
     }
 
+    gv_StatShopDialog = c_invalidDialogId;
     gv_StatusWindow = c_invalidDialogId;
     gv_StatusWindow2 = c_invalidDialogId;
     for (init_i = 0; init_i <= 1; init_i += 1) {
@@ -4182,6 +4184,11 @@ void gf_HrStatDialogMake1a () {
     stat_x_offset_left = 29;
     stat_x_offset_right = 134;
     stat_y_offset = 20;
+
+    gv_StatShopDialog = DialogControlHookupStandard(
+        c_triggerControlTypePanel,
+        "UIContainer/StatShop"
+    );
 
     DialogCreate(270, 284, c_anchorBottomRight, 408, -10, true);
     gv_StatusWindow = DialogLastCreated();
@@ -10164,8 +10171,9 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     DialogSetVisible(gv_ScoreDialog[0], PlayerGroupAll(), false);
     DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), true);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), true);
-    DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), true);
-    DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), true);
+    // DialogSetVisible(gv_StatusWindow, PlayerGroupAll(), true);
+    // DialogSetVisible(gv_StatusWindow2, PlayerGroupAll(), true);
+    DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), true);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), true);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), true);
     gf_HrCleanUpHeroSelectDialogs();

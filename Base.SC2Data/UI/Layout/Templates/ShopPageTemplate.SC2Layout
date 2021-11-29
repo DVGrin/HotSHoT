@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Constant name="ButtonSpacingY" val="-5"/>
+    <Constant name="ButtonSpacingX" val="0"/>
+    <Constant name="PageButtonSpacingX" val="-5"/>
+
+    <Frame type="Button" name="ShopPageButton" template="StandardTemplates/StandardButtonTemplate">
+        <Width val="45"/>
+        <Height val="45"/>
+
+        <Frame type="Image" name="HoverImage">
+            <Texture val="Assets/Textures/protoss-border-button-game.dds"/>
+            <TextureType val="Border"/>
+        </Frame>
+
+        <Frame type="Image" name="NormalImage">
+            <Texture val="Assets/Textures/protoss-border-button-game.dds"/>
+            <TextureType val="Border"/>
+        </Frame>
+
+        <Frame type="Label" name="Label">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="2"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+
+            <Style val="MyButtonLabel"/>
+            <Text val="0"/>
+            <RenderPriority val="550"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="Frame" name="ShopButtonFrame">
+        <Width val="110"/>
+        <Height val="70"/>
+
+        <Frame type="Button" name="ShopButton" template="StandardTemplates/StandardButtonTemplate">
+            <Width val="70"/>
+            <Height val="70"/>
+
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+
+            <Frame type="Image" name="HoverImage">
+                <Texture val="Assets/Textures/ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds"/>
+                <TextureType val="Normal"/>
+            </Frame>
+
+            <Frame type="Image" name="NormalImage">
+                <Texture val="Assets/Textures/ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds"/>
+                <TextureType val="Normal"/>
+            </Frame>
+
+            <Frame type="Image" name="StatImage">
+                <Width val="52"/>
+                <Height val="52"/>
+
+                <Anchor side="Left" relative="$parent" pos="Min" offset="9"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="9"/>
+
+                <Texture val="Assets/Textures/btn-upgrade-protoss-groundweaponslevel3.dds"/>
+                <RenderPriority val="550"/>
+            </Frame>
+
+            <Tooltip val="If you see this, something is WRONG!"/>
+        </Frame>
+
+        <Frame type="Label" name="Label">
+            <Width val="40"/>
+            <Height val="52"/>
+
+            <Anchor side="Left" relative="$parent/ShopButton/StatImage" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent/ShopButton/StatImage" pos="Min" offset="2"/>
+
+            <Style val="MyButtonLabel"/>
+            <Color val="ccffff"/>
+            <Text val="0"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="Frame" name="ShopPageFrame">
+        <Frame type="Frame" name="Button1" template="ShopPageTemplate/ShopButtonFrame">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
+
+            <Frame type="Button" name="ShopButton">
+                <Shortcut val="@UI/Hotkey/BuyStat1"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Frame" name="Button2" template="ShopPageTemplate/ShopButtonFrame">
+            <Anchor side="Left" relative="$parent/Button1" pos="Max" offset="#ButtonSpacingX"/>
+            <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="0"/>
+            
+            <Frame type="Button" name="ShopButton">
+                <Shortcut val="@UI/Hotkey/BuyStat2"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Frame" name="Button3" template="ShopPageTemplate/ShopButtonFrame">
+            <Anchor side="Left" relative="$parent/Button1" pos="Min" offset="0"/>
+            <Anchor side="Top" relative="$parent/Button1" pos="Max" offset="#ButtonSpacingY"/>
+
+            <Frame type="Button" name="ShopButton">
+                <Shortcut val="@UI/Hotkey/BuyStat3"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Frame" name="Button4" template="ShopPageTemplate/ShopButtonFrame">
+            <Anchor side="Left" relative="$parent/Button1" pos="Max" offset="#ButtonSpacingX"/>
+            <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="0"/>
+
+            <Frame type="Button" name="ShopButton">
+                <Shortcut val="@UI/Hotkey/BuyStat4"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Frame" name="Button5" template="ShopPageTemplate/ShopButtonFrame">
+            <Anchor side="Left" relative="$parent/Button1" pos="Min" offset="0"/>
+            <Anchor side="Top" relative="$parent/Button3" pos="Max" offset="#ButtonSpacingY"/>
+            
+            <Frame type="Button" name="ShopButton">
+                <Shortcut val="@UI/Hotkey/BuyStat5"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Frame" name="Button6" template="ShopPageTemplate/ShopButtonFrame">
+            <Anchor side="Left" relative="$parent/Button1" pos="Max" offset="#ButtonSpacingX"/>
+            <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="0"/>
+
+            <Frame type="Button" name="ShopButton">
+                <Shortcut val="@UI/Hotkey/BuyStat6"/>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>
