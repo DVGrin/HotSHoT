@@ -27,6 +27,9 @@ struct ShopItem {
     int gas_cost;
     bool alive_only;
     int max_upgrades;
+    text tooltip_before_num;
+    text tooltip_after_num;
+    string button_image;
     funcref<fn_prototype> increase_function;
 };
 
@@ -100,24 +103,16 @@ int gv_SkillLearnWindow;
 int gv_SkillLearnWindowLabel;
 int[4] gv_SkillLearnWindowButton;
 int[11] gv_AvailableSkillPoints;
-
 int gv_StatShopDialog;
 int[5] gv_StatShopPage;
 int[30] gv_StatShopButton;
 int[30] gv_StatShopItemLabel;
+int[30] gv_StatShopItemImage;
 int gv_StatShopNextPageDummyButton;
 int[5] gv_StatShopPageButton;
 int[11] gv_ActiveShopPage;
 int[11][30] gv_StatIncreasesBought;
-
-int gv_StatusWindow;
-int[2] gv_StatusWindowImage;
-int[5] gv_StatusWindowPageBtn;
-int[30] gv_StatusWindowBtn;
-int[30] gv_StatusWindowBtnImage;
-int[11] gv_StatusWindowPageSwitch;
 bool[11] gv_StatusWindowAddDelay;
-
 int gv_SelectionLockButton;
 int[30][12] gv_StatHowMoney;
 unitgroup[11] gv_WardGroup;
@@ -299,20 +294,7 @@ void InitGlobals () {
     for (init_i = 0; init_i < 30; init_i += 1) {
         gv_StatShopButton[init_i] = c_invalidDialogControlId;
         gv_StatShopItemLabel[init_i] = c_invalidDialogControlId;
-    }
-
-    gv_StatusWindow = c_invalidDialogId;
-    for (init_i = 0; init_i <= 1; init_i += 1) {
-        gv_StatusWindowImage[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 4; init_i += 1) {
-        gv_StatusWindowPageBtn[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 29; init_i += 1) {
-        gv_StatusWindowBtn[init_i] = c_invalidDialogControlId;
-    }
-    for (init_i = 0; init_i <= 29; init_i += 1) {
-        gv_StatusWindowBtnImage[init_i] = c_invalidDialogControlId;
+        gv_StatShopItemImage[init_i] = c_invalidDialogControlId;
     }
 
     gv_SelectionLockButton = c_invalidDialogId;
@@ -479,11 +461,7 @@ void gf_HrHeroLevelUpLink ();
 void gf_HrSkillLearnDialogMake ();
 void gf_HrSkillLearnWindowOpen ();
 void gf_HrSkillLearnWindowClose ();
-void gf_HrStatDialogMake1a ();
-void gf_HrStatDialogMake2a ();
-void gf_HrStatDialogMake3a2 ();
-void gf_HrStatDialogMake3a ();
-void gf_HrStatDialogMake4a ();
+void gf_CreateStatDialog ();
 void gf_HrStatMoneySet ();
 void gf_HrStat1 ();
 void gf_HrStat2 ();
@@ -744,6 +722,9 @@ void ShopInit() {
     gv_ShopItemParameters[0].alive_only = false;
     gv_ShopItemParameters[0].max_upgrades = 25;
     gv_ShopItemParameters[0].increase_function = gf_HrStat1;
+    gv_ShopItemParameters[0].tooltip_before_num = StringExternal("Param/Value/0F6E4246");
+    gv_ShopItemParameters[0].tooltip_after_num = StringExternal("Param/Value/891B282F");
+    gv_ShopItemParameters[0].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundweaponslevel3.dds";
 
     gv_ShopItemParameters[1].name = StringToText("Ability Power");
     gv_ShopItemParameters[1].minerals_cost = 200;
@@ -752,6 +733,9 @@ void ShopInit() {
     gv_ShopItemParameters[1].alive_only = false;
     gv_ShopItemParameters[1].max_upgrades = 30;
     gv_ShopItemParameters[1].increase_function = gf_HrStat2;
+    gv_ShopItemParameters[1].tooltip_before_num = StringExternal("Param/Value/74423AD9");
+    gv_ShopItemParameters[1].tooltip_after_num = StringExternal("Param/Value/8088D325");
+    gv_ShopItemParameters[1].button_image = "Assets\\Textures\\btn-upgrade-protoss-airweaponslevel3.dds";
 
     gv_ShopItemParameters[2].name = StringToText("Physical Defense");
     gv_ShopItemParameters[2].minerals_cost = 100;
@@ -760,6 +744,9 @@ void ShopInit() {
     gv_ShopItemParameters[2].alive_only = false;
     gv_ShopItemParameters[2].max_upgrades = 20;
     gv_ShopItemParameters[2].increase_function = gf_HrStat3;
+    gv_ShopItemParameters[2].tooltip_before_num = StringExternal("Param/Value/B762C11C");
+    gv_ShopItemParameters[2].tooltip_after_num = StringExternal("Param/Value/A6B27F25");
+    gv_ShopItemParameters[2].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundarmorlevel2.dds";
 
     gv_ShopItemParameters[3].name = StringToText("Magical Defense");
     gv_ShopItemParameters[3].minerals_cost = 100;
@@ -768,6 +755,9 @@ void ShopInit() {
     gv_ShopItemParameters[3].alive_only = false;
     gv_ShopItemParameters[3].max_upgrades = 20;
     gv_ShopItemParameters[3].increase_function = gf_HrStat4;
+    gv_ShopItemParameters[3].tooltip_before_num = StringExternal("Param/Value/793ADEEF");
+    gv_ShopItemParameters[3].tooltip_after_num = StringExternal("Param/Value/A8695773");
+    gv_ShopItemParameters[3].button_image = "Assets\\Textures\\btn-upgrade-protoss-airarmorlevel3.dds";
 
     gv_ShopItemParameters[4].name = StringToText("Maximum Health");
     gv_ShopItemParameters[4].minerals_cost = 230;
@@ -776,6 +766,9 @@ void ShopInit() {
     gv_ShopItemParameters[4].alive_only = false;
     gv_ShopItemParameters[4].max_upgrades = 25;
     gv_ShopItemParameters[4].increase_function = gf_HrStat5;
+    gv_ShopItemParameters[4].tooltip_before_num = StringExternal("Param/Value/56C3945D");
+    gv_ShopItemParameters[4].tooltip_after_num = StringExternal("Param/Value/127C08B6");
+    gv_ShopItemParameters[4].button_image = "Assets\\Textures\\btn-upgrade-terran-caduceusreactor.dds";
 
     gv_ShopItemParameters[5].name = StringToText("Maximum Mana");
     gv_ShopItemParameters[5].minerals_cost = 85;
@@ -784,6 +777,9 @@ void ShopInit() {
     gv_ShopItemParameters[5].alive_only = false;
     gv_ShopItemParameters[5].max_upgrades = 25;
     gv_ShopItemParameters[5].increase_function = gf_HrStat6;
+    gv_ShopItemParameters[5].tooltip_before_num = StringExternal("Param/Value/E47F7098");
+    gv_ShopItemParameters[5].tooltip_after_num = StringExternal("Param/Value/C8B41D66");
+    gv_ShopItemParameters[5].button_image = "Assets\\Textures\\btn-upgrade-protoss-graviticbooster.dds";
 
     gv_ShopItemParameters[6].name = StringToText("Health Regeneration");
     gv_ShopItemParameters[6].minerals_cost = 60;
@@ -792,6 +788,9 @@ void ShopInit() {
     gv_ShopItemParameters[6].alive_only = false;
     gv_ShopItemParameters[6].max_upgrades = 20;
     gv_ShopItemParameters[6].increase_function = gf_HrStat7;
+    gv_ShopItemParameters[6].tooltip_before_num = StringExternal("Param/Value/105F4D99");
+    gv_ShopItemParameters[6].tooltip_after_num = StringExternal("Param/Value/71ED1578");
+    gv_ShopItemParameters[6].button_image = "Assets\\Textures\\btn-upgrade-terran-corvidreactor.dds";
 
     gv_ShopItemParameters[7].name = StringToText("Mana Regeneration");
     gv_ShopItemParameters[7].minerals_cost = 50;
@@ -800,6 +799,9 @@ void ShopInit() {
     gv_ShopItemParameters[7].alive_only = false;
     gv_ShopItemParameters[7].max_upgrades = 20;
     gv_ShopItemParameters[7].increase_function = gf_HrStat8;
+    gv_ShopItemParameters[7].tooltip_before_num = StringExternal("Param/Value/B52C4DBD");
+    gv_ShopItemParameters[7].tooltip_after_num = StringExternal("Param/Value/4B39A3DF");
+    gv_ShopItemParameters[7].button_image = "Assets\\Textures\\btn-upgrade-terran-moebiusreactor.dds";
 
     gv_ShopItemParameters[8].name = StringToText("Attack Speed");
     gv_ShopItemParameters[8].minerals_cost = 180;
@@ -808,6 +810,9 @@ void ShopInit() {
     gv_ShopItemParameters[8].alive_only = false;
     gv_ShopItemParameters[8].max_upgrades = 10;
     gv_ShopItemParameters[8].increase_function = gf_HrStat9;
+    gv_ShopItemParameters[8].tooltip_before_num = StringExternal("Param/Value/25D75730");
+    gv_ShopItemParameters[8].tooltip_after_num = StringExternal("Param/Value/FED58AF3");
+    gv_ShopItemParameters[8].button_image = "Assets\\Textures\\btn-tips-terran-penetrator.dds";
 
     gv_ShopItemParameters[9].name = StringToText("Penetration");
     gv_ShopItemParameters[9].minerals_cost = 150;
@@ -816,6 +821,9 @@ void ShopInit() {
     gv_ShopItemParameters[9].alive_only = false;
     gv_ShopItemParameters[9].max_upgrades = 3;
     gv_ShopItemParameters[9].increase_function = gf_HrStat10;
+    gv_ShopItemParameters[9].tooltip_before_num = StringExternal("Param/Value/0D38B383");
+    gv_ShopItemParameters[9].tooltip_after_num = StringExternal("Param/Value/9FB47B93");
+    gv_ShopItemParameters[9].button_image = "Assets\\Textures\\btn-ability-protoss-blinkshieldrestore.dds";
 
     gv_ShopItemParameters[10].name = StringToText("Evasion Chance");
     gv_ShopItemParameters[10].minerals_cost = 225;
@@ -824,6 +832,9 @@ void ShopInit() {
     gv_ShopItemParameters[10].alive_only = false;
     gv_ShopItemParameters[10].max_upgrades = 3;
     gv_ShopItemParameters[10].increase_function = gf_HrStat11;
+    gv_ShopItemParameters[10].tooltip_before_num = StringExternal("Param/Value/BC0C4F6D");
+    gv_ShopItemParameters[10].tooltip_after_num = StringExternal("Param/Value/2CC75CD2");
+    gv_ShopItemParameters[10].button_image = "Assets\\Textures\\btn-research-terran-commandcenterreactor.dds";
 
     gv_ShopItemParameters[11].name = StringToText("Critical Hit Chance");
     gv_ShopItemParameters[11].minerals_cost = 300;
@@ -832,6 +843,9 @@ void ShopInit() {
     gv_ShopItemParameters[11].alive_only = false;
     gv_ShopItemParameters[11].max_upgrades = 5;
     gv_ShopItemParameters[11].increase_function = gf_HrStat12;
+    gv_ShopItemParameters[11].tooltip_before_num = StringExternal("Param/Value/45A143F6");
+    gv_ShopItemParameters[11].tooltip_after_num = StringExternal("Param/Value/A214EC24");
+    gv_ShopItemParameters[11].button_image = "Assets\\AddIcon\\btn-ability-terran-yamatocannon-ultra-color.dds";
 
     gv_ShopItemParameters[12].name = StringToText("Seal of Execution");
     gv_ShopItemParameters[12].minerals_cost = 400;
@@ -840,6 +854,9 @@ void ShopInit() {
     gv_ShopItemParameters[12].alive_only = false;
     gv_ShopItemParameters[12].max_upgrades = 1;
     gv_ShopItemParameters[12].increase_function = gf_HrStat25;
+    gv_ShopItemParameters[12].tooltip_before_num = StringExternal("Param/Value/FED2E4BB");
+    gv_ShopItemParameters[12].tooltip_after_num = StringExternal("Param/Value/5BD409C6");
+    gv_ShopItemParameters[12].button_image = "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds";
 
     gv_ShopItemParameters[13].name = StringToText("Seal of Curse");
     gv_ShopItemParameters[13].minerals_cost = 450;
@@ -848,6 +865,9 @@ void ShopInit() {
     gv_ShopItemParameters[13].alive_only = false;
     gv_ShopItemParameters[13].max_upgrades = 1;
     gv_ShopItemParameters[13].increase_function = gf_HrStat26;
+    gv_ShopItemParameters[13].tooltip_before_num = StringExternal("Param/Value/99E0EBC2");
+    gv_ShopItemParameters[13].tooltip_after_num = StringExternal("Param/Value/3E972BDA");
+    gv_ShopItemParameters[13].button_image = "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds";
 
     gv_ShopItemParameters[14].name = StringToText("Seal of Destruction");
     gv_ShopItemParameters[14].minerals_cost = 350;
@@ -856,6 +876,9 @@ void ShopInit() {
     gv_ShopItemParameters[14].alive_only = false;
     gv_ShopItemParameters[14].max_upgrades = 1;
     gv_ShopItemParameters[14].increase_function = gf_HrStat27;
+    gv_ShopItemParameters[14].tooltip_before_num = StringExternal("Param/Value/5E89B444");
+    gv_ShopItemParameters[14].tooltip_after_num = StringExternal("Param/Value/ED07ED74");
+    gv_ShopItemParameters[14].button_image = "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds";
 
     gv_ShopItemParameters[15].name = StringToText("Demon Seal");
     gv_ShopItemParameters[15].minerals_cost = 400;
@@ -864,6 +887,9 @@ void ShopInit() {
     gv_ShopItemParameters[15].alive_only = false;
     gv_ShopItemParameters[15].max_upgrades = 1;
     gv_ShopItemParameters[15].increase_function = gf_HrStat28;
+    gv_ShopItemParameters[15].tooltip_before_num = StringExternal("Param/Value/BE23B6F8");
+    gv_ShopItemParameters[15].tooltip_after_num = StringExternal("Param/Value/C46BC4C8");
+    gv_ShopItemParameters[15].button_image = "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds";
 
     gv_ShopItemParameters[16].name = StringToText("Seal of Iron");
     gv_ShopItemParameters[16].minerals_cost = 350;
@@ -872,6 +898,9 @@ void ShopInit() {
     gv_ShopItemParameters[16].alive_only = false;
     gv_ShopItemParameters[16].max_upgrades = 1;
     gv_ShopItemParameters[16].increase_function = gf_HrStat29;
+    gv_ShopItemParameters[16].tooltip_before_num = StringExternal("Param/Value/E0BA54A0");
+    gv_ShopItemParameters[16].tooltip_after_num = StringExternal("Param/Value/067028AD");
+    gv_ShopItemParameters[16].button_image = "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds";
 
     gv_ShopItemParameters[17].name = StringToText("Seal of Resistance");
     gv_ShopItemParameters[17].minerals_cost = 325;
@@ -880,6 +909,9 @@ void ShopInit() {
     gv_ShopItemParameters[17].alive_only = false;
     gv_ShopItemParameters[17].max_upgrades = 1;
     gv_ShopItemParameters[17].increase_function = gf_HrStat30;
+    gv_ShopItemParameters[17].tooltip_before_num = StringExternal("Param/Value/63C1F55F");
+    gv_ShopItemParameters[17].tooltip_after_num = StringExternal("Param/Value/864F237F");
+    gv_ShopItemParameters[17].button_image = "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds";
 
     gv_ShopItemParameters[18].name = StringToText("Lifesteal");
     gv_ShopItemParameters[18].minerals_cost = 275;
@@ -888,6 +920,9 @@ void ShopInit() {
     gv_ShopItemParameters[18].alive_only = false;
     gv_ShopItemParameters[18].max_upgrades = 3;
     gv_ShopItemParameters[18].increase_function = gf_HrStat13;
+    gv_ShopItemParameters[18].tooltip_before_num = StringExternal("Param/Value/2E68C9BA");
+    gv_ShopItemParameters[18].tooltip_after_num = StringExternal("Param/Value/11CDAC01");
+    gv_ShopItemParameters[18].button_image = "Assets\\Textures\\btn-tips-sellzergbiosamples.dds";
 
     gv_ShopItemParameters[19].name = StringToText("Spell Vampirism");
     gv_ShopItemParameters[19].minerals_cost = 325;
@@ -896,6 +931,9 @@ void ShopInit() {
     gv_ShopItemParameters[19].alive_only = false;
     gv_ShopItemParameters[19].max_upgrades = 3;
     gv_ShopItemParameters[19].increase_function = gf_HrStat14;
+    gv_ShopItemParameters[19].tooltip_before_num = StringExternal("Param/Value/5936EEEA");
+    gv_ShopItemParameters[19].tooltip_after_num = StringExternal("Param/Value/0EC8098E");
+    gv_ShopItemParameters[19].button_image = "Assets\\Textures\\btn-tips-sellprotossartifacts.dds";
 
     gv_ShopItemParameters[20].name = StringToText("Cooldown Reduction");
     gv_ShopItemParameters[20].minerals_cost = 200;
@@ -904,6 +942,9 @@ void ShopInit() {
     gv_ShopItemParameters[20].alive_only = false;
     gv_ShopItemParameters[20].max_upgrades = 3;
     gv_ShopItemParameters[20].increase_function = gf_HrStat15;
+    gv_ShopItemParameters[20].tooltip_before_num = StringExternal("Param/Value/2F67E042");
+    gv_ShopItemParameters[20].tooltip_after_num = StringExternal("Param/Value/3308F27F");
+    gv_ShopItemParameters[20].button_image = "Assets\\AddIcon\\btn-custom-terran-engine.dds";
 
     gv_ShopItemParameters[21].name = StringToText("Booster");
     gv_ShopItemParameters[21].minerals_cost = 200;
@@ -912,6 +953,9 @@ void ShopInit() {
     gv_ShopItemParameters[21].alive_only = false;
     gv_ShopItemParameters[21].max_upgrades = 1;
     gv_ShopItemParameters[21].increase_function = gf_HrStat16;
+    gv_ShopItemParameters[21].tooltip_before_num = StringExternal("Param/Value/FD3563C7");
+    gv_ShopItemParameters[21].tooltip_after_num = StringExternal("Param/Value/777978E1");
+    gv_ShopItemParameters[21].button_image = "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds";
 
     gv_ShopItemParameters[22].name = StringToText("Spell Shield");
     gv_ShopItemParameters[22].minerals_cost = 375;
@@ -920,6 +964,9 @@ void ShopInit() {
     gv_ShopItemParameters[22].alive_only = false;
     gv_ShopItemParameters[22].max_upgrades = 1;
     gv_ShopItemParameters[22].increase_function = gf_HrStat17;
+    gv_ShopItemParameters[22].tooltip_before_num = StringExternal("Param/Value/18EE85FD");
+    gv_ShopItemParameters[22].tooltip_after_num = StringExternal("Param/Value/97B7197B");
+    gv_ShopItemParameters[22].button_image = "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds";
 
     gv_ShopItemParameters[23].name = StringToText("Body of Lava");
     gv_ShopItemParameters[23].minerals_cost = 285;
@@ -928,6 +975,9 @@ void ShopInit() {
     gv_ShopItemParameters[23].alive_only = false;
     gv_ShopItemParameters[23].max_upgrades = 1;
     gv_ShopItemParameters[23].increase_function = gf_HrStat18;
+    gv_ShopItemParameters[23].tooltip_before_num = StringExternal("Param/Value/707486D0");
+    gv_ShopItemParameters[23].tooltip_after_num = StringExternal("Param/Value/74F45D38");
+    gv_ShopItemParameters[23].button_image = "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds";
 
     gv_ShopItemParameters[24].name = StringToText("Health Potion");
     gv_ShopItemParameters[24].minerals_cost = 35;
@@ -936,6 +986,9 @@ void ShopInit() {
     gv_ShopItemParameters[24].alive_only = true;
     gv_ShopItemParameters[24].max_upgrades = 1;
     gv_ShopItemParameters[24].increase_function = gf_HrStat19;
+    gv_ShopItemParameters[24].tooltip_before_num = StringExternal("Param/Value/E8EEDC9A");
+    gv_ShopItemParameters[24].tooltip_after_num = StringExternal("Param/Value/F921592A");
+    gv_ShopItemParameters[24].button_image = "Assets\\AddIcon\\btn-items-postion.dds";
 
     gv_ShopItemParameters[25].name = StringToText("Mana Potion");
     gv_ShopItemParameters[25].minerals_cost = 30;
@@ -944,6 +997,9 @@ void ShopInit() {
     gv_ShopItemParameters[25].alive_only = true;
     gv_ShopItemParameters[25].max_upgrades = 1;
     gv_ShopItemParameters[25].increase_function = gf_HrStat20;
+    gv_ShopItemParameters[25].tooltip_before_num = StringExternal("Param/Value/56E70969");
+    gv_ShopItemParameters[25].tooltip_after_num = StringExternal("Param/Value/829AA365");
+    gv_ShopItemParameters[25].button_image = "Assets\\AddIcon\\btn-items-postion2.dds";
 
     gv_ShopItemParameters[26].name = StringToText("Ward");
     gv_ShopItemParameters[26].minerals_cost = 70;
@@ -952,6 +1008,9 @@ void ShopInit() {
     gv_ShopItemParameters[26].alive_only = true;
     gv_ShopItemParameters[26].max_upgrades = 1;
     gv_ShopItemParameters[26].increase_function = gf_HrStat21;
+    gv_ShopItemParameters[26].tooltip_before_num = StringExternal("Param/Value/CB424073");
+    gv_ShopItemParameters[26].tooltip_after_num = StringExternal("Param/Value/0A92B03F");
+    gv_ShopItemParameters[26].button_image = "Assets\\Textures\\btn-building-protoss-obelisk.dds";
 
     gv_ShopItemParameters[27].name = StringToText("Hawk Eye");
     gv_ShopItemParameters[27].minerals_cost = 225;
@@ -960,6 +1019,9 @@ void ShopInit() {
     gv_ShopItemParameters[27].alive_only = true;
     gv_ShopItemParameters[27].max_upgrades = 1;
     gv_ShopItemParameters[27].increase_function = gf_HrStat22;
+    gv_ShopItemParameters[27].tooltip_before_num = StringExternal("Param/Value/4B152A48");
+    gv_ShopItemParameters[27].tooltip_after_num = StringExternal("Param/Value/F0642B8D");
+    gv_ShopItemParameters[27].button_image = "Assets\\AddIcon\\btn-ability-zerg-domination-color.dds";
 
     gv_ShopItemParameters[28].name = StringToText("Fiery Flask");
     gv_ShopItemParameters[28].minerals_cost = 350;
@@ -968,6 +1030,9 @@ void ShopInit() {
     gv_ShopItemParameters[28].alive_only = true;
     gv_ShopItemParameters[28].max_upgrades = 1;
     gv_ShopItemParameters[28].increase_function = gf_HrStat23;
+    gv_ShopItemParameters[28].tooltip_before_num = StringExternal("Param/Value/581492DB");
+    gv_ShopItemParameters[28].tooltip_after_num = StringExternal("Param/Value/7037D2B3");
+    gv_ShopItemParameters[28].button_image = "Assets\\AddIcon\\btn-items-pwpotion.dds";
 
     gv_ShopItemParameters[29].name = StringToText("Devil Elixir");
     gv_ShopItemParameters[29].minerals_cost = 400;
@@ -976,6 +1041,9 @@ void ShopInit() {
     gv_ShopItemParameters[29].alive_only = true;
     gv_ShopItemParameters[29].max_upgrades = 1;
     gv_ShopItemParameters[29].increase_function = gf_HrStat24;
+    gv_ShopItemParameters[29].tooltip_before_num = StringExternal("Param/Value/09E4F027");
+    gv_ShopItemParameters[29].tooltip_after_num = StringExternal("Param/Value/B72DF259");
+    gv_ShopItemParameters[29].button_image = "Assets\\AddIcon\\btn-items-blackpotion.dds";
 }
 
 void HeroInfoInit() {
@@ -4174,7 +4242,7 @@ void gf_SpawnHero(int player_number, int hero_number) {
     TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], recall_upgrade[player_number - 1], 1);
 }
 
-void gf_HrStatDialogMake1a () {
+void gf_CreateStatDialog () {
     int i;
     int j;
     int current_button_num;
@@ -4223,6 +4291,10 @@ void gf_HrStatDialogMake1a () {
                 c_triggerControlTypeLabel,
                 current_button_name + "/Label"
             );
+            gv_StatShopItemImage[current_button_num] = DialogControlHookupStandard(
+                c_triggerControlTypeImage,
+                current_button_name + "/ShopButton/StatImage"
+            );
         }
     }
 
@@ -4248,348 +4320,17 @@ void gf_HrStatDialogMake1a () {
 
     for (i = 0; i < 30; i += 1) {
         TriggerAddEventDialogControl(gt_TrStatDialogStatIncrease, c_playerAny, gv_StatShopButton[i], c_triggerControlEventTypeClick);
+
+        libNtve_gf_SetDialogItemImage(gv_StatShopItemImage[i], gv_ShopItemParameters[i].button_image, PlayerGroupAll());
+        libNtve_gf_SetDialogItemTooltip(
+            gv_StatShopButton[i],
+            (
+                gv_ShopItemParameters[i].tooltip_before_num +
+                IntToText(gv_StatHowMoney[i][0]) +
+                gv_ShopItemParameters[i].tooltip_after_num
+            ),
+            PlayerGroupAll());
     }
-
-    DialogCreate(270, 284, c_anchorBottomRight, 408, -10, true);
-    gv_StatusWindow = DialogLastCreated();
-    DialogSetImageVisible(gv_StatusWindow, false);
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 220, 250, c_anchorCenter, 0, 0, StringToText(""), "Assets\\blackbg.tga", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowImage[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 250, 290, c_anchorCenter, 0, 5, StringToText(""), "Assets\\Textures\\ui_chat_frame_protoss.dds", c_triggerImageTypeBorder, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowImage[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/0F6E4246") + IntToText(gv_StatHowMoney[0][0]) + StringExternal("Param/Value/891B282F")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-protoss-groundweaponslevel3.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/74423AD9") + IntToText(gv_StatHowMoney[1][0]) + StringExternal("Param/Value/8088D325")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-protoss-airweaponslevel3.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[1] = DialogControlLastCreated();
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/B762C11C") + IntToText(gv_StatHowMoney[2][0]) + StringExternal("Param/Value/A6B27F25")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-protoss-groundarmorlevel2.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/793ADEEF") + IntToText(gv_StatHowMoney[3][0]) + StringExternal("Param/Value/A8695773")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[3] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-protoss-airarmorlevel3.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[3] = DialogControlLastCreated();
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/56C3945D") + IntToText(gv_StatHowMoney[4][0]) + StringExternal("Param/Value/127C08B6")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[4] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-terran-caduceusreactor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[4] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/E47F7098") + IntToText(gv_StatHowMoney[5][0]) + StringExternal("Param/Value/C8B41D66")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[5] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-protoss-graviticbooster.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[5] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 44, 45, c_anchorBottomLeft, 33, 22, StringExternal("Param/Value/194E30BE"), StringExternal("Param/Value/0A92B612"), "Assets\\Textures\\protoss-border-button-game.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\protoss-border-button-game.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_StatusWindowPageBtn[0] = DialogControlLastCreated();
-    DialogControlSetEnabled(gv_StatusWindowPageBtn[0], PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 44, 45, c_anchorBottomLeft, 73, 22, StringExternal("Param/Value/FBD5DF0F"), StringExternal("Param/Value/5535F4B9"), "Assets\\Textures\\protoss-border-button-game.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\protoss-border-button-game.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_StatusWindowPageBtn[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 44, 45, c_anchorBottomLeft, 113, 22, StringExternal("Param/Value/CF1BBA4C"), StringExternal("Param/Value/DBC83AA6"), "Assets\\Textures\\protoss-border-button-game.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\protoss-border-button-game.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_StatusWindowPageBtn[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 44, 45, c_anchorBottomLeft, 153, 22, StringExternal("Param/Value/7EE239FC"), StringExternal("Param/Value/5737A71A"), "Assets\\Textures\\protoss-border-button-game.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\protoss-border-button-game.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_StatusWindowPageBtn[3] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 44, 45, c_anchorBottomLeft, 193, 22, StringExternal("Param/Value/1598FBB3"), StringExternal("Param/Value/E294E7CE"), "Assets\\Textures\\protoss-border-button-game.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\protoss-border-button-game.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_StatusWindowPageBtn[4] = DialogControlLastCreated();
-}
-
-void gf_HrStatDialogMake2a () {
-    int stat_x_offset_left;
-    int stat_x_offset_right;
-    int stat_y_offset;
-
-    stat_x_offset_left = 29;
-    stat_x_offset_right = 134;
-    stat_y_offset = 20;
-
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/105F4D99") + IntToText(gv_StatHowMoney[6][0]) + StringExternal("Param/Value/71ED1578")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[6] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-terran-corvidreactor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[6] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/B52C4DBD") + IntToText(gv_StatHowMoney[7][0]) + StringExternal("Param/Value/4B39A3DF")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[7] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-terran-moebiusreactor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[7] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/25D75730") + IntToText(gv_StatHowMoney[8][0]) + StringExternal("Param/Value/FED58AF3")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[8] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-tips-terran-penetrator.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[8] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/0D38B383") + IntToText(gv_StatHowMoney[9][0]) + StringExternal("Param/Value/9FB47B93")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[9] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-protoss-blinkshieldrestore.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[9] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/BC0C4F6D") + IntToText(gv_StatHowMoney[10][0]) + StringExternal("Param/Value/2CC75CD2")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[10] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-research-terran-commandcenterreactor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[10] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/45A143F6") + IntToText(gv_StatHowMoney[11][0]) + StringExternal("Param/Value/A214EC24")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[11] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-ability-terran-yamatocannon-ultra-color.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[11] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-}
-
-void gf_HrStatDialogMake3a2 () {
-    int stat_x_offset_left;
-    int stat_x_offset_right;
-    int stat_y_offset;
-
-    stat_x_offset_left = 29;
-    stat_x_offset_right = 134;
-    stat_y_offset = 20;
-
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/FED2E4BB") + IntToText(gv_StatHowMoney[12][0]) + StringExternal("Param/Value/5BD409C6")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[12] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[12] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/99E0EBC2") + IntToText(gv_StatHowMoney[13][0]) + StringExternal("Param/Value/3E972BDA")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[13] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[13] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/5E89B444") + IntToText(gv_StatHowMoney[14][0]) + StringExternal("Param/Value/ED07ED74")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[14] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[14] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/BE23B6F8") + IntToText(gv_StatHowMoney[15][0]) + StringExternal("Param/Value/C46BC4C8")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[15] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[15] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/E0BA54A0") + IntToText(gv_StatHowMoney[16][0]) + StringExternal("Param/Value/067028AD")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[16] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[16] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_zerg_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/63C1F55F") + IntToText(gv_StatHowMoney[17][0]) + StringExternal("Param/Value/864F237F")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[17] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[17] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-}
-
-void gf_HrStatDialogMake3a () {
-    int stat_x_offset_left;
-    int stat_x_offset_right;
-    int stat_y_offset;
-
-    stat_x_offset_left = 29;
-    stat_x_offset_right = 134;
-    stat_y_offset = 20;
-
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/2E68C9BA") + IntToText(gv_StatHowMoney[18][0]) + StringExternal("Param/Value/11CDAC01")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[18] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-tips-sellzergbiosamples.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[18] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/5936EEEA") + IntToText(gv_StatHowMoney[19][0]) + StringExternal("Param/Value/0EC8098E")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[19] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-tips-sellprotossartifacts.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[19] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/2F67E042") + IntToText(gv_StatHowMoney[20][0]) + StringExternal("Param/Value/3308F27F")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[20] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-custom-terran-engine.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[20] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/FD3563C7") + IntToText(gv_StatHowMoney[21][0]) + StringExternal("Param/Value/777978E1")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[21] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[21] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/18EE85FD") + IntToText(gv_StatHowMoney[22][0]) + StringExternal("Param/Value/97B7197B")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[22] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[22] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/707486D0") + IntToText(gv_StatHowMoney[23][0]) + StringExternal("Param/Value/74F45D38")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[23] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[23] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-}
-
-void gf_HrStatDialogMake4a () {
-    int stat_x_offset_left;
-    int stat_x_offset_right;
-    int stat_y_offset;
-
-    stat_x_offset_left = 29;
-    stat_x_offset_right = 134;
-    stat_y_offset = 20;
-
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/E8EEDC9A") + IntToText(gv_StatHowMoney[24][0]) + StringExternal("Param/Value/F921592A")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[24] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-items-postion.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[24] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/56E70969") + IntToText(gv_StatHowMoney[25][0]) + StringExternal("Param/Value/829AA365")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[25] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-items-postion2.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[25] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/CB424073") + IntToText(gv_StatHowMoney[26][0]) + StringExternal("Param/Value/0A92B03F")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[26] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\Textures\\btn-building-protoss-obelisk.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[26] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/4B152A48") + IntToText(gv_StatHowMoney[27][0]) + StringExternal("Param/Value/F0642B8D")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[27] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-ability-zerg-domination-color.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[27] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    stat_y_offset += 65;
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_left, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/581492DB") + IntToText(gv_StatHowMoney[28][0]) + StringExternal("Param/Value/7037D2B3")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[28] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_left + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-items-pwpotion.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[28] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_StatusWindow, 70, 70, c_anchorTopLeft, stat_x_offset_right, stat_y_offset, StringToText(""), StringToText(""), "Assets\\Textures\\ui_glossary_strongagainst_protoss_normaloverandpressedover.dds");
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), (StringExternal("Param/Value/09E4F027") + IntToText(gv_StatHowMoney[29][0]) + StringExternal("Param/Value/B72DF259")), PlayerGroupAll());
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    gv_StatusWindowBtn[29] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemImage(gv_StatusWindow, 52, 52, c_anchorTopLeft, (stat_x_offset_right + 10), (stat_y_offset + 10), StringToText(""), "Assets\\AddIcon\\btn-items-blackpotion.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_StatusWindowBtnImage[29] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
 }
 
 void gf_HrStatMoneySet () {
@@ -4636,7 +4377,7 @@ void gf_HrStat1 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4654,7 +4395,7 @@ void gf_HrStat2 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4667,7 +4408,7 @@ void gf_HrStat3 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4680,7 +4421,7 @@ void gf_HrStat4 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4693,7 +4434,7 @@ void gf_HrStat5 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4707,7 +4448,7 @@ void gf_HrStat6 () {
         gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
-        libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
+        libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
         lf_ShopRelatedChecks(shop_index);
     } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
@@ -4722,7 +4463,7 @@ void gf_HrStat7 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4735,7 +4476,7 @@ void gf_HrStat8 () {
         gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
-        libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
+        libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
         lf_ShopRelatedChecks(shop_index);
     } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
@@ -4751,7 +4492,7 @@ void gf_HrStat9 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4779,7 +4520,7 @@ void gf_HrStat10 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4791,7 +4532,7 @@ void gf_HrStat11 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4803,7 +4544,7 @@ void gf_HrStat12 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4902,7 +4643,7 @@ void gf_HrStat13 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4919,7 +4660,7 @@ void gf_HrStat14 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4931,7 +4672,7 @@ void gf_HrStat15 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatusWindowBtn[shop_index], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -5231,13 +4972,13 @@ void gf_StatWindowUpdatePlayer (int player) {
 void gf_HrItemUseComplete () {
     if ((gv_StatIncreasesBought[EventPlayer()][28] != 0)) {
         gv_StatIncreasesBought[EventPlayer()][28] = 0;
-        DialogControlSetEnabled(gv_StatusWindowBtn[28], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_StatShopButton[28], PlayerGroupSingle(EventPlayer()), true);
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[28], (StringExternal("Param/Value/68B8F61B") + IntToText(gv_StatIncreasesBought[EventPlayer()][28]) + StringExternal("Param/Value/9418664B")), PlayerGroupSingle(EventPlayer()));
     }
 
     if ((gv_StatIncreasesBought[EventPlayer()][29] != 0)) {
         gv_StatIncreasesBought[EventPlayer()][29] = 0;
-        DialogControlSetEnabled(gv_StatusWindowBtn[29], PlayerGroupSingle(EventPlayer()), true);
+        DialogControlSetEnabled(gv_StatShopButton[29], PlayerGroupSingle(EventPlayer()), true);
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[29], (StringExternal("Param/Value/5A294C24") + IntToText(gv_StatIncreasesBought[EventPlayer()][29]) + StringExternal("Param/Value/4C29070D")), PlayerGroupSingle(EventPlayer()));
     }
 
@@ -7423,9 +7164,6 @@ bool gf_HotkeyStatIncreaseTestConditions() {
     if (!((gv_BeforeStartCounterDialogNum == 0))) {
         return false;
     }
-    if (!((gv_StatusWindowAddDelay[EventPlayer()] == false))) {
-        return false;
-    }
     return true;
 }
 
@@ -7704,11 +7442,7 @@ bool gt_Tr5AllDialogInit_Func (bool testConds, bool runActions) {
     gf_HrSkillLearnDialogMake();
     gf_HrStatMoneySet();
     gf_HrTeamSelectDialogMake();
-    gf_HrStatDialogMake1a();
-    gf_HrStatDialogMake2a();
-    gf_HrStatDialogMake3a2();
-    gf_HrStatDialogMake3a();
-    gf_HrStatDialogMake4a();
+    gf_CreateStatDialog();
     gf_HrSurrenderDialogMake();
     return true;
 }
@@ -10935,12 +10669,10 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     if (!runActions) {
         return true;
     }
-    gv_StatusWindowAddDelay[EventPlayer()] = true;
     // Increase the stat if the criteria are met
     for (i = 0; i < 30; i += 1) {
         if ((EventDialogControl() == gv_StatShopButton[i])) {
             if (!(lf_StatEligibleForBuying(i))) {
-                gv_StatusWindowAddDelay[EventPlayer()] = false;
                 return false;
             }
             if (i == 26) {
@@ -10952,9 +10684,7 @@ bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
             gv_ShopItemParameters[i].increase_function();
         }
     }
-    Wait(0.1, c_timeReal);
     gf_StatWindowUpdatePlayer(EventPlayer());
-    gv_StatusWindowAddDelay[EventPlayer()] = false;
     return true;
 }
 //--------------------------------------------------------------------------------------------------
@@ -10985,7 +10715,7 @@ bool gt_TrHealingPosionUseComplete_Func (bool testConds, bool runActions) {
     }
 
     gv_StatIncreasesBought[EventPlayer()][24] = 0;
-    DialogControlSetEnabled(gv_StatusWindowBtn[24], PlayerGroupSingle(EventPlayer()), true);
+    DialogControlSetEnabled(gv_StatShopButton[24], PlayerGroupSingle(EventPlayer()), true);
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[24], (StringExternal("Param/Value/96D19A96") + IntToText(gv_StatIncreasesBought[EventPlayer()][24]) + StringExternal("Param/Value/458E87A8")), PlayerGroupSingle(EventPlayer()));
     return true;
 }
@@ -11019,7 +10749,7 @@ bool gt_TrManaPosionUseComplete_Func (bool testConds, bool runActions) {
     }
 
     gv_StatIncreasesBought[EventPlayer()][25] = 0;
-    DialogControlSetEnabled(gv_StatusWindowBtn[25], PlayerGroupSingle(EventPlayer()), true);
+    DialogControlSetEnabled(gv_StatShopButton[25], PlayerGroupSingle(EventPlayer()), true);
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[25], (StringExternal("Param/Value/696A9ED7") + IntToText(gv_StatIncreasesBought[EventPlayer()][25]) + StringExternal("Param/Value/104CC61A")), PlayerGroupSingle(EventPlayer()));
     return true;
 }
@@ -11053,7 +10783,7 @@ bool gt_TrWardUseComplete_Func (bool testConds, bool runActions) {
     }
 
     gv_StatIncreasesBought[EventPlayer()][26] = 0;
-    DialogControlSetEnabled(gv_StatusWindowBtn[26], PlayerGroupSingle(EventPlayer()), true);
+    DialogControlSetEnabled(gv_StatShopButton[26], PlayerGroupSingle(EventPlayer()), true);
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[26], (StringExternal("Param/Value/D68A9FC5") + IntToText(gv_StatIncreasesBought[EventPlayer()][26]) + StringExternal("Param/Value/C65A8CFA")), PlayerGroupSingle(EventPlayer()));
     gf_StatWindowUpdatePlayer(EventPlayer());
     return true;
@@ -11088,7 +10818,7 @@ bool gt_TrWardUseComplete2_Func (bool testConds, bool runActions) {
     }
 
     gv_StatIncreasesBought[EventPlayer()][27] = 0;
-    DialogControlSetEnabled(gv_StatusWindowBtn[27], PlayerGroupSingle(EventPlayer()), true);
+    DialogControlSetEnabled(gv_StatShopButton[27], PlayerGroupSingle(EventPlayer()), true);
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[27], (StringExternal("Param/Value/7D0E738D") + IntToText(gv_StatIncreasesBought[EventPlayer()][27]) + StringExternal("Param/Value/417CE63D")), PlayerGroupSingle(EventPlayer()));
     gf_StatWindowUpdatePlayer(EventPlayer());
     return true;
