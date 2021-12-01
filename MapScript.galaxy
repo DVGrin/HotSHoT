@@ -3346,7 +3346,6 @@ void gf_HrHeroSelect() {
 
 void gf_HrHeroTeamSelectSave () {
     int i;
-    int j;
 
     const int total_players = 8;
     const int players_in_team = 4;
@@ -3364,42 +3363,30 @@ void gf_HrHeroTeamSelectSave () {
             }
         }
     } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true)) {
-            for (j = 5 ; j <= total_players ; j += 1 ) {
-                if ((PlayerType(gv_PlayerBayul[j]) == c_playerTypeUser) && 
-                    (PlayerStatus(gv_PlayerBayul[j]) == c_playerStatusActive) &&
-                    (gv_PlayerBayul[j] != EventPlayer()) && 
-                    (gv_SelectedCharNum[EventPlayer()] == gv_SelectedCharNum[gv_PlayerBayul[j]])
-                    ) {
-                        gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
-                        gv_CharSelectedName[EventPlayer()] = StringToText("");
-                        gv_SelectedCharNum[EventPlayer()] = 0;
-                }
+        for (i = 5 ; i <= total_players ; i += 1 ) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && 
+                (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) &&
+                (gv_PlayerBayul[i] != EventPlayer()) && 
+                (gv_SelectedCharNum[EventPlayer()] == gv_SelectedCharNum[gv_PlayerBayul[i]])
+                ) {
+                    gv_CharSelectedImage[EventPlayer()] = "Assets\\InviButton.dds";
+                    gv_CharSelectedName[EventPlayer()] = StringToText("");
+                    gv_SelectedCharNum[EventPlayer()] = 0;
             }
+        }
     }
     if ((gv_SelectedCharNum[EventPlayer()] > 0)) {
-        if ((EventPlayer() == gv_PlayerBayul[1])) {
-            gv_Team1CharNum[0] = gv_SelectedCharNum[EventPlayer()];
+        for (i = 1 ; i <= players_in_team ; i += 1 ) {
+            if ((EventPlayer() == gv_PlayerBayul[i])) {
+                gv_Team1CharNum[i - 1] = gv_SelectedCharNum[EventPlayer()];
+                break;
+            }
         }
-        else if ((EventPlayer() == gv_PlayerBayul[2])) {
-            gv_Team1CharNum[1] = gv_SelectedCharNum[EventPlayer()];
-        }
-        else if ((EventPlayer() == gv_PlayerBayul[3])) {
-            gv_Team1CharNum[2] = gv_SelectedCharNum[EventPlayer()];
-        }
-        else if ((EventPlayer() == gv_PlayerBayul[4])) {
-            gv_Team1CharNum[3] = gv_SelectedCharNum[EventPlayer()];
-        }
-        else if ((EventPlayer() == gv_PlayerBayul[5])) {
-            gv_Team2CharNum[0] = gv_SelectedCharNum[EventPlayer()];
-        }
-        else if ((EventPlayer() == gv_PlayerBayul[6])) {
-            gv_Team2CharNum[1] = gv_SelectedCharNum[EventPlayer()];
-        }
-        else if ((EventPlayer() == gv_PlayerBayul[7])) {
-            gv_Team2CharNum[2] = gv_SelectedCharNum[EventPlayer()];
-        }
-        else if ((EventPlayer() == gv_PlayerBayul[8])) {
-            gv_Team2CharNum[3] = gv_SelectedCharNum[EventPlayer()];
+        for (i = 5 ; i <= total_players ; i += 1 ) {
+            if ((EventPlayer() == gv_PlayerBayul[i])) {
+                gv_Team2CharNum[i - 5] = gv_SelectedCharNum[EventPlayer()];
+                break;
+            }
         }
     }
 }
@@ -12329,7 +12316,7 @@ bool gt_TrMonsterAttackBird1_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterBirdGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterBirdGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(554)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterBirdGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(554)), c_orderQueueAddToEnd);
     gv_MonsterBirdSwitch[0] = false;
     return true;
 }
@@ -12371,7 +12358,7 @@ bool gt_TrMonsterAttackBird2_Func (bool testConds, bool runActions) {
         UnitBehaviorRemove(UnitGroupUnit(gv_MonsterBirdGroup[1], 1), "Notauto", 1);
     }
     UnitGroupIssueOrder(gv_MonsterBirdGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterBirdGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(555)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterBirdGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(555)), c_orderQueueAddToEnd);
     gv_MonsterBirdSwitch[1] = false;
     return true;
 }
@@ -12411,7 +12398,7 @@ bool gt_TrMonsterBackBird1_Func (bool testConds, bool runActions) {
         UnitGroupIssueOrder(gv_MonsterBirdGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(554)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterBirdSwitch[0] = false;
     return true;
 }
@@ -12451,7 +12438,7 @@ bool gt_TrMonsterBackBird2_Func (bool testConds, bool runActions) {
         UnitGroupIssueOrder(gv_MonsterBirdGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(555)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterBirdSwitch[1] = false;
     return true;
 }
@@ -12498,7 +12485,7 @@ bool gt_TrMonsterAttackDog1_Func (bool testConds, bool runActions) {
 
     }
     UnitGroupIssueOrder(gv_MonsterDogGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterDogGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(561)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterDogGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(561)), c_orderQueueAddToEnd);
     gv_MonsterDogSwitch[0] = false;
     return true;
 }
@@ -12545,7 +12532,7 @@ bool gt_TrMonsterAttackDog2_Func (bool testConds, bool runActions) {
 
     }
     UnitGroupIssueOrder(gv_MonsterDogGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterDogGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(558)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterDogGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(558)), c_orderQueueAddToEnd);
     gv_MonsterDogSwitch[1] = false;
     return true;
 }
@@ -12609,7 +12596,7 @@ bool gt_TrMonsterBackDog1_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterDogGroup[0], 4), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(563)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterDogSwitch[0] = false;
     return true;
 }
@@ -12673,7 +12660,7 @@ bool gt_TrMonsterBackDog2_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterDogGroup[1], 4), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(559)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterDogSwitch[1] = false;
     return true;
 }
@@ -12720,7 +12707,7 @@ bool gt_TrMonsterAttackCow1_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterCowGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterCowGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(234)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterCowGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(234)), c_orderQueueAddToEnd);
     gv_MonsterCowSwitch[0] = false;
     return true;
 }
@@ -12767,7 +12754,7 @@ bool gt_TrMonsterAttackCow2_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterCowGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterCowGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(157)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterCowGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(157)), c_orderQueueAddToEnd);
     gv_MonsterCowSwitch[1] = false;
     return true;
 }
@@ -12813,7 +12800,7 @@ bool gt_TrMonsterBackCow1_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterCowGroup[0], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(234)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterCowSwitch[0] = false;
     return true;
 }
@@ -12859,7 +12846,7 @@ bool gt_TrMonsterBackCow2_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterCowGroup[1], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(158)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterCowSwitch[1] = false;
     return true;
 }
@@ -12906,7 +12893,7 @@ bool gt_TrMonsterAttackGalic1_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterGalicGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterGalicGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(548)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterGalicGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(548)), c_orderQueueAddToEnd);
     gv_MonsterGalicSwitch[0] = false;
     return true;
 }
@@ -12953,7 +12940,7 @@ bool gt_TrMonsterAttackGalic2_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterGalicGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterGalicGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(551)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterGalicGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(551)), c_orderQueueAddToEnd);
     gv_MonsterGalicSwitch[1] = false;
     return true;
 }
@@ -13007,7 +12994,7 @@ bool gt_TrMonsterBackGalic1_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterGalicGroup[0], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(550)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterGalicSwitch[0] = false;
     return true;
 }
@@ -13061,7 +13048,7 @@ bool gt_TrMonsterBackGalic2_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterGalicGroup[1], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(553)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterGalicSwitch[1] = false;
     return true;
 }
@@ -13108,7 +13095,7 @@ bool gt_TrMonsterAttackScorpion1_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterScorpionGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterScorpionGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(564)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterScorpionGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(564)), c_orderQueueAddToEnd);
     gv_MonsterScorpionSwitch[0] = false;
     return true;
 }
@@ -13155,7 +13142,7 @@ bool gt_TrMonsterAttackScorpion2_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterScorpionGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterScorpionGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(567)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterScorpionGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(567)), c_orderQueueAddToEnd);
     gv_MonsterScorpionSwitch[1] = false;
     return true;
 }
@@ -13209,7 +13196,7 @@ bool gt_TrMonsterBackScorpion1_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[0], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(566)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterScorpionSwitch[0] = false;
     return true;
 }
@@ -13263,7 +13250,7 @@ bool gt_TrMonsterBackScorpion2_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterScorpionGroup[1], 3), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(569)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterScorpionSwitch[1] = false;
     return true;
 }
@@ -13310,7 +13297,7 @@ bool gt_TrMonsterAttackIceBug1_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterIceBugGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterIceBugGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[0] = false;
     return true;
 }
@@ -13357,7 +13344,7 @@ bool gt_TrMonsterAttackIceBug2_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterIceBugGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterIceBugGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[1] = false;
     return true;
 }
@@ -13404,7 +13391,7 @@ bool gt_TrMonsterAttackIceBug3_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[2], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterIceBugGroup[2], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterIceBugGroup[2], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[2] = false;
     return true;
 }
@@ -13451,7 +13438,7 @@ bool gt_TrMonsterAttackIceBug4_Func (bool testConds, bool runActions) {
 
     }
     UnitGroupIssueOrder(gv_MonsterIceBugGroup[3], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterIceBugGroup[3], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(570)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterIceBugGroup[3], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(570)), c_orderQueueAddToEnd);
     gv_MonsterIceBugSwitch[3] = false;
     return true;
 }
@@ -13497,7 +13484,7 @@ bool gt_TrMonsterBackIceBug1_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterIceBugGroup[0], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(571)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterIceBugSwitch[0] = false;
     return true;
 }
@@ -13543,7 +13530,7 @@ bool gt_TrMonsterBackIceBug2_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterIceBugGroup[1], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(573)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterIceBugSwitch[1] = false;
     return true;
 }
@@ -13589,7 +13576,7 @@ bool gt_TrMonsterBackIceBug3_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterIceBugGroup[2], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(575)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterIceBugSwitch[2] = false;
     return true;
 }
@@ -13635,7 +13622,7 @@ bool gt_TrMonsterBackIceBug4_Func (bool testConds, bool runActions) {
         UnitIssueOrder(UnitGroupUnit(gv_MonsterIceBugGroup[3], 2), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(577)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterIceBugSwitch[3] = false;
     return true;
 }
@@ -13677,7 +13664,7 @@ bool gt_TrMonsterAttackBoss1_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterBossGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterBossGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(578)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterBossGroup[0], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(578)), c_orderQueueAddToEnd);
     gv_MonsterIceBossSwitch[0] = false;
     return true;
 }
@@ -13719,7 +13706,7 @@ bool gt_TrMonsterAttackBoss2_Func (bool testConds, bool runActions) {
     }
 
     UnitGroupIssueOrder(gv_MonsterBossGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), EventUnitDamageSourcePoint()), c_orderQueueReplace);
-    UnitGroupIssueOrder(gv_MonsterBossGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(579)), c_orderQueueAddToEnd);
+    UnitGroupIssueOrder(gv_MonsterBossGroup[1], OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(579)), c_orderQueueAddToEnd);
     gv_MonsterIceBossSwitch[1] = false;
     return true;
 }
@@ -13762,7 +13749,7 @@ bool gt_TrMonsterBackBoss1_Func (bool testConds, bool runActions) {
         UnitGroupIssueOrder(gv_MonsterBossGroup[0], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(578)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterIceBossSwitch[0] = false;
     return true;
 }
@@ -13805,7 +13792,7 @@ bool gt_TrMonsterBackBoss2_Func (bool testConds, bool runActions) {
         UnitGroupIssueOrder(gv_MonsterBossGroup[1], OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(579)), c_orderQueueReplace);
     }
 
-    Wait(2.0, c_timeReal);
+    Wait(1.0, c_timeReal);
     gv_MonsterIceBossSwitch[1] = false;
     return true;
 }
