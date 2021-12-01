@@ -847,137 +847,137 @@ void ShopInit() {
     gv_ShopItemParameters[11].tooltip_after_num = StringExternal("Param/Value/A214EC24");
     gv_ShopItemParameters[11].button_image = "Assets\\AddIcon\\btn-ability-terran-yamatocannon-ultra-color.dds";
 
-    gv_ShopItemParameters[12].name = StringToText("Seal of Execution");
-    gv_ShopItemParameters[12].minerals_cost = 400;
-    gv_ShopItemParameters[12].minerals_increase = 0;
+    gv_ShopItemParameters[12].name = StringToText("Lifesteal");
+    gv_ShopItemParameters[12].minerals_cost = 275;
+    gv_ShopItemParameters[12].minerals_increase = 85;
     gv_ShopItemParameters[12].gas_cost = 1;
     gv_ShopItemParameters[12].alive_only = false;
-    gv_ShopItemParameters[12].max_upgrades = 1;
-    gv_ShopItemParameters[12].increase_function = gf_HrStat25;
-    gv_ShopItemParameters[12].tooltip_before_num = StringExternal("Param/Value/FED2E4BB");
-    gv_ShopItemParameters[12].tooltip_after_num = StringExternal("Param/Value/5BD409C6");
-    gv_ShopItemParameters[12].button_image = "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds";
+    gv_ShopItemParameters[12].max_upgrades = 3;
+    gv_ShopItemParameters[12].increase_function = gf_HrStat13;
+    gv_ShopItemParameters[12].tooltip_before_num = StringExternal("Param/Value/2E68C9BA");
+    gv_ShopItemParameters[12].tooltip_after_num = StringExternal("Param/Value/11CDAC01");
+    gv_ShopItemParameters[12].button_image = "Assets\\Textures\\btn-tips-sellzergbiosamples.dds";
 
-    gv_ShopItemParameters[13].name = StringToText("Seal of Curse");
-    gv_ShopItemParameters[13].minerals_cost = 450;
-    gv_ShopItemParameters[13].minerals_increase = 0;
+    gv_ShopItemParameters[13].name = StringToText("Spell Vampirism");
+    gv_ShopItemParameters[13].minerals_cost = 325;
+    gv_ShopItemParameters[13].minerals_increase = 100;
     gv_ShopItemParameters[13].gas_cost = 1;
     gv_ShopItemParameters[13].alive_only = false;
-    gv_ShopItemParameters[13].max_upgrades = 1;
-    gv_ShopItemParameters[13].increase_function = gf_HrStat26;
-    gv_ShopItemParameters[13].tooltip_before_num = StringExternal("Param/Value/99E0EBC2");
-    gv_ShopItemParameters[13].tooltip_after_num = StringExternal("Param/Value/3E972BDA");
-    gv_ShopItemParameters[13].button_image = "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds";
+    gv_ShopItemParameters[13].max_upgrades = 3;
+    gv_ShopItemParameters[13].increase_function = gf_HrStat14;
+    gv_ShopItemParameters[13].tooltip_before_num = StringExternal("Param/Value/5936EEEA");
+    gv_ShopItemParameters[13].tooltip_after_num = StringExternal("Param/Value/0EC8098E");
+    gv_ShopItemParameters[13].button_image = "Assets\\Textures\\btn-tips-sellprotossartifacts.dds";
 
-    gv_ShopItemParameters[14].name = StringToText("Seal of Destruction");
-    gv_ShopItemParameters[14].minerals_cost = 350;
-    gv_ShopItemParameters[14].minerals_increase = 0;
+    gv_ShopItemParameters[14].name = StringToText("Cooldown Reduction");
+    gv_ShopItemParameters[14].minerals_cost = 200;
+    gv_ShopItemParameters[14].minerals_increase = 60;
     gv_ShopItemParameters[14].gas_cost = 1;
     gv_ShopItemParameters[14].alive_only = false;
-    gv_ShopItemParameters[14].max_upgrades = 1;
-    gv_ShopItemParameters[14].increase_function = gf_HrStat27;
-    gv_ShopItemParameters[14].tooltip_before_num = StringExternal("Param/Value/5E89B444");
-    gv_ShopItemParameters[14].tooltip_after_num = StringExternal("Param/Value/ED07ED74");
-    gv_ShopItemParameters[14].button_image = "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds";
+    gv_ShopItemParameters[14].max_upgrades = 3;
+    gv_ShopItemParameters[14].increase_function = gf_HrStat15;
+    gv_ShopItemParameters[14].tooltip_before_num = StringExternal("Param/Value/2F67E042");
+    gv_ShopItemParameters[14].tooltip_after_num = StringExternal("Param/Value/3308F27F");
+    gv_ShopItemParameters[14].button_image = "Assets\\AddIcon\\btn-custom-terran-engine.dds";
 
-    gv_ShopItemParameters[15].name = StringToText("Demon Seal");
-    gv_ShopItemParameters[15].minerals_cost = 400;
+    gv_ShopItemParameters[15].name = StringToText("Booster");
+    gv_ShopItemParameters[15].minerals_cost = 200;
     gv_ShopItemParameters[15].minerals_increase = 0;
     gv_ShopItemParameters[15].gas_cost = 1;
     gv_ShopItemParameters[15].alive_only = false;
     gv_ShopItemParameters[15].max_upgrades = 1;
-    gv_ShopItemParameters[15].increase_function = gf_HrStat28;
-    gv_ShopItemParameters[15].tooltip_before_num = StringExternal("Param/Value/BE23B6F8");
-    gv_ShopItemParameters[15].tooltip_after_num = StringExternal("Param/Value/C46BC4C8");
-    gv_ShopItemParameters[15].button_image = "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds";
+    gv_ShopItemParameters[15].increase_function = gf_HrStat16;
+    gv_ShopItemParameters[15].tooltip_before_num = StringExternal("Param/Value/FD3563C7");
+    gv_ShopItemParameters[15].tooltip_after_num = StringExternal("Param/Value/777978E1");
+    gv_ShopItemParameters[15].button_image = "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds";
 
-    gv_ShopItemParameters[16].name = StringToText("Seal of Iron");
-    gv_ShopItemParameters[16].minerals_cost = 350;
+    gv_ShopItemParameters[16].name = StringToText("Spell Shield");
+    gv_ShopItemParameters[16].minerals_cost = 375;
     gv_ShopItemParameters[16].minerals_increase = 0;
     gv_ShopItemParameters[16].gas_cost = 1;
     gv_ShopItemParameters[16].alive_only = false;
     gv_ShopItemParameters[16].max_upgrades = 1;
-    gv_ShopItemParameters[16].increase_function = gf_HrStat29;
-    gv_ShopItemParameters[16].tooltip_before_num = StringExternal("Param/Value/E0BA54A0");
-    gv_ShopItemParameters[16].tooltip_after_num = StringExternal("Param/Value/067028AD");
-    gv_ShopItemParameters[16].button_image = "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds";
+    gv_ShopItemParameters[16].increase_function = gf_HrStat17;
+    gv_ShopItemParameters[16].tooltip_before_num = StringExternal("Param/Value/18EE85FD");
+    gv_ShopItemParameters[16].tooltip_after_num = StringExternal("Param/Value/97B7197B");
+    gv_ShopItemParameters[16].button_image = "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds";
 
-    gv_ShopItemParameters[17].name = StringToText("Seal of Resistance");
-    gv_ShopItemParameters[17].minerals_cost = 325;
+    gv_ShopItemParameters[17].name = StringToText("Body of Lava");
+    gv_ShopItemParameters[17].minerals_cost = 285;
     gv_ShopItemParameters[17].minerals_increase = 0;
     gv_ShopItemParameters[17].gas_cost = 1;
     gv_ShopItemParameters[17].alive_only = false;
     gv_ShopItemParameters[17].max_upgrades = 1;
-    gv_ShopItemParameters[17].increase_function = gf_HrStat30;
-    gv_ShopItemParameters[17].tooltip_before_num = StringExternal("Param/Value/63C1F55F");
-    gv_ShopItemParameters[17].tooltip_after_num = StringExternal("Param/Value/864F237F");
-    gv_ShopItemParameters[17].button_image = "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds";
+    gv_ShopItemParameters[17].increase_function = gf_HrStat18;
+    gv_ShopItemParameters[17].tooltip_before_num = StringExternal("Param/Value/707486D0");
+    gv_ShopItemParameters[17].tooltip_after_num = StringExternal("Param/Value/74F45D38");
+    gv_ShopItemParameters[17].button_image = "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds";
 
-    gv_ShopItemParameters[18].name = StringToText("Lifesteal");
-    gv_ShopItemParameters[18].minerals_cost = 275;
-    gv_ShopItemParameters[18].minerals_increase = 85;
+    gv_ShopItemParameters[18].name = StringToText("Seal of Execution");
+    gv_ShopItemParameters[18].minerals_cost = 400;
+    gv_ShopItemParameters[18].minerals_increase = 0;
     gv_ShopItemParameters[18].gas_cost = 1;
     gv_ShopItemParameters[18].alive_only = false;
-    gv_ShopItemParameters[18].max_upgrades = 3;
-    gv_ShopItemParameters[18].increase_function = gf_HrStat13;
-    gv_ShopItemParameters[18].tooltip_before_num = StringExternal("Param/Value/2E68C9BA");
-    gv_ShopItemParameters[18].tooltip_after_num = StringExternal("Param/Value/11CDAC01");
-    gv_ShopItemParameters[18].button_image = "Assets\\Textures\\btn-tips-sellzergbiosamples.dds";
+    gv_ShopItemParameters[18].max_upgrades = 1;
+    gv_ShopItemParameters[18].increase_function = gf_HrStat25;
+    gv_ShopItemParameters[18].tooltip_before_num = StringExternal("Param/Value/FED2E4BB");
+    gv_ShopItemParameters[18].tooltip_after_num = StringExternal("Param/Value/5BD409C6");
+    gv_ShopItemParameters[18].button_image = "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds";
 
-    gv_ShopItemParameters[19].name = StringToText("Spell Vampirism");
-    gv_ShopItemParameters[19].minerals_cost = 325;
-    gv_ShopItemParameters[19].minerals_increase = 100;
+    gv_ShopItemParameters[19].name = StringToText("Seal of Curse");
+    gv_ShopItemParameters[19].minerals_cost = 450;
+    gv_ShopItemParameters[19].minerals_increase = 0;
     gv_ShopItemParameters[19].gas_cost = 1;
     gv_ShopItemParameters[19].alive_only = false;
-    gv_ShopItemParameters[19].max_upgrades = 3;
-    gv_ShopItemParameters[19].increase_function = gf_HrStat14;
-    gv_ShopItemParameters[19].tooltip_before_num = StringExternal("Param/Value/5936EEEA");
-    gv_ShopItemParameters[19].tooltip_after_num = StringExternal("Param/Value/0EC8098E");
-    gv_ShopItemParameters[19].button_image = "Assets\\Textures\\btn-tips-sellprotossartifacts.dds";
+    gv_ShopItemParameters[19].max_upgrades = 1;
+    gv_ShopItemParameters[19].increase_function = gf_HrStat26;
+    gv_ShopItemParameters[19].tooltip_before_num = StringExternal("Param/Value/99E0EBC2");
+    gv_ShopItemParameters[19].tooltip_after_num = StringExternal("Param/Value/3E972BDA");
+    gv_ShopItemParameters[19].button_image = "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds";
 
-    gv_ShopItemParameters[20].name = StringToText("Cooldown Reduction");
-    gv_ShopItemParameters[20].minerals_cost = 200;
-    gv_ShopItemParameters[20].minerals_increase = 60;
+    gv_ShopItemParameters[20].name = StringToText("Seal of Destruction");
+    gv_ShopItemParameters[20].minerals_cost = 350;
+    gv_ShopItemParameters[20].minerals_increase = 0;
     gv_ShopItemParameters[20].gas_cost = 1;
     gv_ShopItemParameters[20].alive_only = false;
-    gv_ShopItemParameters[20].max_upgrades = 3;
-    gv_ShopItemParameters[20].increase_function = gf_HrStat15;
-    gv_ShopItemParameters[20].tooltip_before_num = StringExternal("Param/Value/2F67E042");
-    gv_ShopItemParameters[20].tooltip_after_num = StringExternal("Param/Value/3308F27F");
-    gv_ShopItemParameters[20].button_image = "Assets\\AddIcon\\btn-custom-terran-engine.dds";
+    gv_ShopItemParameters[20].max_upgrades = 1;
+    gv_ShopItemParameters[20].increase_function = gf_HrStat27;
+    gv_ShopItemParameters[20].tooltip_before_num = StringExternal("Param/Value/5E89B444");
+    gv_ShopItemParameters[20].tooltip_after_num = StringExternal("Param/Value/ED07ED74");
+    gv_ShopItemParameters[20].button_image = "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds";
 
-    gv_ShopItemParameters[21].name = StringToText("Booster");
-    gv_ShopItemParameters[21].minerals_cost = 200;
+    gv_ShopItemParameters[21].name = StringToText("Demon Seal");
+    gv_ShopItemParameters[21].minerals_cost = 400;
     gv_ShopItemParameters[21].minerals_increase = 0;
     gv_ShopItemParameters[21].gas_cost = 1;
     gv_ShopItemParameters[21].alive_only = false;
     gv_ShopItemParameters[21].max_upgrades = 1;
-    gv_ShopItemParameters[21].increase_function = gf_HrStat16;
-    gv_ShopItemParameters[21].tooltip_before_num = StringExternal("Param/Value/FD3563C7");
-    gv_ShopItemParameters[21].tooltip_after_num = StringExternal("Param/Value/777978E1");
-    gv_ShopItemParameters[21].button_image = "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds";
+    gv_ShopItemParameters[21].increase_function = gf_HrStat28;
+    gv_ShopItemParameters[21].tooltip_before_num = StringExternal("Param/Value/BE23B6F8");
+    gv_ShopItemParameters[21].tooltip_after_num = StringExternal("Param/Value/C46BC4C8");
+    gv_ShopItemParameters[21].button_image = "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds";
 
-    gv_ShopItemParameters[22].name = StringToText("Spell Shield");
-    gv_ShopItemParameters[22].minerals_cost = 375;
+    gv_ShopItemParameters[22].name = StringToText("Seal of Iron");
+    gv_ShopItemParameters[22].minerals_cost = 350;
     gv_ShopItemParameters[22].minerals_increase = 0;
     gv_ShopItemParameters[22].gas_cost = 1;
     gv_ShopItemParameters[22].alive_only = false;
     gv_ShopItemParameters[22].max_upgrades = 1;
-    gv_ShopItemParameters[22].increase_function = gf_HrStat17;
-    gv_ShopItemParameters[22].tooltip_before_num = StringExternal("Param/Value/18EE85FD");
-    gv_ShopItemParameters[22].tooltip_after_num = StringExternal("Param/Value/97B7197B");
-    gv_ShopItemParameters[22].button_image = "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds";
+    gv_ShopItemParameters[22].increase_function = gf_HrStat29;
+    gv_ShopItemParameters[22].tooltip_before_num = StringExternal("Param/Value/E0BA54A0");
+    gv_ShopItemParameters[22].tooltip_after_num = StringExternal("Param/Value/067028AD");
+    gv_ShopItemParameters[22].button_image = "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds";
 
-    gv_ShopItemParameters[23].name = StringToText("Body of Lava");
-    gv_ShopItemParameters[23].minerals_cost = 285;
+    gv_ShopItemParameters[23].name = StringToText("Seal of Resistance");
+    gv_ShopItemParameters[23].minerals_cost = 325;
     gv_ShopItemParameters[23].minerals_increase = 0;
     gv_ShopItemParameters[23].gas_cost = 1;
     gv_ShopItemParameters[23].alive_only = false;
     gv_ShopItemParameters[23].max_upgrades = 1;
-    gv_ShopItemParameters[23].increase_function = gf_HrStat18;
-    gv_ShopItemParameters[23].tooltip_before_num = StringExternal("Param/Value/707486D0");
-    gv_ShopItemParameters[23].tooltip_after_num = StringExternal("Param/Value/74F45D38");
-    gv_ShopItemParameters[23].button_image = "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds";
+    gv_ShopItemParameters[23].increase_function = gf_HrStat30;
+    gv_ShopItemParameters[23].tooltip_before_num = StringExternal("Param/Value/63C1F55F");
+    gv_ShopItemParameters[23].tooltip_after_num = StringExternal("Param/Value/864F237F");
+    gv_ShopItemParameters[23].button_image = "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds";
 
     gv_ShopItemParameters[24].name = StringToText("Health Potion");
     gv_ShopItemParameters[24].minerals_cost = 35;
@@ -1698,7 +1698,7 @@ void SkillsInit() {
     gv_SkillLevelUpgrades[i][c_skillQ][3] = "SpellUp222233362";
     gv_SkillLevelUpgrades[i][c_skillQ][4] = "SpellUp222233362";
 
-    gv_SkillLevelUpgrades[i][c_skillW][0] = "SpellUp222233362";
+    gv_SkillLevelUpgrades[i][c_skillW][0] = "SpellUp222233363";
     gv_SkillLevelUpgrades[i][c_skillW][1] = "SpellUp2222333633";
     gv_SkillLevelUpgrades[i][c_skillW][2] = "SpellUp2222333633";
     gv_SkillLevelUpgrades[i][c_skillW][3] = "SpellUp2222333633";
@@ -3787,6 +3787,7 @@ void gf_CreateObjectives() {
         if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), gv_PlayerBayul[i])) {
             continue;
         }
+        primary = true;
         for (j = 0; j < 4; j += 1) {
             if (j >= 1) {
                 primary = false;
@@ -4539,8 +4540,8 @@ void gf_HrStat12 () {
 
 static void lf_DisableSeals() {
     int i;
-    const int first_seal_index = 12;
-    const int last_seal_index = 17;
+    const int first_seal_index = 18;
+    const int last_seal_index = 23;
     for (i = first_seal_index; i <= last_seal_index; i += 1) {
         DialogControlSetEnabled(gv_StatShopButton[i], PlayerGroupSingle(EventPlayer()), false);
     }
@@ -4548,7 +4549,7 @@ static void lf_DisableSeals() {
 }
 
 void gf_HrStat25 () {
-    const int shop_index = 12;
+    const int shop_index = 18;
     // Upgrade
     if ((UnitWeaponRange(gv_PlayerHero[EventPlayer()], 1) > 2.5)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP3", gv_PlayerHero[EventPlayer()], 1);
@@ -4564,7 +4565,7 @@ void gf_HrStat25 () {
 }
 
 void gf_HrStat26 () {
-    const int shop_index = 13;
+    const int shop_index = 19;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
@@ -4575,7 +4576,7 @@ void gf_HrStat26 () {
 }
 
 void gf_HrStat27 () {
-    const int shop_index = 14;
+    const int shop_index = 20;
     // Upgrade
     gf_HrCriticalChanceLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP3233", gv_PlayerHero[EventPlayer()], 1);
@@ -4587,7 +4588,7 @@ void gf_HrStat27 () {
 }
 
 void gf_HrStat28 () {
-    const int shop_index = 15;
+    const int shop_index = 21;
     // Upgrade
     gf_HrCooldownReductionLevelIncrease();
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323333", gv_PlayerHero[EventPlayer()], 1);
@@ -4599,7 +4600,7 @@ void gf_HrStat28 () {
 }
 
 void gf_HrStat29 () {
-    const int shop_index = 16;
+    const int shop_index = 22;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP32333", gv_PlayerHero[EventPlayer()], 1);
     gf_HrEvasionLevelIncrease();
@@ -4611,7 +4612,7 @@ void gf_HrStat29 () {
 }
 
 void gf_HrStat30 () {
-    const int shop_index = 17;
+    const int shop_index = 23;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP323332", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
@@ -4622,7 +4623,7 @@ void gf_HrStat30 () {
 }
 
 void gf_HrStat13 () {
-    const int shop_index = 18;
+    const int shop_index = 12;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4232", 1);
@@ -4635,7 +4636,7 @@ void gf_HrStat13 () {
 }
 
 void gf_HrStat14 () {
-    const int shop_index = 19;
+    const int shop_index = 13;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "HeroGainHP2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "HeroLvUp4233", 1);
@@ -4652,7 +4653,7 @@ void gf_HrStat14 () {
 }
 
 void gf_HrStat15 () {
-    const int shop_index = 20;
+    const int shop_index = 14;
     // Upgrade
     gf_HrCooldownReductionLevelIncrease();
     // Shop Changes
@@ -4664,7 +4665,7 @@ void gf_HrStat15 () {
 }
 
 void gf_HrStat16 () {
-    const int shop_index = 21;
+    const int shop_index = 15;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "BoosterItem2", gv_PlayerHero[EventPlayer()], 1);
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322232222", 1);
@@ -4676,7 +4677,7 @@ void gf_HrStat16 () {
 }
 
 void gf_HrStat17 () {
-    const int shop_index = 22;
+    const int shop_index = 16;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
@@ -4687,7 +4688,7 @@ void gf_HrStat17 () {
 }
 
 void gf_HrStat18 () {
-    const int shop_index = 23;
+    const int shop_index = 17;
     // Upgrade
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagmaFire", gv_PlayerHero[EventPlayer()], 1);
     // Shop Changes
@@ -4889,7 +4890,7 @@ void gf_StatWindowUpdatePlayer (int player) {
     );
 
     for (i = 0; i < 24; i += 1) {
-        if ((i >= 12) && (i <= 17)) {  // Seals
+        if ((i >= 18) && (i <= 23)) {  // Seals
             continue;
         }
 
@@ -4925,7 +4926,7 @@ void gf_StatWindowUpdatePlayer (int player) {
 
     tooltip_text += StringToText("<n/>");
     if (gv_SealBought[player]) {
-        for (i = 12; i <= 17; i += 1) {
+        for (i = 18; i <= 23; i += 1) {
             if (gv_StatIncreasesBought[player][i] == 1) {
                 tooltip_text += StringToText("  ");
                 tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, SEAL_COLOR);
@@ -7070,7 +7071,7 @@ void gf_ShowPlayerStatistics(int player) {
     );
 
     UIDisplayMessage(
-        PlayerGroupSingle(player),
+        PlayerGroupSingle(gv_PlayerBayul[player]),
         c_messageAreaDebug,
         (
             StringExternal("Param/Value/89E47C85") + 
@@ -7080,13 +7081,13 @@ void gf_ShowPlayerStatistics(int player) {
             StringToText("<n/>CS: ") +
             IntToText(UnitGetPropertyInt(gv_PlayerHero[gv_PlayerBayul[player]], c_unitPropKills, true)) +
             StringToText("<n/>Hero damage dealt: ") +
-            IntToText(gv_PlayerStatistics[player].damage_dealt) +
+            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].damage_dealt) +
             StringToText("<n/>Hero damage absorbed: ") +
-            IntToText(gv_PlayerStatistics[player].damage_absorbed) +
+            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].damage_absorbed) +
             StringToText("<n/>Healing done: ") +
-            IntToText(gv_PlayerStatistics[player].healing_done) +
+            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].healing_done) +
             StringToText("<n/>Self-healing done: ") +
-            IntToText(gv_PlayerStatistics[player].self_healing) +
+            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].self_healing) +
             StringExternal("Param/Value/CC7276AB")
         )
     );
@@ -9877,7 +9878,7 @@ bool gt_HeroSelectionLockAction_Func (bool testConds, bool runActions) {
             continue;
         }
         UnitClearSelection(PlayerGroupLoopCurrent());
-        UnitSelect(gv_PlayerHero[gv_PlayerBayul[PlayerGroupLoopCurrent()]], PlayerGroupLoopCurrent(), true);
+        UnitSelect(gv_PlayerHero[PlayerGroupLoopCurrent()], PlayerGroupLoopCurrent(), true);
     }
     PlayerGroupLoopEnd();
     return true;
@@ -10028,15 +10029,15 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
             message += IntToText(PlayerGroupLoopCurrent());
             message += StringToText(". ");
             message += TextWithColor(
-                PlayerName(EventPlayer()),
-                libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))
+                PlayerName(PlayerGroupLoopCurrent()),
+                libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(PlayerGroupLoopCurrent(), false))
             );
             message += StringToText("\n");
         }
         PlayerGroupLoopEnd();
 
         UIDisplayMessage(
-            PlayerGroupAll(),
+            PlayerGroupSingle(EventPlayer()),
             c_messageAreaSubtitle,
             message
         );
