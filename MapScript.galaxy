@@ -71,6 +71,11 @@ const int c_secondaryObjectiveLevels = 3;
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+// This is used to convert player numbers used in code to real ones.
+// It takes player numbers 1-4 for team 1 players,
+// player numbers 5-8 for team 2 players
+// and numbers 9-10 for team 3 players,
+// and returns real player numbers
 int[11] gv_PlayerBayul;
 playergroup[2] gv_TeamPlayerGroup;
 int gv_TotalHeroNum;
@@ -3781,10 +3786,10 @@ void gf_CreateObjectives() {
     descriptions[c_secondaryObjectiveLevels] = StringToText("You also get vespene gas for every level"); // TODO: Move to external string
 
     for (i = 0; i < 11; i += 1) {
-        if (!((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive))) {
+        if (!((PlayerType(i) == c_playerTypeUser) && (PlayerStatus(i) == c_playerStatusActive))) {
             continue;
         }
-        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), gv_PlayerBayul[i])) {
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), i)) {
             continue;
         }
         primary = true;
@@ -3792,12 +3797,12 @@ void gf_CreateObjectives() {
             if (j >= 1) {
                 primary = false;
             }
-            gv_PlayerObjectives[gv_PlayerBayul[i]][j] = ObjectiveCreateForPlayers(
+            gv_PlayerObjectives[i][j] = ObjectiveCreateForPlayers(
                 objectives[j],
                 descriptions[j],
                 c_objectiveStateActive,
                 primary,
-                PlayerGroupSingle(gv_PlayerBayul[i])
+                PlayerGroupSingle(i)
             );
         }
     }
@@ -3939,85 +3944,85 @@ void gf_LearnSkill(int player_number, int skill) {
 
     // Skill passives
     if ((hero_number == 3) && (skill == c_skillE)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Amor2", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "DefensePower", gv_PlayerHero[player_number], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Amor2", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 6) && (skill == c_skillE)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong3222", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "SpellDong3222", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 7) && (skill == c_skillR) && (current_skill_level == 0)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "AlwaysGold2", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "AlwaysGold2", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 10) && (skill == c_skillW) && (current_skill_level == 0)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero10Skill3Slow32", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero10Skill3Slow322", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero10Skill3Slow32", gv_PlayerHero[player_number], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero10Skill3Slow322", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 14) && (skill == c_skillR)) {
         if (current_skill_level == 0) {
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero14Skill4Passive", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+            UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero14Skill4Passive", gv_PlayerHero[player_number], 1);
         } else if (current_skill_level == 1) {
-            UnitBehaviorRemovePlayer(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero14Skill4Passive", player_number, 1);
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero14Skill4Passive2", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+            UnitBehaviorRemovePlayer(gv_PlayerHero[player_number], "Hero14Skill4Passive", player_number, 1);
+            UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero14Skill4Passive2", gv_PlayerHero[player_number], 1);
         } else if (current_skill_level == 2) {
-            UnitBehaviorRemovePlayer(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero14Skill4Passive2", player_number, 1);
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero14Skill4Passive22", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+            UnitBehaviorRemovePlayer(gv_PlayerHero[player_number], "Hero14Skill4Passive2", player_number, 1);
+            UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero14Skill4Passive22", gv_PlayerHero[player_number], 1);
         }
     }
     if ((hero_number == 20) && (skill == c_skillR)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong3222222635", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "SpellDong3222222635", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 22) && (skill == c_skillW)) {
         if (current_skill_level == 0) {
-            UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", player_number, 3);
+            UnitBehaviorAddPlayer(gv_PlayerHero[player_number], "DefensePower", player_number, 3);
             TechTreeUpgradeAddLevel(player_number, "SpellUp222233322234", 3);
         } else {
-            UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", player_number, 2);
+            UnitBehaviorAddPlayer(gv_PlayerHero[player_number], "DefensePower", player_number, 2);
             TechTreeUpgradeAddLevel(player_number, "SpellUp222233322234", 2);
         }
     }
     if ((hero_number == 25) && (skill == c_skillQ)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero25Skill12", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero25Skill12", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 38) && (skill == c_skillW) && (current_skill_level == 0)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero38Skill233", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero38Skill233", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 41) && (skill == c_skillR)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", gv_PlayerHero[gv_PlayerBayul[player_number]], 2);
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Amor2", gv_PlayerHero[gv_PlayerBayul[player_number]], 2);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "DefensePower", gv_PlayerHero[player_number], 2);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Amor2", gv_PlayerHero[player_number], 2);
         TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp222233322234", 2);
         TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp2222333222342", 2);
     }
     if (hero_number == 48) {
         if ((skill == c_skillW) && (current_skill_level == 0)) {
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero48Skill2Impact3", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+            UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero48Skill2Impact3", gv_PlayerHero[player_number], 1);
         }
         if (skill == c_skillR) {
             if (current_skill_level == 0) {
-                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", gv_PlayerHero[gv_PlayerBayul[player_number]], 3);
+                UnitBehaviorAdd(gv_PlayerHero[player_number], "DefensePower", gv_PlayerHero[player_number], 3);
             } else if (current_skill_level == 1) {
-                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", gv_PlayerHero[gv_PlayerBayul[player_number]], 5);
+                UnitBehaviorAdd(gv_PlayerHero[player_number], "DefensePower", gv_PlayerHero[player_number], 5);
             } else if (current_skill_level == 2) {
-                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "DefensePower", gv_PlayerHero[gv_PlayerBayul[player_number]], 7);
+                UnitBehaviorAdd(gv_PlayerHero[player_number], "DefensePower", gv_PlayerHero[player_number], 7);
             }
         }
     }
     if ((hero_number == 63) && (skill == c_skillW)) {
         if (current_skill_level == 0) {
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero63Skill2Passive", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+            UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero63Skill2Passive", gv_PlayerHero[player_number], 1);
         } else {
-            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero63Skill2Passive2", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+            UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero63Skill2Passive2", gv_PlayerHero[player_number], 1);
         }
     }
     if ((hero_number == 66) && (skill == c_skillW) && (current_skill_level == 0)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero66Skill2", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero66Skill2", gv_PlayerHero[player_number], 1);
     }
     if ((hero_number == 68) && (skill == c_skillW) && (current_skill_level == 0)) {
-        UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Hero68Skill2", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
+        UnitBehaviorAdd(gv_PlayerHero[player_number], "Hero68Skill2", gv_PlayerHero[player_number], 1);
     }
 
     gf_HrSkillLearnWindowClose();
 
-    i = gv_PlayerObjectives[gv_PlayerBayul[player_number]][c_secondaryObjectiveLevels];
+    i = gv_PlayerObjectives[player_number][c_secondaryObjectiveLevels];
     if (ObjectiveGetState(i) == c_objectiveStateActive) {
         ObjectiveSetState(i, c_objectiveStateCompleted);
         gf_RemoveCompletedSecondaryObjectives();
@@ -4141,70 +4146,70 @@ void gf_SpawnHero(int player_number, int hero_number) {
         position = 195;
     }
 
-    gv_SelectedCharNum[gv_PlayerBayul[player_number]] = hero_number;
-    gv_PlayerReadyUnit[gv_PlayerBayul[player_number]] = gv_HeroInformation[hero_number - 1].unitname;
-    gv_CharSelectedName[gv_PlayerBayul[player_number]] = gv_HeroInformation[hero_number - 1].name;
-    gv_CharSelectedImage[gv_PlayerBayul[player_number]] = gv_HeroInformation[hero_number - 1].image;
+    gv_SelectedCharNum[player_number] = hero_number;
+    gv_PlayerReadyUnit[player_number] = gv_HeroInformation[hero_number - 1].unitname;
+    gv_CharSelectedName[player_number] = gv_HeroInformation[hero_number - 1].name;
+    gv_CharSelectedImage[player_number] = gv_HeroInformation[hero_number - 1].image;
 
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 5)) {
+    if ((gv_SelectedCharNum[player_number] == 5)) {
         TriggerEnable(gt_TrTextTailUseHero5Skill4, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 6)) {
-        TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], "SpellUp222233322234", 1);
+    if ((gv_SelectedCharNum[player_number] == 6)) {
+        TechTreeUpgradeAddLevel(player_number, "SpellUp222233322234", 1);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 9)) {
+    if ((gv_SelectedCharNum[player_number] == 9)) {
         TriggerEnable(gt_TrTextTailUseHero9AttackImpact, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 10)) {
+    if ((gv_SelectedCharNum[player_number] == 10)) {
         TriggerEnable(gt_TrHero10Skill4On, true);
         TriggerEnable(gt_TrHero10Skill4Off, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 14)) {
-        TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], "SpellUp2222333222342", 1);
+    if ((gv_SelectedCharNum[player_number] == 14)) {
+        TechTreeUpgradeAddLevel(player_number, "SpellUp2222333222342", 1);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 15)) {
+    if ((gv_SelectedCharNum[player_number] == 15)) {
         TriggerEnable(gt_TrHero15Skill4Use, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 19)) {
+    if ((gv_SelectedCharNum[player_number] == 19)) {
         TriggerEnable(gt_TrHero19Death, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 32)) {
+    if ((gv_SelectedCharNum[player_number] == 32)) {
         TriggerEnable(gt_TrHero32Skill2Up, true);
         TriggerEnable(gt_TrHero32Skill4On, true);
         TriggerEnable(gt_TrHero32Skill4Off, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 36)) {
+    if ((gv_SelectedCharNum[player_number] == 36)) {
         TriggerEnable(gt_TrHero36Skill4RPDown, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 39)) {
+    if ((gv_SelectedCharNum[player_number] == 39)) {
         TriggerEnable(gt_TrHero39Skill4On, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 59)) {
+    if ((gv_SelectedCharNum[player_number] == 59)) {
         TriggerEnable(gt_TrHero59Skill1Use, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 62)) {
+    if ((gv_SelectedCharNum[player_number] == 62)) {
         TriggerEnable(gt_TrHero62Skill3Start, true);
         TriggerEnable(gt_TrHero62Skill3End, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 66)) {
+    if ((gv_SelectedCharNum[player_number] == 66)) {
         TriggerEnable(gt_TrHero66PassiveOn, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 72)) {
+    if ((gv_SelectedCharNum[player_number] == 72)) {
         TriggerEnable(gt_TrHero66PassiveOn2, true);
     }
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 73)) {
-        PlayerCreateEffectPoint(gv_PlayerBayul[player_number], "Hero73Skill1G", PointFromId(578));
+    if ((gv_SelectedCharNum[player_number] == 73)) {
+        PlayerCreateEffectPoint(player_number, "Hero73Skill1G", PointFromId(578));
     }
 
-    libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[gv_PlayerBayul[player_number]], 0, gv_PlayerBayul[player_number], PointFromId(position));
-    gv_PlayerHero[gv_PlayerBayul[player_number]] = UnitLastCreated();
-    CameraPan(gv_PlayerBayul[player_number], PointFromId(position), 0.0, -1, 10, false);
-    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "Toherodamage", gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
-    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong2423", gv_PlayerHero[gv_PlayerBayul[player_number]], 2);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, gv_PlayerReadyUnit[player_number], 0, player_number, PointFromId(position));
+    gv_PlayerHero[player_number] = UnitLastCreated();
+    CameraPan(player_number, PointFromId(position), 0.0, -1, 10, false);
+    UnitBehaviorAdd(gv_PlayerHero[player_number], "Toherodamage", gv_PlayerHero[player_number], 1);
+    UnitBehaviorAdd(gv_PlayerHero[player_number], "SpellDong2423", gv_PlayerHero[player_number], 2);
 
-    if ((gv_SelectedSpellNum1[gv_PlayerBayul[player_number]] == 8) || (gv_SelectedSpellNum2[gv_PlayerBayul[player_number]] == 8)) {
-        if (gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[player_number]] - 1].ability_resource == c_abilityResourceMana) {
-            UnitBehaviorAddPlayer(gv_PlayerHero[gv_PlayerBayul[player_number]], "SpellDong5", gv_PlayerBayul[player_number], 1);
+    if ((gv_SelectedSpellNum1[player_number] == 8) || (gv_SelectedSpellNum2[player_number] == 8)) {
+        if (gv_HeroInformation[gv_SelectedCharNum[player_number] - 1].ability_resource == c_abilityResourceMana) {
+            UnitBehaviorAddPlayer(gv_PlayerHero[player_number], "SpellDong5", player_number, 1);
         }
     }
 
@@ -4226,8 +4231,8 @@ void gf_SpawnHero(int player_number, int hero_number) {
     recall_upgrade[6] = "PortalBuy23222222";
     recall_upgrade[7] = "PortalBuy232222222";
 
-    UnitBehaviorAdd(gv_PlayerHero[gv_PlayerBayul[player_number]], assist_upgrade[player_number - 1], gv_PlayerHero[gv_PlayerBayul[player_number]], 1);
-    TechTreeUpgradeAddLevel(gv_PlayerBayul[player_number], recall_upgrade[player_number - 1], 1);
+    UnitBehaviorAdd(gv_PlayerHero[player_number], assist_upgrade[player_number - 1], gv_PlayerHero[player_number], 1);
+    TechTreeUpgradeAddLevel(player_number, recall_upgrade[player_number - 1], 1);
 }
 
 void gf_CreateStatDialog () {
@@ -4333,7 +4338,7 @@ void gf_HrStatMoneySet () {
 }
 
 static void lf_ShopObjectiveCompletion() {
-    int objective = gv_PlayerObjectives[gv_PlayerBayul[EventPlayer()]][c_secondaryObjectiveShop];
+    int objective = gv_PlayerObjectives[EventPlayer()][c_secondaryObjectiveShop];
     if (ObjectiveGetState(objective) == c_objectiveStateActive) {
         ObjectiveSetState(objective, c_objectiveStateCompleted);
     }
@@ -7038,7 +7043,7 @@ void gf_RemoveCompletedSecondaryObjectives() {
         if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
             continue;
         }
-        player = gv_PlayerBayul[PlayerGroupLoopCurrent()];
+        player = PlayerGroupLoopCurrent();
         if (ObjectiveGetState(gv_PlayerObjectives[player][c_secondaryObjectiveShop]) != c_objectiveStateCompleted) {
             continue;
         }
@@ -7060,34 +7065,34 @@ void gf_ShowPlayerStatistics(int player) {
     fixed deaths;
     fixed kda;
 
-    deaths = IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][2]);
+    deaths = IntToFixed(gv_PlayerLevel[player][2]);
     if (deaths == 0) {
         deaths = 1;
     }
 
     kda = (
-        (IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][1]) + 
-        IntToFixed(gv_PlayerLevel[gv_PlayerBayul[player]][3])) / deaths
+        (IntToFixed(gv_PlayerLevel[player][1]) + 
+        IntToFixed(gv_PlayerLevel[player][3])) / deaths
     );
 
     UIDisplayMessage(
-        PlayerGroupSingle(gv_PlayerBayul[player]),
+        PlayerGroupSingle(player),
         c_messageAreaDebug,
         (
             StringExternal("Param/Value/89E47C85") + 
-            TextWithColor(PlayerName(gv_PlayerBayul[player]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player], false))) +
+            TextWithColor(PlayerName(player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(player, false))) +
             StringToText("<n/>KDA: ") +
             FixedToText(kda, 2) +
             StringToText("<n/>CS: ") +
-            IntToText(UnitGetPropertyInt(gv_PlayerHero[gv_PlayerBayul[player]], c_unitPropKills, true)) +
+            IntToText(UnitGetPropertyInt(gv_PlayerHero[player], c_unitPropKills, true)) +
             StringToText("<n/>Hero damage dealt: ") +
-            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].damage_dealt) +
+            IntToText(gv_PlayerStatistics[player].damage_dealt) +
             StringToText("<n/>Hero damage absorbed: ") +
-            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].damage_absorbed) +
+            IntToText(gv_PlayerStatistics[player].damage_absorbed) +
             StringToText("<n/>Healing done: ") +
-            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].healing_done) +
+            IntToText(gv_PlayerStatistics[player].healing_done) +
             StringToText("<n/>Self-healing done: ") +
-            IntToText(gv_PlayerStatistics[gv_PlayerBayul[player]].self_healing) +
+            IntToText(gv_PlayerStatistics[player].self_healing) +
             StringExternal("Param/Value/CC7276AB")
         )
     );
@@ -7571,17 +7576,23 @@ static bool lf_CharacterNotChosen(int player_number) {
 }
 
 static void lf_PlayerHeroChoice(int player_number) {
+    int i;
     int flag;
     int team_number;
     int dialog_x_position;
-    int player_index_in_team;
+    int player_index_in_team = 0;
     flag = 1;
     team_number = 1;
-    if (player_number > 4) {
+    if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), player_number)) {
         team_number = 2;
     }
     dialog_x_position = -365;
-    player_index_in_team = player_number - 1;
+
+    for (i = 1; i <= 8; i += 1) {
+        if (player_number == gv_PlayerBayul[i]) {
+            player_index_in_team = i - 1;
+        }
+    }
     if (team_number == 2) {
         dialog_x_position = 365;
         player_index_in_team -= 4;
@@ -7595,7 +7606,7 @@ static void lf_PlayerHeroChoice(int player_number) {
         gv_BeforeStartCounterDialogLabel[1],
         (
             StringExternal("Param/Value/1F62248E") +
-            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            TextWithColor(PlayerName(player_number), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(player_number, false))) +
             TextWithColor(StringExternal("Param/Value/3F436E23"), Color(100.00, 100.00, 100.00))
         ),
         PlayerGroupAll()
@@ -7603,12 +7614,12 @@ static void lf_PlayerHeroChoice(int player_number) {
     // "Selecting" under the portrait
     SoundPlay(SoundLink("UI_Bnet_PopUp_Generic", -1), PlayerGroupAll(), 100.0, 0.0);
     libNtve_gf_SetDialogItemText(
-        gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
-        (StringExternal("Param/Value/DBADF006") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/0FA3FB8C")),
+        gv_TeamSelectDialogPlayerName[player_number],
+        (StringExternal("Param/Value/DBADF006") + PlayerName(player_number) + StringExternal("Param/Value/0FA3FB8C")),
         PlayerGroupAll()
     );
     // Countdown ticks
-    gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = true;
+    gv_GameModeMyTurn[player_number] = true;
     while ((gv_BeforeStartCounterDialogNum > 0)) {
         libNtve_gf_SetDialogItemText(
             gv_BeforeStartCounterDialogLabel[0],
@@ -7616,7 +7627,7 @@ static void lf_PlayerHeroChoice(int player_number) {
             PlayerGroupAll()
         );
         gv_BeforeStartCounterDialogNum -= 1;
-        if (((gv_ReadyClickBoolean[gv_PlayerBayul[player_number]] == true) || (PlayerStatus(gv_PlayerBayul[player_number]) != c_playerStatusActive))) {
+        if (((gv_ReadyClickBoolean[player_number] == true) || (PlayerStatus(player_number) != c_playerStatusActive))) {
             gv_BeforeStartCounterDialogNum = 0;
         }
         Wait(1.0, c_timeReal);
@@ -7626,25 +7637,25 @@ static void lf_PlayerHeroChoice(int player_number) {
     // Disable the countdown
     DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), false);
     // Give a random character if not chosen
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 0)) {
+    if ((gv_SelectedCharNum[player_number] == 0)) {
         while ((flag > 0)) {
-            gv_SelectedCharNum[gv_PlayerBayul[player_number]] = RandomInt(1, gv_TotalHeroNum);
+            gv_SelectedCharNum[player_number] = RandomInt(1, gv_TotalHeroNum);
             if (lf_CharacterNotChosen(player_number)) {
                 flag = 0;
                 if (team_number == 1) {
-                    gv_Team1CharNum[player_index_in_team] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
+                    gv_Team1CharNum[player_index_in_team] = gv_SelectedCharNum[player_number];
                 } else {
-                    gv_Team2CharNum[player_index_in_team] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
+                    gv_Team2CharNum[player_index_in_team] = gv_SelectedCharNum[player_number];
                 }
-                PlayerCreateEffectPoint(gv_PlayerBayul[player_number], "HeroOkGi2242", PointFromId(1));
+                PlayerCreateEffectPoint(player_number, "HeroOkGi2242", PointFromId(1));
             }
             Wait(0.01, c_timeReal);
         }
     }
     // "Ready" under the portrait
-    libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]], (StringExternal("Param/Value/0C8DBF4C") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/7ACF4E49")), PlayerGroupAll());
+    libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[player_number], (StringExternal("Param/Value/0C8DBF4C") + PlayerName(player_number) + StringExternal("Param/Value/7ACF4E49")), PlayerGroupAll());
     // Pass the choice
-    gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = false;
+    gv_GameModeMyTurn[player_number] = false;
 }
 
 static void lf_PlayerBan(int player_number, int ban_number) {
@@ -7652,14 +7663,18 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     int flag;
     int team_number;
     int dialog_x_position;
-    int player_index_in_team;
+    int player_index_in_team = 0;
     flag = 1;
     team_number = 1;
-    if (player_number > 4) {
+    if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), player_number)) {
         team_number = 2;
     }
     dialog_x_position = -365;
-    player_index_in_team = player_number - 1;
+    for (i = 1; i <= 8; i += 1) {
+        if (player_number == gv_PlayerBayul[i]) {
+            player_index_in_team = i - 1;
+        }
+    }
     if (team_number == 2) {
         dialog_x_position = 365;
         player_index_in_team -= 4;
@@ -7673,7 +7688,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         gv_BeforeStartCounterDialogLabel[1],
         (
             StringExternal("Param/Value/1F62248E") +
-            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            TextWithColor(PlayerName(player_number), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(player_number, false))) +
             // TextWithColor(StringToText("'s ban"), Color(100.00, 100.00, 100.00))
             TextWithColor(StringExternal("DOCSTR_Banning2"), Color(100.00, 100.00, 100.00))
         ),
@@ -7681,10 +7696,10 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     );
     // "Banning" under the portrait
     libNtve_gf_SetDialogItemText(
-        gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
+        gv_TeamSelectDialogPlayerName[player_number],
         (
             StringExternal("Param/Value/DBADF006") + 
-            PlayerName(gv_PlayerBayul[player_number]) + 
+            PlayerName(player_number) + 
             // StringToText("(</c><c val=\"ff4444\">Banning</c>)</s>")
             StringExternal("DOCSTR_Banning1")
         ),
@@ -7695,7 +7710,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         DialogControlSetEnabled(gv_CharChooseWindowRandomImage[i], PlayerGroupAll(), false);
     }
     // Countdown ticks
-    gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = true;
+    gv_GameModeMyTurn[player_number] = true;
     while ((gv_BeforeStartCounterDialogNum > 0)) {
         libNtve_gf_SetDialogItemText(
             gv_BeforeStartCounterDialogLabel[0],
@@ -7703,7 +7718,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
             PlayerGroupAll()
         );
         gv_BeforeStartCounterDialogNum -= 1;
-        if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] != 0) || (PlayerStatus(gv_PlayerBayul[player_number]) != c_playerStatusActive)) {
+        if ((gv_SelectedCharNum[player_number] != 0) || (PlayerStatus(player_number) != c_playerStatusActive)) {
             gv_BeforeStartCounterDialogNum = 0;
             break;
         }
@@ -7714,13 +7729,13 @@ static void lf_PlayerBan(int player_number, int ban_number) {
     // Disable the countdown
     DialogSetVisible(gv_BeforeStartCounterDialog[1], PlayerGroupAll(), false);
     // Choose a random unbanned character if time's up
-    if ((gv_SelectedCharNum[gv_PlayerBayul[player_number]] == 0)) {
+    if ((gv_SelectedCharNum[player_number] == 0)) {
         while ((flag > 0)) {
-            gv_SelectedCharNum[gv_PlayerBayul[player_number]] = RandomInt(1, gv_TotalHeroNum);
-            gv_CharSelectedName[gv_PlayerBayul[player_number]] = gv_HeroInformation[gv_SelectedCharNum[gv_PlayerBayul[player_number]] - 1].name;
+            gv_SelectedCharNum[player_number] = RandomInt(1, gv_TotalHeroNum);
+            gv_CharSelectedName[player_number] = gv_HeroInformation[gv_SelectedCharNum[player_number] - 1].name;
             flag = 0;
             for (i = 0; i < 6; i += 1) {
-                if (gv_SelectedCharNum[gv_PlayerBayul[player_number]] == gv_BannedCharNum[i]) {
+                if (gv_SelectedCharNum[player_number] == gv_BannedCharNum[i]) {
                     flag = 1;
                     break;
                 }
@@ -7732,7 +7747,7 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         }
     }
     // Ban it for everyone
-    gv_BannedCharNum[ban_number] = gv_SelectedCharNum[gv_PlayerBayul[player_number]];
+    gv_BannedCharNum[ban_number] = gv_SelectedCharNum[player_number];
     DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     DialogControlSetEnabled(gv_CharChooseWindowImage[gv_BannedCharNum[ban_number] - 1], PlayerGroupAll(), false);
     // Play the sound
@@ -7742,27 +7757,27 @@ static void lf_PlayerBan(int player_number, int ban_number) {
         PlayerGroupAll(),
         c_messageAreaSubtitle,
         (
-            TextWithColor(PlayerName(gv_PlayerBayul[player_number]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[player_number], false))) +
+            TextWithColor(PlayerName(player_number), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(player_number, false))) +
             // StringToText(" has banned ") + 
             StringExternal("DOCSTR_Banning3") +
-            gv_CharSelectedName[gv_PlayerBayul[player_number]]
+            gv_CharSelectedName[player_number]
         )
     );
     // Reset the chosen character portrait, name and number
-    gv_CharSelectedImage[gv_PlayerBayul[player_number]] = "Assets\\InviButton.dds";
-    gv_CharSelectedName[gv_PlayerBayul[player_number]] = StringToText("");
-    gv_SelectedCharNum[gv_PlayerBayul[player_number]] = 0;
+    gv_CharSelectedImage[player_number] = "Assets\\InviButton.dds";
+    gv_CharSelectedName[player_number] = StringToText("");
+    gv_SelectedCharNum[player_number] = 0;
     // Reset the actual portrait dialog
-    libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[player_number]], gv_CharSelectedImage[gv_PlayerBayul[player_number]], PlayerGroupAll());
-    libNtve_gf_SetDialogItemTooltip(gv_TeamSelectDialogPlayerHeroImage[gv_PlayerBayul[player_number]], gv_CharSelectedName[gv_PlayerBayul[player_number]], PlayerGroupAll());
+    libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[player_number], gv_CharSelectedImage[player_number], PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(gv_TeamSelectDialogPlayerHeroImage[player_number], gv_CharSelectedName[player_number], PlayerGroupAll());
     // "Waiting" under the portrait
     libNtve_gf_SetDialogItemText(
-        gv_TeamSelectDialogPlayerName[gv_PlayerBayul[player_number]],
-        (StringExternal("Param/Value/47A1E486") + PlayerName(gv_PlayerBayul[player_number]) + StringExternal("Param/Value/A5530891")),
+        gv_TeamSelectDialogPlayerName[player_number],
+        (StringExternal("Param/Value/47A1E486") + PlayerName(player_number) + StringExternal("Param/Value/A5530891")),
         PlayerGroupAll()
     );
     // Pass the choice
-    gv_GameModeMyTurn[gv_PlayerBayul[player_number]] = false;
+    gv_GameModeMyTurn[player_number] = false;
 }
 
 bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
@@ -7783,11 +7798,11 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     ban_number = 0;
     for (i = 0; i < 3; i += 1) {
         if ((PlayerType(gv_PlayerBayul[1]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[1]) == c_playerStatusActive)) {
-            lf_PlayerBan(1, ban_number);
+            lf_PlayerBan(gv_PlayerBayul[1], ban_number);
             ban_number += 1;
         }
         if ((PlayerType(gv_PlayerBayul[5]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[5]) == c_playerStatusActive)) {
-            lf_PlayerBan(5, ban_number);
+            lf_PlayerBan(gv_PlayerBayul[5], ban_number);
             ban_number += 1;
         }
     }
@@ -7795,7 +7810,7 @@ bool gt_TrCharSelectDraft_Func (bool testConds, bool runActions) {
     for (i = 0 ; i < 8 ; i += 1 ) {
         selecting_hero = gv_DraftChoiceOrder[i];
         if ((PlayerType(gv_PlayerBayul[selecting_hero]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[selecting_hero]) == c_playerStatusActive)) {
-            lf_PlayerHeroChoice(selecting_hero);
+            lf_PlayerHeroChoice(gv_PlayerBayul[selecting_hero]);
         }
     }
     // Character swapping
@@ -9704,14 +9719,11 @@ bool gt_TrGameStartCounter_Func (bool testConds, bool runActions) {
     gf_CreateObjectives();
     TriggerEnable(gt_MinionObjectiveCompleted, true);
 
-    for (i = 0; i < 11; i += 1) {
-        if (!(PlayerStatus(i) == c_playerStatusActive)) {
+    for (i = 1; i <= 8; i += 1) {
+        if (!(PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             continue;
         }
-        if (!(PlayerType(i) == c_playerTypeUser)) {
-            continue;
-        }
-        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), i)) {
+        if (!(PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
             continue;
         }
         reference = UnitRefFromUnit(gv_PlayerHero[gv_PlayerBayul[i]]);
@@ -10113,15 +10125,18 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((PlayerGroupCount(PlayerGroupActive()) != 1) && !(lf_TestModeVotedFor())) {
-        return false;
+    if (
+            (!(lf_TestModeVotedFor())) &&
+            (PlayerGroupCount(GameAttributePlayersForTeam(1)) + PlayerGroupCount(GameAttributePlayersForTeam(2)) != 1)
+        ) {
+            return false;
     }
 
     // Here are the singleplayer and testmode commands
     if (StringEqual(command, "-minerals", true)) {
         number = StringToInt(arguments[0]);
         if (number == 0) {
-            number = 10000;
+            number = 100000;
         }
         PlayerModifyPropertyInt(
             EventPlayer(),
@@ -14787,8 +14802,8 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     TriggerEnable(gt_TrNexusDestroyTeam2, false);
     TriggerStop(gt_TrMinionMake);
     for (i = 1; i <= 4; i += 1) {
-        ObjectiveSetState(gv_PlayerObjectives[i + 4][c_primaryObjectiveDestroyNexus], c_objectiveStateCompleted);
-        ObjectiveSetState(gv_PlayerObjectives[i][c_primaryObjectiveDestroyNexus], c_objectiveStateFailed);
+        ObjectiveSetState(gv_PlayerObjectives[gv_PlayerBayul[i + 4]][c_primaryObjectiveDestroyNexus], c_objectiveStateCompleted);
+        ObjectiveSetState(gv_PlayerObjectives[gv_PlayerBayul[i]][c_primaryObjectiveDestroyNexus], c_objectiveStateFailed);
     }
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
     UISetDragSelectEnabled(PlayerGroupAll(), false);
@@ -14810,7 +14825,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
             DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), false);
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
-            gf_ShowPlayerStatistics(i);
+            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
@@ -14868,8 +14883,8 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     TriggerEnable(gt_TrNexusDestroyTeam1, false);
     TriggerStop(gt_TrMinionMake);
     for (i = 1; i <= 4; i += 1) {
-        ObjectiveSetState(gv_PlayerObjectives[i][c_primaryObjectiveDestroyNexus], c_objectiveStateCompleted);
-        ObjectiveSetState(gv_PlayerObjectives[i + 4][c_primaryObjectiveDestroyNexus], c_objectiveStateFailed);
+        ObjectiveSetState(gv_PlayerObjectives[gv_PlayerBayul[i]][c_primaryObjectiveDestroyNexus], c_objectiveStateCompleted);
+        ObjectiveSetState(gv_PlayerObjectives[gv_PlayerBayul[i + 4]][c_primaryObjectiveDestroyNexus], c_objectiveStateFailed);
     }
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
     UISetDragSelectEnabled(PlayerGroupAll(), false);
@@ -14891,7 +14906,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
             DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), false);
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
-            gf_ShowPlayerStatistics(i);
+            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
@@ -15499,7 +15514,7 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
             VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(293), 20.0), 20.0, false);
-            gf_ShowPlayerStatistics(i);
+            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
@@ -15576,7 +15591,7 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
             VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(266), 20.0), 20.0, false);
-            gf_ShowPlayerStatistics(i);
+            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
@@ -15643,7 +15658,7 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true)) {
         gv_SurrenderPlayerNum1 -= 1;
         PlayerGroupRemove(gv_TeamPlayerGroup[0], EventPlayer());
-        for (i = 1 ; i <= 4; i += 1) {
+        for (i = 1; i <= 4; i += 1) {
             if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive) && (gv_PlayerBayul[i] != EventPlayer())) {
                 PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, gv_AllyGiveMoney[EventPlayer()]);
                 PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropVespene, c_playerPropOperAdd, 10);
