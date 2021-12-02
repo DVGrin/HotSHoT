@@ -44,11 +44,13 @@
             <Frame type="Image" name="HoverImage">
                 <Texture val="Assets/Textures/ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds"/>
                 <TextureType val="Normal"/>
+                <DesaturateOnDisable val="True"/>
             </Frame>
 
             <Frame type="Image" name="NormalImage">
                 <Texture val="Assets/Textures/ui_gloassary_stongagainst_protoss_normaloverandpressedover.dds"/>
                 <TextureType val="Normal"/>
+                <DesaturateOnDisable val="True"/>
             </Frame>
 
             <Frame type="Image" name="StatImage">
@@ -59,6 +61,7 @@
                 <Anchor side="Top" relative="$parent" pos="Min" offset="9"/>
 
                 <Texture val="Assets/Textures/btn-upgrade-protoss-groundweaponslevel3.dds"/>
+                <DesaturateOnDisable val="True"/>
                 <RenderPriority val="550"/>
             </Frame>
 

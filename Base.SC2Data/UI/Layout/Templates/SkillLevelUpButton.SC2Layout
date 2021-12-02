@@ -7,11 +7,13 @@
         <Frame type="Image" name="NormalImage">
             <Texture val="Assets/Textures/ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds"/>
             <TextureType val="Normal"/>
+            <DesaturateOnDisable val="True"/>
         </Frame>
 
         <Frame type="Image" name="HoverImage">
             <Texture val="Assets/Textures/ui_gloassary_stongagainst_zerg_normaloverandpressedover.dds"/>
             <TextureType val="Normal"/>
+            <DesaturateOnDisable val="True"/>
         </Frame>
 
         <Frame type="Image" name="PlusImage">
@@ -23,6 +25,7 @@
 
             <Texture val="Assets/Textures/btn-ability-terran-heal.dds"/>
             <RenderPriority val="550"/>
+            <DesaturateOnDisable val="True"/>
         </Frame>
     </Frame>
 </Desc>
