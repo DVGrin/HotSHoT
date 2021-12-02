@@ -10065,11 +10065,11 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
             return true;
         }
         number = StringToInt(arguments[0]);
-        if ((number <= 0) || (number >= 9)) {
-            return false;
-        }
-        if (!(PlayerGroupHasPlayer(PlayerGroupActive(), number))) {
-            return false;
+        if (
+                !(PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), number)) &&
+                !(PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), number))
+            ) {
+                return false;   
         }
         gf_ShowPlayerStatistics(number);
         return true;
