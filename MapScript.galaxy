@@ -5451,7 +5451,7 @@ void gf_HrAssistantBonusTeam1 () {
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
             libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/2C3357F5") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/D9E79FA4") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/DC65B07B") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/39AC057A")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/7498FB6B") + TextWithColor(StringExternal("Param/Value/A61AFE81"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/DE3747DD"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/D089DE34")));
-            if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][15] == 1)) {
+            if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][21] == 1)) {
                 PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerBayul[i]]);
                 UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/F7E20A48") + TextWithColor(StringExternal("Param/Value/2C30D7B6"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/3BEF4AFB"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/17688C44")));
             }
@@ -5520,7 +5520,7 @@ void gf_HrAssistantBonusTeam2 () {
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
             libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/30C3264C") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/C140D7C8") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/9130939D") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/581A015F")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/878D3123") + TextWithColor(StringExternal("Param/Value/86749EDE"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/F27D4BF3"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/806A603B")));
-            if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][15] == 1)) {
+            if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][21] == 1)) {
                 PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerBayul[i]]);
                 UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/0DFFE2F2") + TextWithColor(StringExternal("Param/Value/4B765203"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/602F3107"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/0A4EA953")));
             }
@@ -5589,11 +5589,11 @@ void gf_HrHeroBuffPut () {
 void gf_HrHeroPassiveRepair () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Toherodamage", gv_PlayerHero[EventPlayer()], 1);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical3", gv_PlayerHero[EventPlayer()], 1);
-    if ((gv_StatIncreasesBought[EventPlayer()][22] >= 1)) {
+    if ((gv_StatIncreasesBought[EventPlayer()][16] >= 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
     }
 
-    if ((gv_StatIncreasesBought[EventPlayer()][23] >= 1)) {
+    if ((gv_StatIncreasesBought[EventPlayer()][17] >= 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagmaFire", gv_PlayerHero[EventPlayer()], 1);
     }
 
