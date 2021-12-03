@@ -4263,6 +4263,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <BuffFlags index="RefreshStack" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero70Skill2cool2">
         <Alignment value="Positive"/>
@@ -17756,6 +17757,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <RemoveValidatorArray value="NotDead222"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero32Passive22">
         <Alignment value="Negative"/>

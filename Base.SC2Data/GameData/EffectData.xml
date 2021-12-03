@@ -292,6 +292,11 @@
         <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="2.5" Effect="Hero58Skill4D"/>
     </CEffectEnumArea>
+    <CEffectSet id="Hero70Skill2Mo2">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero70Skill2Dong22"/>
+        <EffectArray value="Hero70Skill2DongRemove2"/>
+    </CEffectSet>
     <CEffectDamage id="Hero8PassiveD2" parent="DU_WEAP">
         <ValidatorArray value="LifeGEHalf222322"/>
         <ValidatorArray value="NotHeroic2"/>
@@ -4056,7 +4061,7 @@
     <CEffectCreatePersistent id="Hero70Skill2G22">
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ScannerSweep"/>
-        <InitialEffect value="Hero70Skill2DongRemove2"/>
+        <InitialEffect value="Hero70Skill2Mo2"/>
         <PeriodCount value="1"/>
         <PeriodicEffectArray value="Hero70Skill2Missile"/>
         <PeriodicOffsetArray value="0,-1.5,0"/>

@@ -1120,7 +1120,6 @@ Behavior/Name/Hero70Skill1Passive1222=Tiger Claw
 Behavior/Name/Hero70Skill1Passive12222=Tiger Claw
 Behavior/Name/Hero70Skill1cool=Tiger Claw Cooldown
 Behavior/Name/Hero70Skill2=Activate Beast Attack
-Behavior/Name/Hero70Skill2cool=Waiting for beast attack
 Behavior/Name/Hero70Skill2cool2=Beast's Assault Reusable
 Behavior/Name/Hero70Skill2cool3=Beast Attack Cooldown
 Behavior/Name/Hero70Skill3impact=Roaring Roar Shock
@@ -2153,7 +2152,6 @@ Behavior/Tooltip/Hero70Skil1Impact=Takes <c val="ff9999">Physical Damage</c> ove
 Behavior/Tooltip/Hero70Skill1=Your next basic attack can deal additional <c val="ff9999">physical damage</c>.
 Behavior/Tooltip/Hero70Skill1cool=
 Behavior/Tooltip/Hero70Skill2=
-Behavior/Tooltip/Hero70Skill2cool=
 Behavior/Tooltip/Hero70Skill2cool2=
 Behavior/Tooltip/Hero70Skill2cool3=
 Behavior/Tooltip/Hero70Skill3impact=
