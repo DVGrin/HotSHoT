@@ -30,6 +30,7 @@ struct ShopItem {
     text tooltip_before_num;
     text tooltip_after_num;
     string button_image;
+    int tooltip_group;
     funcref<fn_prototype> increase_function;
 };
 
@@ -67,6 +68,13 @@ const int c_primaryObjectiveDestroyNexus = 0;
 const int c_secondaryObjectiveMinions = 1;
 const int c_secondaryObjectiveShop = 2;
 const int c_secondaryObjectiveLevels = 3;
+
+const int c_statTooltipGroupNone = 0;
+const int c_statTooltipGroupOffense = 1;
+const int c_statTooltipGroupDefense = 2;
+const int c_statTooltipGroupUtility = 3;
+const int c_statTooltipGroupConsumable = 4;
+const int c_statTooltipGroupSeal = 5;
 
 //--------------------------------------------------------------------------------------------------
 // Global Variables
@@ -720,335 +728,396 @@ void SetDraftChoiceOrder() {
 }
 
 void ShopInit() {
-    gv_ShopItemParameters[0].name = StringToText("Attack Damage"); // TODO: Move all names to external strings
-    gv_ShopItemParameters[0].minerals_cost = 225;
-    gv_ShopItemParameters[0].minerals_increase = 25;
-    gv_ShopItemParameters[0].gas_cost = 1;
-    gv_ShopItemParameters[0].alive_only = false;
-    gv_ShopItemParameters[0].max_upgrades = 25;
-    gv_ShopItemParameters[0].increase_function = gf_HrStat1;
-    gv_ShopItemParameters[0].tooltip_before_num = StringExternal("Param/Value/0F6E4246");
-    gv_ShopItemParameters[0].tooltip_after_num = StringExternal("Param/Value/891B282F");
-    gv_ShopItemParameters[0].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundweaponslevel3.dds";
+    int i = 0;
 
-    gv_ShopItemParameters[1].name = StringToText("Ability Power");
-    gv_ShopItemParameters[1].minerals_cost = 200;
-    gv_ShopItemParameters[1].minerals_increase = 10;
-    gv_ShopItemParameters[1].gas_cost = 1;
-    gv_ShopItemParameters[1].alive_only = false;
-    gv_ShopItemParameters[1].max_upgrades = 30;
-    gv_ShopItemParameters[1].increase_function = gf_HrStat2;
-    gv_ShopItemParameters[1].tooltip_before_num = StringExternal("Param/Value/74423AD9");
-    gv_ShopItemParameters[1].tooltip_after_num = StringExternal("Param/Value/8088D325");
-    gv_ShopItemParameters[1].button_image = "Assets\\Textures\\btn-upgrade-protoss-airweaponslevel3.dds";
+    gv_ShopItemParameters[i].name = StringToText("Attack Damage"); // TODO: Move all names to external strings
+    gv_ShopItemParameters[i].minerals_cost = 225;
+    gv_ShopItemParameters[i].minerals_increase = 25;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 25;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat1;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/0F6E4246");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/891B282F");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundweaponslevel3.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
-    gv_ShopItemParameters[2].name = StringToText("Physical Defense");
-    gv_ShopItemParameters[2].minerals_cost = 100;
-    gv_ShopItemParameters[2].minerals_increase = 35;
-    gv_ShopItemParameters[2].gas_cost = 1;
-    gv_ShopItemParameters[2].alive_only = false;
-    gv_ShopItemParameters[2].max_upgrades = 20;
-    gv_ShopItemParameters[2].increase_function = gf_HrStat3;
-    gv_ShopItemParameters[2].tooltip_before_num = StringExternal("Param/Value/B762C11C");
-    gv_ShopItemParameters[2].tooltip_after_num = StringExternal("Param/Value/A6B27F25");
-    gv_ShopItemParameters[2].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundarmorlevel2.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Ability Power");
+    gv_ShopItemParameters[i].minerals_cost = 200;
+    gv_ShopItemParameters[i].minerals_increase = 10;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 30;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat2;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/74423AD9");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/8088D325");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-airweaponslevel3.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
-    gv_ShopItemParameters[3].name = StringToText("Magical Defense");
-    gv_ShopItemParameters[3].minerals_cost = 100;
-    gv_ShopItemParameters[3].minerals_increase = 35;
-    gv_ShopItemParameters[3].gas_cost = 1;
-    gv_ShopItemParameters[3].alive_only = false;
-    gv_ShopItemParameters[3].max_upgrades = 20;
-    gv_ShopItemParameters[3].increase_function = gf_HrStat4;
-    gv_ShopItemParameters[3].tooltip_before_num = StringExternal("Param/Value/793ADEEF");
-    gv_ShopItemParameters[3].tooltip_after_num = StringExternal("Param/Value/A8695773");
-    gv_ShopItemParameters[3].button_image = "Assets\\Textures\\btn-upgrade-protoss-airarmorlevel3.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Physical Defense");
+    gv_ShopItemParameters[i].minerals_cost = 100;
+    gv_ShopItemParameters[i].minerals_increase = 35;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 20;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat3;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/B762C11C");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/A6B27F25");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundarmorlevel2.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
-    gv_ShopItemParameters[4].name = StringToText("Maximum Health");
-    gv_ShopItemParameters[4].minerals_cost = 230;
-    gv_ShopItemParameters[4].minerals_increase = 20;
-    gv_ShopItemParameters[4].gas_cost = 1;
-    gv_ShopItemParameters[4].alive_only = false;
-    gv_ShopItemParameters[4].max_upgrades = 25;
-    gv_ShopItemParameters[4].increase_function = gf_HrStat5;
-    gv_ShopItemParameters[4].tooltip_before_num = StringExternal("Param/Value/56C3945D");
-    gv_ShopItemParameters[4].tooltip_after_num = StringExternal("Param/Value/127C08B6");
-    gv_ShopItemParameters[4].button_image = "Assets\\Textures\\btn-upgrade-terran-caduceusreactor.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Magical Defense");
+    gv_ShopItemParameters[i].minerals_cost = 100;
+    gv_ShopItemParameters[i].minerals_increase = 35;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 20;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat4;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/793ADEEF");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/A8695773");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-airarmorlevel3.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
-    gv_ShopItemParameters[5].name = StringToText("Maximum Mana");
-    gv_ShopItemParameters[5].minerals_cost = 85;
-    gv_ShopItemParameters[5].minerals_increase = 15;
-    gv_ShopItemParameters[5].gas_cost = 0;
-    gv_ShopItemParameters[5].alive_only = false;
-    gv_ShopItemParameters[5].max_upgrades = 25;
-    gv_ShopItemParameters[5].increase_function = gf_HrStat6;
-    gv_ShopItemParameters[5].tooltip_before_num = StringExternal("Param/Value/E47F7098");
-    gv_ShopItemParameters[5].tooltip_after_num = StringExternal("Param/Value/C8B41D66");
-    gv_ShopItemParameters[5].button_image = "Assets\\Textures\\btn-upgrade-protoss-graviticbooster.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Maximum Health");
+    gv_ShopItemParameters[i].minerals_cost = 230;
+    gv_ShopItemParameters[i].minerals_increase = 20;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 25;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat5;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/56C3945D");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/127C08B6");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-caduceusreactor.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
-    gv_ShopItemParameters[6].name = StringToText("Health Regeneration");
-    gv_ShopItemParameters[6].minerals_cost = 60;
-    gv_ShopItemParameters[6].minerals_increase = 10;
-    gv_ShopItemParameters[6].gas_cost = 0;
-    gv_ShopItemParameters[6].alive_only = false;
-    gv_ShopItemParameters[6].max_upgrades = 20;
-    gv_ShopItemParameters[6].increase_function = gf_HrStat7;
-    gv_ShopItemParameters[6].tooltip_before_num = StringExternal("Param/Value/105F4D99");
-    gv_ShopItemParameters[6].tooltip_after_num = StringExternal("Param/Value/71ED1578");
-    gv_ShopItemParameters[6].button_image = "Assets\\Textures\\btn-upgrade-terran-corvidreactor.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Maximum Mana");
+    gv_ShopItemParameters[i].minerals_cost = 85;
+    gv_ShopItemParameters[i].minerals_increase = 15;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 25;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat6;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/E47F7098");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/C8B41D66");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-graviticbooster.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[7].name = StringToText("Mana Regeneration");
-    gv_ShopItemParameters[7].minerals_cost = 50;
-    gv_ShopItemParameters[7].minerals_increase = 5;
-    gv_ShopItemParameters[7].gas_cost = 0;
-    gv_ShopItemParameters[7].alive_only = false;
-    gv_ShopItemParameters[7].max_upgrades = 20;
-    gv_ShopItemParameters[7].increase_function = gf_HrStat8;
-    gv_ShopItemParameters[7].tooltip_before_num = StringExternal("Param/Value/B52C4DBD");
-    gv_ShopItemParameters[7].tooltip_after_num = StringExternal("Param/Value/4B39A3DF");
-    gv_ShopItemParameters[7].button_image = "Assets\\Textures\\btn-upgrade-terran-moebiusreactor.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Health Regeneration");
+    gv_ShopItemParameters[i].minerals_cost = 60;
+    gv_ShopItemParameters[i].minerals_increase = 10;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 20;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat7;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/105F4D99");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/71ED1578");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-corvidreactor.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[8].name = StringToText("Attack Speed");
-    gv_ShopItemParameters[8].minerals_cost = 180;
-    gv_ShopItemParameters[8].minerals_increase = 40;
-    gv_ShopItemParameters[8].gas_cost = 1;
-    gv_ShopItemParameters[8].alive_only = false;
-    gv_ShopItemParameters[8].max_upgrades = 10;
-    gv_ShopItemParameters[8].increase_function = gf_HrStat9;
-    gv_ShopItemParameters[8].tooltip_before_num = StringExternal("Param/Value/25D75730");
-    gv_ShopItemParameters[8].tooltip_after_num = StringExternal("Param/Value/FED58AF3");
-    gv_ShopItemParameters[8].button_image = "Assets\\Textures\\btn-tips-terran-penetrator.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Mana Regeneration");
+    gv_ShopItemParameters[i].minerals_cost = 50;
+    gv_ShopItemParameters[i].minerals_increase = 5;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 20;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat8;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/B52C4DBD");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/4B39A3DF");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-moebiusreactor.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[9].name = StringToText("Penetration");
-    gv_ShopItemParameters[9].minerals_cost = 150;
-    gv_ShopItemParameters[9].minerals_increase = 50;
-    gv_ShopItemParameters[9].gas_cost = 1;
-    gv_ShopItemParameters[9].alive_only = false;
-    gv_ShopItemParameters[9].max_upgrades = 3;
-    gv_ShopItemParameters[9].increase_function = gf_HrStat10;
-    gv_ShopItemParameters[9].tooltip_before_num = StringExternal("Param/Value/0D38B383");
-    gv_ShopItemParameters[9].tooltip_after_num = StringExternal("Param/Value/9FB47B93");
-    gv_ShopItemParameters[9].button_image = "Assets\\Textures\\btn-ability-protoss-blinkshieldrestore.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Attack Speed");
+    gv_ShopItemParameters[i].minerals_cost = 180;
+    gv_ShopItemParameters[i].minerals_increase = 40;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 10;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat9;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/25D75730");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/FED58AF3");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-tips-terran-penetrator.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
-    gv_ShopItemParameters[10].name = StringToText("Evasion Chance");
-    gv_ShopItemParameters[10].minerals_cost = 225;
-    gv_ShopItemParameters[10].minerals_increase = 100;
-    gv_ShopItemParameters[10].gas_cost = 1;
-    gv_ShopItemParameters[10].alive_only = false;
-    gv_ShopItemParameters[10].max_upgrades = 3;
-    gv_ShopItemParameters[10].increase_function = gf_HrStat11;
-    gv_ShopItemParameters[10].tooltip_before_num = StringExternal("Param/Value/BC0C4F6D");
-    gv_ShopItemParameters[10].tooltip_after_num = StringExternal("Param/Value/2CC75CD2");
-    gv_ShopItemParameters[10].button_image = "Assets\\Textures\\btn-research-terran-commandcenterreactor.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Penetration");
+    gv_ShopItemParameters[i].minerals_cost = 150;
+    gv_ShopItemParameters[i].minerals_increase = 50;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 3;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat10;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/0D38B383");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/9FB47B93");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-protoss-blinkshieldrestore.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
-    gv_ShopItemParameters[11].name = StringToText("Critical Hit Chance");
-    gv_ShopItemParameters[11].minerals_cost = 300;
-    gv_ShopItemParameters[11].minerals_increase = 100;
-    gv_ShopItemParameters[11].gas_cost = 1;
-    gv_ShopItemParameters[11].alive_only = false;
-    gv_ShopItemParameters[11].max_upgrades = 5;
-    gv_ShopItemParameters[11].increase_function = gf_HrStat12;
-    gv_ShopItemParameters[11].tooltip_before_num = StringExternal("Param/Value/45A143F6");
-    gv_ShopItemParameters[11].tooltip_after_num = StringExternal("Param/Value/A214EC24");
-    gv_ShopItemParameters[11].button_image = "Assets\\AddIcon\\btn-ability-terran-yamatocannon-ultra-color.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Evasion Chance");
+    gv_ShopItemParameters[i].minerals_cost = 225;
+    gv_ShopItemParameters[i].minerals_increase = 100;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 3;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat11;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/BC0C4F6D");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/2CC75CD2");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-research-terran-commandcenterreactor.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
-    gv_ShopItemParameters[12].name = StringToText("Lifesteal");
-    gv_ShopItemParameters[12].minerals_cost = 275;
-    gv_ShopItemParameters[12].minerals_increase = 85;
-    gv_ShopItemParameters[12].gas_cost = 1;
-    gv_ShopItemParameters[12].alive_only = false;
-    gv_ShopItemParameters[12].max_upgrades = 3;
-    gv_ShopItemParameters[12].increase_function = gf_HrStat13;
-    gv_ShopItemParameters[12].tooltip_before_num = StringExternal("Param/Value/2E68C9BA");
-    gv_ShopItemParameters[12].tooltip_after_num = StringExternal("Param/Value/11CDAC01");
-    gv_ShopItemParameters[12].button_image = "Assets\\Textures\\btn-tips-sellzergbiosamples.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Critical Hit Chance");
+    gv_ShopItemParameters[i].minerals_cost = 300;
+    gv_ShopItemParameters[i].minerals_increase = 100;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 5;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat12;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/45A143F6");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/A214EC24");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-ability-terran-yamatocannon-ultra-color.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
-    gv_ShopItemParameters[13].name = StringToText("Spell Vampirism");
-    gv_ShopItemParameters[13].minerals_cost = 325;
-    gv_ShopItemParameters[13].minerals_increase = 100;
-    gv_ShopItemParameters[13].gas_cost = 1;
-    gv_ShopItemParameters[13].alive_only = false;
-    gv_ShopItemParameters[13].max_upgrades = 3;
-    gv_ShopItemParameters[13].increase_function = gf_HrStat14;
-    gv_ShopItemParameters[13].tooltip_before_num = StringExternal("Param/Value/5936EEEA");
-    gv_ShopItemParameters[13].tooltip_after_num = StringExternal("Param/Value/0EC8098E");
-    gv_ShopItemParameters[13].button_image = "Assets\\Textures\\btn-tips-sellprotossartifacts.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Lifesteal");
+    gv_ShopItemParameters[i].minerals_cost = 275;
+    gv_ShopItemParameters[i].minerals_increase = 85;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 3;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat13;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/2E68C9BA");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/11CDAC01");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-tips-sellzergbiosamples.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[14].name = StringToText("Cooldown Reduction");
-    gv_ShopItemParameters[14].minerals_cost = 200;
-    gv_ShopItemParameters[14].minerals_increase = 60;
-    gv_ShopItemParameters[14].gas_cost = 1;
-    gv_ShopItemParameters[14].alive_only = false;
-    gv_ShopItemParameters[14].max_upgrades = 3;
-    gv_ShopItemParameters[14].increase_function = gf_HrStat15;
-    gv_ShopItemParameters[14].tooltip_before_num = StringExternal("Param/Value/2F67E042");
-    gv_ShopItemParameters[14].tooltip_after_num = StringExternal("Param/Value/3308F27F");
-    gv_ShopItemParameters[14].button_image = "Assets\\AddIcon\\btn-custom-terran-engine.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Spell Vampirism");
+    gv_ShopItemParameters[i].minerals_cost = 325;
+    gv_ShopItemParameters[i].minerals_increase = 100;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 3;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat14;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/5936EEEA");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/0EC8098E");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-tips-sellprotossartifacts.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[15].name = StringToText("Booster");
-    gv_ShopItemParameters[15].minerals_cost = 200;
-    gv_ShopItemParameters[15].minerals_increase = 0;
-    gv_ShopItemParameters[15].gas_cost = 1;
-    gv_ShopItemParameters[15].alive_only = false;
-    gv_ShopItemParameters[15].max_upgrades = 1;
-    gv_ShopItemParameters[15].increase_function = gf_HrStat16;
-    gv_ShopItemParameters[15].tooltip_before_num = StringExternal("Param/Value/FD3563C7");
-    gv_ShopItemParameters[15].tooltip_after_num = StringExternal("Param/Value/777978E1");
-    gv_ShopItemParameters[15].button_image = "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Cooldown Reduction");
+    gv_ShopItemParameters[i].minerals_cost = 200;
+    gv_ShopItemParameters[i].minerals_increase = 60;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 3;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat15;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/2F67E042");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/3308F27F");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-custom-terran-engine.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[16].name = StringToText("Spell Shield");
-    gv_ShopItemParameters[16].minerals_cost = 375;
-    gv_ShopItemParameters[16].minerals_increase = 0;
-    gv_ShopItemParameters[16].gas_cost = 1;
-    gv_ShopItemParameters[16].alive_only = false;
-    gv_ShopItemParameters[16].max_upgrades = 1;
-    gv_ShopItemParameters[16].increase_function = gf_HrStat17;
-    gv_ShopItemParameters[16].tooltip_before_num = StringExternal("Param/Value/18EE85FD");
-    gv_ShopItemParameters[16].tooltip_after_num = StringExternal("Param/Value/97B7197B");
-    gv_ShopItemParameters[16].button_image = "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Booster");
+    gv_ShopItemParameters[i].minerals_cost = 200;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat16;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/FD3563C7");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/777978E1");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[17].name = StringToText("Body of Lava");
-    gv_ShopItemParameters[17].minerals_cost = 285;
-    gv_ShopItemParameters[17].minerals_increase = 0;
-    gv_ShopItemParameters[17].gas_cost = 1;
-    gv_ShopItemParameters[17].alive_only = false;
-    gv_ShopItemParameters[17].max_upgrades = 1;
-    gv_ShopItemParameters[17].increase_function = gf_HrStat18;
-    gv_ShopItemParameters[17].tooltip_before_num = StringExternal("Param/Value/707486D0");
-    gv_ShopItemParameters[17].tooltip_after_num = StringExternal("Param/Value/74F45D38");
-    gv_ShopItemParameters[17].button_image = "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Spell Shield");
+    gv_ShopItemParameters[i].minerals_cost = 375;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat17;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/18EE85FD");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/97B7197B");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
-    gv_ShopItemParameters[18].name = StringToText("Seal of Execution");
-    gv_ShopItemParameters[18].minerals_cost = 400;
-    gv_ShopItemParameters[18].minerals_increase = 0;
-    gv_ShopItemParameters[18].gas_cost = 1;
-    gv_ShopItemParameters[18].alive_only = false;
-    gv_ShopItemParameters[18].max_upgrades = 1;
-    gv_ShopItemParameters[18].increase_function = gf_HrStat25;
-    gv_ShopItemParameters[18].tooltip_before_num = StringExternal("Param/Value/FED2E4BB");
-    gv_ShopItemParameters[18].tooltip_after_num = StringExternal("Param/Value/5BD409C6");
-    gv_ShopItemParameters[18].button_image = "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Body of Lava");
+    gv_ShopItemParameters[i].minerals_cost = 285;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat18;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/707486D0");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/74F45D38");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
-    gv_ShopItemParameters[19].name = StringToText("Seal of Curse");
-    gv_ShopItemParameters[19].minerals_cost = 450;
-    gv_ShopItemParameters[19].minerals_increase = 0;
-    gv_ShopItemParameters[19].gas_cost = 1;
-    gv_ShopItemParameters[19].alive_only = false;
-    gv_ShopItemParameters[19].max_upgrades = 1;
-    gv_ShopItemParameters[19].increase_function = gf_HrStat26;
-    gv_ShopItemParameters[19].tooltip_before_num = StringExternal("Param/Value/99E0EBC2");
-    gv_ShopItemParameters[19].tooltip_after_num = StringExternal("Param/Value/3E972BDA");
-    gv_ShopItemParameters[19].button_image = "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Seal of Execution");
+    gv_ShopItemParameters[i].minerals_cost = 400;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat25;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/FED2E4BB");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/5BD409C6");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
-    gv_ShopItemParameters[20].name = StringToText("Seal of Destruction");
-    gv_ShopItemParameters[20].minerals_cost = 350;
-    gv_ShopItemParameters[20].minerals_increase = 0;
-    gv_ShopItemParameters[20].gas_cost = 1;
-    gv_ShopItemParameters[20].alive_only = false;
-    gv_ShopItemParameters[20].max_upgrades = 1;
-    gv_ShopItemParameters[20].increase_function = gf_HrStat27;
-    gv_ShopItemParameters[20].tooltip_before_num = StringExternal("Param/Value/5E89B444");
-    gv_ShopItemParameters[20].tooltip_after_num = StringExternal("Param/Value/ED07ED74");
-    gv_ShopItemParameters[20].button_image = "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Seal of Curse");
+    gv_ShopItemParameters[i].minerals_cost = 450;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat26;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/99E0EBC2");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/3E972BDA");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
-    gv_ShopItemParameters[21].name = StringToText("Demon Seal");
-    gv_ShopItemParameters[21].minerals_cost = 400;
-    gv_ShopItemParameters[21].minerals_increase = 0;
-    gv_ShopItemParameters[21].gas_cost = 1;
-    gv_ShopItemParameters[21].alive_only = false;
-    gv_ShopItemParameters[21].max_upgrades = 1;
-    gv_ShopItemParameters[21].increase_function = gf_HrStat28;
-    gv_ShopItemParameters[21].tooltip_before_num = StringExternal("Param/Value/BE23B6F8");
-    gv_ShopItemParameters[21].tooltip_after_num = StringExternal("Param/Value/C46BC4C8");
-    gv_ShopItemParameters[21].button_image = "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Seal of Destruction");
+    gv_ShopItemParameters[i].minerals_cost = 350;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat27;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/5E89B444");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/ED07ED74");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
-    gv_ShopItemParameters[22].name = StringToText("Seal of Iron");
-    gv_ShopItemParameters[22].minerals_cost = 350;
-    gv_ShopItemParameters[22].minerals_increase = 0;
-    gv_ShopItemParameters[22].gas_cost = 1;
-    gv_ShopItemParameters[22].alive_only = false;
-    gv_ShopItemParameters[22].max_upgrades = 1;
-    gv_ShopItemParameters[22].increase_function = gf_HrStat29;
-    gv_ShopItemParameters[22].tooltip_before_num = StringExternal("Param/Value/E0BA54A0");
-    gv_ShopItemParameters[22].tooltip_after_num = StringExternal("Param/Value/067028AD");
-    gv_ShopItemParameters[22].button_image = "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Demon Seal");
+    gv_ShopItemParameters[i].minerals_cost = 400;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat28;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/BE23B6F8");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/C46BC4C8");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
-    gv_ShopItemParameters[23].name = StringToText("Seal of Resistance");
-    gv_ShopItemParameters[23].minerals_cost = 325;
-    gv_ShopItemParameters[23].minerals_increase = 0;
-    gv_ShopItemParameters[23].gas_cost = 1;
-    gv_ShopItemParameters[23].alive_only = false;
-    gv_ShopItemParameters[23].max_upgrades = 1;
-    gv_ShopItemParameters[23].increase_function = gf_HrStat30;
-    gv_ShopItemParameters[23].tooltip_before_num = StringExternal("Param/Value/63C1F55F");
-    gv_ShopItemParameters[23].tooltip_after_num = StringExternal("Param/Value/864F237F");
-    gv_ShopItemParameters[23].button_image = "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Seal of Iron");
+    gv_ShopItemParameters[i].minerals_cost = 350;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat29;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/E0BA54A0");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/067028AD");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
-    gv_ShopItemParameters[24].name = StringToText("Health Potion");
-    gv_ShopItemParameters[24].minerals_cost = 35;
-    gv_ShopItemParameters[24].minerals_increase = 0;
-    gv_ShopItemParameters[24].gas_cost = 0;
-    gv_ShopItemParameters[24].alive_only = true;
-    gv_ShopItemParameters[24].max_upgrades = 1;
-    gv_ShopItemParameters[24].increase_function = gf_HrStat19;
-    gv_ShopItemParameters[24].tooltip_before_num = StringExternal("Param/Value/E8EEDC9A");
-    gv_ShopItemParameters[24].tooltip_after_num = StringExternal("Param/Value/F921592A");
-    gv_ShopItemParameters[24].button_image = "Assets\\AddIcon\\btn-items-postion.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Seal of Resistance");
+    gv_ShopItemParameters[i].minerals_cost = 325;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 1;
+    gv_ShopItemParameters[i].alive_only = false;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat30;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/63C1F55F");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/864F237F");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
-    gv_ShopItemParameters[25].name = StringToText("Mana Potion");
-    gv_ShopItemParameters[25].minerals_cost = 30;
-    gv_ShopItemParameters[25].minerals_increase = 0;
-    gv_ShopItemParameters[25].gas_cost = 0;
-    gv_ShopItemParameters[25].alive_only = true;
-    gv_ShopItemParameters[25].max_upgrades = 1;
-    gv_ShopItemParameters[25].increase_function = gf_HrStat20;
-    gv_ShopItemParameters[25].tooltip_before_num = StringExternal("Param/Value/56E70969");
-    gv_ShopItemParameters[25].tooltip_after_num = StringExternal("Param/Value/829AA365");
-    gv_ShopItemParameters[25].button_image = "Assets\\AddIcon\\btn-items-postion2.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Health Potion");
+    gv_ShopItemParameters[i].minerals_cost = 35;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = true;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat19;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/E8EEDC9A");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/F921592A");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-postion.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
-    gv_ShopItemParameters[26].name = StringToText("Ward");
-    gv_ShopItemParameters[26].minerals_cost = 70;
-    gv_ShopItemParameters[26].minerals_increase = 0;
-    gv_ShopItemParameters[26].gas_cost = 0;
-    gv_ShopItemParameters[26].alive_only = true;
-    gv_ShopItemParameters[26].max_upgrades = 1;
-    gv_ShopItemParameters[26].increase_function = gf_HrStat21;
-    gv_ShopItemParameters[26].tooltip_before_num = StringExternal("Param/Value/CB424073");
-    gv_ShopItemParameters[26].tooltip_after_num = StringExternal("Param/Value/0A92B03F");
-    gv_ShopItemParameters[26].button_image = "Assets\\Textures\\btn-building-protoss-obelisk.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Mana Potion");
+    gv_ShopItemParameters[i].minerals_cost = 30;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = true;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat20;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/56E70969");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/829AA365");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-postion2.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
-    gv_ShopItemParameters[27].name = StringToText("Hawk Eye");
-    gv_ShopItemParameters[27].minerals_cost = 225;
-    gv_ShopItemParameters[27].minerals_increase = 0;
-    gv_ShopItemParameters[27].gas_cost = 0;
-    gv_ShopItemParameters[27].alive_only = true;
-    gv_ShopItemParameters[27].max_upgrades = 1;
-    gv_ShopItemParameters[27].increase_function = gf_HrStat22;
-    gv_ShopItemParameters[27].tooltip_before_num = StringExternal("Param/Value/4B152A48");
-    gv_ShopItemParameters[27].tooltip_after_num = StringExternal("Param/Value/F0642B8D");
-    gv_ShopItemParameters[27].button_image = "Assets\\AddIcon\\btn-ability-zerg-domination-color.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Ward");
+    gv_ShopItemParameters[i].minerals_cost = 70;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = true;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat21;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/CB424073");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/0A92B03F");
+    gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-building-protoss-obelisk.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
-    gv_ShopItemParameters[28].name = StringToText("Fiery Flask");
-    gv_ShopItemParameters[28].minerals_cost = 350;
-    gv_ShopItemParameters[28].minerals_increase = 0;
-    gv_ShopItemParameters[28].gas_cost = 0;
-    gv_ShopItemParameters[28].alive_only = true;
-    gv_ShopItemParameters[28].max_upgrades = 1;
-    gv_ShopItemParameters[28].increase_function = gf_HrStat23;
-    gv_ShopItemParameters[28].tooltip_before_num = StringExternal("Param/Value/581492DB");
-    gv_ShopItemParameters[28].tooltip_after_num = StringExternal("Param/Value/7037D2B3");
-    gv_ShopItemParameters[28].button_image = "Assets\\AddIcon\\btn-items-pwpotion.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Hawk Eye");
+    gv_ShopItemParameters[i].minerals_cost = 225;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = true;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat22;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/4B152A48");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/F0642B8D");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-ability-zerg-domination-color.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupConsumable;
 
-    gv_ShopItemParameters[29].name = StringToText("Devil Elixir");
-    gv_ShopItemParameters[29].minerals_cost = 400;
-    gv_ShopItemParameters[29].minerals_increase = 0;
-    gv_ShopItemParameters[29].gas_cost = 0;
-    gv_ShopItemParameters[29].alive_only = true;
-    gv_ShopItemParameters[29].max_upgrades = 1;
-    gv_ShopItemParameters[29].increase_function = gf_HrStat24;
-    gv_ShopItemParameters[29].tooltip_before_num = StringExternal("Param/Value/09E4F027");
-    gv_ShopItemParameters[29].tooltip_after_num = StringExternal("Param/Value/B72DF259");
-    gv_ShopItemParameters[29].button_image = "Assets\\AddIcon\\btn-items-blackpotion.dds";
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Fiery Flask");
+    gv_ShopItemParameters[i].minerals_cost = 350;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = true;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat23;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/581492DB");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/7037D2B3");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-pwpotion.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupConsumable;
+
+    i += 1;
+    gv_ShopItemParameters[i].name = StringToText("Devil Elixir");
+    gv_ShopItemParameters[i].minerals_cost = 400;
+    gv_ShopItemParameters[i].minerals_increase = 0;
+    gv_ShopItemParameters[i].gas_cost = 0;
+    gv_ShopItemParameters[i].alive_only = true;
+    gv_ShopItemParameters[i].max_upgrades = 1;
+    gv_ShopItemParameters[i].increase_function = gf_HrStat24;
+    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/09E4F027");
+    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/B72DF259");
+    gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-blackpotion.dds";
+    gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupConsumable;
 }
 
 void HeroInfoInit() {
@@ -3777,7 +3846,7 @@ void gf_CreateObjectives() {
 
     objectives[c_secondaryObjectiveMinions] = StringToText("Kill minions to receive minerals"); // TODO: Move to external string
     objectives[c_secondaryObjectiveShop] = StringToText("Use minerals and gas to buy stats in the shop"); // TODO: Move to external string
-    objectives[c_secondaryObjectiveLevels] = StringToText("Level up to upgrade your skills"); // TODO: Move to external string
+    objectives[c_secondaryObjectiveLevels] = StringToText("Upgrade your abilities every level"); // TODO: Move to external string
 
     descriptions[c_primaryObjectiveDestroyNexus] = StringToText("The Nexus is immune until all the structures in a lane are destroyed"); // TODO: Move to external string
 
@@ -4239,15 +4308,8 @@ void gf_CreateStatDialog () {
     int i;
     int j;
     int current_button_num;
-    int stat_x_offset_left;
-    int stat_x_offset_right;
-    int stat_y_offset;
     string current_page_name;
     string current_button_name;
-
-    stat_x_offset_left = 29;
-    stat_x_offset_right = 134;
-    stat_y_offset = 20;
 
     gv_StatShopDialog = DialogControlHookupStandard(
         c_triggerControlTypePanel,
@@ -4871,20 +4933,18 @@ void gf_HrCooldownReductionLevelIncrease () {
 
 void gf_StatWindowUpdatePlayer (int player) {
     int i;
-    int stat_sum = 0;
+    int j;
+    int[6] stat_sum;
     text tooltip_text;
+    text[6] tooltip_text_groups;
     color stat_name_color;
 
-    const color AD_COLOR = Color(100.0, 60.0, 60.0);
-    const color AP_COLOR = Color(60.0, 100.0, 80.0);
     const color SEAL_COLOR = Color(100.0, 50.0, 0.0);
     const color DEFAULT_COLOR = Color(40.0, 60.0, 100.0);
     const color NUMBER_COLOR = Color(100.0, 100.0, 100.0);
     const color PLAYERNAME_COLOR = Color(50.0, 70.0, 100.0);
-
-    const color CONSUMABLE_LABEL_COLOR = Color(100.0, 90.0, 55.0);
-    const color ACTIVE_CONSUMABLE_COLOR = Color(80.0, 80.0, 80.0);
-    const color NONACTIVE_CONSUMABLE_COLOR = Color(30.0, 30.0, 30.0);
+    const color LABEL_COLOR = Color(100.0, 90.0, 55.0);
+    const color CONSUMABLE_COLOR = Color(80.0, 80.0, 80.0);
 
     tooltip_text = (
         StringToText("<s val=\"PurchasePanelGroupName\">") +
@@ -4894,68 +4954,76 @@ void gf_StatWindowUpdatePlayer (int player) {
         StringToText("<s val=\"Header18\">")
     );
 
-    for (i = 0; i < 24; i += 1) {
-        if ((i >= 18) && (i <= 23)) {  // Seals
-            continue;
-        }
+    tooltip_text_groups[c_statTooltipGroupConsumable] = TextWithColor(StringToText("Active consumables:"), LABEL_COLOR);
+    tooltip_text_groups[c_statTooltipGroupOffense] = TextWithColor(StringToText("Offense:"), LABEL_COLOR);
+    tooltip_text_groups[c_statTooltipGroupDefense] = TextWithColor(StringToText("Defense:"), LABEL_COLOR);
+    tooltip_text_groups[c_statTooltipGroupSeal] = StringToText("");
+    tooltip_text_groups[c_statTooltipGroupUtility] = TextWithColor(StringToText("Utility:"), LABEL_COLOR);
 
+    for (i = 0; i < 30; i += 1) {
         if (gv_StatIncreasesBought[player][i] == 0) { // Only show bought stats
             continue;
         }
-
-        if ((i == 0) || (i == 2)) { // AD and DP
-            stat_name_color = AD_COLOR;
-        }
-        else if ((i == 1) || (i == 3)) { // AP and RP
-            stat_name_color = AP_COLOR;
-        }
-        else {
+        for (j = 1; j < 6; j += 1) {
             stat_name_color = DEFAULT_COLOR;
-        }
-
-        stat_sum += 1;
-        tooltip_text += TextWithColor(
-            (StringToText("  ") + gv_ShopItemParameters[i].name + StringToText(": ")),
-            stat_name_color
-        );
-
-        tooltip_text += TextWithColor(IntToText(gv_StatIncreasesBought[player][i]), NUMBER_COLOR);
-        tooltip_text += StringToText("<n/>");
-    }
-
-    if (stat_sum == 0) {
-        tooltip_text += StringToText("  ");
-        tooltip_text += TextWithColor(StringToText("No stats bought yet"), DEFAULT_COLOR); // TODO: Move to external string
-        tooltip_text += StringToText("<n/>");
-    }
-
-    tooltip_text += StringToText("<n/>");
-    if (gv_SealBought[player]) {
-        for (i = 18; i <= 23; i += 1) {
-            if (gv_StatIncreasesBought[player][i] == 1) {
-                tooltip_text += StringToText("  ");
-                tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, SEAL_COLOR);
-                break;
+            if (gv_ShopItemParameters[i].tooltip_group == c_statTooltipGroupSeal) {
+                stat_name_color = SEAL_COLOR;
             }
+            if (gv_ShopItemParameters[i].tooltip_group == c_statTooltipGroupConsumable) {
+                stat_name_color = CONSUMABLE_COLOR;
+            }
+            if (gv_ShopItemParameters[i].tooltip_group == j) {
+                stat_sum[j] += 1;
+                tooltip_text_groups[j] += TextWithColor(
+                    StringToText("<n/>  ") + gv_ShopItemParameters[i].name,
+                    stat_name_color
+                );
+            } else {
+                continue;
+            }
+            if (gv_ShopItemParameters[i].max_upgrades == 1) {
+                continue;
+            }
+            TextWithColor(StringToText(": "), stat_name_color);
+            tooltip_text_groups[j] += StringToText(": ");
+            tooltip_text_groups[j] += TextWithColor(IntToText(gv_StatIncreasesBought[player][i]), NUMBER_COLOR);
         }
-    } else {
-        tooltip_text += StringToText("  ");
-        tooltip_text += TextWithColor(StringToText("No Seal"), SEAL_COLOR); // TODO: Move to external string
     }
 
-    tooltip_text += StringToText("<n/><n/>  ");
-    tooltip_text += TextWithColor(StringToText("Consumables:"), CONSUMABLE_LABEL_COLOR); // TODO: Move to external string
-
-    for (i = 27; i < 30; i += 1) {
-        if (gv_StatIncreasesBought[player][i] == 0) {
-            stat_name_color = NONACTIVE_CONSUMABLE_COLOR;
-        } else {
-            stat_name_color = ACTIVE_CONSUMABLE_COLOR;
-        }
-
-        tooltip_text += StringToText("<n/>  ");
-        tooltip_text += TextWithColor(gv_ShopItemParameters[i].name, stat_name_color);
+    if (stat_sum[c_statTooltipGroupSeal] == 0) {
+        tooltip_text_groups[c_statTooltipGroupSeal] = TextWithColor(
+            StringToText("<n/>") + StringToText("No Seal"),
+            SEAL_COLOR
+        );
     }
+    if (stat_sum[c_statTooltipGroupConsumable] == 0) {
+        tooltip_text_groups[c_statTooltipGroupConsumable] = TextWithColor(
+            StringToText("No active consumables"),
+            LABEL_COLOR
+        );
+    }
+
+    if (stat_sum[c_statTooltipGroupOffense] > 0) {
+        tooltip_text += tooltip_text_groups[c_statTooltipGroupOffense];
+        tooltip_text += StringToText("<n/><n/>");
+    }
+    if (stat_sum[c_statTooltipGroupDefense] > 0) {
+        tooltip_text += tooltip_text_groups[c_statTooltipGroupDefense];
+        tooltip_text += StringToText("<n/><n/>");
+    }
+    if (stat_sum[c_statTooltipGroupUtility] > 0) {
+        tooltip_text += tooltip_text_groups[c_statTooltipGroupUtility];
+        tooltip_text += StringToText("<n/>");
+    }
+    if (stat_sum[c_statTooltipGroupOffense] + stat_sum[c_statTooltipGroupDefense] + stat_sum[c_statTooltipGroupUtility] == 0) {
+        tooltip_text += TextWithColor(
+            StringToText("No stats bought yet<n/>"),
+            LABEL_COLOR
+        );
+    }
+    tooltip_text += tooltip_text_groups[c_statTooltipGroupSeal];
+    tooltip_text += StringToText("<n/><n/>");
+    tooltip_text += tooltip_text_groups[c_statTooltipGroupConsumable];
 
     tooltip_text += StringToText("</s>");  // Header18
 
