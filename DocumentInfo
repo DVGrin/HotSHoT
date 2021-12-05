@@ -8,11 +8,11 @@
     </Icon>
     <Dependencies>
         <Value>bnet:Liberty (Campaign)/0.0/999,file:Campaigns/Liberty.SC2Campaign</Value>
-        <Value>bnet:Mods1/1.0/303684,file:Mods\a mod.sc2mod</Value>
-        <Value>bnet:Mods 2/1.0/303703,file:Mods\another mod.sc2mod</Value>
-        <Value>bnet:Mods 3/1.0/303704,file:Mods\the other mod.sc2mod</Value>
-        <Value>bnet:Mods 4/1.0/303705,file:Mods\the other other mod.sc2mod</Value>
         <Value>bnet:Void Multi (Mod)/0.0/999,file:Mods/VoidMulti.SC2Mod</Value>
+        <Value>bnet:Hotshot Mod 1/1.0/303660</Value>
+        <Value>bnet:Hotshot Mod 2/1.0/303659</Value>
+        <Value>bnet:Hotshot Mod 3/1.0/303657</Value>
+        <Value>bnet:Hotshot Mod 4/1.0/303656</Value>
     </Dependencies>
     <HowToPlayBasic>
         <ListType>

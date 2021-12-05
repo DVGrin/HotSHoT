@@ -12321,14 +12321,14 @@
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
         <SearchFilters value="Self,Heroic;Ally,Neutral,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="18" Effect="Hero32PassiveHealing"/>
+        <AreaArray Radius="11" Effect="Hero32PassiveHealing"/>
         <MaxCount value="1"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="Hero32PassiveSr22">
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
         <SearchFilters value="Self,Heroic;Ally,Neutral,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="18" Effect="Hero32PassiveHealing2"/>
+        <AreaArray Radius="11" Effect="Hero32PassiveHealing2"/>
         <MaxCount value="1"/>
     </CEffectEnumArea>
     <CEffectDamage id="Hero32PassiveM" parent="DU_WEAP">
@@ -12506,7 +12506,7 @@
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
         <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="9" Effect="Hero32PassiveMo"/>
+        <AreaArray Radius="15" Effect="Hero32PassiveMo"/>
     </CEffectEnumArea>
     <CEffectDamage id="Hero27Skill1D2" parent="DU_WEAP">
         <ValidatorArray value="Hero27Skill1In"/>

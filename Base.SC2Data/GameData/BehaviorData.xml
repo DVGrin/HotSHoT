@@ -17736,7 +17736,6 @@
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
-        <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\InviButton.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <BuffFlags index="RefreshStack" value="1"/>
@@ -17758,6 +17757,8 @@
             </Cost>
         </DamageResponse>
         <RemoveValidatorArray value="NotDead222"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero32Passive22">
         <Alignment value="Negative"/>
@@ -17765,7 +17766,6 @@
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
-        <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\InviButton.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="NotDead222"/>
@@ -17787,6 +17787,8 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero32Skill2Passive">
         <Alignment value="Positive"/>
@@ -39454,7 +39456,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <Duration value="450"/>
+        <Duration value="270"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="SpellDong242423">
         <Alignment value="Positive"/>

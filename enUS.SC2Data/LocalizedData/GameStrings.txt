@@ -623,8 +623,6 @@ Behavior/Name/Hero31Skill4Impact=Targeted by Strike Impact
 Behavior/Name/Hero31Skill4cool=Behavior to end rotation strike
 Behavior/Name/Hero31Skill4mover=Increase rotational movement speed
 Behavior/Name/Hero32Passive=Decompose Corpse
-Behavior/Name/Hero32Passive2=Target 1 to disassemble corpse
-Behavior/Name/Hero32Passive22=Target 2 to disassemble corpse
 Behavior/Name/Hero32Passive3=Adrenaline Bonus Attack
 Behavior/Name/Hero32Passive32=Adrenaline Bonus Attack
 Behavior/Name/Hero32Passive322=Adrenaline Bonus Attack
@@ -1660,8 +1658,6 @@ Behavior/Tooltip/Hero31Skill4Impact=
 Behavior/Tooltip/Hero31Skill4cool=
 Behavior/Tooltip/Hero31Skill4mover=
 Behavior/Tooltip/Hero32Passive=
-Behavior/Tooltip/Hero32Passive2=
-Behavior/Tooltip/Hero32Passive22=
 Behavior/Tooltip/Hero32Passive3=
 Behavior/Tooltip/Hero32Passive32=
 Behavior/Tooltip/Hero32Passive322=
@@ -7273,14 +7269,14 @@ Param/Value/00AD05F3=
 Param/Value/00BD21C3=<s val="Header18">Accept</c>
 Param/Value/00C847D5= can't be stopped!
 Param/Value/00D47175=</c> second(s) after - Respawn after..
-Param/Value/00F105AA=Kill/Death/Assists
+Param/Value/00F105AA=   K / D / A
 Param/Value/00F51662=</s></c>
 Param/Value/00F772C4= <s val="HelpPanelListBoxItemTitle">
 Param/Value/0108650D= <s val="HelpPanelListBoxItemTitle">
-Param/Value/011C0259=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases physical defense (DP)</c> by <c val="ffffff">8</c><n/>(Max: 20)
+Param/Value/011C0259=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="FF9866">Defense Power (DP)</c> by <c val="ffffff">8</c>. Defense Power is reducing incoming <c val="FF9999">physical damage</c>.<n/>(Max: 20)
 Param/Value/012323B9=
 Param/Value/013B77B4=</s></c>
-Param/Value/01473258=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase physical defense (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/01473258=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/016587D9=Surfering
 Param/Value/01673405=
 Param/Value/016D7E1B=<s val="Header18"><c val="ccffff">
@@ -7350,7 +7346,7 @@ Param/Value/062D849D=</s>
 Param/Value/0633BE4E=</s>
 Param/Value/064F4967=<c val="33ccff">Shuirin</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■■■</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■□□□</c></s>
 Param/Value/066B0529= <s val="HelpPanelListBoxItemTitle">
-Param/Value/067028AD=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases your basic attack evasion rate by 10%, and when you receive a basic attack from an enemy, you deal 4+<c val="ffffff">(40% of additional <c val="ff9999">DP</c> + 20% of additional <c val="99ffcc">RP</c>)</c> <c val="ffff99">true damage</c> to the attacking enemy. Damaged targets have their Vampiric and Healing effects reduced by 40% for 3 seconds. Seal of Iron deals 60% less damage to monsters.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/067028AD=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases your chance to evade basic attacks by 10%. When you receive a basic attack from an enemy, you deal 4 + <c val="ff9999">(0.4 DP)</c> + <c val="99ffcc">(0.2 RP)</c> <c val="ffff99">True Damage</c> to the attacking enemy. Damaged targets have their Lifesteal/Spellvamp and Healing effects reduced by 40% for 3 seconds. Seal of Iron deals 60% less damage to monsters.<n/>(You can only buy 1 out of 6 seals)
 Param/Value/0683A4DB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/06977E96=/Opposition: 
 Param/Value/069CC3BA=<s val="Header18"><c val="ccffff">
@@ -7366,7 +7362,7 @@ Param/Value/07570867=
 Param/Value/075CB298=
 Param/Value/0771F738=</c>   <c val="6699ff">Max mana:</c><c val="ffffff"> 
 Param/Value/07A85A9A=<s val="Header18"><c val="ccffff">
-Param/Value/07BCCBDB=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase magic defense (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/07BCCBDB=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Resistance Power (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/07EF6D64=Enemy team's 
 Param/Value/07F11049=
 Param/Value/081635A0=
@@ -7401,7 +7397,7 @@ Param/Value/0A313823=</s>
 Param/Value/0A4EA953=</s>
 Param/Value/0A7B17E1=
 Param/Value/0A870B15=</c>   <c val="6699ff">Booster:</c><c val="ffffff"> 
-Param/Value/0A92B03F=<n/>Places a tower that illuminates the field of vision for 2 minutes at the hero's current location.<n/>(cannot be duplicated)
+Param/Value/0A92B03F=<n/>Places a tower at the hero's current location, providing vision for 2 minutes.<n/>(cannot be duplicated)
 Param/Value/0A92B612=<s val="Header18"> 1</s>
 Param/Value/0AE3A101=<Cheat list><n/>-mm: Add Minerals and Gases<n/>-lv: Hero level up<n/>-tu: Create a test hero<n/>-dpi number: Increases the test hero's physical defense stat level by the number<n/>-dpd number: Reduces the test hero's physical defense stat level by the number<n/>-rpi number: Increases the test hero's magic defense stat level by the number<n/>-rpd number: Decrease the test hero's magic defense stat level by the number<n/><n/><Command list><n/>-save: Store storage (cannot store cumulative kills/assists)<n/>-player: Shows handler numbers for all players.
 Param/Value/0AF3A712=</c></s>
@@ -7447,7 +7443,7 @@ Param/Value/0D0DA65C=</s>
 Param/Value/0D1C55A8=</s>
 Param/Value/0D257CFA=</s>
 Param/Value/0D37E18B=Select Hero
-Param/Value/0D38B383=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/0D38B383=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/0D3DC93F=
 Param/Value/0D5AF1AF=Haemosu
 Param/Value/0D8B29CF=Zero
@@ -7465,7 +7461,7 @@ Param/Value/0E319800=</s>
 Param/Value/0E7F8D9B=Hera
 Param/Value/0E8E2B11=</s></c>
 Param/Value/0EB75D56=Demol
-Param/Value/0EC8098E=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's skill attacks by <c val="ffffff">10%</c>. <c val="ffff99">Standard damage</c> or AoE damage only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/0EC8098E=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.<n/>(Max: 3)
 Param/Value/0EDAEAF3= <s val="HelpPanelListBoxItemTitle">
 Param/Value/0EDF51E8=
 Param/Value/0F129044=</s>
@@ -7473,11 +7469,11 @@ Param/Value/0F2CC604=Devola
 Param/Value/0F39DF22=<s val="Header18"><c val="ccffff">
 Param/Value/0F431017=Valkyre
 Param/Value/0F666ECB=Proward
-Param/Value/0F6E4246=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase in attack power (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/0F6E4246=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Damage (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/0F889330=Burndress
 Param/Value/0FA322F6=
 Param/Value/0FA3FB8C= (</c><c val="ffff66">Selecting</c>)</s>
-Param/Value/0FD4A904=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase in attack power (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/0FD4A904=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Damage (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/0FECD8A1=
 Param/Value/0FEDEF0E=(
 Param/Value/0FF38FCB=</c></s>
@@ -7487,7 +7483,7 @@ Param/Value/10144C07=(Agree:
 Param/Value/103861F8=Moria
 Param/Value/104CC61A=</s></c>
 Param/Value/10582CC4=</c>  Defeat: <c val="ffffff">
-Param/Value/105F4D99=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase HP regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/105F4D99=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Health Regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/106EFAA6=Bay Arc
 Param/Value/10904BC4=
 Param/Value/10A1C684=<c val="33ccff">Grant</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
@@ -7508,7 +7504,7 @@ Param/Value/11884929=<s val="PlanetPanelPlanetName">
 Param/Value/11A402F4=</s>
 Param/Value/11B2AE40=
 Param/Value/11BF2BC1=The enemy team is in the process of voting for surrender.
-Param/Value/11CDAC01=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's basic attacks by <c val="ffffff">10%</c>. <c val="ffff99">Fixed damage</c> only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/11CDAC01=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.<n/>(Max: 3)
 Param/Value/11E48D90= A is destroyed.
 Param/Value/120F00B3=)
 Param/Value/121A9DF2=<s val="Header18">
@@ -7522,7 +7518,7 @@ Param/Value/12489DD6= <s val="HelpPanelListBoxItemTitle">
 Param/Value/1255ADAD=</s>
 Param/Value/1262DEFE=
 Param/Value/1276829B=Random selection
-Param/Value/127C08B6=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases maximum HP by <c val="ffffff">100</c>.<n/>(Max: 25)
+Param/Value/127C08B6=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases maximum health points by <c val="ffffff">100</c>.<n/>(Max: 25)
 Param/Value/1299D79F=
 Param/Value/12A551AB=<s val="PurchasePanelGroupName"><c val="78b8ff">Q Skill Enhancement (<c val="ffffff">F1</c>)</c></s><n/><n/>It further strengthens the skills below.
 Param/Value/12AE0B68=<c val="33ccff">Soul Kaiser</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
@@ -7531,7 +7527,7 @@ Param/Value/12BC88A9=
 Param/Value/12BFE644=<s val="Header18">
 Param/Value/12C02D1B=</s></c>
 Param/Value/12DD2C06=<s val="Header18"><c val="ccffff">
-Param/Value/12EACCF9=<n/>Heals the hero by <c val="ffffff">150</c> for 10 seconds.<n/>(Cannot use duplicates)
+Param/Value/12EACCF9=<n/>Heals for <c val="ffffff">150</c> HP over the duration of 10 seconds.<n/>(Cannot buy while active already)
 Param/Value/130D817D=<s val="Header18"><c val="ffffff">Hero lock on/off [<c val="ffe400">F5</c>]</c></s>
 Param/Value/132BAF62=<c val="33ccff">Jelquus</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Warrior</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/133EDE5E=<c val="33ccff">Grant</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
@@ -7586,7 +7582,7 @@ Param/Value/168A8FFF=
 Param/Value/16953F6A=</s>
 Param/Value/169C3EB1=<s val="Header18">
 Param/Value/16A2EEFA=
-Param/Value/16A3EF70=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase in attack power (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/16A3EF70=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Damage (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/16F941D9=
 Param/Value/17206531=<n/></c><c val="6699ff">Magic veil:</c><c val="ffffff"> 
 Param/Value/1736D2B2=Galvalon
@@ -7613,7 +7609,7 @@ Param/Value/182EE93E=
 Param/Value/1831C539=<s val="Header18">
 Param/Value/18401CFC=0
 Param/Value/1841795E= <s val="HelpPanelListBoxItemTitle">
-Param/Value/184B0E55=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases attack (+AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
+Param/Value/184B0E55=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="ff9999">Attack Damage (AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
 Param/Value/185E2614=<s val="Header18"><c val="ccffff">
 Param/Value/1869B959=Farming
 Param/Value/1878496C=<c val="33ccff">Devola</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Warrior, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
@@ -7621,7 +7617,7 @@ Param/Value/189B2D59=<c val="ccccff">/</c>
 Param/Value/18DBD4EB=
 Param/Value/18DF7C33=<s val="Header18"><c val="ccffff">
 Param/Value/18E8773C=<c val="33ccff">Kerberos</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Warrior, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
-Param/Value/18EE85FD=<s val="PurchasePanelGroupName"><c val="78b8ff">Magic veil (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/18EE85FD=<s val="PurchasePanelGroupName"><c val="78b8ff">Magic Veil (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/18EED40E=
 Param/Value/1909E8DA=Beacon
 Param/Value/19160477= is destroyed.
@@ -7641,7 +7637,7 @@ Param/Value/199C7F6A=<s val="Header18"><c val="ffffff">
 Param/Value/199C91AA=<s val="PurchasePanelGroupName"><c val="78b8ff">Focus shot</s></c><n/><n/>[Active] Deals <c val="ffff99">fixed damage</c> equal to 250 + 25 x hero level to a minion or neutral monster. Recovers 25% of your max HP when used on monsters.
 Param/Value/199EBAA4=<c val="33ccff">Jade</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin, Stealth</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■■□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">□□□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/19C53978= is regenerated.
-Param/Value/19D42EB2=<s val="PurchasePanelGroupName"><c val="78b8ff">Hawk eye (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/19D42EB2=<s val="PurchasePanelGroupName"><c val="78b8ff">Eye Of The Hawk (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/19DBA674=<s val="ExitGameTitle">
 Param/Value/19E9A1F6=Xolus
 Param/Value/19EFD31F= (<c val="ffff66">Selecting</c>)</s>
@@ -7685,7 +7681,7 @@ Param/Value/1CC8EA31=</s></c>
 Param/Value/1CD6E931=<s val="PurchasePanelNoSelection">
 Param/Value/1CD88668=
 Param/Value/1CF1FA35=</s>
-Param/Value/1CF49202=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase magic defense (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/1CF49202=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Resistance Power (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/1CFE8910=<s val="Header18"><c val="6699ff">
 Param/Value/1D097368=
 Param/Value/1D14E3A5=<s val="Header18"><c val="6699ff">
@@ -7734,12 +7730,12 @@ Param/Value/1FEBB9B3=
 Param/Value/1FF4C4A6=<n/>Increases mana regeneration rate by <c val="ffffff">0.6</c>.<n/>(max: 20)
 Param/Value/1FFEB8BA=0
 Param/Value/2011F731='s turn.
-Param/Value/2013D8A0=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase maximum HP (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/2013D8A0=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Maximum Health Points (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/202109D2=0
 Param/Value/20603998= will be regenerated soon.
 Param/Value/206B55A6=Magner
 Param/Value/2083DE81=<s val="Header18">
-Param/Value/20A73C7C=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="99ffcc">Increases Magic Defense (RP)</c> by <c val="ffffff">8</c>.<n/>(Max: 20)
+Param/Value/20A73C7C=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99ffcc">Resistance Power (RP)</c> by <c val="ffffff">8</c>. Resistance Power is reducing incoming <c val="80FFFF">magical damage</c>.<n/>(Max: 20)
 Param/Value/20B10748=
 Param/Value/20BED578=<s val="Header18"><c val="ccffff">
 Param/Value/20C9BA3A=
@@ -7748,7 +7744,7 @@ Param/Value/20D5B31B=Beacon
 Param/Value/20DC55D5=(
 Param/Value/20EF8408=random selection
 Param/Value/211C87AC=</s>
-Param/Value/213501BE=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase in attack power (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/213501BE=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Damage (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/213B30BB=
 Param/Value/21431BAF=)
 Param/Value/216F90A0=</s>
@@ -7760,7 +7756,7 @@ Param/Value/21C66CDE=
 Param/Value/21CBD8ED=</s></c>
 Param/Value/21CD8375=Niglos
 Param/Value/21FE72A8= is destroyed.
-Param/Value/22057B90=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from minions or neutral monsters by 20%, and deals <c val="ffffff">2</c> + 2 x hero level <c val="99ffcc">magic to nearby enemies every second. Deals damage</c>.
+Param/Value/22057B90=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from neutral monsters by 20%. Deals <c val="99ffcc">magical damage</c> equal to 2 + 2 x hero level to nearby enemies every second.
 Param/Value/220CEBD0=</c> second(s).</s>
 Param/Value/22141F2D=
 Param/Value/221740D1=
@@ -7789,7 +7785,7 @@ Param/Value/236EE5F1=Gianter
 Param/Value/2396CF09=Private selection
 Param/Value/23A1D5C9=
 Param/Value/23A9F22D=</s>
-Param/Value/23B10544=<s val="PurchasePanelGroupName"><c val="78b8ff">Skill cooldown reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/23B10544=<s val="PurchasePanelGroupName"><c val="78b8ff">Cooldown Reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/23C288C7=
 Param/Value/23CF5BBC= <s val="HelpPanelListBoxItemTitle">
 Param/Value/23E01348=/Opposition: 
@@ -7819,7 +7815,7 @@ Param/Value/2563897E=(Agree:
 Param/Value/256858A0=I'm not dying!!
 Param/Value/25AE5F57=</c></s>
 Param/Value/25B9ED84=</s>
-Param/Value/25D75730=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack speed (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/25D75730=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Speed (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/25ED2472=<c val="33ccff">Kaion</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Wizard, Assassin</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■■□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
 Param/Value/26185934=
 Param/Value/26479604=Blane
@@ -7855,7 +7851,7 @@ Param/Value/28CB0911=Test player
 Param/Value/28DD364C=
 Param/Value/28E8BFB6=</c><c val="ccffff"> second(s) after - the game will start.</c>
 Param/Value/29120B95=<s val="Header18"><c val="888888">
-Param/Value/2927F712=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases attack (+AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
+Param/Value/2927F712=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="ff9999">Attack Damage (AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
 Param/Value/293872FA=
 Param/Value/293F10F3=
 Param/Value/2952BE70=
@@ -7910,7 +7906,7 @@ Param/Value/2C838535=</c>   <c val="6699ff">Seal of Resistance:</c><c val="fffff
 Param/Value/2CA00620=<s val="Header18">
 Param/Value/2CB54EC3=</s>
 Param/Value/2CBED175=Leinard
-Param/Value/2CC75CD2=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the evasion rate of the hero's basic attacks from enemies by <c val="ffffff">10%</c>. Evasion ignores 80% of basic attack damage.<n/>(Max: 3)
+Param/Value/2CC75CD2=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to evade basic attacks by <c val="ffffff">10%</c>. Successfully evading prevents 80% of the incoming damage.<n/>(Max: 3)
 Param/Value/2CCE880D=
 Param/Value/2CCF2FB3=<s val="Header18">
 Param/Value/2CE2A158=
@@ -7929,7 +7925,7 @@ Param/Value/2DEEBAF2=Focus shot
 Param/Value/2E477FA4=
 Param/Value/2E58C9CF=
 Param/Value/2E687D1E=</c></s>
-Param/Value/2E68C9BA=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack vampiric (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/2E68C9BA=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Lifesteal (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/2E6BD199=/Opposition: 
 Param/Value/2EA9BFAB=Cleansee
 Param/Value/2EAA36A2=</s></c>
@@ -7942,7 +7938,7 @@ Param/Value/2EF49552=Jade
 Param/Value/2F073264=
 Param/Value/2F0FBECA=Niglos
 Param/Value/2F17B680=
-Param/Value/2F1D5C63=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces hero's skill cooldown by <c val="ffffff">10%</c>.<n/>(Max: 3)
+Param/Value/2F1D5C63=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces the cooldown of skills by <c val="ffffff">10%</c>.<n/>(Max: 3)
 Param/Value/2F244599=Govan
 Param/Value/2F3247B5=
 Param/Value/2F372B06=
@@ -7950,7 +7946,7 @@ Param/Value/2F41B015= is regenerated.
 Param/Value/2F47B3DE=</s></c>
 Param/Value/2F4E15DE=</s>
 Param/Value/2F557583=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
-Param/Value/2F67E042=<s val="PurchasePanelGroupName"><c val="78b8ff">Skill cooldown reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/2F67E042=<s val="PurchasePanelGroupName"><c val="78b8ff">Cooldown Reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/2F6AA662=
 Param/Value/2F759055=<s val="Header18"> 1</s>
 Param/Value/2F79A13D=<s val="Header18"><c val="ccffff">
@@ -7970,7 +7966,7 @@ Param/Value/305526FB=<s val="Header18"><c val="888888">
 Param/Value/3055F9D1=</s>
 Param/Value/307D03DF= requested<n/>Hero replacement</s>
 Param/Value/3081669B=)
-Param/Value/30A22F9D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase critical hit rate (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/30A22F9D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Critical Hit Chance (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/30BC5E5F=
 Param/Value/30C3264C=<s val="Header18">
 Param/Value/30CA022A=The first victim has arrived!
@@ -7992,7 +7988,7 @@ Param/Value/31D6425F=Lack of minerals.
 Param/Value/31FF4A28=) declares surrender to the enemy team.
 Param/Value/320F37A0=</s></c>
 Param/Value/320F877C=
-Param/Value/3244915F=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spell Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/3244915F=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Ability Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/324C8A95=<s val="PlanetPanelPlanetName">
 Param/Value/3258C638=Daisy
 Param/Value/32655D2E=Enemy team's 
@@ -8004,7 +8000,7 @@ Param/Value/32B16E6E=<c val="33ccff">Metel</c><s val="Header18"><n/><n/><c val="
 Param/Value/32D71BEF= (<c val="ffff66">Selecting</c>)</s>
 Param/Value/32E6FC84=</s></c>
 Param/Value/32ED0183=<c val="33ccff">Musashi</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■■□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
-Param/Value/3308F27F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces hero's skill cooldown by <c val="ffffff">10%</c>.<n/>(Max: 3)
+Param/Value/3308F27F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces the cooldown of skills by <c val="ffffff">10%</c>.<n/>(Max: 3)
 Param/Value/3323CBC3=<s val="PurchasePanelGroupName"><c val="78b8ff">R skill enhancement (<c val="ffffff">F4</c>)</c></s><n/><n/>It further strengthens the skills below.
 Param/Value/3327EAD3=Blink
 Param/Value/333C96D8=</s>
@@ -8077,7 +8073,7 @@ Param/Value/372E2BD4=Cleanse
 Param/Value/3734A6EB=Jango
 Param/Value/373CE98F=</s></c>
 Param/Value/3768D684=
-Param/Value/37A6EFC0=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase critical hit rate (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/37A6EFC0=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Critical Hit Chance (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/37C6F9B8=
 Param/Value/37CFC183=<s val="PlanetPanelPlanetName">
 Param/Value/37CFCE72=<s val="Header18">
@@ -8133,7 +8129,7 @@ Param/Value/3B6F14C2=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/3B712892=</s>
 Param/Value/3B94E9B5=<c val="33ccff">Land Baron</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Defense, Ranged</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
 Param/Value/3B96CF73=Moria
-Param/Value/3B9EF42D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase HP regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/3B9EF42D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Health Regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/3BC0F0ED=<s val="Header18"><c val="ffffff">
 Param/Value/3BD40790= is destroyed.
 Param/Value/3BEF4AFB= additional Minerals!
@@ -8171,9 +8167,9 @@ Param/Value/3E7488AA=</s>
 Param/Value/3E74B3CA=Please wait while the storage is being saved.<n/>(You may lose your storage data if you leave the game midway.)
 Param/Value/3E766ECA=<s val="ExitGameTitle">
 Param/Value/3E76756A=</s></c>
-Param/Value/3E816046=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase physical defense (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/3E816046=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/3E8FC01D=
-Param/Value/3E972BDA=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>When attacking an enemy with a skill, the target takes <c val="ffff99">fixed damage</c> for 4 seconds by 1+<c val="ffffff">(20% of additional <c val="ff9999">AD</c>/<c val="99ffcc">AP</c>)</c> every 1 sec.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/3E972BDA=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>When attacking an enemy with a skill, the target takes 1 + <c val="ff9999">(0.2 AD)</c> + <c val="99ffcc">(0.2 AP)</c> <c val="ffff99">True Damage</c> every second for 4 seconds.<n/>(You can only buy 1 out of 6 seals)
 Param/Value/3EA6F201=
 Param/Value/3EBE670F=<s val="Header18"><c val="ccffff">
 Param/Value/3EBEC6E7=Enemy team's 
@@ -8184,7 +8180,7 @@ Param/Value/3F09DC0D=</s></c>
 Param/Value/3F35A2DB=</s></c>
 Param/Value/3F436E23='s turn
 Param/Value/3F6004C5=Leinard
-Param/Value/3F619813=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from minions or neutral monsters by 20%, and deals <c val="ffffff">2</c> + 2 x hero level <c val="99ffcc">magic to nearby enemies every second. Deals damage</c>.
+Param/Value/3F619813=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from neutral monsters by 20%. Deals <c val="99ffcc">magical damage</c> equal to 2 + 2 x hero level to nearby enemies every second.
 Param/Value/3F77CCA3= <s val="HelpPanelListBoxItemTitle">
 Param/Value/3F8EDB63= <s val="HelpPanelListBoxItemTitle">
 Param/Value/3FA0B549=
@@ -8280,7 +8276,7 @@ Param/Value/45808609=<s val="Header18"><c val="ffffff">
 Param/Value/4584E4FA=
 Param/Value/458E87A8=</s></c>
 Param/Value/459896CF=
-Param/Value/45A143F6=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase critical hit rate (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/45A143F6=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Critical Hit Chance (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/45C8788A=
 Param/Value/45E20482=
 Param/Value/461FD990=)
@@ -8352,7 +8348,7 @@ Param/Value/4AF7E446= is destroyed.
 Param/Value/4AFD709C=</c></s>
 Param/Value/4B04EABB=Guard tower
 Param/Value/4B0D05CF=
-Param/Value/4B152A48=<s val="PurchasePanelGroupName"><c val="78b8ff">Hawk eye (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/4B152A48=<s val="PurchasePanelGroupName"><c val="78b8ff">Eye Of The Hawk (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/4B1E7C27=</s></c>
 Param/Value/4B219FBE=Bax
 Param/Value/4B2DB28D=
@@ -8400,7 +8396,7 @@ Param/Value/4E4FC1AD= <s val="HelpPanelListBoxItemTitle">
 Param/Value/4E6E4ACD=
 Param/Value/4E778ACD=
 Param/Value/4EAB037A=Luna
-Param/Value/4EB03C3A=<s val="PurchasePanelGroupName"><c val="78b8ff">HP potion (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/4EB03C3A=<s val="PurchasePanelGroupName"><c val="78b8ff">Health Potion (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/4EC2F48A=<s val="PurchasePanelGroupName"><c val="78b8ff">Berserk</s></c><n/><n/>[Passive] Permanently increases the hero's basic attack speed by 17% and movement speed by 5%.
 Param/Value/4ED678AB=</s>
 Param/Value/4EE897B1=
@@ -8454,7 +8450,7 @@ Param/Value/52B81D08=Focus shot
 Param/Value/52C63FE2=
 Param/Value/52CEBFD9=<s val="PurchasePanelGroupName"><c val="78b8ff">Attack Evasion Rate Increase (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/52D75577=Lack of minerals.
-Param/Value/52E90764=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance of critical strikes from hero's basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
+Param/Value/52E90764=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to land critical strikes with basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
 Param/Value/530D95EA=
 Param/Value/5313DEA9=
 Param/Value/5315943E=
@@ -8466,7 +8462,7 @@ Param/Value/534A9DE2=</c>   <c val="6699ff">Seal of Curse:</c><c val="ffffff">
 Param/Value/53619D25=
 Param/Value/53A03F26=
 Param/Value/53AD8A0C=Beacon
-Param/Value/53ADDDAC=<n/>Places a tower that illuminates the field of vision for 3 minutes at the hero's current location.<n/>(Cannot be duplicated)
+Param/Value/53ADDDAC=<n/>Places a tower at the hero's current location, providing vision for 2 minutes.<n/>(cannot be duplicated)
 Param/Value/53B1CA4F=
 Param/Value/53E2AE88=<n/></c><c val="6699ff">Seal of Iron:</c><c val="ffffff"> 
 Param/Value/53E8D3ED=</s>
@@ -8475,7 +8471,7 @@ Param/Value/5425FB30= requested<n/>Hero replacement</s>
 Param/Value/542BC3C0= <s val="HelpPanelListBoxItemTitle">
 Param/Value/54434504=<s val="GameOverDialogTitle">
 Param/Value/546BB54B=
-Param/Value/546F2B11=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack evasion rate (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/546F2B11=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Evasion (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/548F99D0=</c></s>
 Param/Value/5494412A=Healing Mana
 Param/Value/54DC5942=Jelquus
@@ -8505,14 +8501,14 @@ Param/Value/5637470D=/Opposition:
 Param/Value/5643C2A6=Number of exits
 Param/Value/56534FAC=Enemy team's 
 Param/Value/565D1841= is regenerated.
-Param/Value/5675CE61=<s val="PurchasePanelGroupName"><c val="78b8ff">Skill cooldown reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/5675CE61=<s val="PurchasePanelGroupName"><c val="78b8ff">Cooldown Reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/56A18217=</s>
 Param/Value/56AC60FE=
 Param/Value/56AD185F=</s>
 Param/Value/56BAD586=
-Param/Value/56C3945D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase maximum HP (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/56C3945D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Maximum Health Points (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/56C6860D=
-Param/Value/56E70969=<s val="PurchasePanelGroupName"><c val="78b8ff">Mana potion (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/56E70969=<s val="PurchasePanelGroupName"><c val="78b8ff">Mana Potion (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/56E9B7F1=<n/></c><c val="6699ff">Devil's Flask:</c><c val="ffffff"> 
 Param/Value/57138EC3=<s val="Header18">
 Param/Value/571733E0=
@@ -8544,12 +8540,12 @@ Param/Value/58EF6625=Not enough vespene gas.
 Param/Value/58F284A5=
 Param/Value/590EA087=)
 Param/Value/5910D4FA=<s val="PurchasePanelCost"><c val="ffffff">
-Param/Value/5936EEEA=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase skill vamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/5936EEEA=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spellvamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/59556D1E= <s val="HelpPanelListBoxItemTitle">
 Param/Value/595C5E63=
 Param/Value/596B7EC1=</s></c>
 Param/Value/59DF8058=
-Param/Value/59E5C445=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack vampiric (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/59E5C445=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Lifesteal (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/5A09C314=</s></c>
 Param/Value/5A0C54C8=
 Param/Value/5A294C24=<s val="Header18"><c val="ccffff">
@@ -8576,7 +8572,7 @@ Param/Value/5BAB177E=<c val="33ccff">Luna</c><s val="Header18"><n/><n/><c val="6
 Param/Value/5BAF8574=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/5BB13B51=<s val="Header18"><c val="ffffff">
 Param/Value/5BBE3C44=<c val="33ccff">Deken</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">□□□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
-Param/Value/5BD409C6=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Basic attacks deal <c val="ffff99">fixed damage</c> equal to 2+<c val="ffffff">(20% of bonus <c val="ff9999">AD</c>/15% of additional <c val="99ffcc">AP</c>)</c>. Charges every 6 seconds, drains the charge and deals 3x additiona damage when the charge is complete. Also, basic attack range increases by 1.5 for ranged heroes and 0.5 for melee heroes, and basic attacks increase movement speed by 5% for ranged heroes and 10% for melee heroes for 2 seconds.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/5BD409C6=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Your Weapon is now charging every 6s. Basic attacks deal bonus <c val="ffff99">True Damage</c> equal to 2 + <c val="ff9999">(0.2 AD)</c> + <c val="99ffcc">(0.15 AP)</c>. If your weapon is charged the bonus damage is tripled for the next attack. Basic attack range is increased by 1.5 for ranged heroes and 0.5 for melee heroes. Basic attacks increase movement speed by 5% for ranged heroes and 10% for melee heroes for 2 seconds.<n/>(You can only buy 1 out of 6 seals)
 Param/Value/5BF0E5CA=</c></s>
 Param/Value/5BF56652=)
 Param/Value/5BF9D9EE=
@@ -8654,7 +8650,7 @@ Param/Value/60C8470C=Garp
 Param/Value/60D68ED7=<s val="PurchasePanelGroupName"><c val="78b8ff">Scanner</s></c><n/><n/>Illuminates the selected area for 7 seconds and detects cloaked enemies within range.
 Param/Value/60E3B1D9=Celin
 Param/Value/60E87A48=</s>
-Param/Value/60EBD59E=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="99ffcc">Increases Magic Defense (RP)</c> by <c val="ffffff">8</c>.<n/>(Max: 20)
+Param/Value/60EBD59E=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99ffcc">Resistance Power (RP)</c> by <c val="ffffff">8</c>. Resistance Power is reducing incoming <c val="80FFFF">magical damage</c>.<n/>(Max: 20)
 Param/Value/60ECB029=</s>
 Param/Value/60EE4FA2=<s val="PurchasePanelGroupName"><c val="78b8ff">Learn R skills (<c val="ffffff">F4</c>)</c></s><n/><n/>You can learn and use the skills below.
 Param/Value/61205D0E=Netero
@@ -8680,7 +8676,7 @@ Param/Value/628454A3='s record</c></s><n/><n/>
 Param/Value/62B9222C=Select Hero
 Param/Value/62BC9DE2=
 Param/Value/630A62CE=<s val="Header18"><c val="ccffff">
-Param/Value/6332FECD=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces hero's skill cooldown by <c val="ffffff">10%</c>.<n/>(Max: 3)
+Param/Value/6332FECD=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces the cooldown of skills by <c val="ffffff">10%</c>.<n/>(Max: 3)
 Param/Value/6390C544= <s val="HelpPanelListBoxItemTitle">
 Param/Value/639EDA9D=<s val="Header18">
 Param/Value/63A99AB4=<s val="PlanetPanelPlanetName">
@@ -8699,14 +8695,14 @@ Param/Value/6472DEC2=
 Param/Value/6481D6FD=
 Param/Value/64929EDC=<s val="Header18">
 Param/Value/64A08086=
-Param/Value/64B96C4D=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="99ffcc">Increases Magic Defense (RP)</c> by <c val="ffffff">8</c>.<n/>(Max: 20)
+Param/Value/64B96C4D=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99ffcc">Resistance Power (RP)</c> by <c val="ffffff">8</c>. Resistance Power is reducing incoming <c val="80FFFF">magical damage</c>.<n/>(Max: 20)
 Param/Value/64CF525D=
 Param/Value/64F63D49=Mordin
 Param/Value/651EFEDB=<s val="PurchasePanelGroupName"><c val="78b8ff">감시탑 (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/65257D20=
 Param/Value/652FC3C6=<s val="GameOverDialogTitle">
 Param/Value/655AB2C9=
-Param/Value/656F7482=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spell Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/656F7482=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Ability Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/6576658A= <s val="HelpPanelListBoxItemTitle">
 Param/Value/65896E39=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/658D6050=Zero
@@ -8733,7 +8729,7 @@ Param/Value/6778B434= <s val="HelpPanelListBoxItemTitle"><c val="ff0000">You can
 Param/Value/6782646E=
 Param/Value/67BF93CA=
 Param/Value/67F4EFB9=Drager
-Param/Value/67FF1ED3=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Skill Vamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/67FF1ED3=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spellvamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/6810EC64=<s val="Header18"><c val="ffffff">
 Param/Value/68124A58=<s val="Header18">
 Param/Value/681A2C62=
@@ -8838,13 +8834,13 @@ Param/Value/6FEFF6D7= <s val="HelpPanelListBoxItemTitle">
 Param/Value/6FF2B7CB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/7026A8AF=Mineral 
 Param/Value/70326EC8=
-Param/Value/7037D2B3=<n/>Until the hero dies, gain 16 base damage and 15% base attack speed. Also, basic attacks reduce the target's Vampiric and Healing effects by 40% for 3 seconds.
+Param/Value/7037D2B3=<n/>Until the hero dies, gain 16 base damage and 15% base attack speed. Basic attacks reduce the target's Lifesteal/Spellvamp and Healing effects by 40% for 3 seconds.
 Param/Value/704236E9=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/704EA586=
 Param/Value/70673AA7= (<c val="ffff66">Selecting</c>)</s>
 Param/Value/70691FAD=</c>   <c val="99ffcc">Magic Defense (RP):</c><c val="ffffff"> 
 Param/Value/706CC8C6=<s val="Header18"><c val="6699ff">Cumulative Kills/Assists: </c><c val="ffffff">
-Param/Value/707486D0=<s val="PurchasePanelGroupName"><c val="78b8ff">Lava parts (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/707486D0=<s val="PurchasePanelGroupName"><c val="78b8ff">Lava Parts (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/708D5AA9=
 Param/Value/7097E052=<s val="Header18">
 Param/Value/70B56CE8=(Agree: 
@@ -8877,7 +8873,7 @@ Param/Value/73BC4291=
 Param/Value/73E52FC3=Xion
 Param/Value/74290F19=Enemy team's 
 Param/Value/74324B3B= acheive!
-Param/Value/74423AD9=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spell Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/74423AD9=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Ability Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/7446F680=Kereberos
 Param/Value/744946CE=
 Param/Value/747CCAF4=</s>
@@ -8891,7 +8887,7 @@ Param/Value/74CF5B12=
 Param/Value/74D03530= <s val="HelpPanelListBoxItemTitle">
 Param/Value/74E55035=
 Param/Value/74F33E40=Not enough vespene gas.
-Param/Value/74F45D38=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from neutral monsters by 20%, and deals <c val="99ffcc">magical damage</c> equal to 2 + 2 x hero level to nearby enemies every second.
+Param/Value/74F45D38=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from neutral monsters by 20%. Deals <c val="99ffcc">magical damage</c> equal to 2 + 2 x hero level to nearby enemies every second.
 Param/Value/74FA41AB=<s val="Header18"><c val="ccffff">
 Param/Value/750E4EEA=(Agree: 
 Param/Value/75172F91=<s val="Header18">
@@ -8941,7 +8937,7 @@ Param/Value/778CB3D7= /
 Param/Value/77953C05=Benderzone
 Param/Value/77B4FB88=
 Param/Value/77B75543=Lack of minerals.
-Param/Value/77C9F250=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases maximum HP by <c val="ffffff">100</c>.<n/>(max: 25)
+Param/Value/77C9F250=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases maximum health points by <c val="ffffff">100</c>.<n/>(max: 25)
 Param/Value/77D1CEEB=
 Param/Value/77E7CBBC=
 Param/Value/77FAB459=Dark Ray
@@ -8952,7 +8948,7 @@ Param/Value/78139A6F= is really great!
 Param/Value/7819E258=
 Param/Value/781CCDB4=<s val="CantinaLevelStart">The hero has been killed.</s>
 Param/Value/782A238D=<s val="GameOverDialogTitle">
-Param/Value/782C3F0D=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's basic attacks by <c val="ffffff">10%</c>. <c val="ffff99">Fixed damage</c> only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/782C3F0D=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.<n/>(Max: 3)
 Param/Value/78321FB8= <s val="HelpPanelListBoxItemTitle">
 Param/Value/784CC637=
 Param/Value/784ECCE0=<c val="ccccff">/</c>
@@ -8969,7 +8965,7 @@ Param/Value/790178B2=</c>  Win rate: <c val="ffffff">
 Param/Value/7901A076=<s val="ExitGameTitle">
 Param/Value/7914B5D0=/Opposition: 
 Param/Value/792A8FD9=<s val="Header18"><c val="6699ff">
-Param/Value/793ADEEF=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase magic defense (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/793ADEEF=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Resistance Power (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/793D90C6=</c></s>
 Param/Value/7955829C=</s>
 Param/Value/7964C599= <s val="HelpPanelListBoxItemTitle">
@@ -8981,7 +8977,7 @@ Param/Value/79D0AD77=
 Param/Value/79D95B02=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/79DB5105=
 Param/Value/79EE1A0B=
-Param/Value/7A06C1E6=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase skill vamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/7A06C1E6=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spellvamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/7A29AC5D=
 Param/Value/7A47D794=
 Param/Value/7A57C509=</c></s>
@@ -8992,7 +8988,7 @@ Param/Value/7AD12C13=
 Param/Value/7AD502C2=</s>
 Param/Value/7AD5772A=
 Param/Value/7B0184F4= (</c><c val="ffff66">Selecting</c>)</s>
-Param/Value/7B165D99=<c val="fff600">[1]</c> You can further strengthen the hero by properly increasing the stats according to the hero style with the obtained Mineral and Gas.<n/><c val="42ff00">[2]</c> You can flip the page to see other stats.<n/><n/><s val="PurchasePanelGroupName"><c val="78b8ff"><Recommended stats for each hero></c></s><n/>- <c val="ffffff">Melee warrior</c>: [Increase attack power] or [Increase ability power], [Increase in HP], [Lava parts]<n/>- <c val="ffffff">Melee main striker</c>: [Increase attack power], [Increase attack speed], [Increase critical strike rate], [Increase attack vampiric]<n/>- <c val="ffffff">Wizard</c>: [Increase ability power], [Increase mana], [Increase skill vamp ], [Skill cooldown reduction]<n/>- <c val="ffffff">Defense</c>: [Increase physical defense] or [Increase magic defense], [Increase in HP], [Skill cooldown reduction]<n/>- <c val="ffffff">Assassin</c>: [Increase attack power] or [Increase ability power], [Skill cooldown reduction]<n/>- <c val="ffffff">Long-distance striker</c>: [Increase attack power], [Increase attack speed], [Increase critical strike rate], [Increase attack vampiric]<n/><n/>The recommended stats are not absolutely set, and can be changed according to the unique characteristics of the hero or the game situation. If you are new to the game, just be aware that there is a basic way to increase stats.
+Param/Value/7B165D99=<c val="fff600">[1]</c> You can further strengthen the hero by properly increasing the stats according to the hero style with the obtained Mineral and Gas.<n/><c val="42ff00">[2]</c> You can flip the page to see other stats.<n/><n/><s val="PurchasePanelGroupName"><c val="78b8ff"><Recommended stats for each hero></c></s><n/>- <c val="ffffff">Melee warrior</c>: [Increase Attack Damage] or [Increase ability power], [Increase in HP], [Lava parts]<n/>- <c val="ffffff">Melee main striker</c>: [Increase Attack Damage], [Increase attack speed], [Increase critical strike rate], [Increase attack vampiric]<n/>- <c val="ffffff">Wizard</c>: [Increase ability power], [Increase mana], [Increase skill vamp ], [Skill cooldown reduction]<n/>- <c val="ffffff">Defense</c>: [Increase physical defense] or [Increase magic defense], [Increase in HP], [Skill cooldown reduction]<n/>- <c val="ffffff">Assassin</c>: [Increase attack power] or [Increase ability power], [Skill cooldown reduction]<n/>- <c val="ffffff">Long-distance striker</c>: [Increase attack power], [Increase attack speed], [Increase critical strike rate], [Increase attack vampiric]<n/><n/>The recommended stats are not absolutely set, and can be changed according to the unique characteristics of the hero or the game situation. If you are new to the game, just be aware that there is a basic way to increase stats.
 Param/Value/7B3AD691=<s val="PurchasePanelGroupName"><c val="78b8ff">W skill enhancement (<c val="ffffff">F2</c>)</c></s><n/><n/>It further strengthens the skills below.
 Param/Value/7BA68811=
 Param/Value/7BAE27E7=
@@ -9042,7 +9038,7 @@ Param/Value/7E926E27=)
 Param/Value/7E937DC5=
 Param/Value/7E93A884=</s>
 Param/Value/7E9EF9FD=
-Param/Value/7EAD3D35=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the evasion rate of the hero's basic attacks from enemies by <c val="ffffff">10%</c>. Evasion ignores 80% of basic attack damage.<n/>(Max: 3)
+Param/Value/7EAD3D35=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to evade basic attacks by <c val="ffffff">10%</c>. Successfully evading prevents 80% of the incoming damage.<n/>(Max: 3)
 Param/Value/7EBA5755=
 Param/Value/7ED739A0=<s val="Header18"><c val="ffffff">
 Param/Value/7EE08D4A=</s>
@@ -9071,7 +9067,7 @@ Param/Value/8053E07C=
 Param/Value/806A603B=</s>
 Param/Value/807E2BCD=<s val="Header18"><c val="ccffff">View all records</c>
 Param/Value/807F018B=</c>   <c val="6699ff">Booster:</c><c val="ffffff"> 
-Param/Value/8088D325=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="99ffcc">Increases AP</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.<n/>(max: 30)
+Param/Value/8088D325=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99FFFF">Ability Power (AP)</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.<n/>(max: 30)
 Param/Value/80926A4D=</s>
 Param/Value/80B33E2E=
 Param/Value/80BF5648=<s val="Header18"><c val="ccffff">
@@ -9100,7 +9096,7 @@ Param/Value/827D9DE1=<s val="Header18"><c val="ccffff">
 Param/Value/827F35B0=</s>
 Param/Value/828AC058=
 Param/Value/8293832A=<c val="33ccff">Daboto</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Wizard</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■□□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
-Param/Value/829AA365=<n/>Restores the hero's mana by <c val="ffffff">100</c> for 10 seconds.<n/>(Cannot use duplicates)
+Param/Value/829AA365=<n/>Restores <c val="ffffff">100</c> mana over the duration of 10 seconds.<n/>(Cannot use duplicates)
 Param/Value/82A0CD73=<c val="33ccff">Zonda</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, supporter</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/82BC57BC=<s val="Header18"><c val="ccffff">Open score (</c><c val="ffffff">Tab</c><c val="ccffff">)</c>
 Param/Value/82BCDFAF=Number of exits
@@ -9112,7 +9108,7 @@ Param/Value/832BA675=%</c></s>
 Param/Value/833365C3=<s val="Header18"><c val="ccffff">
 Param/Value/833B5199=Lack of minerals.
 Param/Value/83590F5D=Moria
-Param/Value/836385E4=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase maximum mana (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/836385E4=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Maximum Mana (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/837C300D=
 Param/Value/83858482=</s></c>
 Param/Value/8394C363=) declares surrender to the enemy team.
@@ -9130,7 +9126,7 @@ Param/Value/8421A0C8= /
 Param/Value/8436AB5C=
 Param/Value/8455CA56=<c val="33ccff">Pyron</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Wizard, Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
 Param/Value/84650819=Sibarun
-Param/Value/8478101F=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spell Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/8478101F=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Ability Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/8495FDAA=Kereberos
 Param/Value/84B5569A= (</c><c val="66ff00">Ready</c><c val="888888">)</c></s>
 Param/Value/84CD97EF= requested<n/>Hero replacement</s>
@@ -9152,12 +9148,12 @@ Param/Value/859B8A83=<s val="Header18"><c val="ccffff">Open score (</c><c val="f
 Param/Value/859CD796=
 Param/Value/859FDAAA=Govan
 Param/Value/85A4C2DF=(Agree: 
-Param/Value/85B6F2BE=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the evasion rate of the hero's basic attacks from enemies by <c val="ffffff">10%</c>. Evasion ignores 80% of basic attack damage.<n/>(Max: 3)
+Param/Value/85B6F2BE=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to evade basic attacks by <c val="ffffff">10%</c>. Successfully evading prevents 80% of the incoming damage.<n/>(Max: 3)
 Param/Value/85E052E3=</c><n/>(Number of game exits: <c val="ffffff">
 Param/Value/860864D1=</c></s>
 Param/Value/860C9666=
 Param/Value/860E2A50=
-Param/Value/864F237F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Received skill damage is reduced by 10%. Taking skill damage increases your movement speed by 12% for 4 seconds and heals you by 2+<c val="ffffff">(40% of bonus <c val="99ffcc">RP</c> + 20% of bonus <c val="ff9999">DP</c>)%</c> HP every second.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/864F237F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Received skill damage is reduced by 10%. Taking skill damage increases your movement speed by 12% for 4 seconds and heals you for 2 + <c val="99ffcc">(0.4 RP)</c> + <c val="ff9999">(0.2 DP)</c> HP every second.<n/>(You can only buy 1 out of 6 seals)
 Param/Value/86562626=<s val="PurchasePanelNoSelection">
 Param/Value/865B66E8=
 Param/Value/866545F3=
@@ -9201,8 +9197,8 @@ Param/Value/88C5DFE8=</s></c>
 Param/Value/88DA8C55=</s></c>
 Param/Value/88EAA7E1=</s>
 Param/Value/8904870A=
-Param/Value/891B282F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases attack (+AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
-Param/Value/89269619=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's skill attacks by <c val="ffffff">10%</c>. <c val="ffff99">Standard damage</c> or AoE damage only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/891B282F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="ff9999">Attack Damage (AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
+Param/Value/89269619=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.<n/>(Max: 3)
 Param/Value/89441CD6=<c val="ccccff">/</c>
 Param/Value/8986B1F2=<n/>Grants movement reduction to basic attacks and skills until the hero dies. Dealing damage to the target reduces movement speed by 20% for 1 sec.
 Param/Value/89BC0937=<s val="Header18"><c val="6699ff">
@@ -9218,7 +9214,7 @@ Param/Value/8AE69306=Leinard
 Param/Value/8AF03220=<s val="Header18"><c val="ffffff">
 Param/Value/8B0F642B=</s></c>
 Param/Value/8B297E9E=
-Param/Value/8B35521E=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase HP regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/8B35521E=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Health Regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/8B3E88BF=<s val="Header18"><c val="6699ff">
 Param/Value/8B49BB19=<s val="Header18">
 Param/Value/8B4C8174=</s>
@@ -9296,7 +9292,7 @@ Param/Value/8FC032A7=Beacon
 Param/Value/8FC217CF=Storage save is complete.
 Param/Value/8FC5ADD5=
 Param/Value/8FCAE68D=<s val="PlanetPanelPlanetName">
-Param/Value/8FE28A63=<s val="PurchasePanelGroupName"><c val="78b8ff">Lava parts (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/8FE28A63=<s val="PurchasePanelGroupName"><c val="78b8ff">Lava Parts (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/8FE33A80=
 Param/Value/8FEE45E6=Netero
 Param/Value/8FEE8D53=
@@ -9323,7 +9319,7 @@ Param/Value/919A9241=<s val="BattleReportPanelSummaryText"><c val="ffffff">
 Param/Value/91A55FB7=Tangky
 Param/Value/91B24EA1=Elzard
 Param/Value/91B4185C=</c></s>
-Param/Value/91BB6474=<s val="PurchasePanelGroupName"><c val="78b8ff">Skill cooldown reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/91BB6474=<s val="PurchasePanelGroupName"><c val="78b8ff">Cooldown Reduction (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/91C0A3AA=
 Param/Value/91D39A18=
 Param/Value/91DBDADC=<s val="PlanetPanelPlanetName"><c val="ffffff">Opposite</c></s>
@@ -9343,7 +9339,7 @@ Param/Value/92BE3943=<c val="33ccff">Garp</c><s val="Header18"><n/><n/><c val="6
 Param/Value/92C322DB=
 Param/Value/92D53B01=</s></c>
 Param/Value/92D719AD=
-Param/Value/92DCA530=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases attack (+AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
+Param/Value/92DCA530=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases Attack Damage (AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
 Param/Value/934F94E3=<c val="33ccff">Blane</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Warrior</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■■□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■□□□□□□□</c></s>
 Param/Value/93683511=
 Param/Value/9376C70A=
@@ -9374,9 +9370,9 @@ Param/Value/95804919=<c val="33ccff">Venom Bug</c><s val="Header18"><n/><n/><c v
 Param/Value/95DD7527=
 Param/Value/95E33867=
 Param/Value/95E640E3=Benderzone
-Param/Value/95FDC91C=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/95FDC91C=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/960331B1=<c val="6699ff">HP regeneration rate:</c><c val="ffffff"> 
-Param/Value/960D2C83=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases Physical Defense (DP)</c> by <c val="ffffff">8</c>.<n/>(Max: 20)
+Param/Value/960D2C83=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="FF9866">Defense Power (DP)</c> by <c val="ffffff">8</c>. Defense Power is reducing incoming <c val="FF9999">physical damage</c>.<n/>(Max: 20)
 Param/Value/9636AB41=<s val="Header18"><c val="ccffff">
 Param/Value/96385771=(Agree: 
 Param/Value/96399525= <s val="HelpPanelListBoxItemTitle">
@@ -9397,7 +9393,7 @@ Param/Value/97026995=Leinard
 Param/Value/970FE69E=<s val="Header18"><c val="ccffff">
 Param/Value/97116942=</s>
 Param/Value/971561BC=<s val="Header18"><c val="ccffff">
-Param/Value/971AFD3E=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/971AFD3E=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/9746353B=<s val="PurchasePanelGroupName"><c val="78b8ff">Learn Q Skills (<c val="ffffff">F1</c>)</c></s><n/><n/>You can learn and use the skills below.
 Param/Value/9748FA07=<c val="33ccff">Jade</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin, Stealth</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■■□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">□□□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/9753BF33=
@@ -9407,7 +9403,7 @@ Param/Value/9779EC25=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="
 Param/Value/978660D8=
 Param/Value/97A368E8=<s val="PurchasePanelGroupName"><c val="78b8ff">Onyx</s></c><n/><n/>Permanently increases the hero's health regeneration by 1 and base maximum health by 30%.
 Param/Value/97A626F6=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
-Param/Value/97B7197B=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Blocks one skill damage from an enemy, and the veil regenerates after 40 seconds.
+Param/Value/97B7197B=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Magic Veil grants a magic shield which prevents the next incoming spell damage. The Shield regenerates every 40 seconds after successfully blocking damage.
 Param/Value/97D1089E=Obos
 Param/Value/97DE05EF=Eren
 Param/Value/97E83587=<s val="Header18"><c val="ccffff">
@@ -9471,12 +9467,12 @@ Param/Value/9BA3AC10=Elzard
 Param/Value/9BAF4666=</s>
 Param/Value/9BB7AEE1= (</c><c val="66ff00">Ready</c><c val="888888">)</c></s>
 Param/Value/9BC4DD88=Garp
-Param/Value/9BE5ED81=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack Vampiric (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/9BE5ED81=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Lifesteal (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/9BE621C7=) as a result of surrender.
 Param/Value/9BF10ABD= <s val="HelpPanelListBoxItemTitle">
 Param/Value/9BFC2D9D=) will not surrender.
 Param/Value/9C0DD5D0=<n/></c><c val="6699ff">Seal of Iron:</c><c val="ffffff"> 
-Param/Value/9C0F7D59=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Ignores physical defense</c> and <c val="99ffcc">magic defense</c> by approximately <c val="ffffff">15%</c><n/>(max: 3)
+Param/Value/9C0F7D59=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Damage done ignores <c val="ff9866">Defense Power (DP)</c> and <c val="99ffcc">Resistance Power (RP)</c> by approximately <c val="ffffff">15%</c><n/>(max: 3)
 Param/Value/9C204A92= is killed.</s>
 Param/Value/9C4B6505=</s>
 Param/Value/9C537CB8= <s val="HelpPanelListBoxItemTitle">Assist: 
@@ -9504,7 +9500,7 @@ Param/Value/9E23248C=</s>
 Param/Value/9E2F5CDD=</c>   <c val="6699ff">Mana Regeneration Rate:</c><c val="ffffff"> 
 Param/Value/9E2FDA28=</s></c>
 Param/Value/9E3B6519=
-Param/Value/9E4A5D8E=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase physical defense (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/9E4A5D8E=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/9E605C74=
 Param/Value/9E6FDC41=Beacon
 Param/Value/9E79C1EA=<s val="GameOverDialogTitle">
@@ -9524,7 +9520,7 @@ Param/Value/9F86987B=<s val="PurchasePanelGroupName"><c val="78b8ff">W skill enh
 Param/Value/9F92847D=Pyron
 Param/Value/9FA24B7B=
 Param/Value/9FA94D58=Voltma
-Param/Value/9FB47B93=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Ignores physical defense</c> and <c val="99ffcc">magic defense</c> by approximately <c val="ffffff">15%</c><n/>(max: 3)
+Param/Value/9FB47B93=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Damage done ignores <c val="ff9866">Defense Power (DP)</c> and <c val="99ffcc">Resistance Power (RP)</c> by approximately <c val="ffffff">15%</c><n/>(max: 3)
 Param/Value/9FC8ECA9= <s val="HelpPanelListBoxItemTitle">
 Param/Value/9FE47CA9=</c>   <c val="99ffcc">Ability power (AP):</c><c val="ffffff"> 
 Param/Value/9FE9A3C5=</s>
@@ -9567,7 +9563,7 @@ Param/Value/A1D07191= <s val="HelpPanelListBoxItemTitle">Assist:
 Param/Value/A1DD285D=Lack of minerals.
 Param/Value/A1EB5F47=) will not surrender.
 Param/Value/A211DA62=<s val="Header18">
-Param/Value/A214EC24=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance of critical strikes from hero's basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
+Param/Value/A214EC24=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to land critical strikes with basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
 Param/Value/A21CFBE1= is more powerful than you think!
 Param/Value/A22A0F40=Healing Life
 Param/Value/A236A51C=</c></s>
@@ -9639,7 +9635,7 @@ Param/Value/A641DDBE=Giant Spore Tentacles slain.
 Param/Value/A67C4EDB=Valkyre
 Param/Value/A686879B=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
 Param/Value/A69EE620=
-Param/Value/A6B27F25=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">Increases Physical Defense (DP)</c> by <c val="ffffff">8</c>.<n/>(Max: 20)
+Param/Value/A6B27F25=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="FF9866">Defense Power (DP)</c> by <c val="ffffff">8</c>. Defense Power is reducing incoming <c val="FF9999">physical damage</c>.<n/>(Max: 20)
 Param/Value/A6DA1DA9=Enemy team's 
 Param/Value/A6DDF75A=</s>
 Param/Value/A6FEC48D=Kelro
@@ -9656,14 +9652,14 @@ Param/Value/A806C010= <IMG path="Assets\AddIcon\Rank-01NoRank.dds" height="64" w
 Param/Value/A81A6602=</c></s>
 Param/Value/A853CE51=<s val="Header18"><c val="ccffff">
 Param/Value/A85CE738=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 2<n/>Blocks one skill damage from an enemy, and the veil regenerates after 40 seconds.
-Param/Value/A8695773=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="99ffcc">Increases Magic Defense (RP)</c> by <c val="ffffff">8</c>.<n/>(Max: 20)
+Param/Value/A8695773=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99ffcc">Resistance Power (RP)</c> by <c val="ffffff">8</c>. Resistance Power is reducing incoming <c val="80FFFF">magical damage</c>.<n/>(Max: 20)
 Param/Value/A86DBDDC=<s val="Header18"><c val="6699ff">
 Param/Value/A87E4C22=
 Param/Value/A88C19F6=
 Param/Value/A8A7F12D=</s>
 Param/Value/A8AA1181=<s val="PurchasePanelGroupName"><c val="78b8ff">Suffering</s></c><n/><n/>[Active] Reduces enemy hero damage by 40% and movement speed by 30% for 3 seconds.
 Param/Value/A8AA38A9= is regenerated.
-Param/Value/A8B24A22=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase magic defense (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/A8B24A22=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Resistance Power (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/A8D0EDBC=
 Param/Value/A8EDCDC8= <s val="HelpPanelListBoxItemTitle">
 Param/Value/A950FE3B=
@@ -9714,7 +9710,7 @@ Param/Value/AC0B32C4=</s></c>
 Param/Value/AC269CD9= will be regenerated soon.
 Param/Value/AC27522A=(
 Param/Value/AC4756DD=</c>   <c val="6699ff">Demon Seal:</c><c val="ffffff"> 
-Param/Value/AC7BEF73=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance of critical strikes from hero's basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
+Param/Value/AC7BEF73=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to land critical strikes with basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
 Param/Value/AC9995F8=</s>
 Param/Value/ACA8230F=:</s>
 Param/Value/ACB2D430=</s>
@@ -9723,7 +9719,7 @@ Param/Value/ACFB53E5=
 Param/Value/AD14A98F=
 Param/Value/AD2CFA93=Neherenia
 Param/Value/AD419722=<c val="ccccff">/</c>
-Param/Value/AD5FC4A6=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase mana regeneration</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/AD5FC4A6=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Mana Regeneration</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/AD868381=Stat increase tips
 Param/Value/AD90E200=
 Param/Value/AD9E7F8A=
@@ -9821,7 +9817,7 @@ Param/Value/B4CE8A7B=Soul Kaiser
 Param/Value/B4D33109=<n/></c><c val="6699ff">Skill cooldown reduction:</c><c val="ffffff"> 
 Param/Value/B5038C46=
 Param/Value/B521C143=</s>
-Param/Value/B52C4DBD=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase mana regeneration (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/B52C4DBD=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Mana Regeneration (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/B53FD620=Lack of minerals.
 Param/Value/B5430FBE=
 Param/Value/B573CD5A=<s val="ExitGameTitle">
@@ -9851,8 +9847,8 @@ Param/Value/B7136BF5=
 Param/Value/B7215932= <s val="HelpPanelListBoxItemTitle"><c val="ff0000">You cannot surrender now.<n/>(20 minutes of game time must elapse)</c></s>
 Param/Value/B7230614=</s></c>
 Param/Value/B72D3472=<s val="Header18"><c val="ffffff">
-Param/Value/B72DF259=<n/>Grants movement reduction to basic attacks and skills until the hero dies. Dealing damage to the target reduces movement speed by 20% for 1 sec. Also, when you deal skill damage, the target's Vampiric and Healing effects are reduced by 40% for 3 seconds.
-Param/Value/B762C11C=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase physical defense (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/B72DF259=<n/>Grants 20% movementspeed reduction (1s) to basic attacks and skills. When dealing skill damage, the target's Lifesteal/Spellvamp and Healing effects are reduced by 40% for 3 seconds. The Devil's Flask lasts until the hero dies. 
+Param/Value/B762C11C=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/B763A44B=
 Param/Value/B770B2F5=<n/></c><c val="6699ff">Magic Curtain:</c><c val="ffffff"> 
 Param/Value/B7777655=Get 400 Minerals!
@@ -9876,7 +9872,7 @@ Param/Value/B888DD3E=
 Param/Value/B897E2DD=Choose spells
 Param/Value/B8A1AE6B=0
 Param/Value/B8F67E14=Elzard
-Param/Value/B9110BE2=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces hero's skill cooldown by <c val="ffffff">10%</c>.<n/>(Max: 3)
+Param/Value/B9110BE2=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces the cooldown of skills by <c val="ffffff">10%</c>.<n/>(Max: 3)
 Param/Value/B95AEB37=) will not surrender.
 Param/Value/B96CA96E=</s></c>
 Param/Value/B96E5AC2=<s val="Header18">
@@ -9923,7 +9919,7 @@ Param/Value/BBD1EBE6=
 Param/Value/BBE1C688=
 Param/Value/BBE7A9CF=Xion
 Param/Value/BC02BDD0=Voltma
-Param/Value/BC0C4F6D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack evasion rate (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/BC0C4F6D=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Evasion (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/BC19B8D0=<n/></c><c val="6699ff">Maximum HP:</c><c val="ffffff"> 
 Param/Value/BC2945CA= / 
 Param/Value/BC34AD67= will be regenerated soon.
@@ -9956,7 +9952,7 @@ Param/Value/BE5FE003= <s val="HelpPanelListBoxItemTitle">
 Param/Value/BE772B7C=<s val="PlanetPanelPlanetName">
 Param/Value/BE7C7CEA=<c val="33ccff">Michael</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Wizard, Ranged, supporter</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
 Param/Value/BE9870D5=
-Param/Value/BEA13735=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase mana regeneration (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/BEA13735=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Mana Regeneration (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/BEAEC8D0=<s val="PurchasePanelGroupName"><c val="78b8ff">Blink</s></c><n/><n/>[Active] The hero teleports to the designated area.
 Param/Value/BEB58E17=</s>
 Param/Value/BEB7CE3C=
@@ -10001,7 +9997,7 @@ Param/Value/C22AC087=<c val="33ccff">Galvalon</c><s val="Header18"><n/><n/><c va
 Param/Value/C23C054E=</s>
 Param/Value/C25061C5=I'm not dying!!
 Param/Value/C2511753=Musashi
-Param/Value/C258F87A=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's basic attacks by <c val="ffffff">10%</c>. <c val="ffff99">Fixed damage</c> only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/C258F87A=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.<n/>(Max: 3)
 Param/Value/C25CF1B1=
 Param/Value/C25E6834=</s></c>
 Param/Value/C2612890=</s>
@@ -10023,7 +10019,7 @@ Param/Value/C3A850BB=<s val="Header18"><c val="888888">
 Param/Value/C3CEF7EC=
 Param/Value/C3D17B65=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="ff9999">물리 방어력(DP)</c>을 <c val="ffffff">8</c>만큼 증가시킵니다.<n/>(최대치: 20)
 Param/Value/C3D7B535=
-Param/Value/C3E5D723=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's skill attacks by <c val="ffffff">10%</c>. <c val="ffff99">Standard damage</c> or AoE damage only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/C3E5D723=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.<n/>(Max: 3)
 Param/Value/C407CC79=
 Param/Value/C42E3023=(
 Param/Value/C441C9FD=
@@ -10050,7 +10046,7 @@ Param/Value/C5CBF063= <s val="HelpPanelListBoxItemTitle">
 Param/Value/C5D49D43=<c val="00ff06">[ON]</c> Changed to fixed hero selection.
 Param/Value/C5E19E57=Enemy team's 영웅들이 모두 Warrior하였습니다.
 Param/Value/C60D12E8= <s val="HelpPanelListBoxItemTitle">
-Param/Value/C6403340=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/C6403340=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/C6561A10=</s></c>
 Param/Value/C658B722= requested<n/>Hero replacement</s>
 Param/Value/C659DE83=<s val="Header18"><c val="ffffff">
@@ -10077,7 +10073,7 @@ Param/Value/C81401B5=
 Param/Value/C81F8244=
 Param/Value/C825D102=Mineral350 acheive!
 Param/Value/C88E439F=Dark Ray
-Param/Value/C8B41D66=<n/>Increases maximum mana by <c val="ffffff">75</c>.<n/>(Max: 25)
+Param/Value/C8B41D66=<n/>Increases maximum mana by <c val="ffffff">50</c>.<n/>(max: 25)
 Param/Value/C8C5BEA0= <s val="HelpPanelListBoxItemTitle">
 Param/Value/C8D085CA=<s val="PurchasePanelGroupName"><c val="78b8ff">Magic Curtain (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/C8D17ACF=
@@ -10113,7 +10109,7 @@ Param/Value/CAC49F91=</s>
 Param/Value/CAED2B1E=
 Param/Value/CB04E25F=
 Param/Value/CB10884F=<s val="Header18">
-Param/Value/CB17DA82=<s val="PurchasePanelGroupName"><c val="78b8ff">Lava parts (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/CB17DA82=<s val="PurchasePanelGroupName"><c val="78b8ff">Lava Parts (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/CB218ED9= is regenerated.
 Param/Value/CB36202D=</s></c>
 Param/Value/CB418C32=Haemosu
@@ -10146,7 +10142,7 @@ Param/Value/CCE5688D=</s>
 Param/Value/CCE8B961=저장소 저장이 완료되었습니다.
 Param/Value/CCF8B04E=
 Param/Value/CD036D58=Garp
-Param/Value/CD235C53=<s val="PurchasePanelGroupName"><c val="78b8ff">Mana potion (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/CD235C53=<s val="PurchasePanelGroupName"><c val="78b8ff">Mana Potion (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/CD2BC030=0
 Param/Value/CD32922B=<s val="Header18"><c val="ccffff">
 Param/Value/CD397CC1=Lack of minerals.
@@ -10214,7 +10210,7 @@ Param/Value/D1FFD232=
 Param/Value/D20A6C2E=
 Param/Value/D22C675B=
 Param/Value/D2349059=</c> second(s) after - Respawn after.</s>
-Param/Value/D23DAF42=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifestain applied to a hero's basic attacks by <c val="ffffff">10%</c>. <c val="ffff99">Fixed damage</c> only takes 60% Vampire.<n/>(Max: 3)
+Param/Value/D23DAF42=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.<n/>(Max: 3)
 Param/Value/D24522CA=<c val="ccccff">/</c>
 Param/Value/D269EB39=
 Param/Value/D27B1B70=</c>/<c val="ffffff">
@@ -10296,7 +10292,7 @@ Param/Value/D7C43A43= is destroyed.
 Param/Value/D7C5D449=Guard tower
 Param/Value/D7D256FD=Demol
 Param/Value/D7D559DA=
-Param/Value/D7E1C95B=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/><c val="99ffcc">Increases AP</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.<n/>(max: 30)
+Param/Value/D7E1C95B=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases<c val="99FFFF"> Ability Power (AP)</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.<n/>(max: 30)
 Param/Value/D7E74E56=
 Param/Value/D7ED20C2=</s></c>
 Param/Value/D80A0FFA=
@@ -10381,7 +10377,7 @@ Param/Value/DD679A31=Enemy team's
 Param/Value/DD929588=게임 시간 30분이 경과하였습니다.<n/>(게임 시간 35분이 경과하면 자동으로 승패가 결정됩니다)
 Param/Value/DD93132A=<c val="33ccff">Bax</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Wizard</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■□□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■□□□□□□□□</c></s>
 Param/Value/DD94E2B4=<s val="Header18">
-Param/Value/DDA2C675=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spell Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/DDA2C675=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Ability Power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/DDE5A5FD=</s></c>
 Param/Value/DDED09B0=<s val="Header18">영웅 능력치 증가</s>
 Param/Value/DE1EF7E4=
@@ -10430,7 +10426,7 @@ Param/Value/E0A51366= will be regenerated soon.
 Param/Value/E0BA54A0=<s val="PurchasePanelGroupName"><c val="78b8ff">Seal of Iron (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/E0BF0368=
 Param/Value/E0D3D83D=
-Param/Value/E0DED4C4=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase critical hit rate (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/E0DED4C4=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Critical Hit Chance (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/E0E1A27E=<s val="GameOverDialogTitle">
 Param/Value/E0E6C633=
 Param/Value/E0FBBB0D=Mineral
@@ -10482,7 +10478,7 @@ Param/Value/E459DCAD=</s></c>
 Param/Value/E46758E9=Warcorn
 Param/Value/E47A8158=(Agree: 
 Param/Value/E47B9ADD=Beacon
-Param/Value/E47F7098=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase maximum mana (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/E47F7098=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Maximum Mana (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/E49389FF=
 Param/Value/E4B8219F=Zonda
 Param/Value/E4E47DCD=
@@ -10541,7 +10537,7 @@ Param/Value/E8CDBB76=<s val="Header18"><c val="ff0000">
 Param/Value/E8DF820D=<s val="Header18">
 Param/Value/E8E68674=
 Param/Value/E8EC79F1=Hera
-Param/Value/E8EEDC9A=<s val="PurchasePanelGroupName"><c val="78b8ff">HP potion (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/E8EEDC9A=<s val="PurchasePanelGroupName"><c val="78b8ff">Health Potion (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/E8FB06B5=/Opposition: 
 Param/Value/E8FFC4AA=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
 Param/Value/E93C159A= <s val="HelpPanelListBoxItemTitle">
@@ -10596,7 +10592,7 @@ Param/Value/ECDA9651=
 Param/Value/ECDC1101= <s val="HelpPanelListBoxItemTitle"><c val="ff0000">You cannot surrender now.<n/>(게임 시간이 20분을 경과해야 합니다.)</c></s>
 Param/Value/ECF58657=</s>
 Param/Value/ED05686E=
-Param/Value/ED07ED74=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases movement speed by 6%, critical strike by 10%, and basic attack speed by 5+<c val="ffffff">(30% of additional <c val="ff9999">AD</c>/25% of additional <c val="99ffcc">AP</c>)</c>%, and critical strike increases your base damage by 2+ (bonus attack speed level x 3) for 4 seconds.<n/>(You can only purchase 1 seal out of 6)
+Param/Value/ED07ED74=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases movement speed by 6%, critical strike chance by 10% and basic attack speed by 5 + <c val="ffffff">(30% of additional <c val="ff9999">AD</c>/25% of additional <c val="99ffcc">AP</c>)</c>%. Critical strikes increase your base damage by 2 + (attack speed level x 3) for 4 seconds.<n/>(You can only purchase 1 seal out of 6)
 Param/Value/ED1344A7= / 
 Param/Value/ED1CCC58=
 Param/Value/ED334879=<s val="Header18">
@@ -10624,7 +10620,7 @@ Param/Value/EF1793FF=Not enough vespene gas.
 Param/Value/EF1D4B43=Daisy
 Param/Value/EF29694E=
 Param/Value/EF2C7C37=Enemy team's 
-Param/Value/EF2CA8D2=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase HP regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/EF2CA8D2=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Health Regeneration (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/EF30BE66=Bay Arc
 Param/Value/EF3B0735=
 Param/Value/EF598E91=
@@ -10645,7 +10641,7 @@ Param/Value/F04E5367=
 Param/Value/F052F5E9=
 Param/Value/F0534464=<s val="PurchasePanelGroupName"><c val="78b8ff">Learn R skills (<c val="ffffff">F4</c>)</c></s><n/><n/>You can learn and use the skills below.
 Param/Value/F05FCD70=<s val="ExitGameTitle">
-Param/Value/F0642B8D=<n/>Grants stealth detection for 5 minutes or until the hero dies.
+Param/Value/F0642B8D=<n/>Grants stealth detection for 3 minutes or until the hero dies.
 Param/Value/F067DA2D=<s val="PurchasePanelGroupName"><c val="78b8ff">
 Param/Value/F0789BD4= <s val="HelpPanelListBoxItemTitle">
 Param/Value/F08A18E4=서퍼링
@@ -10689,8 +10685,8 @@ Param/Value/F2EA6253=</s>
 Param/Value/F30A51F2=
 Param/Value/F32D2569= <IMG path="Assets\AddIcon\Rank-06Diamond.dds" height="64" width="64"/> <s val="Header18">
 Param/Value/F33C1DD0=Teleport
-Param/Value/F34D9071=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack Vampiric (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/F353F556=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase mana regeneration</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/F34D9071=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Lifesteal (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/F353F556=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Mana Regeneration</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/F384DEA4=Glan
 Param/Value/F38E4BAC=
 Param/Value/F38E4D03=(Agree: 
@@ -10748,11 +10744,11 @@ Param/Value/F7DFD162=
 Param/Value/F7E20A48= <s val="HelpPanelListBoxItemTitle">
 Param/Value/F7ECA966= <s val="HelpPanelListBoxItemTitle">
 Param/Value/F7F4870B=
-Param/Value/F7FDE15B=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack speed (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/F7FDF443=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase attack speed (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/F7FDE15B=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Speed (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/F7FDF443=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Speed (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/F8023BE4=<s val="Header18">
 Param/Value/F812965D=<s val="PurchasePanelGroupName"><c val="78b8ff">E skill enhancement (<c val="ffffff">F3</c>)</c></s><n/><n/>It further strengthens the skills below.
-Param/Value/F81AF3CD=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Skill Vamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/F81AF3CD=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Spellvamp  (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/F8673180=Bloodius
 Param/Value/F873B1AD=Enemy team 
 Param/Value/F87B4AFA=Grunt
@@ -10763,7 +10759,7 @@ Param/Value/F8E5357C=<s val="PlanetPanelPlanetName">
 Param/Value/F8F836B6=0
 Param/Value/F90F65FE=</s>
 Param/Value/F920FBAE=<c val="33ccff">Lucifer</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Jungler, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■■□□</c></s>
-Param/Value/F921592A=<n/>Heals the hero by <c val="ffffff">150</c> for 10 seconds.<n/>(Cannot use duplicates)
+Param/Value/F921592A=<n/>Heals for <c val="ffffff">150</c> HP over the duration of 10 seconds.<n/>(Cannot buy while active already)
 Param/Value/F9369F0F= will be regenerated soon.
 Param/Value/F9470B03=
 Param/Value/F9589698=<s val="Header17"><c val="ffff99">
@@ -10823,7 +10819,7 @@ Param/Value/FD9B1FC8=Daboto
 Param/Value/FDA51BC5=
 Param/Value/FDA5D990=</s></c>
 Param/Value/FDAA8AE7=Player
-Param/Value/FDACEA09=<n/>Increases maximum mana by <c val="ffffff">75</c>.<n/>(max: 25)
+Param/Value/FDACEA09=<n/>Increases maximum mana by <c val="ffffff">50</c>.<n/>(max: 25)
 Param/Value/FDCC6089=</s>
 Param/Value/FDD4A2A8=) will not surrender.
 Param/Value/FDDD99D2=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>영웅의 스킬 공격에 적용되는 흡혈량이 <c val="ffffff">10%</c>만큼 증가시킵니다. <c val="ffff99">고정 피해</c> 또는 광역 피해의 경우 60%의 흡혈 효과만 받습니다.<n/>(최대치: 3)
