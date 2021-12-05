@@ -8773,7 +8773,7 @@
     </CActorAction>
     <CActorSound id="Hero23PassiveSound" parent="SoundOneShot">
         <Inherits index="Visibility" value="0"/>
-        <On Terms="Effect.Hero23PassiveG.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.Hero23PassiveG.Start; At Source" Send="Create"/>
         <Sound value="Hero23Sound34"/>
     </CActorSound>
     <CActorUnit id="Hero60" parent="GenericUnitStandard" unitName="Hero60">
@@ -33979,7 +33979,7 @@
     <CActorModel id="SpellModel2342333" parent="ModelAnimationStyleOneShot">
         <FogVisibility value="Hidden"/>
         <On index="1" Terms="ActorOrphan" Send="Destroy"/>
-        <On index="2" Terms="Effect.Hero23PassiveG.Start; At Caster" Send="Create"/>
+        <On index="2" Terms="Effect.Hero23PassiveG.Start; At Source" Send="Create"/>
         <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="Hero23Skill3jari"/>

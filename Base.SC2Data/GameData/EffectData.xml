@@ -185,6 +185,34 @@
         <Flags index="Notification" value="0"/>
         <Amount value="10"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="Hero23Skill2Dong2">
+        <ValidatorArray index="0" removed="1"/>
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/ApplyIncapBehavior"/>
+        <Behavior value="Hero23Skill2Passive"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="Hero23Skill2Dong3">
+        <ValidatorArray index="0" removed="1"/>
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/ApplyIncapBehavior"/>
+        <Behavior value="Hero23Skill2Passive2"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="Hero23Skill2Mo">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero23Skill2Dong2"/>
+        <EffectArray value="Hero23Skill2Dong3"/>
+    </CEffectSet>
+    <CEffectSet id="Hero23Skill2Mo2">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero23Skill2Sr"/>
+        <EffectArray value="Hero23Skill2Dong"/>
+    </CEffectSet>
+    <CEffectEnumArea id="Hero23Skill2Sr">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="Effect/HybridFAoESearch"/>
+        <SearchFilters value="Heroic;Self,Neutral,Enemy,Structure,Missile,Dead"/>
+        <AreaArray Radius="8" Effect="Hero23Skill2Mo"/>
+    </CEffectEnumArea>
     <CEffectDamage id="Hero28Skill3D" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ToshU"/>

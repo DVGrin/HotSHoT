@@ -529,6 +529,7 @@ Behavior/Name/Hero23Skill22=Guardian Shield
 Behavior/Name/Hero23Skill222=Guardian Shield
 Behavior/Name/Hero23Skill2222=Guardian Shield
 Behavior/Name/Hero23Skill22222=Guardian Shield
+Behavior/Name/Hero23Skill2Passive=Iron Armor
 Behavior/Name/Hero23Skill3=Increase Morale
 Behavior/Name/Hero23Skill32=Increase Morale
 Behavior/Name/Hero23Skill322=Increase Morale
@@ -1564,6 +1565,7 @@ Behavior/Tooltip/Hero23Skill22=Reduces all <c val="ff9999">Physical Damage</c>.
 Behavior/Tooltip/Hero23Skill222=Reduces all <c val="ff9999">Physical Damage</c>.
 Behavior/Tooltip/Hero23Skill2222=Reduces all <c val="ff9999">Physical Damage</c>.
 Behavior/Tooltip/Hero23Skill22222=Reduces all <c val="ff9999">Physical Damage</c>.
+Behavior/Tooltip/Hero23Skill2Passive=Hero has a 30% chance to ignore 60% damage done by basic attacks / 40% damage done by physical skill damage.
 Behavior/Tooltip/Hero23Skill3=Base damage and movement speed increased.
 Behavior/Tooltip/Hero23Skill32=Base damage and movement speed increased.
 Behavior/Tooltip/Hero23Skill322=Base damage and movement speed increased.
@@ -3200,7 +3202,7 @@ Button/Tooltip/HeroSkillBtn553392=<c val="ccffff">[Active]</c> Deken creates a s
 Button/Tooltip/HeroSkillBtn553393=<c val="ccffff">[Active]</c> Deken slams the ground, dealing <c val="ffffff"><d ref="Effect,Hero49Skill3D,Amount"/></c><c val="ff9999">(0.65 AD)</c> <c val="ff9999">physical damage</c> to nearby enemies, and basic damage for 3 seconds. Reduces attack speed and movement speed by <c val="ffffff"><d ref="Effect,Hero49Skill3M,Amount"/>%</c>.
 Button/Tooltip/HeroSkillBtn5533932=<c val="ccffff">[Active]</c> Deken approaches an enemy hero, dealing a powerful blow. Enemies hit take <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero49Skill4D,Amount"/></c><c val="ff9999">(1.25 AD)</c> and fly into the air for 2 seconds.
 Button/Tooltip/HeroSkillBtn5534=<c val="ccffff">[Active]</c> Garp throws his sword at an enemy, dealing <c val="ffffff"><d ref="Effect,Hero23Skill1D,Amount"/></c><c val="ff9999">(1.0 DP)</c> <c val="ffff99">true damage</c>. Deals additional damage equal to 50% to enemies below 25% of their current health.
-Button/Tooltip/HeroSkillBtn5535=<c val="ccffff">[Passive]</c> Increases Garp's health regen by <c val="ffffff"><d ref="Effect,Hero23Skill2M,Amount" precision="1"/></c>.<n/><c val="ccffff">[Active]</c> Garp raises a shield, taking all <c val="ff9999"> Physical damage</c> reduced by <c val="ffffff"><d ref="Effect,Hero23Skill2M2,Amount"/>%</c>.
+Button/Tooltip/HeroSkillBtn5535=<c val="ccffff">[Passive]</c> Increases Garp's health regen by <c val="ffffff"><d ref="Effect,Hero23Skill2M,Amount" precision="1"/></c>.<n/><c val="ccffff">[Active]</c> Garp raises a shield, reducing all <c val="ff9999"> Physical Damage</c> by <c val="ffffff"><d ref="Effect,Hero23Skill2M2,Amount"/>%</c> for 3 seconds. Allies close to Garp gain Garp's "Iron Armor" for a duration of 5 seconds.
 Button/Tooltip/HeroSkillBtn55352=<c val="ccffff">[Active]</c> Garp boosts the morale of allied heroes with his fiery fighting spirit. Increases Garp's base damage by <c val="ffffff"><d ref="Effect,Hero23Skill3M,Amount"/></c> and movement speed by <c val="ffffff"><d ref="Effect,Hero23Skill3M2,Amount"/>%</c> for 7 seconds. Only half the effect is applied to nearby allied heroes.
 Button/Tooltip/HeroSkillBtn553522=<c val="ccffff">[Active]</c> Garp channels all his mind to 1 enemy Hero, reducing the target's base attack speed by <c val="ffffff"><d ref="Effect,Hero23Skill4M,Amount"/>%</c> and enemy skill damage by <c val="ffffff"><d ref="Effect,Hero23Skill4M3,Amount"/>%</c> for 8 seconds. For the duration of the target, Garp reduces all damage taken from enemies by <c val="ffffff"><d ref="Effect,Hero23Skill4M2,Amount"/>%</c> and becomes immune to all harmful effects.
 Button/Tooltip/HeroSkillBtn5536=<c val="ccffff">[Active]</c> Kaion unleashes holy energy at enemies. The target enemy takes <c val="ffffff"><d ref="Effect,Hero24Skill1D,Amount"/></c><c val="99ffcc">(0.9 AP)</c> of <c val="99ffcc">magical damage</c> and is silenced for <c val="ffffff"><d ref="Effect,Hero24Skill1M,Amount" precision="1"/></c> seconds.
@@ -4339,8 +4341,13 @@ Effect/Name/Hero23Skill1G=투검
 Effect/Name/Hero23Skill1Missile=투검
 Effect/Name/Hero23Skill1Mo=투검
 Effect/Name/Hero23Skill2Dong=수호 방패
+Effect/Name/Hero23Skill2Dong2=Hero23Skill2Dong2
+Effect/Name/Hero23Skill2Dong3=Hero23Skill2Dong3
 Effect/Name/Hero23Skill2M=수호 방패
 Effect/Name/Hero23Skill2M2=수호 방패
+Effect/Name/Hero23Skill2Mo=Hero23Skill2Mo
+Effect/Name/Hero23Skill2Mo2=Hero23Skill2Mo2
+Effect/Name/Hero23Skill2Sr=Hero23Skill2Sr
 Effect/Name/Hero23Skill3Dong=사기 증진
 Effect/Name/Hero23Skill3Dong2=사기 증진
 Effect/Name/Hero23Skill3G=사기 증진

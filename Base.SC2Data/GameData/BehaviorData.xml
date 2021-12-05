@@ -881,6 +881,69 @@
         <Duration value="2"/>
         <InitialEffect value="Hero16Skill1Mo"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="Hero23Skill2Passive2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\AddIcon\btn-hero23.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="7.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse Handled="Hero23PassiveG" ModifyFraction="0.6">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Melee" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Chance value="0.3"/>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero23Skill2Passive">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoIcon value="Assets\AddIcon\btn-hero23.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="7.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse Handled="Hero23PassiveG" ModifyFraction="0.4">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Chance value="0.3"/>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
     <CBehaviorBuff id="Hero26Skill3impact3">
         <Alignment value="Positive"/>
         <Cost>

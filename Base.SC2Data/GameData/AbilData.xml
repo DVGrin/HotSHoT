@@ -6782,7 +6782,7 @@
     <CAbilEffectInstant id="Hero23Skill2">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <InfoTooltipPriority value="1"/>
-        <Effect index="0" value="Hero23Skill2Dong"/>
+        <Effect index="0" value="Hero23Skill2Mo2"/>
         <Flags index="AllowMovement" value="1"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Flags index="Transient" value="1"/>

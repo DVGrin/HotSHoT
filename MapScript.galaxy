@@ -4939,7 +4939,6 @@ void gf_StatWindowUpdatePlayer (int player) {
     text[6] tooltip_text_groups;
     color stat_name_color;
 
-    const color SEAL_COLOR = Color(100.0, 50.0, 0.0);
     const color DEFAULT_COLOR = Color(40.0, 60.0, 100.0);
     const color NUMBER_COLOR = Color(100.0, 100.0, 100.0);
     const color PLAYERNAME_COLOR = Color(50.0, 70.0, 100.0);
@@ -4957,7 +4956,7 @@ void gf_StatWindowUpdatePlayer (int player) {
     tooltip_text_groups[c_statTooltipGroupConsumable] = TextWithColor(StringToText("Active consumables:"), LABEL_COLOR);
     tooltip_text_groups[c_statTooltipGroupOffense] = TextWithColor(StringToText("Offense:"), LABEL_COLOR);
     tooltip_text_groups[c_statTooltipGroupDefense] = TextWithColor(StringToText("Defense:"), LABEL_COLOR);
-    tooltip_text_groups[c_statTooltipGroupSeal] = StringToText("");
+    tooltip_text_groups[c_statTooltipGroupSeal] = TextWithColor(StringToText("Seal:"), LABEL_COLOR);
     tooltip_text_groups[c_statTooltipGroupUtility] = TextWithColor(StringToText("Utility:"), LABEL_COLOR);
 
     for (i = 0; i < 30; i += 1) {
@@ -4966,9 +4965,6 @@ void gf_StatWindowUpdatePlayer (int player) {
         }
         for (j = 1; j < 6; j += 1) {
             stat_name_color = DEFAULT_COLOR;
-            if (gv_ShopItemParameters[i].tooltip_group == c_statTooltipGroupSeal) {
-                stat_name_color = SEAL_COLOR;
-            }
             if (gv_ShopItemParameters[i].tooltip_group == c_statTooltipGroupConsumable) {
                 stat_name_color = CONSUMABLE_COLOR;
             }
@@ -4990,12 +4986,6 @@ void gf_StatWindowUpdatePlayer (int player) {
         }
     }
 
-    if (stat_sum[c_statTooltipGroupSeal] == 0) {
-        tooltip_text_groups[c_statTooltipGroupSeal] = TextWithColor(
-            StringToText("<n/>") + StringToText("No Seal"),
-            SEAL_COLOR
-        );
-    }
     if (stat_sum[c_statTooltipGroupConsumable] == 0) {
         tooltip_text_groups[c_statTooltipGroupConsumable] = TextWithColor(
             StringToText("No active consumables"),
@@ -5013,16 +5003,23 @@ void gf_StatWindowUpdatePlayer (int player) {
     }
     if (stat_sum[c_statTooltipGroupUtility] > 0) {
         tooltip_text += tooltip_text_groups[c_statTooltipGroupUtility];
-        tooltip_text += StringToText("<n/>");
+        tooltip_text += StringToText("<n/><n/>");
     }
-    if (stat_sum[c_statTooltipGroupOffense] + stat_sum[c_statTooltipGroupDefense] + stat_sum[c_statTooltipGroupUtility] == 0) {
-        tooltip_text += TextWithColor(
-            StringToText("No stats bought yet<n/>"),
-            LABEL_COLOR
-        );
+    if (stat_sum[c_statTooltipGroupSeal] > 0) {
+        tooltip_text += tooltip_text_groups[c_statTooltipGroupSeal];
+        tooltip_text += StringToText("<n/><n/>");
     }
-    tooltip_text += tooltip_text_groups[c_statTooltipGroupSeal];
-    tooltip_text += StringToText("<n/><n/>");
+    if (
+            stat_sum[c_statTooltipGroupOffense] + 
+            stat_sum[c_statTooltipGroupDefense] + 
+            stat_sum[c_statTooltipGroupUtility] + 
+            stat_sum[c_statTooltipGroupSeal] == 0
+        ) {
+            tooltip_text += TextWithColor(
+                StringToText("No stats bought yet<n/>"),
+                LABEL_COLOR
+            );
+    }
     tooltip_text += tooltip_text_groups[c_statTooltipGroupConsumable];
 
     tooltip_text += StringToText("</s>");  // Header18
