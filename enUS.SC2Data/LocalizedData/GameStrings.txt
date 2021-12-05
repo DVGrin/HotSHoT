@@ -9527,7 +9527,7 @@ Param/Value/9F86987B=<s val="PurchasePanelGroupName"><c val="78b8ff">W skill enh
 Param/Value/9F92847D=Pyron
 Param/Value/9FA24B7B=
 Param/Value/9FA94D58=Voltma
-Param/Value/9FB47B93=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Damage done ignores <c val="ff9866">Defense Power (DP)</c> and <c val="99ffcc">Resistance Power (RP)</c> by approximately <c val="ffffff">15%</c><n/>(max: 3)
+Param/Value/9FB47B93=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Damage done ignores <c val="ff9866">Defense Power (DP)</c> and <c val="99ffcc">Resistance Power (RP)</c> by approximately <c val="ffffff">12%</c><n/>(max: 5)
 Param/Value/9FC8ECA9= <s val="HelpPanelListBoxItemTitle">
 Param/Value/9FE47CA9=</c>   <c val="99ffcc">Ability power (AP):</c><c val="ffffff"> 
 Param/Value/9FE9A3C5=</s>
