@@ -389,7 +389,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0195">
+        <DamageResponse ModifyFraction="1.0152">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>
@@ -419,7 +419,67 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0292">
+        <DamageResponse ModifyFraction="1.0228">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <Chance value="1"/>
+            <Cost>
+                <Charge Link="Behavior/CriticalAttached"/>
+                <Cooldown Link="Behavior/CriticalAttached"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Armorbreaks222">
+        <Cost>
+            <Charge Link="Behavior/CriticalAttached"/>
+            <Cooldown Link="Behavior/CriticalAttached"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="20"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/CriticalAttached"/>
+                    <Cooldown Link="Behavior/CriticalAttached"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse ModifyFraction="1.0304">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <Chance value="1"/>
+            <Cost>
+                <Charge Link="Behavior/CriticalAttached"/>
+                <Cooldown Link="Behavior/CriticalAttached"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Armorbreaks2222">
+        <Cost>
+            <Charge Link="Behavior/CriticalAttached"/>
+            <Cooldown Link="Behavior/CriticalAttached"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="20"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/CriticalAttached"/>
+                    <Cooldown Link="Behavior/CriticalAttached"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse ModifyFraction="1.038">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>
@@ -449,7 +509,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0097">
+        <DamageResponse ModifyFraction="1.0076">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -480,7 +540,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0195">
+        <DamageResponse ModifyFraction="1.0152">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -511,7 +571,69 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0292">
+        <DamageResponse ModifyFraction="1.0228">
+            <Kind index="Melee" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <Chance value="1"/>
+            <Cost>
+                <Charge Link="Behavior/CriticalAttached"/>
+                <Cooldown Link="Behavior/CriticalAttached"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Armorbreaks3222">
+        <Cost>
+            <Charge Link="Behavior/CriticalAttached"/>
+            <Cooldown Link="Behavior/CriticalAttached"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="20"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/CriticalAttached"/>
+                    <Cooldown Link="Behavior/CriticalAttached"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse ModifyFraction="1.0304">
+            <Kind index="Melee" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <Chance value="1"/>
+            <Cost>
+                <Charge Link="Behavior/CriticalAttached"/>
+                <Cooldown Link="Behavior/CriticalAttached"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Armorbreaks32222">
+        <Cost>
+            <Charge Link="Behavior/CriticalAttached"/>
+            <Cooldown Link="Behavior/CriticalAttached"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="20"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/CriticalAttached"/>
+                    <Cooldown Link="Behavior/CriticalAttached"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse ModifyFraction="1.038">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -831,7 +953,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0097">
+        <DamageResponse ModifyFraction="1.0076">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>

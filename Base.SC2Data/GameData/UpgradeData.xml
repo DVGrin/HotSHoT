@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="Armorbreakupgrade" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Alert value=""/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Effect,ArmorbreakDong22,Count" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
     <CUpgrade id="Armorbreakupgrade2" parent="Research">
         <Flags index="TechTreeCheat" value="1"/>
         <InfoTooltipPriority value="2"/>
@@ -19,6 +29,28 @@
         <Race value="Terr"/>
         <EffectArray Operation="Set" Reference="Effect,ArmorbreakDong,Behavior" Value="Armorbreaks22"/>
         <EffectArray Operation="Set" Reference="Effect,ArmorbreakDongRemove,BehaviorLink" Value="Armorbreaks22"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="Armorbreakupgrade222" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Alert value=""/>
+        <Race value="Terr"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDong,Behavior" Value="Armorbreaks222"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDongRemove,BehaviorLink" Value="Armorbreaks222"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="Armorbreakupgrade2222" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Alert value=""/>
+        <Race value="Terr"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDong,Behavior" Value="Armorbreaks2222"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDongRemove,BehaviorLink" Value="Armorbreaks2222"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -51,6 +83,28 @@
         <Race value="Terr"/>
         <EffectArray Operation="Set" Reference="Effect,ArmorbreakDong2,Behavior" Value="Armorbreaks322"/>
         <EffectArray Operation="Set" Reference="Effect,ArmorbreakDongRemove2,BehaviorLink" Value="Armorbreaks322"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="Armorbreakupgrade3222" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Alert value=""/>
+        <Race value="Terr"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDong2,Behavior" Value="Armorbreaks3222"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDongRemove2,BehaviorLink" Value="Armorbreaks3222"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="Armorbreakupgrade32222" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Alert value=""/>
+        <Race value="Terr"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDong2,Behavior" Value="Armorbreaks32222"/>
+        <EffectArray Operation="Set" Reference="Effect,ArmorbreakDongRemove2,BehaviorLink" Value="Armorbreaks32222"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -2127,16 +2181,6 @@
         <EffectArray Reference="Unit,Sentry2team,KillResource[Minerals]" Value="2"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="5"/>
-        <LeaderAlias value=""/>
-    </CUpgrade>
-    <CUpgrade id="Armorbreakupgrade" parent="Research">
-        <Flags index="TechTreeCheat" value="1"/>
-        <InfoTooltipPriority value="2"/>
-        <Icon value="Assets\Textures\btn-status-detector.dds"/>
-        <Alert value=""/>
-        <Race value="Terr"/>
-        <EffectArray Reference="Effect,ArmorbreakDong22,Count" Value="1"/>
-        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="PortalBuy23" parent="Research">
