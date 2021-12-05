@@ -4422,6 +4422,18 @@ static void lf_ShopRelatedChecks(int shop_index) {
     lf_ShopObjectiveCompletion();
 }
 
+static void lf_SetStatShopTooltip(int shop_index) {
+    libNtve_gf_SetDialogItemTooltip(
+        gv_StatShopButton[shop_index],
+        (
+            gv_ShopItemParameters[shop_index].tooltip_before_num + 
+            IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + 
+            gv_ShopItemParameters[shop_index].tooltip_after_num
+        ),
+        PlayerGroupSingle(EventPlayer())
+    );
+}
+
 void gf_HrStat1 () {
     const int shop_index = 0;
     // Upgrade
@@ -4433,7 +4445,7 @@ void gf_HrStat1 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/16A3EF70") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/92DCA530")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4451,7 +4463,7 @@ void gf_HrStat2 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/656F7482") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D7E1C95B")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4464,7 +4476,7 @@ void gf_HrStat3 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/3E816046") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/960D2C83")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4477,7 +4489,7 @@ void gf_HrStat4 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/1CF49202") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/64B96C4D")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4490,7 +4502,7 @@ void gf_HrStat5 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/2013D8A0") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/77C9F250")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4504,7 +4516,7 @@ void gf_HrStat6 () {
         gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
-        libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/836385E4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/FDACEA09")), PlayerGroupSingle(EventPlayer()));
+        lf_SetStatShopTooltip(shop_index);
         lf_ShopRelatedChecks(shop_index);
     } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
@@ -4519,7 +4531,7 @@ void gf_HrStat7 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/3B9EF42D") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C7535C3C")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4532,7 +4544,7 @@ void gf_HrStat8 () {
         gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
-        libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/BEA13735") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/3E68978B")), PlayerGroupSingle(EventPlayer()));
+        lf_SetStatShopTooltip(shop_index);
         lf_ShopRelatedChecks(shop_index);
     } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
@@ -4548,7 +4560,7 @@ void gf_HrStat9 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/F7FDE15B") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/26E55644")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4565,7 +4577,15 @@ void gf_HrStat10 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/971AFD3E") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/9C0F7D59")), PlayerGroupSingle(EventPlayer()));
+    libNtve_gf_SetDialogItemTooltip(
+        gv_StatShopButton[shop_index],
+        (
+            gv_ShopItemParameters[shop_index].tooltip_before_num + 
+            IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + 
+            gv_ShopItemParameters[shop_index].tooltip_after_num
+        ),
+        PlayerGroupSingle(EventPlayer())
+    );
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4577,7 +4597,7 @@ void gf_HrStat11 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/546F2B11") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/7EAD3D35")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4589,7 +4609,7 @@ void gf_HrStat12 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/E0DED4C4") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/52E90764")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4688,7 +4708,7 @@ void gf_HrStat13 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/59E5C445") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/D23DAF42")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4705,7 +4725,7 @@ void gf_HrStat14 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/7A06C1E6") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/C3E5D723")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4717,7 +4737,7 @@ void gf_HrStat15 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], (StringExternal("Param/Value/91BB6474") + IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + StringExternal("Param/Value/6332FECD")), PlayerGroupSingle(EventPlayer()));
+    lf_SetStatShopTooltip(shop_index);
     lf_ShopRelatedChecks(shop_index);
 }
 
