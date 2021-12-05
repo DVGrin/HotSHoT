@@ -756,7 +756,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
     i += 1;
-    gv_ShopItemParameters[i].name = StringToText("Physical Defense");
+    gv_ShopItemParameters[i].name = StringToText("Defense Power");
     gv_ShopItemParameters[i].minerals_cost = 100;
     gv_ShopItemParameters[i].minerals_increase = 35;
     gv_ShopItemParameters[i].gas_cost = 1;
@@ -769,7 +769,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
     i += 1;
-    gv_ShopItemParameters[i].name = StringToText("Magical Defense");
+    gv_ShopItemParameters[i].name = StringToText("Resistance Power");
     gv_ShopItemParameters[i].minerals_cost = 100;
     gv_ShopItemParameters[i].minerals_increase = 35;
     gv_ShopItemParameters[i].gas_cost = 1;
@@ -1081,7 +1081,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
     i += 1;
-    gv_ShopItemParameters[i].name = StringToText("Hawk Eye");
+    gv_ShopItemParameters[i].name = StringToText("Eye of the Hawk");
     gv_ShopItemParameters[i].minerals_cost = 225;
     gv_ShopItemParameters[i].minerals_increase = 0;
     gv_ShopItemParameters[i].gas_cost = 0;
