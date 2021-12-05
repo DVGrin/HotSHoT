@@ -11443,6 +11443,7 @@ Upgrade/Name/Armorbreakupgrade=물리 방어력 관통 증가1
 Upgrade/Name/Armorbreakupgrade2=물리 방어력 관통 증가2
 Upgrade/Name/Armorbreakupgrade22=물리 방어력 관통 증가3
 Upgrade/Name/Armorbreakupgrade222=물리 방어력 관통 증가4
+Upgrade/Name/Armorbreakupgrade2222=물리 방어력 관통 증가5
 Upgrade/Name/Armorbreakupgrade3=마법 방어력 관통 증가1
 Upgrade/Name/Armorbreakupgrade32=마법 방어력 관통 증가2
 Upgrade/Name/Armorbreakupgrade322=마법 방어력 관통 증가3

@@ -27284,6 +27284,7 @@ Upgrade/EditorPrefix/Armorbreakupgrade=맥스 -
 Upgrade/EditorPrefix/Armorbreakupgrade2=맥스 -
 Upgrade/EditorPrefix/Armorbreakupgrade22=맥스 -
 Upgrade/EditorPrefix/Armorbreakupgrade222=맥스 -
+Upgrade/EditorPrefix/Armorbreakupgrade2222=맥스 -
 Upgrade/EditorPrefix/Armorbreakupgrade3=맥스 -
 Upgrade/EditorPrefix/Armorbreakupgrade32=맥스 -
 Upgrade/EditorPrefix/Armorbreakupgrade322=맥스 -
