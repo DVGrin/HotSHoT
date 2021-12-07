@@ -120,6 +120,15 @@
         <SelectionRadius value="0.625000"/>
         <ShadowRadius value="0.625000"/>
     </CModel>
+    <CModel id="Hero70Skill1Blood" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Zealot_Purifier_Collection_Cleave_Swipe\Zealot_Purifier_Collection_Cleave_Swipe.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <ScaleMax value="0.800000,1.300000,1.500000"/>
+        <ScaleMin value="0.800000,1.300000,1.500000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
     <CModel id="StatInjang1Model" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\PhasePrismUnload\PhasePrismUnload.m3"/>
         <EditorCategories value="Race:Terran"/>

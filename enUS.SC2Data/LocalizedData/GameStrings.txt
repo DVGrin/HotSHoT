@@ -582,7 +582,6 @@ Behavior/Name/Hero27Skill32=Beast Taunt Damage Shock
 Behavior/Name/Hero27Skill4=Discharge Current
 Behavior/Name/Hero27Skill42=Discharge Current
 Behavior/Name/Hero27Skill422=Discharge Current
-Behavior/Name/Hero28Skill1B=Activate Fire Headbutt
 Behavior/Name/Hero28Skill2impact=Thermal Explosion
 Behavior/Name/Hero28Skill2impact2=Attacking
 Behavior/Name/Hero28Skill3impact=Hellfire Shock
@@ -628,7 +627,6 @@ Behavior/Name/Hero32Passive3=Adrenaline Bonus Attack
 Behavior/Name/Hero32Passive32=Adrenaline Bonus Attack
 Behavior/Name/Hero32Passive322=Adrenaline Bonus Attack
 Behavior/Name/Hero32Passive33=Adrenaline Bonus Attack Damage
-Behavior/Name/Hero32Skill2=Activate Hunting Instinct
 Behavior/Name/Hero32Skill2Passive=Hunting Instinct Bonus Health
 Behavior/Name/Hero32Skill2Passive2=Passive Hunting Instinct
 Behavior/Name/Hero32Skill3=Adrenaline
@@ -747,7 +745,6 @@ Behavior/Name/Hero40Skill22=The Power of the Hammer
 Behavior/Name/Hero40Skill222=The Power of the Hammer
 Behavior/Name/Hero40Skill2222=The Power of the Hammer
 Behavior/Name/Hero40Skill22222=The Power of the Hammer
-Behavior/Name/Hero40Skill3=Activate Jump Attack
 Behavior/Name/Hero40Skill3Missile=For Leap Attack Missiles
 Behavior/Name/Hero41Passive=Play Plugin
 Behavior/Name/Hero41Skill2Lifetime=Spider Mine Lifetime
@@ -758,7 +755,6 @@ Behavior/Name/Hero41Skill4c322=Power Mode
 Behavior/Name/Hero42Skill2=Blood Vortex
 Behavior/Name/Hero42Skill4=Blood Hunt
 Behavior/Name/Hero43Passive=Crazy Resilience
-Behavior/Name/Hero43Skill1b=Activate Thump
 Behavior/Name/Hero43Skill2=Enemies targeted by Stonefist Slam
 Behavior/Name/Hero43Skill22=Stonefist Knockback
 Behavior/Name/Hero43Skill222=Stonefist Knockback
@@ -776,7 +772,6 @@ Behavior/Name/Hero44Skill1impact=Blue Sphere Impact
 Behavior/Name/Hero44Skill1impact2=Blue Sphere Impact2
 Behavior/Name/Hero44Skill2LifeTime=Guardian Water Timed Life
 Behavior/Name/Hero44Skill2LifeTime2=Create Guardian Water
-Behavior/Name/Hero44Skill3=Activate Underwater Dash
 Behavior/Name/Hero44Skill4=Spirit Water
 Behavior/Name/Hero44Skill42=Spirit Water
 Behavior/Name/Hero44Skill422=Spirit Water
@@ -830,7 +825,6 @@ Behavior/Name/Hero48Skill3MaTimeLife2=Create a runaway barrier
 Behavior/Name/Hero48Skill4Impact=Overload Explosion Shock
 Behavior/Name/Hero48Skill4Impact2=Overload Explosion Shock
 Behavior/Name/Hero49Skill1Impact=Sparkling Shock
-Behavior/Name/Hero49Skill1bal=Activate Pulse Fist Charge
 Behavior/Name/Hero49Skill2=Health skill practice
 Behavior/Name/Hero49Skill22=Health Skill Practical
 Behavior/Name/Hero49Skill222=Health Skill Practical
@@ -844,7 +838,6 @@ Behavior/Name/Hero49Skill3Slow322=Slow Attack Speed
 Behavior/Name/Hero49Skill3Slow3222=Slow Attack Speed
 Behavior/Name/Hero49Skill3Slow32222=Slow Attack Speed
 Behavior/Name/Hero50PassiveImpact=Strongest Inspector Passive Impact
-Behavior/Name/Hero50Skill1Bal=Activate Ghost Slash
 Behavior/Name/Hero50Skill1Impact=Demon Slash Shock
 Behavior/Name/Hero50Skill1Impact2=Ghost Slash Shock2
 Behavior/Name/Hero50Skill1Impact3=Reuse Ghost Slash
@@ -966,7 +959,6 @@ Behavior/Name/Hero59Skill22222=Iron Shield
 Behavior/Name/Hero59Skill4Im=Taunt
 Behavior/Name/Hero60Skill1=Defense Break Shock
 Behavior/Name/Hero60Skill12=Defense Break Shock
-Behavior/Name/Hero60Skill1B=Activate Defense Breaker
 Behavior/Name/Hero60Skill1impact=Defense Break
 Behavior/Name/Hero60Skill2=Excessive Openness
 Behavior/Name/Hero60Skill22=Excessive Openness
@@ -984,7 +976,6 @@ Behavior/Name/Hero61Skill2Impact=Storm Rake Damage Reduction1
 Behavior/Name/Hero61Skill2Impact2=Storm Rake Damage Reduction2
 Behavior/Name/Hero61Skill2Impact22=Storm Rake Damage Reduction3
 Behavior/Name/Hero61Skill2Impact222=Storm Rake Damage Reduction4
-Behavior/Name/Hero61Skill3B=Activate Assassination Charge
 Behavior/Name/Hero61Skill4=Alcoholic System
 Behavior/Name/Hero61Skill4Attackspeed=Shadow Clone Attack Speed
 Behavior/Name/Hero61Skill4s=Activate Shadow Clone
@@ -1077,13 +1068,11 @@ Behavior/Name/Hero67Skill32=Fire Melee
 Behavior/Name/Hero67Skill322=Fire Melee
 Behavior/Name/Hero67Skill3222=Fire Melee
 Behavior/Name/Hero67Skill32222=Fire Melee
-Behavior/Name/Hero67Skill4Bal=Activate Let's Fight
 Behavior/Name/Hero67Skill4cool2=Fight cooldown
 Behavior/Name/Hero68Passive=Fierce Shot
 Behavior/Name/Hero68Skill1impact=Energy Bolt Shock
 Behavior/Name/Hero68Skill2=Energy Charge Charging
 Behavior/Name/Hero68Skill22=Energy Charge
-Behavior/Name/Hero68Skill3=Activate Righteous Run
 Behavior/Name/Hero68Skill32=Just Run
 Behavior/Name/Hero68Skill322=Just Run
 Behavior/Name/Hero68Skill3222=Just Run
@@ -1118,7 +1107,6 @@ Behavior/Name/Hero70Skill1Passive122=Tiger Claw
 Behavior/Name/Hero70Skill1Passive1222=Tiger Claw
 Behavior/Name/Hero70Skill1Passive12222=Tiger Claw
 Behavior/Name/Hero70Skill1cool=Tiger Claw Cooldown
-Behavior/Name/Hero70Skill2=Activate Beast Attack
 Behavior/Name/Hero70Skill2cool2=Beast's Assault Reusable
 Behavior/Name/Hero70Skill2cool3=Beast Attack Cooldown
 Behavior/Name/Hero70Skill3impact=Roaring Roar Shock
@@ -1298,7 +1286,6 @@ Behavior/Name/SpellDong2322222=Rapid Shot
 Behavior/Name/SpellDong23222222=Wind Stealth
 Behavior/Name/SpellDong232222223=Store
 Behavior/Name/SpellDong232222224=Phantom Assault
-Behavior/Name/SpellDong23222222422=Trigger True Raid
 Behavior/Name/SpellDong233=Indomitable Battle
 Behavior/Name/SpellDong234=Steel Strike
 Behavior/Name/SpellDong2342=Combat Instinct
@@ -1360,8 +1347,6 @@ Behavior/Name/SpellDong242523323=Watch Tower
 Behavior/Name/SpellDong242523324=Dread Trap Continues
 Behavior/Name/SpellDong24252333=Install Watchtower
 Behavior/Name/SpellDong242524=Avatar's Slash Shock
-Behavior/Name/SpellDong2425242=Invoke Avatar's Slash
-Behavior/Name/SpellDong24252422=Activate Onslaught of Demons
 Behavior/Name/SpellDong2425243=The King's Wrath
 Behavior/Name/SpellDong24253=Excitement
 Behavior/Name/SpellDong242532=Excited
@@ -1467,10 +1452,10 @@ Behavior/Tooltip/Hero10Skill3Slow3=
 Behavior/Tooltip/Hero10Skill3Slow32=
 Behavior/Tooltip/Hero10Skill3Slow5=
 Behavior/Tooltip/Hero10Skill3Slow52=
-Behavior/Tooltip/Hero10Skill4=Increases <c val="ff9999">Physical Defense</c>, <c val="99ffcc">Magical Defense</c>, health and mana regeneration for the duration.
+Behavior/Tooltip/Hero10Skill4=Increases <c val="FF9866">DP</c>, <c val="99ffcc">RP</c>, health and mana regeneration for the duration.
 Behavior/Tooltip/Hero10Skill42=
 Behavior/Tooltip/Hero10Skill43=Increases <c val="ff9999">Physical Defense</c>, <c val="99ffcc">Magical Defense</c>, health and mana regeneration for the duration.
-Behavior/Tooltip/Hero10Skill432=Increases <c val="ff9999">Physical Defense</c>, <c val="99ffcc">Magical Defense</c>, health and mana regeneration for the duration.
+Behavior/Tooltip/Hero10Skill432=Increases <c val="FF9866">DP</c>, <c val="99ffcc">RP</c>, health and mana regeneration for the duration.
 Behavior/Tooltip/Hero11Skill1=
 Behavior/Tooltip/Hero11Skill3=
 Behavior/Tooltip/Hero13Passive=Takes <c val="99ffcc">magical damage</c> over time.
@@ -1618,7 +1603,6 @@ Behavior/Tooltip/Hero27Skill32=
 Behavior/Tooltip/Hero27Skill4=Base damage is increased, dealing <c val="99ffcc">magic damage</c> and electrocuting nearby enemies.
 Behavior/Tooltip/Hero27Skill42=Base damage is increased, dealing <c val="99ffcc">magic damage</c> and electrocuting nearby enemies.
 Behavior/Tooltip/Hero27Skill422=Base damage is increased, dealing <c val="99ffcc">magic damage</c> and electrocuting nearby enemies.
-Behavior/Tooltip/Hero28Skill1B=
 Behavior/Tooltip/Hero28Skill2impact=Takes <c val="99ffcc">magical damage</c> over time.
 Behavior/Tooltip/Hero28Skill2impact2=
 Behavior/Tooltip/Hero28Skill3impact=
@@ -1664,7 +1648,6 @@ Behavior/Tooltip/Hero32Passive3=
 Behavior/Tooltip/Hero32Passive32=
 Behavior/Tooltip/Hero32Passive322=
 Behavior/Tooltip/Hero32Passive33=
-Behavior/Tooltip/Hero32Skill2=
 Behavior/Tooltip/Hero32Skill2Passive=
 Behavior/Tooltip/Hero32Skill2Passive2=
 Behavior/Tooltip/Hero32Skill3=Reduces basic attack damage from enemies and gains bonus basic attack damage.
@@ -1785,7 +1768,6 @@ Behavior/Tooltip/Hero40Skill22=Base attack speed increased.
 Behavior/Tooltip/Hero40Skill222=Base attack speed increased.
 Behavior/Tooltip/Hero40Skill2222=Base attack speed increased.
 Behavior/Tooltip/Hero40Skill22222=Base attack speed increased.
-Behavior/Tooltip/Hero40Skill3=
 Behavior/Tooltip/Hero40Skill3Missile=
 Behavior/Tooltip/Hero41Passive=
 Behavior/Tooltip/Hero41Skill2Lifetime=
@@ -1796,7 +1778,6 @@ Behavior/Tooltip/Hero41Skill4c322=Basic attack range is increased, and basic att
 Behavior/Tooltip/Hero42Skill2=Increases movement speed and deals <c val="99ffcc">magic damage</c> to nearby enemies.
 Behavior/Tooltip/Hero42Skill4=You take <c val="99ffcc">magical damage</c> over time, and reduces the HP recovery effect by 30%.
 Behavior/Tooltip/Hero43Passive=Restores stamina.
-Behavior/Tooltip/Hero43Skill1b=
 Behavior/Tooltip/Hero43Skill2=
 Behavior/Tooltip/Hero43Skill22=Movement speed is increased.
 Behavior/Tooltip/Hero43Skill222=Movement speed is increased.
@@ -1814,7 +1795,6 @@ Behavior/Tooltip/Hero44Skill1impact=
 Behavior/Tooltip/Hero44Skill1impact2=
 Behavior/Tooltip/Hero44Skill2LifeTime=
 Behavior/Tooltip/Hero44Skill2LifeTime2=
-Behavior/Tooltip/Hero44Skill3=
 Behavior/Tooltip/Hero44Skill4=Grants an additional effect to the next skill cast.
 Behavior/Tooltip/Hero44Skill42=
 Behavior/Tooltip/Hero44Skill422=
@@ -1868,7 +1848,6 @@ Behavior/Tooltip/Hero48Skill3MaTimeLife2=
 Behavior/Tooltip/Hero48Skill4Impact=
 Behavior/Tooltip/Hero48Skill4Impact2=
 Behavior/Tooltip/Hero49Skill1Impact=Sight is shared with enemies.
-Behavior/Tooltip/Hero49Skill1bal=
 Behavior/Tooltip/Hero49Skill2=
 Behavior/Tooltip/Hero49Skill22=
 Behavior/Tooltip/Hero49Skill222=
@@ -1883,7 +1862,6 @@ Behavior/Tooltip/Hero49Skill3Slow322=
 Behavior/Tooltip/Hero49Skill3Slow3222=
 Behavior/Tooltip/Hero49Skill3Slow32222=
 Behavior/Tooltip/Hero50PassiveImpact=
-Behavior/Tooltip/Hero50Skill1Bal=
 Behavior/Tooltip/Hero50Skill1Impact=
 Behavior/Tooltip/Hero50Skill1Impact2=
 Behavior/Tooltip/Hero50Skill1Impact3=
@@ -2004,7 +1982,6 @@ Behavior/Tooltip/Hero59Skill2222=All damage from enemies is reduced.
 Behavior/Tooltip/Hero59Skill22222=All damage from enemies is reduced.
 Behavior/Tooltip/Hero60Skill1=
 Behavior/Tooltip/Hero60Skill12=
-Behavior/Tooltip/Hero60Skill1B=
 Behavior/Tooltip/Hero60Skill1impact=During the duration, you take additional damage from all attacks from the Bison.
 Behavior/Tooltip/Hero60Skill2=Basic attacks deal the same damage to enemies around the target.
 Behavior/Tooltip/Hero60Skill22=Basic attack range and movement speed increased.
@@ -2022,7 +1999,6 @@ Behavior/Tooltip/Hero61Skill2Impact=
 Behavior/Tooltip/Hero61Skill2Impact2=
 Behavior/Tooltip/Hero61Skill2Impact22=
 Behavior/Tooltip/Hero61Skill2Impact222=
-Behavior/Tooltip/Hero61Skill3B=
 Behavior/Tooltip/Hero61Skill4=
 Behavior/Tooltip/Hero61Skill4Attackspeed=
 Behavior/Tooltip/Hero61Skill4s=
@@ -2115,13 +2091,11 @@ Behavior/Tooltip/Hero67Skill32=Deals <c val="99ffcc">magical damage</c> to nearb
 Behavior/Tooltip/Hero67Skill322=Deals <c val="99ffcc">magical damage</c> to nearby enemies, and reduces all <c val="ff9999">physical damage</c> from enemies.
 Behavior/Tooltip/Hero67Skill3222=Deals <c val="99ffcc">magical damage</c> to nearby enemies, and reduces all <c val="ff9999">physical damage</c> from enemies.
 Behavior/Tooltip/Hero67Skill32222=Deals <c val="99ffcc">magical damage</c> to nearby enemies, and reduces all <c val="ff9999">physical damage</c> from enemies.
-Behavior/Tooltip/Hero67Skill4Bal=
 Behavior/Tooltip/Hero67Skill4cool2=
 Behavior/Tooltip/Hero68Passive=
 Behavior/Tooltip/Hero68Skill1impact=
 Behavior/Tooltip/Hero68Skill2=
 Behavior/Tooltip/Hero68Skill22=Your next basic attack deals additional <c val="ff9999">physical damage</c> and <c val="99ffcc">magical damage</c>.
-Behavior/Tooltip/Hero68Skill3=
 Behavior/Tooltip/Hero68Skill32=Base attack speed increased.
 Behavior/Tooltip/Hero68Skill322=Base attack speed increased.
 Behavior/Tooltip/Hero68Skill3222=Base attack speed increased.
@@ -2149,7 +2123,6 @@ Behavior/Tooltip/Hero70PassiveImpact=
 Behavior/Tooltip/Hero70Skil1Impact=Takes <c val="ff9999">Physical Damage</c> over time.
 Behavior/Tooltip/Hero70Skill1=Your next basic attack can deal additional <c val="ff9999">physical damage</c>.
 Behavior/Tooltip/Hero70Skill1cool=
-Behavior/Tooltip/Hero70Skill2=
 Behavior/Tooltip/Hero70Skill2cool2=
 Behavior/Tooltip/Hero70Skill2cool3=
 Behavior/Tooltip/Hero70Skill3impact=
@@ -2188,7 +2161,7 @@ Behavior/Tooltip/Hero73Passive=The next basic attack strikes twice quickly.
 Behavior/Tooltip/Hero73Skill12=Movement speed is increased.
 Behavior/Tooltip/Hero73Skill2=Basic attacks deal additional <c val="99ffcc">magic damage</c>.
 Behavior/Tooltip/Hero7Passive=Reduces <c val="ff9999">Physical Damage</c> and <c val="99ffcc">Magic Damage</c> from enemies.
-Behavior/Tooltip/Hero7Passive2=Allied heroes near Metel take <c val="ff9999">physical damage</c> and <c val="99ffcc">magical damage</c> less.
+Behavior/Tooltip/Hero7Passive2=Allied heroes near Metel take less <c val="ff9999">physical damage</c> and <c val="80FFFF">magical damage</c>.
 Behavior/Tooltip/Hero7Skill3=Absorbs a certain amount of damage for the duration.
 Behavior/Tooltip/Hero7Skill32=
 Behavior/Tooltip/Hero7Skill322=
@@ -2326,7 +2299,6 @@ Behavior/Tooltip/SpellDong2322222=Base attack speed and movement speed increased
 Behavior/Tooltip/SpellDong23222222=Stay stealthed. While in Stealth, you gain movement speed, and basic attacks or skills break out of Stealth.
 Behavior/Tooltip/SpellDong232222223=
 Behavior/Tooltip/SpellDong232222224=You remain stealthed and use attacks and skills to break out of stealth.
-Behavior/Tooltip/SpellDong23222222422=
 Behavior/Tooltip/SpellDong233=Basic attack range is increased and basic attacks against enemies deal additional <c val="99ffcc">magic damage</c>.
 Behavior/Tooltip/SpellDong234=Increases movement speed and deals additional <c val="99ffcc">magic damage</c> on your next basic attack.
 Behavior/Tooltip/SpellDong2342=Reduces <c val="ff9999">Physical Damage</c> and <c val="99ffcc">Magic Damage</c> from enemies each time you use a basic attack or skill.
@@ -2389,8 +2361,6 @@ Behavior/Tooltip/SpellDong242523323=Illuminates the field of vision around the w
 Behavior/Tooltip/SpellDong242523324=
 Behavior/Tooltip/SpellDong24252333=
 Behavior/Tooltip/SpellDong242524=
-Behavior/Tooltip/SpellDong2425242=
-Behavior/Tooltip/SpellDong24252422=
 Behavior/Tooltip/SpellDong2425243=Immune to death for the duration.
 Behavior/Tooltip/SpellDong24253=Base damage is reduced.
 Behavior/Tooltip/SpellDong242532=Base damage reduced.
@@ -2884,7 +2854,7 @@ Button/Tooltip/ArtifactVault=
 Button/Tooltip/FleetBeacon=
 Button/Tooltip/Gamsi=
 Button/Tooltip/Hero10=
-Button/Tooltip/Hero10Passive=<c val="ccffff">[Passive]</c> When Venom Bugs die, they leave a parasitic egg in their place. The parasitic egg explodes after 3 seconds, dealing <c val="ffffff"><d ref="Effect,Hero10PassiveD,Amount"/></c> <c val="ffff99">fixed damage</c> to nearby enemies.
+Button/Tooltip/Hero10Passive=<c val="ccffff">[Passive]</c> When Venom Bug dies, it leaves a parasitic egg in it's place. The parasitic egg explodes after 3 seconds, dealing <c val="ffffff"><d ref="Effect,Hero10PassiveD,Amount"/></c> <c val="ffff99">True Damage</c> to nearby enemies.
 Button/Tooltip/Hero11=
 Button/Tooltip/Hero11Passive=<c val="ccffff">[Passive]</c> When Galaxia kills an enemy, it instantly restores <c val="ffffff"><d ref="Effect,Hero11PassiveM,Amount"  precision="1"/></c> mana. When a hero is killed, 50% of the amount restored is additionally restored to mana.
 Button/Tooltip/Hero12=
@@ -2906,7 +2876,7 @@ Button/Tooltip/Hero19Passive=<c val="ccffff">[Passive]</c> Proward remains in th
 Button/Tooltip/Hero19Passive2=<c val="ccffff">[Passive]</c> Elzard ignores <c val="99ffcc">magical damage</c> from enemies by 15%.
 Button/Tooltip/Hero19Passive3=<c val="ccffff">[Passive]</c> Each time the Warcorn basic attacks, his basic attack speed is increased by 5% for 6 sec. This effect stacks up to 5 times.
 Button/Tooltip/Hero19Passive4=<c val="ccffff">[Passive]</c> For every 10 Hera's <c val="99ffcc">Ability Power</c> increases, her maximum health is increased by an additional 25.
-Button/Tooltip/Hero1Passive=<c val="ccffff">[Passive]</c> When the Benderzone's health drops below 20%, it immediately becomes stealthed for 6 seconds and its movement speed is increased by 25%. Basic attacks or skills break stealth.
+Button/Tooltip/Hero1Passive=<c val="ccffff">[Passive]</c> When Benderzone's health drops below 20% he gains 25% increased movementspeed and becomes stealthed for up to 6 seconds. Basic attacks or skills during stealth breaks stealth.
 Button/Tooltip/Hero1Passive2=<c val="ccffff">[Passive]</c> Soul Kaiser does not collide with other units, and gains 10% movement speed when current health is above 70%.
 Button/Tooltip/Hero1Passive3=<c val="ccffff">[Passive]</c> When Sieger's basic attacks critically strike, his basic attack speed is increased by 8% for 2.5 sec. This effect stacks up to 3 times.
 Button/Tooltip/Hero20=
@@ -2934,7 +2904,7 @@ Button/Tooltip/Hero29S1=
 Button/Tooltip/Hero29S2=
 Button/Tooltip/Hero29S3=
 Button/Tooltip/Hero29S4=
-Button/Tooltip/Hero2Passive=<c val="ccffff">[Passive]</c> Each time Blane uses a basic attack or skill, reduces <c val="ff9999">Physical Damage</c> and <c val="99ffcc">Magic Damage</c> from enemies by 4% for 4 seconds . This effect stacks up to 5 times.
+Button/Tooltip/Hero2Passive=<c val="ccffff">[Passive]</c> Each time Blane uses a basic attack or skill, the <c val="ff9999">Physical Damage</c> and <c val="80FFFF">Magic Damage</c> from enemies is reduced by 4% for 4 seconds. This effect stacks up to 5 times.
 Button/Tooltip/Hero30=
 Button/Tooltip/Hero30Passive=<c val="ccffff">[Passive]</c> Each time Xion levels up, he gains 2 <c val="99ffcc">Ability Power</c>.
 Button/Tooltip/Hero30Skill3Dummy=
@@ -2954,7 +2924,7 @@ Button/Tooltip/Hero37=
 Button/Tooltip/Hero38=
 Button/Tooltip/Hero39=
 Button/Tooltip/Hero39Passive=<c val="ccffff">[Passive]</c> Dark Ray becomes Stealth when not in combat. If Dark Ray takes damage, deals damage, or uses a skill, you cannot stealth for 6 seconds. When you get close to an enemy hero while stealthed, you'll notice that the enemy is nearby.
-Button/Tooltip/Hero3Passive=<c val="ccffff">[Passive]</c> Each time the Gianter levels up, his maximum health increases by an additional 23.
+Button/Tooltip/Hero3Passive=<c val="ccffff">[Passive]</c> Each time Gianter levels up, his maximum health increases by an additional 23 HP.
 Button/Tooltip/Hero3Passive2=<c val="ccffff">[Passive]</c> Basilisk's basic attacks against enemies increase movement speed by 0.2 for 2 seconds. This effect stacks up to 3 times.
 Button/Tooltip/Hero3Passive3=<c val="ccffff">[Passive]</c> Each time Neherenia casts an ability, her movement speed is increased by 6% for 3 seconds. Stacks up to 3 times.
 Button/Tooltip/Hero40=
@@ -3030,8 +3000,8 @@ Button/Tooltip/Hero67Skill4Dummy2=
 Button/Tooltip/Hero68=
 Button/Tooltip/Hero69=
 Button/Tooltip/Hero69Passive=<c val="ccffff">[Passive]</c> Targets hit by Margon's basic attacks take <c val="ffffff"><d ref="Effect,Hero69PassiveM,Amount"/></c> <c val="99ffcc">magical damage</c> over 4 seconds, and when attacked with skills, their basic attack speed is reduced by 15% for 2 seconds . This effect does not apply to structures.
-Button/Tooltip/Hero6Passive=<c val="ccffff">[Passive]</c> Edburn has <c val="ff9999">Physical Defense</c> equal to 2, and increases by an additional 2 per level.
-Button/Tooltip/Hero6Passive2=<c val="ccffff">[Passive]</c> If the hero's current HP is <c val="ffffff"><d ref="Effect,Hero8PassiveM,Amount" precision="1"/>%</c> or less after being attacked by Jade's skill, they will be executed immediately.
+Button/Tooltip/Hero6Passive=<c val="ccffff">[Passive]</c> Edburn has <c val="FF9866">DP</c> equal to 2, and increases by an additional 2 per level.
+Button/Tooltip/Hero6Passive2=<c val="ccffff">[Passive]</c> Jade's skills can execute enemies if their current HP is <c val="ffffff"><d ref="Effect,Hero8PassiveM,Amount" precision="1"/>%</c> or lower. If enemies are below the health treshhold a marker is applied.
 Button/Tooltip/Hero6Passive3=<c val="ccffff">[Passive]</c> Devola heals for 0.5% of her maximum health every second.
 Button/Tooltip/Hero6Skill4Dummy=
 Button/Tooltip/Hero7=
@@ -3050,33 +3020,33 @@ Button/Tooltip/Hero73Skill1Btn=<c val="ccffff">[Active]</c> Luna fires a bullet 
 Button/Tooltip/Hero73Skill2Btn=<c val="ccffff">[Active]</c> For 4 seconds, Luna's basic attack range is increased by 1, and her basic attacks deal <c val="ffffff"><d ref="Effect,Hero73Skill2D,Amount"/></c><c val="99ffcc"> (0.6 AP)</c> additional <c val="99ffcc">magical damage</c>.
 Button/Tooltip/Hero73Skill3Btn=<c val="ccffff">[Active]</c> Luna quickly rolls forward according to the skill range and charges. After her dash, she fires a beam of energy at the nearest enemy in front of her, dealing <c val="ffffff"><d ref="Effect,Hero73Skill3D,Amount"/></c><c val="ff9999">(0.6 AD)</c> <c val="ff9999">physical damage</c>. If this skill is used while the Dada Shot skill is in use, it will not attack after charging.
 Button/Tooltip/Hero73Skill4Btn=<c val="ccffff">[Active]</c> Luna fires in one direction for 3 seconds and moves freely. These bullets deal <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount"/></c><c val="ff9999">(0.2 AD)</c><c val="99ffcc">(0.1 AP)</c> <c val="ff9999">physical damage</c> to the first enemy hit, and Deals 200 damage and deals 100% bonus <c val ="ffff99">fixed damage</c> to minions and monsters. This skill also increases Luna's rate of fire according to her attack speed. If you use the skill one more time, it will stop firing.
-Button/Tooltip/Hero7Passive=<c val="ccffff">[Passive]</c> Metel blesses nearby allied Heroes, reducing all <c val="ff9999">Physical Damage</c> and <c val="99ffcc">Magic Damage</c> from enemies by 10% . Metel herself is unaffected.
+Button/Tooltip/Hero7Passive=<c val="ccffff">[Passive]</c> Metel blesses nearby allied Heroes, reducing all <c val="ff9999">Physical Damage</c> and <c val="80FFFF">Magic Damage</c> from enemies by 10%. Metel herself is unaffected.
 Button/Tooltip/Hero8=
 Button/Tooltip/Hero9=
-Button/Tooltip/Hero9Passive=<c val="ccffff">[Passive]</c> Leinard deals bonus  <c val="ffff99">True Damage</c> equal to 10% of her basic attack damage on hit. Leinard has a 25% chance to Headshot, dealing a bonus 50% of her basic attack damage as  <c val="ffff99">True Damage</c>.
+Button/Tooltip/Hero9Passive=<c val="ccffff">[Passive]</c> Leinard deals bonus <c val="ffff99">True Damage</c> equal to 10% of her basic attack damage on hit. Leinard has a 25% chance to Headshot, dealing a bonus 50% of her basic attack damage as <c val="ffff99">True Damage</c>.
 Button/Tooltip/Hero9Passive2=<c val="ccffff">[Passive]</c> When Tangky approaches an enemy hero, his movement speed is increased by 0.4.
 Button/Tooltip/Hero9Passive3=<c val="ccffff">[Passive]</c> When Moria casts a skill attack against an enemy, she deals an additional <c val="ffff99">fixed damage</c> equal to 5% of the damage dealt.
 Button/Tooltip/Hero9Skill2Dummy=
 Button/Tooltip/Hero9Skill2Remove=Remove that structure or unit.
 Button/Tooltip/Hero9Skill4Dummy=
 Button/Tooltip/HeroDumit=
-Button/Tooltip/HeroSkillBtn=<c val="ccffff">[Passive]</c> Benderzone's base damage is increased by <c val="ffffff"><d ref="Effect,Hero1Skill1M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Benderzone calms down and attacks. A basic attack within 6 seconds deals <c val="ffffff"><d ref="Effect,Hero1Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> of <c val="ff9999">physical damage</c> and 6% of the target's current health. Deals additional <c val="ff9999">physical damage</c>.
+Button/Tooltip/HeroSkillBtn=<c val="ccffff">[Passive]</c> Benderzone's base damage is increased by <c val="ffffff"><d ref="Effect,Hero1Skill1M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Benderzone calms down and shoots more carefully. The next basic attack within 6 seconds deals <c val="ffffff"><d ref="Effect,Hero1Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> + 6% of the target's current health <c val="ff9999">physical damage</c>.
 Button/Tooltip/HeroSkillBtn2=<c val="ccffff">[Active]</c> Benderzone is actively engaged in the fight. Increases your basic attack speed by <c val="ffffff"><d ref="Effect,Hero1Skill2M2,Amount"/>%</c> and movement speed by 17% for 4 sec.
-Button/Tooltip/HeroSkillBtn3=<c val="ccffff">[Active]</c> Benderzone throws a grenade at the target area. All enemies within range take <c val="ffffff"><d ref="Effect,Hero1Skill3D,Amount"/></c><c val="99ffcc">(0.5 AP)</c> of <c val="99ffcc">magical damage</c>, and their movement speed is reduced by <c val="ffffff"><d ref="Effect,Hero1Skill3M,Amount"/>%</c> for <c val="ffffff"><d ref="Effect,Hero1Skill3M2,Amount" precision="2"/></c> seconds. is reduced by
-Button/Tooltip/HeroSkillBtn4=<c val="ccffff">[Active]</c> Benderzone bravely fires. Increases basic attack range by 2.5 for 15 seconds and deals <c val="ffffff"><d ref="Effect,Hero1Skill4D,Amount"/></c><c val="ff9999">(0.3 AD)</c> additional <c val="99ffcc">magical damage</c> to target .
-Button/Tooltip/HeroSkillBtn5=<c val="ccffff">[Active]</c> Blane instantly removes any movement reduction applied to her and increases her movement speed by <c val="ffffff"><d ref="Effect,Hero2Skill1M,Amount"/>%</c> for 4 seconds. Blane's next basic attack deals <c val="ffffff"><d ref="Effect,Hero2Skill1D,Amount"/></c><c val="ff9999">(0.9 AD)</c> additional <c val="99ffcc">magical damage</c> and 4% of her maximum health Recovers enough stamina.
-Button/Tooltip/HeroSkillBtn52=<c val="ccffff">[Active]</c> Blane slams the ground with her sword, dealing <c val="ffffff"><d ref="Effect,Hero2Skill2D,Amount"/></c><c val="ff9999">(0.8 AD)</c> <c val="ff9999">physical damage</c> to nearby enemies for 1.5 seconds Puts you in a state of silence.
-Button/Tooltip/HeroSkillBtn522=<c val="ccffff">[Active]</c> Blane swings her sword around her for 3 seconds. Inflicts <c val="ff9999">physical damage</c> of <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c> every 0.5 seconds to enemies within range. Deals 75% damage to minions or neutral monsters.
-Button/Tooltip/HeroSkillBtn5222=<c val="ccffff">[Active]</c> Blane thrusts the last sword into the enemy's head, dealing <c val="ffffff"><d ref="Effect,Hero2Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c> of <c val="ff9999">physical damage</c> and Blane's maximum health. Deals an additional <c val="99ffcc">magic damage</c> equal to 12.5% (<c val="ffffff"><d ref="Effect,Hero2Skill4D2,Amount"  precision="1"/></c>) of
-Button/Tooltip/HeroSkillBtn5223=<c val="ccffff">[Active]</c> Blane swings her sword around her for 3 seconds. Inflicts <c val="ff9999">physical damage</c> of <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c> every 0.5 seconds to enemies within range. Deals 75% damage to minions or neutral monsters.
-Button/Tooltip/HeroSkillBtn53=<c val="ccffff">[Active]</c> Gianter collapses the ground in the target area. After 1 second, deals <c val="99ffcc">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero3Skill1D,Amount"/></c><c val="99ffcc">(0.6 AP)</c> to enemies within range. Damaged enemies have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero3Skill1M,Amount"/>%</c> for 4 seconds.
-Button/Tooltip/HeroSkillBtn532=<c val="ccffff">[Passive]</c> Gianter's basic attacks heal <c val="ffffff"><d ref="Effect,Hero3Skill2M,Amount" precision="1"/></c> health.<n/><c val="ccffff">[Active]</c> Gianter bites the target minion or neutral monster for <c val="ffffff"><d ref="Effect,Hero3Skill2D,Amount"/></c> <c val="ffff99" Deals ">Fixed Damage</c> and heals for <c val="ffffff"><d ref="Effect,Hero3Skill2M2,Amount"/></c> HP. When used on an enemy hero, it deals <c val="ffffff"><d ref="Effect,Hero3Skill2D2,Amount"/></c> <c val="99ffcc">magical damage</c> and does not heal.
-Button/Tooltip/HeroSkillBtn5322=<c val="ccffff">[Passive]</c> Increases Gianter's <c val="ff9999">Physical Defense</c> and <c val="99ffcc">Magic Defense</c> by <c val="ffffff"><d ref="Effect,Hero3Skill3M,Amount"/></c>.<n/><c val="ccffff">[ Active]</c> Gianter creates a shock wave for 8 seconds that deals <c val="ffffff"><d ref="Effect,Hero3Skill3D,Amount"/></c><c val="99ffcc">(0.1 AP)</c> <c val="99ffcc">magic to nearby enemies every 0.5 seconds. Deals damage</c> and an additional <c val="99ffcc">magic damage</c> equal to 0.4%(<c val="ffffff"><d ref="Effect,Hero3Skill3D2,Amount" precision="1"/></c>) of your max health. Damaged enemies have their basic attack speed reduced by <c val="ffffff"><d ref="Effect,Hero3Skill3M2,Amount"/>%</c>.
-Button/Tooltip/HeroSkillBtn53222=<c val="ccffff">[Passive]</c> Increases Gianter's maximum health by <c val="ffffff"><d ref="Effect,Hero3Skill4M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Gianter quickly dashes to the target area and inflicts <c val="ffffff"><d ref="Effect,Hero3Skill4D,Amount"/></c><c val="99ffcc"> Deals <c val="99ffcc">magical damage</c> equal to (1.0 AP)</c> and knocks you into the air for 1.5 seconds. Enemies thrown into the air are stunned for an additional 0.5 seconds.
-Button/Tooltip/HeroSkillBtn533=<c val="ccffff">[Passive]</c> Enemies that take damage from Obos' basic attacks are psionic for 4 seconds. Marked enemies take <c val="ffffff"><d ref="Effect,Hero4Skill0D,Amount"/></c> additional <c val="99ffcc">magical damage</c> to Obos's next skill attack.
-Button/Tooltip/HeroSkillBtn5332=<c val="ccffff">[Active]</c> Obos creates a psionic storm in the target area that lasts for 4 seconds, dealing <c val="99ffcc">magical damage</c> equal to 5% (<c val="ffffff"><d ref="Effect,Hero4Skill3D,Amount" precision="1"/></c>) of his maximum mana to enemies within the area, and 0.5 Deals <c val="ffffff"><d ref="Effect,Hero4Skill3D2,Amount"/></c><c val="99ffcc">(0.15 AP)</c><c val="99ffcc">magical damage</c> per second.
-Button/Tooltip/HeroSkillBtn53322=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="99ffcc">(0.4 AP)</c> of <c val="99ffcc">magical damage</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's maximum mana Deals (<c val="ffffff"><d ref="Effect,Hero4Skill1D2,Amount"  precision="1"/></c>) additional <c val="99ffcc">magic damage</c>.
-Button/Tooltip/HeroSkillBtn533222=<c val="ccffff">[Active]</c> Obos binds the target in place with a powerful gravitational force for <c val="ffffff"><d ref="Effect,Hero4Skill2M,Amount" precision="2"/></c> seconds. The constrained target takes <c val="99ffcc">magic damage</c> equal to 15% (<c val="ffffff"><d ref="Effect,Hero4Skill2D,Amount" precision="2"/></c>) of Obos's maximum mana.
+Button/Tooltip/HeroSkillBtn3=<c val="ccffff">[Active]</c> Benderzone throws a grenade at the target area. Enemies within range take <c val="ffffff"><d ref="Effect,Hero1Skill3D,Amount"/></c><c val="80FFFF">(0.5 AP)</c> <c val="80FFFF">magical damage</c>, and their movement speed is reduced by <c val="ffffff"><d ref="Effect,Hero1Skill3M,Amount"/>%</c> for <c val="ffffff"><d ref="Effect,Hero1Skill3M2,Amount" precision="2"/></c> seconds.
+Button/Tooltip/HeroSkillBtn4=<c val="ccffff">[Active]</c> Benderzone fires bravely. Increases basic attack range by 2.5 for 15 seconds and deals <c val="ffffff"><d ref="Effect,Hero1Skill4D,Amount"/></c><c val="ff9999">(0.3 AD)</c> additional <c val="80FFFF">magical damage</c> with basic attacks.
+Button/Tooltip/HeroSkillBtn5=<c val="ccffff">[Active]</c> Blane removes any movement reduction effects applied to him and increases his movement speed by <c val="ffffff"><d ref="Effect,Hero2Skill1M,Amount"/>%</c> for 4 seconds. Blane's next basic attack deals <c val="ffffff"><d ref="Effect,Hero2Skill1D,Amount"/></c><c val="ff9999">(0.9 AD)</c> additional <c val="80FFFF">magical damage</c> and recovers 4% of his maximum health on hit.
+Button/Tooltip/HeroSkillBtn52=<c val="ccffff">[Active]</c> Blane slams the ground with his sword, dealing <c val="ffffff"><d ref="Effect,Hero2Skill2D,Amount"/></c><c val="ff9999">(0.8 AD)</c> <c val="ff9999">physical damage</c> to nearby enemies. Puts nearby enemies in a state of silence for 1.5 seconds.
+Button/Tooltip/HeroSkillBtn522=<c val="ccffff">[Active]</c> Blane swings his sword around him for 3 seconds. Inflicts <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999"> physical damage</c> to nearby enemies every 0.5 seconds. Only deals 75% damage to minions and neutral monsters.
+Button/Tooltip/HeroSkillBtn5222=<c val="ccffff">[Active]</c> Blane thrusts the last sword into the enemy's head, dealing <c val="ffffff"><d ref="Effect,Hero2Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c>. Deals additional <c val="80FFFF">magic damage</c> equal to 12.5% (<c val="ffffff"><d ref="Effect,Hero2Skill4D2,Amount"  precision="1"/></c>) of Blane's maximum health.
+Button/Tooltip/HeroSkillBtn5223=<c val="ccffff">[Active]</c> Blane swings his sword around him for 3 seconds. Inflicts <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999"> physical damage</c> to nearby enemies every 0.5 seconds. Only deals 75% damage to minions and neutral monsters.
+Button/Tooltip/HeroSkillBtn53=<c val="ccffff">[Active]</c> Gianter collapses the ground in the target area. After 1 second, deals <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero3Skill1D,Amount"/></c><c val="80FFFF">(0.6 AP)</c> to enemies within range. Damaged enemies have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero3Skill1M,Amount"/>%</c> for 4 seconds.
+Button/Tooltip/HeroSkillBtn532=<c val="ccffff">[Passive]</c> Gianter's basic attacks heal <c val="ffffff"><d ref="Effect,Hero3Skill2M,Amount" precision="1"/></c> health.<n/><c val="ccffff">[Active]</c> Gianter bites the target minion or neutral monster, dealing <c val="ffffff"><d ref="Effect,Hero3Skill2D,Amount"/></c> <c val="ffff99">True Damage</c> and healing for <c val="ffffff"><d ref="Effect,Hero3Skill2M2,Amount"/></c> HP. When used on an enemy hero, it deals <c val="ffffff"><d ref="Effect,Hero3Skill2D2,Amount"/></c> <c val="80FFFF">magical damage</c> and does not heal.
+Button/Tooltip/HeroSkillBtn5322=<c val="ccffff">[Passive]</c> Increases Gianter's <c val="FF9866">DP</c> and <c val="99ffcc">RP</c> by <c val="ffffff"><d ref="Effect,Hero3Skill3M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Gianter creates shockwaves around him for 8 seconds. Each shockwave deals <c val="ffffff"><d ref="Effect,Hero3Skill3D,Amount"/></c><c val="80FFFF">(0.1 AP)</c> <c val="80FFFF">magical damage</c> to nearby enemies every 0.5 seconds. Shockwaves deal</c> additional <c val="80FFFF">magic damage</c> equal to 0.4%(<c val="ffffff"><d ref="Effect,Hero3Skill3D2,Amount" precision="1"/></c>) of Gianter's maximum health. Damaged enemies have their basic attack speed reduced by <c val="ffffff"><d ref="Effect,Hero3Skill3M2,Amount"/>%</c>.
+Button/Tooltip/HeroSkillBtn53222=<c val="ccffff">[Passive]</c> Increases Gianter's maximum health by <c val="ffffff"><d ref="Effect,Hero3Skill4M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Gianter quickly dashes to the target area and inflicts <c val="ffffff"><d ref="Effect,Hero3Skill4D,Amount"/></c> <c val="80FFFF">(1.0 AP) magical damage</c>. Enemies hit are knocked into the air for 1.5 seconds. Knocked up enemies are stunned for an additional 0.5 seconds after landing.
+Button/Tooltip/HeroSkillBtn533=<c val="ccffff">[Passive]</c> Enemies that take damage from Obos basic attacks are marked with psionic energy for 4 seconds. Marked enemies take <c val="ffffff"><d ref="Effect,Hero4Skill0D,Amount"/></c> additional <c val="80FFFF">magical damage</c> from Obos next skill attack.
+Button/Tooltip/HeroSkillBtn5332=<c val="ccffff">[Active]</c> Obos creates a psionic storm in the target area that lasts for 4 seconds, dealing <c val="80FFFF">magical damage</c> equal to 5% (<c val="ffffff"><d ref="Effect,Hero4Skill3D,Amount" precision="1"/></c>) of his maximum mana to enemies within the area. The storm deals an additional <c val="ffffff"><d ref="Effect,Hero4Skill3D2,Amount"/></c><c val="80FFFF">(0.15 AP)</c><c val="80FFFF"> magical damage</c> per second.
+Button/Tooltip/HeroSkillBtn53322=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="80FFFF">(0.5 AP)</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's maximum mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) <c val="80FFFF">magical damage</c>.
+Button/Tooltip/HeroSkillBtn533222=<c val="ccffff">[Active]</c> Obos binds the target in place with a powerful gravitational force for <c val="ffffff"><d ref="Effect,Hero4Skill2M,Amount" precision="2"/></c> seconds. The constrained target takes <c val="80FFFF">magic damage</c> equal to 15% (<c val="ffffff"><d ref="Effect,Hero4Skill2D,Amount" precision="2"/></c>) of Obos's maximum mana.
 Button/Tooltip/HeroSkillBtn533223=<c val="ccffff">[Active]</c> Bax fires a shock ball at the enemy for <c val="ffffff"><d ref="Effect,Hero55Skill1D,Amount"/></c><c val="99ffcc">(0.4 AP)</c> <c val="99ffcc">magical damage</c> and 8% of Bax's max health (<c val="ffffff"><d ref="Effect,Hero55Skill1D2,Amount" precision="1"/></c>) additional <c val="99ffcc">magic damage</c>.
 Button/Tooltip/HeroSkillBtn5332232=<c val="ccffff">[Active]</c> Bax casts a deadly spell on an enemy, silencing them for 1 second. The target takes <c val="ffffff"><d ref="Effect,Hero55Skill2M,Amount"/>%</c> additional damage every time Bax takes a skill attack for 4 seconds.
 Button/Tooltip/HeroSkillBtn53322322=<c val="ccffff">[Active]</c> Bax unleashes magical energy at the enemy for <c val="ffffff"><d ref="Effect,Hero55Skill3D,Amount"/></c><c val="99ffcc">(0.25 AP)</c> <c val="99ffcc">magic damage</c> and 4.5% of Bax's max health (<c val="ffffff"><d ref="Effect,Hero55Skill3D2,Amount" precision="1"/></c>) additional <c val="99ffcc">magic damage</c>. Magical energy bounces off up to 3 enemies.
@@ -3085,7 +3055,7 @@ Button/Tooltip/HeroSkillBtn533224=<c val="ccffff">[Active]</c> Burndress moves f
 Button/Tooltip/HeroSkillBtn5332242=<c val="ccffff">[Active]</c> Burndress is protected by a shield, reducing all damage taken from enemies by <c val="ffffff"><d ref="Effect,Hero59Skill2M,Amount"/>%</c> for 3 sec.
 Button/Tooltip/HeroSkillBtn5332243=<c val="ccffff">[Active]</c> Burndress throws a shield at the target area. Enemies hit by the shield take <c val="ffffff"><d ref="Effect,Hero59Skill3D,Amount"/></c><c val="99ffcc">(0.4 AP)</c> of <c val="99ffcc">magical damage</c> and their movement speed is reduced by <c val="ffffff"><d ref="Effect,Hero59Skill3M,Amount"/>%</c> for 2.5 seconds .
 Button/Tooltip/HeroSkillBtn53322432=<c val="ccffff">[Active]</c> Burndress channels for 2 sec, taunting nearby enemies. After focusing, deals <c val="99ffcc">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero59Skill4D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> to nearby enemies. If you use the skill once more during the taunt, it will be canceled.
-Button/Tooltip/HeroSkillBtn53323=<c val="ccffff">[Passive]</c> Increases Obos's maximum mana by <c val="ffffff"><d ref="Effect,Hero4Skill4M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Obos focuses for 0.75 seconds and then unleashes powerful psionic energy, dealing <c val="ffffff"><d ref="Effect,Hero4Skill4D,Amount"/></c> to all enemies hit <c val="99ffcc">(0.8 AP)</c> of <c val="99ffcc">magical damage</c> plus 10% (<c val="ffffff"><d ref="Effect,Hero4Skill4D2,Amount" precision="1"/></c>) of Obos's maximum mana <c val= Deals "99ffcc">magic damage</c>.
+Button/Tooltip/HeroSkillBtn53323=<c val="ccffff">[Passive]</c> Increases Obos's maximum mana by <c val="ffffff"><d ref="Effect,Hero4Skill4M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Obos focuses for 0.75 seconds and then unleashes powerful psionic energy, dealing <c val="ffffff"><d ref="Effect,Hero4Skill4D,Amount"/></c><c val="80FFFF">(0.8 AP)</c> plus 10% (<c val="ffffff"><d ref="Effect,Hero4Skill4D2,Amount" precision="1"/></c>) of Obos maximum mana <c val="80FFFF">magical damage</c>.
 Button/Tooltip/HeroSkillBtn5333=<c val="ccffff">[Passive]</c> Burndress receives the power of her shield, increasing her base damage by 50% (<c val="ffffff"><d ref="Effect,Hero59PassiveM,Amount" precision="2"/></c>) of <c val="ff9999">Physical Defense</c> and <c val="99ffcc">Magical Defense</c>.
 Button/Tooltip/HeroSkillBtn534=<c val="ccffff">[Passive]</c> Increases Basilisk's base attack speed by <c val="ffffff"><d ref="Effect,Hero25Skill1M,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Basilisk fires spores at the target area. Enemies within range take <c val="ffffff"><d ref="Effect,Hero25Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c> <c val="ff9999">physical damage</c>. Target becomes poisoned for 3 seconds, taking <c val="ffffff"><d ref="Effect,Hero25Skill1D2,Amount"/></c><c val="99ffcc">(0.3 AP)</c> additional <c val="99ffcc">magical damage</c> every second.
 Button/Tooltip/HeroSkillBtn5342=<c val="ccffff">[Active]</c> Basilisk fires acid in the eyes of enemy heroes. The target hero takes <c val="ffffff"><d ref="Effect,Hero25Skill2D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> of <c val="99ffcc">magical damage</c> and is blinded for <c val="ffffff"><d ref="Effect,Hero25Skill2M,Amount" precision="1"/></c> seconds.
@@ -3099,11 +3069,11 @@ Button/Tooltip/HeroSkillBtn536=<c val="ccffff">[Active]</c> Mordin's next basic 
 Button/Tooltip/HeroSkillBtn5362=<c val="ccffff">[Active]</c> Mordin creates a mucous path in a straight line for 4 sec, reducing the movement speed of enemies standing on it by <c val="ffffff"><d ref="Effect,Hero65Skill2M,Amount"/>%</c>. Also, Mordin and allied Heroes standing on the mucous have their movement speed increased by <c val="ffffff"><d ref="Effect,Hero65Skill2M2,Amount"/>%</c>.
 Button/Tooltip/HeroSkillBtn5363=<c val="ccffff">[Active]</c> Mordin hatches 3 Legionnaires that survive for <c val="ffffff"><d ref="Effect,Hero65Skill3M,Amount" precision="1"/></c> seconds. Legionnaires have 30% of Mordin's base attack power and health and 110% movement speed, and immediately attack nearby enemy heroes as priority. If Mordin is nearby when Legionnaires die, <c val="ffffff"><d ref="Effect,Hero65Skill3M2,Amount"/></c> health is restored.
 Button/Tooltip/HeroSkillBtn5364=<c val="ccffff">[Active]</c> Mordin concentrates for 1.5 seconds and enters the ground, then breaks through the ground in the target area and deals <c val="99ffcc" equal to <c val="ffffff"><d ref="Effect,Hero65Skill4D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> to all nearby enemies. Deals >magical damage</c> and knocks you into the air for 1.75 seconds. Enemies in the center of the range will have an additional 0.75 seconds to stay in the air.
-Button/Tooltip/HeroSkillBtn54=<c val="ccffff">[Passive]</c> Increases Xolus' base damage by <c val="ffffff"><d ref="Effect,Hero5Skill1M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Xolus unleashes a powerful zeal, reducing his health by <c val="ffffff"><d ref="Effect,Hero5Skill1M2,Amount"/></c><c val="99ffcc">( 0.5 AP)</c> while reducing the base damage of enemies within range by <c val="ffffff"><d ref="Effect,Hero5Skill1M3,Amount"/>%</c> for 4 seconds.
-Button/Tooltip/HeroSkillBtn54222=<c val="ccffff">[Passive]</c> Increases Xolus' basic attack critical strike chance by <c val="ffffff"><d ref="Effect,Hero5Skill4M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Xolus goes beyond his rage limit and becomes immune to death for 5 seconds. At the end of the duration, his health is instantly restored for <c val="ffffff"><d ref="Effect,Hero5Skill4M3,Amount"/></c><c val = "99ffcc">(1.0 AP)</ c>.
+Button/Tooltip/HeroSkillBtn54=<c val="ccffff">[Passive]</c> Increases Xolus base damage by <c val="ffffff"><d ref="Effect,Hero5Skill1M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Xolus unleashes a powerful zeal, recovering <c val="ffffff"><d ref="Effect,Hero5Skill1M2,Amount"/></c><c val="80FFFF">(0.5 AP)</c> health. Enemies within range have their base damage reduced by <c val="ffffff"><d ref="Effect,Hero5Skill1M3,Amount"/>%</c> for 4 seconds.
+Button/Tooltip/HeroSkillBtn54222=<c val="ccffff">[Passive]</c> Increases Xolus basic attack critical strike chance by <c val="ffffff"><d ref="Effect,Hero5Skill4M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Xolus goes beyond his rage limit and becomes immune to death for 5 seconds. At the end of the duration Xolus is restoring <c val="ffffff"><d ref="Effect,Hero5Skill4M3,Amount"/></c><c val = "80FFFF">(1.0 AP)</c> HP.
 Button/Tooltip/HeroSkillBtn543=<c val="ccffff">[Active]</c> Xolus amplifies the power of his sword for 5 sec, reducing the movement speed of all enemies in front of him by <c val="ffffff"><d ref="Effect,Hero5Skill2M,Amount"/>%</c>.
-Button/Tooltip/HeroSkillBtn5432=<c val="ccffff">[Active]</c> Xolus travels to the designated area and inflicts Avatar Slash. Inflicts <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero5Skill3D,Amount"/></c><c val="ff9999">(0.6 AD)</c> to all enemies it passes through.
-Button/Tooltip/HeroSkillBtn55=<c val="ccffff">[Active]</c> Edburn fires a pistol at an enemy, dealing <c val="ffffff"><d ref="Effect,Hero6Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> basic attack damage. If the target is killed by this skill, the mana depleted is restored. This skill is critical.
+Button/Tooltip/HeroSkillBtn5432=<c val="ccffff">[Active]</c> Xolus travels to the designated area and inflicts <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero5Skill3D,Amount"/></c><c val="ff9999">(0.6 AD)</c> to all enemies he passes through.
+Button/Tooltip/HeroSkillBtn55=<c val="ccffff">[Active]</c> Edburn fires a pistol at an enemy, dealing <c val="ffffff"><d ref="Effect,Hero6Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> basic attack damage. If the target is killed by this skill the depleted mana is restored. This skill can land critical stikes and can be evaded.
 Button/Tooltip/HeroSkillBtn5510=<c val="ccffff">[Active]</c> Valkyria swings her scythe with a large swipe, dealing <c val="ffffff"><d ref="Effect,Hero36Skill1D,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999">physical damage</c> to all enemies in a circle around it. Enemies outside the skill range take 50% additional damage.
 Button/Tooltip/HeroSkillBtn55102=<c val="ccffff">[Active]</c> Valkyria's basic attacks within 4 seconds deal <c val="ffffff"><d ref="Effect,Hero36Skill2M,Amount"/>%</c> additional basic attack damage and reduce movement speed by <c val="ffffff"><d ref="Effect,Hero36Skill2M2,Amount"/>%</c> for 2 seconds.
 Button/Tooltip/HeroSkillBtn551022=<c val="ccffff">[Passive]</c> Increases the base damage of Valkyria by <c val="ffffff"><d ref="Effect,Hero36Skill3M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Valkyria wraps nearby enemies with her scythe's hook and pulls them in front of her. The dragged enemies have their movement speed reduced by 60% for 1 second.
@@ -3112,13 +3082,13 @@ Button/Tooltip/HeroSkillBtn55104=<c val="ccffff">[Active]</c> Jango fires a pois
 Button/Tooltip/HeroSkillBtn551042=<c val="ccffff">[Active]</c> Jango detonates the poison in the bodies of enemies in the target area, dealing <c val="ffffff"><d ref="Effect,Hero58Skill2D,Amount"/></c><c val="ff9999"> (0.8 AD)</c> <c val="ff9999">physical damage</c>. Each additional stack of poison inflicts <c val="FFFFFF"><d ref="Effect,Hero58PassiveM,Amount"/> </c><c val="FFFF80">fixed damage</c>. If the spell is used on a target enemy with 5 stacks of poison it deals <c val="FFFF80">fixed damage</c> instead of <c val="ff9999">physical damage</c>.
 Button/Tooltip/HeroSkillBtn5510422=<c val="ccffff">[Active]</c> Jango fires a rocket forward, dealing <c val="ffffff"><d ref="Effect,Hero58Skill3D,Amount"/></c><c val="ff9999">(0.65 AD)</c> <c val="ff9999">physical damage</c> to enemies within range, and is pushed back by recoil. Enemies hit gain one poison stack.
 Button/Tooltip/HeroSkillBtn55104222=<c val="ccffff">[Active]</c> Jango infects enemies in the target area with explosive poison. After 5 seconds the poison explodes for <c val="ffffff"><d ref="Effect,Hero58Skill4D,Amount"/> </c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c>. The target hit takes an additional <c val="ffff99">fixed damage</c> equal to 25% of the damage done by Jango's basic attacks during the mentioned 5s duration. The explosion can land critical hits.
-Button/Tooltip/HeroSkillBtn552=<c val="ccffff">[Active]</c> Edburn immediately gives first aid, removing all movement impairing effects and restoring <c val="ffffff"><d ref="Effect,Hero6Skill2M,Amount"/></c><c val="99ffcc">(1.0 AP)</c> health.
-Button/Tooltip/HeroSkillBtn5522=<c val="ccffff">[Passive]</c> Increases Edburn's base damage by <c val="ffffff"><d ref="Effect,Hero6Skill3M,Amount"/></c> and movement speed by <c val="ffffff"><d ref="Effect,Hero6Skill3M2,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Edburn goes into battle like crazy for 7 seconds. If you deal basic attack damage to an enemy for the duration, the target bleeds for <c val="ffffff"><d ref="Effect,Hero6Skill3D,Amount"/></c><c val="ff9999">(0.3 AD)</c> <c val="ff9999">Physical Damage</c> every second. wears for 5 seconds.
-Button/Tooltip/HeroSkillBtn55222=<c val="ccffff">[Active]</c> Edburn calls for bombing support, dropping bombs at the target area for 8 seconds. Enemies within range have their movement speed reduced by 45% and each bomb deals <c val="ffffff"><d ref="Effect,Hero6Skill4D,Amount"/></c><c val="99ffcc">(0.3 AP)</c> <c val="99ffcc">magical damage</c> put on.
-Button/Tooltip/HeroSkillBtn553=<c val="ccffff">[Active]</c> Metel quickly infuses the regenerative potion. Recovers HP by <c val="ffffff"><d ref="Effect,Hero7Skill1M,Amount"/></c><c val="99ffcc">(0.7 AP)</c> when used on self or allies, and <c val="ffffff"><d ref="Effect,Hero7Skill1D,Amount"/></c><c val="99ffcc">(0.4 AP)</c> when used on enemies Inflicts <c val="99ffcc">magical damage</c>.
-Button/Tooltip/HeroSkillBtn5532=<c val="ccffff">[Active]</c> Metel quickly infuses the magic potion. Recovers mana by <c val="ffffff"><d ref="Effect,Hero7Skill2M,Amount"/></c><c val="99ffcc">(0.35 AP)</c> when used on an ally, and <c val="ffffff"><d ref="Effect,Hero7Skill2D,Amount"/></c><c val="99ffcc">(0.5 AP)</c> when used on an enemy. Deals <c val="99ffcc">magical damage</c> and silences them for <c val="ffffff"><d ref="Effect,Hero7Skill2M2,Amount" precision="2"/></c> seconds.
-Button/Tooltip/HeroSkillBtn55322=<c val="ccffff">[Active]</c> Metel Creates a shield on yourself or an ally that absorbs <c val="ffffff"><d ref="Effect,Hero7Skill3M,Amount"/></c><c val="99ffcc">(0.6 AP)</c> damage for 5 seconds.
-Button/Tooltip/HeroSkillBtn553222=<c val="ccffff">[Passive]</c> Gain <c val="ffffff"><d ref="Effect,Hero7Skill4M,Amount"/></c> minerals every 10 seconds.<n/><c val="ccffff">[Active]</c> Metel heals herself and all allied Heroes by <c val="ffffff"><d ref="Effect,Hero7Skill4M2,Amount"/></c><c val="99ffcc">(0.9 AP)</c> instantly.
+Button/Tooltip/HeroSkillBtn552=<c val="ccffff">[Active]</c> Edburn uses his first aid knowledge, removing all movement impairing effects and restoring <c val="ffffff"><d ref="Effect,Hero6Skill2M,Amount"/></c><c val="80FFFF">(1.0 AP)</c> health.
+Button/Tooltip/HeroSkillBtn5522=<c val="ccffff">[Passive]</c> Increases Edburn's base damage by <c val="ffffff"><d ref="Effect,Hero6Skill3M,Amount"/></c> and movement speed by <c val="ffffff"><d ref="Effect,Hero6Skill3M2,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Edburn goes into a rage-like state for 7 seconds. If Edburn deals basic attack damage to an enemy during rage, enemies will bleed for <c val="ffffff"><d ref="Effect,Hero6Skill3D,Amount"/></c><c val="ff9999">(0.3 AD)</c> <c val="ff9999">Physical Damage</c> every second for 5 seconds.
+Button/Tooltip/HeroSkillBtn55222=<c val="ccffff">[Active]</c> Edburn calls for bombing support, dropping bombs at the target area for 8 seconds. Enemies within range have their movement speed reduced by 45%. Each bomb deals <c val="ffffff"><d ref="Effect,Hero6Skill4D,Amount"/></c><c val="80FFFF">(0.3 AP)</c> <c val="80FFFF">magical damage</c>.
+Button/Tooltip/HeroSkillBtn553=<c val="ccffff">[Active]</c> Metel quickly infuses a regenerative potion. Recovers <c val="ffffff"><d ref="Effect,Hero7Skill1M,Amount"/></c><c val="80FFFF">(0.7 AP)</c> HP when used on self or allies. Inflicts <c val="ffffff"><d ref="Effect,Hero7Skill1D,Amount"/></c><c val="80FFFF">(0.4 AP)</c> <c val="80FFFF">magical damage</c> when used on enemies.
+Button/Tooltip/HeroSkillBtn5532=<c val="ccffff">[Active]</c> Metel quickly infuses a mana potion. Recovers <c val="ffffff"><d ref="Effect,Hero7Skill2M,Amount"/></c><c val="80FFFF">(0.35 AP)</c> mana when used on an ally. When used on an enemy the infusion deals <c val="ffffff"><d ref="Effect,Hero7Skill2D,Amount"/></c><c val="80FFFF">(0.5 AP)</c> <c val="80FFFF">magical damage</c> and puts the enemy in a state of silence for <c val="ffffff"><d ref="Effect,Hero7Skill2M2,Amount" precision="2"/></c> second(s).
+Button/Tooltip/HeroSkillBtn55322=<c val="ccffff">[Active]</c> Metel Creates a shield on yourself or an ally that absorbs <c val="ffffff"><d ref="Effect,Hero7Skill3M,Amount"/></c><c val="80FFFF">(0.6 AP)</c> damage for 5 seconds.
+Button/Tooltip/HeroSkillBtn553222=<c val="ccffff">[Passive]</c> Gain <c val="ffffff"><d ref="Effect,Hero7Skill4M,Amount"/></c> minerals every 10 seconds.<n/><c val="ccffff">[Active]</c> Metel heals herself and all allied Heroes by <c val="ffffff"><d ref="Effect,Hero7Skill4M2,Amount"/></c><c val="80FFFF">(0.9 AP)</c> instantly.
 Button/Tooltip/HeroSkillBtn5533=<c val="ccffff">[Active]</c> Netero empowers his sword. Your next basic attack deals <c val="ffffff"><d ref="Effect,Hero20Skill1D,Amount"/></c><c val="99ffcc">(0.8 AP)</c> of <c val="99ffcc">magical damage</c> and 4% (<c val="ffffff"><d ref="Effect,Hero20Skill1D2,Amount"  precision="1"/></c>) of Netero's maximum health. Deals additional <c val="ffff99">true damage</c>. Targets hit by this skill take 15% additional <c val="ff9999">Physical Damage</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn553310=<c val="ccffff">[Active]</c> Zero dashes forward, dealing <c val="ffffff"><d ref="Effect,Hero50Skill1D,Amount"/></c><c val="ff9999">(0.5 AD)</c><c val="ff9999">physical damage</c> to all enemies it passes through. Hitting an enemy Hero can use this skill one more time within 3 seconds.
 Button/Tooltip/HeroSkillBtn5533102=<c val="ccffff">[Active]</c> Zero summons a shadow around her, swinging her sword 360 degrees, dealing <c val="ffffff"><d ref="Effect,Hero50Skill2D,Amount"/></c><c val="ff9999">(1.3 AD) </c><c val="ff9999">Physical damage</c> is applied.
@@ -3214,15 +3184,15 @@ Button/Tooltip/HeroSkillBtn55372=<c val="ccffff">[Active]</c> Michael Cleansees 
 Button/Tooltip/HeroSkillBtn553722=<c val="ccffff">[Active]</c> Michael injects a magical stimulant into himself or an allied hero. Removes all movement impairing effects on the target and increases their movement speed by <c val="ffffff"><d ref="Effect,Hero26Skill3M,Amount"/>%</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn5537222=<c val="ccffff">[Active]</c> Michael absorbs <c val="ffffff"><d ref="Effect,Hero26Skill4M,Amount"/>%</c> of all damage for 3 seconds. At the end of the duration, it deals <c val="ffffff"><d ref="Effect,Hero26Skill4D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> <c val="99ffcc">magical damage</c> to nearby enemies and stuns them for 1.5 seconds.
 Button/Tooltip/HeroSkillBtn554=<c val="ccffff">[Active]</c> Jade teleports to an enemy, attacking a vital point. Enemies attacked take <c val="ffffff"><d ref="Effect,Hero8Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> of <c val="ff9999">physical damage</c> and are silenced for 1 second.
-Button/Tooltip/HeroSkillBtn5542=<c val="ccffff">[Active]</c> Jade transforms her body into a blade to move quickly. While moving, she won't bump into other units and gain <c val="ffffff"><d ref="Effect,Hero8Skill2M,Amount"/>%</c> movement speed for 3 seconds. Enemies near Jade take <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero8Skill2D,Amount"/></c><c val="ff9999">(0.8 AD)</c>. This skill does not apply additional damage to the same target.
-Button/Tooltip/HeroSkillBtn55422=<c val="ccffff">[Active]</c> Jade unleashes several blades in unison and then causes them to return to him. Each time these blades pass an enemy, they inflict <c val="ffffff"><d ref="Effect,Hero8Skill3D,Amount"/></c><c val="ff9999">(0.75 AD)</c> <c val="ff9999">physical damage</c> and reduce movement speed by <c val="ffffff"><d ref="Effect,Hero8Skill3M,Amount"/>%</c> for 2 seconds.
-Button/Tooltip/HeroSkillBtn554222=<c val="ccffff">[Passive]</c> Increases Jade's Dark Wound trigger condition (target's maximum health) by <c val="ffffff"><d ref="Effect,Hero8PassiveM2,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Jade hides in the shadows, becoming Stealth for 12 seconds. Basic attacks or skills while stealth deal <c val="ffffff"><d ref="Effect,Hero8Skill4D,Amount"/></c><c val="ff9999">(1.35 AD)</c> additional <c val="ff9999">Physical Damage</c>. After attacking, stealth is released.
+Button/Tooltip/HeroSkillBtn5542=<c val="ccffff">[Active]</c> Jade transforms her body into a blade to move quickly. While moving, she won't bump into other units and gain <c val="ffffff"><d ref="Effect,Hero8Skill2M,Amount"/>%</c> movement speed for 3 seconds. Enemies near Jade take <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero8Skill2D,Amount"/></c><c val="ff9999">(0.8 AD)</c>. Damage can't be applied more than once to the same target.
+Button/Tooltip/HeroSkillBtn55422=<c val="ccffff">[Active]</c> Jade unleashes several blades in unison and then causes them to return. Each time these blades pass an enemy they inflict <c val="ffffff"><d ref="Effect,Hero8Skill3D,Amount"/></c><c val="ff9999">(0.75 AD)</c> <c val="ff9999">physical damage</c> and reduce movement speed by <c val="ffffff"><d ref="Effect,Hero8Skill3M,Amount"/>%</c> for 2 seconds.
+Button/Tooltip/HeroSkillBtn554222=<c val="ccffff">[Passive]</c> Increases Jade's "Dark Scar" trigger condition (target's maximum health) by <c val="ffffff"><d ref="Effect,Hero8PassiveM2,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Jade hides in the shadows, becoming stealthed for 12 seconds. Basic attacks or skills while stealthed deal <c val="ffffff"><d ref="Effect,Hero8Skill4D,Amount"/></c><c val="ff9999">(1.35 AD)</c> additional <c val="ff9999">Physical Damage</c>. Stealth is removed after attacking.
 Button/Tooltip/HeroSkillBtn5543=<c val="ccffff">[Active]</c> Neherenia deals <c val="99ffcc">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero29Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c> to the target, and summons a vampire monster. Vampire monsters have 40% of Neherenia's base attack power and HP, 65% attack speed, and 110% movement speed. Each time the vampire monster performs a basic attack, Neherenia's health is restored by <c val="ffffff"><d ref="Effect,Hero29Skill1M,Amount"/></c><c val="ff9999">(0.3 AD)</c>.
-Button/Tooltip/HeroSkillBtn555=<c val="ccffff">[Active]</c> Venom Bug rolls around when moving, moving quickly for 7 seconds. Accelerates while moving and on impact deals <c val="ffffff"><d ref="Effect,Hero10Skill1D,Amount"/></c><c val="99ffcc">(0.75 AP)</c> <c val="99ffcc">magic damage</c> to nearby enemies and moves for 3 seconds Reduces speed by <c val="ffffff"><d ref="Effect,Hero10Skill1M,Amount"/>%</c>.
-Button/Tooltip/HeroSkillBtn5552=<c val="ccffff">[Passive]</c> Venom Bug takes 30% less damage from neutral monsters, and when receiving a basic attack from an enemy, the attacker deals <c val="ffff99"> equal to <c val="ffffff"><d ref="Effect,Hero10Skill2D,Amount"/></c><c val="ff9999">(0.2 DP)</c> Deals true damage</c>.<n/><c val="ccffff">[Active]</c> Venom Bug taunts an enemy, causing them to attack themselves for <c val="ffffff"><d ref="Effect,Hero10Skill2M,Amount" precision="2"/></c> seconds.
-Button/Tooltip/HeroSkillBtn55522=<c val="ccffff">[Active]</c> Venom Bug carries a huge acid pouch on his back for 10 seconds. When the duration expires or when attacked by an enemy, ignores 50% damage and explodes an acid sac, dealing <c val="ffffff"><d ref="Effect,Hero10Skill3D,Amount"/></c><c val="99ffcc">(0.5 AP)</c> <c val="99ffcc">magical damage</c> to nearby enemies.
-Button/Tooltip/HeroSkillBtn555222=<c val="ccffff">[Active]</c> Venom Bug triggers biochemical reactions in his body to survive. Instantly removes all harmful effects on you, increases <c val="ff9999">Physical Defense</c> and <c val="99ffcc">Magical Defense</c> by <c val="ffffff"><d ref="Effect,Hero10Skill4M,Amount"/></c>, health regeneration and Mana regeneration increased by <c val="ffffff"><d ref="Effect,Hero10Skill4M2,Amount"/></c>.
-Button/Tooltip/HeroSkillBtn5553=<c val="ccffff">[Active]</c> Venom Bug rolls around when moving, moving quickly for 7 seconds. Accelerates while moving and on impact deals <c val="ffffff"><d ref="Effect,Hero10Skill1D,Amount"/></c><c val="99ffcc">(0.75 AP)</c> <c val="99ffcc">magic damage</c> to nearby enemies and moves for 3 seconds Reduces speed by <c val="ffffff"><d ref="Effect,Hero10Skill1M,Amount"/>%</c>.
+Button/Tooltip/HeroSkillBtn555=<c val="ccffff">[Active]</c> Venom Bug rolls around when moving, moving quickly for 7 seconds. Accelerates quickly while moving and deals <c val="ffffff"><d ref="Effect,Hero10Skill1D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies on impact. Enemies struck have their movementspeed reduced by <c val="ffffff"><d ref="Effect,Hero10Skill1M,Amount"/>%</c> for 3 seconds.
+Button/Tooltip/HeroSkillBtn5552=<c val="ccffff">[Passive]</c> Venom Bug takes 30% less damage from neutral monsters. When Venom Bug is attacked with a basic attack, the attacker receives <c val="ffffff"><d ref="Effect,Hero10Skill2D,Amount"/></c><c val="FF9866">(0.2 DP)</c> <c val="ffff99">True Damage</c></c> in retaliation.<n/><c val="ccffff">[Active]</c> Venom Bug taunts an enemy, causing him to attack Venom Bug for <c val="ffffff"><d ref="Effect,Hero10Skill2M,Amount" precision="2"/></c> second(s).
+Button/Tooltip/HeroSkillBtn55522=<c val="ccffff">[Active]</c> Venom Bug carries a huge acid pouch on his back for 10 seconds. The next enemy basic or skill attack's damage is reduced by 50%. When the duration expires or when attacked by an enemy the acid pouch explodes, dealing <c val="ffffff"><d ref="Effect,Hero10Skill3D,Amount"/></c><c val="80FFFF">(0.5 AP)</c> <c val="80FFFF">magical damage</c> to nearby enemies.
+Button/Tooltip/HeroSkillBtn555222=<c val="ccffff">[Active]</c> Venom Bug triggers biochemical reactions in his body which instantly remove all harmful effects. Increases <c val="FF9866">DP</c>, <c val="99ffcc">RP</c> by <c val="ffffff"><d ref="Effect,Hero10Skill4M,Amount"/></c>, Health regeneration and Mana regeneration by <c val="ffffff"><d ref="Effect,Hero10Skill4M2,Amount"/></c> for a duration of 20 seconds.
+Button/Tooltip/HeroSkillBtn5553=<c val="ccffff">[Active]</c> Venom Bug rolls around for up to 7 seconds. During the duration Venom Bug accelerates quickly while moving and deals <c val="ffffff"><d ref="Effect,Hero10Skill1D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies on impact. Enemies struck have their movementspeed reduced by <c val="ffffff"><d ref="Effect,Hero10Skill1M,Amount"/>%</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn5554=<c val="ccffff">[Active]</c> Bay Arc fires a shock cannon at the target area, dealing <c val="99ffcc">magic damage</c> equal to <c val="ffffff"><d ref="Effect,Hero48Skill1D,Amount"/></c><c val="99ffcc">(0.6 AP)</c> and stunning them for 1.25 seconds. . Enemies in the center of the range have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero48Skill1M,Amount"/>%</c> for an additional 3 seconds.
 Button/Tooltip/HeroSkillBtn55542=<c val="ccffff">[Passive]</c>All allied Heroes near the Bay Arc regenerate <c val="ffffff"><d ref="Effect,Hero48Skill2M,Amount" precision="1"/></c> mana per second. Bay Arc itself is unaffected.<n/><c val="ccffff">[Active]</c> Increases the movement speed of Bay Arc and nearby allied heroes by <c val="ffffff"><d ref="Effect,Hero48Skill2M2,Amount"/>%</c> for 2 seconds.
 Button/Tooltip/HeroSkillBtn555422=<c val="ccffff">[Active]</c> Bay Arc creates an impenetrable electric wall in the target area for <c val="ffffff"><d ref="Effect,Hero48Skill3M,Amount"/></c> seconds. The wall is dealing <c val="FFFFFF"><d ref="Effect,Hero48Skill3D,Amount"/> <c val="99ffcc">(0.2 AP) magical damage </c></c>to nearby enemies each second.
@@ -3260,10 +3230,10 @@ Button/Tooltip/HeroSkillBtn57=<c val="ccffff">[Active]</c> Kerberos deals <c val
 Button/Tooltip/HeroSkillBtn572=<c val="ccffff">[Active]</c> Kerberos creates a shield on himself that absorbs <c val="ffffff"><d ref="Effect,Hero27Skill2M,Amount"/></c><c val="99ffcc">(0.6 AP)</c> damage for 6 seconds. While the shield is on, Kerberos' base attack speed is increased by <c val="ffffff"><d ref="Effect,Hero27Skill2M2,Amount"/>%</c> and movement speed is increased by <c val="ffffff"><d ref="Effect,Hero27Skill2M3,Amount"/>%</c>.
 Button/Tooltip/HeroSkillBtn5722=<c val="ccffff">[Active]</c> Kerberos deals <c val="ffffff"><d ref="Effect,Hero27Skill3D,Amount"/></c><c val="99ffcc">(0.8 AP)</c> <c val="99ffcc">magic damage</c> to all enemies in the target area, taunts for <c val="ffffff"><d ref="Effect,Hero27Skill3M,Amount" precision="2"/></c> seconds do. Recovers 25 energy for each taunted hero.
 Button/Tooltip/HeroSkillBtn57222=<c val="ccffff">[Active]</c> Kerberos emit a large amount of current. Increases base damage by <c val="ffffff"><d ref="Effect,Hero27Skill4M,Amount"/>%</c> for 8 seconds, deals <c val="ffffff"><d ref="Effect,Hero27Skill4D,Amount"/></c><c val="ff9999">(0.25 AD)</c><c val="99ffcc">magical damage</c> every 0.5 seconds to nearby enemies is applied. Targets damaged by this skill will be electrocuted.
-Button/Tooltip/HeroSkillBtn6=<c val="ccffff">[Active]</c> Leinard fires an explosive wraith grenade, dealing <c val="ffffff"><d ref="Effect,Hero9Skill1D,Amount"/></c><c val="ff9999">(1.2 AD)</c><c val="ff9999">physical damage</c> to all enemies in a line. Enemies marked with Shock are attacked by this skill and their movement speed is reduced by <c val="ffffff"><d ref="Effect,Hero9Skill1M,Amount"/>%</c> for 3 seconds.
-Button/Tooltip/HeroSkillBtn62=<c val="ccffff">[Active]</c> Leinard places a trap that lasts 4 minutes. The trapped target takes <c val="ffffff"><d ref="Effect,Hero9Skill2D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> <c val="99ffcc">magical damage</c>, is restricted from movement for 2 seconds, and has vision shared with enemies for 6 seconds. Targets caught in the trap take 50% more damage if they receive Leinard's basic attack or Wraith Shot / True Aim Sniper skill within 6 seconds. You can place up to 6 traps.
-Button/Tooltip/HeroSkillBtn622=<c val="ccffff">[Active]</c> Leinard fires a shock bomb at the target location. All enemies near the target location take <c val="ffffff"><d ref="Effect,Hero9Skill3D,Amount"/></c><c val="99ffcc">(0.8 AP)</c> <c val="99ffcc">magical damage</c> and are marked with shock for <c val="ffffff"><d ref="Effect,Hero9Skill3M,Amount"/></c> seconds. Stealthed enemies are revealed for the duration.
-Button/Tooltip/HeroSkillBtn6222=<c val="ccffff">[Active]</c> Leinard aims at an enemy for 1.5 seconds, then deals <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero9Skill4D,Amount"/></c><c val="ff9999">(2.0 AD)</c>. During this time, the target's sight is shared. While the bullets fire and fly, another enemy hero can hit them for you.
+Button/Tooltip/HeroSkillBtn6=<c val="ccffff">[Active]</c> Leinard fires an explosive wraith grenade, dealing <c val="ffffff"><d ref="Effect,Hero9Skill1D,Amount"/></c><c val="ff9999">(1.2 AD)</c><c val="ff9999"> physical damage</c> to all enemies in a line. Enemies marked with Shock have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero9Skill1M,Amount"/>%</c> for 3 seconds.
+Button/Tooltip/HeroSkillBtn62=<c val="ccffff">[Active]</c> Leinard places a trap that lasts 4 minutes. The trapped target takes <c val="ffffff"><d ref="Effect,Hero9Skill2D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magical damage</c>, is restricted from movement for 2 seconds, and has vision shared with enemies for 6 seconds. Targets caught in the trap take 50% more damage from the next basic attack, Wraith Shot or True Aim Sniper skill within 6 seconds. You can place up to 6 traps.
+Button/Tooltip/HeroSkillBtn622=<c val="ccffff">[Active]</c> Leinard fires a shock bomb at the target location. All enemies near the target location take <c val="ffffff"><d ref="Effect,Hero9Skill3D,Amount"/></c><c val="80FFFF">(0.8 AP)</c> <c val="80FFFF">magical damage</c> and are marked with Shock for <c val="ffffff"><d ref="Effect,Hero9Skill3M,Amount"/></c> seconds. Stealthed enemies are revealed for the duration.
+Button/Tooltip/HeroSkillBtn6222=<c val="ccffff">[Active]</c> Leinard aims at an enemy for 1.5 seconds, then deals <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero9Skill4D,Amount"/></c><c val="ff9999">(2.0 AD)</c>. During this time, the target's sight is shared. While the bullet is midair other enemy hero's can block the bullet and take the damage instead.
 Button/Tooltip/HeroSkillBtn63=<c val="ccffff">[Active]</c> Galaxia summons two demonic sands. After a while, a powerful force of sand erupts, dealing <c val="ffffff"><d ref="Effect,Hero11Skill1D,Amount"/></c><c val="99ffcc">(0.9 AP)</c> <c val="99ffcc">magical damage</c> to enemies and <c val="ffffff"><d ref="Effect,Hero11Skill1M,Amount" precision="2"/></c> seconds silence for a while.
 Button/Tooltip/HeroSkillBtn632=<c val="ccffff">[Active]</c> Galaxia bombards the target area with sand energy lasting 5 seconds, dealing <c val="ffffff"><d ref="Effect,Hero11Skill2M,Amount" precision="1"/>%</c><c val="99ffcc">(1% 100 AP)</c> of their maximum health per second to enemies in the area. Inflicts <c val="99ffcc">magic damage</c>. Maximum damage is capped at <c val="ffffff"><d ref="Effect,Hero11Skill2D2,Amount" precision="1"/></c> against minions or neutral monsters.
 Button/Tooltip/HeroSkillBtn6322=<c val="ccffff">[Active]</c> Galaxia sends a powerful sandstorm to the target area. Enemies passing through this storm take <c val="ffffff"><d ref="Effect,Hero11Skill3D,Amount"/></c><c val="99ffcc">(0.75 AP)</c> of <c val="99ffcc">magical damage</c> and gain <c val="ffffff"><d ref="Effect,Hero11Skill3M,Amount"/>%</c> movement speed for 3 seconds. is reduced by.
@@ -3387,27 +3357,27 @@ Button/Tooltip/SporeCrawler=
 Button/Tooltip/Tosh=
 Button/Tooltip/Ultralisk=
 Button/Tooltip/Zeratul=
-DOCSTR_0001=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="99ffcc">(0.5 AP)</c> <c val="99ffcc">magical damage</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's max mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) additional damage.
-DOCSTR_0002=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="99ffcc">(0.5 AP)</c> <c val="99ffcc">magical damage</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's max mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) additional damage.
-DOCSTR_0003=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="99ffcc">(0.5 AP)</c> <c val="99ffcc">magical damage</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's max mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) additional damage.
-DOCSTR_0004=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="99ffcc">(0.5 AP)</c> <c val="99ffcc">magical damage</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's max mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) additional damage.
+DOCSTR_0001=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="80FFFF">(0.5 AP)</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's maximum mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) <c val="80FFFF">magical damage</c>.
+DOCSTR_0002=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="80FFFF">(0.5 AP)</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's maximum mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) <c val="80FFFF">magical damage</c>.
+DOCSTR_0003=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="80FFFF">(0.5 AP)</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's maximum mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) <c val="80FFFF">magical damage</c>.
+DOCSTR_0004=<c val="ccffff">[Active]</c> Obos inflicts a powerful energy shock on the target for <c val="ffffff"><d ref="Effect,PsionicShockwaveDamage,Amount"/></c><c val="80FFFF">(0.5 AP)</c> and <c val="ffffff"><d ref="Effect,Hero4Skill1M,Amount"/>%</c> of Obos's maximum mana (<c val="ffffff"><d ref="Effect,Hero4Skill1D4,Amount" precision="1"/></c>) <c val="80FFFF">magical damage</c>.
 DOCSTR_Banning1= (<c val="ff5555">Banning</c>)
 DOCSTR_Banning2='s ban
 DOCSTR_Banning3= has banned 
 DocInfo/Author=MaxStorm
-DocInfo/DescLong=Hotshot is a miniature version of the AOS game that anyone can enjoy easily by discarding the complicated item method and using a simple stat increase method like a real-time game. Meet the various heroes with the charm of Hotshot now.<n/><n/>Channel: Hotshot<n/>Community: https://discord.gg/7gyChsbT5n
+DocInfo/DescLong=Hotshot is a miniature version of the AOS game that anyone can enjoy easily by discarding the complicated item method and using a simple stat increase method like a real-time game. Meet the various heroes with the charm of Hotshot now.<n/><n/>Map created by: Maxstorm<n/>Discord: https://discord.gg/7gyChsbT5n
 DocInfo/DescShort=4v4
 DocInfo/HowToPlayAdvanced00=1. When both teams have made all their choices, the real game begins.
-DocInfo/HowToPlayAdvanced01=2. After a while, minions will spawn and start attacking with lines above and below.
+DocInfo/HowToPlayAdvanced01=2. After a while, minions will spawn and start attacking top and bottom lane.
 DocInfo/HowToPlayAdvanced02=3. Players grow by killing these minions or heroes of the enemy team.
-DocInfo/HowToPlayAdvanced03=4. In addition, you can grow your hero by hunting neutral monsters.
+DocInfo/HowToPlayAdvanced03=4. In addition, you can grow your hero by hunting neutral monsters in the jungle.
 DocInfo/HowToPlayAdvanced04=5. Destroy the enemy team's towers and structures to reach the gates of victory.
-DocInfo/HowToPlayBasic00=1. When the game starts, the first thing you need to do is choose a hero and spell.
-DocInfo/HowToPlayBasic01=2. Talk with your teammates to choose a styled hero that suits your combination.
+DocInfo/HowToPlayBasic00=1. When the game starts, the first thing you need to do is choose a hero.
+DocInfo/HowToPlayBasic01=2. Talk with your teammates to choose a hero that suits your team combination.
 DocInfo/HowToPlayBasic02=3. Choose 2 spells for your chosen hero.
-DocInfo/HowToPlayWinning00=Destroy the enemy team's nexus first.
+DocInfo/HowToPlayWinning00=Destroy the enemy team's nexus before your opponent destroys yours.
 DocInfo/Name=HotSHoT (Hero Battle)
-DocInfo/PatchNote001=See all patchnotes in our discord server 1.0 and onward
+DocInfo/PatchNote001=See all Patchnotes 1.0 and onward in our discord server: https://discord.gg/7gyChsbT5n
 DocInfo/ScreenshotHowToPlay01=(http://sc2hot.net)에서 핫샷에 대한 모든 정보를 보실 수 있습니다.
 DocInfo/ScreenshotHowToPlay02=영웅 및 주문을 선택합니다.
 DocInfo/ScreenshotHowToPlay03=미니언 또는 중립 몬스터를 사냥하여 영웅을 성장시킬 수 있습니다.
@@ -7239,7 +7209,7 @@ Hero39Skill4Error=
 Hero39Skill4Error2=Invalid target.
 Hero41Skill4Error=The target unit is too close.
 LoadingScreen/Help00=
-LoadingScreen/Tip=<s val="PlanetPanelPlanetName">For a single cheat list, type "<c val="ffff99">-help</c>" in the chat window.<n/><c val="99ffcc">official channel:</c> <c val="ffffff">HotSHoT</c>   <c val="33ccff">official URL:</c> <c val="ffffff">https://cafe.naver.com/hotshotsc2</s>
+LoadingScreen/Tip=<s val="PlanetPanelPlanetName">For chat commands type "<c val="ffff99">-list</c>" in the chat window.<n/><c val="33ccff">Discord:</c> <c val="ffffff">https://discord.gg/7gyChsbT5n<n/><c val="99ffcc">Original Mapmaker:</c> <c val="ffffff">MaxStorm</c>
 MapInfo/Player00/Name=neutrality
 MapInfo/Player01/Name=
 MapInfo/Player02/Name=

@@ -317,6 +317,21 @@
     <CActorSound id="HighTemplar_Death">
         <On index="1" removed="1"/>
     </CActorSound>
+    <CActorModel id="Hero70Skill1Blood" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Hero70Skill1D2.Start; At Target" Send="Create"/>
+        <On Terms="Behavior.Hero70Skil1Impact.Destroy" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpDrauger"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="SOpDrauger">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.000000,2.700000,0.000000"/>
+    </CActorSiteOpLocalOffset>
     <CActorModel id="SpellModel2323" parent="ModelAnimationStyleContinuous">
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>

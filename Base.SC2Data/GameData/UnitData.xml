@@ -2126,6 +2126,7 @@
         <GlossaryWeakArray index="0" removed="1"/>
         <GlossaryWeakArray index="1" removed="1"/>
         <GlossaryWeakArray index="2" removed="1"/>
+        <PushPriority value="9"/>
     </CUnit>
     <CUnit id="Hero68AttackMissile" parent="MISSILE">
         <ReviveType value=""/>
@@ -2287,7 +2288,6 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>
         <PlaneArray index="Ground" value="1"/>
-        <PushPriority value="11"/>
         <Collide index="Ground" value="1"/>
         <Collide index="ForceField" value="1"/>
         <LifeStart value="172.5"/>
@@ -3957,7 +3957,6 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>
         <PlaneArray index="Ground" value="1"/>
-        <PushPriority value="11"/>
         <Collide index="Ground" value="1"/>
         <Collide index="ForceField" value="1"/>
         <LifeStart value="176"/>
@@ -7135,7 +7134,6 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>
         <PlaneArray index="Ground" value="1"/>
-        <PushPriority value="11"/>
         <Collide index="Ground" value="1"/>
         <Collide index="ForceField" value="1"/>
         <LifeStart value="132"/>
@@ -7199,7 +7197,6 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>
         <PlaneArray index="Ground" value="1"/>
-        <PushPriority value="11"/>
         <Collide index="Ground" value="1"/>
         <Collide index="ForceField" value="1"/>
         <LifeStart value="154"/>
@@ -7266,7 +7263,6 @@
         <FlagArray index="UseLineOfSight" value="1"/>
         <FlagArray index="Invulnerable" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>
-        <PushPriority value="11"/>
         <LifeStart value="5000"/>
         <LifeMax value="5000"/>
         <LifeRegenRate value="5000"/>
@@ -12195,6 +12191,7 @@
         <SelectAlias value="PreserverA"/>
         <SubgroupAlias value="PreserverA"/>
         <AIEvaluateAlias value="PreserverA"/>
+        <PushPriority value="9"/>
     </CUnit>
     <CUnit id="Sentry">
         <Attributes index="Mechanical" value="0"/>
@@ -12262,6 +12259,7 @@
         <GlossaryWeakArray index="1" removed="1"/>
         <GlossaryWeakArray index="2" removed="1"/>
         <EquipmentArray index="0" removed="1"/>
+        <PushPriority value="9"/>
     </CUnit>
     <CUnit id="SpineCrawler">
         <FlagArray index="Turnable" value="1"/>
@@ -14166,6 +14164,7 @@
             <Charge Link="HighTemplar/Revive"/>
             <Cooldown Link="HighTemplar/Revive"/>
         </ReviveInfoBase>
+        <PushPriority value="9"/>
     </CUnit>
     <CUnit id="Hero9Skill3Missile" parent="MISSILE">
         <ReviveType value=""/>
@@ -15223,6 +15222,7 @@
             <Charge Link="Sentry/Revive"/>
             <Cooldown Link="Sentry/Revive"/>
         </ReviveInfoBase>
+        <PushPriority value="9"/>
     </CUnit>
     <CUnit id="Inunit4">
         <DeathRevealRadius value="3"/>
@@ -15564,6 +15564,7 @@
         <ScoreResult value=""/>
         <Attributes index="Biological" value="0"/>
         <TacticalAI value=""/>
+        <PushPriority value="9"/>
     </CUnit>
     <CUnit id="Inunit">
         <DeathRevealRadius value="3"/>

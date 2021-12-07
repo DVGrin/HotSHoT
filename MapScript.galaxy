@@ -4017,6 +4017,9 @@ void gf_LearnSkill(int player_number, int skill) {
         UnitBehaviorAdd(gv_PlayerHero[player_number], "DefensePower", gv_PlayerHero[player_number], 1);
         UnitBehaviorAdd(gv_PlayerHero[player_number], "Amor2", gv_PlayerHero[player_number], 1);
     }
+    if ((hero_number == 5) && (skill == c_skillE)) {
+        gf_CriticalChanceLevelIncrease();
+    }
     if ((hero_number == 6) && (skill == c_skillE)) {
         UnitBehaviorAdd(gv_PlayerHero[player_number], "SpellDong3222", gv_PlayerHero[player_number], 1);
     }

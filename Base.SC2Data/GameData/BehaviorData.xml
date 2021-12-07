@@ -389,7 +389,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0152">
+        <DamageResponse ModifyFraction="1.0151">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>
@@ -419,7 +419,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0228">
+        <DamageResponse ModifyFraction="1.0227">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>
@@ -449,7 +449,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0304">
+        <DamageResponse ModifyFraction="1.0305">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>
@@ -509,7 +509,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0076">
+        <DamageResponse ModifyFraction="1.0075">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -540,7 +540,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0152">
+        <DamageResponse ModifyFraction="1.0151">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -571,7 +571,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0228">
+        <DamageResponse ModifyFraction="1.0227">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -602,7 +602,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0304">
+        <DamageResponse ModifyFraction="1.0305">
             <Kind index="Melee" value="0"/>
             <Kind index="Ranged" value="0"/>
             <Kind index="Splash" value="0"/>
@@ -953,7 +953,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.0076">
+        <DamageResponse ModifyFraction="1.0075">
             <Kind index="Spell" value="0"/>
             <Kind index="Splash" value="0"/>
             <Kind index="NoProc" value="0"/>
@@ -4951,7 +4951,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero68Skill1"/>
             <AbilLinkDisableArray value="Hero68Skill4"/>
             <DeathResponse>
@@ -7890,8 +7892,10 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
             <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero61Skill4"/>
             <DeathResponse>
                 <Cost>
@@ -11213,7 +11217,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero67Skill3"/>
             <DeathResponse>
                 <Cost>
@@ -11245,7 +11251,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero70Skill1"/>
             <AbilLinkDisableArray value="Hero70Skill3"/>
             <AbilLinkDisableArray value="Hero70Skill4"/>
@@ -11520,7 +11528,9 @@
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -11973,8 +11983,10 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
             <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero60Skill3"/>
             <AbilLinkDisableArray value="Hero60Skill4"/>
             <DeathResponse>
@@ -12685,7 +12697,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero32Skill1"/>
             <DeathResponse>
                 <Cost>
@@ -21135,7 +21149,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero3Skill1"/>
             <AbilLinkDisableArray value="Hero3Skill2"/>
             <DeathResponse>
@@ -21431,6 +21447,8 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="2"/>
         <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero40Skill4"/>
             <DeathResponse>
                 <Cost>
@@ -22350,7 +22368,9 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="2"/>
         <Modification MoveSpeedMaximum="0.1015">
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero43Skill2"/>
             <DeathResponse>
                 <Cost>
@@ -22865,7 +22885,9 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="2"/>
         <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero44Skill1"/>
             <DeathResponse>
                 <Cost>
@@ -23586,6 +23608,8 @@
         <InitialEffect value="HeroOkGi2223"/>
         <FinalEffect value="HeroOkGi22232"/>
         <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -25261,7 +25285,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero49Skill3"/>
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Spell9"/>
@@ -25889,7 +25915,9 @@
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero50Skill2"/>
             <AbilLinkDisableArray value="Hero50Skill3"/>
             <AbilLinkDisableArray value="Hero50Skill4"/>
@@ -37668,7 +37696,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero15Skill1"/>
             <AbilLinkDisableArray value="Hero15Skill2"/>
             <AbilLinkDisableArray value="Hero15Skill4"/>
@@ -41903,7 +41933,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero5Skill2"/>
             <DeathResponse>
                 <Cost>
@@ -43286,7 +43318,9 @@
         <Modification MoveSpeedMaximum="0.0117">
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero28Skill2"/>
             <AbilLinkDisableArray value="Hero28Skill3"/>
             <AbilLinkDisableArray value="Hero28Skill4"/>
