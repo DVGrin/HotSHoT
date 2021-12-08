@@ -27,8 +27,7 @@ struct ShopItem {
     int gas_cost;
     bool alive_only;
     int max_upgrades;
-    text tooltip_before_num;
-    text tooltip_after_num;
+    text shop_tooltip;
     string button_image;
     int tooltip_group;
     funcref<fn_prototype> increase_function;
@@ -474,6 +473,7 @@ void gf_HrHeroLevelUpLink ();
 void gf_HrSkillLearnDialogMake ();
 void gf_HrSkillLearnWindowOpen ();
 void gf_HrSkillLearnWindowClose ();
+void gf_SetStatShopTooltip(int shop_index, int player);
 void gf_CreateStatDialog ();
 void gf_HrStatMoneySet ();
 void gf_HrStat1 ();
@@ -738,8 +738,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 25;
     gv_ShopItemParameters[i].increase_function = gf_HrStat1;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/0F6E4246");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/891B282F");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/891B282F");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundweaponslevel3.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
@@ -751,8 +750,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 30;
     gv_ShopItemParameters[i].increase_function = gf_HrStat2;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/74423AD9");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/8088D325");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/8088D325");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-airweaponslevel3.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
@@ -764,8 +762,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 20;
     gv_ShopItemParameters[i].increase_function = gf_HrStat3;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/B762C11C");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/A6B27F25");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/A6B27F25");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-groundarmorlevel2.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
@@ -777,8 +774,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 20;
     gv_ShopItemParameters[i].increase_function = gf_HrStat4;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/793ADEEF");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/A8695773");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/A8695773");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-airarmorlevel3.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
@@ -790,8 +786,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 25;
     gv_ShopItemParameters[i].increase_function = gf_HrStat5;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/56C3945D");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/127C08B6");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/127C08B6");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-caduceusreactor.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
@@ -803,8 +798,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 25;
     gv_ShopItemParameters[i].increase_function = gf_HrStat6;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/E47F7098");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/C8B41D66");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/C8B41D66");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-protoss-graviticbooster.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -816,8 +810,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 20;
     gv_ShopItemParameters[i].increase_function = gf_HrStat7;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/105F4D99");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/71ED1578");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/71ED1578");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-corvidreactor.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -829,8 +822,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 20;
     gv_ShopItemParameters[i].increase_function = gf_HrStat8;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/B52C4DBD");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/4B39A3DF");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/4B39A3DF");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-moebiusreactor.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -842,8 +834,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 10;
     gv_ShopItemParameters[i].increase_function = gf_HrStat9;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/25D75730");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/FED58AF3");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/FED58AF3");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-tips-terran-penetrator.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
@@ -855,8 +846,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 5;
     gv_ShopItemParameters[i].increase_function = gf_HrStat10;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/0D38B383");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/9FB47B93");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/9FB47B93");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-protoss-blinkshieldrestore.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
@@ -868,8 +858,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 3;
     gv_ShopItemParameters[i].increase_function = gf_HrStat11;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/BC0C4F6D");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/2CC75CD2");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/2CC75CD2");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-research-terran-commandcenterreactor.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
@@ -881,8 +870,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 5;
     gv_ShopItemParameters[i].increase_function = gf_HrStat12;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/45A143F6");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/A214EC24");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/A214EC24");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-ability-terran-yamatocannon-ultra-color.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupOffense;
 
@@ -894,8 +882,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 3;
     gv_ShopItemParameters[i].increase_function = gf_HrStat13;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/2E68C9BA");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/11CDAC01");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/11CDAC01");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-tips-sellzergbiosamples.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -907,8 +894,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 3;
     gv_ShopItemParameters[i].increase_function = gf_HrStat14;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/5936EEEA");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/0EC8098E");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/0EC8098E");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-tips-sellprotossartifacts.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -920,8 +906,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 3;
     gv_ShopItemParameters[i].increase_function = gf_HrStat15;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/2F67E042");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/3308F27F");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/3308F27F");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-custom-terran-engine.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -933,8 +918,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat16;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/FD3563C7");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/777978E1");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/777978E1");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-jotunboosters.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -946,8 +930,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat17;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/18EE85FD");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/97B7197B");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/97B7197B");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-protoss-hardenedshields-color.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupDefense;
 
@@ -959,8 +942,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat18;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/707486D0");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/74F45D38");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/74F45D38");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-upgrade-terran-behemothreactor.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupUtility;
 
@@ -972,8 +954,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat25;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/FED2E4BB");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/5BD409C6");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/5BD409C6");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-hornerhan-mechbioweaponupgrades-c.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
@@ -985,8 +966,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat26;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/99E0EBC2");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/3E972BDA");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/3E972BDA");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-mengsk-siegetank-shockandawe.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
@@ -998,8 +978,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat27;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/5E89B444");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/ED07ED74");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/ED07ED74");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-hornerhan-hellbat-fear.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
@@ -1011,8 +990,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat28;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/BE23B6F8");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/C46BC4C8");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/C46BC4C8");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-mengsk-ghost-staticempblast.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
@@ -1024,8 +1002,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat29;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/E0BA54A0");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/067028AD");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/067028AD");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-kerrigan-malignantcreep.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
@@ -1037,8 +1014,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = false;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat30;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/63C1F55F");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/864F237F");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/864F237F");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-ability-mengsk-viking-cheatdeath.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupSeal;
 
@@ -1050,8 +1026,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = true;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat19;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/E8EEDC9A");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/F921592A");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/F921592A");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-postion.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
@@ -1063,8 +1038,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = true;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat20;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/56E70969");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/829AA365");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/829AA365");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-postion2.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
@@ -1076,8 +1050,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = true;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat21;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/CB424073");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/0A92B03F");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/0A92B03F");
     gv_ShopItemParameters[i].button_image = "Assets\\Textures\\btn-building-protoss-obelisk.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupNone;
 
@@ -1089,8 +1062,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = true;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat22;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/4B152A48");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/F0642B8D");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/F0642B8D");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-ability-zerg-domination-color.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupConsumable;
 
@@ -1102,8 +1074,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = true;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat23;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/581492DB");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/7037D2B3");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/7037D2B3");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-pwpotion.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupConsumable;
 
@@ -1115,8 +1086,7 @@ void ShopInit() {
     gv_ShopItemParameters[i].alive_only = true;
     gv_ShopItemParameters[i].max_upgrades = 1;
     gv_ShopItemParameters[i].increase_function = gf_HrStat24;
-    gv_ShopItemParameters[i].tooltip_before_num = StringExternal("Param/Value/09E4F027");
-    gv_ShopItemParameters[i].tooltip_after_num = StringExternal("Param/Value/B72DF259");
+    gv_ShopItemParameters[i].shop_tooltip = StringExternal("Param/Value/B72DF259");
     gv_ShopItemParameters[i].button_image = "Assets\\AddIcon\\btn-items-blackpotion.dds";
     gv_ShopItemParameters[i].tooltip_group = c_statTooltipGroupConsumable;
 }
@@ -1353,7 +1323,7 @@ void HeroInfoInit() {
     gv_HeroInformation[32].name = StringExternal("Unit/Name/Hero33");
     gv_HeroInformation[32].ability_resource = c_abilityResourceMana;
 
-    // Chorus
+    // Choros
     gv_HeroInformation[33].image = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
     gv_HeroInformation[33].unitname = "Hero34";
     gv_HeroInformation[33].levelup_upgrade = "HeroLvUp5232";
@@ -2438,7 +2408,7 @@ void SkillsInit() {
     gv_SkillLevelUpgrades[i][c_skillR][2] = "SpellUp2222333112222";
 
     i += 1;
-    // Chorus
+    // Choros
     gv_SkillLevelUpgrades[i][c_skillQ][0] = "SpellUp2222333546";
     gv_SkillLevelUpgrades[i][c_skillQ][1] = "SpellUp22223335463";
     gv_SkillLevelUpgrades[i][c_skillQ][2] = "SpellUp222233354632";
@@ -4308,6 +4278,59 @@ void gf_SpawnHero(int player_number, int hero_number) {
     TechTreeUpgradeAddLevel(player_number, recall_upgrade[player_number - 1], 1);
 }
 
+void gf_SetStatShopTooltip(int shop_index, int player) {
+    playergroup show_to = PlayerGroupSingle(player);
+    text tooltip;
+    string[6] hotkeys;
+    hotkeys[0] = "Z"; hotkeys[1] = "X"; hotkeys[2] = "C";
+    hotkeys[3] = "V"; hotkeys[4] = "B"; hotkeys[5] = "N";
+
+    if ((player < 1) || (player > 10)) {
+        player = 0;
+        show_to = PlayerGroupAll();
+    }
+
+    // Stat name and hotkey
+    tooltip = (
+        StringToText("<s val=\"PurchasePanelGroupName\">") + 
+        TextWithColor(gv_ShopItemParameters[shop_index].name, Color(47.0, 72.0, 100.0)) +
+        TextWithColor(StringToText(" (" + hotkeys[shop_index % 6] + ")"), Color(100.0, 100.0, 100.0)) +
+        StringToText("</s><n/><n/>")
+    );
+
+    // Minerals cost
+    tooltip += (
+        StringToText("<IMG path=\"Assets\\Textures\\icon-mineral-protoss.dds\" height=\"18\" width=\"18\"/>") +
+        IntToText(gv_StatHowMoney[shop_index][player])
+    );
+
+    // Gas cost
+    if (gv_ShopItemParameters[shop_index].gas_cost > 0) {
+        tooltip += (
+            StringToText("  <IMG path=\"Assets\\Textures\\icon-gas-protoss.dds\" height=\"18\" width=\"18\"/> ") +
+            IntToText(gv_ShopItemParameters[shop_index].gas_cost)
+        );
+    }
+
+    // Description
+    tooltip += StringToText("<n/>");
+    tooltip += gv_ShopItemParameters[shop_index].shop_tooltip;
+
+    // Max stacks
+    if (gv_ShopItemParameters[shop_index].max_upgrades > 1) {
+        tooltip += StringToText("<n/>(Max: ");
+        tooltip += IntToText(gv_ShopItemParameters[shop_index].max_upgrades);
+        tooltip += StringToText(")");
+    }
+
+    // Seal warning
+    if (gv_ShopItemParameters[shop_index].tooltip_group == c_statTooltipGroupSeal) {
+        tooltip += StringToText("<n/>(You cannot buy more than one seal)");
+    }
+
+    libNtve_gf_SetDialogItemTooltip(gv_StatShopButton[shop_index], tooltip, show_to);
+}
+
 void gf_CreateStatDialog () {
     int i;
     int j;
@@ -4381,14 +4404,7 @@ void gf_CreateStatDialog () {
         TriggerAddEventDialogControl(gt_TrStatDialogStatIncrease, c_playerAny, gv_StatShopButton[i], c_triggerControlEventTypeClick);
 
         libNtve_gf_SetDialogItemImage(gv_StatShopItemImage[i], gv_ShopItemParameters[i].button_image, PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(
-            gv_StatShopButton[i],
-            (
-                gv_ShopItemParameters[i].tooltip_before_num +
-                IntToText(gv_StatHowMoney[i][0]) +
-                gv_ShopItemParameters[i].tooltip_after_num
-            ),
-            PlayerGroupAll());
+        gf_SetStatShopTooltip(i, 0);
     }
 }
 
@@ -4425,18 +4441,6 @@ static void lf_ShopRelatedChecks(int shop_index) {
     lf_ShopObjectiveCompletion();
 }
 
-static void lf_SetStatShopTooltip(int shop_index) {
-    libNtve_gf_SetDialogItemTooltip(
-        gv_StatShopButton[shop_index],
-        (
-            gv_ShopItemParameters[shop_index].tooltip_before_num + 
-            IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + 
-            gv_ShopItemParameters[shop_index].tooltip_after_num
-        ),
-        PlayerGroupSingle(EventPlayer())
-    );
-}
-
 void gf_HrStat1 () {
     const int shop_index = 0;
     // Upgrade
@@ -4448,7 +4452,7 @@ void gf_HrStat1 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/65A12297") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/504C5FDC")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4466,7 +4470,7 @@ void gf_HrStat2 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/630A62CE") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/1E37331F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4479,7 +4483,7 @@ void gf_HrStat3 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/2F79A13D") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/D52A61AD")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4492,7 +4496,7 @@ void gf_HrStat4 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/2ACCA46C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/435BBCB2")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4505,7 +4509,7 @@ void gf_HrStat5 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/5567282B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/4BCFA2C0")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4519,7 +4523,7 @@ void gf_HrStat6 () {
         gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/18DF7C33") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/266C386E")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
-        lf_SetStatShopTooltip(shop_index);
+        gf_SetStatShopTooltip(shop_index, EventPlayer());
         lf_ShopRelatedChecks(shop_index);
     } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
@@ -4534,7 +4538,7 @@ void gf_HrStat7 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/A56E3141") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2BAF824D")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4547,7 +4551,7 @@ void gf_HrStat8 () {
         gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
         libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/0BA6465C") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/7D802EEE")), PlayerGroupSingle(EventPlayer()));
         lf_PayCostsForShopItem(shop_index);
-        lf_SetStatShopTooltip(shop_index);
+        gf_SetStatShopTooltip(shop_index, EventPlayer());
         lf_ShopRelatedChecks(shop_index);
     } else {
         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaError, StringExternal("Param/Value/A72FF288"));
@@ -4563,7 +4567,7 @@ void gf_HrStat9 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4580,15 +4584,7 @@ void gf_HrStat10 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/E83DF35E") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/5E9CA015")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    libNtve_gf_SetDialogItemTooltip(
-        gv_StatShopButton[shop_index],
-        (
-            gv_ShopItemParameters[shop_index].tooltip_before_num + 
-            IntToText(gv_StatHowMoney[shop_index][EventPlayer()]) + 
-            gv_ShopItemParameters[shop_index].tooltip_after_num
-        ),
-        PlayerGroupSingle(EventPlayer())
-    );
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4600,7 +4596,7 @@ void gf_HrStat11 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/9EF04A19") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/312059D4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4612,7 +4608,7 @@ void gf_HrStat12 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/A74FC466") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/373CE98F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4711,7 +4707,7 @@ void gf_HrStat13 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/3E26FE28") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/50CAF2F4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4728,7 +4724,7 @@ void gf_HrStat14 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/F76E2374") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/CEE4DA7E")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 
@@ -4740,7 +4736,7 @@ void gf_HrStat15 () {
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/74BA56B3") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/97EC7ED4")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
-    lf_SetStatShopTooltip(shop_index);
+    gf_SetStatShopTooltip(shop_index, EventPlayer());
     lf_ShopRelatedChecks(shop_index);
 }
 

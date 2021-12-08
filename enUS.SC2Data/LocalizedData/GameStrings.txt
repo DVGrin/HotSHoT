@@ -7323,7 +7323,7 @@ Param/Value/062D849D=</s>
 Param/Value/0633BE4E=</s>
 Param/Value/064F4967=<c val="33ccff">Shuirin</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■■■</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■□□□</c></s>
 Param/Value/066B0529= <s val="HelpPanelListBoxItemTitle">
-Param/Value/067028AD=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases your chance to evade basic attacks by 10%. When you receive a basic attack from an enemy, you deal 4 + <c val="ff9999">(0.4 DP)</c> + <c val="99ffcc">(0.2 RP)</c> <c val="ffff99">True Damage</c> to the attacking enemy. Damaged targets have their Lifesteal/Spellvamp and Healing effects reduced by 40% for 3 seconds. Seal of Iron deals 60% less damage to monsters.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/067028AD=Increases your chance to evade basic attacks by 10%. When you receive a basic attack from an enemy, you deal 4 + <c val="ff9999">(0.4 DP)</c> + <c val="99ffcc">(0.2 RP)</c> <c val="ffff99">True Damage</c> to the attacking enemy. Damaged targets have their Lifesteal/Spellvamp and Healing effects reduced by 40% for 3 seconds. Seal of Iron deals 60% less damage to monsters.
 Param/Value/0683A4DB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/06977E96=/Opposition: 
 Param/Value/069CC3BA=<s val="Header18"><c val="ccffff">
@@ -7374,7 +7374,7 @@ Param/Value/0A313823=</s>
 Param/Value/0A4EA953=</s>
 Param/Value/0A7B17E1=
 Param/Value/0A870B15=</c>   <c val="6699ff">Booster:</c><c val="ffffff"> 
-Param/Value/0A92B03F=<n/>Places a tower at the hero's current location, providing vision for 2 minutes.<n/>(cannot be duplicated)
+Param/Value/0A92B03F=Places a tower at the hero's current location, providing vision for 2 minutes.<n/>(Only one ward can be active at a time)
 Param/Value/0A92B612=<s val="Header18"> 1</s>
 Param/Value/0AE3A101=<Cheat list><n/>-mm: Add Minerals and Gases<n/>-lv: Hero level up<n/>-tu: Create a test hero<n/>-dpi number: Increases the test hero's physical defense stat level by the number<n/>-dpd number: Reduces the test hero's physical defense stat level by the number<n/>-rpi number: Increases the test hero's magic defense stat level by the number<n/>-rpd number: Decrease the test hero's magic defense stat level by the number<n/><n/><Command list><n/>-save: Store storage (cannot store cumulative kills/assists)<n/>-player: Shows handler numbers for all players.
 Param/Value/0AF3A712=</c></s>
@@ -7438,7 +7438,7 @@ Param/Value/0E319800=</s>
 Param/Value/0E7F8D9B=Hera
 Param/Value/0E8E2B11=</s></c>
 Param/Value/0EB75D56=Demol
-Param/Value/0EC8098E=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.<n/>(Max: 3)
+Param/Value/0EC8098E=Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.
 Param/Value/0EDAEAF3= <s val="HelpPanelListBoxItemTitle">
 Param/Value/0EDF51E8=
 Param/Value/0F129044=</s>
@@ -7481,7 +7481,7 @@ Param/Value/11884929=<s val="PlanetPanelPlanetName">
 Param/Value/11A402F4=</s>
 Param/Value/11B2AE40=
 Param/Value/11BF2BC1=The enemy team is in the process of voting for surrender.
-Param/Value/11CDAC01=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.<n/>(Max: 3)
+Param/Value/11CDAC01=Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.
 Param/Value/11E48D90= A is destroyed.
 Param/Value/120F00B3=)
 Param/Value/121A9DF2=<s val="Header18">
@@ -7495,7 +7495,7 @@ Param/Value/12489DD6= <s val="HelpPanelListBoxItemTitle">
 Param/Value/1255ADAD=</s>
 Param/Value/1262DEFE=
 Param/Value/1276829B=Random selection
-Param/Value/127C08B6=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases maximum health points by <c val="ffffff">100</c>.<n/>(Max: 25)
+Param/Value/127C08B6=Increases maximum health points by <c val="ffffff">100</c>.
 Param/Value/1299D79F=
 Param/Value/12A551AB=<s val="PurchasePanelGroupName"><c val="78b8ff">Q Skill Enhancement (<c val="ffffff">F1</c>)</c></s><n/><n/>It further strengthens the skills below.
 Param/Value/12AE0B68=<c val="33ccff">Soul Kaiser</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
@@ -7883,7 +7883,7 @@ Param/Value/2C838535=</c>   <c val="6699ff">Seal of Resistance:</c><c val="fffff
 Param/Value/2CA00620=<s val="Header18">
 Param/Value/2CB54EC3=</s>
 Param/Value/2CBED175=Leinard
-Param/Value/2CC75CD2=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to evade basic attacks by <c val="ffffff">10%</c>. Successfully evading prevents 80% of the incoming damage.<n/>(Max: 3)
+Param/Value/2CC75CD2=Increases the chance to evade basic attacks by <c val="ffffff">10%</c>. Successful evasion prevents 80% of the incoming damage.
 Param/Value/2CCE880D=
 Param/Value/2CCF2FB3=<s val="Header18">
 Param/Value/2CE2A158=
@@ -7977,7 +7977,7 @@ Param/Value/32B16E6E=<c val="33ccff">Metel</c><s val="Header18"><n/><n/><c val="
 Param/Value/32D71BEF= (<c val="ffff66">Selecting</c>)</s>
 Param/Value/32E6FC84=</s></c>
 Param/Value/32ED0183=<c val="33ccff">Musashi</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■■□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
-Param/Value/3308F27F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces the cooldown of skills by <c val="ffffff">10%</c>.<n/>(Max: 3)
+Param/Value/3308F27F=Reduces cooldowns of hero's skills by <c val="ffffff">10%</c>.
 Param/Value/3323CBC3=<s val="PurchasePanelGroupName"><c val="78b8ff">R skill enhancement (<c val="ffffff">F4</c>)</c></s><n/><n/>It further strengthens the skills below.
 Param/Value/3327EAD3=Blink
 Param/Value/333C96D8=</s>
@@ -8146,7 +8146,7 @@ Param/Value/3E766ECA=<s val="ExitGameTitle">
 Param/Value/3E76756A=</s></c>
 Param/Value/3E816046=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/3E8FC01D=
-Param/Value/3E972BDA=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>When attacking an enemy with a skill, the target takes 1 + <c val="ff9999">(0.2 AD)</c> + <c val="99ffcc">(0.2 AP)</c> <c val="ffff99">True Damage</c> every second for 4 seconds.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/3E972BDA=When attacking an enemy with a skill, the target takes 1 + <c val="ff9999">(0.2 AD)</c> + <c val="99ffcc">(0.2 AP)</c> <c val="ffff99">True Damage</c> every second for 4 seconds.
 Param/Value/3EA6F201=
 Param/Value/3EBE670F=<s val="Header18"><c val="ccffff">
 Param/Value/3EBEC6E7=Enemy team's 
@@ -8330,7 +8330,7 @@ Param/Value/4B1E7C27=</s></c>
 Param/Value/4B219FBE=Bax
 Param/Value/4B2DB28D=
 Param/Value/4B35A0A9=</s>
-Param/Value/4B39A3DF=<n/>Increases mana regeneration rate by <c val="ffffff">0.8</c>.<n/>(max: 20)
+Param/Value/4B39A3DF=Increases mana regeneration rate by <c val="ffffff">0.8</c>.
 Param/Value/4B47610B=<c val="33ccff">Hera</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Wizard, Ranged</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/4B5C7A59=Leinard
 Param/Value/4B69E693=<s val="Header18"><c val="ffff99">
@@ -8549,7 +8549,7 @@ Param/Value/5BAB177E=<c val="33ccff">Luna</c><s val="Header18"><n/><n/><c val="6
 Param/Value/5BAF8574=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/5BB13B51=<s val="Header18"><c val="ffffff">
 Param/Value/5BBE3C44=<c val="33ccff">Deken</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">□□□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
-Param/Value/5BD409C6=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Your Weapon is now charging every 6s. Basic attacks deal bonus <c val="ffff99">True Damage</c> equal to 2 + <c val="ff9999">(0.2 AD)</c> + <c val="99ffcc">(0.15 AP)</c>. If your weapon is charged the bonus damage is tripled for the next attack. Basic attack range is increased by 1.5 for ranged heroes and 0.5 for melee heroes. Basic attacks increase movement speed by 5% for ranged heroes and 10% for melee heroes for 2 seconds.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/5BD409C6=Your weapon charges every 6 seconds. Basic attacks deal bonus <c val="ffff99">True Damage</c> equal to 2 + <c val="ff9999">(0.2 AD)</c> + <c val="99ffcc">(0.15 AP)</c>. If your weapon is charged, the bonus damage is tripled for the next attack. Basic attack range is increased by 1.5 for ranged heroes and 0.5 for melee heroes. Basic attacks increase movement speed by 5% for ranged heroes and 10% for melee heroes for 2 seconds.
 Param/Value/5BF0E5CA=</c></s>
 Param/Value/5BF56652=)
 Param/Value/5BF9D9EE=
@@ -8811,7 +8811,7 @@ Param/Value/6FEFF6D7= <s val="HelpPanelListBoxItemTitle">
 Param/Value/6FF2B7CB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/7026A8AF=Mineral 
 Param/Value/70326EC8=
-Param/Value/7037D2B3=<n/>Until the hero dies, gain 16 base damage and 15% base attack speed. Basic attacks reduce the target's Lifesteal/Spellvamp and Healing effects by 40% for 3 seconds.
+Param/Value/7037D2B3=Until the hero dies, gain 16 base damage and 15% base attack speed. Basic attacks reduce the target's Lifesteal/Spellvamp and Healing effects by 40% for 3 seconds.
 Param/Value/704236E9=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/704EA586=
 Param/Value/70673AA7= (<c val="ffff66">Selecting</c>)</s>
@@ -8835,7 +8835,7 @@ Param/Value/718CAEBF=
 Param/Value/7191F502=
 Param/Value/7194B57E=
 Param/Value/71A369F9=Enemy team's 
-Param/Value/71ED1578=<n/>Increases health regeneration rate by <c val="ffffff">0.6</c>.<n/>(max: 20)
+Param/Value/71ED1578=Increases health regeneration rate by <c val="ffffff">0.6</c>
 Param/Value/71F15F63=)
 Param/Value/7210AA30=</s>
 Param/Value/7257D5EB=
@@ -8864,7 +8864,7 @@ Param/Value/74CF5B12=
 Param/Value/74D03530= <s val="HelpPanelListBoxItemTitle">
 Param/Value/74E55035=
 Param/Value/74F33E40=Not enough vespene gas.
-Param/Value/74F45D38=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Reduces damage taken from neutral monsters by 20%. Deals <c val="99ffcc">magical damage</c> equal to 2 + 2 x hero level to nearby enemies every second.
+Param/Value/74F45D38=Reduces damage taken from neutral monsters by 20%. Deals <c val="99ffcc">magical damage</c> equal to 2 + 2 x hero level to nearby enemies every second.
 Param/Value/74FA41AB=<s val="Header18"><c val="ccffff">
 Param/Value/750E4EEA=(Agree: 
 Param/Value/75172F91=<s val="Header18">
@@ -8907,7 +8907,7 @@ Param/Value/773FBB88=
 Param/Value/774CE7E0=Lack of minerals.
 Param/Value/774ED5A0=
 Param/Value/7772ADD8=</s>
-Param/Value/777978E1=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>After taking no damage for 4 seconds, the hero's movement speed is increased by <c val="ffffff">0.4</c>.
+Param/Value/777978E1=After taking no damage for 4 seconds, the hero's movement speed is increased by <c val="ffffff">0.4</c>.
 Param/Value/777EA2D4=</c>   <c val="6699ff">Flaming Flask:</c><c val="ffffff"> 
 Param/Value/7789AD69=
 Param/Value/778CB3D7= / 
@@ -9044,7 +9044,7 @@ Param/Value/8053E07C=
 Param/Value/806A603B=</s>
 Param/Value/807E2BCD=<s val="Header18"><c val="ccffff">View all records</c>
 Param/Value/807F018B=</c>   <c val="6699ff">Booster:</c><c val="ffffff"> 
-Param/Value/8088D325=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99FFFF">Ability Power (AP)</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.<n/>(max: 30)
+Param/Value/8088D325=Increases <c val="99FFFF">Ability Power (AP)</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.
 Param/Value/80926A4D=</s>
 Param/Value/80B33E2E=
 Param/Value/80BF5648=<s val="Header18"><c val="ccffff">
@@ -9073,7 +9073,7 @@ Param/Value/827D9DE1=<s val="Header18"><c val="ccffff">
 Param/Value/827F35B0=</s>
 Param/Value/828AC058=
 Param/Value/8293832A=<c val="33ccff">Daboto</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Wizard</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■□□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
-Param/Value/829AA365=<n/>Restores <c val="ffffff">100</c> mana over the duration of 10 seconds.<n/>(Cannot use duplicates)
+Param/Value/829AA365=Restores <c val="ffffff">100</c> mana over the duration of 10 seconds.<n/>(Only one mana potion can be active at a time)
 Param/Value/82A0CD73=<c val="33ccff">Zonda</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, supporter</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/82BC57BC=<s val="Header18"><c val="ccffff">Open score (</c><c val="ffffff">Tab</c><c val="ccffff">)</c>
 Param/Value/82BCDFAF=Number of exits
@@ -9130,7 +9130,7 @@ Param/Value/85E052E3=</c><n/>(Number of game exits: <c val="ffffff">
 Param/Value/860864D1=</c></s>
 Param/Value/860C9666=
 Param/Value/860E2A50=
-Param/Value/864F237F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Received skill damage is reduced by 10%. Taking skill damage increases your movement speed by 12% for 4 seconds and heals you for 2 + <c val="99ffcc">(0.4 RP)</c> + <c val="ff9999">(0.2 DP)</c> HP every second.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/864F237F=Received skill damage is reduced by 10%. Taking skill damage increases your movement speed by 12% for 4 seconds and heals you for 2 + <c val="99ffcc">(0.4 RP)</c> + <c val="ff9999">(0.2 DP)</c> HP every second.
 Param/Value/86562626=<s val="PurchasePanelNoSelection">
 Param/Value/865B66E8=
 Param/Value/866545F3=
@@ -9174,7 +9174,7 @@ Param/Value/88C5DFE8=</s></c>
 Param/Value/88DA8C55=</s></c>
 Param/Value/88EAA7E1=</s>
 Param/Value/8904870A=
-Param/Value/891B282F=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="ff9999">Attack Damage (AD)</c> by <c val="ffffff">8</c>.<n/>(Max: 25)
+Param/Value/891B282F=Increases <c val="ff9999">Attack Damage (AD)</c> by <c val="ffffff">8</c>
 Param/Value/89269619=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.<n/>(Max: 3)
 Param/Value/89441CD6=<c val="ccccff">/</c>
 Param/Value/8986B1F2=<n/>Grants movement reduction to basic attacks and skills until the hero dies. Dealing damage to the target reduces movement speed by 20% for 1 sec.
@@ -9380,7 +9380,7 @@ Param/Value/9779EC25=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="
 Param/Value/978660D8=
 Param/Value/97A368E8=<s val="PurchasePanelGroupName"><c val="78b8ff">Onyx</s></c><n/><n/>Permanently increases the hero's health regeneration by 1 and base maximum health by 30%.
 Param/Value/97A626F6=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
-Param/Value/97B7197B=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Magic Veil grants a magic shield which prevents the next incoming spell damage. The Shield regenerates every 40 seconds after successfully blocking damage.
+Param/Value/97B7197B=Magic Veil grants a magic shield which prevents the next incoming spell damage. The Shield regenerates every 40 seconds after successfully blocking damage.
 Param/Value/97D1089E=Obos
 Param/Value/97DE05EF=Eren
 Param/Value/97E83587=<s val="Header18"><c val="ccffff">
@@ -9497,7 +9497,7 @@ Param/Value/9F86987B=<s val="PurchasePanelGroupName"><c val="78b8ff">W skill enh
 Param/Value/9F92847D=Pyron
 Param/Value/9FA24B7B=
 Param/Value/9FA94D58=Voltma
-Param/Value/9FB47B93=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Damage done ignores <c val="ff9866">Defense Power (DP)</c> and <c val="99ffcc">Resistance Power (RP)</c> by approximately <c val="ffffff">12%</c><n/>(max: 5)
+Param/Value/9FB47B93=Damage done ignores <c val="ff9866">Defense Power (DP)</c> and <c val="99ffcc">Resistance Power (RP)</c> by approximately <c val="ffffff">12%</c>
 Param/Value/9FC8ECA9= <s val="HelpPanelListBoxItemTitle">
 Param/Value/9FE47CA9=</c>   <c val="99ffcc">Ability power (AP):</c><c val="ffffff"> 
 Param/Value/9FE9A3C5=</s>
@@ -9540,7 +9540,7 @@ Param/Value/A1D07191= <s val="HelpPanelListBoxItemTitle">Assist:
 Param/Value/A1DD285D=Lack of minerals.
 Param/Value/A1EB5F47=) will not surrender.
 Param/Value/A211DA62=<s val="Header18">
-Param/Value/A214EC24=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases the chance to land critical strikes with basic attacks by <c val="ffffff">10%</c>.<n/>(Max: 5)
+Param/Value/A214EC24=Increases the chance to land critical strikes with basic attacks by <c val="ffffff">10%</c>.
 Param/Value/A21CFBE1= is more powerful than you think!
 Param/Value/A22A0F40=Healing Life
 Param/Value/A236A51C=</c></s>
@@ -9612,7 +9612,7 @@ Param/Value/A641DDBE=Giant Spore Tentacles slain.
 Param/Value/A67C4EDB=Valkyre
 Param/Value/A686879B=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
 Param/Value/A69EE620=
-Param/Value/A6B27F25=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="FF9866">Defense Power (DP)</c> by <c val="ffffff">8</c>. Defense Power is reducing incoming <c val="FF9999">physical damage</c>.<n/>(Max: 20)
+Param/Value/A6B27F25=Increases <c val="FF9866">Defense Power (DP)</c> by <c val="ffffff">8</c>. Defense Power reduces incoming <c val="FF9999">physical damage</c>.
 Param/Value/A6DA1DA9=Enemy team's 
 Param/Value/A6DDF75A=</s>
 Param/Value/A6FEC48D=Kelro
@@ -9629,7 +9629,7 @@ Param/Value/A806C010= <IMG path="Assets\AddIcon\Rank-01NoRank.dds" height="64" w
 Param/Value/A81A6602=</c></s>
 Param/Value/A853CE51=<s val="Header18"><c val="ccffff">
 Param/Value/A85CE738=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 2<n/>Blocks one skill damage from an enemy, and the veil regenerates after 40 seconds.
-Param/Value/A8695773=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="99ffcc">Resistance Power (RP)</c> by <c val="ffffff">8</c>. Resistance Power is reducing incoming <c val="80FFFF">magical damage</c>.<n/>(Max: 20)
+Param/Value/A8695773=Increases <c val="99ffcc">Resistance Power (RP)</c> by <c val="ffffff">8</c>. Resistance Power reduces incoming <c val="80FFFF">magical damage</c>.
 Param/Value/A86DBDDC=<s val="Header18"><c val="6699ff">
 Param/Value/A87E4C22=
 Param/Value/A88C19F6=
@@ -9824,7 +9824,7 @@ Param/Value/B7136BF5=
 Param/Value/B7215932= <s val="HelpPanelListBoxItemTitle"><c val="ff0000">You cannot surrender now.<n/>(20 minutes of game time must elapse)</c></s>
 Param/Value/B7230614=</s></c>
 Param/Value/B72D3472=<s val="Header18"><c val="ffffff">
-Param/Value/B72DF259=<n/>Grants 20% movementspeed reduction (1s) to basic attacks and skills. When dealing skill damage, the target's Lifesteal/Spellvamp and Healing effects are reduced by 40% for 3 seconds. The Devil's Flask lasts until the hero dies. 
+Param/Value/B72DF259=Grants 20% movement speed reduction (1s) to basic attacks and skills. When dealing skill damage, the target's Lifesteal/Spellvamp and Healing effects are reduced by 40% for 3 seconds. The Devil's Flask lasts until the hero dies. 
 Param/Value/B762C11C=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/B763A44B=
 Param/Value/B770B2F5=<n/></c><c val="6699ff">Magic Curtain:</c><c val="ffffff"> 
@@ -10002,7 +10002,7 @@ Param/Value/C42E3023=(
 Param/Value/C441C9FD=
 Param/Value/C463590A=Beacon
 Param/Value/C463B1AE= 
-Param/Value/C46BC4C8=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Mana regeneration is increased by 1.6. Skill cooldown is reduced by 10%. You gain 50% more minerals for every assist.<n/>(You can only buy 1 out of 6 seals)
+Param/Value/C46BC4C8=Mana regeneration is increased by 1.6. Skill cooldown is reduced by 10%. You gain 50% more minerals for every assist.
 Param/Value/C4720756=<c val="ccccff">/</c>
 Param/Value/C484B204=Jelquus
 Param/Value/C4C24AC1=Edburn
@@ -10050,7 +10050,7 @@ Param/Value/C81401B5=
 Param/Value/C81F8244=
 Param/Value/C825D102=Mineral350 acheive!
 Param/Value/C88E439F=Dark Ray
-Param/Value/C8B41D66=<n/>Increases maximum mana by <c val="ffffff">50</c>.<n/>(max: 25)
+Param/Value/C8B41D66=Increases maximum mana by <c val="ffffff">50</c>.
 Param/Value/C8C5BEA0= <s val="HelpPanelListBoxItemTitle">
 Param/Value/C8D085CA=<s val="PurchasePanelGroupName"><c val="78b8ff">Magic Curtain (<c val="ffffff">B</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/C8D17ACF=
@@ -10569,7 +10569,7 @@ Param/Value/ECDA9651=
 Param/Value/ECDC1101= <s val="HelpPanelListBoxItemTitle"><c val="ff0000">You cannot surrender now.<n/>(게임 시간이 20분을 경과해야 합니다.)</c></s>
 Param/Value/ECF58657=</s>
 Param/Value/ED05686E=
-Param/Value/ED07ED74=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases movement speed by 6%, critical strike chance by 10% and basic attack speed by 5 + <c val="ffffff">(30% of additional <c val="ff9999">AD</c>/25% of additional <c val="99ffcc">AP</c>)</c>%. Critical strikes increase your base damage by 2 + (attack speed level x 3) for 4 seconds.<n/>(You can only purchase 1 seal out of 6)
+Param/Value/ED07ED74=Increases movement speed by 6%, critical strike chance by 10% and basic attack speed by 5 + <c val="ffffff">(30% of additional <c val="ff9999">AD</c>/25% of additional <c val="99ffcc">AP</c>)</c>%. Critical strikes increase your base damage by 2 + (attack speed level x 3) for 4 seconds.
 Param/Value/ED1344A7= / 
 Param/Value/ED1CCC58=
 Param/Value/ED334879=<s val="Header18">
@@ -10618,7 +10618,7 @@ Param/Value/F04E5367=
 Param/Value/F052F5E9=
 Param/Value/F0534464=<s val="PurchasePanelGroupName"><c val="78b8ff">Learn R skills (<c val="ffffff">F4</c>)</c></s><n/><n/>You can learn and use the skills below.
 Param/Value/F05FCD70=<s val="ExitGameTitle">
-Param/Value/F0642B8D=<n/>Grants stealth detection for 3 minutes or until the hero dies.
+Param/Value/F0642B8D=Grants stealth detection for 3 minutes or until the hero dies.
 Param/Value/F067DA2D=<s val="PurchasePanelGroupName"><c val="78b8ff">
 Param/Value/F0789BD4= <s val="HelpPanelListBoxItemTitle">
 Param/Value/F08A18E4=서퍼링
@@ -10736,7 +10736,7 @@ Param/Value/F8E5357C=<s val="PlanetPanelPlanetName">
 Param/Value/F8F836B6=0
 Param/Value/F90F65FE=</s>
 Param/Value/F920FBAE=<c val="33ccff">Lucifer</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Jungler, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■■□□</c></s>
-Param/Value/F921592A=<n/>Heals for <c val="ffffff">150</c> HP over the duration of 10 seconds.<n/>(Cannot buy while active already)
+Param/Value/F921592A=Heals for <c val="ffffff">150</c> HP over the duration of 10 seconds.<n/>(Only one health potion can be active at a time)
 Param/Value/F9369F0F= will be regenerated soon.
 Param/Value/F9470B03=
 Param/Value/F9589698=<s val="Header17"><c val="ffff99">
@@ -10812,7 +10812,7 @@ Param/Value/FEACAE14=<s val="GameOverDialogTitle">
 Param/Value/FEB96B09=</s></c>
 Param/Value/FEBEFA1F=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
 Param/Value/FED2E4BB=<s val="PurchasePanelGroupName"><c val="78b8ff">Seal of Execution (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/FED58AF3=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases base attack speed by <c val="ffffff">15%</c>.<n/>(Max: 10)
+Param/Value/FED58AF3=Increases base attack speed by <c val="ffffff">15%</c>.
 Param/Value/FEE877FE=Shuirin
 Param/Value/FF0A82EE= is regenerated.
 Param/Value/FF226EE3=</s>
