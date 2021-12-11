@@ -14,6 +14,8 @@
         <Width val="150"/>
         <Height val="780"/>
 
+        <Visible val="False"/>
+
         <Frame type="Image" name="HeroImage">
             <Anchor side="Left" relative="$parent" pos="Mid" offset="-30"/>
             <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>

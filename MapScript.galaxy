@@ -79,6 +79,15 @@ const int c_statTooltipGroupUtility = 3;
 const int c_statTooltipGroupConsumable = 4;
 const int c_statTooltipGroupSeal = 5;
 
+const int c_statisticsColumnLabelKDA = 0;
+const int c_statisticsColumnLabelDamageDone = 1;
+const int c_statisticsColumnLabelDamageReceived = 2;
+const int c_statisticsColumnLabelHealing = 3;
+const int c_statisticsColumnLabelSelfHealing = 4;
+const int c_statisticsColumnLabelResources = 5;
+const int c_statisticsColumnLabelWards = 6;
+const int c_statisticsColumnLabelTimeSpentDead = 7;
+
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
@@ -268,6 +277,10 @@ int gv_RemoveObjectivesButton;
 int gv_CenterCameraOnHeroDummyButton;
 int gv_PlayerStatisticsWindow;
 int gv_PlayerStatisticsWindowOpenDummyButton;
+int[8] gv_PlayerStatisticsWindowPlayerColumn;
+int[8] gv_PlayerStatisticsWindowHeroImage;
+int[8] gv_PlayerStatisticsWindowPlayerName;
+int[8][11] gv_PlayerStatisticsWindowNumber;
 
 void InitGlobals () {
     int init_i;
@@ -465,6 +478,14 @@ void InitGlobals () {
 
     gv_PlayerStatisticsWindow = c_invalidDialogControlId;
     gv_PlayerStatisticsWindowOpenDummyButton = c_invalidDialogControlId;
+    for (init_i = 0; init_i < 8; init_i += 1) {
+        gv_PlayerStatisticsWindowPlayerColumn[init_i] = c_invalidDialogControlId;
+        gv_PlayerStatisticsWindowHeroImage[init_i] = c_invalidDialogControlId;
+        gv_PlayerStatisticsWindowPlayerName[init_i] = c_invalidDialogControlId;
+        for (init_j = 0; init_j < 11; init_j += 1) {
+            gv_PlayerStatisticsWindowNumber[init_i][init_j] = c_invalidDialogControlId;
+        }
+    }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -571,7 +592,7 @@ void gf_CreateObjectives();
 void gf_RemoveCompletedSecondaryObjectives();
 void gf_ShowPlayerStatistics(int player);
 void gf_CreatePlayerStatisticsWindow();
-void gf_UpdatePlayerStatisticsWindow(int player);
+void gf_UpdatePlayerStatisticsWindow();
 // Utility functions
 int gf_ShopWindowByIndex(int shop_index);
 bool gf_EligibleForBuyingHotkey(int shop_index);
@@ -7226,6 +7247,10 @@ void gf_ShowPlayerStatistics(int player) {
 }
 
 void gf_CreatePlayerStatisticsWindow() {
+    int i;
+    int j;
+    string column_name;
+
     gv_PlayerStatisticsWindow = DialogControlHookupStandard(
         c_triggerControlTypePanel,
         "UIContainer/PlayerStatisticsWindow"
@@ -7242,10 +7267,109 @@ void gf_CreatePlayerStatisticsWindow() {
         gv_PlayerStatisticsWindowOpenDummyButton,
         c_triggerControlEventTypeClick
     );
+
+    for (i = 0; i < 8; i += 1) {
+        column_name = "UIContainer/PlayerStatisticsWindow/PlayerColumn" + IntToString(i + 1);
+        gv_PlayerStatisticsWindowPlayerColumn[i] = DialogControlHookupStandard(
+            c_triggerControlTypePanel,
+            column_name
+        );
+        gv_PlayerStatisticsWindowHeroImage[i] = DialogControlHookupStandard(
+            c_triggerControlTypeImage,
+            column_name + "/HeroImage"
+        );
+        gv_PlayerStatisticsWindowPlayerName[i] = DialogControlHookupStandard(
+            c_triggerControlTypeLabel,
+            column_name + "/PlayerName"
+        );
+        for (j = 0; j < 8; j += 1) {
+            gv_PlayerStatisticsWindowNumber[i][j] = DialogControlHookupStandard(
+                c_triggerControlTypeLabel,
+                column_name + "/MainBody/Label" + IntToString(j + 1)
+            );
+        }
+
+        if (
+            (PlayerType(gv_PlayerBayul[i + 1]) == c_playerTypeUser) &&
+            (PlayerStatus(gv_PlayerBayul[i + 1]) == c_playerStatusActive)
+        ) {
+            DialogControlSetVisible(gv_PlayerStatisticsWindowPlayerColumn[i], PlayerGroupAll(), true);
+            libNtve_gf_SetDialogItemImage(
+                gv_PlayerStatisticsWindowHeroImage[i],
+                gv_CharSelectedImage[gv_PlayerBayul[i + 1]],
+                PlayerGroupAll()
+            );
+            libNtve_gf_SetDialogItemText(
+                gv_PlayerStatisticsWindowPlayerName[i],
+                TextWithColor(PlayerName(gv_PlayerBayul[i + 1]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[i + 1], false))),
+                PlayerGroupAll()
+            );
+        }
+    }
 }
 
-void gf_UpdatePlayerStatisticsWindow(int player) {
+void gf_UpdatePlayerStatisticsWindow() {
+    int i;
+    int player;
 
+    for (i = 0; i < 8; i += 1) {
+        player = gv_PlayerBayul[i + 1];
+        if (!((PlayerType(player) == c_playerTypeUser) && (PlayerStatus(player) == c_playerStatusActive))) {
+            continue;
+        }
+
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelKDA],
+            (
+                IntToText(gv_PlayerLevel[player][1]) + 
+                StringToText("/") +
+                IntToText(gv_PlayerLevel[player][2]) + 
+                StringToText("/") +
+                IntToText(gv_PlayerLevel[player][3])         
+            ),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelDamageDone],
+            IntToText(gv_PlayerStatistics[player].damage_dealt),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelDamageReceived],
+            IntToText(gv_PlayerStatistics[player].damage_absorbed),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelHealing],
+            IntToText(gv_PlayerStatistics[player].healing_done),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelSelfHealing],
+            IntToText(gv_PlayerStatistics[player].self_healing),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelResources],
+            (
+                StringToText("<IMG path=\"Assets\\Textures\\icon-mineral-protoss.dds\" height=\"18\" width=\"18\"/> ") +
+                IntToText(gv_PlayerStatistics[player].minerals_spent) +
+                StringToText("</n><IMG path=\"Assets\\Textures\\icon-gas-protoss.dds\" height=\"18\" width=\"18\"/> ") +
+                IntToText(gv_PlayerStatistics[player].gas_spent)
+            ),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelWards],
+            IntToText(gv_PlayerStatistics[player].wards_placed),
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemText(
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelTimeSpentDead],
+            IntToText(gv_PlayerStatistics[player].time_spent_dead),
+            PlayerGroupAll()
+        );
+    }
 }
 
 // Utility finctions
@@ -14970,6 +15094,13 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             CameraLockInput(gv_PlayerBayul[i], true);
@@ -14978,12 +15109,11 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
             DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), false);
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
-            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(6.0, c_timeReal);
+    Wait(12.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     Wait(2.0, c_timeReal);
@@ -15051,6 +15181,13 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             CameraLockInput(gv_PlayerBayul[i], true);
@@ -15059,12 +15196,11 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
             DialogControlSetVisible(gv_HeroReviveWindowTime[gv_PlayerBayul[i]], PlayerGroupSingle(gv_PlayerBayul[i]), false);
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
-            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(6.0, c_timeReal);
+    Wait(12.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     Wait(2.0, c_timeReal);
@@ -15658,6 +15794,13 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             CameraLockInput(gv_PlayerBayul[i], true);
@@ -15667,14 +15810,13 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
             VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(293), 20.0), 20.0, false);
-            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(109));
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(6.0, c_timeReal);
+    Wait(12.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     Wait(2.0, c_timeReal);
@@ -15735,6 +15877,13 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
 
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
             CameraLockInput(gv_PlayerBayul[i], true);
@@ -15744,14 +15893,13 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
             gv_AvailableSkillPoints[gv_PlayerBayul[i]] = 0;
             libNtve_gf_MakeUnitUncommandable(gv_PlayerHero[gv_PlayerBayul[i]], true);
             VisRevealArea(gv_PlayerBayul[i], RegionCircle(PointFromId(266), 20.0), 20.0, false);
-            gf_ShowPlayerStatistics(gv_PlayerBayul[i]);
         }
     }
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(112));
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(6.0, c_timeReal);
+    Wait(12.0, c_timeReal);
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     Wait(2.0, c_timeReal);
@@ -16063,6 +16211,7 @@ bool gt_TogglePlayerStatisticsWindow_Func (bool testConds, bool runActions) {
             false
         );
     } else {
+        gf_UpdatePlayerStatisticsWindow();
         DialogControlSetVisible(
             gv_PlayerStatisticsWindow,
             PlayerGroupSingle(EventPlayer()),
