@@ -266,6 +266,8 @@ int[11][5] gv_PlayerObjectives;
 PlayerStatistics[11] gv_PlayerStatistics;
 int gv_RemoveObjectivesButton;
 int gv_CenterCameraOnHeroDummyButton;
+int gv_PlayerStatisticsWindow;
+int gv_PlayerStatisticsWindowOpenDummyButton;
 
 void InitGlobals () {
     int init_i;
@@ -460,6 +462,9 @@ void InitGlobals () {
     for (init_i = 0; init_i < gv_TotalHeroNum; init_i += 1) {
         gv_HeroInformation[init_i].number = init_i + 1;
     }
+
+    gv_PlayerStatisticsWindow = c_invalidDialogControlId;
+    gv_PlayerStatisticsWindowOpenDummyButton = c_invalidDialogControlId;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -565,6 +570,8 @@ void gf_SpawnHero(int player_number, int hero_number);
 void gf_CreateObjectives();
 void gf_RemoveCompletedSecondaryObjectives();
 void gf_ShowPlayerStatistics(int player);
+void gf_CreatePlayerStatisticsWindow();
+void gf_UpdatePlayerStatisticsWindow(int player);
 // Utility functions
 int gf_ShopWindowByIndex(int shop_index);
 bool gf_EligibleForBuyingHotkey(int shop_index);
@@ -717,6 +724,7 @@ trigger gt_MinionObjectiveCompleted;
 trigger gt_TrackHeroDamage;
 trigger gt_TrackHeroHealing;
 trigger gt_RemoveObjectivesButton;
+trigger gt_TogglePlayerStatisticsWindow;
 
 //--------------------------------------------------------------------------------------------------
 // Game Parameters
@@ -7217,6 +7225,29 @@ void gf_ShowPlayerStatistics(int player) {
     );
 }
 
+void gf_CreatePlayerStatisticsWindow() {
+    gv_PlayerStatisticsWindow = DialogControlHookupStandard(
+        c_triggerControlTypePanel,
+        "UIContainer/PlayerStatisticsWindow"
+    );
+
+    gv_PlayerStatisticsWindowOpenDummyButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/ToggleStatisticsDummyButton"
+    );
+
+    TriggerAddEventDialogControl(
+        gt_TogglePlayerStatisticsWindow,
+        c_playerAny,
+        gv_PlayerStatisticsWindowOpenDummyButton,
+        c_triggerControlEventTypeClick
+    );
+}
+
+void gf_UpdatePlayerStatisticsWindow(int player) {
+
+}
+
 // Utility finctions
 
 int gf_ShopWindowByIndex(int shop_index) {
@@ -9774,6 +9805,8 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
 
     gf_HrScoreDialogMake();
     TriggerAddEventDialogControl(gt_ScoreWindowToggle, c_playerAny, gv_ScoreWindowToggleButton, c_triggerControlEventTypeClick);
+
+    gf_CreatePlayerStatisticsWindow();
 
     for (i = 1; i <= 8; i += 1) {
         if (PlayerType(gv_PlayerBayul[i]) != c_playerTypeUser) {
@@ -16010,6 +16043,42 @@ void gt_TrackHeroHealing_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Show statistics window
+//--------------------------------------------------------------------------------------------------
+bool gt_TogglePlayerStatisticsWindow_Func (bool testConds, bool runActions) {
+    if (testConds) {
+        if (!((gv_GameStartBoolean == true))) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    if (DialogControlIsVisible(gv_PlayerStatisticsWindow, EventPlayer())) {
+        DialogControlSetVisible(
+            gv_PlayerStatisticsWindow,
+            PlayerGroupSingle(EventPlayer()),
+            false
+        );
+    } else {
+        DialogControlSetVisible(
+            gv_PlayerStatisticsWindow,
+            PlayerGroupSingle(EventPlayer()),
+            true
+        );
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_TogglePlayerStatisticsWindow_Init () {
+    gt_TogglePlayerStatisticsWindow = TriggerCreate("gt_TogglePlayerStatisticsWindow_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -16156,6 +16225,7 @@ void InitTriggers () {
     gt_TrackHeroDamage_Init();
     gt_TrackHeroHealing_Init();
     gt_RemoveObjectivesButton_Init();
+    gt_TogglePlayerStatisticsWindow_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

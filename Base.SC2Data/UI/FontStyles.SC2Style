@@ -15,4 +15,12 @@
         hjustify="Center"
         textcolor="255,255,255,255"
     />
+
+    <Style name="StatisticsCenterLabel"
+        template="Header18"
+        height="22"
+        vjustify="Middle"
+        hjustify="Center"
+        textcolor="255,255,255,255"
+    />
 </StyleFile>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Frame" name="PlayerStatisticsWindow">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="100"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-750"/>
+
+            <Width val="1500"/>
+            <Height val="800"/>
+
+            <Visible val="False"/>
+
+            <Frame type="Frame" name="BackgroundFrame">
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+    
+                <Width val="1500"/>
+                <Height val="800"/>
+    
+                <Frame type="Image" name="Background">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+    
+                    <Texture val="Assets/blackbg.tga"/>
+                    <Alpha val="200"/>
+                </Frame>
+    
+                <Frame type="Image" name="Border">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+    
+                    <Texture val="Assets/Textures/ui_chat_frame_protoss.dds"/>
+                    <TextureType val="Border"/>
+                </Frame>
+
+                <Frame type="Image" name="LeftTeamLine">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
+                    <Anchor side="Right" relative="$parent/$parent/CenterColumnFrame" pos="Min" offset="0"/>
+    
+                    <Width val="7"/>
+                    <Height val="760"/>
+    
+                    <Texture val="Assets/Textures/ui_battlenet_glue_columbutton_frame_gradient.dds"/>
+                    <TextureType val="Normal"/>
+                </Frame>
+    
+                <Frame type="Image" name="RightTeamLine">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
+                    <Anchor side="Left" relative="$parent/$parent/CenterColumnFrame" pos="Max" offset="0"/>
+    
+                    <Width val="7"/>
+                    <Height val="760"/>
+    
+                    <Texture val="Assets/Textures/ui_battlenet_glue_columbutton_frame_gradient.dds"/>
+                    <TextureType val="Normal"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="CenterColumnFrame">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="-90"/>
+
+                <Width val="180"/>
+                <Height val="780"/>
+
+                <Frame type="Label" name="Label">
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="30"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+    
+                    <Style val="SecurityButton"/>
+                    <Color val="ffffff"/>
+                    <Text val="Game Statistics"/>
+                </Frame>
+
+                <Frame type="Frame" name="MainBody">
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="110"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
+
+                    <Constant name="LabelOffset" val="0"/>
+                    <Constant name="LabelHeight" val="60"/>
+
+                    <Frame type="Label" name="Label0">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="KDA"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label1">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label0" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Hero damage dealt"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label2">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label1" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Hero damage received"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label3">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label2" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Healing done"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label4">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label3" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Self-healing done"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label5">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label4" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Resources spent"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label6">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label5" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Wards placed"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label7">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label6" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Time spent dead"/>
+                    </Frame>
+                </Frame>
+            </Frame>
+
+            <Constant name="PlayerColumnOffset" val="10"/>
+            <Constant name="PlayerColumnOffsetNeg" val="-10"/>
+
+            <Frame type="Frame" name="PlayerColumn1" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+                <Anchor side="Right" relative="$parent/PlayerColumn2" pos="Min" offset="#PlayerColumnOffsetNeg"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn2" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/PlayerColumn3" pos="Min" offset="#PlayerColumnOffsetNeg"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn3" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/PlayerColumn4" pos="Min" offset="#PlayerColumnOffsetNeg"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn4" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/CenterColumnFrame" pos="Min" offset="#PlayerColumnOffsetNeg"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn5" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/CenterColumnFrame" pos="Max" offset="#PlayerColumnOffset"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn6" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/PlayerColumn5" pos="Max" offset="#PlayerColumnOffset"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn7" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/PlayerColumn6" pos="Max" offset="#PlayerColumnOffset"/>
+            </Frame>
+
+            <Frame type="Frame" name="PlayerColumn8" template="StatisticsPlayerColumnTemplate/StatisticsPlayerColumnTemplate">
+                <Anchor side="Top" relative="$parent/PlayerColumn1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/PlayerColumn7" pos="Max" offset="#PlayerColumnOffset"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Button" name="ToggleStatisticsDummyButton">
+            <RenderType val="Offscreen"/>
+            <Shortcut val="@UI/Hotkey/ShowPlayerStatistics"/>
+        </Frame>
+    </Frame>
+</Desc>

@@ -406,3 +406,4 @@ UI/Hotkey/BuyStat4=V
 UI/Hotkey/BuyStat5=B
 UI/Hotkey/BuyStat6=N
 UI/Hotkey/NextShopPage=Grave
+UI/Hotkey/ShowPlayerStatistics=F6

@@ -4,6 +4,7 @@
     <Include path="UI/Layout/Templates/MyButtonTemplate.SC2Layout"/>
     <Include path="UI/Layout/Templates/SkillLevelUpButton.SC2Layout"/>
     <Include path="UI/Layout/Templates/ShopPageTemplate.SC2Layout"/>
+    <Include path="UI/Layout/Templates/StatisticsPlayerColumnTemplate.SC2Layout"/>
 
     <!-- Loading Screen -->
     <Include path="UI/Layout/LoadingScreen.SC2Layout" requiredtoload="IS_EDITOR"/>
@@ -15,6 +16,7 @@
     <Include path="UI/Layout/Custom/SkillPointAllocationDialog.SC2Layout"/>
     <Include path="UI/Layout/Custom/ScoreWindowToggleButton.SC2Layout"/>
     <Include path="UI/Layout/Custom/StatShop.SC2Layout"/>
+    <Include path="UI/Layout/Custom/PlayerStatisticsWindow.SC2Layout"/>
 
     <!-- MaxStorm modifications -->
     <Include path="UI/Layout/MaxStorm/CustomBHeroBar.SC2Layout"/>

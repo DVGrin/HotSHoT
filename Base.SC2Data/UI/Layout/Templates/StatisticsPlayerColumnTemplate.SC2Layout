@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Label" name="StatisticsNumber">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+
+        <Height val="60"/>
+
+        <Style val="StatisticsCenterLabel"/>
+        <Text val="0"/>
+    </Frame>
+
+    <Frame type="Frame" name="StatisticsPlayerColumnTemplate">
+        <Width val="150"/>
+        <Height val="780"/>
+
+        <Frame type="Image" name="HeroImage">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-30"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+
+            <Width val="60"/>
+            <Height val="60"/>
+
+            <Texture val="Assets/Textures/btn-unit-protoss-colossus.dds"/>
+        </Frame>
+
+        <Frame type="Label" name="PlayerName">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent/HeroImage" pos="Max" offset="5"/>
+
+            <Height val="30"/>
+
+            <Style val="StatisticsCenterLabel"/>
+            <Text val="Player name"/>
+        </Frame>
+
+        <Frame type="Frame" name="MainBody">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="110"/>
+
+            <Height val="660"/>
+
+            <Constant name="LabelOffset" val="0"/>
+
+            <Frame type="Label" name="Label1" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label2" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label1" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label3" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label2" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label4" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label3" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label5" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label4" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label6" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label5" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label7" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label6" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label8" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>
