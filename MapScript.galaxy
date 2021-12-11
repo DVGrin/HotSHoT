@@ -47,6 +47,10 @@ struct PlayerStatistics {
     int damage_absorbed;
     int healing_done;
     int self_healing;
+    int wards_placed;
+    int minerals_spent;
+    int gas_spent;
+    int time_spent_dead;
 };
 
 //--------------------------------------------------------------------------------------------------
@@ -4430,6 +4434,8 @@ static void lf_ShopObjectiveCompletion() {
 static void lf_PayCostsForShopItem(int shop_index) {
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSubtract, gv_StatHowMoney[shop_index][EventPlayer()]);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, gv_ShopItemParameters[shop_index].gas_cost);
+    gv_PlayerStatistics[EventPlayer()].minerals_spent += gv_StatHowMoney[shop_index][EventPlayer()];
+    gv_PlayerStatistics[EventPlayer()].gas_spent += gv_ShopItemParameters[shop_index].gas_cost;
     gv_StatHowMoney[shop_index][EventPlayer()] += gv_ShopItemParameters[shop_index].minerals_increase;
 }
 
@@ -4803,6 +4809,7 @@ void gf_HrStat21 () {
     UnitControlGroupAddUnit(EventPlayer(), 3, UnitLastCreated());
     // Shop Changes
     gv_StatIncreasesBought[EventPlayer()][shop_index] = 1;
+    gv_PlayerStatistics[EventPlayer()].wards_placed += 1;
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/44B3468A") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/5214615F")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     lf_ShopRelatedChecks(shop_index);
@@ -7180,7 +7187,7 @@ void gf_ShowPlayerStatistics(int player) {
         PlayerGroupSingle(player),
         c_messageAreaDebug,
         (
-            StringExternal("Param/Value/89E47C85") + 
+            StringToText(" <s val=\"HelpPanelListBoxItemTitle\">") + 
             TextWithColor(PlayerName(player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(player, false))) +
             StringToText("<n/>KDA: ") +
             FixedToText(kda, 2) +
@@ -7194,7 +7201,18 @@ void gf_ShowPlayerStatistics(int player) {
             IntToText(gv_PlayerStatistics[player].healing_done) +
             StringToText("<n/>Self-healing done: ") +
             IntToText(gv_PlayerStatistics[player].self_healing) +
-            StringExternal("Param/Value/CC7276AB")
+            StringToText("<n/>Wards placed: ") +
+            IntToText(gv_PlayerStatistics[player].wards_placed) +
+            StringToText("<n/>Time spent dead: ") +
+            IntToText(gv_PlayerStatistics[player].time_spent_dead) +
+            StringToText("<n/>Resources spent: ") +
+            (
+                StringToText("<IMG path=\"Assets\\Textures\\icon-mineral-protoss.dds\" height=\"18\" width=\"18\"/>") +
+                IntToText(gv_PlayerStatistics[player].minerals_spent) +
+                StringToText("  <IMG path=\"Assets\\Textures\\icon-gas-protoss.dds\" height=\"18\" width=\"18\"/> ") +
+                IntToText(gv_PlayerStatistics[player].gas_spent)
+            ) +
+            StringToText("</s>")
         )
     );
 }
@@ -14830,6 +14848,7 @@ bool gt_TrHeroReviveStand_Func (bool testConds, bool runActions) {
         libNtve_gf_SetDialogItemText(gv_HeroReviveWindowTime[EventPlayer()], (StringExternal("Param/Value/A7788B65") + IntToText(gv_HeroReviveCountNum[EventPlayer()][0]) + StringExternal("Param/Value/220CEBD0")), PlayerGroupSingle(EventPlayer()));
         libNtve_gf_SetDialogItemText(gv_ScoreDialogReviveTime[EventPlayer()], (StringExternal("Param/Value/1831C539") + TextWithColor(IntToText(gv_HeroReviveCountNum[EventPlayer()][0]), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/47B532D3")), PlayerGroupAll());
         gv_HeroReviveCountNum[EventPlayer()][0] -= 1;
+        gv_PlayerStatistics[EventPlayer()].time_spent_dead += 1;
         Wait(1.0, c_timeReal);
     }
     libNtve_gf_SetDialogItemText(gv_HeroReviveWindowTime[EventPlayer()], (StringExternal("Param/Value/9E9D9A06") + IntToText(gv_HeroReviveCountNum[EventPlayer()][0]) + StringExternal("Param/Value/90BBD409")), PlayerGroupSingle(EventPlayer()));

@@ -9620,7 +9620,7 @@ Param/Value/A70536A9=
 Param/Value/A710DDB3=<s val="BattleReportPanelSummaryText"><c val="ffffff">
 Param/Value/A712FCA3=
 Param/Value/A71D7690=Kereberos
-Param/Value/A72FF288=Heroes that do not use mana cannot be used.
+Param/Value/A72FF288=Heroes that do not use mana can't buy this
 Param/Value/A74FC466=<s val="Header18"><c val="ccffff">
 Param/Value/A7558D1B=Margon
 Param/Value/A7788B65=<s val="BattleReportPanelSummaryText">Respawns after <c val="ffff00">
