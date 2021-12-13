@@ -590,7 +590,6 @@ void gf_LearnSkill(int player_number, int skill);
 void gf_SpawnHero(int player_number, int hero_number);
 void gf_CreateObjectives();
 void gf_RemoveCompletedSecondaryObjectives();
-void gf_ShowPlayerStatistics(int player);
 void gf_CreatePlayerStatisticsWindow();
 void gf_UpdatePlayerStatisticsWindow();
 // Utility functions
@@ -7198,54 +7197,6 @@ void gf_RemoveCompletedSecondaryObjectives() {
     PlayerGroupLoopEnd();
 }
 
-void gf_ShowPlayerStatistics(int player) {
-    fixed deaths;
-    fixed kda;
-
-    deaths = IntToFixed(gv_PlayerLevel[player][2]);
-    if (deaths == 0) {
-        deaths = 1;
-    }
-
-    kda = (
-        (IntToFixed(gv_PlayerLevel[player][1]) + 
-        IntToFixed(gv_PlayerLevel[player][3])) / deaths
-    );
-
-    UIDisplayMessage(
-        PlayerGroupSingle(player),
-        c_messageAreaDebug,
-        (
-            StringToText(" <s val=\"HelpPanelListBoxItemTitle\">") + 
-            TextWithColor(PlayerName(player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(player, false))) +
-            StringToText("<n/>KDA: ") +
-            FixedToText(kda, 2) +
-            StringToText("<n/>CS: ") +
-            IntToText(UnitGetPropertyInt(gv_PlayerHero[player], c_unitPropKills, true)) +
-            StringToText("<n/>Hero damage dealt: ") +
-            IntToText(gv_PlayerStatistics[player].damage_dealt) +
-            StringToText("<n/>Hero damage absorbed: ") +
-            IntToText(gv_PlayerStatistics[player].damage_absorbed) +
-            StringToText("<n/>Healing done: ") +
-            IntToText(gv_PlayerStatistics[player].healing_done) +
-            StringToText("<n/>Self-healing done: ") +
-            IntToText(gv_PlayerStatistics[player].self_healing) +
-            StringToText("<n/>Wards placed: ") +
-            IntToText(gv_PlayerStatistics[player].wards_placed) +
-            StringToText("<n/>Time spent dead: ") +
-            IntToText(gv_PlayerStatistics[player].time_spent_dead) +
-            StringToText("<n/>Resources spent: ") +
-            (
-                StringToText("<IMG path=\"Assets\\Textures\\icon-mineral-protoss.dds\" height=\"18\" width=\"18\"/>") +
-                IntToText(gv_PlayerStatistics[player].minerals_spent) +
-                StringToText("  <IMG path=\"Assets\\Textures\\icon-gas-protoss.dds\" height=\"18\" width=\"18\"/> ") +
-                IntToText(gv_PlayerStatistics[player].gas_spent)
-            ) +
-            StringToText("</s>")
-        )
-    );
-}
-
 void gf_CreatePlayerStatisticsWindow() {
     int i;
     int j;
@@ -10329,25 +10280,6 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
             c_messageAreaSubtitle,
             message
         );
-        return true;
-    }
-
-    if (StringEqual(command, "-stats", true)) {
-        if (StringEqual(arguments[0], "", true)) {
-            if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer())) {
-                return false;
-            }
-            gf_ShowPlayerStatistics(EventPlayer());
-            return true;
-        }
-        number = StringToInt(arguments[0]);
-        if (
-                !(PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), number)) &&
-                !(PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), number))
-            ) {
-                return false;   
-        }
-        gf_ShowPlayerStatistics(number);
         return true;
     }
 
