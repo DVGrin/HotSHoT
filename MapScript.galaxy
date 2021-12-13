@@ -5253,14 +5253,14 @@ void gf_HrMonsterBuffPickUp3 () {
         } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), libNtve_gf_KillingPlayer()) == true)) {
             i = 5;
             n = 8;
+        } else {
+            return;
         }
 
-        if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), libNtve_gf_KillingPlayer()) == true)) {
-            for (; i <= n; i += 1) {
-                if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
-                    UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/23CF5BBC") + TextWithColor(StringExternal("Param/Value/4415B380"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C9C7F429")));
-                    PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, 350);
-                }
+        for (; i <= n; i += 1) {
+            if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
+                UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/23CF5BBC") + TextWithColor(StringExternal("Param/Value/4415B380"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/C9C7F429")));
+                PlayerModifyPropertyInt(gv_PlayerBayul[i], c_playerPropMinerals, c_playerPropOperAdd, 350);
             }
         }
     }
@@ -8390,7 +8390,7 @@ bool gt_TrCharSelect_Func (bool testConds, bool runActions) {
         }
     }
 
-    Wait(0.2, c_timeReal);
+    Wait(0.1, c_timeReal);
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_CharSelectedDelay[0] == true)) {
         gv_CharSelectedDelay[0] = false;
     }
