@@ -173,6 +173,28 @@
                         <Style val="StatisticsCenterLabel"/>
                         <Text val="Time spent dead"/>
                     </Frame>
+
+                    <Frame type="Label" name="Label8">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Minerals lost"/>
+                    </Frame>
+
+                    <Frame type="Label" name="Label9">
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                        <Anchor side="Top" relative="$parent/Label8" pos="Max" offset="#LabelOffset"/>
+
+                        <Height val="#LabelHeight"/>
+
+                        <Style val="StatisticsCenterLabel"/>
+                        <Text val="Kill participation"/>
+                    </Frame>
                 </Frame>
             </Frame>
 

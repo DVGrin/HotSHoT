@@ -85,6 +85,16 @@
                 <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#LabelOffset"/>
                 <Text val="0"/>
             </Frame>
+
+            <Frame type="Label" name="Label9" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label8" pos="Max" offset="#LabelOffset"/>
+                <Text val="0"/>
+            </Frame>
+
+            <Frame type="Label" name="Label10" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
+                <Anchor side="Top" relative="$parent/Label9" pos="Max" offset="#LabelOffset"/>
+                <Text val="0%"/>
+            </Frame>
         </Frame>
     </Frame>
 </Desc>
