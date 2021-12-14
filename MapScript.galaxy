@@ -10331,6 +10331,7 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
                 c_messageAreaSubtitle,
                 StringToText("Test mode activated. Singleplayer commands enabled for everyone") // TODO: Move to external string
             );
+            TriggerEnable(gt_TogglePlayerStatisticsWindow, true);
         }
         return true;
     }
@@ -16132,6 +16133,7 @@ bool gt_TogglePlayerStatisticsWindow_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TogglePlayerStatisticsWindow_Init () {
     gt_TogglePlayerStatisticsWindow = TriggerCreate("gt_TogglePlayerStatisticsWindow_Func");
+    TriggerEnable(gt_TogglePlayerStatisticsWindow, false);
 }
 
 //--------------------------------------------------------------------------------------------------
