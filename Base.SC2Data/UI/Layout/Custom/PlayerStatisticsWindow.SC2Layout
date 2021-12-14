@@ -83,117 +83,54 @@
                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
                     <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
 
-                    <Constant name="LabelOffset" val="0"/>
-                    <Constant name="LabelHeight" val="60"/>
-
-                    <Frame type="Label" name="Label0">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent" pos="Min" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="KDA"/>
+                    <Frame type="Label" name="Label1" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel1"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label1">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label0" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Hero damage dealt"/>
+                    <Frame type="Label" name="Label2" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label1" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel2"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label2">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label1" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Hero damage received"/>
+                    <Frame type="Label" name="Label3" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label2" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel3"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label3">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label2" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Healing done"/>
+                    <Frame type="Label" name="Label4" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label3" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel4"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label4">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label3" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Self-healing done"/>
+                    <Frame type="Label" name="Label5" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label4" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel5"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label5">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label4" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Resources spent"/>
+                    <Frame type="Label" name="Label6" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label5" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel6"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label6">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label5" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Wards placed"/>
+                    <Frame type="Label" name="Label7" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label6" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel7"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label7">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label6" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Time spent dead"/>
+                    <Frame type="Label" name="Label8" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel8"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label8">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Minerals lost"/>
+                    <Frame type="Label" name="Label9" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label8" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel9"/>
                     </Frame>
 
-                    <Frame type="Label" name="Label9">
-                        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-                        <Anchor side="Top" relative="$parent/Label8" pos="Max" offset="#LabelOffset"/>
-
-                        <Height val="#LabelHeight"/>
-
-                        <Style val="StatisticsCenterLabel"/>
-                        <Text val="Kill participation"/>
+                    <Frame type="Label" name="Label10" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                        <Anchor side="Top" relative="$parent/Label9" pos="Max" offset="#StatisticsLabelOffset"/>
+                        <Text val="#StatisticsRowLabel10"/>
                     </Frame>
                 </Frame>
             </Frame>

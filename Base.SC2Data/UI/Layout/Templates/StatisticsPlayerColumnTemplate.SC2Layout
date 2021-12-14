@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-    <Frame type="Label" name="StatisticsNumber">
+    <Constant name="StatisticsRowLabel1" val="K/D/A"/>
+    <Constant name="StatisticsRowLabel2" val="Hero damage dealt"/>
+    <Constant name="StatisticsRowLabel3" val="Hero damage received"/>
+    <Constant name="StatisticsRowLabel4" val="Healing done"/>
+    <Constant name="StatisticsRowLabel5" val="Self-healing done"/>
+    <Constant name="StatisticsRowLabel6" val="Resources spent"/>
+    <Constant name="StatisticsRowLabel7" val="Wards placed"/>
+    <Constant name="StatisticsRowLabel8" val="Time spent dead"/>
+    <Constant name="StatisticsRowLabel9" val="Minerals lost"/>
+    <Constant name="StatisticsRowLabel10" val="Kill participation"/>
+
+    <Constant name="StatisticsLabelOffset" val="0"/>
+    <Constant name="StatisticsLabelHeight" val="60"/>
+
+    <Frame type="Label" name="StatisticsRow">
         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
 
-        <Height val="60"/>
+        <Height val="#StatisticsLabelHeight"/>
 
         <Style val="StatisticsCenterLabel"/>
-        <Text val="0"/>
+        <Text val="—"/>
     </Frame>
 
     <Frame type="Frame" name="StatisticsPlayerColumnTemplate">
         <Width val="150"/>
         <Height val="780"/>
-
-        <Visible val="False"/>
 
         <Frame type="Image" name="HeroImage">
             <Anchor side="Left" relative="$parent" pos="Mid" offset="-30"/>
@@ -23,7 +35,7 @@
             <Width val="60"/>
             <Height val="60"/>
 
-            <Texture val="Assets/Textures/btn-unit-protoss-colossus.dds"/>
+            <Texture val="Assets/blackbg.tga"/>
         </Frame>
 
         <Frame type="Label" name="PlayerName">
@@ -34,7 +46,7 @@
             <Height val="30"/>
 
             <Style val="StatisticsCenterLabel"/>
-            <Text val="Player name"/>
+            <Text val=""/>
         </Frame>
 
         <Frame type="Frame" name="MainBody">
@@ -44,56 +56,54 @@
 
             <Height val="660"/>
 
-            <Constant name="LabelOffset" val="0"/>
-
-            <Frame type="Label" name="Label1" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent" pos="Min" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label1" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel1"/>
             </Frame>
 
-            <Frame type="Label" name="Label2" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label1" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label2" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label1" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel2"/>
             </Frame>
 
-            <Frame type="Label" name="Label3" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label2" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label3" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label2" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel3"/>
             </Frame>
 
-            <Frame type="Label" name="Label4" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label3" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label4" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label3" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel4"/>
             </Frame>
 
-            <Frame type="Label" name="Label5" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label4" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label5" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label4" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel5"/>
             </Frame>
 
-            <Frame type="Label" name="Label6" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label5" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label6" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label5" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel6"/>
             </Frame>
 
-            <Frame type="Label" name="Label7" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label6" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label7" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label6" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel7"/>
             </Frame>
 
-            <Frame type="Label" name="Label8" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label8" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label7" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel8"/>
             </Frame>
 
-            <Frame type="Label" name="Label9" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label8" pos="Max" offset="#LabelOffset"/>
-                <Text val="0"/>
+            <Frame type="Label" name="Label9" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label8" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel9"/>
             </Frame>
 
-            <Frame type="Label" name="Label10" template="StatisticsPlayerColumnTemplate/StatisticsNumber">
-                <Anchor side="Top" relative="$parent/Label9" pos="Max" offset="#LabelOffset"/>
-                <Text val="0%"/>
+            <Frame type="Label" name="Label10" template="StatisticsPlayerColumnTemplate/StatisticsRow">
+                <Anchor side="Top" relative="$parent/Label9" pos="Max" offset="#StatisticsLabelOffset"/>
+                <Tooltip val="#StatisticsRowLabel10"/>
             </Frame>
         </Frame>
     </Frame>

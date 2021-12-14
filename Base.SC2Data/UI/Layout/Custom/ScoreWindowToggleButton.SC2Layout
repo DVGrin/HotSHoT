@@ -15,16 +15,3 @@
         </Frame>
     </Frame>
 </Desc>
-
-<!-- DialogCreate(490, 550, c_anchorTopRight, -25, 30, true);
-gv_ScoreDialog[1] = DialogLastCreated();
-DialogSetImageVisible(gv_ScoreDialog[1], false);
-libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 290, 70, c_anchorCenter, 100, -235, StringToText(""), StringExternal("Param/Value/EA9531F2"), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds");
-libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds", PlayerGroupAll());
-libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
-gv_ScoreDialogAddBtn[0] = DialogControlLastCreated();
-libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 220, 70, c_anchorCenter, -75, -235, StringToText(""), StringExternal("Param/Value/807E2BCD"), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds");
-libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_help_tabbutton_normaloverpressedover_protoss.dds", PlayerGroupAll());
-libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeEndCap, PlayerGroupAll());
-DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-gv_ScoreDialogAddBtn[1] = DialogControlLastCreated(); -->

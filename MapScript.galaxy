@@ -280,7 +280,6 @@ int gv_RemoveObjectivesButton;
 int gv_CenterCameraOnHeroDummyButton;
 int gv_PlayerStatisticsWindow;
 int gv_PlayerStatisticsWindowOpenDummyButton;
-int[8] gv_PlayerStatisticsWindowPlayerColumn;
 int[8] gv_PlayerStatisticsWindowHeroImage;
 int[8] gv_PlayerStatisticsWindowPlayerName;
 int[8][11] gv_PlayerStatisticsWindowNumber;
@@ -484,7 +483,6 @@ void InitGlobals () {
     gv_PlayerStatisticsWindow = c_invalidDialogControlId;
     gv_PlayerStatisticsWindowOpenDummyButton = c_invalidDialogControlId;
     for (init_i = 0; init_i < 8; init_i += 1) {
-        gv_PlayerStatisticsWindowPlayerColumn[init_i] = c_invalidDialogControlId;
         gv_PlayerStatisticsWindowHeroImage[init_i] = c_invalidDialogControlId;
         gv_PlayerStatisticsWindowPlayerName[init_i] = c_invalidDialogControlId;
         for (init_j = 0; init_j < 11; init_j += 1) {
@@ -5594,9 +5592,11 @@ void gf_HrAssistantBonusTeam1 () {
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
             libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/2C3357F5") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/D9E79FA4") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/DC65B07B") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/39AC057A")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/7498FB6B") + TextWithColor(StringExternal("Param/Value/A61AFE81"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/DE3747DD"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/D089DE34")));
+            gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2];
             if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][21] == 1)) {
                 PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerBayul[i]]);
                 UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/F7E20A48") + TextWithColor(StringExternal("Param/Value/2C30D7B6"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/3BEF4AFB"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/17688C44")));
+                gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2] / 2;
             }
 
             if (((gv_SelectedSpellNum1[gv_PlayerBayul[i]] == 4) || (gv_SelectedSpellNum2[gv_PlayerBayul[i]] == 4)) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerBayul[i]], "SpellDong4") == true)) {
@@ -7242,10 +7242,6 @@ void gf_CreatePlayerStatisticsWindow() {
 
     for (i = 0; i < 8; i += 1) {
         column_name = "UIContainer/PlayerStatisticsWindow/PlayerColumn" + IntToString(i + 1);
-        gv_PlayerStatisticsWindowPlayerColumn[i] = DialogControlHookupStandard(
-            c_triggerControlTypePanel,
-            column_name
-        );
         gv_PlayerStatisticsWindowHeroImage[i] = DialogControlHookupStandard(
             c_triggerControlTypeImage,
             column_name + "/HeroImage"
@@ -7254,7 +7250,7 @@ void gf_CreatePlayerStatisticsWindow() {
             c_triggerControlTypeLabel,
             column_name + "/PlayerName"
         );
-        for (j = 0; j < 8; j += 1) {
+        for (j = 0; j < 10; j += 1) {
             gv_PlayerStatisticsWindowNumber[i][j] = DialogControlHookupStandard(
                 c_triggerControlTypeLabel,
                 column_name + "/MainBody/Label" + IntToString(j + 1)
@@ -7265,7 +7261,6 @@ void gf_CreatePlayerStatisticsWindow() {
             (PlayerType(gv_PlayerBayul[i + 1]) == c_playerTypeUser) &&
             (PlayerStatus(gv_PlayerBayul[i + 1]) == c_playerStatusActive)
         ) {
-            DialogControlSetVisible(gv_PlayerStatisticsWindowPlayerColumn[i], PlayerGroupAll(), true);
             libNtve_gf_SetDialogItemImage(
                 gv_PlayerStatisticsWindowHeroImage[i],
                 gv_CharSelectedImage[gv_PlayerBayul[i + 1]],
@@ -7283,7 +7278,7 @@ void gf_CreatePlayerStatisticsWindow() {
 void gf_UpdatePlayerStatisticsWindow() {
     int i;
     int player;
-    fixed participated_in;
+    int participated_in;
 
     for (i = 0; i < 8; i += 1) {
         player = gv_PlayerBayul[i + 1];
@@ -7348,7 +7343,7 @@ void gf_UpdatePlayerStatisticsWindow() {
             PlayerGroupAll()
         );
         
-        participated_in = IntToFixed(gv_PlayerLevel[player][1]) + IntToFixed(gv_PlayerLevel[player][3]);
+        participated_in = gv_PlayerLevel[player][1] + gv_PlayerLevel[player][3];
         if ((i < 4) && (gv_PlayerProfileTeamKillNum[0] > 0)) {
             participated_in /= gv_PlayerProfileTeamKillNum[0];
         }
@@ -7357,7 +7352,7 @@ void gf_UpdatePlayerStatisticsWindow() {
         }
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelKillParticipation],
-            FixedToText(participated_in, 1) + StringToText("%"),
+            IntToText(participated_in) + StringToText("%"),
             PlayerGroupAll()
         );
     }
