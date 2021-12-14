@@ -284,6 +284,8 @@ int[8] gv_PlayerStatisticsWindowPlayerColumn;
 int[8] gv_PlayerStatisticsWindowHeroImage;
 int[8] gv_PlayerStatisticsWindowPlayerName;
 int[8][11] gv_PlayerStatisticsWindowNumber;
+int gv_EndGameButton;
+int gv_WinningTeam;
 
 void InitGlobals () {
     int init_i;
@@ -489,6 +491,7 @@ void InitGlobals () {
             gv_PlayerStatisticsWindowNumber[init_i][init_j] = c_invalidDialogControlId;
         }
     }
+    gv_EndGameButton = c_invalidDialogControlId;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -587,7 +590,7 @@ void gf_HrTeamSelectDialogMake ();
 void gf_HrTeamSelectDialogTeam1Make ();
 void gf_HrTeamSelectDialogTeam1Make2 ();
 void gf_HrScoreDialogMake ();
-void gf_HrSurrenderDialogMake ();
+void gf_CreateEndGameDialogs ();
 void gf_HrDrawGame ();
 void gf_LearnSkill(int player_number, int skill);
 void gf_SpawnHero(int player_number, int hero_number);
@@ -748,6 +751,7 @@ trigger gt_TrackHeroDamage;
 trigger gt_TrackHeroHealing;
 trigger gt_RemoveObjectivesButton;
 trigger gt_TogglePlayerStatisticsWindow;
+trigger gt_EndGameForPlayer;
 
 //--------------------------------------------------------------------------------------------------
 // Game Parameters
@@ -7104,7 +7108,7 @@ void gf_HrScoreDialogMake () {
     gv_ScoreDialogTextB[5] = DialogControlLastCreated();
 }
 
-void gf_HrSurrenderDialogMake () {
+void gf_CreateEndGameDialogs () {
     DialogCreate(360, 275, c_anchorBottomRight, 20, 340, true);
     gv_SurrenderDialog = DialogLastCreated();
     DialogSetImageVisible(gv_SurrenderDialog, false);
@@ -7159,6 +7163,18 @@ void gf_HrSurrenderDialogMake () {
     libNtve_gf_SetDialogItemCurrentValue(DialogControlLastCreated(), 20.0, PlayerGroupAll());
     DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
     DialogControlSetVisible(DialogControlLastCreated(), GameAttributePlayersForTeam(2), true);
+
+    gv_EndGameButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/EndGameButton"
+    );
+
+    TriggerAddEventDialogControl(
+        gt_EndGameForPlayer,
+        c_playerAny,
+        gv_EndGameButton,
+        c_triggerControlEventTypeClick
+    );
 }
 
 void gf_HrDrawGame () {
@@ -7685,7 +7701,7 @@ bool gt_Tr5AllDialogInit_Func (bool testConds, bool runActions) {
     gf_HrStatMoneySet();
     gf_HrTeamSelectDialogMake();
     gf_CreateStatDialog();
-    gf_HrSurrenderDialogMake();
+    gf_CreateEndGameDialogs();
     return true;
 }
 
@@ -15034,6 +15050,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     }
 
     gv_GameEndBoolean = true;
+    gv_WinningTeam = 2;
     TriggerEnable(gt_TrNexusDestroyTeam2, false);
     TriggerStop(gt_TrMinionMake);
     for (i = 1; i <= 4; i += 1) {
@@ -15051,13 +15068,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-
-    gf_UpdatePlayerStatisticsWindow();
-    DialogControlSetVisible(
-        gv_PlayerStatisticsWindow,
-        PlayerGroupAll(),
-        true
-    );
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
@@ -15070,30 +15081,18 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
         }
     }
 
-    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(12.0, c_timeReal);
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
+    TriggerEnable(gt_EndGameForPlayer, true);
+    DialogControlSetVisible(gv_EndGameButton, PlayerGroupAll(), true);
+
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
-    Wait(2.0, c_timeReal);
-    UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-
-    for (i = 5; i <= 8; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
-        }
-    }
-
-    for (i = 1; i <= 4; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
-        }
-    }
-
-    for (i = 9; i <= 10; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
-        }
-    }
 
     return true;
 }
@@ -15121,6 +15120,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     }
 
     gv_GameEndBoolean = true;
+    gv_WinningTeam = 1;
     TriggerEnable(gt_TrNexusDestroyTeam1, false);
     TriggerStop(gt_TrMinionMake);
     for (i = 1; i <= 4; i += 1) {
@@ -15138,13 +15138,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-
-    gf_UpdatePlayerStatisticsWindow();
-    DialogControlSetVisible(
-        gv_PlayerStatisticsWindow,
-        PlayerGroupAll(),
-        true
-    );
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
@@ -15157,30 +15151,18 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
         }
     }
 
-    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(12.0, c_timeReal);
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
+    TriggerEnable(gt_EndGameForPlayer, true);
+    DialogControlSetVisible(gv_EndGameButton, PlayerGroupAll(), true);
+
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
-    Wait(2.0, c_timeReal);
-    UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-
-    for (i = 1; i <= 4; i += 1 ) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
-        }
-    }
-
-    for (i = 5; i <= 8; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
-        }
-    }
-
-    for (i = 9; i <= 10; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
-        }
-    }
 
     return true;
 }
@@ -15738,6 +15720,7 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     }
 
     gv_GameEndBoolean = true;
+    gv_WinningTeam = 2;
     TriggerEnable(gt_TrNexusDestroyTeam2, false);
     TriggerStop(gt_TrMinionMake);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
@@ -15751,13 +15734,7 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-
-    gf_UpdatePlayerStatisticsWindow();
-    DialogControlSetVisible(
-        gv_PlayerStatisticsWindow,
-        PlayerGroupAll(),
-        true
-    );
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
@@ -15773,28 +15750,19 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(109));
-    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(12.0, c_timeReal);
+
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
+    TriggerEnable(gt_EndGameForPlayer, true);
+    DialogControlSetVisible(gv_EndGameButton, PlayerGroupAll(), true);
+
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
-    Wait(2.0, c_timeReal);
-    UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-
-    for (i = 5; i <= 8; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
-        }
-    }
-    for (i = 1; i <= 4; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
-        }
-    }
-    for (i = 9; i <= 10; i += 1) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
-        }
-    }
 
     return true;
 }
@@ -15821,6 +15789,7 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     }
 
     gv_GameEndBoolean = true;
+    gv_WinningTeam = 1;
     TriggerEnable(gt_TrNexusDestroyTeam1, false);
     TriggerStop(gt_TrMinionMake);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
@@ -15834,13 +15803,7 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
-
-    gf_UpdatePlayerStatisticsWindow();
-    DialogControlSetVisible(
-        gv_PlayerStatisticsWindow,
-        PlayerGroupAll(),
-        true
-    );
+    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
 
     for (i = 1; i <= 8; i += 1) {
         if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerBayul[i]) == c_playerStatusActive)) {
@@ -15856,28 +15819,19 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
 
     Wait(0.25, c_timeReal);
     UnitKill(UnitFromId(112));
-    DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
-    Wait(12.0, c_timeReal);
+
+    gf_UpdatePlayerStatisticsWindow();
+    DialogControlSetVisible(
+        gv_PlayerStatisticsWindow,
+        PlayerGroupAll(),
+        true
+    );
+
+    TriggerEnable(gt_EndGameForPlayer, true);
+    DialogControlSetVisible(gv_EndGameButton, PlayerGroupAll(), true);
+
     SoundPlay(SoundLink("SystemSound332", -1), GameAttributePlayersForTeam(1), 200.0, 0.0);
     SoundPlay(SoundLink("SystemSound3322", -1), GameAttributePlayersForTeam(2), 200.0, 0.0);
-    Wait(2.0, c_timeReal);
-    UIClearMessages(PlayerGroupAll(), c_messageAreaDebug);
-
-    for (i = 1; i <= 4; i += 1 ) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverVictory, true, true);
-        }
-    }
-    for (i = 5; i <= 8; i += 1 ) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverDefeat, true, true);
-        }
-    }
-    for (i = 9; i <= 10; i += 1 ) {
-        if ((PlayerType(gv_PlayerBayul[i]) == c_playerTypeUser)) {
-            GameOver(gv_PlayerBayul[i], c_gameOverTie, true, true);
-        }
-    }
 
     return true;
 }
@@ -16186,6 +16140,43 @@ void gt_TogglePlayerStatisticsWindow_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: End the game for a player that clicked the button
+//--------------------------------------------------------------------------------------------------
+bool gt_EndGameForPlayer_Func (bool testConds, bool runActions) {
+    if (testConds) {
+        if (!((gv_GameEndBoolean == true))) {
+            return false;
+        }
+        if (gv_WinningTeam == 0) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer())) {
+        GameOver(EventPlayer(), c_gameOverTie, true, true);
+        return true;
+    }
+
+    if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(gv_WinningTeam), EventPlayer())) {
+        GameOver(EventPlayer(), c_gameOverVictory, true, true);
+    } else {
+        GameOver(EventPlayer(), c_gameOverDefeat, true, true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_EndGameForPlayer_Init () {
+    gt_EndGameForPlayer = TriggerCreate("gt_EndGameForPlayer_Func");
+    TriggerEnable(gt_EndGameForPlayer, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -16333,6 +16324,7 @@ void InitTriggers () {
     gt_TrackHeroHealing_Init();
     gt_RemoveObjectivesButton_Init();
     gt_TogglePlayerStatisticsWindow_Init();
+    gt_EndGameForPlayer_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

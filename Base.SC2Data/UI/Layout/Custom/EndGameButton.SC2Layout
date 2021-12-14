@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Button" name="EndGameButton" template="MyButtonTemplate/ButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-160"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-400"/>
+
+            <Width val="800"/>
+            <Height val="120"/>
+
+            <Visible val="False"/>
+
+            <Frame type="Label" name="Label">
+                <Style val="PurchasePanelNoSelection"/>
+                <Text val="End Game"/>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>
