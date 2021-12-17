@@ -10169,13 +10169,7 @@ void gt_HeroSelectionLockAction_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_RemoveObjectivesButton_Func (bool testConds, bool runActions) {
     if (testConds) {
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-        if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-            return false;
-        }
-        if (!((EventDialogControl() == gv_RemoveObjectivesButton))) {
+        if (PlayerType(EventPlayer()) != c_playerTypeUser) {
             return false;
         }
     }
