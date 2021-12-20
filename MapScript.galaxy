@@ -9990,7 +9990,6 @@ bool gt_TrGameStartCounter_Func (bool testConds, bool runActions) {
         }
         reference = UnitRefFromUnit(gv_PlayerHero[gv_PlayerBayul[i]]);
         TriggerAddEventUnitProperty(gt_MinionObjectiveCompleted, reference, c_unitPropKills);
-        TriggerAddEventUnitDamaged(gt_TrackHeroDamage, reference, c_unitDamageTypeAny, c_unitDamageEither, null);
         TriggerAddEventUnitHealed(gt_TrackHeroHealing, reference, c_unitVitalLife, null);
     }
 
@@ -10455,7 +10454,6 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         gf_SpawnHero(EventPlayer(), number);
         reference = UnitRefFromUnit(gv_PlayerHero[EventPlayer()]);
         TriggerAddEventUnitProperty(gt_MinionObjectiveCompleted, reference, c_unitPropKills);
-        TriggerAddEventUnitDamaged(gt_TrackHeroDamage, reference, c_unitDamageTypeAny, c_unitDamageEither, null);
         TriggerAddEventUnitHealed(gt_TrackHeroHealing, reference, c_unitVitalLife, null);
         gf_HrSkillLearnWindowOpen();
         UnitClearSelection(EventPlayer());
@@ -16022,10 +16020,7 @@ void gt_MinionObjectiveCompleted_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TrackHeroDamage_Func (bool testConds, bool runActions) {
     if (testConds) {
-        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-            return false;
-        }
-        if (!((PlayerType(EventUnitDamageSourcePlayer()) == c_playerTypeUser))) {
+        if (PlayerType(EventUnitDamageSourcePlayer()) != c_playerTypeUser) {
             return false;
         }
         if (!((gv_GameStartBoolean == true))) {
@@ -16034,13 +16029,18 @@ bool gt_TrackHeroDamage_Func (bool testConds, bool runActions) {
         if (!((gv_GameEndBoolean == false))) {
             return false;
         }
+        if (EventPlayer() == EventUnitDamageSourcePlayer()) {
+            return false;
+        }
     }
 
     if (!runActions) {
         return true;
     }
 
-    if (EventPlayer() == EventUnitDamageSourcePlayer()) {
+    gv_PlayerStatistics[EventUnitDamageSourcePlayer()].self_healing += FixedToInt(EventUnitDamageVitalsLeeched(c_unitVitalLife));
+
+    if (PlayerType(EventPlayer()) != c_playerTypeUser) {
         return false;
     }
 
@@ -16053,6 +16053,7 @@ bool gt_TrackHeroDamage_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TrackHeroDamage_Init () {
     gt_TrackHeroDamage = TriggerCreate("gt_TrackHeroDamage_Func");
+    TriggerAddEventUnitDamaged(gt_TrackHeroDamage, null, c_unitDamageTypeAny, c_unitDamageEither, null);
 }
 
 //--------------------------------------------------------------------------------------------------
