@@ -43,6 +43,7 @@ struct HeroInfo {
 };
 
 struct PlayerStatistics {
+    bool display_stats;
     int damage_dealt;
     int damage_absorbed;
     int healing_done;
@@ -7261,6 +7262,7 @@ void gf_CreatePlayerStatisticsWindow() {
             (PlayerType(gv_PlayerBayul[i + 1]) == c_playerTypeUser) &&
             (PlayerStatus(gv_PlayerBayul[i + 1]) == c_playerStatusActive)
         ) {
+            gv_PlayerStatistics[gv_PlayerBayul[i + 1]].display_stats = true;
             libNtve_gf_SetDialogItemImage(
                 gv_PlayerStatisticsWindowHeroImage[i],
                 gv_CharSelectedImage[gv_PlayerBayul[i + 1]],
@@ -7282,7 +7284,7 @@ void gf_UpdatePlayerStatisticsWindow() {
 
     for (i = 0; i < 8; i += 1) {
         player = gv_PlayerBayul[i + 1];
-        if (!((PlayerType(player) == c_playerTypeUser) && (PlayerStatus(player) == c_playerStatusActive))) {
+        if (!gv_PlayerStatistics[player].display_stats) {
             continue;
         }
 
