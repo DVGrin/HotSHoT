@@ -16081,6 +16081,10 @@ bool gt_TrackHeroHealing_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    if (EventUnitHealEffect() == "AllHealing") {
+        return true;
+    }
+
     if (EventPlayer() == EventUnitHealLaunchPlayer()) {
         gv_PlayerStatistics[EventUnitHealLaunchPlayer()].self_healing += FixedToInt(EventUnitHealAmount());
     } else {
