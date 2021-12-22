@@ -228,6 +228,27 @@
         <ResponseFlags index="Acquire" value="1"/>
         <Amount value="20"/>
     </CEffectDamage>
+    <CEffectDamage id="Hero2Skill3D2" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker Link="Effect/Zeratul"/>
+        <ResponseFlags index="Flee" value="0"/>
+        <AttributeFactor index="Biological" value="0.85"/>
+        <ArmorReduction value="0"/>
+        <Flags index="Notification" value="0"/>
+        <Kind value="Splash"/>
+        <Amount value="25"/>
+    </CEffectDamage>
+    <CEffectSet id="Hero2Skill3Mo">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero2Skill3Sr"/>
+        <EffectArray value="Hero2Skill3Sr2"/>
+    </CEffectSet>
+    <CEffectEnumArea id="Hero2Skill3Sr2">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="Effect/HybridFAoESearch"/>
+        <SearchFilters value="Biological;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3.05" Effect="Hero2Skill3D2"/>
+    </CEffectEnumArea>
     <CEffectDamage id="Hero32Skill3M2">
         <EditorCategories value=""/>
         <ResponseFlags index="Acquire" value="1"/>
@@ -8449,7 +8470,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="10"/>
+        <Amount value="15"/>
     </CEffectDamage>
     <CEffectSet id="Hero63AttackMo">
         <Marker Link="Effect/PickupMinerals100Set"/>
@@ -30871,7 +30892,7 @@
     <CEffectEnumArea id="Hero2Skill3Sr">
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
-        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Self,Player,Ally,Biological,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3.05" Effect="Hero2Skill3D"/>
     </CEffectEnumArea>
     <CEffectDamage id="Hero2Skill4D2" parent="DU_WEAP">
@@ -31275,7 +31296,7 @@
         <WhichLocation Value="SourcePoint"/>
         <OffsetVectorEndLocation Value="SourcePoint"/>
         <PeriodCount value="1"/>
-        <PeriodicEffectArray value="Hero2Skill3Sr"/>
+        <PeriodicEffectArray value="Hero2Skill3Mo"/>
         <PeriodicPeriodArray value="0"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="HeroOkGi23242">

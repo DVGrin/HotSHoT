@@ -8719,7 +8719,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <Modification>
-            <VitalMaxArray index="Shields" value="1.2"/>
+            <VitalMaxArray index="Shields" value="3"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -29436,7 +29436,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="7.5"/>
         <Modification>
-            <VitalMaxArray index="Shields" value="1.4"/>
+            <VitalMaxArray index="Shields" value="2.8"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>

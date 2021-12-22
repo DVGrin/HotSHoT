@@ -25727,6 +25727,7 @@
         <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
+        <On Terms="Effect.Hero2Skill3D2.Start; At Target" Send="Create"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachTarget"/>
         <Model value="SpellModel32332222223"/>
@@ -29463,6 +29464,7 @@
     </CActorSound>
     <CActorSound id="HeroSkillSounds22" parent="SoundOneShot">
         <On Terms="Effect.Hero2Skill3D.Start; At Target" Send="Create"/>
+        <On Terms="Effect.Hero2Skill3D2.Start; At Target" Send="Create"/>
         <Sound value="Zeratul_AttackImpact2222"/>
         <Inherits index="Visibility" value="0"/>
     </CActorSound>

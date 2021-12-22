@@ -929,7 +929,6 @@ Behavior/Name/Hero56Passive=Tramp
 Behavior/Name/Hero56Skill1time=Tree of Blessing Lifetime
 Behavior/Name/Hero56Skill2=Green Protection
 Behavior/Name/Hero56Skill22=Green Protection
-Behavior/Name/Hero56Skill222=Add green protection 1/4
 Behavior/Name/Hero56Skill223=Green Protection
 Behavior/Name/Hero56Skill2232=Green Protection
 Behavior/Name/Hero56Skill22322=Green Protection
@@ -993,7 +992,6 @@ Behavior/Name/Hero63Skill222=Actual Golden Shield
 Behavior/Name/Hero63Skill2222=Actual Golden Shield
 Behavior/Name/Hero63Skill22222=Actual Golden Shield
 Behavior/Name/Hero63Skill222222=Actual Golden Shield
-Behavior/Name/Hero63Skill23=Add 1/4 Golden Shield
 Behavior/Name/Hero63Skill2Passive=Golden Shield Passive
 Behavior/Name/Hero63Skill2Passive2=Add golden shield passive
 Behavior/Name/Hero63Skill3=Judge's Spin
@@ -1953,7 +1951,6 @@ Behavior/Tooltip/Hero56Passive=Deals <c val="99ffcc">magic damage</c> to nearby 
 Behavior/Tooltip/Hero56Skill1time=
 Behavior/Tooltip/Hero56Skill2=Absorbs a certain amount of damage for the duration.
 Behavior/Tooltip/Hero56Skill22=
-Behavior/Tooltip/Hero56Skill222=
 Behavior/Tooltip/Hero56Skill223=
 Behavior/Tooltip/Hero56Skill2232=
 Behavior/Tooltip/Hero56Skill22322=
@@ -2016,7 +2013,6 @@ Behavior/Tooltip/Hero63Skill222=
 Behavior/Tooltip/Hero63Skill2222=
 Behavior/Tooltip/Hero63Skill22222=
 Behavior/Tooltip/Hero63Skill222222=
-Behavior/Tooltip/Hero63Skill23=
 Behavior/Tooltip/Hero63Skill2Passive=
 Behavior/Tooltip/Hero63Skill2Passive2=
 Behavior/Tooltip/Hero63Skill3=Deals <c val="99ffcc">magic damage</c> to nearby enemies and reduces their movement speed.
@@ -2329,7 +2325,7 @@ Behavior/Tooltip/SpellDong242322=
 Behavior/Tooltip/SpellDong242323=
 Behavior/Tooltip/SpellDong2423232=
 Behavior/Tooltip/SpellDong24233=
-Behavior/Tooltip/SpellDong2424=Blessed with tentacles, the hero's <c val="ff9999">bonus attack damage</c>, <c val="99ffcc">Ability power</c>, and health regeneration are increased. If you go near the minions, the minions will be strengthened.
+Behavior/Tooltip/SpellDong2424=Blessed from killing the colossal spore tentacle, the hero's <c val="ff9999">AD</c>, <c val="80FFFF">AP</c>, and health regeneration are increased. Nearby minions will be strengthened.
 Behavior/Tooltip/SpellDong24242=You are blessed with regeneration, increasing your health, mana, and energy regeneration.
 Behavior/Tooltip/SpellDong242422=Gives you stealth detection for a period of time or until the hero dies.
 Behavior/Tooltip/SpellDong242423=You are blessed with ivory to reduce the cooldown of your skills and deal <c val="ffff99">true damage</c> every time you hit an enemy.
@@ -2356,7 +2352,7 @@ Behavior/Tooltip/SpellDong242523238=
 Behavior/Tooltip/SpellDong242523239=Movement speed is reduced.
 Behavior/Tooltip/SpellDong2425232392=
 Behavior/Tooltip/SpellDong2425233=
-Behavior/Tooltip/SpellDong24252332=Enemies that step on this trap take <c val="99ffcc">magical damage</c> and are stunned for a short time.
+Behavior/Tooltip/SpellDong24252332=Enemies that step on this trap take <c val="80FFFF">magical damage</c> and are rooted for a short time.
 Behavior/Tooltip/SpellDong242523323=Illuminates the field of vision around the watchtower.
 Behavior/Tooltip/SpellDong242523324=
 Behavior/Tooltip/SpellDong24252333=
@@ -3036,9 +3032,9 @@ Button/Tooltip/HeroSkillBtn3=<c val="ccffff">[Active]</c> Benderzone throws a gr
 Button/Tooltip/HeroSkillBtn4=<c val="ccffff">[Active]</c> Benderzone fires bravely. Increases basic attack range by 2.5 for 15 seconds and deals <c val="ffffff"><d ref="Effect,Hero1Skill4D,Amount"/></c><c val="ff9999">(0.3 AD)</c> additional <c val="80FFFF">magical damage</c> with basic attacks.
 Button/Tooltip/HeroSkillBtn5=<c val="ccffff">[Active]</c> Blane removes any movement reduction effects applied to him and increases his movement speed by <c val="ffffff"><d ref="Effect,Hero2Skill1M,Amount"/>%</c> for 4 seconds. Blane's next basic attack deals <c val="ffffff"><d ref="Effect,Hero2Skill1D,Amount"/></c><c val="ff9999">(0.9 AD)</c> additional <c val="80FFFF">magical damage</c> and recovers 4% of his maximum health on hit.
 Button/Tooltip/HeroSkillBtn52=<c val="ccffff">[Active]</c> Blane slams the ground with his sword, dealing <c val="ffffff"><d ref="Effect,Hero2Skill2D,Amount"/></c><c val="ff9999">(0.8 AD)</c> <c val="ff9999">physical damage</c> to nearby enemies. Puts nearby enemies in a state of silence for 1.5 seconds.
-Button/Tooltip/HeroSkillBtn522=<c val="ccffff">[Active]</c> Blane swings his sword around him for 3 seconds. Inflicts <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999"> physical damage</c> to nearby enemies every 0.5 seconds. Only deals 75% damage to minions and neutral monsters.
+Button/Tooltip/HeroSkillBtn522=<c val="ccffff">[Active]</c> Blane swings his sword around him for 3 seconds. Inflicts <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999"> physical damage</c> to nearby enemies every 0.5 seconds. Deals <c val="ffff99">true damage</c> against monsters, but 15% less.
 Button/Tooltip/HeroSkillBtn5222=<c val="ccffff">[Active]</c> Blane thrusts the last sword into the enemy's head, dealing <c val="ffffff"><d ref="Effect,Hero2Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c>. Deals additional <c val="80FFFF">magic damage</c> equal to 12.5% (<c val="ffffff"><d ref="Effect,Hero2Skill4D2,Amount"  precision="1"/></c>) of Blane's maximum health.
-Button/Tooltip/HeroSkillBtn5223=<c val="ccffff">[Active]</c> Blane swings his sword around him for 3 seconds. Inflicts <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999"> physical damage</c> to nearby enemies every 0.5 seconds. Only deals 75% damage to minions and neutral monsters.
+Button/Tooltip/HeroSkillBtn5223=<c val="ccffff">[Active]</c> Blane swings his sword around him for 3 seconds. Inflicts <c val="ffffff"><d ref="Effect,Hero2Skill3M,Amount"/></c><c val="ff9999">(0.6 AD)</c><c val="ff9999"> physical damage</c> to nearby enemies every 0.5 seconds. Deals <c val="ffff99">true damage</c> against monsters, but 15% less.
 Button/Tooltip/HeroSkillBtn53=<c val="ccffff">[Active]</c> Gianter collapses the ground in the target area. After 1 second, deals <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero3Skill1D,Amount"/></c><c val="80FFFF">(0.6 AP)</c> to enemies within range. Damaged enemies have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero3Skill1M,Amount"/>%</c> for 4 seconds.
 Button/Tooltip/HeroSkillBtn532=<c val="ccffff">[Passive]</c> Gianter's basic attacks heal <c val="ffffff"><d ref="Effect,Hero3Skill2M,Amount" precision="1"/></c> health.<n/><c val="ccffff">[Active]</c> Gianter bites the target minion or neutral monster, dealing <c val="ffffff"><d ref="Effect,Hero3Skill2D,Amount"/></c> <c val="ffff99">True Damage</c> and healing for <c val="ffffff"><d ref="Effect,Hero3Skill2M2,Amount"/></c> HP. When used on an enemy hero, it deals <c val="ffffff"><d ref="Effect,Hero3Skill2D2,Amount"/></c> <c val="80FFFF">magical damage</c> and does not heal.
 Button/Tooltip/HeroSkillBtn5322=<c val="ccffff">[Passive]</c> Increases Gianter's <c val="FF9866">DP</c> and <c val="99ffcc">RP</c> by <c val="ffffff"><d ref="Effect,Hero3Skill3M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Gianter creates shockwaves around him for 8 seconds. Each shockwave deals <c val="ffffff"><d ref="Effect,Hero3Skill3D,Amount"/></c><c val="80FFFF">(0.1 AP)</c> <c val="80FFFF">magical damage</c> to nearby enemies every 0.5 seconds. Shockwaves deal</c> additional <c val="80FFFF">magic damage</c> equal to 0.4%(<c val="ffffff"><d ref="Effect,Hero3Skill3D2,Amount" precision="1"/></c>) of Gianter's maximum health. Damaged enemies have their basic attack speed reduced by <c val="ffffff"><d ref="Effect,Hero3Skill3M2,Amount"/>%</c>.
@@ -3065,7 +3061,7 @@ Button/Tooltip/HeroSkillBtn535=<c val="ccffff">[Active]</c> Neherenia causes a p
 Button/Tooltip/HeroSkillBtn5352=<c val="ccffff">[Active]</c> Neherenia throws a ghost at the target area, reducing the movement speed of enemies within range by <c val="ffffff"><d ref="Effect,Hero29Skill3M,Amount"/>%</c> for 3 seconds and summoning a ghost monster. The ghost monster has 35% of Neherenia's base attack power and health, 65% attack speed, and 100% movement speed. Targets that receive basic attacks from ghost monsters have their basic attack speed reduced by <c val="ffffff"><d ref="Effect,Hero29Skill3M2,Amount"/>%</c> for 2.5 seconds.
 Button/Tooltip/HeroSkillBtn53522=<c val="ccffff">[Toggle]</c>Neherenia transforms into her ultimate form, changing her basic attack to a ranged attack which is sending out up to 10 symbiotic monsters to attack the enemy. Symbiotic monsters have 75% of Neherenia's basic attack speed and deal <c val="80FFFF">magical damage </c>equal to <c val="ffffff"><d ref="Effect,Hero29Skill4D,Amount"/></c><c val="ff9999">(0.1 AD)</c> each basic attack.
 Button/Tooltip/HeroSkillBtn535222=<c val="ccffff">[Toggle]</c>Neherenia transforms into her ultimate form, changing her basic attack to a ranged attack which is sending out up to 10 symbiotic monsters to attack the enemy. Symbiotic monsters have 75% of Neherenia's basic attack speed and deal <c val="80FFFF">magical damage </c>equal to <c val="ffffff"><d ref="Effect,Hero29Skill4D,Amount"/></c><c val="ff9999">(0.1 AD)</c> each basic attack.
-Button/Tooltip/HeroSkillBtn536=<c val="ccffff">[Active]</c> Mordin's next basic attack bites the target, dealing <c val="ffffff"><d ref="Effect,Hero65Skill1D,Amount"/></c><c val="FF9866">(0.8 DP)</c> additional <c val="ff9999">physical damage</c>. Also increases Mordin's base damage by <c val="ffffff"><d ref="Effect,Hero65Skill1M,Amount"/></c> for 10 sec, and damage taken is reduced by Mordin's base damage.
+Button/Tooltip/HeroSkillBtn536=<c val="ccffff">[Active]</c> Mordin's next basic attack bites the target, dealing <c val="ffffff"><d ref="Effect,Hero65Skill1D,Amount"/></c><c val="FF9866">(0.8 DP)</c> additional <c val="ff9999">physical damage</c>. The bite increases Mordin's base damage by <c val="ffffff"><d ref="Effect,Hero65Skill1M,Amount"/></c> while lowering the bitten enemy's base damage by <c val="ffffff"><d ref="Effect,Hero65Skill1M,Amount"/></c> for 10 seconds.
 Button/Tooltip/HeroSkillBtn5362=<c val="ccffff">[Active]</c> Mordin creates a mucous path in a straight line for 4 seconds, reducing the movement speed of enemies standing on it by <c val="ffffff"><d ref="Effect,Hero65Skill2M,Amount"/>%</c>. Also, Mordin and allied Heroes standing on the mucous have their movement speed increased by <c val="ffffff"><d ref="Effect,Hero65Skill2M2,Amount"/>%</c>.
 Button/Tooltip/HeroSkillBtn5363=<c val="ccffff">[Active]</c> Mordin hatches 3 legionnaires that survive for <c val="ffffff"><d ref="Effect,Hero65Skill3M,Amount" precision="1"/></c> seconds. Legionnaires have 30% of Mordin's base attack damage and health and 110% movement speed, and immediately attack nearby enemy heroes as priority. If Mordin is nearby when legionnaires die, <c val="ffffff"><d ref="Effect,Hero65Skill3M2,Amount"/></c> health is restored.
 Button/Tooltip/HeroSkillBtn5364=<c val="ccffff">[Active]</c> Mordin concentrates for 1.5 seconds and enters the ground, then breaks through the ground in the target area and deals <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero65Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> to all nearby enemies. Knocks all enemies hit into the air for 1.75 seconds. Enemies in the center of the spell are knocked up for additional 0.75 seconds.
@@ -3100,7 +3096,7 @@ Button/Tooltip/HeroSkillBtn55331122=<c val="ccffff">[Active]</c> Voltma slams th
 Button/Tooltip/HeroSkillBtn553311222=<c val="ccffff">[Passive]</c> Voltma's blood-soaked axe increases the maximum amount of bonus damage it gains by <c val="ffffff"><d ref="Effect,Hero54Skill4M,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Voltma's agitation increases his combat power. Increases movement speed by <c val="ffffff"><d ref="Effect,Hero54Skill4M,Amount"/>%</c> and gains <c val="ffffff"><d ref="Effect,Hero54Skill4M2,Amount"/></c> bonus damage for 10 sec. Additional damage is reduced by <c val="ffffff"><d ref="Effect,Hero54Skill4M3,Amount"/></c> per second.
 Button/Tooltip/HeroSkillBtn55331123=<c val="ccffff">[Active]</c> Voltma quickly spins with his axe, evading basic attack damage and reducing damage taken from all abilities by 25% for 2 seconds. Movement speed is increased by 15% while spinning. When the duration expires or when the skill is stopped,  the axe is thrown at nearby enemies for <c val="ffffff"><d ref="Effect,Hero54Skill2D,Amount"/></c><c val="ff9999">(0.65 AD)</c> <c val= "ff9999">physical damage</c> and stuns for 1 second.
 Button/Tooltip/HeroSkillBtn553312=<c val="ccffff">[Active]</c> Grant throws a tree at the target area, dealing <c val="ffffff"><d ref="Effect,Hero56Skill1D,Amount"/></c><c val="80FFFF">(0.6 AP)</c> <c val="80FFFF">magic damage</c> to enemies within range. A tree is planted at the location where it was thrown providing vision for 6 seconds and healing nearby allies for <c val="ffffff"><d ref="Effect,Hero56Skill1M,Amount"/></c><c val="99ffcc">(0.2 RP)</c> health per second.
-Button/Tooltip/HeroSkillBtn5533122=<c val="ccffff">[Active]</c> Grant creates a shield on himself that absorbs <c val="ffffff"><d ref="Effect,Hero56Skill2M,Amount"/></c><c val="FF9866">(0.7 DP)</c> damage for 5 seconds. If Grant uses this skill while the tree is planted, he will quickly burrow to the location of the tree.
+Button/Tooltip/HeroSkillBtn5533122=<c val="ccffff">[Active]</c> Grant creates a shield on himself that absorbs <c val="ffffff"><d ref="Effect,Hero56Skill2M,Amount"/></c><c val="FF9866">(1.5 DP</c><c val="99FFCC">/RP)</c> damage for 5 seconds. If Grant uses this skill while the tree is planted, he will quickly burrow to the location of the tree.
 Button/Tooltip/HeroSkillBtn55331222=<c val="ccffff">[Active]</c> Grant slams the ground, dealing <c val="ffffff"><d ref="Effect,Hero56Skill3D,Amount"/></c><c val="80FFFF">(0.65 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies and dragging them towards himself. The dragged enemies have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero56Skill3M,Amount"/>%</c> for 2 seconds.
 Button/Tooltip/HeroSkillBtn5533123=<c val="ccffff">[Active]</c> Grant roots nearby enemies, dealing <c val="ffffff"><d ref="Effect,Hero56Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magic damage</c>. Enemies that are rooted are locked for 2 seconds and cannot perform basic attacks. The constrained enemy hero's cannot use teleportation skills.
 Button/Tooltip/HeroSkillBtn553313=<c val="ccffff">[Active]</c> Bison slams into the enemy, dealing <c val="ffffff"><d ref="Effect,Hero60Skill1D,Amount"/></c><c val="ff9999">(0.9 AD)</c> <c val="ff9999">physical damage</c> and knocking them back. If you use this skill while in Race Mode, it fires a strong fire cannon at the enemy for <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero60Skill1D2,Amount"/></c><c val="ff9999">(0.9 AD)</c>, and the target takes 15% additional damage from all attacks from Bison for 5 seconds.
@@ -3127,8 +3123,8 @@ Button/Tooltip/HeroSkillBtn55331723=<c val="ccffff">[Active]</c> Lucifer summons
 Button/Tooltip/HeroSkillBtn55332=<c val="ccffff">[Active]</c> Netero raises his shield, reducing all skill attack damage from enemies by <c val="ffffff"><d ref="Effect,Hero20Skill2M,Amount"/>%</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn55333=<c val="ccffff">[Passive]</c> Netero's basic attacks against minions or neutral monsters currently below 50% health deal an additional <c val="ffffff"><d ref="Effect,Hero20Skill3D,Amount"/></c><c val="ff9999">(0.4 AD)</c><c val="ffff99">True Damage</c>.<n/><c val="ccffff">[Active]</c> Netero uses his high-level swordsmanship to attack a maximum of 4 enemies in the target area, dealing <c val="ffffff"><d ref="Effect,Hero20Skill3D2,Amount"/></c><c val="99ffcc"><c val="80FFFF">(1.0 AP) magical damage</c></c>.
 Button/Tooltip/HeroSkillBtn553332=<c val="ccffff">[Passive]</c> Increases Netero's movement speed by <c val="ffffff"><d ref="Effect,Hero20Skill4M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Netero moves more than anyone else. Increases Netero's basic attack speed by <c val="ffffff"><d ref="Effect,Hero20Skill4M2,Amount"/>%</c>, movement speed by <c val="ffffff"><d ref="Effect,Hero20Skill4M3,Amount"/>%</c> and becomes immune to movement reduction effects for 10 sec.
-Button/Tooltip/HeroSkillBtn553333=<c val="ccffff">[Active]</c> Galleon's next basic attack deals <c val="ffffff"><d ref="Effect,Hero63Skill1D,Amount"/></c><c val="80FFFF">(0.8 AP)</c> <c val="80FFFF">magical damage</c> to the enemy and stuns them for 1 second.
-Button/Tooltip/HeroSkillBtn5533332=<c val="ccffff">[Passive]</c> All <c val="ff9999">physical damage</c> taken from enemies is reduced by <c val="ffffff"><d ref="Effect,Hero63Skill2M,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Creates a shield that absorbs <c val="ffffff"><d ref="Effect,Hero63Skill2M2,Amount"/></c><c val="FF9866">(0.6 DP)</c> damage for 4 seconds. Immune to movement reduction effects while the shield lasts.
+Button/Tooltip/HeroSkillBtn553333=<c val="ccffff">[Active]</c> Galleon's next basic attack deals <c val="ffffff"><d ref="Effect,Hero63Skill1D,Amount"/></c><c val="80FFFF">(0.8 AP)</c> additional <c val="80FFFF">magical damage</c> to the enemy and stuns them for 1 second.
+Button/Tooltip/HeroSkillBtn5533332=<c val="ccffff">[Passive]</c> All <c val="ff9999">physical damage</c> taken from enemies is reduced by <c val="ffffff"><d ref="Effect,Hero63Skill2M,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Galleon creates a shield that absorbs <c val="ffffff"><d ref="Effect,Hero63Skill2M2,Amount"/></c><c val="FF9866">(1.5 DP</c><c val="99FFCC">/RP) </c>damage for 4 seconds. Immune to movement reduction effects while the shield lasts.
 Button/Tooltip/HeroSkillBtn55333322=<c val="ccffff">[Active]</c> Galleon raises his sword and spins rapidly for 1.5 seconds, dealing <c val="ffffff"><d ref="Effect,Hero63Skill3D,Amount"/></c><c val="80FFFF">(0.65 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies and reducing their movement speed by <c val="ffffff"><d ref="Effect,Hero63Skill3M,Amount"/>%</c> for 3 seconds. While spinning, Galleon's movement speed is increased by 55%.
 Button/Tooltip/HeroSkillBtn553333222=<c val="ccffff">[Active]</c> Galleon lowers his sword vertically to the ground after 0.75 seconds. The moment the sword explodes it deals <c val="ffffff"><d ref="Effect,Hero63Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magical damage</c> and reduces the movement speed of struck enemies by 70% for 1.5 seconds. Enemies in the center of the explosion are stunned instead of slowed.
 Button/Tooltip/HeroSkillBtn553333223=<c val="ccffff">[Active]</c> Galleon raises his sword and spins rapidly for 1.5 seconds, dealing <c val="ffffff"><d ref="Effect,Hero63Skill3D,Amount"/></c><c val="80FFFF">(0.65 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies and reducing their movement speed by <c val="ffffff"><d ref="Effect,Hero63Skill3M,Amount"/>%</c> for 3 seconds. While spinning, Galleon's movement speed is increased by 55%.
@@ -4591,8 +4587,11 @@ Effect/Name/Hero2Skill1zisi=스틸 일격
 Effect/Name/Hero2Skill2D=기폭발
 Effect/Name/Hero2Skill2Sr=기폭발
 Effect/Name/Hero2Skill3D=회전 베기
+Effect/Name/Hero2Skill3D2=회전 베기
 Effect/Name/Hero2Skill3M=회전 베기
+Effect/Name/Hero2Skill3Mo=Hero2Skill3Mo
 Effect/Name/Hero2Skill3Sr=회전 베기
+Effect/Name/Hero2Skill3Sr2=회전 베기
 Effect/Name/Hero2Skill3zisi=회전 베기
 Effect/Name/Hero2Skill4D=최후의 일격
 Effect/Name/Hero2Skill4D2=최후의 일격
@@ -7837,7 +7836,7 @@ Param/Value/29858E35=<c val="33ccff">Margon</c><s val="Header18"><n/><n/><c val=
 Param/Value/298E3FC2=
 Param/Value/29D01F72=</s></c>
 Param/Value/29D1A9D5=
-Param/Value/29F04EA6=Get 400 Minerals!
+Param/Value/29F04EA6=Your team obtained 400 minerals each!
 Param/Value/29F3402B=</s>
 Param/Value/2A008C47= <s val="HelpPanelListBoxItemTitle">
 Param/Value/2A111BCF=Duke
@@ -8064,7 +8063,7 @@ Param/Value/384BBEE7=
 Param/Value/384EF115= <s val="HelpPanelListBoxItemTitle">
 Param/Value/385F0EF4=Guard tower
 Param/Value/3885EC93=Bison
-Param/Value/389DCFE8=Get 400 Minerals!
+Param/Value/389DCFE8=Your team obtained 400 minerals each!
 Param/Value/38A61BC4=Netero
 Param/Value/38C5BEE5=
 Param/Value/38C5EAD6=Chorus
@@ -8228,7 +8227,7 @@ Param/Value/43D8342D=
 Param/Value/44024D6C=</s>
 Param/Value/44067820=<s val="Header18">
 Param/Value/4408074C=Teleport
-Param/Value/4415B380=Get 350 Minerals!
+Param/Value/4415B380=Your team obtained 350 minerals each!
 Param/Value/442194FB=Metel
 Param/Value/442DED36=
 Param/Value/443D63A6=Select Hero
@@ -8842,7 +8841,7 @@ Param/Value/7257D5EB=
 Param/Value/726D5BEB=</s>
 Param/Value/72A43126=10 minutes of game time has elapsed.<n/>(Winning or losing is automatically decided after 35 minutes of game time)
 Param/Value/72CDC7D1= <s val="HelpPanelListBoxItemTitle">
-Param/Value/72EB257C=Get 400 Minerals!
+Param/Value/72EB257C=Your team obtained 400 minerals each!
 Param/Value/73031E54=Kelro
 Param/Value/731A1880=</c></s>
 Param/Value/735882AB=<n/></c><c val="6699ff">Skill cooldown reduction:</c><c val="ffffff"> 
@@ -9608,7 +9607,7 @@ Param/Value/A61ADDD0=) declares surrender to the enemy team.
 Param/Value/A61AFE81=You have earned 
 Param/Value/A62933E6=Jade
 Param/Value/A62B9A29=<n/><s val="Header18">
-Param/Value/A641DDBE=Giant Spore Tentacles slain.
+Param/Value/A641DDBE=Colossal Spore Tentacle has been slain.
 Param/Value/A67C4EDB=Valkyre
 Param/Value/A686879B=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
 Param/Value/A69EE620=
@@ -9828,7 +9827,7 @@ Param/Value/B72DF259=Grants 20% movement speed reduction (1s) to basic attacks a
 Param/Value/B762C11C=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/B763A44B=
 Param/Value/B770B2F5=<n/></c><c val="6699ff">Magic Curtain:</c><c val="ffffff"> 
-Param/Value/B7777655=Get 400 Minerals!
+Param/Value/B7777655=Your team obtained 400 minerals each!
 Param/Value/B77D00F4=<n/></c><c val="6699ff">Maximum HP:</c><c val="ffffff"> 
 Param/Value/B791F822= is regenerated.
 Param/Value/B7A10B95=(Agree: 
@@ -10469,7 +10468,7 @@ Param/Value/E52CE552=
 Param/Value/E546B821=아군의 영웅들이 모두 Warrior하였습니다.
 Param/Value/E561E29A= will be regenerated soon.
 Param/Value/E57A485A=
-Param/Value/E5AC2DF6=거대 가시 촉수가 처치 되었습니다.
+Param/Value/E5AC2DF6=Giant Spiny Tentacle has been slain.
 Param/Value/E5B12F03=준비 완료
 Param/Value/E5B2A90C=Jernigan
 Param/Value/E5BBF31E= / 
@@ -11404,7 +11403,7 @@ Unit/Name/Sentry=Hunter Zone
 Unit/Name/Sentry2team=Hunter Zone
 Unit/Name/SoohoTower=Guardian Power
 Unit/Name/SpineCrawler=Giant Spiny Tentacle
-Unit/Name/SporeCrawler=Colossal Spore Tentacles
+Unit/Name/SporeCrawler=Colossal Spore Tentacle
 Unit/Name/Tosh=Benderzone
 Unit/Name/Ultralisk=Gianter
 Unit/Name/UnknownUnit=Magic Arrow Weapon

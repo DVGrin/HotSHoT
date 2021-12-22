@@ -783,6 +783,7 @@
         <EffectArray Reference="Effect,Hero2Skill1D,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero2Skill2D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero2Skill3D,LeechFraction[Life]" Value="0.06"/>
+        <EffectArray Reference="Effect,Hero2Skill3D2,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero2Skill4D,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero2Skill4D2,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero3Skill1D,LeechFraction[Life]" Value="0.06"/>
@@ -1785,7 +1786,7 @@
         <EffectArray Reference="Effect,Hero63AttackD,Amount[0]" Value="2"/>
         <EffectArray Reference="Unit,Hero63,LifeRegenRate[0]" Value="0.050700"/>
         <EffectArray Reference="Unit,Hero63,EnergyRegenRate[0]" Value="0.050700"/>
-        <EffectArray Reference="Effect,Hero63PassiveD,Amount[0]" Value="4"/>
+        <EffectArray Reference="Effect,Hero63PassiveD,Amount[0]" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="18"/>
         <LeaderAlias value=""/>
@@ -3422,6 +3423,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Effect,Hero1Skill1D,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero2Skill3D,Amount[0]" Value="4.8"/>
+        <EffectArray Reference="Effect,Hero2Skill3D2,Amount[0]" Value="4.8"/>
         <EffectArray Reference="Effect,Hero2Skill4D,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero2Skill2D,Amount[0]" Value="6.4"/>
         <EffectArray Reference="Effect,Hero5Skill3D,Amount[0]" Value="4.8"/>
@@ -4316,10 +4318,10 @@
         <EffectArray Reference="Effect,Herodpview,Amount[0]" Value="2"/>
         <EffectArray Reference="Effect,Herodpview2,Amount[0]" Value="1.14"/>
         <EffectArray Reference="Effect,Hero56Skill2Dong22,Count[0]" Value="1"/>
-        <EffectArray Reference="Effect,Hero56Skill2M,Amount[0]" Value="1.4"/>
+        <EffectArray Reference="Effect,Hero56Skill2M,Amount[0]" Value="2.8"/>
         <EffectArray Reference="Effect,Hero59AttackD,Amount[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero59PassiveM,Amount[0]" Value="1"/>
-        <EffectArray Reference="Effect,Hero63Skill2M2,Amount[0]" Value="1.2"/>
+        <EffectArray Reference="Effect,Hero63Skill2M2,Amount[0]" Value="3"/>
         <EffectArray Reference="Effect,Hero63Skill2Dong,Count[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero65Skill1D,Amount[0]" Value="1.6"/>
         <EffectArray Reference="Effect,StatInjang5D,Amount" Value="0.8"/>
@@ -4345,6 +4347,10 @@
         <EffectArray Reference="Effect,Herorpview2,Amount[0]" Value="1.14"/>
         <EffectArray Reference="Effect,Hero56Skill1Heal,VitalArray[Life].Change[0]" Value="0.4"/>
         <EffectArray Reference="Effect,Hero56Skill1M,Amount[0]" Value="0.4"/>
+        <EffectArray Reference="Effect,Hero63Skill2M2,Amount[0]" Value="3"/>
+        <EffectArray Reference="Effect,Hero63Skill2Dong,Count[0]" Value="1"/>
+        <EffectArray Reference="Effect,Hero56Skill2Dong22,Count[0]" Value="1"/>
+        <EffectArray Reference="Effect,Hero56Skill2M,Amount[0]" Value="2.8"/>
         <EffectArray Reference="Effect,Hero59AttackD,Amount[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero59PassiveM,Amount[0]" Value="1"/>
         <EffectArray Reference="Behavior,HeroGainHP323332,Modification.HealTakenMultiplier" Value="0.004"/>
@@ -5301,6 +5307,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero2Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero2Skill3D,Amount[0]" Value="12.5"/>
+        <EffectArray Reference="Effect,Hero2Skill3D2,Amount[0]" Value="12.5"/>
         <EffectArray Reference="Abil,Hero2Skillc,InfoArray[Research2].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero2Skill3M,Amount[0]" Value="12.5"/>
         <EffectArray Reference="Abil,Hero2Skill3end,Cost[0].Charge[0].CountMax[0]" Value="1"/>
