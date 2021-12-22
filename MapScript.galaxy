@@ -16001,13 +16001,13 @@ bool gt_MinionObjectiveCompleted_Func (bool testConds, bool runActions) {
         if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
             continue;
         }
-        if (ObjectiveGetState(gv_PlayerObjectives[PlayerGroupLoopCurrent()][c_secondaryObjectiveMinions]) == c_objectiveStateActive) {
-            continue;
+        if (ObjectiveGetState(gv_PlayerObjectives[PlayerGroupLoopCurrent()][c_secondaryObjectiveMinions]) != c_objectiveStateCompleted) {
+            return true;
         }
-        TriggerEnable(TriggerGetCurrent(), false);
-        return true;
     }
     PlayerGroupLoopEnd();
+
+    TriggerEnable(TriggerGetCurrent(), false);
     return true;
 }
 
