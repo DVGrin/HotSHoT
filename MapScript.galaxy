@@ -44,10 +44,10 @@ struct HeroInfo {
 
 struct PlayerStatistics {
     bool display_stats;
-    int damage_dealt;
-    int damage_absorbed;
-    int healing_done;
-    int self_healing;
+    fixed damage_dealt;
+    fixed damage_absorbed;
+    fixed healing_done;
+    fixed self_healing;
     int wards_placed;
     int minerals_spent;
     int gas_spent;
@@ -7301,22 +7301,22 @@ void gf_UpdatePlayerStatisticsWindow() {
         );
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelDamageDone],
-            IntToText(gv_PlayerStatistics[player].damage_dealt),
+            FixedToText(gv_PlayerStatistics[player].damage_dealt, 0),
             PlayerGroupAll()
         );
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelDamageReceived],
-            IntToText(gv_PlayerStatistics[player].damage_absorbed),
+            FixedToText(gv_PlayerStatistics[player].damage_absorbed, 0),
             PlayerGroupAll()
         );
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelHealing],
-            IntToText(gv_PlayerStatistics[player].healing_done),
+            FixedToText(gv_PlayerStatistics[player].healing_done, 0),
             PlayerGroupAll()
         );
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelSelfHealing],
-            IntToText(gv_PlayerStatistics[player].self_healing),
+            FixedToText(gv_PlayerStatistics[player].self_healing, 0),
             PlayerGroupAll()
         );
         libNtve_gf_SetDialogItemText(
@@ -16040,14 +16040,14 @@ bool gt_TrackHeroDamage_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gv_PlayerStatistics[EventUnitDamageSourcePlayer()].self_healing += FixedToInt(EventUnitDamageVitalsLeeched(c_unitVitalLife));
+    gv_PlayerStatistics[EventUnitDamageSourcePlayer()].self_healing += EventUnitDamageVitalsLeeched(c_unitVitalLife);
 
     if (PlayerType(EventPlayer()) != c_playerTypeUser) {
         return false;
     }
 
-    gv_PlayerStatistics[EventUnitDamageSourcePlayer()].damage_dealt += FixedToInt(EventUnitDamageAmount());
-    gv_PlayerStatistics[EventPlayer()].damage_absorbed += FixedToInt(EventUnitDamageAbsorbed());
+    gv_PlayerStatistics[EventUnitDamageSourcePlayer()].damage_dealt += EventUnitDamageAmount();
+    gv_PlayerStatistics[EventPlayer()].damage_absorbed += EventUnitDamageAbsorbed();
 
     return true;
 }
@@ -16086,9 +16086,9 @@ bool gt_TrackHeroHealing_Func (bool testConds, bool runActions) {
     }
 
     if (EventPlayer() == EventUnitHealLaunchPlayer()) {
-        gv_PlayerStatistics[EventUnitHealLaunchPlayer()].self_healing += FixedToInt(EventUnitHealAmount());
+        gv_PlayerStatistics[EventUnitHealLaunchPlayer()].self_healing += EventUnitHealAmount();
     } else {
-        gv_PlayerStatistics[EventUnitHealLaunchPlayer()].healing_done += FixedToInt(EventUnitHealAmount());
+        gv_PlayerStatistics[EventUnitHealLaunchPlayer()].healing_done += EventUnitHealAmount();
     }
 
     return true;
