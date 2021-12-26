@@ -14889,11 +14889,11 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
         if ((gv_PlayerLevel[EventPlayer()][0] > gv_PlayerLevel[killing_player][0])) {
             UIDisplayMessage(PlayerGroupSingle(killing_player), c_messageAreaSubtitle, (StringExternal("Param/Value/FAB94D7C") + TextWithColor(StringExternal("Param/Value/E161D6C8"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + gv_HeroKillMoney[EventPlayer()][1] + bounty)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/089F3CD4"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/2D044E80")));
             PlayerModifyPropertyInt(killing_player, c_playerPropMinerals, c_playerPropOperAdd, (gv_HeroKillMoney[EventPlayer()][1] + bounty));
-            gv_PlayerStatistics[EventPlayer()].minerals_lost += (gv_HeroKillMoney[EventPlayer()][1] + bounty);
+            gv_PlayerStatistics[EventPlayer()].minerals_lost += (gv_HeroKillMoney[EventPlayer()][0] + gv_HeroKillMoney[EventPlayer()][1] + bounty);
         } else {
             UIDisplayMessage(PlayerGroupSingle(killing_player), c_messageAreaSubtitle, (StringExternal("Param/Value/FB1959EE") + TextWithColor(StringExternal("Param/Value/772AC933"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + bounty)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/FABCA002"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/3453FA0E")));
             PlayerModifyPropertyInt(killing_player, c_playerPropMinerals, c_playerPropOperAdd, bounty);
-            gv_PlayerStatistics[EventPlayer()].minerals_lost += bounty;
+            gv_PlayerStatistics[EventPlayer()].minerals_lost += (gv_HeroKillMoney[EventPlayer()][0] + bounty);
         }
 
         if (((gv_SelectedCharNum[killing_player] == 32) || (gv_SelectedCharNum[killing_player] == 46) || (gv_SelectedCharNum[killing_player] == 66) || (gv_SelectedCharNum[killing_player] == 70))) {
