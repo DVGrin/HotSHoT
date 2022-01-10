@@ -587,7 +587,6 @@ Behavior/Name/Hero28Skill2impact2=Attacking
 Behavior/Name/Hero28Skill3impact=Hellfire Shock
 Behavior/Name/Hero28Skill4=Shadow of Fire
 Behavior/Name/Hero29MaTimeLife=Limited Life of a Vampire Demon
-Behavior/Name/Hero29MaTimeLife2=Fire Monster Timed Life
 Behavior/Name/Hero29MaTimeLife22=Ghost Monster Timed Life
 Behavior/Name/Hero29Mamoolspeed=Monster attack speed
 Behavior/Name/Hero29Mamoolspeed2=Symnic monster attack speed
@@ -964,7 +963,6 @@ Behavior/Name/Hero60Skill22=Excessive Openness
 Behavior/Name/Hero60Skill3impact=Inferno Missile Impact
 Behavior/Name/Hero60Skill4=Race Mode
 Behavior/Name/Hero60Skill42=Transforming into Race Mode
-Behavior/Name/Hero60Skill422=Transforming into battle mode
 Behavior/Name/Hero61Passive=Rakehand
 Behavior/Name/Hero61Passive2=Rakehand Count
 Behavior/Name/Hero61Skill1=Three Strikes of Pain
@@ -1045,7 +1043,6 @@ Behavior/Name/Hero65Skill2Fast22=Sticky Mucus
 Behavior/Name/Hero65Skill2Fast222=Sticky Mucus
 Behavior/Name/Hero65Skill2Fast2222=Sticky Mucosal
 Behavior/Name/Hero65Skill3TimeLife=Swarmling Timed Life
-Behavior/Name/Hero65Skill3sys=Swarmworm System
 Behavior/Name/Hero66Skill1Impact=Hook Scythe Impact
 Behavior/Name/Hero66Skill2=Demon Regeneration
 Behavior/Name/Hero66Skill22=Demon Regeneration
@@ -1079,7 +1076,6 @@ Behavior/Name/Hero68Skill322222=Just Run
 Behavior/Name/Hero68Skill4=Craving Shot
 Behavior/Name/Hero68Skill42=Craving Shot
 Behavior/Name/Hero68Skill422=Craving Shot
-Behavior/Name/Hero68Skill4impact=Passive Longing Shot
 Behavior/Name/Hero68Skill4impact2=Passive Longing Shot
 Behavior/Name/Hero68Skill4impact22=Passive Longing Shot
 Behavior/Name/Hero69Passive=Image
@@ -1105,7 +1101,6 @@ Behavior/Name/Hero70Skill1Passive122=Tiger Claw
 Behavior/Name/Hero70Skill1Passive1222=Tiger Claw
 Behavior/Name/Hero70Skill1Passive12222=Tiger Claw
 Behavior/Name/Hero70Skill1cool=Tiger Claw Cooldown
-Behavior/Name/Hero70Skill2cool2=Beast's Assault Reusable
 Behavior/Name/Hero70Skill2cool3=Beast Attack Cooldown
 Behavior/Name/Hero70Skill3impact=Roaring Roar Shock
 Behavior/Name/Hero70Skill4=Fierce Tiger Special 1
@@ -1422,7 +1417,7 @@ Behavior/Tooltip/Armorbreaks322=
 Behavior/Tooltip/Armorbreaks3222=
 Behavior/Tooltip/Armorbreaks32222=
 Behavior/Tooltip/Armorbreaks322222=
-Behavior/Tooltip/AttackDamage=Base attack power and skill <c val="ff9999">Physical Damage</c> increased.
+Behavior/Tooltip/AttackDamage=<c val="ff9999">Attack Damage (AD)</c> increases the strength of your basic attacks and skills (if they scale with <c val="ff9999">AD</c>). Basic attacks deal <c val="ff9999">physical damage</c>. 
 Behavior/Tooltip/AttackSpeed=
 Behavior/Tooltip/AttackSpeed2=
 Behavior/Tooltip/AttackSpeed22=
@@ -1439,7 +1434,7 @@ Behavior/Tooltip/BoosterItem22=
 Behavior/Tooltip/DamageNo=
 Behavior/Tooltip/DefensePower=
 Behavior/Tooltip/DefensePower2=
-Behavior/Tooltip/DefensePowers=Take <c val="ffffff"><d ref="(Effect,Herodpview,Amount / Effect,Herodpview2,Amount) * 100" />%</c> less all <c val="ff9999">physical damage.</c>
+Behavior/Tooltip/DefensePowers=You take <c val="ffffff"><d ref="(Effect,Herodpview,Amount / Effect,Herodpview2,Amount) * 100" />%</c> less <c val="ff9999">physical damage</c>.
 Behavior/Tooltip/Hero10Skill1Air=
 Behavior/Tooltip/Hero10Skill1Fast=Increases movement speed and deals <c val="99ffcc">magic damage</c> to the target and nearby enemies when colliding with an enemy.
 Behavior/Tooltip/Hero10Skill1cool=
@@ -1606,7 +1601,6 @@ Behavior/Tooltip/Hero28Skill2impact2=
 Behavior/Tooltip/Hero28Skill3impact=
 Behavior/Tooltip/Hero28Skill4=It maintains stealth, and when you perform a basic attack or use a skill, the stealth state is released.
 Behavior/Tooltip/Hero29MaTimeLife=
-Behavior/Tooltip/Hero29MaTimeLife2=
 Behavior/Tooltip/Hero29MaTimeLife22=
 Behavior/Tooltip/Hero29Mamoolspeed=
 Behavior/Tooltip/Hero29Mamoolspeed2=
@@ -1985,7 +1979,6 @@ Behavior/Tooltip/Hero60Skill22=Basic attack range and movement speed increased.
 Behavior/Tooltip/Hero60Skill3impact=
 Behavior/Tooltip/Hero60Skill4=Ranged attacks are possible, and movement speed is increased.
 Behavior/Tooltip/Hero60Skill42=
-Behavior/Tooltip/Hero60Skill422=
 Behavior/Tooltip/Hero61Passive=Base attack speed increased.
 Behavior/Tooltip/Hero61Passive2=
 Behavior/Tooltip/Hero61Skill1=Deals additional <c val="ff9999">Physical Damage</c> to the next 3 basic attacks and reduces the target's movement speed.
@@ -2066,7 +2059,6 @@ Behavior/Tooltip/Hero65Skill2Fast22=Movement speed is increased.
 Behavior/Tooltip/Hero65Skill2Fast222=Movement speed is increased.
 Behavior/Tooltip/Hero65Skill2Fast2222=Movement speed is increased.
 Behavior/Tooltip/Hero65Skill3TimeLife=
-Behavior/Tooltip/Hero65Skill3sys=
 Behavior/Tooltip/Hero66Skill1Impact=
 Behavior/Tooltip/Hero66Skill2=Increases health regeneration and also increases the health regeneration of nearby allied heroes.
 Behavior/Tooltip/Hero66Skill22=Stamina regeneration is increased.
@@ -2100,7 +2092,6 @@ Behavior/Tooltip/Hero68Skill322222=Base attack speed increased.
 Behavior/Tooltip/Hero68Skill4=You gain bonus base attack damage, and every basic attack heals you.
 Behavior/Tooltip/Hero68Skill42=You gain bonus base attack damage, and every basic attack heals you.
 Behavior/Tooltip/Hero68Skill422=You gain bonus base attack damage, and every basic attack heals you.
-Behavior/Tooltip/Hero68Skill4impact=
 Behavior/Tooltip/Hero68Skill4impact2=
 Behavior/Tooltip/Hero68Skill4impact22=
 Behavior/Tooltip/Hero69Passive=Takes <c val="99ffcc">magical damage</c> over time.
@@ -2119,7 +2110,6 @@ Behavior/Tooltip/Hero70PassiveImpact=
 Behavior/Tooltip/Hero70Skil1Impact=Takes <c val="ff9999">Physical Damage</c> over time.
 Behavior/Tooltip/Hero70Skill1=Your next basic attack can deal additional <c val="ff9999">physical damage</c>.
 Behavior/Tooltip/Hero70Skill1cool=
-Behavior/Tooltip/Hero70Skill2cool2=
 Behavior/Tooltip/Hero70Skill2cool3=
 Behavior/Tooltip/Hero70Skill3impact=
 Behavior/Tooltip/Hero70Skill4=
@@ -2206,7 +2196,7 @@ Behavior/Tooltip/HeroPassAdd=
 Behavior/Tooltip/HeroWait=
 Behavior/Tooltip/Heromark=
 Behavior/Tooltip/Incapacitated2=
-Behavior/Tooltip/MagicRasist=You take <c val="ffffff"><d ref="(Effect,Herorpview,Amount / Effect,Herorpview2,Amount) * 100" />%</c> less all <c val="99ffcc">magical damage</c>.
+Behavior/Tooltip/MagicRasist=You take <c val="ffffff"><d ref="(Effect,Herorpview,Amount / Effect,Herorpview2,Amount) * 100" />%</c> less <c val="80FFFF">magical damage</c>.
 Behavior/Tooltip/MagicShield=Blocks skill damage from enemies once.
 Behavior/Tooltip/MagicShield2=After 40 seconds, the veil will regenerate.
 Behavior/Tooltip/MagmaFire=Reduces damage taken from neutral monsters, dealing <c val="99ffcc">magical damage</c> to nearby enemies every second.
@@ -2407,7 +2397,7 @@ Behavior/Tooltip/SpellDong4=It does not collide with other units, and its moveme
 Behavior/Tooltip/SpellDong422=Damage dealt to enemies and movement speed are reduced.
 Behavior/Tooltip/SpellDong43=Absorbs a certain amount of damage.
 Behavior/Tooltip/SpellDong5=
-Behavior/Tooltip/SpellPower=Increases skill <c val="99ffcc">magical damage</c>.
+Behavior/Tooltip/SpellPower=Increases the amount of<c val="80FFFF"> magical damage</c> your skills inflict (if scaling with <c val="80FFFF">AP</c>). Your Hero's basic attacks against structures deal additional damage equal to 80% of your <c val="80FFFF">Ability Power (AP)</c>.
 Behavior/Tooltip/TestVeterancy2=
 Behavior/Tooltip/Toherodamage=
 Behavior/Tooltip/debuffairborne=All commands are disabled while in the air.
@@ -2874,7 +2864,7 @@ Button/Tooltip/Hero19Passive3=<c val="ccffff">[Passive]</c> Each time the Warcor
 Button/Tooltip/Hero19Passive4=<c val="ccffff">[Passive]</c> For every 10 <c val="80FFFF">AP</c> Hera's maximum health is increased by 25.
 Button/Tooltip/Hero1Passive=<c val="ccffff">[Passive]</c> When Benderzone's health drops below 20% he gains 25% increased movementspeed and becomes stealthed for up to 6 seconds. Basic attacks or skills during stealth breaks stealth.
 Button/Tooltip/Hero1Passive2=<c val="ccffff">[Passive]</c> Soul Kaiser does not collide with other units, and gains 10% movement speed when his current health is above 70%.
-Button/Tooltip/Hero1Passive3=<c val="ccffff">[Passive]</c> When Sieger's basic attacks critically strike, his basic attack speed is increased by 8% for 2.5 sec. This effect stacks up to 3 times.
+Button/Tooltip/Hero1Passive3=<c val="ccffff">[Passive]</c> When Sieger's basic attacks critically strike, his basic attack speed is increased by 8% for 2.5 seconds. This effect stacks up to 3 times.
 Button/Tooltip/Hero20=
 Button/Tooltip/Hero20Passive=<c val="ccffff">[Passive]</c> Every 5 seconds, Netero's basic attack is strengthened, dealing additional damage equal to 70% of basic attack power (<c val="ffffff"><d ref="Effect,Hero20AttackD,Amount/100*70"/></c>) to the target.
 Button/Tooltip/Hero20Passive2=<c val="ccffff">[Passive]</c> Duke's basic attacks deal <c val="80FFFF">magic damage</c> to enemies near the target equal to 80% of the damage dealt.
@@ -2977,9 +2967,9 @@ Button/Tooltip/Hero61=
 Button/Tooltip/Hero61Passive=<c val="ccffff">[Passive]</c> When Musashi uses an ability, his next 3 basic attacks within 3 seconds gain 35% attack speed.
 Button/Tooltip/Hero61Skill4Unit=
 Button/Tooltip/Hero62=
-Button/Tooltip/Hero62Passive=<c val="ccffff">[Passive]</c> After Daboto has used 3 skills, the next skill he uses will stun for 1 second.
+Button/Tooltip/Hero62Passive=<c val="ccffff">[Passive]</c> After Daboto has used 3 skills, the next skill he uses will stun for <c val="ffffff"><d ref="Effect,Hero62PassiveM,Amount" precision="2"/></c> second(s).
 Button/Tooltip/Hero63=
-Button/Tooltip/Hero63Passive=<c val="ccffff">[Passive]</c> Galleon takes 10% reduced basic attack damage from enemies. When Galleon's skills hit enemies they are marked for 5 seconds. When a friendly hero attacks a marked target the mark will explode for <c val="ffffff"><d ref="Effect,Hero63PassiveD,Amount" /></c> <c val="80FFFF">magical damage</c> and the mark disappears.
+Button/Tooltip/Hero63Passive=<c val="ccffff">[Passive]</c> Galleon takes 10% reduced basic attack damage from enemies. When Galleon's skills hit enemies they are marked for 5 seconds. When a friendly hero attacks a marked target the mark will explode for <c val="ffffff"><d ref="Effect,Hero63PassiveD,Amount" /></c> <c val="FFFF80">true damage</c> and the mark disappears.
 Button/Tooltip/Hero63Skill4Dummy=
 Button/Tooltip/Hero64=
 Button/Tooltip/Hero64Passive=<c val="ccffff">[Passive]</c> When no enemies are within Wiz's line of sight, movement speed is increased by 20%.
@@ -2990,32 +2980,32 @@ Button/Tooltip/Hero66=
 Button/Tooltip/Hero66Passive=<c val="ccffff">[Passive]</c> Each time Demol kills or assists killing an enemy Hero, he gains 1 Demon Scythe Point. Demol unlocks additional effects proportional to his current demon's scythe points.<n/>(Current points: <c val="ffffff"><d ref="Effect,Hero66PassiveM,Amount"/></c>)<n/><c val="ccffff">[4 points]</c> Demol's <c val="FF9866">DP </c>increases by 6.<n/><c val="ccffff">[8 points]</c> Increases Demol's movement speed by 0.2.<n /><c val="ccffff">[12 points]</c> Increases the range of your hook sickle skill by 1.5 and the duration of the movement reduction effect by 0.5 seconds.<n/><c val="ccffff" >[16 points]</c> Demol's skill cooldown is reduced by 15%.<n/><c val="ccffff">[24 points]</c> Death Sentence skill damage increased by 100. Targets suppressed by this skill take 25% additional <c val="ff9999">physical damage</c> and <c val="80FFFF">magical damage</c> during the suppression.
 Button/Tooltip/Hero66Skill3Dummy=
 Button/Tooltip/Hero67=
-Button/Tooltip/Hero67Passive=<c val="ccffff">[Passive]</c> Desilba's basic attacks heal for 5% of the damage dealt to the target. When attacking minions or neutral monsters, you receive double HP recovery.
+Button/Tooltip/Hero67Passive=<c val="ccffff">[Passive]</c> Desilba's basic attacks heal for 5% of the damage dealt to the target. When attacking minions or neutral monsters the HP recovery is doubled.
 Button/Tooltip/Hero67Skill4Dummy=
 Button/Tooltip/Hero67Skill4Dummy2=
 Button/Tooltip/Hero68=
 Button/Tooltip/Hero69=
-Button/Tooltip/Hero69Passive=<c val="ccffff">[Passive]</c> Targets hit by Margon's basic attacks take <c val="ffffff"><d ref="Effect,Hero69PassiveM,Amount"/></c> <c val="99ffcc">magical damage</c> over 4 seconds, and when attacked with skills, their basic attack speed is reduced by 15% for 2 seconds . This effect does not apply to structures.
+Button/Tooltip/Hero69Passive=<c val="ccffff">[Passive]</c> Targets hit by Margon's basic attacks take <c val="ffffff"><d ref="Effect,Hero69PassiveM,Amount"/></c> <c val="80FFFF">magical damage</c> over a duration of 4 seconds. Enemies hit by Margon's skills have their basic attack speed reduced by 15% for 2 seconds. These effect do not apply to structures.
 Button/Tooltip/Hero6Passive=<c val="ccffff">[Passive]</c> Edburn has <c val="FF9866">DP</c> equal to 2, and increases by an additional 2 per level.
 Button/Tooltip/Hero6Passive2=<c val="ccffff">[Passive]</c> Jade's skills can execute enemies if their current HP is <c val="ffffff"><d ref="Effect,Hero8PassiveM,Amount" precision="1"/>%</c> or lower. If enemies are below the health treshhold a marker is applied.
 Button/Tooltip/Hero6Passive3=<c val="ccffff">[Passive]</c> Devola heals for 0.5% of her maximum health every second.
 Button/Tooltip/Hero6Skill4Dummy=
 Button/Tooltip/Hero7=
 Button/Tooltip/Hero70=
-Button/Tooltip/Hero70Passive=<c val="ccffff">[Passive]</c> When Drager basic attacks an enemy below 50% health, it deals additional <c val="99ffcc">magic damage</c> equal to 9% of the target's max health. This effect only applies once every 10 seconds to the same target.
+Button/Tooltip/Hero70Passive=<c val="ccffff">[Passive]</c> When Drager basic attacks an enemy below 50% health he deals additional <c val="80FFFF">magic damage</c> equal to 9% of the target's max health. This effect only applies once every 10 seconds to the same target.
 Button/Tooltip/Hero71=
-Button/Tooltip/Hero71Passive=<c val="ccffff">[Passive]</c> For each 10 ability power of Lucifer, gain 1.5% movement speed.
+Button/Tooltip/Hero71Passive=<c val="ccffff">[Passive]</c> Lucifer gains 1.5% movement speed for each 10 <c val="80FFFF">AP</c>.
 Button/Tooltip/Hero71Skill4Dummy=
-Button/Tooltip/Hero72Passive=<c val="ccffff">[Passive]</c> Each time Eren uses a skill, her sword is strengthened, dealing <c val="ffffff"><d ref="Effect,Hero72PassiveD,Amount"/></c><c val="99ffcc">(0.4 AP)</c> additional <c val="99ffcc">magical damage</c> with her basic attacks for 5 seconds. The buff can be stacked up to 4 times in total.<n/>
-Button/Tooltip/Hero72SkillBtn1=<c val="ccffff">[Active]</c> When Eren uses skills consecutively, it activates as an enhanced effect.<n/>On the first use, slams the sword forward to the ground, dealing <c val="ffffff"><d ref="Effect,Hero72Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">Physical Damage</c>.<n/>The second use swings the sword in a cone in front of you, dealing the same damage.<n/>The third use charges forward, dealing equal damage to all enemies it passes through and stunning them for 1 second. Swing sword in a circular motion at the destination, dealing <c val="ffffff"><d ref="Effect,Hero72Skill1D2,Amount"/></c><c val="ff9999">(0.5 AD)</c> additional <c val="ff9999">Physical Damage</c>.
-Button/Tooltip/Hero72SkillBtn2=<c val="ccffff">[Active]</c> Eren swings her sword around, creating a storm of flames at her location for 2.5 seconds, taking all <c val="ff9999">Physical Damage</c> and <c val="99ffcc">Magic Damage</c> from enemies. > blocks by <c val="ffffff"><d ref="Effect,Hero72Skill2M,Amount"/>%</c>.
+Button/Tooltip/Hero72Passive=<c val="ccffff">[Passive]</c> Each time Eren uses a skill, his sword is strengthened, dealing <c val="ffffff"><d ref="Effect,Hero72PassiveD,Amount"/></c><c val="80FFFF">(0.4 AP)</c> additional <c val="80FFFF">magical damage</c> with his basic attacks for 5 seconds. The buff can be stacked up to 4 times in total.<n/>
+Button/Tooltip/Hero72SkillBtn1=<c val="ccffff">[Active]</c> Each time Eren uses his Q ability it will have a different enhanced effect: <n/><n/><c val="ccffff">[1]</c> On the first use, Eren slams the sword forward to the ground, dealing <c val="ffffff"><d ref="Effect,Hero72Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c>.<n/><n/><c val="ccffff">[2]</c> On the second use, Eren swings the sword in a cone in front of him, dealing <c val="ffffff"><d ref="Effect,Hero72Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c>.<n/><n/><c val="ccffff">[3]</c> The third use makes Eren charge forward, dealing <c val="ffffff"><d ref="Effect,Hero72Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c> and applying a 1 second stun to all enemies he passes through. After dashing Eren swings his sword in a circular motion at the destination, dealing <c val="ffffff"><d ref="Effect,Hero72Skill1D2,Amount"/></c><c val="ff9999">(0.5 AD)</c> additional <c val="ff9999">physical damage</c> to all nearby enemies.
+Button/Tooltip/Hero72SkillBtn2=<c val="ccffff">[Active]</c> Eren swings his sword around, creating a storm of flames at his location for 2.5 seconds. Inside the storm Eren is taking <c val="ffffff"><d ref="Effect,Hero72Skill2M,Amount"/>%</c> less <c val="ff9999">physical damage</c> and <c val="80FFFF">magical damage</c> from enemies.
 Button/Tooltip/Hero72SkillBtn3=<c val="ccffff">[Active]</c> Eren fires a tiger-shaped sword at the target location, dealing <c val="ffffff"><d ref="Effect,Hero72Skill3D,Amount"/></c><c val="ff9999">(0.9 AD)</c> <c val="ff9999">physical damage</c> to enemies hit and reducing their movement speed by <c val="ffffff"><d ref="Effect,Hero72Skill3M,Amount"/>%</c> for 2 seconds.
-Button/Tooltip/Hero72SkillBtn4=<c val="ccffff">[Active]</c> After a while, Eren quickly moves to the front end, dealing <c val="ffffff"><d ref="Effect,Hero72Skill4D,Amount"/></c><c val="ff9999">(1.2 AD)</c> <c val="ff9999">Physical Damage</c> to all enemies in her path, and knocking them into the air for 1 second. If the target is a hero, it will be dragged to Eren's location.
+Button/Tooltip/Hero72SkillBtn4=<c val="ccffff">[Active]</c> After channeling for a while, Eren quickly dashes into the target direction, dealing <c val="ffffff"><d ref="Effect,Hero72Skill4D,Amount"/></c><c val="ff9999">(1.2 AD)</c> <c val="ff9999">physical damage</c> to all enemies in his path and knocking them into the air for 1 second. If the target is a hero, it will be dragged to Eren's location.
 Button/Tooltip/Hero73Passive=<c val="ccffff">[Passive]</c> If Luna performs a basic attack within 4 seconds of using a skill, she will attack twice in quick succession. The first of two attacks deals 75% damage.
-Button/Tooltip/Hero73Skill1Btn=<c val="ccffff">[Active]</c> Luna fires a bullet of energy that explodes when it hits an enemy forward or reaches the end of its path. Deals <c val="ffffff"><d ref="Effect,Hero73Skill1D,Amount"/></c><c val="99ffcc">(0.8 AP)</c> <c val="99ffcc">magic damage</c> to enemies hit by the explosion and marks them for 6 seconds. Attacking a marked enemy increases Luna's movement speed by <c val="ffffff"><d ref="Effect,Hero73Skill1M,Amount"/>%</c> for 2 seconds.
-Button/Tooltip/Hero73Skill2Btn=<c val="ccffff">[Active]</c> For 4 seconds, Luna's basic attack range is increased by 1, and her basic attacks deal <c val="ffffff"><d ref="Effect,Hero73Skill2D,Amount"/></c><c val="99ffcc"> (0.6 AP)</c> additional <c val="99ffcc">magical damage</c>.
-Button/Tooltip/Hero73Skill3Btn=<c val="ccffff">[Active]</c> Luna quickly rolls forward according to the skill range and charges. After her dash, she fires a beam of energy at the nearest enemy in front of her, dealing <c val="ffffff"><d ref="Effect,Hero73Skill3D,Amount"/></c><c val="ff9999">(0.6 AD)</c> <c val="ff9999">physical damage</c>. If this skill is used while the Dada Shot skill is in use, it will not attack after charging.
-Button/Tooltip/Hero73Skill4Btn=<c val="ccffff">[Active]</c> Luna fires in one direction for 3 seconds and moves freely. These bullets deal <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount"/></c><c val="ff9999">(0.2 AD)</c><c val="99ffcc">(0.1 AP)</c> <c val="ff9999">physical damage</c> to the first enemy hit, and Deals 200 damage and deals 100% bonus <c val ="ffff99">fixed damage</c> to minions and monsters. This skill also increases Luna's rate of fire according to her attack speed. If you use the skill one more time, it will stop firing.
+Button/Tooltip/Hero73Skill1Btn=<c val="ccffff">[Active]</c> Luna fires a bullet of energy that explodes when it hits an enemy or reaches the end of its path. Deals <c val="ffffff"><d ref="Effect,Hero73Skill1D,Amount"/></c><c val="80FFFF">(0.8 AP)</c> <c val="80FFFF">magic damage</c> to enemies hit by the explosion and marks them for 6 seconds. Attacking a marked enemy increases Luna's movement speed by <c val="ffffff"><d ref="Effect,Hero73Skill1M,Amount"/>%</c> for 2 seconds.
+Button/Tooltip/Hero73Skill2Btn=<c val="ccffff">[Active]</c> For 4 seconds, Luna's basic attack range is increased by 1, and her basic attacks deal <c val="ffffff"><d ref="Effect,Hero73Skill2D,Amount"/></c><c val="80FFFF"> (0.6 AP)</c> additional <c val="80FFFF">magical damage</c>.
+Button/Tooltip/Hero73Skill3Btn=<c val="ccffff">[Active]</c> Luna quickly rolls forward and is charging her gun. After her dash, she fires a beam of energy at the nearest enemy in front of her, dealing <c val="ffffff"><d ref="Effect,Hero73Skill3D,Amount"/></c><c val="ff9999">(0.6 AD)</c> <c val="ff9999">physical damage</c>. If this skill is used while the Dada Shot skill is in use, the beam will not be shot.
+Button/Tooltip/Hero73Skill4Btn=<c val="ccffff">[Active]</c> Luna fires in the target direction and can move freely for 3 seconds. These bullets deal <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount"/></c><c val="ff9999">(0.2 AD)</c><c val="80FFFF">(0.1 AP)</c> <c val="ff9999">physical damage</c> to the first enemy hit. Bullets deal 100% bonus <c val ="ffff99">true damage</c> to minions and monsters. This skill's rate of fire increases according to Luna's attack speed. This results in more bullets, more damage (see below). If you press the button again while firing, the shooting stops.<n/><n/>Attackspeed [0] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*14" precision="1"/></c> total damage<n/>Attackspeed [1] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*15" precision="1"/></c> total damage<n/>Attackspeed [2] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*17" precision="1"/></c> total damage<n/>Attackspeed [3] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*18" precision="1"/></c> total damage<n/>Attackspeed [4] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*19" precision="1"/></c> total damage<n/>Attackspeed [5] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*21" precision="1"/></c> total damage<n/>Attackspeed [6] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*23" precision="1"/></c> total damage<n/>Attackspeed [7] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*24" precision="1"/></c> total damage<n/>Attackspeed [8] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*26" precision="1"/></c> total damage<n/>Attackspeed [9] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*28" precision="1"/></c> total damage<n/>Attackspeed [10] = <c val="ffffff"><d ref="Effect,Hero73Skill4D,Amount*31" precision="1"/></c> total damage
 Button/Tooltip/Hero7Passive=<c val="ccffff">[Passive]</c> Metel blesses nearby allied Heroes, reducing all <c val="ff9999">Physical Damage</c> and <c val="80FFFF">Magic Damage</c> from enemies by 10%. Metel herself is unaffected.
 Button/Tooltip/Hero8=
 Button/Tooltip/Hero9=
@@ -3107,19 +3097,19 @@ Button/Tooltip/HeroSkillBtn553314=<c val="ccffff">[Passive]</c> Each time Musash
 Button/Tooltip/HeroSkillBtn5533142=<c val="ccffff">[Active]</c> Musashi creates a spinning rake near him that lasts for 3 seconds, dealing <c val="ffffff"><d ref="Effect,Hero61Skill2D,Amount"/></c><c val="ff9999">(0.5 AD)</c> <c val="ff9999">physical damage </c> per second to enemies within range. This skill attack deals less damage as there are more enemies nearby (up to 40% reduction).
 Button/Tooltip/HeroSkillBtn55331422=<c val="ccffff">[Active]</c> Musashi quickly dashes towards the target, dealing <c val="80FFFF">magic damage</c> equal to <c val="ffffff"><d ref="Effect,Hero61Skill3D,Amount"/></c><c val="80FFFF">(0.8 AP)</c>.
 Button/Tooltip/HeroSkillBtn553314222=<c val="ccffff">[Active]</c> Musashi inflicts <c val="ffffff"><d ref="Effect,Hero61Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c> to nearby enemies and disappears for 0.5 seconds, creating a clone at his current positon that lasts for 15 seconds. The clone has 70% of Musashi's base damage and takes 50% additional damage.
-Button/Tooltip/HeroSkillBtn553315=<c val="ccffff">[Active]</c> Margon throws a boulder of lava at an enemy, dealing <c val="ffffff"><d ref="Effect,Hero69Skill1D,Amount"/></c><c val="99ffcc">(0.9 AP)</c> <c val="99ffcc">magic damage</c> to the target and nearby enemies. , reduces movement speed by <c val="ffffff"><d ref="Effect,Hero69Skill1M,Amount"/>%</c> for 2.5 sec.
-Button/Tooltip/HeroSkillBtn5533152=<c val="ccffff">[Active]</c> Margon immediately removes all movement impairing effects on her, and takes <c val="ff9999">physical damage</c> and <c val="99ffcc">magical damage</c> from enemies for 5 seconds. Absorbs <c val="ffffff"><d ref="Effect,Hero69Skill2M,Amount"/>%</c>.
-Button/Tooltip/HeroSkillBtn5533153=<c val="ccffff">[Passive]</c> Each time Margon uses a skill, she takes <c val="ffffff"><d ref="Effect,Hero69Skill3D2,Amount"/></c><c val="99ffcc">(0.25 AP)</c><c val="99ffcc">magical damage</c> per second to nearby enemies for 3 seconds. <n/><c val="ccffff">[Active]</c> Margon unleashes powerful heat in a cone in front of her. All enemies within range take <c val="99ffcc">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero69Skill3D,Amount"/></c><c val="99ffcc">(0.8 AP)</c>.
-Button/Tooltip/HeroSkillBtn55331532=<c val="ccffff">[Active]</c> Margon unleashes a giant lava fist forward, dealing <c val="ffffff"><d ref="Effect,Hero69Skill4D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> <c val="99ffcc">magical damage</c> to enemies within range. Stuns for 0.75 seconds. Where the lava fist passes, fire is created for 4 seconds, dealing <c val="ffffff"><d ref="Effect,Hero69Skill4D2,Amount"/></c><c val="99ffcc">(0.3 AP)</c><c val="99ffcc">magical damage</c> per second.
-Button/Tooltip/HeroSkillBtn553316=<c val="ccffff">[Passive]</c> Drager's basic attack critical strike damage is increased by <c val="ffffff"><d ref="Effect,Hero70Skill1M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Drager's next basic attack hits <c val="ffffff"><d ref="Effect,Hero70Skill1D,Amount"/></c><c val="ff9999" over 3 seconds Inflicts an additional <c val="ff9999">physical damage</c> equal to >(1.5 AD)</c>.
-Button/Tooltip/HeroSkillBtn5533162=<c val="ccffff">[Active]</c> Drager transforms into a tiger and leaps into the target area, dealing <c val="ffffff"><d ref="Effect,Hero70Skill2D,Amount"/></c><c val="99ffcc">(0.7 AP)</c><c val="99ffcc">magical damage< /c> is applied. After using this skill, if you kill an enemy hero or score an assist within 7 seconds, you can use it again without consuming mana.
-Button/Tooltip/HeroSkillBtn55331622=<c val="ccffff">[Active]</c> Drager roars, creating a powerful wave in a cone in front of him, dealing <c val="ffffff"><d ref="Effect,Hero70Skill3D,Amount"/></c><c val="99ffcc">(0.6 AP)</c><c val="99ffcc">magical damage</c> to enemies within the area. and reduces movement speed by <c val="ffffff"><d ref="Effect,Hero70Skill3M,Amount"/>%</c> for 3 sec.
-Button/Tooltip/HeroSkillBtn553316222=<c val="ccffff">[Active]</c> Drager moves frantically and attacks the target hero 8 times, dealing <c val="ffffff"><d ref="Effect,Hero70Skill4D,Amount"/></c><c val="ff9999">(0.5 AD)</c> > is put on. Enemies near the target take 50% damage, and their damage is reduced by 10% based on the number of enemy heroes. While using this skill, Drager dodge basic attacks for the duration.
-Button/Tooltip/HeroSkillBtn553317=<c val="ccffff">[Active]</c> Increases Lucifer's movement speed by <c val="ffffff"><d ref="Effect,Hero71Skill1M,Amount"/>%</c> for 5 sec, and her next basic attack knocks enemies into the air for 1 sec. Immune to movement reduction effects for the duration.
-Button/Tooltip/HeroSkillBtn5533172=<c val="ccffff">[Toggle]</c> When disabled, Lucifer heals for <c val="ffffff"><d ref="Effect,Hero71Skill2M,Amount"/></c><c val="99ffcc">(0.45 AP)</c> every 3rd basic attack. When activated, Lucifer deals <c val="ffffff"><d ref="Effect,Hero71Skill2D,Amount"/></c><c val="99ffcc">(0.9 AP)</c> additional <c val="99ffcc">magical damage</c> for every basic attack. Each attack consumes 15% (<c val="ffffff"><d ref="Effect,Hero71Skill2M2,Amount" precision="1"/></c>) of additional damage as HP.
-Button/Tooltip/HeroSkillBtn55331722=<c val="ccffff">[Toggle]</c> When disabled, Lucifer heals for <c val="ffffff"><d ref="Effect,Hero71Skill2M,Amount"/></c><c val="99ffcc">(0.45 AP)</c> every 3rd basic attack. When activated, Lucifer deals <c val="ffffff"><d ref="Effect,Hero71Skill2D,Amount"/></c><c val="99ffcc">(0.9 AP)</c> additional <c val="99ffcc">magical damage</c> for every basic attack. Each attack consumes 15% (<c val="ffffff"><d ref="Effect,Hero71Skill2M2,Amount" precision="1"/></c>) of additional damage as HP.
-Button/Tooltip/HeroSkillBtn553317222=<c val="ccffff">[Passive]</c> Targets struck by Lucifer's basic attacks have their basic attack speed reduced by <c val="ffffff"><d ref="Effect,Hero71Skill3M,Amount"/>%</c> for 2 seconds.<n/><c val="ccffff">[Active]</c> Lucifer lengthens her sword, making her basic attack range for 5 seconds. increases by 3 and basic attack speed by <c val="ffffff"><d ref="Effect,Hero71Skill3M2,Amount"/>%</c>.
-Button/Tooltip/HeroSkillBtn55331723=<c val="ccffff">[Active]</c> Lucifer summons demons and charges forward, dealing <c val="ffffff"><d ref="Effect,Hero71Skill4D,Amount"/></c><c val="99ffcc">(1.0 AP)</c> <c val="99ffcc">magical damage</c> to enemies in a line. Reduces movement speed by 60% for seconds. Lucifer only charges to a specified location, and demons will charge up to its maximum range. A horseman attaches to each enemy hero hit by the skill attack and attacks. The horseman has 50% of Lucifer's health and base damage, and lasts for 8 seconds.
+Button/Tooltip/HeroSkillBtn553315=<c val="ccffff">[Active]</c> Margon throws a boulder of lava at an enemy, dealing <c val="ffffff"><d ref="Effect,Hero69Skill1D,Amount"/></c><c val="80FFFF">(0.9 AP)</c> <c val="80FFFF">magic damage</c> to the target and nearby enemies. Targets hit have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero69Skill1M,Amount"/>%</c> for 2.5 seconds.
+Button/Tooltip/HeroSkillBtn5533152=<c val="ccffff">[Active]</c> Margon immediately removes all movement impairing effects on himself, and will take <c val="ffffff"><d ref="Effect,Hero69Skill2M,Amount"/>%</c> less <c val="ff9999">physical damage</c> and <c val="80FFFF">magical damage</c> from enemies for the next 5 seconds.
+Button/Tooltip/HeroSkillBtn5533153=<c val="ccffff">[Passive]</c> Each time Margon uses a skill, he ignites the floor and deals <c val="ffffff"><d ref="Effect,Hero69Skill3D2,Amount"/></c><c val="80FFFF">(0.25 AP)</c> <c val="80FFFF">magical damage</c> per second to nearby enemies for 3 seconds. <n/><c val="ccffff">[Active]</c> Margon unleashes powerful heat in a cone in front of him. All enemies within range take <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero69Skill3D,Amount"/></c><c val="80FFFF">(0.8 AP)</c>.
+Button/Tooltip/HeroSkillBtn55331532=<c val="ccffff">[Active]</c> Margon unleashes a giant lava fist in a straight line in the target direction, dealing <c val="ffffff"><d ref="Effect,Hero69Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magical damage</c> to enemies within range. Stuns for 0.75 seconds. The fist is leaving a lava trail for 4 seconds, dealing <c val="ffffff"><d ref="Effect,Hero69Skill4D2,Amount"/></c><c val="80FFFF">(0.3 AP)</c> <c val="80FFFF">magical damage</c> to all nearby enemies per second.
+Button/Tooltip/HeroSkillBtn553316=<c val="ccffff">[Passive]</c> Drager's basic attack critical strike damage is increased by <c val="ffffff"><d ref="Effect,Hero70Skill1M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Drager's next basic attack inflicts additional<c val="ff9999"> physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero70Skill1D,Amount"/></c><c val="ff9999">(1.5 AD)</c> over a duration of 3 seconds.
+Button/Tooltip/HeroSkillBtn5533162=<c val="ccffff">[Active]</c> Drager transforms into a tiger and leaps into the target area, dealing <c val="ffffff"><d ref="Effect,Hero70Skill2D,Amount"/></c><c val="80FFFF">(0.7 AP)</c> <c val="80FFFF">magical damage</c>. After using this skill, if you kill an enemy hero or score an assist within 7 seconds, you can use it again without consuming mana.
+Button/Tooltip/HeroSkillBtn55331622=<c val="ccffff">[Active]</c> Drager roars, creating a powerful wave in a cone in front of him, dealing <c val="ffffff"><d ref="Effect,Hero70Skill3D,Amount"/></c><c val="80FFFF">(0.6 AP)</c> <c val="80FFFF">magical damage</c> to enemies within the area. Enemies hit have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero70Skill3M,Amount"/>%</c> for 3 seconds.
+Button/Tooltip/HeroSkillBtn553316222=<c val="ccffff">[Active]</c> Drager moves frantically and attacks the target hero 8 times, dealing <c val="ffffff"><d ref="Effect,Hero70Skill4D,Amount"/></c><c val="ff9999">(0.5 AD) physical damage</c>. Total damage = <c val="ffffff"><d ref="Effect,Hero70Skill4D,Amount*8"/></c>. Enemies near the target will take 50% damage (AoE). The skill will deal 10% reduced damage for every additional enemy hero in range. While using this skill, Drager can't be hit by basic attacks (but damaged with AoE abilities).
+Button/Tooltip/HeroSkillBtn553317=<c val="ccffff">[Active]</c> Increases Lucifer's movement speed by <c val="ffffff"><d ref="Effect,Hero71Skill1M,Amount"/>%</c> for 5 seconds, and her next basic attack knocks enemies into the air for 1 second. Lucifer is immune to movement reduction effects for the duration.
+Button/Tooltip/HeroSkillBtn5533172=<c val="ccffff">[Toggle]</c> When disabled, Lucifer heals for <c val="ffffff"><d ref="Effect,Hero71Skill2M,Amount"/></c><c val="80FFFF">(0.45 AP)</c> every 3rd basic attack. When activated, Lucifer deals <c val="ffffff"><d ref="Effect,Hero71Skill2D,Amount"/></c><c val="80FFFF">(0.9 AP)</c> additional <c val="80FFFF">magical damage</c> every basic attack. Each attack consumes HP from Lucifer equal to 15% (<c val="ffffff"><d ref="Effect,Hero71Skill2M2,Amount" precision="1"/></c>) of the additional damage.
+Button/Tooltip/HeroSkillBtn55331722=<c val="ccffff">[Toggle]</c> When disabled, Lucifer heals for <c val="ffffff"><d ref="Effect,Hero71Skill2M,Amount"/></c><c val="80FFFF">(0.45 AP)</c> every 3rd basic attack. When activated, Lucifer deals <c val="ffffff"><d ref="Effect,Hero71Skill2D,Amount"/></c><c val="80FFFF">(0.9 AP)</c> additional <c val="80FFFF">magical damage</c> every basic attack. Each attack consumes HP from Lucifer equal to 15% (<c val="ffffff"><d ref="Effect,Hero71Skill2M2,Amount" precision="1"/></c>) of the additional damage.
+Button/Tooltip/HeroSkillBtn553317222=<c val="ccffff">[Passive]</c> Targets struck by Lucifer's basic attacks have their basic attack speed reduced by <c val="ffffff"><d ref="Effect,Hero71Skill3M,Amount"/>%</c> for 2 seconds.<n/><c val="ccffff">[Active]</c> Lucifer lengthens his sword, increasing his basic attack range by 3 and increasing his attack speed by <c val="ffffff"><d ref="Effect,Hero71Skill3M2,Amount"/>%</c> for 5 seconds.
+Button/Tooltip/HeroSkillBtn55331723=<c val="ccffff">[Active]</c> Lucifer summons demons and charges forward, dealing <c val="ffffff"><d ref="Effect,Hero71Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magical damage</c> to enemies in a line. Enemies hit have their movement speed reduced by 60% for 2 seconds. A horseman attaches to each enemy hero hit by the skill attack and will hunt his target. Horsemen have 50% of Lucifer's health and base damage, lasting for 8 seconds.
 Button/Tooltip/HeroSkillBtn55332=<c val="ccffff">[Active]</c> Netero raises his shield, reducing all skill attack damage from enemies by <c val="ffffff"><d ref="Effect,Hero20Skill2M,Amount"/>%</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn55333=<c val="ccffff">[Passive]</c> Netero's basic attacks against minions or neutral monsters currently below 50% health deal an additional <c val="ffffff"><d ref="Effect,Hero20Skill3D,Amount"/></c><c val="ff9999">(0.4 AD)</c><c val="ffff99">True Damage</c>.<n/><c val="ccffff">[Active]</c> Netero uses his high-level swordsmanship to attack a maximum of 4 enemies in the target area, dealing <c val="ffffff"><d ref="Effect,Hero20Skill3D2,Amount"/></c><c val="99ffcc"><c val="80FFFF">(1.0 AP) magical damage</c></c>.
 Button/Tooltip/HeroSkillBtn553332=<c val="ccffff">[Passive]</c> Increases Netero's movement speed by <c val="ffffff"><d ref="Effect,Hero20Skill4M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Netero moves more than anyone else. Increases Netero's basic attack speed by <c val="ffffff"><d ref="Effect,Hero20Skill4M2,Amount"/>%</c>, movement speed by <c val="ffffff"><d ref="Effect,Hero20Skill4M3,Amount"/>%</c> and becomes immune to movement reduction effects for 10 sec.
@@ -3129,10 +3119,10 @@ Button/Tooltip/HeroSkillBtn55333322=<c val="ccffff">[Active]</c> Galleon raises 
 Button/Tooltip/HeroSkillBtn553333222=<c val="ccffff">[Active]</c> Galleon lowers his sword vertically to the ground after 0.75 seconds. The moment the sword explodes it deals <c val="ffffff"><d ref="Effect,Hero63Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magical damage</c> and reduces the movement speed of struck enemies by 70% for 1.5 seconds. Enemies in the center of the explosion are stunned instead of slowed.
 Button/Tooltip/HeroSkillBtn553333223=<c val="ccffff">[Active]</c> Galleon raises his sword and spins rapidly for 1.5 seconds, dealing <c val="ffffff"><d ref="Effect,Hero63Skill3D,Amount"/></c><c val="80FFFF">(0.65 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies and reducing their movement speed by <c val="ffffff"><d ref="Effect,Hero63Skill3M,Amount"/>%</c> for 3 seconds. While spinning, Galleon's movement speed is increased by 55%.
 Button/Tooltip/HeroSkillBtn553334=<c val="ccffff">[Active]</c> Desilba's next basic attack deals <c val="ffffff"><d ref="Effect,Hero67Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c> additional <c val="ff9999">physical damage</c> to the target and nearby enemies. Reduces movement speed by <c val="ffffff"><d ref="Effect,Hero67Skill1M,Amount"/>%</c> for 2.5 seconds.
-Button/Tooltip/HeroSkillBtn5533342=<c val="ccffff">[Passive]</c> Each time Desilba basic attacks, increases her basic attack speed by <c val="ffffff"><d ref="Effect,Hero67Skill2M,Amount"/>%</c> for 3 seconds. This effect stacks up to 3 times.<n/><c val="ccffff">[Active]</c> Desilba's Wild Movement passive effects are applied to the maximum, and movement speed is reduced by <c val="ffffff"><d ref="Effect,Hero67Skill2M2,Amount"/>%</c> for 5 seconds. increases as much.
-Button/Tooltip/HeroSkillBtn5533343=<c val="ccffff">[Active]</c> Desilba fires 3 fire explosions per second centered on her. Each fire explosion deals <c val="ffffff"><d ref="Effect,Hero67Skill3D,Amount"/></c><c val="99ffcc">(0.6 AP)</c> <c val="99ffcc">magical damage</c> to nearby enemies. All <c val="ff9999">physical damage</c> and <c val="99ffcc">magical damage</c> from enemies are reduced by <c val="ffffff"><d ref="Effect,Hero67Skill3M,Amount"/>%</c> while this skill lasts.
-Button/Tooltip/HeroSkillBtn5533344=<c val="ccffff">[Active]</c> Desilba leaps into the target area, dealing <c val="ffffff"><d ref="Effect,Hero67Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c><c val="ff9999">physical damage</c> to all nearby enemies. Immediately after Desilba leaps, the impact destroys the ground, enclosing him in a wall for 3 seconds. When you use the skill again, the wall disappears.
-Button/Tooltip/HeroSkillBtn55333442=<c val="ccffff">[Active]</c> Desilba leaps into the target area, dealing <c val="ffffff"><d ref="Effect,Hero67Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c><c val="ff9999">physical damage</c> to all nearby enemies. Immediately after Desilba leaps, the impact destroys the ground, enclosing him in a wall for 3 seconds. When you use the skill again, the wall disappears.
+Button/Tooltip/HeroSkillBtn5533342=<c val="ccffff">[Passive]</c> Each time Desilba basic attacks her basic attack speed increases by <c val="ffffff"><d ref="Effect,Hero67Skill2M,Amount"/>%</c> for 3 seconds. This effect stacks up to 3 times.<n/><c val="ccffff">[Active]</c> Desilba gains maximum Wild Movement stacks, increasing her basic attack speed by <c val="ffffff"><d ref="Effect,Hero67Skill2M,Amount*3"/>%</c> and movement speed by <c val="ffffff"><d ref="Effect,Hero67Skill2M2,Amount"/>%</c> for 5 seconds.
+Button/Tooltip/HeroSkillBtn5533343=<c val="ccffff">[Active]</c> Desilba channels her inner strength, causing a fire explosion centered on herself each second for 2 seconds. Each fire explosion deals <c val="ffffff"><d ref="Effect,Hero67Skill3D,Amount"/></c><c val="80FFFF">(0.6 AP)</c> <c val="80FFFF">magical damage</c> to nearby enemies. All <c val="ff9999">physical damage</c> and <c val="80FFFF">magical damage</c> from enemies is reduced by <c val="ffffff"><d ref="Effect,Hero67Skill3M,Amount"/>%</c> during the duration.
+Button/Tooltip/HeroSkillBtn5533344=<c val="ccffff">[Active]</c> Desilba leaps into the target area, dealing <c val="ffffff"><d ref="Effect,Hero67Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c> to all nearby enemies. Immediately after Desilba leaps, the impact destroys the ground, enclosing her in a wall for 3 seconds. When you use the skill again, the wall disappears.
+Button/Tooltip/HeroSkillBtn55333442=<c val="ccffff">[Active]</c> Desilba leaps into the target area, dealing <c val="ffffff"><d ref="Effect,Hero67Skill4D,Amount"/></c><c val="ff9999">(1.0 AD)</c> <c val="ff9999">physical damage</c> to all nearby enemies. Immediately after Desilba leaps, the impact destroys the ground, enclosing her in a wall for 3 seconds. When you use the skill again, the wall disappears.
 Button/Tooltip/HeroSkillBtn55334=<c val="ccffff">[Active]</c> Duke dashes to the target, dealing <c val="80FFFF">magic damage</c> equal to <c val="ffffff"><d ref="Effect,Hero28Skill1D,Amount"/></c><c val="80FFFF">(0.9 AP)</c> and stunning them for 1 second.
 Button/Tooltip/HeroSkillBtn553342=<c val="ccffff">[Active]</c> Duke inflicts <c val="ffffff"><d ref="Effect,Hero28Skill2D,Amount"/></c><c val="ff9999">(0.7 AD)</c> <c val="ff9999">physical damage</c> to all nearby enemies, and inflicts <c val="ffffff"><d ref="Effect,Hero28Skill2D2,Amount"/></c> <c val="80FFFF">(0.4 AP)</c> additional <c val="80FFFF">magical damage</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn5533422=<c val="ccffff">[Active]</c> Duke fires blue flames forward, dealing <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero28Skill3D,Amount"/></c><c val="ff9999"> (0.8 AD)</c>, and inflicts an additional <c val="ffffff"><d ref="Effect,Hero28Skill3D2,Amount"/></c> <c val="80FFFF">(0.5 AP) magical damage</c>. If the target is a hero, he burns <c val="ffffff"><d ref="Effect,Hero28Skill3M,Amount"/></c><c val = "80FFFF">(0.6 AP)</c> mana.
@@ -3153,7 +3143,7 @@ Button/Tooltip/HeroSkillBtn553364222=<c val="ccffff">[Passive]</c> Increases Jel
 Button/Tooltip/HeroSkillBtn55337=<c val="ccffff">[Active]</c> Haemosu explodes the target area, dealing <c val="ffffff"><d ref="Effect,Hero41Skill1D,Amount"/></c><c val="80FFFF">(0.6 AP)</c> <c val="80FFFF">magic damage</c> to all enemies within the area. Creates a field of fire that deals <c val="ffffff"><d ref="Effect,Hero41Skill1D2,Amount"/></c><c val="80FFFF">(0.15 AP)</c> <c val="80FFFF">magic damage</c> every 0.5 seconds to all enemies inside the detonated area for 3 seconds.
 Button/Tooltip/HeroSkillBtn553372=<c val="ccffff">[Active]</c> Haemosu fires a circle of 13 mines that explode when stepped on. Enemies that step on the mine take <c val="ffffff"><d ref="Effect,Hero41Skill2D,Amount"/></c><c val="80FFFF">(0.4 AP)</c> <c val="80FFFF">magical damage</c> and have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero41Skill2M,Amount"/>%</c> for 2.5 seconds. Mines last for 6 seconds.
 Button/Tooltip/HeroSkillBtn5533722=<c val="ccffff">[Passive]</c> Haemosu's skill cooldowns are reduced by <c val="ffffff"><d ref="Effect,Hero41Skill3M,Amount" precision="1"/></c> seconds.<n/><c val="ccffff">[Active]</c> Haemosu illuminates the target area for <c val="ffffff"><d ref="Effect,Hero41Skill3M2,Amount"/></c> seconds, providing visibility and detecting stealthed enemies.
-Button/Tooltip/HeroSkillBtn55337222=<c val="ccffff">[Passive]</c> Haemosu's <c val="ff9999">Physical Armor</c> and <c val="99ffcc">Magic Armor</c> are increased by <c val="ffffff"><d ref="Effect,Hero41Skill4M,Amount"/></c>.<n/><c val="ccffff">[ Toggle]</c> Haemosu transforms into a powerful siege tank. While remaining as a Siege Tank, your basic attack range is increased by <c val="ffffff"><d ref="Effect,Hero41Skill4M3,Amount"/></c>, and your basic attacks deal 2% (<c val="ffffff"><d ref="Effect,Hero41Skill4D,Amount"/></c>) of Haemosu's maximum health to the target and nearby enemies as <c val="ff9999">Physical damage</c > is put on. While in Siege Mode, Haemosu's movement speed is reduced by 15%.
+Button/Tooltip/HeroSkillBtn55337222=<c val="ccffff">[Passive]</c> Haemosu's <c val="FF9866">DP</c> and <c val="99ffcc">RP</c> are increased by <c val="ffffff"><d ref="Effect,Hero41Skill4M,Amount"/></c>.<n/><c val="ccffff">[ Toggle]</c> Haemosu transforms into a powerful siege tank. While in siege mode your basic attack range is increased by <c val="ffffff"><d ref="Effect,Hero41Skill4M3,Amount"/></c>, and your basic attacks deal 2% (<c val="ffffff"><d ref="Effect,Hero41Skill4D,Amount"/></c>) of Haemosu's maximum health additional <c val="ff9999">physical damage</c>. While in siege mode, Haemosu has a minimum range and 15% reduced movement speed. Siege mode drains 20 mana per second.
 Button/Tooltip/HeroSkillBtn553372222=<c val="ccffff">[Passive]</c> Haemosu's <c val="FF9866">DP</c> and <c val="99ffcc">RP</c> are increased by <c val="ffffff"><d ref="Effect,Hero41Skill4M,Amount"/></c>.<n/><c val="ccffff">[ Toggle]</c> Haemosu transforms into a powerful siege tank. While in siege mode your basic attack range is increased by <c val="ffffff"><d ref="Effect,Hero41Skill4M3,Amount"/></c>, and your basic attacks deal 2% (<c val="ffffff"><d ref="Effect,Hero41Skill4D,Amount"/></c>) of Haemosu's maximum health additional <c val="ff9999">physical damage</c>. While in siege mode, Haemosu has a minimum range and 15% reduced movement speed. Siege mode drains 20 mana per second.
 Button/Tooltip/HeroSkillBtn55338=<c val="ccffff">[Active]</c> Zonda throws himself into the target area, dealing <c val="ffffff"><d ref="Effect,Hero43Skill1D,Amount"/></c><c val="80FFFF">(0.5 AP)</c> <c val="80FFFF">magic damage</c> to all nearby enemies, reducing their movement speed by <c val="ffffff"><d ref="Effect,Hero43Skill1M,Amount"/>%</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn553382=<c val="ccffff">[Passive]</c> Zonda's basic attack stuns his target for 0.5 seconds. This effect does not reapply to the same target for <c val="ffffff"><d ref="Effect,Hero43Skill2M,Amount"  precision="1"/></c> seconds.<n/><c val="ccffff">[Active]</c> Zonda knocks the target hero away. When used on an ally hero, increases movement speed by <c val="ffffff"><d ref="Effect,Hero43Skill2M2,Amount"/>%</c> for 2 seconds, and when used on an enemy hero, deals <c val="80FFFF">magical damage</c> equal to 7% (<c val="ffffff"><d ref="Effect,Hero43Skill2D,Amount"  precision="1"/></c>) of Zonda's maximum health.
@@ -3301,7 +3291,7 @@ Button/Tooltip/HeroSkillBtn65352222=<c val="ccffff">[Toggle]</c> Daisy summons a
 Button/Tooltip/HeroSkillBtn6536=<c val="ccffff">[Passive]</c> Each time Daboto uses a skill, his maximum mana is increased by 4 (<c val="FFFFFF"><d ref="4 *($BehaviorStackCount:Hero62Skill1$)"/></c>/600).<n/><c val="ccffff">[Active]</c> Daboto detonates his target with magical power, inflicting <c val="ffffff"><d ref="Effect,Hero62Skill1D,Amount"/></c><c val="80FFFF">(0.8 AP)</c> <c val="80FFFF">magical damage</c>. If the target is killed by this skill, the mana depleted is restored and the cooldown reduced by half.
 Button/Tooltip/HeroSkillBtn65362=<c val="ccffff">[Active]</c> Daboto causes an explosion in the target area. After 0.5 seconds, deals <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero62Skill2D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> to enemies within range.
 Button/Tooltip/HeroSkillBtn653622=<c val="ccffff">[Active]</c> Daboto creates a shield on himself that absorbs 50% of all <c val="ff9999">physical damage</c> and <c val="80FFFF">magical damage</c> for <c val="ffffff"><d ref="Effect,Hero62Skill3M,Amount"/></c> seconds. During the duration, every time you take damage from an enemy, your mana is reduced by 50% of the damage, and if your current mana is 25 or less, the shield disappears immediately.
-Button/Tooltip/HeroSkillBtn653623=<c val="ccffff">[Active]</c> Daboto explodes the ground in the target area with powerful magical power. After 1 second, deal <c val="ffffff"><d ref="Effect,Hero62Skill4D,Amount"/></c><c val="80FFFF">(1.25 AP)</c> <c val="80FFFF">magical damage</c> to enemies within range and reduce their movement speed by 50% for 3 seconds.
+Button/Tooltip/HeroSkillBtn653623=<c val="ccffff">[Passive]</c> Increases the stun duration of "Accumulated Orders" by <c val="ffffff"><d ref="Effect,Hero62PassiveM2,Amount" precision="2"/></c> seconds.<n/><c val="ccffff">[Active]</c> Daboto explodes the ground in the target area with powerful magical power. After a delay of 1 second, deals <c val="ffffff"><d ref="Effect,Hero62Skill4D,Amount"/></c><c val="80FFFF">(1.25 AP)</c> <c val="80FFFF">magical damage</c> to enemies within range and reduces their movement speed by 50% for 3 seconds.
 Button/Tooltip/HeroSkillBtn66=<c val="ccffff">[Active]</c> Celin's weapon is changed to fire arrows.
 Button/Tooltip/HeroSkillBtn662=<c val="ccffff">[Passive]</c> Each of Celin's basic attacks reduces the target's movement speed by <c val="ffffff"><d ref="Effect,Hero21Skill1M2,Amount" precision="1"/>%</c> for 2 seconds. This effect stacks up to 3 times, and each attack costs 8 mana.<n/><c val="ccffff">[Active]</c> Changes Celin's weapon to a basic arrow.
 Button/Tooltip/HeroSkillBtn6622=<c val="ccffff">[Passive]</c> Each of Celin's basic attacks inflicts <c val="ffffff"><d ref="Effect,Hero21Skill1M,Amount"/></c><c val="FF9999">(0.3 AD)</c> <c val="80FFFF">magical damage</c> to the target for 2 seconds, stacking up to 3 times. Each attack costs 8 mana.<n/><c val="ccffff">[Active]</c> Changes Celin's weapon to a Frostbolt.
@@ -3320,9 +3310,9 @@ Button/Tooltip/HeroSkillBtn75=<c val="ccffff">[Active]</c> Govan's next basic at
 Button/Tooltip/HeroSkillBtn752=<c val="ccffff">[Passive]</c> Basic attacks mark the target. Marks reset after 3 seconds of not being attacked. When Govan marks the same target with three consecutive basic attacks or skills he deals <c val="ffff99">true damage</c> equal to <c val="ffffff"><d ref="Effect,Hero47Skill2M,Amount"/>%</c> of the target's maximum health.
 Button/Tooltip/HeroSkillBtn753=<c val="ccffff">[Active]</c> Govan fires a cursed arrow at an enemy, dealing <c val="ffffff"><d ref="Effect,Hero47Skill3D,Amount"/></c><c val="ff9999">(0.9 AD)</c> <c val="ff9999">physical damage</c>, and reducing their basic attack speed by <c val="ffffff"><d ref="Effect,Hero47Skill3M2,Amount"/>%</c> for 3 seconds. Inflicts the same amount of <c val="ff9999">physical damage</c> to up to 2 enemies near the target.
 Button/Tooltip/HeroSkillBtn7532=<c val="ccffff">[Active]</c> Govan's crossbow is empowered, increasing his base damage by <c val="ffffff"><d ref="Effect,Hero47Skill4M,Amount"/>%</c> for 10 seconds.
-Button/Tooltip/HeroSkillBtn8=<c val="ccffff">[Active]</c> Sieger fires energy cannons that penetrate in a straight line. All enemies hit by this skill take <c val="ffffff"><d ref="Effect,Hero68Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c> <c val="ff9999">physical damage</c> and move speed for 2 seconds is reduced by <c val="ffffff"><d ref="Effect,Hero68Skill1M,Amount"/>%</c>.
-Button/Tooltip/HeroSkillBtn82=<c val="ccffff">[Passive]</c> Recharges and empowers Sieger's weapon energy every 15 sec. When a weapon is empowered, Sieger's movement speed is increased by 15%, and his next basic attack deals <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero68Skill2M,Amount"/>%</c> of Sieger's base attack damage and 9 of the target's current health.<n/><c val="ccffff">[Active]</c> Instantly recharges energy to Sieger's weapon strengthens.
-Button/Tooltip/HeroSkillBtn822=<c val="ccffff">[Passive]</c> Each time Sieger's basic and skill attacks deal <c val="ffffff"><d ref="Effect,Hero68Skill4M,Amount"/>%</c> increased damage to the same target. This effect stacks up to 5 times. <n/><c val="ccffff">[Active]</c> For 10 seconds, Sieger gains <c val="ffffff"><d ref="Effect,Hero68Skill4M2,Amount"/></c> additional base damage, and for each hit with a basic attack, <c val="ffffff"><d ref="Effect,Hero68Skill4M3,Amount"/></c><c val="ff9999">( Recovers HP equal to 0.25 AD)</c>.
+Button/Tooltip/HeroSkillBtn8=<c val="ccffff">[Active]</c> Sieger fires energy cannons that penetrate everything in a straight line. All enemies hit by this skill take <c val="ffffff"><d ref="Effect,Hero68Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c> <c val="ff9999">physical damage</c> and have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero68Skill1M,Amount"/>%</c> for 2 seconds.
+Button/Tooltip/HeroSkillBtn82=<c val="ccffff">[Passive]</c> Recharges and empowers Sieger's weapon energy every 15 seconds. When Sieger's weapon is empowered his movement speed is increased by 15%, and his next basic attack deals additional <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero68Skill2M,Amount"/>%</c> of Sieger's base attack damage + 9% of the target's current health.<n/><c val="ccffff">[Active]</c> Instantly recharges the energy of Sieger's weapon.
+Button/Tooltip/HeroSkillBtn822=<c val="ccffff">[Passive]</c> Each time Sieger basic attacks or uses skill attacks against an opponent, his next basic or skill attacks will deal <c val="ffffff"><d ref="Effect,Hero68Skill4M,Amount"/>%</c> increased damage to the same target. This effect stacks up to 5 times. The effect is reset if the target is taking no damage for 2.5 seconds.<n/><c val="ccffff">[Active]</c> Sieger gains <c val="ffffff"><d ref="Effect,Hero68Skill4M2,Amount"/></c> additional base damage and recovers HP equal to <c val="ffffff"><d ref="Effect,Hero68Skill4M3,Amount"/></c><c val="ff9999">(0.25 AD)</c> with each basic attack for 10 seconds.
 Button/Tooltip/HeroSkillBtn83=<c val="ccffff">[Active]</c> Sieger quickly sprints a short distance, increasing his basic attack speed by <c val="ffffff"><d ref="Effect,Hero68Skill3M,Amount"/>%</c> for 4 sec.
 Button/Tooltip/HighTemplar=
 Button/Tooltip/HighTemplar2team=
@@ -6175,6 +6165,8 @@ Effect/Name/Hero62PassiveDong2=누적된 주문
 Effect/Name/Hero62PassiveDong22=누적된 주문
 Effect/Name/Hero62PassiveDongRemove=누적된 주문
 Effect/Name/Hero62PassiveDongRemove2=누적된 주문
+Effect/Name/Hero62PassiveM=Hero62PassiveM
+Effect/Name/Hero62PassiveM2=Hero62PassiveM2
 Effect/Name/Hero62PassiveMo=누적된 주문
 Effect/Name/Hero62PassiveMo2=누적된 주문
 Effect/Name/Hero62Skill1D=멸폭
@@ -6568,6 +6560,7 @@ Effect/Name/Hero70Skill1G=호랑이 발톱
 Effect/Name/Hero70Skill1M=호랑이 발톱
 Effect/Name/Hero70Skill1Mo=호랑이 발톱
 Effect/Name/Hero70Skill1zisi=호랑이 발톱
+Effect/Name/Hero70Skill2AddCooldown=Hero70Skill2AddCooldown
 Effect/Name/Hero70Skill2D=맹수의 습격
 Effect/Name/Hero70Skill2Dong=맹수의 습격
 Effect/Name/Hero70Skill2Dong2=맹수의 습격
@@ -6669,6 +6662,9 @@ Effect/Name/Hero71Skill4Sr=악령의 맹습
 Effect/Name/Hero71Skill4Tele=악령의 맹습
 Effect/Name/Hero71Skill4UnitMake=악령의 맹습
 Effect/Name/Hero71Skill4zisi=악령의 맹습
+Effect/Name/Hero73Skill4Mo2=다다다 샷트
+Effect/Name/Hero73Skill4Mo3=다다다 샷트
+Effect/Name/Hero73Skill4Sr2=다다다 샷트
 Effect/Name/Hero7AttackD=무기
 Effect/Name/Hero7AttackMissile=무기
 Effect/Name/Hero7Skill1D=치료약 주입
@@ -7122,6 +7118,7 @@ Effect/Name/PsionicShockwaveDamage=에너지 충격
 Effect/Name/SangD=상아의 저주
 Effect/Name/ScannerSpell=스캐너
 Effect/Name/ScannerSpell2=스캐너
+Effect/Name/SealofExecutionupgrade=Seal of Execution upgrade
 Effect/Name/Spell10D=헬 파이어
 Effect/Name/Spell10M=헬 파이어
 Effect/Name/Spell11D=포커스 샷
@@ -7480,7 +7477,7 @@ Param/Value/11884929=<s val="PlanetPanelPlanetName">
 Param/Value/11A402F4=</s>
 Param/Value/11B2AE40=
 Param/Value/11BF2BC1=The enemy team is in the process of voting for surrender.
-Param/Value/11CDAC01=Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks. Lifesteal has 60% effectiveness for <c val="ffff99">True Damage</c>.
+Param/Value/11CDAC01=Increases the amount of lifesteal by <c val="ffffff">10%</c>. Lifesteal allows the attacking hero to gain back health when damaging an enemy hero with basic attacks.
 Param/Value/11E48D90= A is destroyed.
 Param/Value/120F00B3=)
 Param/Value/121A9DF2=<s val="Header18">
@@ -10072,7 +10069,7 @@ Param/Value/CA097A6F=<s val="Header18">reject</c>
 Param/Value/CA17E249=Lack of minerals.
 Param/Value/CA244DBE=<s val="Header18"><c val="ccffff">
 Param/Value/CA3B724F=</s></c>
-Param/Value/CA46CB81=Mineral125 acheive!
+Param/Value/CA46CB81=Your team obtained 125 minerals each!
 Param/Value/CA4AA415=Moria
 Param/Value/CA7D2772=Valkyre
 Param/Value/CA8902C9= is destroyed.
@@ -10091,7 +10088,7 @@ Param/Value/CB36202D=</s></c>
 Param/Value/CB418C32=Haemosu
 Param/Value/CB424073=<s val="PurchasePanelGroupName"><c val="78b8ff">Watchtower (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/CB5A4891= <s val="HelpPanelListBoxItemTitle">
-Param/Value/CB5ACB70=Mineral125 acheive!
+Param/Value/CB5ACB70=Your team obtained 125 minerals each!
 Param/Value/CB94B0AB=킬/데스/어시
 Param/Value/CBA7A160=<n/>영웅이 죽을 때까지 기본 공격력이 16, 기본 공격 속도가 15%만큼 증가합니다.
 Param/Value/CBAC11BC=)
@@ -10178,7 +10175,7 @@ Param/Value/D16ABC42=
 Param/Value/D17FA4A4=
 Param/Value/D1B3B6BA=<s val="Header18">
 Param/Value/D1B6397B=</c><c val="ccffff"> second(s) after - the game starts.</c>
-Param/Value/D1BDDFA4=Mineral125 acheive!
+Param/Value/D1BDDFA4=Your team obtained 125 minerals each!
 Param/Value/D1BEFF3F=</s>
 Param/Value/D1E59F4E=
 Param/Value/D1FDFCA1=</c></s>
@@ -10819,7 +10816,7 @@ Param/Value/FF26DC99= <s val="HelpPanelListBoxItemTitle">
 Param/Value/FF396FB0=</s>
 Param/Value/FF6CAED4=Garp
 Param/Value/FF6CE680=<s val="PurchasePanelGroupName"><c val="78b8ff">Q skill enhancement (<c val="ffffff">F1</c>)</c></s><n/><n/>It further strengthens the skills below.
-Param/Value/FF7D46E6=Mineral125 acheive!
+Param/Value/FF7D46E6=Your team obtained 125 minerals each!
 Param/Value/FF9E76AE=
 Param/Value/FFC929AF=/Opposition: 
 Param/Value/FFD9CF42=
@@ -11376,6 +11373,7 @@ Unit/Name/Hero9Skill4Dummy=Leinard
 Unit/Name/Hero9Skill4Missile=True Aim Sniper Weapon
 Unit/Name/HeroDumit=Hero Dumit Unit
 Unit/Name/HighTemplar=Wizardon
+Unit/Name/HighTemplar2=Wizardon
 Unit/Name/HighTemplar2team=Wizardon
 Unit/Name/HunterZoneWeapon=HunterZoneWeapon
 Unit/Name/HunterZoneWeapon22=Vendor Zone Weapon
@@ -11517,6 +11515,7 @@ Upgrade/Name/PortalBuy232222=어시스트 시스템 적용5
 Upgrade/Name/PortalBuy2322222=어시스트 시스템 적용6
 Upgrade/Name/PortalBuy23222222=어시스트 시스템 적용7
 Upgrade/Name/PortalBuy232222222=어시스트 시스템 적용8
+Upgrade/Name/SealofExecutionUpgrade=Seal of Execution Upgrade
 Upgrade/Name/SpellLvUp=Spell 레벨업 증가
 Upgrade/Name/SpellUp=Berserk 사용
 Upgrade/Name/SpellUp10=악몽의 데굴데굴 강화3
@@ -11563,6 +11562,7 @@ Upgrade/Name/SpellUp2222333112322=광기 전투 강화3
 Upgrade/Name/SpellUp22223331123222=광기 전투 강화4
 Upgrade/Name/SpellUp2222333113=산탄 사격 강화
 Upgrade/Name/SpellUp2222333114=Learn Energy Vault
+Upgrade/Name/SpellUp22223331142=Learn Recharge Energy
 Upgrade/Name/SpellUp222233311422=Learn Righteous Rush
 Upgrade/Name/SpellUp2222333114222=Learn Longing Shot
 Upgrade/Name/SpellUp22223331142222=갈망의 사격 강화1

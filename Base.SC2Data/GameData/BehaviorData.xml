@@ -2040,6 +2040,7 @@
             </Cost>
         </DamageResponse>
         <BehaviorFlags index="Permanent" value="1"/>
+        <InitialEffect value="SealofExecutionupgrade"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="HeroGainHP32">
         <Alignment value="Positive"/>
@@ -4476,6 +4477,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero70Skill2cool3">
         <Alignment value="Positive"/>
@@ -9847,6 +9849,7 @@
             </Cost>
         </DamageResponse>
         <Duration value="9"/>
+        <KillCredit Value="Caster"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero66Skill2">
         <Alignment value="Positive"/>
@@ -13357,6 +13360,7 @@
         <Period value="1.5"/>
         <PeriodicEffect value="Hero29Sommonh"/>
         <PeriodCount value="6"/>
+        <KillCredit Value="Caster"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero29MaTimeLife22">
         <Alignment value="Positive"/>
@@ -13395,7 +13399,6 @@
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
-        <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\InviButton.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <MaxStackCount value="10"/>
@@ -13414,6 +13417,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <KillCredit Value="Caster"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="BoosterItem2">
         <Cost>
@@ -27973,7 +27977,6 @@
         <DisplayDuration index="Self" value="1"/>
         <DisplayDuration index="Ally" value="1"/>
         <RemoveValidatorArray value="HeroDie"/>
-        <RemoveValidatorArray value="PickupCheck22222"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero53Skill1G22"/>
@@ -30209,7 +30212,6 @@
         <InfoIcon value="Assets\AddIcon\btn-hero58-skill4.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
-        <RemoveValidatorArray value="PickupCheck22222"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="7.5"/>
         <ExpireEffect value="Hero58Skill4G2"/>
@@ -30962,6 +30964,7 @@
             <AbilLinkDisableArray value="Hero60Skill2b"/>
             <AbilLinkDisableArray value="Hero60Skill3"/>
             <AbilLinkDisableArray value="Hero60Skill32"/>
+            <TurretDisableArray value="Hellion"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>

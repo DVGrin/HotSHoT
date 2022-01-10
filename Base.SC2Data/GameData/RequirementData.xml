@@ -601,7 +601,7 @@
     </CRequirement>
     <CRequirement id="SpellUse437327923">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
-        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233355102CompleteOnly1"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp222233355102CompleteOnly1"/>
         <NodeArray index="Show" Link="EqCountBehaviorHero70Skill2cool2InProgressOrBetterAtUnit1"/>
     </CRequirement>
     <CRequirement id="SpellUse437328">

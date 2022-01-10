@@ -699,7 +699,7 @@
         <Effect index="0" value="Hero70Skill2G22"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Cooldown Location="Unit" TimeUse="0.9"/>
+            <Cooldown Location="Unit"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="7"/>
@@ -2364,7 +2364,7 @@
         <Effect index="0" value="HeroOkGi2362233"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="80"/>
+            <Vital index="Energy" value="70"/>
             <Cooldown Location="Unit" TimeUse="22.5"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -2384,7 +2384,7 @@
         <Effect index="0" value="Hero11Skill3G22"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="70"/>
+            <Vital index="Energy" value="65"/>
             <Cooldown Location="Unit" TimeUse="10.5"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -2860,7 +2860,7 @@
         <Effect index="0" value="HeroOkGi2362"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="60"/>
             <Cooldown Location="Unit" TimeUse="12"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -7206,11 +7206,11 @@
         <InfoTooltipPriority value="1"/>
         <Effect index="0" value="Hero62Skill1G"/>
         <Cost>
-            <Vital index="Energy" value="70"/>
+            <Vital index="Energy" value="55"/>
             <Cooldown Location="Unit" TimeUse="7.5"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="5.5"/>
+        <Range value="6"/>
         <FinishTime value="0.5"/>
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>

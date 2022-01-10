@@ -111,6 +111,17 @@
         <ScaleMin value="8.000000,8.000000,8.000000"/>
         <SelectionRadius value="0.150000"/>
     </CModel>
+    <CModel id="PartyHatT1">
+        <Model value="Assets\Doodads\AnniversaryHatTerran\AnniversaryHatTerran.m3"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="PartyHatT12">
+        <Model value="Assets\Doodads\AnniversaryHatZerg\AnniversaryHatZerg.m3"/>
+        <Lighting value="PartyHatT1"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
     <CModel id="SpellModel3224" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\PhasePrismUnload\PhasePrismUnload.m3"/>
         <EditorCategories value="Race:Terran"/>

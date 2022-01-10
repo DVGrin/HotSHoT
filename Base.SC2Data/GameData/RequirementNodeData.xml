@@ -128,7 +128,6 @@
         <OperandArray value="EqCountBehaviorHero51Skill1coolInProgressOrBetterAtUnit0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEqCountBehaviorHero52Skill422InProgressOrBetterAtUnit0EqCountBehaviorHero52Skill4coolInProgressOrBetterAtUnit0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="EqCountBehaviorHero52Skill422InProgressOrBetterAtUnit0"/>
         <OperandArray value="EqCountBehaviorHero52Skill4coolInProgressOrBetterAtUnit0"/>
     </CRequirementAnd>
@@ -416,7 +415,6 @@
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorHero52Skill422InProgressOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="Hero52Skill422" State="InProgressOrBetterAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorHero52Skill4coolInProgressOrBetterAtUnit">
@@ -2207,10 +2205,6 @@
         <OperandArray index="0" value="CountUpgradeSpellUp2222333551023CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
-    <CRequirementEq id="Eq1570662034CountUpgradeSpellUp222233355102CompleteOnly1">
-        <OperandArray index="0" value="CountUpgradeSpellUp222233355102CompleteOnly"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementEq>
     <CRequirementEq id="Eq1570662034CountUpgradeSpellUp2222333543CompleteOnlyTechTreeCheat1">
         <OperandArray index="0" value="CountUpgradeSpellUp2222333543CompleteOnlyTechTreeCheat"/>
         <OperandArray index="1" value="1"/>
@@ -3383,12 +3377,10 @@
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorHero52Skill422InProgressOrBetterAtUnit0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountBehaviorHero52Skill422InProgressOrBetterAtUnit"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorHero52Skill422InProgressOrBetterAtUnit1">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountBehaviorHero52Skill422InProgressOrBetterAtUnit"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>

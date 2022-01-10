@@ -2264,6 +2264,9 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
+    <CUpgrade id="SealofExecutionUpgrade">
+        <EffectArray Reference="Actor,CannonRadar2,Range" Value="1.500000"/>
+    </CUpgrade>
     <CUpgrade id="SpellLvUp" parent="Research">
         <Flags index="TechTreeCheat" value="1"/>
         <InfoTooltipPriority value="2"/>
@@ -9530,6 +9533,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero36Skill4,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero36Skill42,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -9550,6 +9554,7 @@
         <EffectArray Reference="Effect,Hero36Skill4D22222222,Amount[0]" Value="12"/>
         <EffectArray Reference="Effect,Hero36Skill4D222222222,Amount[0]" Value="12"/>
         <EffectArray Reference="Effect,Hero36Skill4D2222222222,Amount[0]" Value="12"/>
+        <EffectArray Reference="Abil,Hero36Skill42,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="2"/>
         <LeaderAlias value=""/>
@@ -11360,6 +11365,8 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero62Skill4,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Behavior,Hero62PassiveSlow,Duration" Value="0.375000"/>
+        <EffectArray Reference="Effect,Hero62PassiveM,Amount" Value="0.25"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
         <Alert value=""/>
@@ -11371,6 +11378,9 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero62Skill4,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero62Skill4D,Amount[0]" Value="125"/>
+        <EffectArray Reference="Behavior,Hero62PassiveSlow,Duration" Value="0.375000"/>
+        <EffectArray Reference="Effect,Hero62PassiveM,Amount" Value="0.25"/>
+        <EffectArray Reference="Effect,Hero62PassiveM2,Amount" Value="0.25"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="2"/>
         <LeaderAlias value=""/>
@@ -11408,7 +11418,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero62Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero62Skill1,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero62Skill1,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero62Skill1Manac,VitalArray[Energy].Change[0]" Value="10"/>
         <EffectArray Reference="Effect,Hero62Skill1D,Amount[0]" Value="45"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
@@ -11832,7 +11842,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero11Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero11Skill1,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero11Skill1,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill1D,Amount[0]" Value="45"/>
         <EffectArray Reference="Effect,Hero11Skill1M,Amount[0]" Value="0.25"/>
         <EffectArray Reference="Behavior,Herodebuff5,Duration[0]" Value="0.375000"/>
@@ -13458,7 +13468,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero11Skill2,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero11Skill2,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero11Skill2,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill2D,VitalFractionMax[Life]" Value="0.01"/>
         <EffectArray Reference="Effect,Hero11Skill2M,Amount[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero11Skill2D2,Amount[0]" Value="12.5"/>
@@ -13506,7 +13516,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill3D,Amount[0]" Value="35"/>
         <EffectArray Reference="Effect,Hero11Skill3M,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero11Skill3Dong,Behavior[0]" Value="SpellDong242523232"/>
@@ -13520,7 +13530,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill3D,Amount[0]" Value="35"/>
         <EffectArray Reference="Effect,Hero11Skill3M,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero11Skill3Dong,Behavior[0]" Value="SpellDong2425232322"/>
@@ -13534,7 +13544,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill3D,Amount[0]" Value="35"/>
         <EffectArray Reference="Effect,Hero11Skill3M,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero11Skill3Dong,Behavior[0]" Value="SpellDong24252323222"/>
@@ -13548,7 +13558,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
-        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Abil,Hero11Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill3D,Amount[0]" Value="35"/>
         <EffectArray Reference="Effect,Hero11Skill3M,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero11Skill3Dong,Behavior[0]" Value="SpellDong242523232222"/>

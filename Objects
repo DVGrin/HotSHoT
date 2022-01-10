@@ -758,7 +758,7 @@
     <ObjectDoodad Id="333" Variation="4" Position="111,60,10.7756" Rotation="0.1083" Scale="0.912,0.912,0.912" Type="RedstoneRockSpires" TintColor="151,203,255">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="711" Variation="1" Position="61,73,10.0056" Rotation="2.498" Scale="1.132,1.132,1.132" Type="RedstoneRockSpires" TintColor="151,203,255">
+    <ObjectDoodad Id="711" Variation="1" Position="61,73,10.005" Rotation="2.498" Scale="1.132,1.132,1.132" Type="RedstoneRockSpires" TintColor="151,203,255">
         <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
@@ -1066,7 +1066,7 @@
     <ObjectDoodad Id="680" Variation="4" Position="46.799,108.421,7.9921" Rotation="0.7851" Scale="1,1,1" Type="XelNagaHullCliffWalls">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="707" Position="61,79,10.0058" Rotation="0.4636" Scale="1.132,1.132,1.132" Type="RedstoneRockSpires" TintColor="151,203,255">
+    <ObjectDoodad Id="707" Position="61,79,10.1225" Rotation="0.4636" Scale="1.132,1.132,1.132" Type="RedstoneRockSpires" TintColor="151,203,255">
         <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>

@@ -328,6 +328,45 @@
         <HostSiteOps Ops="SOpDrauger"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
     </CActorModel>
+    <CActorModel id="PartyHatWarrionT1Attachment" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <On Terms="UnitBirth.PreserverA" Send="Create"/>
+        <On Terms="UnitDeath.PreserverA" Send="Destroy"/>
+        <Host Subject="PreserverA"/>
+        <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
+        <Model value="PartyHatT1"/>
+    </CActorModel>
+    <CActorModel id="PartyHatWizardonT1Attachment" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <On Terms="UnitBirth.HighTemplar" Send="Create"/>
+        <On Terms="UnitDeath.HighTemplar" Send="Destroy"/>
+        <Host Subject="HighTemplar"/>
+        <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
+        <Model value="PartyHatT1"/>
+    </CActorModel>
+    <CActorModel id="PartyHatWarrionT2Attachment" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <On Terms="UnitBirth.PreserverB" Send="Create"/>
+        <On Terms="UnitDeath.PreserverB" Send="Destroy"/>
+        <Host Subject="PreserverB"/>
+        <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
+        <Model value="PartyHatT12"/>
+    </CActorModel>
+    <CActorModel id="PartyHatWizardonT2Attachment" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <On Terms="UnitDeath.HighTemplar2team" Send="Destroy"/>
+        <Host Subject="HighTemplar2team"/>
+        <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
+        <Model value="PartyHatT1"/>
+    </CActorModel>
+    <CActorSiteOpAttach id="PartyHatsTest">
+        <EditorCategories value=""/>
+        <AttachQuery Methods="Head 0" Fallback="Head"/>
+    </CActorSiteOpAttach>
+    <CActorSiteOpLocalOffset id="PartyHatsTestOffset">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.000000,0.000000,0.040000"/>
+    </CActorSiteOpLocalOffset>
     <CActorSiteOpLocalOffset id="SOpDrauger">
         <EditorCategories value=""/>
         <LocalOffset value="0.000000,2.700000,0.000000"/>
@@ -472,6 +511,7 @@
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.200000"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 1.300000"/>
         <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Hero73Skill4D2; At Target" Send="Create"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
@@ -885,6 +925,7 @@
     <CActorSound id="Hero73Skill4Sound3" parent="SoundOneShot">
         <Inherits index="Visibility" value="0"/>
         <On Terms="Effect.Hero73Skill4D.Start; At Target" Send="Create"/>
+        <On Terms="Effect.Hero73Skill4D2; At Target" Send="Create"/>
         <Sound value="Hero73Sound"/>
     </CActorSound>
     <CActorRange id="HeroBasicAttackRange" parent="RangeAbil" abil="attack"/>
@@ -36629,6 +36670,12 @@
         <On index="6" removed="1"/>
         <ContainerAssets Model="" Sound=""/>
     </CActorAction>
+    <CActorTurret id="TurretTest">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.Hero60Skill22.On" Send="Create"/>
+        <On Terms="Behavior.Hero60Skill22.Off" Send="Destroy"/>
+        <TurretBody Subject="Hero60"/>
+    </CActorTurret>
     <!--                                                                                         -->
     <!-- Ultralisk ............................................................................. -->
     <!--                                                                                         -->
@@ -37135,7 +37182,7 @@
         <On index="32" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <On index="33" Terms="Behavior.SpellDong24243.Create" Target="" Send="SetScale 1.300000 0.750000"/>
         <On index="34" Terms="Behavior.SpellDong24243.Destroy" Send="SetScale 1.000000 0.750000"/>
-        <On index="35" removed="1"/>
+        <On index="35" Terms="UnitBirth.HighTemplar2team" Send="Create PartyHatWizardonT2Attachment"/>
         <EventDataFootprint index="0" Model="HighTemplar2teamFootprint"/>
         <GroupSoundArray index="What" value="HighTemplar2team_GroupWhat"/>
         <GroupSoundArray index="Yes" value="HighTemplar2team_GroupYes"/>

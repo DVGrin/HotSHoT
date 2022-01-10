@@ -2871,6 +2871,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
+        <TurretArray value="Hellion"/>
     </CUnit>
     <CUnit id="Hero32">
         <DeathTime value="-1"/>
@@ -7157,6 +7158,7 @@
         <BehaviorArray Link="Hero29MaTimeLife2"/>
         <BehaviorArray Link="Toherodamage"/>
         <BehaviorArray Link="HeroPassAdd"/>
+        <BehaviorArray Link="KillsToCaster"/>
         <WeaponArray Link="Hero29Weapons2"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
