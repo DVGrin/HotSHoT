@@ -7226,12 +7226,12 @@ void gf_CreatePlayerStatisticsWindow() {
 
     gv_PlayerStatisticsWindow = DialogControlHookupStandard(
         c_triggerControlTypePanel,
-        "UIContainer/PlayerStatisticsWindow"
+        "UIContainer/FullscreenUpperContainer/PlayerStatisticsWindow"
     );
 
     gv_PlayerStatisticsWindowOpenDummyButton = DialogControlHookupStandard(
         c_triggerControlTypeButton,
-        "UIContainer/ToggleStatisticsDummyButton"
+        "UIContainer/FullscreenUpperContainer/ToggleStatisticsDummyButton"
     );
 
     TriggerAddEventDialogControl(
@@ -7242,7 +7242,7 @@ void gf_CreatePlayerStatisticsWindow() {
     );
 
     for (i = 0; i < 8; i += 1) {
-        column_name = "UIContainer/PlayerStatisticsWindow/PlayerColumn" + IntToString(i + 1);
+        column_name = "UIContainer/FullscreenUpperContainer/PlayerStatisticsWindow/PlayerColumn" + IntToString(i + 1);
         gv_PlayerStatisticsWindowHeroImage[i] = DialogControlHookupStandard(
             c_triggerControlTypeImage,
             column_name + "/HeroImage"

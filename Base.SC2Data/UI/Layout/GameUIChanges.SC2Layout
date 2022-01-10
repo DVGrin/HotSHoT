@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI" >
+        <Frame type="ChatBar" name="ChatBar">
+            <RenderPriority val="750"/>
+        </Frame>
+        <Frame type="GameMessageDisplay" name="ChatDisplay">
+            <RenderPriority val="750"/>
+        </Frame>
+    </Frame>
+</Desc>

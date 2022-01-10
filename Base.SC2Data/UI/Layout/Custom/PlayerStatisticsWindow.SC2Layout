@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI" >
         <Frame type="Frame" name="PlayerStatisticsWindow">
             <Anchor side="Top" relative="$parent" pos="Min" offset="100"/>
             <Anchor side="Left" relative="$parent" pos="Mid" offset="-750"/>

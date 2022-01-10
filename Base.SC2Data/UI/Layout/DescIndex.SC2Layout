@@ -6,6 +6,9 @@
     <Include path="UI/Layout/Templates/ShopPageTemplate.SC2Layout"/>
     <Include path="UI/Layout/Templates/StatisticsPlayerColumnTemplate.SC2Layout"/>
 
+    <!-- Game UI changes -->
+    <Include path="UI/Layout/GameUIChanges.SC2Layout"/>
+
     <!-- Loading Screen -->
     <Include path="UI/Layout/LoadingScreen.SC2Layout" requiredtoload="IS_EDITOR"/>
 
