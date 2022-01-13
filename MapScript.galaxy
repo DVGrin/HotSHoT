@@ -16081,7 +16081,37 @@ bool gt_TrackHeroHealing_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    // Healing in the base
     if (EventUnitHealEffect() == "AllHealing") {
+        return true;
+    }
+
+    // Choros E counts as self-healing otherwise
+    if (EventUnitHealEffect() == "Hero34Skill3Heal") {
+        PlayerGroupLoopBegin(PlayerGroupAll());
+        for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+            if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+                continue;
+            }
+            if (gv_SelectedCharNum[PlayerGroupLoopCurrent()] != 34) {
+                continue;
+            }
+            if (
+                    (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), PlayerGroupLoopCurrent())) &&
+                    (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()))
+                ) {
+                    continue;
+            }
+            if (
+                    (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), PlayerGroupLoopCurrent())) &&
+                    (PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()))
+                ) {
+                    continue;
+            }
+            gv_PlayerStatistics[PlayerGroupLoopCurrent()].healing_done += EventUnitHealAmount();
+            break;
+        }
+        PlayerGroupLoopEnd();
         return true;
     }
 
