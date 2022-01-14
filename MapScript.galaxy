@@ -7827,10 +7827,10 @@ void gt_Tr8VoteScreenView_Init () {
 static bool lf_CharacterNotChosen(int player_number) {
     int i;
     for (i = 0; i < 4; i += 1) {
-        if (gv_Team1CharNum[i] == gv_SelectedCharNum[gv_PlayerBayul[player_number]]) {
+        if (gv_Team1CharNum[i] == gv_SelectedCharNum[player_number]) {
             return false;
         }
-        if (gv_Team2CharNum[i] == gv_SelectedCharNum[gv_PlayerBayul[player_number]]) {
+        if (gv_Team2CharNum[i] == gv_SelectedCharNum[player_number]) {
             return false;
         }
     }
