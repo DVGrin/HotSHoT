@@ -7473,7 +7473,7 @@ bool gt_Tr1FullscreenSetting_Func (bool testConds, bool runActions) {
     DialogSetFullscreen(DialogLastCreated(), true);
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 2134, 1200, c_anchorCenter, 0, 0, StringToText(""), "SelectBack.tga", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
     gv_CharChooseFullDialogImage[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 2134, 1200, c_anchorCenter, 0, 0, StringToText(""), "Loading.tga", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 2134, 1200, c_anchorCenter, 0, 0, StringToText(""), "Assets/Loading.tga", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
     gv_CharChooseFullDialogImage[0] = DialogControlLastCreated();
     DialogControlCreate(DialogLastCreated(), c_triggerControlTypeLabel);
     DialogControlSetSize(DialogControlLastCreated(), PlayerGroupAll(), 500, 50);
