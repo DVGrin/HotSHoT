@@ -9703,6 +9703,9 @@ void gt_TrGameModeSelect_Init () {
 // Trigger: ?????? ?????? ??????(?????? ??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
+    int i;
+    bool flag = true;
+
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
             return false;
@@ -9729,11 +9732,34 @@ bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
         DialogControlSetEnabled(gv_CharChooseDialogReadyBtn, PlayerGroupSingle(EventPlayer()), false);
         libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[EventPlayer()], (StringExternal("Param/Value/A276AAB5") + PlayerName(EventPlayer()) + StringExternal("Param/Value/42884527")), PlayerGroupAll());
         gv_ReadyBoolean -= 1;
-        if ((gv_CharRandomBoolean[EventPlayer()] == false)) {
-            gv_ReadyClickBoolean[EventPlayer()] = true;
-        }
-        else {
-            gv_ReadyRandomBoolean[EventPlayer()] = true;
+        gv_ReadyClickBoolean[EventPlayer()] = true;
+        if ((gv_CharRandomBoolean[EventPlayer()] == true)) {
+            while (flag) {
+                gv_SelectedCharNum[EventPlayer()] = RandomInt(1, gv_TotalHeroNum);
+                if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && ((gv_Team1CharNum[0] != gv_SelectedCharNum[EventPlayer()]) && (gv_Team1CharNum[1] != gv_SelectedCharNum[EventPlayer()]) && (gv_Team1CharNum[2] != gv_SelectedCharNum[EventPlayer()]) && (gv_Team1CharNum[3] != gv_SelectedCharNum[EventPlayer()]))) {
+                    flag = false;
+                    for (i = 1; i <= 4; i += 1) {
+                        if (gv_PlayerBayul[i] == EventPlayer()) {
+                            gv_Team1CharNum[(i - 1)] = gv_SelectedCharNum[EventPlayer()];
+                            break;
+                        }
+                    }
+                }
+                else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && ((gv_Team2CharNum[0] != gv_SelectedCharNum[EventPlayer()]) && (gv_Team2CharNum[1] != gv_SelectedCharNum[EventPlayer()]) && (gv_Team2CharNum[2] != gv_SelectedCharNum[EventPlayer()]) && (gv_Team2CharNum[3] != gv_SelectedCharNum[EventPlayer()]))) {
+                    flag = false;
+                    for (i = 5; i <= 8; i += 1) {
+                        if (gv_PlayerBayul[i] == EventPlayer()) {
+                            gv_Team2CharNum[(i - 5)] = gv_SelectedCharNum[EventPlayer()];
+                            break;
+                        }
+                    }
+                }
+                Wait(0.01, c_timeReal);
+            }
+            gv_CharSelectedImage[EventPlayer()] = gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].image;
+            gv_CharSelectedName[EventPlayer()] = gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].name;
+            libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[EventPlayer()], gv_CharSelectedImage[EventPlayer()], PlayerGroupAll());
+            libNtve_gf_SetDialogItemTooltip(gv_TeamSelectDialogPlayerHeroImage[EventPlayer()], gv_CharSelectedName[EventPlayer()], PlayerGroupAll());
         }
     }
     else {
