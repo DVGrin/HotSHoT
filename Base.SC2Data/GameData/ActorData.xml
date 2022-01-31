@@ -162,6 +162,12 @@
         <On index="4" Terms="Abil.Hero16Skill11.ButtonHoverOff" Send="Destroy"/>
         <Abil Link="Hero16Skill11"/>
     </CActorRange>
+    <CActorModel id="Hero26Skill4Disease" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.Hero26Skill4Disease.Create" Send="Create"/>
+        <On Terms="Behavior.Hero26Skill4Disease.Destroy" Send="Destroy"/>
+        <Model value="IrradiateEffect"/>
+    </CActorModel>
     <CActorModel id="Hero27Skill1Impact3" parent="ModelAnimationStyleOneShot">
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>
@@ -190,6 +196,148 @@
         <Scale value="0.300000"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
     </CActorModel>
+    <CActorRange id="Hero26Skill4Range">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <EditorCategories value=""/>
+        <On Terms="Abil.Hero26Skill4.ButtonHoverOn" Send="Create"/>
+        <On Terms="Abil.Hero26Skill4.ButtonHoverOff" Send="Destroy"/>
+        <Range value="5.500000"/>
+    </CActorRange>
+    <CActorAction id="Hero74Attack" parent="GenericAttack" effectImpact="Hero74AttackD" effectLaunch="Hero74AttackMissile">
+        <LaunchAttachQuery Methods="AMFilterWeaponRight"/>
+        <LaunchAssets Model="" Sound="Hero74Sound2"/>
+        <Beam value="KarassAttackBeam"/>
+        <ImpactMap index="None" Sound="Hero74Sound" ModelReaction="KarassAttackImpactReaction"/>
+        <ImpactMap index="Dirt" Sound="KarassAttackImpactDirt" ModelReaction="KarassAttackImpactReactionDirt"/>
+        <ImpactMap index="Rock" Sound="KarassAttackImpactRock" ModelReaction="KarassAttackImpactReactionRock"/>
+        <ImpactMap index="Snow" Sound="KarassAttackImpactSnow" ModelReaction="KarassAttackImpactReactionSnow"/>
+        <ImpactMap index="Sand" Sound="KarassAttackImpactSand" ModelReaction="KarassAttackImpactReactionSand"/>
+        <ImpactMap index="Water" Sound="KarassAttackImpactWater" ModelReaction="KarassAttackImpactReactionWater"/>
+        <ImpactMap index="Flesh" Sound="KarassAttackImpactFlesh" ModelReaction="KarassAttackImpactReactionFlesh"/>
+        <ImpactMap index="LightArmor" Sound="KarassAttackImpactLightArmor" ModelReaction="KarassAttackImpactReactionLightArmor"/>
+        <ImpactMap index="Metal" Sound="KarassAttackImpactMetal" ModelReaction="KarassAttackImpactReactionMetal"/>
+        <ImpactMap index="Shield" Sound="KarassAttackImpactShield" ModelReaction="KarassAttackImpactReactionShield"/>
+        <DamageMap index="None" Model="KarassAttackDamage" Sound="KarassAttackDamage" ModelReaction="KarassAttackDamageReaction"/>
+        <DamageMap index="Dirt" Sound="KarassAttackDamageDirt" ModelReaction="KarassAttackDamageReactionDirt"/>
+        <DamageMap index="Rock" Sound="KarassAttackDamageRock" ModelReaction="KarassAttackDamageReactionRock"/>
+        <DamageMap index="Snow" Sound="KarassAttackDamageSnow" ModelReaction="KarassAttackDamageReactionSnow"/>
+        <DamageMap index="Sand" Sound="KarassAttackDamageSand" ModelReaction="KarassAttackDamageReactionSand"/>
+        <DamageMap index="Water" Sound="KarassAttackDamageWater" ModelReaction="KarassAttackDamageReactionWater"/>
+        <DamageMap index="Flesh" Sound="KarassAttackDamageFlesh" ModelReaction="KarassAttackDamageReactionFlesh"/>
+        <DamageMap index="LightArmor" Sound="KarassAttackDamageLightArmor" ModelReaction="KarassAttackDamageReactionLightArmor"/>
+        <DamageMap index="Metal" Sound="KarassAttackDamageMetal" ModelReaction="KarassAttackDamageReactionMetal"/>
+        <DamageMap index="Shield" Sound="KarassAttackDamageShield" ModelReaction="KarassAttackDamageReactionShield"/>
+    </CActorAction>
+    <CActorMissile id="Hero74AttackMissile" parent="GenericAttackMissile" unitName="Hero74AttackMissile">
+        <On Terms="ActorCreation" Send="SetTintColor {47,255,140 2.000000}"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,255,255 2.000000} 1.500000"/>
+        <BarHeight value="1"/>
+        <BarWidth value="1"/>
+    </CActorMissile>
+    <CActorUnit id="Hero74" parent="GenericUnitStandard" unitName="Hero34">
+        <On index="0" Terms="UnitBirth.Hero74"/>
+        <On index="1" Terms="UnitBirth.Hero74"/>
+        <On index="2" Terms="UnitRevive.Hero74"/>
+        <On index="3" Terms="UnitRevive.Hero74"/>
+        <On index="4" Terms="UnitConstruction.Hero74"/>
+        <On index="5" Terms="UnitConstruction.Hero74"/>
+        <On index="33" Terms="WeaponStart.*.AttackStart" Target="" Send="AnimBracketStart Attack Attack"/>
+        <On index="34" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On index="35" Terms="Abil.Hero34Skill1.SourceCastStart" Send="AnimBracketStart Spell Attack"/>
+        <On index="36" Terms="Abil.Hero34Skill1.SourceFinishStop" Send="AnimBracketStop Spell"/>
+        <On index="37" Terms="Abil.Hero34Skill2.SourceCastStart" Send="AnimBracketStart Spell Spell B {} 0 0.250000 AsDuration"/>
+        <On index="38" Terms="Abil.Hero34Skill2.SourceFinishStop" Target="" Send="AnimBracketStop Spell"/>
+        <On index="39" removed="1"/>
+        <On index="40" removed="1"/>
+        <On index="41" removed="1"/>
+        <On index="42" removed="1"/>
+        <On index="43" removed="1"/>
+        <On index="44" removed="1"/>
+        <On index="45" removed="1"/>
+        <On index="46" removed="1"/>
+        <On index="47" removed="1"/>
+        <On index="48" removed="1"/>
+        <On index="49" removed="1"/>
+        <On index="50" removed="1"/>
+        <On index="51" removed="1"/>
+        <On index="52" removed="1"/>
+        <On index="53" removed="1"/>
+        <On index="54" removed="1"/>
+        <On index="55" removed="1"/>
+        <On index="56" removed="1"/>
+        <On index="57" removed="1"/>
+        <On index="58" removed="1"/>
+        <On index="59" removed="1"/>
+        <On index="60" removed="1"/>
+        <On index="61" removed="1"/>
+        <On index="62" removed="1"/>
+        <On index="63" removed="1"/>
+        <On index="64" removed="1"/>
+        <On index="65" removed="1"/>
+        <On index="66" removed="1"/>
+        <On index="67" removed="1"/>
+        <On index="68" removed="1"/>
+        <Model value="Hero342"/>
+        <EventDataFootprint index="0" removed="1"/>
+        <BuildModel value=""/>
+        <DeathArray index="Normal" ModelLink="Hero34_Death2" SoundLink="" VoiceLink=""/>
+        <DeathArray index="Eat" AnimProps=""/>
+        <DeathArray index="Eviscerate" AnimProps=""/>
+        <DeathArray index="Fire" AnimProps=""/>
+        <DeathArray index="Silentkill" AnimProps=""/>
+        <DeathArray index="Squish" AnimProps=""/>
+        <DeathArray index="UnderConstruction" AnimProps=""/>
+        <DeathCustoms index="0" removed="1"/>
+        <DeathCustoms index="1" removed="1"/>
+        <DeathCustoms index="2" removed="1"/>
+        <DeathCustoms index="3" removed="1"/>
+        <DeathCustoms index="4" removed="1"/>
+        <DeathActorModel value="UnitDeathModelUnscaled"/>
+        <PlacementModel value=""/>
+        <WalkAnimMoveSpeed value="2.75"/>
+        <BarHeight value="9"/>
+        <BarWidth value="80"/>
+        <CustomUnitStatusFrame value="CustomHeroBar/HeroStatus"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-zerg-infestor.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <HighlightTooltip value="Unit/Name/Hero74"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Ready" value=""/>
+        <SoundArray index="Help" value=""/>
+        <SoundArray index="What" value=""/>
+        <SoundArray index="Yes" value=""/>
+        <SoundArray index="Attack" value=""/>
+        <SoundArray index="Pissed" value=""/>
+        <SoundArray index="Movement" value=""/>
+        <SoundArray index="Turning" value=""/>
+        <SoundArray index="Board" value=""/>
+        <SoundArray index="Click" value=""/>
+        <SoundArray index="ClickError" value=""/>
+        <SoundArray index="Highlight" value=""/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <UnitBorderNormalColor value="150,150,150"/>
+        <UnitBorderSubgroupColor value="255,255,255"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-zerg-infestor.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\wireframe-zerg-infestor.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorModel id="Hero42Skill2m3" parent="ModelAnimationStyleContinuousUNIT">
         <Flags index="SuppressSaveLoad" value="1"/>
         <Inherits index="CloakEffect" value="1"/>

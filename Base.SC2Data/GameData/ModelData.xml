@@ -87,6 +87,18 @@
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
     </CModel>
+    <CModel id="Hero342" parent="Unit" Race="Protoss">
+        <Model value="Assets\Models\Warcraft_AirElemental.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Lighting value="Zeratul"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.400000"/>
+        <ScaleMax value="1.000000,0.800000,1.500000"/>
+        <ScaleMin value="1.000000,0.800000,1.500000"/>
+        <SelectionRadius value="1.100000"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
     <CModel id="Hero34Skill2Start2" parent="ImpactFX">
         <Model value="Assets\Effects\Zerg\WildMutationImpact\WildMutationImpact.m3"/>
         <AnimSpeed value="1.100000"/>
@@ -103,6 +115,18 @@
         <ScaleMax value="0.770000,0.770000,0.770000"/>
         <ScaleMin value="0.770000,0.770000,0.770000"/>
     </CModel>
+    <CModel id="Hero34_Death2" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Units\Zerg\InfestorDeath\InfestorDeath.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Lighting value="Zeratul"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.400000"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="1.100000"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
     <CModel id="Hero42Skill2Model2" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\Alarak_SoulAbsorption_Missile\Alarak_SoulAbsorption_Missile.m3"/>
         <EditorCategories value="Race:Terran"/>
@@ -110,6 +134,26 @@
         <ScaleMax value="8.000000,8.000000,8.000000"/>
         <ScaleMin value="8.000000,8.000000,8.000000"/>
         <SelectionRadius value="0.150000"/>
+    </CModel>
+    <CModel id="Hero74AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\TempestPlasmaMissileImpact\TempestPlasmaMissileImpact.m3"/>
+        <AnimSpeed value="1.850000"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ToshAttackImpact"/>
+        <ScaleMax value="0.150000,0.150000,0.150000"/>
+        <ScaleMin value="0.150000,0.150000,0.150000"/>
+    </CModel>
+    <CModel id="Hero74AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\TempestPlasmaMissile\TempestPlasmaMissile.m3"/>
+        <AnimSpeed value="2.000000"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ToshAttackImpact"/>
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+    </CModel>
+    <CModel id="IrradiateEffect">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
     </CModel>
     <CModel id="PartyHatT1">
         <Model value="Assets\Doodads\AnniversaryHatTerran\AnniversaryHatTerran.m3"/>

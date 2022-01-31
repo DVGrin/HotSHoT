@@ -1095,6 +1095,11 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
+    <CBehaviorBuff id="Hero26Skill4Disease">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="4.6"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="Hero36Skill42">
         <Alignment value="Positive"/>
         <Cost>
@@ -2170,6 +2175,11 @@
             <ExcludeEffectArray value="Hero58PassiveD"/>
             <ExcludeEffectArray value="Spell10D"/>
             <ExcludeEffectArray value="Hero13PassiveD"/>
+            <ExcludeEffectArray value="Hero35Skill3Dg"/>
+            <ExcludeEffectArray value="Hero69PassiveD"/>
+            <ExcludeEffectArray value="Hero19Skill3D"/>
+            <ExcludeEffectArray value="Hero37Skill3D"/>
+            <ExcludeEffectArray value="Hero51PassiveD"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -2405,7 +2415,7 @@
         <InfoIcon value="Assets\Textures\btn-ability-hornerhan-mechbioweaponupgrades-c.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="9"/>
+        <Duration value="15"/>
         <FinalEffect value="StatInjang1Dong22"/>
         <Modification>
             <DeathResponse>
@@ -5119,6 +5129,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <DisplayDuration index="Self" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero63Skill3impact2">
         <Alignment value="Negative"/>
@@ -12014,16 +12025,22 @@
         </Cost>
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\InviButton.dds"/>
+        <BehaviorCategories index="Stun" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
         <RemoveValidatorArray value="PickupCheck2222225"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.125"/>
+        <Duration value="0.75"/>
         <InitialEffect value="PickupMinerals100Set2"/>
-        <Modification Height="0.75" MoveSpeedMultiplier="0.4">
-            <HeightTime index="Start" value="0.5"/>
-            <HeightTime index="Stop" value="0.25"/>
+        <FinalEffect value="PickupMinerals100Set24"/>
+        <Modification Height="1" MoveSpeedMaximum="0.0117">
+            <StateFlags index="SuppressAttack" value="1"/>
+            <HeightTime index="Start" value="0.4"/>
+            <HeightTime index="Stop" value="0.1"/>
+            <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+            <AbilLinkEnableArray value="Hero23Skill4"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -12037,8 +12054,6 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <FinalEffect value="PickupMinerals100Set24"/>
-        <BehaviorCategories index="Stun" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero32Passive33">
         <Alignment value="Positive"/>
@@ -12666,7 +12681,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisplayDuration index="Self" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="10.5"/>
+        <Duration value="12"/>
         <Modification>
             <StateFlags index="SuppressCollision" value="1"/>
             <DeathResponse>
@@ -16541,6 +16556,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <InitialEffect value="Hero26Skill4Sr2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero26Skill3impact">
         <Alignment value="Positive"/>
@@ -17888,6 +17904,14 @@
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Hero70Skill2"/>
             <AbilLinkDisableArray value="Hero70Skill2b"/>
+            <AbilLinkDisableArray value="Hero72Skill4"/>
+            <AbilLinkDisableArray value="Hero72Skill1"/>
+            <AbilLinkDisableArray value="Hero46Skill4"/>
+            <AbilLinkDisableArray value="Hero46Skill42"/>
+            <AbilLinkDisableArray value="Hero71Skill4"/>
+            <AbilLinkDisableArray value="Hero73Skill3"/>
+            <AbilLinkDisableArray value="Hero73Skill32"/>
+            <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -19170,6 +19194,14 @@
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Hero70Skill2"/>
             <AbilLinkDisableArray value="Hero70Skill2b"/>
+            <AbilLinkDisableArray value="Hero72Skill4"/>
+            <AbilLinkDisableArray value="Hero72Skill1"/>
+            <AbilLinkDisableArray value="Hero46Skill4"/>
+            <AbilLinkDisableArray value="Hero46Skill42"/>
+            <AbilLinkDisableArray value="Hero71Skill4"/>
+            <AbilLinkDisableArray value="Hero73Skill3"/>
+            <AbilLinkDisableArray value="Hero73Skill32"/>
+            <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -19989,6 +20021,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <InitialEffect value="dummydamageforcurse"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero38Passive">
         <Alignment value="Positive"/>
@@ -23069,6 +23102,14 @@
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Hero70Skill2"/>
             <AbilLinkDisableArray value="Hero70Skill2b"/>
+            <AbilLinkDisableArray value="Hero72Skill4"/>
+            <AbilLinkDisableArray value="Hero72Skill1"/>
+            <AbilLinkDisableArray value="Hero46Skill4"/>
+            <AbilLinkDisableArray value="Hero46Skill42"/>
+            <AbilLinkDisableArray value="Hero71Skill4"/>
+            <AbilLinkDisableArray value="Hero73Skill3"/>
+            <AbilLinkDisableArray value="Hero73Skill32"/>
+            <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -27379,6 +27420,14 @@
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Hero70Skill2"/>
             <AbilLinkDisableArray value="Hero70Skill2b"/>
+            <AbilLinkDisableArray value="Hero72Skill4"/>
+            <AbilLinkDisableArray value="Hero72Skill1"/>
+            <AbilLinkDisableArray value="Hero46Skill4"/>
+            <AbilLinkDisableArray value="Hero46Skill42"/>
+            <AbilLinkDisableArray value="Hero71Skill4"/>
+            <AbilLinkDisableArray value="Hero73Skill3"/>
+            <AbilLinkDisableArray value="Hero73Skill32"/>
+            <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -31784,7 +31833,7 @@
         <Duration value="7.6"/>
         <Period value="0.75"/>
         <PeriodCount value="9"/>
-        <InitialEffect value="Hero19Skill3D"/>
+        <InitialEffect value="Hero19Skill3Mo"/>
         <PeriodicEffect value="Hero19Skill3D"/>
         <Modification>
             <DeathResponse>
@@ -38103,8 +38152,8 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie2"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="6"/>
-        <Period value="0.75"/>
+        <Duration value="3.75"/>
+        <Period value="0.4687"/>
         <PeriodCount value="7"/>
         <InitialEffect value="Hero31Skill4G"/>
         <PeriodicEffect value="Hero31Skill4G"/>
@@ -39044,6 +39093,14 @@
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Hero70Skill2"/>
             <AbilLinkDisableArray value="Hero70Skill2b"/>
+            <AbilLinkDisableArray value="Hero72Skill4"/>
+            <AbilLinkDisableArray value="Hero72Skill1"/>
+            <AbilLinkDisableArray value="Hero46Skill4"/>
+            <AbilLinkDisableArray value="Hero46Skill42"/>
+            <AbilLinkDisableArray value="Hero71Skill4"/>
+            <AbilLinkDisableArray value="Hero73Skill3"/>
+            <AbilLinkDisableArray value="Hero73Skill32"/>
+            <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -39115,8 +39172,6 @@
             <AbilLinkDisableArray value="Hero72Skill1"/>
             <AbilLinkDisableArray value="Hero72Skill4"/>
             <AbilLinkDisableArray value="Hero71Skill4"/>
-            <AbilLinkDisableArray value="Hero72Skill1"/>
-            <AbilLinkDisableArray value="Hero72Skill4"/>
             <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
@@ -41756,6 +41811,14 @@
             <AbilLinkDisableArray value="Hero49Skill4"/>
             <AbilLinkDisableArray value="Hero70Skill2"/>
             <AbilLinkDisableArray value="Hero70Skill2b"/>
+            <AbilLinkDisableArray value="Hero72Skill4"/>
+            <AbilLinkDisableArray value="Hero72Skill1"/>
+            <AbilLinkDisableArray value="Hero46Skill4"/>
+            <AbilLinkDisableArray value="Hero46Skill42"/>
+            <AbilLinkDisableArray value="Hero71Skill4"/>
+            <AbilLinkDisableArray value="Hero73Skill3"/>
+            <AbilLinkDisableArray value="Hero73Skill32"/>
+            <AbilLinkDisableArray value="Hero42Skill2"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>

@@ -46,6 +46,11 @@
         <AbilCmdIndex value="2"/>
         <Find value="0"/>
     </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareBehaviorCount id="Hero26Skill4CheckDisease">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero26Skill4Disease"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="Hero32Skill2Dongin52">
         <Behavior value="Hero42Skill2"/>
     </CValidatorUnitCompareBehaviorCount>

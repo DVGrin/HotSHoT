@@ -363,6 +363,25 @@
         <Flags index="BestUnit" value="0"/>
         <Flags index="Transient" value="1"/>
     </CAbilResearch>
+    <CAbilEffectTarget id="Hero69Skill42">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="Hero69Skill4G"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="150"/>
+            <Cooldown Location="Unit" TimeUse="172.5"/>
+        </Cost>
+        <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="20"/>
+        <FinishTime value="0.65"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value=""/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn55331532" State="Restricted" Requirements="SpellUse4373328222"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero73Skill32">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <InfoTooltipPriority value="1"/>
@@ -6373,7 +6392,7 @@
         <AINotifyEffect value=""/>
         <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn5332232" State="Restricted" Requirements="SpellUse43732533"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
-        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero55Skill22">
@@ -6395,7 +6414,7 @@
         <AINotifyEffect value=""/>
         <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn5332232" State="Restricted" Requirements="SpellUse437325322"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
-        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero55Skill3">
@@ -7387,7 +7406,7 @@
         <InfoTooltipPriority value="1"/>
         <Effect index="0" value="Hero69Skill1Missile"/>
         <Cost>
-            <Vital index="Energy" value="70"/>
+            <Vital index="Energy" value="65"/>
             <Cooldown Location="Unit" TimeUse="13.5"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -7406,7 +7425,7 @@
         <Effect index="0" value="Hero69Skill3G"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="65"/>
+            <Vital index="Energy" value="60"/>
             <Cooldown Location="Unit" TimeUse="12"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>

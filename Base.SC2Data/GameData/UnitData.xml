@@ -212,6 +212,20 @@
         <SubgroupAlias value=""/>
         <AIEvaluateAlias value=""/>
     </CUnit>
+    <CUnit id="Hero74AttackMissile" parent="MISSILE">
+        <ReviveType value=""/>
+        <Race value="Prot"/>
+        <Mover value="Hero74Mover"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value=""/>
+        <SelectAlias value=""/>
+        <SubgroupAlias value=""/>
+        <AIEvaluateAlias value=""/>
+        <ReviveInfoBase>
+            <Charge Link="KarassWeapon/Revive"/>
+            <Cooldown Link="KarassWeapon/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
     <CUnit id="Hero73AttackMissile" parent="MISSILE">
         <Race value="Prot"/>
         <Mover value="ThorAA"/>
@@ -879,6 +893,153 @@
         <SelectAlias value=""/>
         <SubgroupAlias value=""/>
         <AIEvaluateAlias value=""/>
+    </CUnit>
+    <CUnit id="Hero74">
+        <DeathTime value="-1"/>
+        <DeathRevealRadius value="5"/>
+        <DeathRevealType value="Vision"/>
+        <ReviveType value="Hero34"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <PushPriority value="11"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="460"/>
+        <LifeMax value="460"/>
+        <LifeRegenRate value="0.3984"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <EnergyStart value="275"/>
+        <EnergyMax value="275"/>
+        <EnergyRegenRate value="0.6015"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="1350"/>
+        <TurningRate value="1350"/>
+        <Sight value="11"/>
+        <AttackTargetPriority value="10"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="Spell3"/>
+        <AbilArray Link="Spell32"/>
+        <AbilArray Link="Spell4"/>
+        <AbilArray Link="Spell42"/>
+        <AbilArray Link="Spell5"/>
+        <AbilArray Link="Spell52"/>
+        <AbilArray Link="Spell6"/>
+        <AbilArray Link="Spell62"/>
+        <AbilArray Link="Spell7"/>
+        <AbilArray Link="Spell72"/>
+        <AbilArray Link="Spell8"/>
+        <AbilArray Link="Spell82"/>
+        <AbilArray Link="Spell9"/>
+        <AbilArray Link="Spell92"/>
+        <AbilArray Link="Spell10"/>
+        <AbilArray Link="Spell102"/>
+        <AbilArray Link="Spell11"/>
+        <AbilArray Link="Spell112"/>
+        <AbilArray Link="Spell12"/>
+        <AbilArray Link="Spell122"/>
+        <AbilArray Link="Portal"/>
+        <AbilArray Link="MaxAttackStop"/>
+        <BehaviorArray Link="TestVeterancy2"/>
+        <BehaviorArray Link="AttackDamage"/>
+        <BehaviorArray Link="SpellPower"/>
+        <BehaviorArray Link="DefensePowers"/>
+        <BehaviorArray Link="MagicRasist"/>
+        <BehaviorArray Link="Critical3"/>
+        <BehaviorArray Link="Agrosystem"/>
+        <BehaviorArray Link="Agrosystem2"/>
+        <WeaponArray Link="Hero74Weapon"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="2" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="MaxAttackStop,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="2" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="2" Column="4"/>
+            <LayoutButtons>
+                <Face value="A_Spell"/>
+                <Type value="Passive"/>
+                <AbilCmd value="Spell1,255"/>
+                <Requirements value="SpellUse"/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="A_Spell2"/>
+                <Type value="Passive"/>
+                <AbilCmd value="Spell2,255"/>
+                <Requirements value="SpellUse3"/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons Face="A_Spell3" Type="AbilCmd" AbilCmd="Spell3,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell4" Type="AbilCmd" AbilCmd="Spell4,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell5" Type="AbilCmd" AbilCmd="Spell5,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell6" Type="AbilCmd" AbilCmd="Spell6,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell7" Type="AbilCmd" AbilCmd="Spell7,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell8" Type="AbilCmd" AbilCmd="Spell8,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell9" Type="AbilCmd" AbilCmd="Spell9,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell10" Type="AbilCmd" AbilCmd="Spell10,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell102" Type="AbilCmd" AbilCmd="Spell11,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="A_Spell103" Type="AbilCmd" AbilCmd="Spell12,On" Row="1" Column="1"/>
+            <LayoutButtons>
+                <Face value="A_Spell11"/>
+                <Type value="Passive"/>
+                <AbilCmd value="Spell1b,255"/>
+                <Requirements value="SpellUse2"/>
+                <Row value="1"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="A_Spell22"/>
+                <Type value="Passive"/>
+                <AbilCmd value="Spell22,255"/>
+                <Requirements value="SpellUse32"/>
+                <Row value="1"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons Face="A_Spell32" Type="AbilCmd" AbilCmd="Spell32,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell42" Type="AbilCmd" AbilCmd="Spell42,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell52" Type="AbilCmd" AbilCmd="Spell52,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell62" Type="AbilCmd" AbilCmd="Spell62,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell72" Type="AbilCmd" AbilCmd="Spell72,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell82" Type="AbilCmd" AbilCmd="Spell82,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell92" Type="AbilCmd" AbilCmd="Spell92,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell104" Type="AbilCmd" AbilCmd="Spell102,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell1022" Type="AbilCmd" AbilCmd="Spell112,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="A_Spell1032" Type="AbilCmd" AbilCmd="Spell122,On" Row="1" Column="2"/>
+            <LayoutButtons Face="Portal" Type="AbilCmd" AbilCmd="Portal,Execute" Row="1" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <InnerRadius value="0.75"/>
+        <CargoSize value="2"/>
+        <ScoreKill value="1"/>
+        <ScoreLost value="1"/>
+        <SubgroupPriority value="90"/>
+        <MinimapRadius value="2.5"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Hero"/>
+        <TacticalAI value=""/>
+        <LeaderAlias value="Hero34"/>
+        <HotkeyAlias value=""/>
+        <SelectAlias value="Hero34"/>
+        <SubgroupAlias value="Hero34"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="170"/>
+        <HotkeyCategory value="Unit/Category/ProtossStory"/>
+        <AIEvaluateAlias value="Hero34"/>
+        <ReviveInfoBase>
+            <Charge Link="Hotshot/HeroRevive"/>
+            <Cooldown Link="Hotshot/HeroRevive"/>
+        </ReviveInfoBase>
     </CUnit>
     <CUnit id="Hero9Skill4Dummy">
         <DeathRevealRadius value="3"/>
@@ -12164,7 +12325,7 @@
         <ShieldsMax value="0"/>
         <ShieldRegenDelay value="0"/>
         <ShieldRegenRate value="0"/>
-        <Sight value="5"/>
+        <Sight value="7"/>
         <CostResource index="Minerals" value="0"/>
         <AttackTargetPriority value="11"/>
         <KillXP value="4"/>
@@ -15534,7 +15695,7 @@
         <ShieldsMax value="0"/>
         <ShieldRegenDelay value="0"/>
         <ShieldRegenRate value="0"/>
-        <Sight value="5"/>
+        <Sight value="7"/>
         <CostResource index="Minerals" value="0"/>
         <AttackTargetPriority value="11"/>
         <AbilArray index="0" Link="attack"/>

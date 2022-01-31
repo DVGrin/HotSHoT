@@ -41,6 +41,20 @@
     <CSound id="EMP_Generator_ElectricArcs_Med">
         <Volume value="0.000000,0.000000"/>
     </CSound>
+    <CSound id="Hero74Sound" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact1.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Hero74Sound2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Hero62AttackLaunch.ogg" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="0.000000,1.500000"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
     <CSound id="Hero73Sound" parent="Combat">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\Nova_PlasmaRifle_AttackImpact_01.wav" FacialGroup=""/>
