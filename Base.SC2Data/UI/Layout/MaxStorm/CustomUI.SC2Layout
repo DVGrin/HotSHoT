@@ -7,9 +7,10 @@
     </Frame>
 
     <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer/MenuBarConsoleAnchor" file="GameUI">
-        <Anchor side="Right" relative="$parent" pos="Max" offset="85"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="88"/>
         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-265"/>
-        <Width val="139"/>
+        <!-- <Width val="139"/> -->
+        <Width val="190"/>
         <Height val="65"/>
     </Frame>
 
