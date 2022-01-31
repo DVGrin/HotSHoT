@@ -7913,6 +7913,11 @@ static void lf_PlayerHeroChoice(int player_number) {
             }
             Wait(0.01, c_timeReal);
         }
+        // Change the portrait and hero name
+        gv_CharSelectedImage[player_number] = gv_HeroInformation[gv_SelectedCharNum[player_number] - 1].image;
+        gv_CharSelectedName[player_number] = gv_HeroInformation[gv_SelectedCharNum[player_number] - 1].name;
+        libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[player_number], gv_CharSelectedImage[player_number], PlayerGroupAll());
+        libNtve_gf_SetDialogItemTooltip(gv_TeamSelectDialogPlayerHeroImage[player_number], gv_CharSelectedName[player_number], PlayerGroupAll());
     }
     // "Ready" under the portrait
     libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[player_number], (StringExternal("Param/Value/0C8DBF4C") + PlayerName(player_number) + StringExternal("Param/Value/7ACF4E49")), PlayerGroupAll());
