@@ -10253,9 +10253,8 @@ bool lf_TestModeVotedFor() {
     return true;
 }
 
-bool lf_EnoughVotesToKick(int player) {
+int lf_VotesNeededToKick() {
     int active_players = 0;
-    int votes = 0;
     PlayerGroupLoopBegin(PlayerGroupActive());
     for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
         if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
@@ -10265,17 +10264,28 @@ bool lf_EnoughVotesToKick(int player) {
             continue;
         }
         active_players += 1;
+    }
+    PlayerGroupLoopEnd();
+    return (active_players / 2) + 1;
+}
+
+bool lf_EnoughVotesToKick(int player) {
+    int votes = 0;
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (!(PlayerType(PlayerGroupLoopCurrent()) == c_playerTypeUser)) {
+            continue;
+        }
+        if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), PlayerGroupLoopCurrent())) {
+            continue;
+        }
         if (gv_VotedToKick[PlayerGroupLoopCurrent()][player] == true) {
             votes += 1;
         }
     }
     PlayerGroupLoopEnd();
 
-    if (active_players <= 2) {
-        return false;
-    }
-
-    if (votes == (active_players - 1)) {
+    if (votes >= lf_VotesNeededToKick()) {
         return true;
     }
 
@@ -10285,6 +10295,7 @@ bool lf_EnoughVotesToKick(int player) {
 bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
     int i;
     int number;
+    int votes;
     fixed numberf;
     fixed current_level;
     string command;
@@ -10384,7 +10395,15 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         if (gv_VotedToKick[EventPlayer()][number] == true) {
             return true;
         }
+
         gv_VotedToKick[EventPlayer()][number] = true;
+        votes = 0;
+        for (i = 0; i < 11; i += 1) {
+            if (gv_VotedToKick[EventPlayer()][i]) {
+                votes += 1;
+            }
+        }
+
         UIDisplayMessage(
             PlayerGroupAll(),
             c_messageAreaSubtitle,
@@ -10397,7 +10416,12 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
                 TextWithColor(
                     PlayerName(number),
                     libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(number, false))
-                )
+                ) + 
+                StringToText("(") + 
+                IntToText(votes) + 
+                StringToText("/") + 
+                IntToText(lf_VotesNeededToKick()) + 
+                StringToText(" votes)")
             )
         );
         if (lf_EnoughVotesToKick(number)) {
@@ -15974,6 +15998,12 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
         DialogControlSetVisible(gv_ScoreDialogFarming[EventPlayer()], PlayerGroupAll(), false);
         DialogControlSetVisible(gv_ScoreDialogReviveTime[EventPlayer()], PlayerGroupAll(), false);
         UnitRemove(gv_PlayerHero[EventPlayer()]);
+    }
+
+    for (i = 1; i <= 8; i += 1) {
+        if (lf_EnoughVotesToKick(gv_PlayerBayul[i])) {
+            KickFromGame(PlayerGroupSingle(gv_PlayerBayul[i]));
+        }
     }
 
     if (((PlayerStatus(gv_PlayerBayul[1]) != c_playerStatusActive) && (PlayerStatus(gv_PlayerBayul[2]) != c_playerStatusActive) && (PlayerStatus(gv_PlayerBayul[3]) != c_playerStatusActive) && (PlayerStatus(gv_PlayerBayul[4]) != c_playerStatusActive)) && (gv_GameEndBoolean == false)) {
