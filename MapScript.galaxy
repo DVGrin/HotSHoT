@@ -9756,6 +9756,17 @@ bool gt_TrReadyOkSelect_Func (bool testConds, bool runActions) {
                 }
                 Wait(0.01, c_timeReal);
             }
+            libNtve_gf_SetDialogItemText(
+                gv_TeamSelectDialogPlayerName[EventPlayer()],
+                (
+                    StringToText("<s val=\"Header18\"><c val=\"888888\">") +
+                    PlayerName(EventPlayer()) + 
+                    StringToText("(</c>") + 
+                    StringToText("<c val=\"ffe303\">Random</c>") + 
+                    StringToText("<c val=\"888888\">)</c></s>")
+                ),
+                PlayerGroupAll()
+            );
             gv_CharSelectedImage[EventPlayer()] = gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].image;
             gv_CharSelectedName[EventPlayer()] = gv_HeroInformation[gv_SelectedCharNum[EventPlayer()] - 1].name;
             libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[EventPlayer()], gv_CharSelectedImage[EventPlayer()], PlayerGroupAll());
