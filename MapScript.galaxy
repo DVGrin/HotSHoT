@@ -16086,7 +16086,7 @@ bool gt_TrackHeroHealing_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    // Choros E counts as self-healing otherwise
+    // Choros E always counts as self-healing otherwise
     if (EventUnitHealEffect() == "Hero34Skill3Heal") {
         PlayerGroupLoopBegin(PlayerGroupAll());
         for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
@@ -16108,7 +16108,11 @@ bool gt_TrackHeroHealing_Func (bool testConds, bool runActions) {
                 ) {
                     continue;
             }
-            gv_PlayerStatistics[PlayerGroupLoopCurrent()].healing_done += EventUnitHealAmount();
+            if (EventPlayer() == PlayerGroupLoopCurrent()) {
+                gv_PlayerStatistics[PlayerGroupLoopCurrent()].self_healing += EventUnitHealAmount();
+            } else {
+                gv_PlayerStatistics[PlayerGroupLoopCurrent()].healing_done += EventUnitHealAmount();
+            }
             break;
         }
         PlayerGroupLoopEnd();
