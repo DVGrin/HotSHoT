@@ -291,7 +291,7 @@ void InitGlobals () {
     int init_i;
     int init_j;
 
-    gv_TotalHeroNum = 73;
+    gv_TotalHeroNum = 74;
 
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_TeamPlayerGroup[init_i] = PlayerGroupEmpty();
@@ -1640,6 +1640,13 @@ void HeroInfoInit() {
     gv_HeroInformation[72].levelup_upgrade = "HeroLvUp4422";
     gv_HeroInformation[72].name = StringExternal("Unit/Name/Hero73");
     gv_HeroInformation[72].ability_resource = c_abilityResourceMana;
+
+    // Hero74
+    gv_HeroInformation[73].image = "Assets\\AddIcon\\btn-hero73.dds";
+    gv_HeroInformation[73].unitname = "Hero74";
+    gv_HeroInformation[73].levelup_upgrade = "HeroLvUp52322";
+    gv_HeroInformation[73].name = StringExternal("Unit/Name/Hero74");
+    gv_HeroInformation[73].ability_resource = c_abilityResourceMana;
 }
 
 void SkillsInit() {
@@ -3400,6 +3407,30 @@ void SkillsInit() {
     gv_SkillLevelUpgrades[i][c_skillR][0] = "Hero73SkillLearn4";
     gv_SkillLevelUpgrades[i][c_skillR][1] = "Hero73SkillLearn223";
     gv_SkillLevelUpgrades[i][c_skillR][2] = "Hero73SkillLearn223";
+
+    i += 1;
+    // Hero74
+    gv_SkillLevelUpgrades[i][c_skillQ][0] = "";
+    gv_SkillLevelUpgrades[i][c_skillQ][1] = "";
+    gv_SkillLevelUpgrades[i][c_skillQ][2] = "";
+    gv_SkillLevelUpgrades[i][c_skillQ][3] = "";
+    gv_SkillLevelUpgrades[i][c_skillQ][4] = "";
+
+    gv_SkillLevelUpgrades[i][c_skillW][0] = "";
+    gv_SkillLevelUpgrades[i][c_skillW][1] = "";
+    gv_SkillLevelUpgrades[i][c_skillW][2] = "";
+    gv_SkillLevelUpgrades[i][c_skillW][3] = "";
+    gv_SkillLevelUpgrades[i][c_skillW][4] = "";
+
+    gv_SkillLevelUpgrades[i][c_skillE][0] = "";
+    gv_SkillLevelUpgrades[i][c_skillE][1] = "";
+    gv_SkillLevelUpgrades[i][c_skillE][2] = "";
+    gv_SkillLevelUpgrades[i][c_skillE][3] = "";
+    gv_SkillLevelUpgrades[i][c_skillE][4] = "";
+
+    gv_SkillLevelUpgrades[i][c_skillR][0] = "";
+    gv_SkillLevelUpgrades[i][c_skillR][1] = "";
+    gv_SkillLevelUpgrades[i][c_skillR][2] = "";
 }
 
 void InitGameParameters() {
@@ -6425,13 +6456,12 @@ void gf_HrCharSelectDialogHeroBtnMake5 () {
     gv_CharChooseWindowBtn[72] = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 460, 90, StringToText(""), "Assets\\AddIcon\\btn-hero73.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
     gv_CharChooseWindowImage[72] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 555, 80, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
+    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 555, 80, gv_HeroInformation[73].name, StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
     gv_CharChooseWindowBtn[73] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), "Assets\\AddIcon\\btn-hero57.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), gv_HeroInformation[73].image, c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
     gv_CharChooseWindowImage[73] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
     libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 30, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
@@ -8332,8 +8362,14 @@ bool gt_TrCharSelect_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((EventDialogControl() == gv_CharChooseWindowBtn[0]) || (EventDialogControl() == gv_CharChooseWindowBtn[1]) || (EventDialogControl() == gv_CharChooseWindowBtn[2]) || (EventDialogControl() == gv_CharChooseWindowBtn[3]) || (EventDialogControl() == gv_CharChooseWindowBtn[4]) || (EventDialogControl() == gv_CharChooseWindowBtn[5]) || (EventDialogControl() == gv_CharChooseWindowBtn[6]) || (EventDialogControl() == gv_CharChooseWindowBtn[7]) || (EventDialogControl() == gv_CharChooseWindowBtn[8]) || (EventDialogControl() == gv_CharChooseWindowBtn[9]) || (EventDialogControl() == gv_CharChooseWindowBtn[10]) || (EventDialogControl() == gv_CharChooseWindowBtn[11]) || (EventDialogControl() == gv_CharChooseWindowBtn[12]) || (EventDialogControl() == gv_CharChooseWindowBtn[13]) || (EventDialogControl() == gv_CharChooseWindowBtn[14]) || (EventDialogControl() == gv_CharChooseWindowBtn[15]) || (EventDialogControl() == gv_CharChooseWindowBtn[16]) || (EventDialogControl() == gv_CharChooseWindowBtn[17]) || (EventDialogControl() == gv_CharChooseWindowBtn[18]) || (EventDialogControl() == gv_CharChooseWindowBtn[19]) || (EventDialogControl() == gv_CharChooseWindowBtn[20]) || (EventDialogControl() == gv_CharChooseWindowBtn[21]) || (EventDialogControl() == gv_CharChooseWindowBtn[22]) || (EventDialogControl() == gv_CharChooseWindowBtn[23]) || (EventDialogControl() == gv_CharChooseWindowBtn[24]) || (EventDialogControl() == gv_CharChooseWindowBtn[25]) || (EventDialogControl() == gv_CharChooseWindowBtn[26]) || (EventDialogControl() == gv_CharChooseWindowBtn[27]) || (EventDialogControl() == gv_CharChooseWindowBtn[28]) || (EventDialogControl() == gv_CharChooseWindowBtn[29]) || (EventDialogControl() == gv_CharChooseWindowBtn[30]) || (EventDialogControl() == gv_CharChooseWindowBtn[31]) || (EventDialogControl() == gv_CharChooseWindowBtn[32]) || (EventDialogControl() == gv_CharChooseWindowBtn[33]) || (EventDialogControl() == gv_CharChooseWindowBtn[34]) || (EventDialogControl() == gv_CharChooseWindowBtn[35]) || (EventDialogControl() == gv_CharChooseWindowBtn[36]) || (EventDialogControl() == gv_CharChooseWindowBtn[37]) || (EventDialogControl() == gv_CharChooseWindowBtn[38]) || (EventDialogControl() == gv_CharChooseWindowBtn[39]) || (EventDialogControl() == gv_CharChooseWindowBtn[40]) || (EventDialogControl() == gv_CharChooseWindowBtn[41]) || (EventDialogControl() == gv_CharChooseWindowBtn[42]) || (EventDialogControl() == gv_CharChooseWindowBtn[43]) || (EventDialogControl() == gv_CharChooseWindowBtn[44]) || (EventDialogControl() == gv_CharChooseWindowBtn[45]) || (EventDialogControl() == gv_CharChooseWindowBtn[46]) || (EventDialogControl() == gv_CharChooseWindowBtn[47]) || (EventDialogControl() == gv_CharChooseWindowBtn[48]) || (EventDialogControl() == gv_CharChooseWindowBtn[49]) || (EventDialogControl() == gv_CharChooseWindowBtn[50]) || (EventDialogControl() == gv_CharChooseWindowBtn[51]) || (EventDialogControl() == gv_CharChooseWindowBtn[52]) || (EventDialogControl() == gv_CharChooseWindowBtn[53]) || (EventDialogControl() == gv_CharChooseWindowBtn[54]) || (EventDialogControl() == gv_CharChooseWindowBtn[55]) || (EventDialogControl() == gv_CharChooseWindowBtn[56]) || (EventDialogControl() == gv_CharChooseWindowBtn[57]) || (EventDialogControl() == gv_CharChooseWindowBtn[58]) || (EventDialogControl() == gv_CharChooseWindowBtn[59]) || (EventDialogControl() == gv_CharChooseWindowBtn[60]) || (EventDialogControl() == gv_CharChooseWindowBtn[61]) || (EventDialogControl() == gv_CharChooseWindowBtn[62]) || (EventDialogControl() == gv_CharChooseWindowBtn[63]) || (EventDialogControl() == gv_CharChooseWindowBtn[64]) || (EventDialogControl() == gv_CharChooseWindowBtn[65]) || (EventDialogControl() == gv_CharChooseWindowBtn[66]) || (EventDialogControl() == gv_CharChooseWindowBtn[67]) || (EventDialogControl() == gv_CharChooseWindowBtn[68]) || (EventDialogControl() == gv_CharChooseWindowBtn[69]) || (EventDialogControl() == gv_CharChooseWindowBtn[70]) || (EventDialogControl() == gv_CharChooseWindowBtn[71]) || (EventDialogControl() == gv_CharChooseWindowBtn[72])))) {
-            return false;
+        for (i = 0; i <= gv_TotalHeroNum; i += 1) {
+            // Checked all the hero buttons
+            if (i == gv_TotalHeroNum) {
+                return false;
+            }
+            if (EventDialogControl() == gv_CharChooseWindowBtn[i]) {
+                break;
+            }
         }
 
         if (!((gv_ReadyClickBoolean[EventPlayer()] == false))) {
