@@ -7548,13 +7548,18 @@ void gt_Tr8VoteScreenView_Init () {
 //--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ?????? ?????? - ?????? ??????
 //--------------------------------------------------------------------------------------------------
-static bool lf_CharacterNotChosen(int player_number) {
+static bool lf_CharacterAvailable(int player_number) {
     int i;
     for (i = 0; i < 4; i += 1) {
         if (gv_Team1CharNum[i] == gv_SelectedCharNum[player_number]) {
             return false;
         }
         if (gv_Team2CharNum[i] == gv_SelectedCharNum[player_number]) {
+            return false;
+        }
+    }
+    for (i = 0; i < 6; i += 1) {
+        if (gv_BannedCharNum[i] == gv_SelectedCharNum[player_number]) {
             return false;
         }
     }
@@ -7626,7 +7631,7 @@ static void lf_PlayerHeroChoice(int player_number) {
     if ((gv_SelectedCharNum[player_number] == 0)) {
         while ((flag > 0)) {
             gv_SelectedCharNum[player_number] = RandomInt(1, gv_TotalHeroNum);
-            if (lf_CharacterNotChosen(player_number)) {
+            if (lf_CharacterAvailable(player_number)) {
                 flag = 0;
                 if (team_number == 1) {
                     gv_Team1CharNum[player_index_in_team] = gv_SelectedCharNum[player_number];
