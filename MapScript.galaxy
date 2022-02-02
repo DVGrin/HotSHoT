@@ -40,6 +40,7 @@ struct HeroInfo {
     string image;
     int ability_resource;
     string levelup_upgrade;
+    text selection_tooltip;
 };
 
 struct PlayerStatistics {
@@ -578,11 +579,7 @@ void gf_HrHeroPassiveRepair ();
 void gf_HrStartBeforeCounterMake ();
 void gf_HrStartBeforeCounterMake2 ();
 void gf_HrStartBeforeCounterMake3 ();
-void gf_HrCharSelectDialogHeroBtnMake1 ();
-void gf_HrCharSelectDialogHeroBtnMake2 ();
-void gf_HrCharSelectDialogHeroBtnMake3 ();
-void gf_HrCharSelectDialogHeroBtnMake4 ();
-void gf_HrCharSelectDialogHeroBtnMake5 ();
+void gf_HrCharSelectDialogHeroBtnMake ();
 void gf_HrCharSelectDialogSpellBtnMake1 ();
 void gf_HrCharSelectDialogSpellBtnMake2 ();
 void gf_HrTeamSelectDialogMake ();
@@ -1130,523 +1127,1322 @@ void ShopInit() {
 }
 
 void HeroInfoInit() {
+    int i = 0;
+
+    
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     // Benderzone
-    gv_HeroInformation[0].image = "Assets\\Textures\\btn-unit-terran-tosh.dds";
-    gv_HeroInformation[0].unitname = "Tosh";
-    gv_HeroInformation[0].levelup_upgrade = "HeroLvUp";
-    gv_HeroInformation[0].name = StringExternal("Unit/Name/Tosh");
-    gv_HeroInformation[0].ability_resource = c_abilityResourceMana;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-tosh.dds";
+    gv_HeroInformation[i].unitname = "Tosh";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Tosh");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/2494C124");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Blane
-    gv_HeroInformation[1].image = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
-    gv_HeroInformation[1].unitname = "Zeratul";
-    gv_HeroInformation[1].levelup_upgrade = "HeroLvUp2";
-    gv_HeroInformation[1].name = StringExternal("Unit/Name/Zeratul");
-    gv_HeroInformation[1].ability_resource = c_abilityResourceNone;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protoss-zeratul.dds";
+    gv_HeroInformation[i].unitname = "Zeratul";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp2";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Zeratul");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/3CADB326");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceNone;
 
     // Gianter
-    gv_HeroInformation[2].image = "Assets\\Textures\\btn-unit-zerg-ultralisk.dds";
-    gv_HeroInformation[2].unitname = "Ultralisk";
-    gv_HeroInformation[2].levelup_upgrade = "HeroLvUp3";
-    gv_HeroInformation[2].name = StringExternal("Unit/Name/Ultralisk");
-    gv_HeroInformation[2].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-ultralisk.dds";
+    gv_HeroInformation[i].unitname = "Ultralisk";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp3";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Ultralisk");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/08DEC2A7");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Obos
-    gv_HeroInformation[3].image = "Assets\\Textures\\btn-unit-protoss-archon.dds";
-    gv_HeroInformation[3].unitname = "Archon";
-    gv_HeroInformation[3].levelup_upgrade = "HeroLvUp4";
-    gv_HeroInformation[3].name = StringExternal("Unit/Name/Archon");
-    gv_HeroInformation[3].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protoss-archon.dds";
+    gv_HeroInformation[i].unitname = "Archon";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp4";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Archon");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/B99391E7");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Xolus
-    gv_HeroInformation[4].image = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
-    gv_HeroInformation[4].unitname = "Hero5";
-    gv_HeroInformation[4].levelup_upgrade = "HeroLvUp22";
-    gv_HeroInformation[4].name = StringExternal("Unit/Name/Hero5");
-    gv_HeroInformation[4].ability_resource = c_abilityResourceNone;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protoss-tassadar.dds";
+    gv_HeroInformation[i].unitname = "Hero5";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp22";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero5");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/41DC308B");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceNone;
 
     // Edburn
-    gv_HeroInformation[5].image = "Assets\\AddIcon\\btn-hero6.dds";
-    gv_HeroInformation[5].unitname = "Hero6";
-    gv_HeroInformation[5].levelup_upgrade = "HeroLvUp5";
-    gv_HeroInformation[5].name = StringExternal("Unit/Name/Hero6");
-    gv_HeroInformation[5].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero6.dds";
+    gv_HeroInformation[i].unitname = "Hero6";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero6");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/6466DB4A");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Metel
-    gv_HeroInformation[6].image = "Assets\\Textures\\btn-unit-terran-medic.dds";
-    gv_HeroInformation[6].unitname = "Hero7";
-    gv_HeroInformation[6].levelup_upgrade = "HeroLvUp43";
-    gv_HeroInformation[6].name = StringExternal("Unit/Name/Hero7");
-    gv_HeroInformation[6].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-medic.dds";
+    gv_HeroInformation[i].unitname = "Hero7";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp43";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero7");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/9AA5AECB");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Jade
-    gv_HeroInformation[7].image = "Assets\\Textures\\btn-unit-terran-reaper.dds";
-    gv_HeroInformation[7].unitname = "Hero8";
-    gv_HeroInformation[7].levelup_upgrade = "HeroLvUp52";
-    gv_HeroInformation[7].name = StringExternal("Unit/Name/Hero8");
-    gv_HeroInformation[7].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-reaper.dds";
+    gv_HeroInformation[i].unitname = "Hero8";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero8");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/9748FA07");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Leinard
-    gv_HeroInformation[8].image = "Assets\\Textures\\btn-unit-terran-nova.dds";
-    gv_HeroInformation[8].unitname = "Hero9";
-    gv_HeroInformation[8].levelup_upgrade = "HeroLvUp9";
-    gv_HeroInformation[8].name = StringExternal("Unit/Name/Hero9");
-    gv_HeroInformation[8].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-nova.dds";
+    gv_HeroInformation[i].unitname = "Hero9";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp9";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero9");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/7CA18253");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Venom Bug
-    gv_HeroInformation[9].image = "Assets\\Textures\\btn-unit-zerg-baneling.dds";
-    gv_HeroInformation[9].unitname = "Hero10";
-    gv_HeroInformation[9].levelup_upgrade = "HeroLvUp522";
-    gv_HeroInformation[9].name = StringExternal("Unit/Name/Hero10");
-    gv_HeroInformation[9].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-baneling.dds";
+    gv_HeroInformation[i].unitname = "Hero10";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero10");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/95804919");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Galaxia
-    gv_HeroInformation[10].image = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
-    gv_HeroInformation[10].unitname = "Hero11";
-    gv_HeroInformation[10].levelup_upgrade = "HeroLvUp5222";
-    gv_HeroInformation[10].name = StringExternal("Unit/Name/Hero11");
-    gv_HeroInformation[10].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-kerrigan.dds";
+    gv_HeroInformation[i].unitname = "Hero11";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero11");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/5A3FD145");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Tangky
-    gv_HeroInformation[11].image = "Assets\\AddIcon\\btn-hero12.dds";
-    gv_HeroInformation[11].unitname = "Hero12";
-    gv_HeroInformation[11].levelup_upgrade = "HeroLvUp32";
-    gv_HeroInformation[11].name = StringExternal("Unit/Name/Hero12");
-    gv_HeroInformation[11].ability_resource = c_abilityResourceEnergy;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero12.dds";
+    gv_HeroInformation[i].unitname = "Hero12";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp32";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero12");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/7158C425");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceEnergy;
 
     // Pyron
-    gv_HeroInformation[12].image = "Assets\\AddIcon\\btn-hero13.dds";
-    gv_HeroInformation[12].unitname = "Hero13";
-    gv_HeroInformation[12].levelup_upgrade = "HeroLvUp33";
-    gv_HeroInformation[12].name = StringExternal("Unit/Name/Hero13");
-    gv_HeroInformation[12].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero13.dds";
+    gv_HeroInformation[i].unitname = "Hero13";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp33";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero13");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/8455CA56");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Magner
-    gv_HeroInformation[13].image = "Assets\\Textures\\btn-unit-terran-marauderswann.dds";
-    gv_HeroInformation[13].unitname = "Hero14";
-    gv_HeroInformation[13].levelup_upgrade = "HeroLvUp92";
-    gv_HeroInformation[13].name = StringExternal("Unit/Name/Hero14");
-    gv_HeroInformation[13].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-marauderswann.dds";
+    gv_HeroInformation[i].unitname = "Hero14";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp92";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero14");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/D9C3DF2D");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Moria
-    gv_HeroInformation[14].image = "Assets\\AddIcon\\btn-hero15.dds";
-    gv_HeroInformation[14].unitname = "Hero15";
-    gv_HeroInformation[14].levelup_upgrade = "HeroLvUp52222";
-    gv_HeroInformation[14].name = StringExternal("Unit/Name/Hero15");
-    gv_HeroInformation[14].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero15.dds";
+    gv_HeroInformation[i].unitname = "Hero15";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero15");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/55C50E51");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Niglos
-    gv_HeroInformation[15].image = "Assets\\Textures\\btn-unit-zerg-roach.dds";
-    gv_HeroInformation[15].unitname = "Hero16";
-    gv_HeroInformation[15].levelup_upgrade = "HeroLvUp52223";
-    gv_HeroInformation[15].name = StringExternal("Unit/Name/Hero16");
-    gv_HeroInformation[15].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-roach.dds";
+    gv_HeroInformation[i].unitname = "Hero16";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52223";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero16");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/AE11B399");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Kelro
-    gv_HeroInformation[16].image = "Assets\\Textures\\btn-unit-zerg-aberration.dds";
-    gv_HeroInformation[16].unitname = "Hero17";
-    gv_HeroInformation[16].levelup_upgrade = "HeroLvUp52224";
-    gv_HeroInformation[16].name = StringExternal("Unit/Name/Hero17");
-    gv_HeroInformation[16].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-aberration.dds";
+    gv_HeroInformation[i].unitname = "Hero17";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52224";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero17");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/B2BEFDCA");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Devola
-    gv_HeroInformation[17].image = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
-    gv_HeroInformation[17].unitname = "Hero18";
-    gv_HeroInformation[17].levelup_upgrade = "HeroLvUp52225";
-    gv_HeroInformation[17].name = StringExternal("Unit/Name/Hero18");
-    gv_HeroInformation[17].ability_resource = c_abilityResourceNone;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-xelnaga-viper.dds";
+    gv_HeroInformation[i].unitname = "Hero18";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52225";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero18");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/1878496C");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceNone;
 
     // Proward
-    gv_HeroInformation[18].image = "Assets\\AddIcon\\btn-hero19.dds";
-    gv_HeroInformation[18].unitname = "Hero19";
-    gv_HeroInformation[18].levelup_upgrade = "HeroLvUp52226";
-    gv_HeroInformation[18].name = StringExternal("Unit/Name/Hero19");
-    gv_HeroInformation[18].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero19.dds";
+    gv_HeroInformation[i].unitname = "Hero19";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52226";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero19");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/1B2F1AB7");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Netero
-    gv_HeroInformation[19].image = "Assets\\Textures\\btn-unit-protoss-darktemplar.dds";
-    gv_HeroInformation[19].unitname = "Hero20";
-    gv_HeroInformation[19].levelup_upgrade = "HeroLvUp52227";
-    gv_HeroInformation[19].name = StringExternal("Unit/Name/Hero20");
-    gv_HeroInformation[19].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protoss-darktemplar.dds";
+    gv_HeroInformation[i].unitname = "Hero20";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52227";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero20");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/8717D8EE");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Celin
-    gv_HeroInformation[20].image = "Assets\\AddIcon\\btn-hero21.dds";
-    gv_HeroInformation[20].unitname = "Hero21";
-    gv_HeroInformation[20].levelup_upgrade = "HeroLvUp332";
-    gv_HeroInformation[20].name = StringExternal("Unit/Name/Hero21");
-    gv_HeroInformation[20].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero21.dds";
+    gv_HeroInformation[i].unitname = "Hero21";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp332";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero21");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/74C4A260");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Land Baron
-    gv_HeroInformation[21].image = "Assets\\Textures\\btn-unit-terran-thor.dds";
-    gv_HeroInformation[21].unitname = "Hero22";
-    gv_HeroInformation[21].levelup_upgrade = "HeroLvUp52228";
-    gv_HeroInformation[21].name = StringExternal("Unit/Name/Hero22");
-    gv_HeroInformation[21].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-thor.dds";
+    gv_HeroInformation[i].unitname = "Hero22";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52228";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero22");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/3B94E9B5");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Garp
-    gv_HeroInformation[22].image = "Assets\\AddIcon\\btn-hero23.dds";
-    gv_HeroInformation[22].unitname = "Hero23";
-    gv_HeroInformation[22].levelup_upgrade = "HeroLvUp522232";
-    gv_HeroInformation[22].name = StringExternal("Unit/Name/Hero23");
-    gv_HeroInformation[22].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero23.dds";
+    gv_HeroInformation[i].unitname = "Hero23";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522232";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero23");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/92BE3943");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Kaion
-    gv_HeroInformation[23].image = "Assets\\AddIcon\\btn-hero24.dds";
-    gv_HeroInformation[23].unitname = "Hero24";
-    gv_HeroInformation[23].levelup_upgrade = "HeroLvUp523";
-    gv_HeroInformation[23].name = StringExternal("Unit/Name/Hero24");
-    gv_HeroInformation[23].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero24.dds";
+    gv_HeroInformation[i].unitname = "Hero24";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp523";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero24");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/A4BD21B2");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Basilisk
-    gv_HeroInformation[24].image = "Assets\\Textures\\btn-unit-zerg-hydralisk.dds";
-    gv_HeroInformation[24].unitname = "Hero25";
-    gv_HeroInformation[24].levelup_upgrade = "HeroLvUp5223";
-    gv_HeroInformation[24].name = StringExternal("Unit/Name/Hero25");
-    gv_HeroInformation[24].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-hydralisk.dds";
+    gv_HeroInformation[i].unitname = "Hero25";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5223";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero25");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/39037900");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Michael
-    gv_HeroInformation[25].image = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
-    gv_HeroInformation[25].unitname = "Hero26";
-    gv_HeroInformation[25].levelup_upgrade = "HeroLvUp432";
-    gv_HeroInformation[25].name = StringExternal("Unit/Name/Hero26");
-    gv_HeroInformation[25].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-medicstetmann.dds";
+    gv_HeroInformation[i].unitname = "Hero26";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp432";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero26");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/E505BA23");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Kerberos
-    gv_HeroInformation[26].image = "Assets\\Textures\\btn-unit-terran-predator.dds";
-    gv_HeroInformation[26].unitname = "Hero27";
-    gv_HeroInformation[26].levelup_upgrade = "HeroLvUp322";
-    gv_HeroInformation[26].name = StringExternal("Unit/Name/Hero27");
-    gv_HeroInformation[26].ability_resource = c_abilityResourceEnergy;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-predator.dds";
+    gv_HeroInformation[i].unitname = "Hero27";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp322";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero27");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/18E8773C");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceEnergy;
 
     // Duke
-    gv_HeroInformation[27].image = "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds";
-    gv_HeroInformation[27].unitname = "Hero28";
-    gv_HeroInformation[27].levelup_upgrade = "HeroLvUp522233";
-    gv_HeroInformation[27].name = StringExternal("Unit/Name/Hero28");
-    gv_HeroInformation[27].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds";
+    gv_HeroInformation[i].unitname = "Hero28";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522233";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero28");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/907E3D24");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Neherenia
-    gv_HeroInformation[28].image = "Assets\\Textures\\btn-unit-zerg-queen.dds";
-    gv_HeroInformation[28].unitname = "Hero29";
-    gv_HeroInformation[28].levelup_upgrade = "HeroLvUp522272";
-    gv_HeroInformation[28].name = StringExternal("Unit/Name/Hero29");
-    gv_HeroInformation[28].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-queen.dds";
+    gv_HeroInformation[i].unitname = "Hero29";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522272";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero29");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/CE0B43F5");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Xion
-    gv_HeroInformation[29].image = "Assets\\AddIcon\\btn-hero30.dds";
-    gv_HeroInformation[29].unitname = "Hero30";
-    gv_HeroInformation[29].levelup_upgrade = "HeroLvUp3322";
-    gv_HeroInformation[29].name = StringExternal("Unit/Name/Hero30");
-    gv_HeroInformation[29].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero30.dds";
+    gv_HeroInformation[i].unitname = "Hero30";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp3322";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero30");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/532D16E6");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Bloodius
-    gv_HeroInformation[30].image = "Assets\\AddIcon\\btn-hero31.dds";
-    gv_HeroInformation[30].unitname = "Hero31";
-    gv_HeroInformation[30].levelup_upgrade = "HeroLvUp5224";
-    gv_HeroInformation[30].name = StringExternal("Unit/Name/Hero31");
-    gv_HeroInformation[30].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero31.dds";
+    gv_HeroInformation[i].unitname = "Hero31";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5224";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero31");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/C5529E37");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Galvaron
-    gv_HeroInformation[31].image = "Assets\\Textures\\btn-unit-zerg-zergling.dds";
-    gv_HeroInformation[31].unitname = "Hero32";
-    gv_HeroInformation[31].levelup_upgrade = "HeroLvUp52229";
-    gv_HeroInformation[31].name = StringExternal("Unit/Name/Hero32");
-    gv_HeroInformation[31].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-zergling.dds";
+    gv_HeroInformation[i].unitname = "Hero32";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52229";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero32");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/B880D41C");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Jernigan
-    gv_HeroInformation[32].image = "Assets\\Textures\\btn-unit-rifleman.dds";
-    gv_HeroInformation[32].unitname = "Hero33";
-    gv_HeroInformation[32].levelup_upgrade = "HeroLvUp34";
-    gv_HeroInformation[32].name = StringExternal("Unit/Name/Hero33");
-    gv_HeroInformation[32].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-rifleman.dds";
+    gv_HeroInformation[i].unitname = "Hero33";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp34";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero33");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/BEDAB7D4");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Choros
-    gv_HeroInformation[33].image = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
-    gv_HeroInformation[33].unitname = "Hero34";
-    gv_HeroInformation[33].levelup_upgrade = "HeroLvUp5232";
-    gv_HeroInformation[33].name = StringExternal("Unit/Name/Hero34");
-    gv_HeroInformation[33].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-infestor.dds";
+    gv_HeroInformation[i].unitname = "Hero34";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5232";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero34");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/A43FE6A8");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Soul Kaiser
-    gv_HeroInformation[34].image = "Assets\\Textures\\btn-unit-protos-soulhunter.dds";
-    gv_HeroInformation[34].unitname = "Hero35";
-    gv_HeroInformation[34].levelup_upgrade = "HeroLvUp3323";
-    gv_HeroInformation[34].name = StringExternal("Unit/Name/Hero35");
-    gv_HeroInformation[34].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protos-soulhunter.dds";
+    gv_HeroInformation[i].unitname = "Hero35";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp3323";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero35");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/12AE0B68");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Valkyria
-    gv_HeroInformation[35].image = "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds";
-    gv_HeroInformation[35].unitname = "Hero36";
-    gv_HeroInformation[35].levelup_upgrade = "HeroLvUp52232";
-    gv_HeroInformation[35].name = StringExternal("Unit/Name/Hero36");
-    gv_HeroInformation[35].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds";
+    gv_HeroInformation[i].unitname = "Hero36";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52232";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero36");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/7C82E900");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Elzard
-    gv_HeroInformation[36].image = "Assets\\AddIcon\\btn-hero37.dds";
-    gv_HeroInformation[36].unitname = "Hero37";
-    gv_HeroInformation[36].levelup_upgrade = "HeroLvUp222";
-    gv_HeroInformation[36].name = StringExternal("Unit/Name/Hero37");
-    gv_HeroInformation[36].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero37.dds";
+    gv_HeroInformation[i].unitname = "Hero37";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero37");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/BD931C19");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Warcorn
-    gv_HeroInformation[37].image = "Assets\\AddIcon\\btn-hero38.dds";
-    gv_HeroInformation[37].unitname = "Hero38";
-    gv_HeroInformation[37].levelup_upgrade = "HeroLvUp44";
-    gv_HeroInformation[37].name = StringExternal("Unit/Name/Hero38");
-    gv_HeroInformation[37].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero38.dds";
+    gv_HeroInformation[i].unitname = "Hero38";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp44";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero38");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/2D42F20D");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Dark Ray
-    gv_HeroInformation[38].image = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
-    gv_HeroInformation[38].unitname = "Hero39";
-    gv_HeroInformation[38].levelup_upgrade = "HeroLvUp522234";
-    gv_HeroInformation[38].name = StringExternal("Unit/Name/Hero39");
-    gv_HeroInformation[38].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-broodlord.dds";
+    gv_HeroInformation[i].unitname = "Hero39";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522234";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero39");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/E509E242");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Lecthor
-    gv_HeroInformation[39].image = "Assets\\AddIcon\\btn-hero40.dds";
-    gv_HeroInformation[39].unitname = "Hero40";
-    gv_HeroInformation[39].levelup_upgrade = "HeroLvUp93";
-    gv_HeroInformation[39].name = StringExternal("Unit/Name/Hero40");
-    gv_HeroInformation[39].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero40.dds";
+    gv_HeroInformation[i].unitname = "Hero40";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp93";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero40");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/999838A0");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Haemosu
-    gv_HeroInformation[40].image = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
-    gv_HeroInformation[40].unitname = "Hero41";
-    gv_HeroInformation[40].levelup_upgrade = "HeroLvUp522262";
-    gv_HeroInformation[40].name = StringExternal("Unit/Name/Hero41");
-    gv_HeroInformation[40].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
+    gv_HeroInformation[i].unitname = "Hero41";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522262";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero41");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/5C821AB5");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Hera
-    gv_HeroInformation[41].image = "Assets\\AddIcon\\btn-hero42.dds";
-    gv_HeroInformation[41].unitname = "Hero42";
-    gv_HeroInformation[41].levelup_upgrade = "HeroLvUp5222622";
-    gv_HeroInformation[41].name = StringExternal("Unit/Name/Hero42");
-    gv_HeroInformation[41].ability_resource = c_abilityResourceNone;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero42.dds";
+    gv_HeroInformation[i].unitname = "Hero42";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222622";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero42");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/4B47610B");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceNone;
 
     // Zonda
-    gv_HeroInformation[42].image = "Assets\\AddIcon\\btn-hero43.dds";
-    gv_HeroInformation[42].unitname = "Hero43";
-    gv_HeroInformation[42].levelup_upgrade = "HeroLvUp342";
-    gv_HeroInformation[42].name = StringExternal("Unit/Name/Hero43");
-    gv_HeroInformation[42].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero43.dds";
+    gv_HeroInformation[i].unitname = "Hero43";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp342";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero43");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/82A0CD73");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Liria
-    gv_HeroInformation[43].image = "Assets\\AddIcon\\btn-hero44.dds";
-    gv_HeroInformation[43].unitname = "Hero44";
-    gv_HeroInformation[43].levelup_upgrade = "HeroLvUp932";
-    gv_HeroInformation[43].name = StringExternal("Unit/Name/Hero44");
-    gv_HeroInformation[43].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero44.dds";
+    gv_HeroInformation[i].unitname = "Hero44";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp932";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero44");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/9C88A981");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Jelquus
-    gv_HeroInformation[44].image = "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds";
-    gv_HeroInformation[44].unitname = "Hero45";
-    gv_HeroInformation[44].levelup_upgrade = "HeroLvUp524";
-    gv_HeroInformation[44].name = StringExternal("Unit/Name/Hero45");
-    gv_HeroInformation[44].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds";
+    gv_HeroInformation[i].unitname = "Hero45";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp524";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero45");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/132BAF62");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Shuirin
-    gv_HeroInformation[45].image = "Assets\\AddIcon\\btn-hero46.dds";
-    gv_HeroInformation[45].unitname = "Hero46";
-    gv_HeroInformation[45].levelup_upgrade = "HeroLvUp3324";
-    gv_HeroInformation[45].name = StringExternal("Unit/Name/Hero46");
-    gv_HeroInformation[45].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero46.dds";
+    gv_HeroInformation[i].unitname = "Hero46";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp3324";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero46");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/064F4967");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Govan
-    gv_HeroInformation[46].image = "Assets\\AddIcon\\btn-hero47.dds";
-    gv_HeroInformation[46].unitname = "Hero47";
-    gv_HeroInformation[46].levelup_upgrade = "HeroLvUp5222322";
-    gv_HeroInformation[46].name = StringExternal("Unit/Name/Hero47");
-    gv_HeroInformation[46].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero47.dds";
+    gv_HeroInformation[i].unitname = "Hero47";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222322";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero47");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/2873890B");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Bay Arc
-    gv_HeroInformation[47].image = "Assets\\Textures\\btn-unit-protoss-colossus.dds";
-    gv_HeroInformation[47].unitname = "Hero48";
-    gv_HeroInformation[47].levelup_upgrade = "HeroLvUp5225";
-    gv_HeroInformation[47].name = StringExternal("Unit/Name/Hero48");
-    gv_HeroInformation[47].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-protoss-colossus.dds";
+    gv_HeroInformation[i].unitname = "Hero48";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5225";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero48");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/DE70428C");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Deken
-    gv_HeroInformation[48].image = "Assets\\AddIcon\\btn-hero49.dds";
-    gv_HeroInformation[48].unitname = "Hero49";
-    gv_HeroInformation[48].levelup_upgrade = "HeroLvUp5222342";
-    gv_HeroInformation[48].name = StringExternal("Unit/Name/Hero49");
-    gv_HeroInformation[48].ability_resource = c_abilityResourceEnergy;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero49.dds";
+    gv_HeroInformation[i].unitname = "Hero49";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222342";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero49");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/42998C10");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceEnergy;
 
     // Zero
-    gv_HeroInformation[49].image = "Assets\\AddIcon\\btn-hero50.dds";
-    gv_HeroInformation[49].unitname = "Hero50";
-    gv_HeroInformation[49].levelup_upgrade = "HeroLvUp5242";
-    gv_HeroInformation[49].name = StringExternal("Unit/Name/Hero50");
-    gv_HeroInformation[49].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero50.dds";
+    gv_HeroInformation[i].unitname = "Hero50";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5242";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero50");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/EC0E1493");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Sibarun
-    gv_HeroInformation[50].image = "Assets\\AddIcon\\btn-hero51.dds";
-    gv_HeroInformation[50].unitname = "Hero51";
-    gv_HeroInformation[50].levelup_upgrade = "HeroLvUp33222";
-    gv_HeroInformation[50].name = StringExternal("Unit/Name/Hero51");
-    gv_HeroInformation[50].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero51.dds";
+    gv_HeroInformation[i].unitname = "Hero51";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp33222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero51");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/BF089656");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Daisy
-    gv_HeroInformation[51].image = "Assets\\AddIcon\\btn-hero52.dds";
-    gv_HeroInformation[51].unitname = "Hero52";
-    gv_HeroInformation[51].levelup_upgrade = "HeroLvUp52223422";
-    gv_HeroInformation[51].name = StringExternal("Unit/Name/Hero52");
-    gv_HeroInformation[51].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero52.dds";
+    gv_HeroInformation[i].unitname = "Hero52";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52223422";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero52");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/3EC1BF6D");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Glan
-    gv_HeroInformation[52].image = "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds";
-    gv_HeroInformation[52].unitname = "Hero53";
-    gv_HeroInformation[52].levelup_upgrade = "HeroLvUp52223222";
-    gv_HeroInformation[52].name = StringExternal("Unit/Name/Hero53");
-    gv_HeroInformation[52].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds";
+    gv_HeroInformation[i].unitname = "Hero53";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52223222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero53");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/3700BB02");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Voltma
-    gv_HeroInformation[53].image = "Assets\\AddIcon\\btn-hero54.dds";
-    gv_HeroInformation[53].unitname = "Hero54";
-    gv_HeroInformation[53].levelup_upgrade = "HeroLvUp6";
-    gv_HeroInformation[53].name = StringExternal("Unit/Name/Hero54");
-    gv_HeroInformation[53].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero54.dds";
+    gv_HeroInformation[i].unitname = "Hero54";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp6";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero54");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/CE13BE6F");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Bax
-    gv_HeroInformation[54].image = "Assets\\AddIcon\\btn-hero55.dds";
-    gv_HeroInformation[54].unitname = "Hero55";
-    gv_HeroInformation[54].levelup_upgrade = "HeroLvUp522322";
-    gv_HeroInformation[54].name = StringExternal("Unit/Name/Hero55");
-    gv_HeroInformation[54].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero55.dds";
+    gv_HeroInformation[i].unitname = "Hero55";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522322";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero55");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/DD93132A");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Grunt
-    gv_HeroInformation[55].image = "Assets\\AddIcon\\btn-hero56.dds";
-    gv_HeroInformation[55].unitname = "Hero56";
-    gv_HeroInformation[55].levelup_upgrade = "HeroLvUp522232222";
-    gv_HeroInformation[55].name = StringExternal("Unit/Name/Hero56");
-    gv_HeroInformation[55].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero56.dds";
+    gv_HeroInformation[i].unitname = "Hero56";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522232222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero56");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/133EDE5E");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Lene
-    gv_HeroInformation[56].image = "Assets\\AddIcon\\btn-hero57.dds";
-    gv_HeroInformation[56].unitname = "Hero57";
-    gv_HeroInformation[56].levelup_upgrade = "HeroLvUp33242";
-    gv_HeroInformation[56].name = StringExternal("Unit/Name/Hero57");
-    gv_HeroInformation[56].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero57.dds";
+    gv_HeroInformation[i].unitname = "Hero57";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp33242";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero57");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/E71AFA18");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Jango
-    gv_HeroInformation[57].image = "Assets\\AddIcon\\btn-hero58.dds";
-    gv_HeroInformation[57].unitname = "Hero58";
-    gv_HeroInformation[57].levelup_upgrade = "HeroLvUp35";
-    gv_HeroInformation[57].name = StringExternal("Unit/Name/Hero58");
-    gv_HeroInformation[57].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero58.dds";
+    gv_HeroInformation[i].unitname = "Hero58";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp35";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero58");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/AAA3638A");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Burndress
-    gv_HeroInformation[58].image = "Assets\\AddIcon\\btn-hero59.dds";
-    gv_HeroInformation[58].unitname = "Hero59";
-    gv_HeroInformation[58].levelup_upgrade = "HeroLvUp5223222";
-    gv_HeroInformation[58].name = StringExternal("Unit/Name/Hero59");
-    gv_HeroInformation[58].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero59.dds";
+    gv_HeroInformation[i].unitname = "Hero59";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5223222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero59");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/7F1D3CCC");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Bison
-    gv_HeroInformation[59].image = "Assets\\AddIcon\\btn-hero60.dds";
-    gv_HeroInformation[59].unitname = "Hero60";
-    gv_HeroInformation[59].levelup_upgrade = "HeroLvUp52233";
-    gv_HeroInformation[59].name = StringExternal("Unit/Name/Hero60");
-    gv_HeroInformation[59].ability_resource = c_abilityResourceHeat;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero60.dds";
+    gv_HeroInformation[i].unitname = "Hero60";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52233";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero60");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/F1852CE0");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceHeat;
 
     // Musashi
-    gv_HeroInformation[60].image = "Assets\\AddIcon\\btn-hero61.dds";
-    gv_HeroInformation[60].unitname = "Hero61";
-    gv_HeroInformation[60].levelup_upgrade = "HeroLvUp433";
-    gv_HeroInformation[60].name = StringExternal("Unit/Name/Hero61");
-    gv_HeroInformation[60].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero61.dds";
+    gv_HeroInformation[i].unitname = "Hero61";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp433";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero61");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/32ED0183");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Daboto
-    gv_HeroInformation[61].image = "Assets\\AddIcon\\btn-hero62.dds";
-    gv_HeroInformation[61].unitname = "Hero62";
-    gv_HeroInformation[61].levelup_upgrade = "HeroLvUp2222";
-    gv_HeroInformation[61].name = StringExternal("Unit/Name/Hero62");
-    gv_HeroInformation[61].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero62.dds";
+    gv_HeroInformation[i].unitname = "Hero62";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp2222";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero62");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/8293832A");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Galleon
-    gv_HeroInformation[62].image = "Assets\\AddIcon\\btn-hero63.dds";
-    gv_HeroInformation[62].unitname = "Hero63";
-    gv_HeroInformation[62].levelup_upgrade = "HeroLvUp522292";
-    gv_HeroInformation[62].name = StringExternal("Unit/Name/Hero63");
-    gv_HeroInformation[62].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero63.dds";
+    gv_HeroInformation[i].unitname = "Hero63";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp522292";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero63");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/8B98AB21");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Wiz
-    gv_HeroInformation[63].image = "Assets\\AddIcon\\btn-hero64.dds";
-    gv_HeroInformation[63].unitname = "Hero64";
-    gv_HeroInformation[63].levelup_upgrade = "HeroLvUp442";
-    gv_HeroInformation[63].name = StringExternal("Unit/Name/Hero64");
-    gv_HeroInformation[63].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero64.dds";
+    gv_HeroInformation[i].unitname = "Hero64";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp442";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero64");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/D869F3D6");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Mordin
-    gv_HeroInformation[64].image = "Assets\\AddIcon\\btn-hero65.dds";
-    gv_HeroInformation[64].unitname = "Hero65";
-    gv_HeroInformation[64].levelup_upgrade = "HeroLvUp434";
-    gv_HeroInformation[64].name = StringExternal("Unit/Name/Hero65");
-    gv_HeroInformation[64].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero65.dds";
+    gv_HeroInformation[i].unitname = "Hero65";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp434";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero65");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/037DA826");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Demol
-    gv_HeroInformation[65].image = "Assets\\AddIcon\\btn-hero66.dds";
-    gv_HeroInformation[65].unitname = "Hero66";
-    gv_HeroInformation[65].levelup_upgrade = "HeroLvUp5222332";
-    gv_HeroInformation[65].name = StringExternal("Unit/Name/Hero66");
-    gv_HeroInformation[65].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero66.dds";
+    gv_HeroInformation[i].unitname = "Hero66";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222332";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero66");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/3C2AF12A");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Desilba
-    gv_HeroInformation[66].image = "Assets\\AddIcon\\btn-hero67.dds";
-    gv_HeroInformation[66].unitname = "Hero67";
-    gv_HeroInformation[66].levelup_upgrade = "HeroLvUp5222333";
-    gv_HeroInformation[66].name = StringExternal("Unit/Name/Hero67");
-    gv_HeroInformation[66].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero67.dds";
+    gv_HeroInformation[i].unitname = "Hero67";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222333";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero67");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/6FAECD8C");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Sieger
-    gv_HeroInformation[67].image = "Assets\\AddIcon\\btn-hero68.dds";
-    gv_HeroInformation[67].unitname = "Hero68";
-    gv_HeroInformation[67].levelup_upgrade = "HeroLvUp33223";
-    gv_HeroInformation[67].name = StringExternal("Unit/Name/Hero68");
-    gv_HeroInformation[67].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero68.dds";
+    gv_HeroInformation[i].unitname = "Hero68";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp33223";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero68");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/5F126115");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Margon
-    gv_HeroInformation[68].image = "Assets\\AddIcon\\btn-hero69.dds";
-    gv_HeroInformation[68].unitname = "Hero69";
-    gv_HeroInformation[68].levelup_upgrade = "HeroLvUp4322";
-    gv_HeroInformation[68].name = StringExternal("Unit/Name/Hero69");
-    gv_HeroInformation[68].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero69.dds";
+    gv_HeroInformation[i].unitname = "Hero69";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp4322";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero69");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/29858E35");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Drager
-    gv_HeroInformation[69].image = "Assets\\AddIcon\\btn-hero70.dds";
-    gv_HeroInformation[69].unitname = "Hero70";
-    gv_HeroInformation[69].levelup_upgrade = "HeroLvUp933";
-    gv_HeroInformation[69].name = StringExternal("Unit/Name/Hero70");
-    gv_HeroInformation[69].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero70.dds";
+    gv_HeroInformation[i].unitname = "Hero70";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp933";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero70");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/5AECD57D");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Lucifer
-    gv_HeroInformation[70].image = "Assets\\AddIcon\\btn-hero71.dds";
-    gv_HeroInformation[70].unitname = "Hero71";
-    gv_HeroInformation[70].levelup_upgrade = "HeroLvUp5222334";
-    gv_HeroInformation[70].name = StringExternal("Unit/Name/Hero71");
-    gv_HeroInformation[70].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero71.dds";
+    gv_HeroInformation[i].unitname = "Hero71";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp5222334";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero71");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/F920FBAE");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Eren
-    gv_HeroInformation[71].image = "Assets\\AddIcon\\btn-hero72.dds";
-    gv_HeroInformation[71].unitname = "Hero72";
-    gv_HeroInformation[71].levelup_upgrade = "Hero72Levelup";
-    gv_HeroInformation[71].name = StringExternal("Unit/Name/Hero72");
-    gv_HeroInformation[71].ability_resource = c_abilityResourceNone;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero72.dds";
+    gv_HeroInformation[i].unitname = "Hero72";
+    gv_HeroInformation[i].levelup_upgrade = "Hero72Levelup";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero72");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/DC59CFAB");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceNone;
 
     // Luna
-    gv_HeroInformation[72].image = "Assets\\AddIcon\\btn-hero73.dds";
-    gv_HeroInformation[72].unitname = "Hero73";
-    gv_HeroInformation[72].levelup_upgrade = "HeroLvUp4422";
-    gv_HeroInformation[72].name = StringExternal("Unit/Name/Hero73");
-    gv_HeroInformation[72].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero73.dds";
+    gv_HeroInformation[i].unitname = "Hero73";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp4422";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero73");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Param/Value/5BAB177E");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 
     // Hero74
-    gv_HeroInformation[73].image = "Assets\\AddIcon\\btn-hero73.dds";
-    gv_HeroInformation[73].unitname = "Hero74";
-    gv_HeroInformation[73].levelup_upgrade = "HeroLvUp52322";
-    gv_HeroInformation[73].name = StringExternal("Unit/Name/Hero74");
-    gv_HeroInformation[73].ability_resource = c_abilityResourceMana;
+    i += 1;
+    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero73.dds";
+    gv_HeroInformation[i].unitname = "Hero74";
+    gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52322";
+    gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero74");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("Unit/Name/Hero74");
+    gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 }
 
 void SkillsInit() {
@@ -5857,7 +6653,6 @@ void gf_HrStartBeforeCounterMake3 () {
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/E0E1A27E") + TextWithColor(StringExternal("Param/Value/96D4980E"), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/7AD502C2")), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
     gv_CharChooseDialogLabel[0] = DialogControlLastCreated();
-    gf_HrCharSelectDialogHeroBtnMake1();
     DialogCreate(685, 455, c_anchorCenter, 0, -123, true);
     gv_CharChooseDialog[3] = DialogLastCreated();
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 685, 455, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_armory_text_outerframe.dds", c_triggerImageTypeHorizontalBorder, false, Color(0.00, 50.20, 100.00), c_triggerBlendModeNormal);
@@ -5871,7 +6666,6 @@ void gf_HrStartBeforeCounterMake3 () {
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/FB5D33D4") + TextWithColor(StringExternal("Param/Value/0D37E18B"), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/146229BA")), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
     gv_CharChooseDialogLabel[3] = DialogControlLastCreated();
-    gf_HrCharSelectDialogHeroBtnMake2();
     DialogCreate(685, 455, c_anchorCenter, 0, -123, true);
     gv_CharChooseDialog[5] = DialogLastCreated();
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 685, 455, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_armory_text_outerframe.dds", c_triggerImageTypeHorizontalBorder, false, Color(0.00, 50.20, 100.00), c_triggerBlendModeNormal);
@@ -5885,7 +6679,6 @@ void gf_HrStartBeforeCounterMake3 () {
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/69AAADF8") + TextWithColor(StringExternal("Param/Value/04DF2E8C"), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/34C3F65A")), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
     gv_CharChooseDialogLabel[4] = DialogControlLastCreated();
-    gf_HrCharSelectDialogHeroBtnMake3();
     DialogCreate(685, 455, c_anchorCenter, 0, -123, true);
     gv_CharChooseDialog[6] = DialogLastCreated();
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 685, 455, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_armory_text_outerframe.dds", c_triggerImageTypeHorizontalBorder, false, Color(0.00, 50.20, 100.00), c_triggerBlendModeNormal);
@@ -5899,7 +6692,6 @@ void gf_HrStartBeforeCounterMake3 () {
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/87951378") + TextWithColor(StringExternal("Param/Value/443D63A6"), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/D7947AF7")), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
     gv_CharChooseDialogLabel[5] = DialogControlLastCreated();
-    gf_HrCharSelectDialogHeroBtnMake4();
     DialogCreate(685, 455, c_anchorCenter, 0, -123, true);
     gv_CharChooseDialog[7] = DialogLastCreated();
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 685, 455, c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_armory_text_outerframe.dds", c_triggerImageTypeHorizontalBorder, false, Color(0.00, 50.20, 100.00), c_triggerBlendModeNormal);
@@ -5913,7 +6705,8 @@ void gf_HrStartBeforeCounterMake3 () {
     libNtve_gf_SetDialogItemText(DialogControlLastCreated(), (StringExternal("Param/Value/782A238D") + TextWithColor(StringExternal("Param/Value/62B9222C"), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/BB63803C")), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "SecurityButton", PlayerGroupAll());
     gv_CharChooseDialogLabel[6] = DialogControlLastCreated();
-    gf_HrCharSelectDialogHeroBtnMake5();
+    gf_HrCharSelectDialogHeroBtnMake();
+
     DialogCreate(685, 100, c_anchorCenter, 0, 70, true);
     gv_CharChooseDialog[4] = DialogLastCreated();
     DialogSetImageVisible(gv_CharChooseDialog[4], false);
@@ -5981,570 +6774,121 @@ void gf_HrStartBeforeCounterMake3 () {
     gf_HrCharSelectDialogSpellBtnMake2();
 }
 
-void gf_HrCharSelectDialogHeroBtnMake1 () {
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/2494C124"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 40, 90, StringToText(""), "Assets\\Textures\\btn-unit-terran-tosh.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 135, 80, StringExternal("Param/Value/3CADB326"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 145, 90, StringToText(""), "Assets\\Textures\\btn-unit-protoss-zeratul.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 240, 80, StringExternal("Param/Value/08DEC2A7"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 250, 90, StringToText(""), "Assets\\Textures\\btn-unit-zerg-ultralisk.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 345, 80, StringExternal("Param/Value/B99391E7"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[3] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 355, 90, StringToText(""), "Assets\\Textures\\btn-unit-protoss-archon.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[3] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 450, 80, StringExternal("Param/Value/41DC308B"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[4] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 460, 90, StringToText(""), "Assets\\Textures\\btn-unit-protoss-tassadar.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[4] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 555, 80, StringExternal("Param/Value/6466DB4A"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[5] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), "Assets\\AddIcon\\btn-hero6.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[5] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 30, 180, StringExternal("Param/Value/9AA5AECB"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[6] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 40, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-medic.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[6] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 135, 180, StringExternal("Param/Value/9748FA07"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[7] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 145, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-reaper.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[7] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 240, 180, StringExternal("Param/Value/7CA18253"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[8] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 250, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-nova.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[8] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 345, 180, StringExternal("Param/Value/95804919"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[9] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 355, 190, StringToText(""), "Assets\\Textures\\btn-unit-zerg-baneling.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[9] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 450, 180, StringExternal("Param/Value/5A3FD145"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[10] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 460, 190, StringToText(""), "Assets\\Textures\\btn-unit-zerg-kerrigan.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[10] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 555, 180, StringExternal("Param/Value/7158C425"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[11] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 565, 190, StringToText(""), "Assets\\AddIcon\\btn-hero12.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[11] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 30, 280, StringExternal("Param/Value/8455CA56"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[12] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 40, 290, StringToText(""), "Assets\\AddIcon\\btn-hero13.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[12] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 135, 280, StringExternal("Param/Value/D9C3DF2D"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[13] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 145, 290, StringToText(""), "Assets\\Textures\\btn-unit-terran-marauderswann.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[13] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 240, 280, StringExternal("Param/Value/55C50E51"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[14] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 250, 290, StringToText(""), "Assets\\AddIcon\\btn-hero15.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[14] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 345, 280, StringExternal("Param/Value/AE11B399"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[15] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 355, 290, StringToText(""), "Assets\\Textures\\btn-unit-zerg-roach.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[15] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 450, 280, StringExternal("Param/Value/B2BEFDCA"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[16] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 460, 290, StringToText(""), "Assets\\Textures\\btn-unit-zerg-aberration.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[16] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[0], 100, 100, c_anchorTopLeft, 555, 280, StringExternal("Param/Value/7ABB05AB"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowRandomBtn[0] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[0], 80, 80, c_anchorTopLeft, 565, 290, StringToText(""), "Assets\\Textures\\btn-tips-tutorial.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowRandomImage[0] = DialogControlLastCreated();
-}
+void gf_HrCharSelectDialogHeroBtnMake () {
+    int i;
+    int x = 0; int y = 0;
+    int page = 0;
+    int x_start = 30;
+    int x_step = 105;
+    int y_start = 80;
+    int y_step = 100;
 
-void gf_HrCharSelectDialogHeroBtnMake2 () {
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/1878496C"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[17] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 40, 90, StringToText(""), "Assets\\Textures\\btn-unit-xelnaga-viper.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[17] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 135, 80, StringExternal("Param/Value/1B2F1AB7"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[18] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 145, 90, StringToText(""), "Assets\\AddIcon\\btn-hero19.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[18] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 240, 80, StringExternal("Param/Value/8717D8EE"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[19] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 250, 90, StringToText(""), "Assets\\Textures\\btn-unit-protoss-darktemplar.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[19] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 345, 80, StringExternal("Param/Value/74C4A260"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[20] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 355, 90, StringToText(""), "Assets\\AddIcon\\btn-hero21.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[20] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 450, 80, StringExternal("Param/Value/3B94E9B5"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[21] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 460, 90, StringToText(""), "Assets\\Textures\\btn-unit-terran-thor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[21] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 555, 80, StringExternal("Param/Value/92BE3943"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[22] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), "Assets\\AddIcon\\btn-hero23.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[22] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 30, 180, StringExternal("Param/Value/A4BD21B2"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[23] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 40, 190, StringToText(""), "Assets\\AddIcon\\btn-hero24.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[23] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 135, 180, StringExternal("Param/Value/39037900"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[24] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 145, 190, StringToText(""), "Assets\\Textures\\btn-unit-zerg-hydralisk.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[24] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 240, 180, StringExternal("Param/Value/E505BA23"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[25] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 250, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-medicstetmann.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[25] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 345, 180, StringExternal("Param/Value/18E8773C"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[26] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 355, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-predator.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[26] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 450, 180, StringExternal("Param/Value/907E3D24"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[27] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 460, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-firebatmercenary.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[27] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 555, 180, StringExternal("Param/Value/CE0B43F5"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[28] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 565, 190, StringToText(""), "Assets\\Textures\\btn-unit-zerg-queen.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[28] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 30, 280, StringExternal("Param/Value/532D16E6"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[29] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 40, 290, StringToText(""), "Assets\\AddIcon\\btn-hero30.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[29] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 135, 280, StringExternal("Param/Value/C5529E37"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[30] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 145, 290, StringToText(""), "Assets\\AddIcon\\btn-hero31.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[30] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 240, 280, StringExternal("Param/Value/B880D41C"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[31] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 90, 90, c_anchorTopLeft, 245, 285, StringToText(""), "Assets\\Textures\\btn-unit-zerg-zergling.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[31] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 345, 280, StringExternal("Param/Value/BEDAB7D4"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[32] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 90, 90, c_anchorTopLeft, 350, 285, StringToText(""), "Assets\\Textures\\btn-unit-rifleman.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[32] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 450, 280, StringExternal("Param/Value/A43FE6A8"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[33] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 460, 290, StringToText(""), "Assets\\Textures\\btn-unit-zerg-infestor.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[33] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[3], 100, 100, c_anchorTopLeft, 555, 280, StringExternal("Param/Value/1B3FDE96"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowRandomBtn[1] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[3], 80, 80, c_anchorTopLeft, 565, 290, StringToText(""), "Assets\\Textures\\btn-tips-tutorial.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowRandomImage[1] = DialogControlLastCreated();
-}
+    // Index of a page in gv_CharChooseDialog
+    int[5] page_dialog_index;
+    int[85] image_offset;
 
-void gf_HrCharSelectDialogHeroBtnMake3 () {
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/12AE0B68"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[34] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 40, 90, StringToText(""), "Assets\\Textures\\btn-unit-protos-soulhunter.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[34] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 135, 80, StringExternal("Param/Value/7C82E900"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[35] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 145, 90, StringToText(""), "Assets\\AddIcon\\LadyAlexstrasa_Btn.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[35] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 240, 80, StringExternal("Param/Value/BD931C19"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[36] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 85, 85, c_anchorTopLeft, 248, 87, StringToText(""), "Assets\\AddIcon\\btn-hero37.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[36] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 345, 80, StringExternal("Param/Value/2D42F20D"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[37] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 355, 90, StringToText(""), "Assets\\AddIcon\\btn-hero38.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[37] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 450, 80, StringExternal("Param/Value/E509E242"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[38] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 460, 90, StringToText(""), "Assets\\Textures\\btn-unit-zerg-broodlord.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[38] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 555, 80, StringExternal("Param/Value/999838A0"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[39] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), "Assets\\AddIcon\\btn-hero40.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[39] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 30, 180, StringExternal("Param/Value/5C821AB5"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[40] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 40, 190, StringToText(""), "Assets\\Textures\\btn-unit-terran-siegetank.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[40] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 135, 180, StringExternal("Param/Value/4B47610B"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[41] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 145, 190, StringToText(""), "Assets\\AddIcon\\btn-hero42.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[41] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 240, 180, StringExternal("Param/Value/82A0CD73"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[42] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 90, 90, c_anchorTopLeft, 245, 185, StringToText(""), "Assets\\AddIcon\\btn-hero43.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[42] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 345, 180, StringExternal("Param/Value/9C88A981"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[43] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 355, 190, StringToText(""), "Assets\\AddIcon\\btn-hero44.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[43] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 450, 180, StringExternal("Param/Value/132BAF62"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[44] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 460, 190, StringToText(""), "Assets\\Textures\\btn-unit-protoss-zealot-nerazim.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[44] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 555, 180, StringExternal("Param/Value/064F4967"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[45] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 565, 190, StringToText(""), "Assets\\AddIcon\\btn-hero46.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[45] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 30, 280, StringExternal("Param/Value/2873890B"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[46] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 40, 290, StringToText(""), "Assets\\AddIcon\\btn-hero47.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[46] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 135, 280, StringExternal("Param/Value/DE70428C"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[47] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 90, 90, c_anchorTopLeft, 140, 285, StringToText(""), "Assets\\Textures\\btn-unit-protoss-colossus.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[47] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 240, 280, StringExternal("Param/Value/42998C10"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[48] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 250, 290, StringToText(""), "Assets\\AddIcon\\btn-hero49.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[48] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 345, 280, StringExternal("Param/Value/EC0E1493"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[49] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 355, 290, StringToText(""), "Assets\\AddIcon\\btn-hero50.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[49] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 450, 280, StringExternal("Param/Value/BF089656"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[50] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 460, 290, StringToText(""), "Assets\\AddIcon\\btn-hero51.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[50] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[5], 100, 100, c_anchorTopLeft, 555, 280, StringExternal("Param/Value/8C1FFB5E"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowRandomBtn[2] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[5], 80, 80, c_anchorTopLeft, 565, 290, StringToText(""), "Assets\\Textures\\btn-tips-tutorial.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowRandomImage[2] = DialogControlLastCreated();
-}
+    page_dialog_index[0] = 0;
+    page_dialog_index[1] = 3;
+    page_dialog_index[2] = 5;
+    page_dialog_index[3] = 6;
+    page_dialog_index[4] = 7;
 
-void gf_HrCharSelectDialogHeroBtnMake4 () {
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/3EC1BF6D"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[51] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 40, 90, StringToText(""), "Assets\\AddIcon\\btn-hero52.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[51] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 135, 80, StringExternal("Param/Value/3700BB02"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[52] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 90, 90, c_anchorTopLeft, 140, 85, StringToText(""), "Assets\\Textures\\btn-unit-zerg-infestedcolonist.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[52] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 240, 80, StringExternal("Param/Value/CE13BE6F"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[53] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 85, 85, c_anchorTopLeft, 248, 87, StringToText(""), "Assets\\AddIcon\\btn-hero54.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[53] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 345, 80, StringExternal("Param/Value/DD93132A"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[54] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 355, 90, StringToText(""), "Assets\\AddIcon\\btn-hero55.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[54] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 450, 80, StringExternal("Param/Value/133EDE5E"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[55] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 460, 90, StringToText(""), "Assets\\AddIcon\\btn-hero56.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[55] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 555, 80, StringExternal("Param/Value/E71AFA18"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[56] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), "Assets\\AddIcon\\btn-hero57.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[56] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 30, 180, StringExternal("Param/Value/AAA3638A"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[57] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 40, 190, StringToText(""), "Assets\\AddIcon\\btn-hero58.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[57] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 135, 180, StringExternal("Param/Value/7F1D3CCC"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[58] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 145, 190, StringToText(""), "Assets\\AddIcon\\btn-hero59.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[58] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 240, 180, StringExternal("Param/Value/F1852CE0"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[59] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 85, 85, c_anchorTopLeft, 250, 190, StringToText(""), "Assets\\AddIcon\\btn-hero60.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[59] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 345, 180, StringExternal("Param/Value/32ED0183"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[60] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 355, 190, StringToText(""), "Assets\\AddIcon\\btn-hero61.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[60] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 450, 180, StringExternal("Param/Value/8293832A"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[61] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 460, 190, StringToText(""), "Assets\\AddIcon\\btn-hero62.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[61] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 555, 180, StringExternal("Param/Value/8B98AB21"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[62] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 565, 190, StringToText(""), "Assets\\AddIcon\\btn-hero63.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[62] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 30, 280, StringExternal("Param/Value/D869F3D6"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[63] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 40, 290, StringToText(""), "Assets\\AddIcon\\btn-hero64.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[63] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 135, 280, StringExternal("Param/Value/037DA826"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[64] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 145, 290, StringToText(""), "Assets\\AddIcon\\btn-hero65.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[64] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 240, 280, StringExternal("Param/Value/3C2AF12A"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[65] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 250, 290, StringToText(""), "Assets\\AddIcon\\btn-hero66.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[65] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 345, 280, StringExternal("Param/Value/6FAECD8C"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[66] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 355, 290, StringToText(""), "Assets\\AddIcon\\btn-hero67.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[66] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 450, 280, StringExternal("Param/Value/5F126115"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[67] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 70, 70, c_anchorTopLeft, 464, 294, StringToText(""), "Assets\\AddIcon\\btn-hero68.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[67] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[6], 100, 100, c_anchorTopLeft, 555, 280, StringExternal("Param/Value/1276829B"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowRandomBtn[3] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[6], 80, 80, c_anchorTopLeft, 565, 290, StringToText(""), "Assets\\Textures\\btn-tips-tutorial.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowRandomImage[3] = DialogControlLastCreated();
-}
+    for (i = 0; i < 85; i += 1) {
+        image_offset[i] = 10;
+    }
+    // Exceptions to preserve the look from the MaxStorm's version
+    image_offset[31] = 5;
+    image_offset[32] = 5;
+    image_offset[36] = 7;
+    image_offset[42] = 5;
+    image_offset[47] = 5;
+    image_offset[52] = 5;
+    image_offset[53] = 7;
+    image_offset[59] = 7;
+    image_offset[67] = 15;
+    image_offset[70] = 7;
 
-void gf_HrCharSelectDialogHeroBtnMake5 () {
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 30, 80, StringExternal("Param/Value/29858E35"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[68] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 40, 90, StringToText(""), "Assets\\AddIcon\\btn-hero69.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[68] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 135, 80, StringExternal("Param/Value/5AECD57D"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[69] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 145, 90, StringToText(""), "Assets\\AddIcon\\btn-hero70.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[69] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 240, 80, StringExternal("Param/Value/F920FBAE"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[70] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 85, 85, c_anchorTopLeft, 248, 87, StringToText(""), "Assets\\AddIcon\\btn-hero71.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[70] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 345, 80, StringExternal("Param/Value/DC59CFAB"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[71] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 355, 90, StringToText(""), "Assets\\AddIcon\\btn-hero72.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[71] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 450, 80, StringExternal("Param/Value/5BAB177E"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[72] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 460, 90, StringToText(""), "Assets\\AddIcon\\btn-hero73.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[72] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 555, 80, gv_HeroInformation[73].name, StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[73] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 565, 90, StringToText(""), gv_HeroInformation[73].image, c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[73] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 30, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[74] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 40, 190, StringToText(""), "Assets\\AddIcon\\btn-hero58.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[74] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 135, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[75] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 145, 190, StringToText(""), "Assets\\AddIcon\\btn-hero59.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[75] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 240, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[76] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 85, 85, c_anchorTopLeft, 250, 190, StringToText(""), "Assets\\AddIcon\\btn-hero60.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[76] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 345, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[77] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 355, 190, StringToText(""), "Assets\\AddIcon\\btn-hero61.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[77] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 450, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[78] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 460, 190, StringToText(""), "Assets\\AddIcon\\btn-hero62.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[78] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 555, 180, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[79] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 565, 190, StringToText(""), "Assets\\AddIcon\\btn-hero63.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[79] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 30, 280, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[80] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 40, 290, StringToText(""), "Assets\\AddIcon\\btn-hero64.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[80] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 135, 280, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[81] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 145, 290, StringToText(""), "Assets\\AddIcon\\btn-hero65.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[81] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 240, 280, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[82] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 250, 290, StringToText(""), "Assets\\AddIcon\\btn-hero66.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[82] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 345, 280, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[83] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 355, 290, StringToText(""), "Assets\\AddIcon\\btn-hero67.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[83] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 450, 280, StringToText(""), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowBtn[84] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 70, 70, c_anchorTopLeft, 464, 294, StringToText(""), "Assets\\AddIcon\\btn-hero68.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowImage[84] = DialogControlLastCreated();
-    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
-    libNtve_gf_CreateDialogItemButton(gv_CharChooseDialog[7], 100, 100, c_anchorTopLeft, 555, 280, StringExternal("Param/Value/6E7DDF14"), StringToText(""), "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds");
-    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds", PlayerGroupAll());
-    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
-    gv_CharChooseWindowRandomBtn[4] = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemImage(gv_CharChooseDialog[7], 80, 80, c_anchorTopLeft, 565, 290, StringToText(""), "Assets\\Textures\\btn-tips-tutorial.dds", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
-    gv_CharChooseWindowRandomImage[4] = DialogControlLastCreated();
+    for (i = 0; i < 85; i += 1) {
+        libNtve_gf_CreateDialogItemButton(
+            gv_CharChooseDialog[page_dialog_index[page]],
+            100, 100, c_anchorTopLeft, x_start + x_step * x, y_start + y_step * y,
+            gv_HeroInformation[i].selection_tooltip,
+            StringToText(""),
+            "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds"
+        );
+        libNtve_gf_SetDialogItemImage(
+            DialogControlLastCreated(),
+            "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds",
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemImageType(
+            DialogControlLastCreated(),
+            c_triggerImageTypeBorder,
+            PlayerGroupAll()
+        );
+        gv_CharChooseWindowBtn[i] = DialogControlLastCreated();
+
+        if (i < gv_TotalHeroNum) {
+            libNtve_gf_CreateDialogItemImage(
+                gv_CharChooseDialog[page_dialog_index[page]],
+                100 - image_offset[i] * 2,
+                100 - image_offset[i] * 2,
+                c_anchorTopLeft,
+                x_start + x_step * x + image_offset[i],
+                y_start + y_step * y + image_offset[i],
+                StringToText(""),
+                gv_HeroInformation[i].image,
+                c_triggerImageTypeNormal, false,
+                Color(100, 100, 100),
+                c_triggerBlendModeNormal
+            );
+            gv_CharChooseWindowImage[i] = DialogControlLastCreated();
+        }
+
+        x += 1;
+        if ((x == 5) && (y == 2)) {
+            x = 0;
+            y = 0;
+            page += 1;
+        }
+        if (x >= 6) {
+            x = 0;
+            y += 1;
+        }
+    }
+
+    for (i = 0; i < 5; i += 1) {
+        libNtve_gf_CreateDialogItemButton(
+            gv_CharChooseDialog[page_dialog_index[i]],
+            100, 100, c_anchorTopLeft, 555, 280,
+            StringExternal("Param/Value/7ABB05AB"),
+            StringToText(""),
+            "Assets\\Textures\\ui_techpurchase_techbutton_selected_normaloverpressedover.dds"
+        );
+
+        libNtve_gf_SetDialogItemImage(
+            DialogControlLastCreated(),
+            "Assets\\Textures\\ui_techpurchase_techbutton_hired_normaloverpressedover.dds",
+            PlayerGroupAll()
+        );
+        libNtve_gf_SetDialogItemImageType(
+            DialogControlLastCreated(),
+            c_triggerImageTypeBorder,
+            PlayerGroupAll()
+        );
+        gv_CharChooseWindowRandomBtn[i] = DialogControlLastCreated();
+
+        libNtve_gf_CreateDialogItemImage(
+            gv_CharChooseDialog[page_dialog_index[i]],
+            80, 80, c_anchorTopLeft, 565, 290,
+            StringToText(""),
+            "Assets\\Textures\\btn-tips-tutorial.dds",
+            c_triggerImageTypeNormal, false,
+            Color(100, 100, 100),
+            c_triggerBlendModeNormal
+        );
+        gv_CharChooseWindowRandomImage[i] = DialogControlLastCreated();
+    }
 }
 
 void gf_HrCharSelectDialogSpellBtnMake1 () {
