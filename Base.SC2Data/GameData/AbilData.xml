@@ -58,6 +58,26 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn557" State="Restricted" Requirements="SpellUse437337"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="Hero74Skill2">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="Hero74Skill2G"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="1"/>
+            <Cooldown Location="Unit" TimeUse="1"/>
+        </Cost>
+        <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="15"/>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="Hero74Skill2Sr"/>
+        <AINotifyEffect value=""/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn63422" State="Restricted"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero36Skill42">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <InfoTooltipPriority value="1"/>
@@ -7570,6 +7590,69 @@
         <AINotifyEffect value=""/>
         <EffectRange index="0" value="0,11"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="Hero73Skill4Btn" State="Restricted" Requirements="SpellUse43747222"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="Hero74Skill1">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="Hero74Skill1G"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="1"/>
+        </Cost>
+        <TargetFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <FinishTime value="0.55"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OracleWeaponOn"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="Hero74SkillX">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="Hero74SkillXDong3"/>
+        <Cost>
+            <Vital index="Energy" value="40"/>
+            <Cooldown Location="Unit" TimeUse="19.5"/>
+        </Cost>
+        <TargetFilters value="-;Neutral,Enemy,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <FinishTime value="0.4"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value=""/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn55322" State="Restricted"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="Hero74Skill4">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="Hero74Skill4G"/>
+        <Cost>
+            <Vital index="Energy" value="1"/>
+            <Cooldown TimeUse="1"/>
+        </Cost>
+        <CastOutroTime value="0.75"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ArbiterMPStasisField"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="Hero74Skill3">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="Hero74Skill3G"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="1"/>
+            <Cooldown Location="Unit" TimeUse="1"/>
+        </Cost>
+        <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="5.25"/>
+        <FinishTime value="0.55"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value=""/>
+        <EffectRange index="0" value="5,25"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn5510422" State="Restricted"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero9Skill1">

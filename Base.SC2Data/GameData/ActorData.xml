@@ -155,6 +155,287 @@
         <Filter index="Enemy" value="1"/>
         <Filter index="All" value="1"/>
     </CActorRange>
+    <CActorAction id="Hero74Skill1" parent="GenericAttack" effectImpact="Hero13Skill1G2" effectLaunch="Hero13Skill1Missile">
+        <On index="1" Terms="Effect.Hero74Skill1G3.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On index="2" Terms="Effect.Hero74Skill1G3.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On index="6" Terms="Effect.Hero74Skill1Missile.Start; At Caster" Send="Create"/>
+        <LaunchSiteOps Ops="SOpAttachHarness SOp74TEST"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="" Sound="Hero13SkillSound"/>
+        <Beam value="KarassAttackBeam"/>
+        <ImpactMap index="None" Model="" Sound="" ModelReaction="KarassAttackImpactReaction"/>
+        <ImpactMap index="Dirt" Sound="KarassAttackImpactDirt" ModelReaction="KarassAttackImpactReactionDirt"/>
+        <ImpactMap index="Rock" Sound="KarassAttackImpactRock" ModelReaction="KarassAttackImpactReactionRock"/>
+        <ImpactMap index="Snow" Sound="KarassAttackImpactSnow" ModelReaction="KarassAttackImpactReactionSnow"/>
+        <ImpactMap index="Sand" Sound="KarassAttackImpactSand" ModelReaction="KarassAttackImpactReactionSand"/>
+        <ImpactMap index="Water" Sound="KarassAttackImpactWater" ModelReaction="KarassAttackImpactReactionWater"/>
+        <ImpactMap index="Flesh" Sound="KarassAttackImpactFlesh" ModelReaction="KarassAttackImpactReactionFlesh"/>
+        <ImpactMap index="LightArmor" Sound="KarassAttackImpactLightArmor" ModelReaction="KarassAttackImpactReactionLightArmor"/>
+        <ImpactMap index="Metal" Sound="KarassAttackImpactMetal" ModelReaction="KarassAttackImpactReactionMetal"/>
+        <ImpactMap index="Shield" Sound="KarassAttackImpactShield" ModelReaction="KarassAttackImpactReactionShield"/>
+        <DamageMap index="None" Model="KarassAttackDamage" Sound="KarassAttackDamage" ModelReaction="KarassAttackDamageReaction"/>
+        <DamageMap index="Dirt" Sound="KarassAttackDamageDirt" ModelReaction="KarassAttackDamageReactionDirt"/>
+        <DamageMap index="Rock" Sound="KarassAttackDamageRock" ModelReaction="KarassAttackDamageReactionRock"/>
+        <DamageMap index="Snow" Sound="KarassAttackDamageSnow" ModelReaction="KarassAttackDamageReactionSnow"/>
+        <DamageMap index="Sand" Sound="KarassAttackDamageSand" ModelReaction="KarassAttackDamageReactionSand"/>
+        <DamageMap index="Water" Sound="KarassAttackDamageWater" ModelReaction="KarassAttackDamageReactionWater"/>
+        <DamageMap index="Flesh" Sound="KarassAttackDamageFlesh" ModelReaction="KarassAttackDamageReactionFlesh"/>
+        <DamageMap index="LightArmor" Sound="KarassAttackDamageLightArmor" ModelReaction="KarassAttackDamageReactionLightArmor"/>
+        <DamageMap index="Metal" Sound="KarassAttackDamageMetal" ModelReaction="KarassAttackDamageReactionMetal"/>
+        <DamageMap index="Shield" Sound="KarassAttackDamageShield" ModelReaction="KarassAttackDamageReactionShield"/>
+    </CActorAction>
+    <CActorUnit id="Hero30Skill3Dummy2" parent="GenericUnitStandard" unitName="Hero74Skill2Dummy2">
+        <AcceptedHostedPropTransfers index="CastShadows" value="0"/>
+        <On index="21" Terms="ActorCreation" Send="SetCastShadows"/>
+        <On index="22" Terms="ActorCreation" Send="SetOpacity"/>
+        <On index="23" removed="1"/>
+        <On index="24" removed="1"/>
+        <On index="25" removed="1"/>
+        <On index="26" removed="1"/>
+        <On index="27" removed="1"/>
+        <On index="28" removed="1"/>
+        <On index="29" removed="1"/>
+        <On index="30" removed="1"/>
+        <On index="31" removed="1"/>
+        <On index="32" removed="1"/>
+        <On index="33" removed="1"/>
+        <On index="34" removed="1"/>
+        <On index="35" removed="1"/>
+        <On index="36" removed="1"/>
+        <On index="37" removed="1"/>
+        <On index="38" removed="1"/>
+        <On index="39" removed="1"/>
+        <On index="40" removed="1"/>
+        <On index="41" removed="1"/>
+        <On index="42" removed="1"/>
+        <On index="43" removed="1"/>
+        <On index="44" removed="1"/>
+        <On index="45" removed="1"/>
+        <On index="46" removed="1"/>
+        <On index="47" removed="1"/>
+        <On index="48" removed="1"/>
+        <On index="49" removed="1"/>
+        <On index="50" removed="1"/>
+        <On index="51" removed="1"/>
+        <On index="52" removed="1"/>
+        <On index="53" removed="1"/>
+        <On index="54" removed="1"/>
+        <On index="55" removed="1"/>
+        <On index="56" removed="1"/>
+        <On index="57" removed="1"/>
+        <On index="58" removed="1"/>
+        <On index="59" removed="1"/>
+        <On index="60" removed="1"/>
+        <On index="61" removed="1"/>
+        <On index="62" removed="1"/>
+        <On index="63" removed="1"/>
+        <On index="64" removed="1"/>
+        <On index="65" removed="1"/>
+        <On index="66" removed="1"/>
+        <On index="67" removed="1"/>
+        <On index="68" removed="1"/>
+        <Model value="Hero30Skill3Unit"/>
+        <Scale value="0.800000"/>
+        <Baselines index="Walk" AnimProps="Stand"/>
+        <BuildModel value=""/>
+        <DeathArray index="Normal" AnimProps="" ModelLink="" SoundLink=""/>
+        <DeathArray index="Eat" AnimProps=""/>
+        <DeathArray index="Eviscerate" AnimProps=""/>
+        <DeathArray index="Fire" AnimProps=""/>
+        <DeathArray index="Silentkill" AnimProps=""/>
+        <DeathArray index="Squish" AnimProps=""/>
+        <DeathArray index="UnderConstruction" AnimProps=""/>
+        <DeathActorModel value="UnitDeathModelUnscaled"/>
+        <PlacementModel value=""/>
+        <HeroIcon value="Assets\InviButton.dds"/>
+        <HighlightTooltip value="Unit/Name/Hero30Skill3Dummy2"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarGroups index="Owner" value="0"/>
+        <StatusBarGroups index="Allied" value="0"/>
+        <StatusBarGroups index="Enemy" value="0"/>
+        <StatusBarGroups index="All" value="0"/>
+        <UnitIcon value="Assets\blackbg.tga"/>
+    </CActorUnit>
+    <CActorSound id="Hero74Skill3Sound" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Effect.Hero74Skill3G.Start" Send="Create"/>
+        <On Terms="Effect.Hero74Skill3G.Stop" Send="Destroy"/>
+    </CActorSound>
+    <CActorRange id="Hero74Skill3Range" parent="RangeAbil" abil="Hero13Skill1">
+        <On index="1" Terms="Abil.Hero74Skill3.TargetOn" Send="Create"/>
+        <On index="2" Terms="Abil.Hero74Skill3.TargetOff" Send="Destroy"/>
+        <On index="3" Terms="Abil.Hero74Skill3.ButtonHoverOn" Send="Create"/>
+        <On index="4" Terms="Abil.Hero74Skill3.ButtonHoverOff" Send="Destroy"/>
+        <Abil Link="Hero74Skill3"/>
+    </CActorRange>
+    <CActorModel id="Hero74Skill3Launch" parent="ModelAnimationStyleOneShot">
+        <Aliases value="_Hero58skill3"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD {} Birth {} ContentPlayOnce 0.400000 AsTimeScale"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,255 10.000000}"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.650000"/>
+        <On Terms="Effect.Hero74Skill3G.Start" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOp74" HoldPosition="1"/>
+        <Model value="Hero74Skill3Model"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorBeamSimple id="Hero74Skill1Beam" parent="BeamSimpleAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="UpdateVisibility" value="0"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="Hero74Skill1Beam2" parent="BeamSimpleAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="UpdateVisibility" value="0"/>
+    </CActorBeamSimple>
+    <CActorModel id="Hero74Skill4Impact" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Zero,Two {} {} ContentPlayOnce"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Hero74Skill4D.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorModel id="Hero74Skill1ImpactBeam" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Hero35Skill4D.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,255 1.500000}"/>
+        <On Terms="Effect.Hero74Skill1BeamD.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachTarget"/>
+        <Model value="Hero74Skill1BeamImpact"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorAction id="Hero74Skill1BeamIdk" parent="GenericAttackBase">
+        <On Terms="Effect.Hero74Skill1BeamG.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.Hero35Skill4D2.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <LaunchAttachQuery Methods="AMFilterCenter"/>
+        <LaunchRequest Subject="_ImpactGuide" Actor="Find"/>
+        <LaunchAssets Model="" Sound=""/>
+        <Beam value="Hero74Skill1Beam"/>
+        <BeamScope value="Caster"/>
+        <Missile value="InterceptorAttackMissile"/>
+        <ImpactMap index="None" Model="" Sound="" ModelReaction="InterceptorAttackImpactReaction"/>
+        <ImpactMap index="Dirt" Sound="InterceptorAttackImpactDirt" ModelReaction="InterceptorAttackImpactReactionDirt"/>
+        <ImpactMap index="Rock" Sound="InterceptorAttackImpactRock" ModelReaction="InterceptorAttackImpactReactionRock"/>
+        <ImpactMap index="Snow" Sound="InterceptorAttackImpactSnow" ModelReaction="InterceptorAttackImpactReactionSnow"/>
+        <ImpactMap index="Sand" Sound="InterceptorAttackImpactSand" ModelReaction="InterceptorAttackImpactReactionSand"/>
+        <ImpactMap index="Water" Sound="InterceptorAttackImpactWater" ModelReaction="InterceptorAttackImpactReactionWater"/>
+        <ImpactMap index="Flesh" Sound="InterceptorAttackImpactFlesh" ModelReaction="InterceptorAttackImpactReactionFlesh"/>
+        <ImpactMap index="LightArmor" Sound="InterceptorAttackImpactLightArmor" ModelReaction="InterceptorAttackImpactReactionLightArmor"/>
+        <ImpactMap index="Metal" Sound="InterceptorAttackImpactMetal" ModelReaction="InterceptorAttackImpactReactionMetal"/>
+        <ImpactMap index="Shield" Sound="InterceptorAttackImpactShield" ModelReaction="InterceptorAttackImpactReactionShield"/>
+        <DamageMap index="None" Model="InterceptorAttackDamage" Sound="InterceptorAttackDamage" ModelReaction="InterceptorAttackDamageReaction"/>
+        <DamageMap index="Dirt" Sound="InterceptorAttackDamageDirt" ModelReaction="InterceptorAttackDamageReactionDirt"/>
+        <DamageMap index="Rock" Sound="InterceptorAttackDamageRock" ModelReaction="InterceptorAttackDamageReactionRock"/>
+        <DamageMap index="Snow" Sound="InterceptorAttackDamageSnow" ModelReaction="InterceptorAttackDamageReactionSnow"/>
+        <DamageMap index="Sand" Sound="InterceptorAttackDamageSand" ModelReaction="InterceptorAttackDamageReactionSand"/>
+        <DamageMap index="Water" Sound="InterceptorAttackDamageWater" ModelReaction="InterceptorAttackDamageReactionWater"/>
+        <DamageMap index="Flesh" Sound="InterceptorAttackDamageFlesh" ModelReaction="InterceptorAttackDamageReactionFlesh"/>
+        <DamageMap index="LightArmor" Sound="InterceptorAttackDamageLightArmor" ModelReaction="InterceptorAttackDamageReactionLightArmor"/>
+        <DamageMap index="Metal" Sound="InterceptorAttackDamageMetal" ModelReaction="InterceptorAttackDamageReactionMetal"/>
+        <DamageMap index="Shield" Sound="InterceptorAttackDamageShield" ModelReaction="InterceptorAttackDamageReactionShield"/>
+    </CActorAction>
+    <CActorSound id="Hero74Skill1Sound2" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Effect.Hero74Skill1D.Start" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+    </CActorSound>
+    <CActorModel id="Hero74Skill2Beam2" parent="ModelAnimationStyleContinuous">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 6.000000 AsDuration"/>
+        <On index="2" Terms="ActorCreation" Send="SetTintColor {0,128,255 1.500000}"/>
+        <On Terms="Effect.Hero74Skill2Sr; At Target" Send="Create"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorSplat id="Hero74Skill2Cursor" parent="CursorSplat" abil="Hero74Skill2">
+        <Model value="ProtossAOECursorSplat2"/>
+    </CActorSplat>
+    <CActorModel id="Hero74Skill2Impact" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth {} {} ContentPlayOnce 3.000000 AsDuration"/>
+        <On index="2" Terms="Effect.Hero74Skill2G.Start" Send="Create"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,128,255 1.500000}"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+        <Model value="Hero74Skill2Ready"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorRange id="Hero74Skill2Range" parent="RangeAbil" abil="Hero74Skill2"/>
+    <CActorSound id="Hero74Skill1Sound" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Effect.Hero74Skill1BeamD.Start" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+    </CActorSound>
+    <CActorModel id="Hero74Skill1Impact" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Death {} {} ContentPlayOnce"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Hero74Skill1Mo.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorModel id="Hero74Skill1Launch" parent="ModelAnimationStyleOneShot">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Attack {} {} ContentPlayOnce"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Abil.Hero74Skill1.SourceCastStart" Send="Create"/>
+        <Host Subject="Hero74"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="Hero74Skill1Impact"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorMissile id="Hero74Skill1Missile" parent="GenericAttackMissile" unitName="Hero13Skill1Missile">
+        <On index="0" Terms="UnitBirth.Hero74Skill1Missile" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,255,255 1.500000}"/>
+        <Model value="Hero74Skill1Missile"/>
+        <BarHeight value="1"/>
+        <BarWidth value="1"/>
+    </CActorMissile>
+    <CActorRange id="Hero74Skill1Range" parent="RangeAbil" abil="Hero13Skill1">
+        <On index="1" Terms="Abil.Hero74Skill1.TargetOn" Send="Create"/>
+        <On index="2" Terms="Abil.Hero74Skill1.TargetOff" Send="Destroy"/>
+        <On index="3" Terms="Abil.Hero74Skill1.ButtonHoverOn" Send="Create"/>
+        <On index="4" Terms="Abil.Hero74Skill1.ButtonHoverOff" Send="Destroy"/>
+        <Abil Link="Hero74Skill1"/>
+    </CActorRange>
     <CActorRange id="Hero16Skill11Range" parent="RangeAbil" abil="Hero16Skill1">
         <On index="1" Terms="Abil.Hero16Skill11.TargetOn" Send="Create"/>
         <On index="2" Terms="Abil.Hero16Skill11.TargetOff" Send="Destroy"/>
@@ -246,11 +527,11 @@
         <On index="5" Terms="UnitConstruction.Hero74"/>
         <On index="33" Terms="WeaponStart.*.AttackStart" Target="" Send="AnimBracketStart Attack Attack"/>
         <On index="34" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
-        <On index="35" Terms="Abil.Hero34Skill1.SourceCastStart" Send="AnimBracketStart Spell Attack"/>
-        <On index="36" Terms="Abil.Hero34Skill1.SourceFinishStop" Send="AnimBracketStop Spell"/>
-        <On index="37" Terms="Abil.Hero34Skill2.SourceCastStart" Send="AnimBracketStart Spell Spell B {} 0 0.250000 AsDuration"/>
-        <On index="38" Terms="Abil.Hero34Skill2.SourceFinishStop" Target="" Send="AnimBracketStop Spell"/>
-        <On index="39" removed="1"/>
+        <On index="35" Terms="Abil.Hero74Skill1.SourceCastStart" Send="AnimBracketStart Spell Spell"/>
+        <On index="36" Terms="Abil.Hero74Skill1.SourceFinishStop" Send="AnimBracketStop Spell"/>
+        <On index="37" Terms="Effect.Hero74Skill4Missile.Start" Send="AnimBracketStart Attack Attack"/>
+        <On index="38" Terms="Abil.Hero74Skill3.SourceCastStart" Target="" Send="AnimBracketStart Attack Attack"/>
+        <On index="39" Terms="Abil.Hero74Skill3.SourceFinishStop" Target="" Send="AnimBracketStop Attack"/>
         <On index="40" removed="1"/>
         <On index="41" removed="1"/>
         <On index="42" removed="1"/>
@@ -462,6 +743,45 @@
         <On index="4" Terms="Abil.Hero73Skill32.ButtonHoverOff" Send="Destroy"/>
         <Abil Link="Hero73Skill32"/>
     </CActorRange>
+    <CActorSound id="Hero74Skill2Sound2" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Effect.Hero74Skill2Sr.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="Hero74Skill2Sound" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Effect.Hero74Skill2G.Start" Send="Create"/>
+        <On Terms="Effect.Hero74Skill2Sr.Start" Send="Destroy"/>
+    </CActorSound>
+    <CActorModel id="Hero74SkillXModel2" parent="ModelAnimationStyleContinuousUNIT">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On Terms="Behavior.Hero74SkillXShield3.Create" Send="Create"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
+        <On Terms="Behavior.Hero74SkillXShield3.Destroy" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="SetTintColor 206,206,206"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorRange id="Hero74SkillXRange" parent="RangeAbil" abil="Hero74SkillX"/>
+    <CActorModel id="Hero74Skill4Model" parent="ModelAnimationStyleContinuous">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimPlay test Birth PlayForever"/>
+        <On index="2" Terms="Abil.Hero74Skill4.SourceChannelStart" Send="Create"/>
+        <On Terms="Abil.Hero74Skill4.SourceChannelStop" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="TimerSet 1.500000 1"/>
+        <On Terms="TimerExpired" Send="TimerSet 1.500000 1"/>
+        <On Terms="TimerExpired" Send="AnimSetCompletion test"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
     <CActorSound id="HighTemplar_Death">
         <On index="1" removed="1"/>
     </CActorSound>
@@ -515,9 +835,36 @@
         <EditorCategories value=""/>
         <LocalOffset value="0.000000,0.000000,0.040000"/>
     </CActorSiteOpLocalOffset>
+    <CActorSiteOpLocalOffset id="SOp5Height">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.000000,7.000000,0.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSiteOpLocalOffset id="SOp74">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.000000,-1.500000,0.000000"/>
+    </CActorSiteOpLocalOffset>
     <CActorSiteOpLocalOffset id="SOpDrauger">
         <EditorCategories value=""/>
         <LocalOffset value="0.000000,2.700000,0.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorModel id="Hero74Skill1Slow" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="2" Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Behavior.Hero74Skill1Slow.Create" Send="Create"/>
+        <On Terms="Behavior.Hero74Skill1Slow.Destroy" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="Slowing"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="SOp74TEST">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.300000,-1.700000,-1.200000"/>
     </CActorSiteOpLocalOffset>
     <CActorModel id="SpellModel2323" parent="ModelAnimationStyleContinuous">
         <Inherits index="CloakEffect" value="1"/>
@@ -565,9 +912,41 @@
         <Scale value="1.400000,1.400000,1.200000"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
     </CActorModel>
+    <CActorModel id="Hero74SkillXModel" parent="ModelAnimationStyleContinuousUNIT">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On Terms="Behavior.Hero74SkillXShield3.Create" Send="Create"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
+        <On Terms="Behavior.Hero74SkillXShield3.Destroy" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
+    <CActorModel id="SpellModel323232234222522" parent="ModelAnimationStyleContinuousUNIT">
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On Terms="Effect.Hero74Skill2G3.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,255,0 4.000000}"/>
+        <On Terms="Effect.Hero74Skill2G3.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
+        <Host Subject=""/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+        <Model value="SpellModel323322222233434232"/>
+        <Scale value="0.585000"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
     <CActorSound id="SpellSound222322" parent="SoundOneShot">
         <On Terms="Effect.StatInjang1G3.Start; At Target" Send="Create"/>
         <Sound value="Injang1Impact"/>
+    </CActorSound>
+    <CActorSound id="Hero74SkillXSound" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Effect.Hero74SkillXDong.Start; At Target" Send="Create"/>
     </CActorSound>
     <CActorModel id="StatInjang1Model" parent="ModelAnimationStyleContinuous">
         <Flags index="SuppressSaveLoad" value="1"/>

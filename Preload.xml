@@ -18,6 +18,8 @@
 <Unit id="Nexus"/>
 <Unit id="FleetBeacon"/>
 <Unit id="PhotonCannon"/>
+<Unit id="Hydralisk"/>
 <Unit id="Beacon_Protoss"/>
+<Unit id="Hero74"/>
 <Unit id="SoohoTower"/>
 </Preload>

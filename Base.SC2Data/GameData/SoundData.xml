@@ -41,6 +41,41 @@
     <CSound id="EMP_Generator_ElectricArcs_Med">
         <Volume value="0.000000,0.000000"/>
     </CSound>
+    <CSound id="Hero74Skill3Sound" parent="Combat">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Wind_ColdSteady_Lp_01.wav" FacialGroup=""/>
+        <DupeMuteCount value="7"/>
+    </CSound>
+    <CSound id="Hero74Skill1Sound2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\LightningThunder_OneShot_01.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Hero74Skill1Sound3" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\LightningThunder_OneShot_04.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Hero74Skill2Sound" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Wind_ColdSteady_Lp_04.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Hero74Skill2Sound2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Tornado_Wind_OneShot_02.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Hero74Skill1Sound" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\LightningThunder_OneShot_04.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
     <CSound id="Hero74Sound" parent="Combat">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact1.wav" FacialGroup=""/>
@@ -127,6 +162,12 @@
         <Flags index="Ignorable" value="0"/>
         <Mode value="2D"/>
         <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Hero74SkillXSound" parent="Combat">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Doodad_ProtossWeatherShield_Birth_00.wav" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <Volume value="-2.000000,-2.000000"/>
     </CSound>
     <CSound id="HighTemplar_Death">
         <AssetArray index="0" removed="1"/>

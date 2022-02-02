@@ -46,6 +46,11 @@
         <AbilCmdIndex value="2"/>
         <Find value="0"/>
     </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareBehaviorCount id="HasSlow">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Categories index="Slow" value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="Hero26Skill4CheckDisease">
         <Compare value="GE"/>
         <Value value="1"/>
@@ -307,6 +312,20 @@
         <Value value="1"/>
         <Behavior value="Hero52Skill422"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero74Skill3ln">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero74Skill3B2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero74Skill3ln2">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="Hero74Skill3B"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero74Skill3InGyul">
+        <CombineArray value="Hero74Skill3ln2"/>
+        <CombineArray value="Hero74Skill3ln"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="Hero63Skill3DongIn3">
         <Behavior value="Hero63Passive23"/>
     </CValidatorUnitCompareBehaviorCount>
@@ -783,6 +802,10 @@
         <Value value="1"/>
         <Behavior value="Hero73Skill122"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero74Skill1B2">
+        <Behavior value="Hero74Skill1B2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Hero74Skill4Check"/>
     <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit322">
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>

@@ -183,6 +183,73 @@
         <TechTreeUnlockedUnitArray index="1" removed="1"/>
         <TechTreeUnlockedUnitArray index="2" removed="1"/>
     </CUnit>
+    <CUnit id="Hero74Skill2Dummy2">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Uncursorable" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Destructible" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PushPriority value="0"/>
+        <LifeStart value="50000"/>
+        <LifeMax value="50000"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Mover value=""/>
+        <SpeedMultiplierCreep value="0.01"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="1000"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="10"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <AbilArray Link="move"/>
+        <Radius value="0"/>
+        <SeparationRadius value="0"/>
+        <CargoSize value="1"/>
+        <SubgroupPriority value="8"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value=""/>
+        <HotkeyAlias value=""/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="50"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <ReviveInfoBase>
+            <Charge Link="Zergling/Revive"/>
+            <Cooldown Link="Zergling/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
+    <CUnit id="Hero74Skill1Missile" parent="MISSILE">
+        <ReviveType value=""/>
+        <Race value="Prot"/>
+        <Mover value="Hero74Skill1Mover"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value=""/>
+        <SelectAlias value=""/>
+        <SubgroupAlias value=""/>
+        <AIEvaluateAlias value=""/>
+        <ReviveInfoBase>
+            <Charge Link="KarassWeapon/Revive"/>
+            <Cooldown Link="KarassWeapon/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
     <CUnit id="Hero40Skill3Missile2" parent="MISSILE">
         <ReviveType value=""/>
         <Race value="Prot"/>
@@ -949,6 +1016,11 @@
         <AbilArray Link="Spell122"/>
         <AbilArray Link="Portal"/>
         <AbilArray Link="MaxAttackStop"/>
+        <AbilArray Link="Hero74Skill1"/>
+        <AbilArray Link="Hero74Skill2"/>
+        <AbilArray Link="Hero74SkillX"/>
+        <AbilArray Link="Hero74Skill4"/>
+        <AbilArray Link="Hero74Skill3"/>
         <BehaviorArray Link="TestVeterancy2"/>
         <BehaviorArray Link="AttackDamage"/>
         <BehaviorArray Link="SpellPower"/>
@@ -1017,6 +1089,11 @@
             <LayoutButtons Face="A_Spell1022" Type="AbilCmd" AbilCmd="Spell112,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="A_Spell1032" Type="AbilCmd" AbilCmd="Spell122,On" Row="1" Column="2"/>
             <LayoutButtons Face="Portal" Type="AbilCmd" AbilCmd="Portal,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="OracleWeaponOn" Type="AbilCmd" AbilCmd="Hero74Skill1,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="Decal_Spray_0022_01" Type="AbilCmd" AbilCmd="Hero74Skill2,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="GuardianShield" Type="AbilCmd" AbilCmd="Hero74Skill3,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="ArbiterMPStasisField" Type="AbilCmd" AbilCmd="Hero74Skill4,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="CommanderZeratulLevel10" Type="AbilCmd" AbilCmd="Hero74SkillX,Execute" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>

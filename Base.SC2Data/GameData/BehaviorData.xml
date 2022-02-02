@@ -1100,6 +1100,190 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Duration value="4.6"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill3B">
+        <Alignment value="Negative"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\AddIcon\btn-hero60-skill1.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <RemoveValidatorArray value="PickupCheck22222"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.75"/>
+        <InitialEffect value="Hero74Skill3D"/>
+        <Modification MoveSpeedMaximum="10" MoveSpeedMinimum="10">
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill3B2">
+        <Alignment value="Negative"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\AddIcon\btn-hero60-skill1.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <RemoveValidatorArray value="PickupCheck22222"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.75"/>
+        <InitialEffect value="Agrozisi22"/>
+        <Modification MoveSpeedMaximum="10" MoveSpeedMinimum="10">
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+            <AbilClassDisableArray index="CAbilMove" value="1"/>
+            <AbilLinkEnableArray value="Hero23Skill4"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill3B3">
+        <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="1.5"/>
+        <InitialEffect value="Hero74Skill3D"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill1Slow">
+        <Name value="Behavior/Name/debuffslow"/>
+        <Tooltip value="Behavior/Tooltip/debuffslow"/>
+        <Alignment value="Negative"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-slow.dds"/>
+        <BehaviorCategories index="Slow" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <RemoveValidatorArray value="PickupCheck22222"/>
+        <RemoveValidatorArray value="PickupCheck222222"/>
+        <RemoveValidatorArray value="PickupCheck2222225"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="3"/>
+        <Modification MoveSpeedMultiplier="0.8">
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill1B2">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="NotHeroic2"/>
+        <RemoveValidatorArray value="NotHeroic2"/>
+        <Duration value="0.2"/>
+        <ExpireEffect value="Hero74Skill1TEST"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill2Impact">
+        <Alignment value="Negative"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <RemoveValidatorArray value="PickupCheck22222"/>
+        <RemoveValidatorArray value="PickupCheck2222225"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="3"/>
+        <InitialEffect value="PickupMinerals100Set2"/>
+        <FinalEffect value="PickupMinerals100Set24"/>
+        <Modification Height="6" MoveSpeedMaximum="0.0117">
+            <StateFlags index="SuppressAttack" value="1"/>
+            <HeightTime index="Start" value="2.75"/>
+            <HeightTime index="Stop" value="0.25"/>
+            <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+            <AbilLinkEnableArray value="Hero23Skill4"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="4.5"/>
+        <Period value="2.25"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="Hero74Skill2G2"/>
+        <ExpireEffect value="TimedLifeFate"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
     <CBehaviorBuff id="Hero36Skill42">
         <Alignment value="Positive"/>
         <Cost>
@@ -1887,6 +2071,162 @@
                 <Cost>
                     <Charge Link="Behavior/Hero64Skill1Impact"/>
                     <Cooldown Link="Behavior/Hero64Skill1Impact"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill1B">
+        <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="1.5"/>
+        <InitialEffect value="Hero74Skill1D"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill4updown">
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="1.5"/>
+        <Modification Height="6" MoveSpeedMaximum="0.0117">
+            <StateFlags index="SuppressAttack" value="1"/>
+            <HeightTime index="Start" value="1.5"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+        <ExpireEffect value="Hero74Skill4Dong2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74Skill4updown2">
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\InviButton.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="1.5"/>
+        <Modification Height="6" MoveSpeedMaximum="0.0117">
+            <StateFlags index="SuppressAttack" value="1"/>
+            <HeightTime index="Start" value="1.25"/>
+            <HeightTime index="Stop" value="0.25"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74SkillXShield2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\AddIcon\btn-hero7-skill3.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <MaxStackCount value="100"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="7.5"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="6"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74SkillXShield">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\AddIcon\btn-hero7-skill3.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="7.6"/>
+        <InitialEffect value="Hero74SkillXMo"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="70"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PsiStorm"/>
+                <Cooldown Link="Behavior/PsiStorm"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hero74SkillXShield3">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PsiStorm"/>
+            <Cooldown Link="Behavior/PsiStorm"/>
+        </Cost>
+        <InfoIcon value="Assets\AddIcon\btn-hero7-skill3.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <RemoveValidatorArray value="HeroDie"/>
+        <RemoveValidatorArray value="hasShields2"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="7.5"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PsiStorm"/>
+                    <Cooldown Link="Behavior/PsiStorm"/>
                 </Cost>
             </DeathResponse>
         </Modification>
@@ -16732,6 +17072,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <InitialEffect value="Hero26Skill4Sr2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero26Skill4impact22">
         <Alignment value="Positive"/>
@@ -16762,6 +17103,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <InitialEffect value="Hero26Skill4Sr2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero27Skill1Slow2">
         <Alignment value="Negative"/>
