@@ -600,9 +600,6 @@ void gf_RemoveCompletedSecondaryObjectives();
 void gf_CreatePlayerStatisticsWindow();
 void gf_UpdatePlayerStatisticsWindow();
 // Utility functions
-int gf_ShopWindowByIndex(int shop_index);
-bool gf_EligibleForBuyingHotkey(int shop_index);
-bool gf_HotkeyStatIncreaseTestConditions();
 void gf_ChangeStatShopPage(int player, int page);
 
 //--------------------------------------------------------------------------------------------------
@@ -7090,66 +7087,6 @@ void gf_UpdatePlayerStatisticsWindow() {
 }
 
 // Utility finctions
-
-int gf_ShopWindowByIndex(int shop_index) {
-    if ((shop_index >= 0) && (shop_index < 6)) {
-        return 0;
-    }
-    if ((shop_index >= 6) && (shop_index < 12)) {
-        return 1;
-    }
-    if ((shop_index >= 12) && (shop_index < 18)) {
-        return 3;
-    }
-    if ((shop_index >= 18) && (shop_index < 24)) {
-        return 2;
-    }
-    if ((shop_index >= 24) && (shop_index < 30)) {
-        return 4;
-    }
-    return -1;
-}
-
-bool gf_EligibleForBuyingHotkey(int shop_index) {
-    if (gv_ActiveShopPage[EventPlayer()] != gf_ShopWindowByIndex(shop_index)) {
-        return false;
-    }
-    if (gv_StatIncreasesBought[EventPlayer()][shop_index] >= gv_ShopItemParameters[shop_index].max_upgrades) {
-        return false;
-    }
-    if ((shop_index >= 12) && (shop_index < 18) && (gv_SealBought[EventPlayer()])) {
-        return false;
-    }
-    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) < gv_StatHowMoney[shop_index][EventPlayer()]) {
-        return false;
-    }
-    if (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) < gv_ShopItemParameters[shop_index].gas_cost) {
-        return false;
-    }
-    if (gv_ShopItemParameters[shop_index].alive_only && (gv_HeroDeathBoolean[EventPlayer()] == true)) {
-        return false;
-    }
-    return true;
-}
-
-bool gf_HotkeyStatIncreaseTestConditions() {
-    if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
-        return false;
-    }
-    if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-        return false;
-    }
-    if (!((gv_GameEndBoolean == false))) {
-        return false;
-    }
-    if (!((gv_GameStartBoolean == true))) {
-        return false;
-    }
-    if (!((gv_BeforeStartCounterDialogNum == 0))) {
-        return false;
-    }
-    return true;
-}
 
 void gf_ChangeStatShopPage(int player, int page) {
     int i;
