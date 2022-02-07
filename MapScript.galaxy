@@ -10076,7 +10076,7 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         gv_VotedToKick[EventPlayer()][number] = true;
         votes = 0;
         for (i = 0; i < 11; i += 1) {
-            if (gv_VotedToKick[EventPlayer()][i]) {
+            if (gv_VotedToKick[i][number]) {
                 votes += 1;
             }
         }
