@@ -86,6 +86,32 @@
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
     </CModel>
+    <CModel id="Hero74Skill2RadiusEnemy" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\PointDefenseRadius\PointDefenseRadius.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+    <CModel id="Hero74Skill4BModel2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Neutral\Aiur_VoidTendril_Shockwave\Aiur_VoidTendril_Shockwave.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+    <CModel id="Hero74Skill4Impact2" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\CerberusYamatoMissileImpact\CerberusYamatoMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ToshAttackLaunch"/>
+    </CModel>
+    <CModel id="Hero74Skill4Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\CerberusYamatoMissile\CerberusYamatoMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ToshAttackImpact"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
     <CModel id="Hero74Skill3Model" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Terran\ThorShoulderMissileLaunch\ThorShoulderMissileLaunch.m3"/>
         <AnimSpeed value="0.900000"/>
@@ -160,7 +186,7 @@
         <Radius value="0.400000"/>
         <ScaleMax value="1.000000,1.000000,1.300000"/>
         <ScaleMin value="1.000000,1.000000,1.300000"/>
-        <SelectionRadius value="1.100000"/>
+        <SelectionRadius value="0.700000"/>
         <TechPurchaseCamera value="Star2CameraMid05"/>
         <UnitGlossaryCamera value="Star2CameraMid05"/>
     </CModel>
@@ -201,20 +227,36 @@
         <SelectionRadius value="0.150000"/>
     </CModel>
     <CModel id="Hero74AttackImpact" parent="ImpactFX">
-        <Model value="Assets\Effects\Protoss\TempestPlasmaMissileImpact\TempestPlasmaMissileImpact.m3"/>
+        <Model value="Assets\Effects\Terran\DiamondbackMissileImpact\DiamondbackMissileImpact.m3"/>
         <AnimSpeed value="1.850000"/>
         <EditorCategories value="Race:Terran"/>
         <Lighting value="ToshAttackImpact"/>
-        <ScaleMax value="0.150000,0.150000,0.150000"/>
-        <ScaleMin value="0.150000,0.150000,0.150000"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
     </CModel>
     <CModel id="Hero74AttackMissile" parent="MissileFX">
-        <Model value="Assets\Effects\Protoss\ArchonBeam\ArchonBeam.m3"/>
+        <Model value="Assets\Effects\Protoss\DragoonEX2_Missile\DragoonEX2_Missile.m3"/>
         <AnimSpeed value="2.000000"/>
         <EditorCategories value="Race:Terran"/>
         <Lighting value="ToshAttackImpact"/>
-        <ScaleMax value="0.650000,0.650000,0.650000"/>
-        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <ScaleMax value="1.700000,1.700000,1.700000"/>
+        <ScaleMin value="1.700000,1.700000,1.700000"/>
+    </CModel>
+    <CModel id="Hero74Skill4BModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\HybridSpellChannel\HybridSpellChannel.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <ScaleMax value="4.000000,4.000000,4.000000"/>
+        <ScaleMin value="4.000000,4.000000,4.000000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+    <CModel id="Hero74Skill4RadiusEnemy" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\PointDefenseRadius\PointDefenseRadius.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
     </CModel>
     <CModel id="Hero74SkillXModel2" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Zerg\PsionicShield\PsionicShield.m3"/>
@@ -275,7 +317,7 @@
         <SelectionRadius value="0.625000"/>
         <ShadowRadius value="0.625000"/>
     </CModel>
-    <CModel id="SpellModel323322222233434232" parent="PersistentSpellFX">
+    <CModel id="Hero74Skill2Radius" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Terran\PointDefenseRadius\PointDefenseRadius.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Lighting value="ConsumptionModel"/>
@@ -288,6 +330,13 @@
         <Lighting value="ConsumptionModel"/>
         <ScaleMax value="3.000000,3.000000,3.000000"/>
         <ScaleMin value="3.000000,3.000000,3.000000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+    <CModel id="Hero74Skill4Radius" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\PointDefenseRadius\PointDefenseRadius.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
         <SelectionRadius value="0.625000"/>
         <ShadowRadius value="0.625000"/>
     </CModel>

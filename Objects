@@ -1675,31 +1675,31 @@
     </ObjectDoodad>
     <ObjectPoint Id="123" Position="47.5,84,0" Scale="1,1,1" Type="Normal" Name="1팀 유닛 생성1" Color="0,0,0,0"/>
     <ObjectPoint Id="564" Position="96.77,69.2724,0" Scale="1,1,1" Type="Normal" Name="(중립생성)왕전갈 좌" Color="0,0,0,0"/>
-    <ObjectPoint Id="575" Position="76.2597,25.92,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충2 아래 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="208" Position="64,109,0" Scale="1,1,1" Type="Normal" Name="1팀 유닛 이동 지점1" Color="0,0,0,0"/>
+    <ObjectPoint Id="575" Position="76.2597,25.92,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충2 아래 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="149" Position="104,30,0" Scale="1,1,1" Type="Normal" Name="(중립범위)가시 촉수" Color="0,0,0,0"/>
     <ObjectPoint Id="158" Position="143.144,72.5068,0" Scale="1,1,1" Type="Normal" Name="(중립생성)미친 소2 우" Color="0,0,0,0"/>
     <ObjectPoint Id="185" Position="159,64,0" Scale="1,1,1" Type="Normal" Name="2팀 신호소 아래 지점" Color="0,0,0,0"/>
-    <ObjectPoint Id="573" Position="133.0097,132.73,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충2 위 우" Color="0,0,0,0"/>
     <ObjectPoint Id="210" Position="104,112,0" Scale="1,1,1" Type="Normal" Name="양팀 유닛 이동 지점 (중앙1)" Color="0,0,0,0"/>
+    <ObjectPoint Id="573" Position="133.0097,132.73,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충2 위 우" Color="0,0,0,0"/>
     <ObjectPoint Id="566" Position="96.0102,67.545,0" Scale="1,1,1" Type="Normal" Name="(중립생성)맹독 전갈2 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="550" Position="79.4,88.96,0" Scale="1,1,1" Type="Normal" Name="(중립생성)볼릭2 좌" Color="0,0,0,0"/>
-    <ObjectPoint Id="557" Position="124.5197,78.48,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개2 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="194" Position="23,79.75,0" Scale="1,1,1" Type="Normal" Name="1팀 시작지점" Color="0,0,0,0"/>
     <ObjectPoint Id="46" Position="144,109,0" Scale="1,1,1" Type="Normal" Name="1팀 유닛 이동 지점1-2" Color="0,0,0,0"/>
+    <ObjectPoint Id="194" Position="23,79.75,0" Scale="1,1,1" Type="Normal" Name="1팀 시작지점" Color="0,0,0,0"/>
+    <ObjectPoint Id="557" Position="124.5197,78.48,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개2 우" Color="0,0,0,0"/>
     <ObjectPoint Id="98" Position="68,86,0" Scale="1,1,1" Type="Normal" Name="(중립범위)미친 소 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="133" Position="124,82,0" Scale="1,1,1" Type="Normal" Name="(중립범위)야생 들개 우" Color="0,0,0,0"/>
     <ObjectPoint Id="559" Position="126.8098,78.5798,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개4 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="548" Position="77.727,89.6855,0" Scale="1,1,1" Type="Normal" Name="(중립생성)갈릭 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="203" Position="160.5,84,0" Scale="1,1,1" Type="Normal" Name="2팀 유닛 생성1" Color="0,0,0,0"/>
-    <ObjectPoint Id="135" Position="127,68.5,0" Scale="1,1,1" Type="Normal" Name="(중립범위)갈릭 우" Color="0,0,0,0"/>
+    <ObjectPoint Id="548" Position="77.727,89.6855,0" Scale="1,1,1" Type="Normal" Name="(중립생성)갈릭 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="107" Position="82.5,67,0" Scale="1,1,1" Type="Normal" Name="(중립범위)미친 조류 좌" Color="0,0,0,0"/>
+    <ObjectPoint Id="135" Position="127,68.5,0" Scale="1,1,1" Type="Normal" Name="(중립범위)갈릭 우" Color="0,0,0,0"/>
     <ObjectPoint Id="579" Position="104,24,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 가시 촉수" Color="0,0,0,0"/>
     <ObjectPoint Id="204" Position="64,50,0" Scale="1,1,1" Type="Normal" Name="1팀 유닛 이동 지점2" Color="0,0,0,0"/>
-    <ObjectPoint Id="552" Position="127.25,69.91,0" Scale="1,1,1" Type="Normal" Name="(중립생성)볼릭 우" Color="0,0,0,0"/>
     <ObjectPoint Id="43" Position="64,108,0" Scale="1,1,1" Type="Normal" Name="2팀 유닛 이동 지점1-2" Color="0,0,0,0"/>
-    <ObjectPoint Id="293" Position="47.5,79.5,0" Scale="1,1,1" Type="Normal" Name="1팀 최종 지점" Color="0,0,0,0"/>
+    <ObjectPoint Id="552" Position="127.25,69.91,0" Scale="1,1,1" Type="Normal" Name="(중립생성)볼릭 우" Color="0,0,0,0"/>
     <ObjectPoint Id="108" Position="47.5,75,0" Scale="1,1,1" Type="Normal" Name="1팀 유닛 생성2" Color="0,0,0,0"/>
+    <ObjectPoint Id="293" Position="47.5,79.5,0" Scale="1,1,1" Type="Normal" Name="1팀 최종 지점" Color="0,0,0,0"/>
     <ObjectPoint Id="554" Position="86.8498,69.13,0" Scale="1,1,1" Type="Normal" Name="(중립생성)미친 조류 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="206" Position="104,48,0" Scale="1,1,1" Type="Normal" Name="양팀 유닛 이동 지점 (중앙2)" Color="0,0,0,0"/>
     <ObjectPoint Id="577" Position="133.67,27.5097,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충2 아래 우" Color="0,0,0,0"/>
@@ -1710,30 +1710,30 @@
     <ObjectPoint Id="124" Position="160.5,75,0" Scale="1,1,1" Type="Normal" Name="2팀 유닛 생성2" Color="0,0,0,0"/>
     <ObjectPoint Id="155" Position="159,95,0" Scale="1,1,1" Type="Normal" Name="2팀 신호소 위 지점" Color="0,0,0,0"/>
     <ObjectPoint Id="568" Position="111.8615,91.585,0" Scale="1,1,1" Type="Normal" Name="(중립생성)맹독 전갈 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="563" Position="84.4,81.0097,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개4 좌" Color="0,0,0,0"/>
-    <ObjectPoint Id="220" Position="18,150,0" Scale="1,1,1" Type="Normal" Name="경계 지점1" Color="0,0,0,0"/>
     <ObjectPoint Id="48" Position="64,51,0" Scale="1,1,1" Type="Normal" Name="2팀 유닛 이동 지점2-2" Color="0,0,0,0"/>
+    <ObjectPoint Id="220" Position="18,150,0" Scale="1,1,1" Type="Normal" Name="경계 지점1" Color="0,0,0,0"/>
+    <ObjectPoint Id="563" Position="84.4,81.0097,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개4 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="234" Position="64.7573,85.77,0" Scale="1,1,1" Type="Normal" Name="(중립생성)미친 소2 좌" Color="0,0,0,0"/>
-    <ObjectPoint Id="138" Position="106.5,92,0" Scale="1,1,1" Type="Normal" Name="(중립범위)왕전갈 우" Color="0,0,0,0"/>
     <ObjectPoint Id="102" Position="140,74.5,0" Scale="1,1,1" Type="Normal" Name="(중립범위)미친 소 우" Color="0,0,0,0"/>
+    <ObjectPoint Id="138" Position="106.5,92,0" Scale="1,1,1" Type="Normal" Name="(중립범위)왕전갈 우" Color="0,0,0,0"/>
     <ObjectPoint Id="578" Position="104,136,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 포자 촉수" Color="0,0,0,0"/>
     <ObjectPoint Id="553" Position="130.0798,67.94,0" Scale="1,1,1" Type="Normal" Name="(중립생성)볼릭2 우" Color="0,0,0,0"/>
     <ObjectPoint Id="207" Position="144,51,0" Scale="1,1,1" Type="Normal" Name="2팀 유닛 이동 지점2" Color="0,0,0,0"/>
     <ObjectPoint Id="555" Position="121.1174,91.2912,0" Scale="1,1,1" Type="Normal" Name="(중립생성)미친 조류 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="576" Position="132.2797,26.14,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충 아래 우" Color="0,0,0,0"/>
     <ObjectPoint Id="266" Position="160.5,79.5,0" Scale="1,1,1" Type="Normal" Name="2팀 최종 지점" Color="0,0,0,0"/>
+    <ObjectPoint Id="576" Position="132.2797,26.14,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충 아래 우" Color="0,0,0,0"/>
     <ObjectPoint Id="571" Position="76.4,134.0297,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충2 위 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="560" Position="81.0612,81.014,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개1 좌" Color="0,0,0,0"/>
-    <ObjectPoint Id="147" Position="130,29,0" Scale="1,1,1" Type="Normal" Name="(중립범위)설충 아래 우" Color="0,0,0,0"/>
     <ObjectPoint Id="127" Position="124.5,93,0" Scale="1,1,1" Type="Normal" Name="(중립범위)미친 조류 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="562" Position="83.3098,81.2797,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개3 좌" Color="0,0,0,0"/>
+    <ObjectPoint Id="147" Position="130,29,0" Scale="1,1,1" Type="Normal" Name="(중립범위)설충 아래 우" Color="0,0,0,0"/>
     <ObjectPoint Id="221" Position="190,7,0" Scale="1,1,1" Type="Normal" Name="경계 지점2" Color="0,0,0,0"/>
-    <ObjectPoint Id="569" Position="109.695,89.7236,0" Scale="1,1,1" Type="Normal" Name="(중립생성)맹독 전갈2 우" Color="0,0,0,0"/>
+    <ObjectPoint Id="562" Position="83.3098,81.2797,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개3 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="214" Position="64.7573,87.23,0" Scale="1,1,1" Type="Normal" Name="(중립생성)미친 소 좌" Color="0,0,0,0"/>
+    <ObjectPoint Id="569" Position="109.695,89.7236,0" Scale="1,1,1" Type="Normal" Name="(중립생성)맹독 전갈2 우" Color="0,0,0,0"/>
     <ObjectPoint Id="154" Position="49,96,0" Scale="1,1,1" Type="Normal" Name="1팀 신호소 위 지점" Color="0,0,0,0"/>
     <ObjectPoint Id="145" Position="131,133,0" Scale="1,1,1" Type="Normal" Name="(중립범위)설충 위 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="574" Position="74.8498,27.2597,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충 아래 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="209" Position="144,108,0" Scale="1,1,1" Type="Normal" Name="2팀 유닛 이동 지점1" Color="0,0,0,0"/>
+    <ObjectPoint Id="574" Position="74.8498,27.2597,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충 아래 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="565" Position="98.3596,69.7731,0" Scale="1,1,1" Type="Normal" Name="(중립생성)맹독 전갈 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="157" Position="143.144,73.9667,0" Scale="1,1,1" Type="Normal" Name="(중립생성)미친 소 우" Color="0,0,0,0"/>
     <ObjectPoint Id="179" Position="49,64,0" Scale="1,1,1" Type="Normal" Name="1팀 신호소 아래 지점" Color="0,0,0,0"/>
@@ -1741,9 +1741,9 @@
     <ObjectPoint Id="572" Position="131.5998,134.0698,0" Scale="1,1,1" Type="Normal" Name="(중립생성) 설충 위 우" Color="0,0,0,0"/>
     <ObjectPoint Id="148" Position="104,130,0" Scale="1,1,1" Type="Normal" Name="(중립범위)포자 촉수" Color="0,0,0,0"/>
     <ObjectPoint Id="132" Position="84,77,0" Scale="1,1,1" Type="Normal" Name="(중립범위)야생 들개 좌" Color="0,0,0,0"/>
-    <ObjectPoint Id="556" Position="123.47,78.6198,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개1 우" Color="0,0,0,0"/>
-    <ObjectPoint Id="195" Position="185,79.75,0" Scale="1,1,1" Type="Normal" Name="2팀 시작지점" Color="0,0,0,0"/>
     <ObjectPoint Id="47" Position="144,50,0" Scale="1,1,1" Type="Normal" Name="1팀 유닛 이동 지점2-2" Color="0,0,0,0"/>
+    <ObjectPoint Id="195" Position="185,79.75,0" Scale="1,1,1" Type="Normal" Name="2팀 시작지점" Color="0,0,0,0"/>
+    <ObjectPoint Id="556" Position="123.47,78.6198,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개1 우" Color="0,0,0,0"/>
     <ObjectPoint Id="551" Position="129.0097,69.5397,0" Scale="1,1,1" Type="Normal" Name="(중립생성)갈릭 우" Color="0,0,0,0"/>
     <ObjectPoint Id="1" Position="30.478,41.2512,0" Scale="1,1,1" Type="Normal" Name="초기 지점" Color="0,0,0,0"/>
     <ObjectPoint Id="141" Position="78,133,0" Scale="1,1,1" Type="Normal" Name="(중립범위)설충 위 좌" Color="0,0,0,0"/>
@@ -1751,33 +1751,29 @@
     <ObjectPoint Id="549" Position="76.828,91.1994,0" Scale="1,1,1" Type="Normal" Name="(중립생성)볼릭 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="558" Position="125.72,78.48,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개3 우" Color="0,0,0,0"/>
     <ObjectUnit Id="112" Position="160.5,79.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="Nexus" Player="13"/>
-    <ObjectUnit Id="225" Position="164.5,79.5,0" Rotation="5.249" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="109" Position="47.5,79.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="Nexus" Player="12"/>
-    <ObjectUnit Id="131" Position="66.5,105.5,0" Rotation="5.8654" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="111" Position="48.5,94.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="12"/>
     <ObjectUnit Id="121" Position="82.5,113.5,0" Rotation="5.8637" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="114" Position="159.5,94.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="13"/>
-    <ObjectUnit Id="223" Position="51.5,79.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="2117528194" Position="102.3488,81.3215,0" Rotation="5.1811" Scale="1,1,1" UnitType="Hydralisk" Player="2"/>
-    <ObjectUnit Id="116" Position="50.5,97.5,0" Rotation="5.2526" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="44" Position="192.5,80.5,0" Rotation="3.434" Scale="1,1,1" UnitType="SoohoTower" Player="13"/>
     <ObjectUnit Id="192" Position="23,79.75,0" Scale="1,1,1" UnitType="Beacon_Protoss" Player="12"/>
+    <ObjectUnit Id="44" Position="192.5,80.5,0" Rotation="3.434" Scale="1,1,1" UnitType="SoohoTower" Player="13"/>
     <ObjectUnit Id="712" Position="66.5,53.5,0" Rotation="5.866" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="118" Position="157.5,61.5,0" Rotation="5.2485" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="230726389" Position="101.838,83.081,0" Rotation="5.4743" Scale="1,1,1" UnitType="Hydralisk" Player="2"/>
-    <ObjectUnit Id="807614127" Position="102.7304,79.1691,0" Rotation="4.359" Scale="1,1,1" UnitType="Hydralisk" Player="2"/>
     <ObjectUnit Id="224" Position="156.5,79.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="122" Position="125.5,113.5,0" Rotation="5.8613" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="113" Position="159.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="13"/>
     <ObjectUnit Id="128" Position="141.5,105.5,0" Rotation="5.8632" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="41" Position="15.5,80.5,0" Rotation="3.4357" Scale="1,1,1" UnitType="SoohoTower" Player="12"/>
     <ObjectUnit Id="110" Position="48.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="12"/>
-    <ObjectUnit Id="115" Position="50.5,61.5,0" Rotation="5.2551" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="120" Position="82.5,45.5,0" Rotation="5.8662" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="117" Position="157.5,97.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="222" Position="43.5,79.5,0" Rotation="5.2526" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="119" Position="125.5,45.5,0" Rotation="5.8637" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="1695558206" Position="94.1694,81.8977,0" Rotation="0.6125" Scale="1,1,1" UnitType="Hero74" Player="1"/>
+    <ObjectUnit Id="225" Position="164.5,79.5,0" Rotation="5.249" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
+    <ObjectUnit Id="109" Position="47.5,79.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="Nexus" Player="12"/>
+    <ObjectUnit Id="111" Position="48.5,94.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="12"/>
+    <ObjectUnit Id="131" Position="66.5,105.5,0" Rotation="5.8654" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="223" Position="51.5,79.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="116" Position="50.5,97.5,0" Rotation="5.2526" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="118" Position="157.5,61.5,0" Rotation="5.2485" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
+    <ObjectUnit Id="122" Position="125.5,113.5,0" Rotation="5.8613" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
+    <ObjectUnit Id="113" Position="159.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="13"/>
+    <ObjectUnit Id="115" Position="50.5,61.5,0" Rotation="5.2551" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="120" Position="82.5,45.5,0" Rotation="5.8662" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="713" Position="141.5,53.5,0" Rotation="5.8635" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="193" Position="185,79.75,0" Scale="1,1,1" UnitType="Beacon_Protoss" Player="13"/>
 </PlacedObjects>

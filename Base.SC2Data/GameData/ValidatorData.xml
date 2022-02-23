@@ -805,6 +805,11 @@
     <CValidatorUnitCompareBehaviorCount id="Hero74Skill1B2">
         <Behavior value="Hero74Skill1B2"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="Hero74Skill4AND">
+        <Type value="And"/>
+        <CombineArray value="HasSlow"/>
+        <CombineArray value="Hero74PassiveFilter"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="Hero74Skill4Check"/>
     <CValidatorUnitCompareBehaviorCount id="HeroBuffModelit322">
         <WhichUnit Value="Caster"/>
@@ -883,6 +888,9 @@
         <Type value="Fraction"/>
         <Value value="0.075"/>
     </CValidatorUnitCompareVital>
+    <CValidatorUnitFilters id="Hero74PassiveFilter">
+        <Filters value="Heroic;-"/>
+    </CValidatorUnitFilters>
     <CValidatorCombine id="PickupCheck22222222222">
         <CombineArray value="ThisUnit2222222223112"/>
         <CombineArray value="Hero72"/>

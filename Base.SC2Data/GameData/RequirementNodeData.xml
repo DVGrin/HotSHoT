@@ -497,6 +497,38 @@
         <Tooltip value=""/>
         <Count Link="Hero64Skill4Impact2" State="InProgressOrBetterAtUnit"/>
     </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHero74Skill4BInProgressOrBetterAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Hero74Skill4B" State="InProgressOrBetterAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountUpgrade id="CountUpgradeSpellUpHero74R0CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="SpellUpHero74R0" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountBehaviorHero74Skill4BInProgressOrBetterAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHero74Skill4BInProgressOrBetterAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeSpellUpHero74R0CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeSpellUpHero74R0CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementGTE id="GTECountBehaviorHero74Skill4BInProgressOrBetterAtUnit1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountBehaviorHero74Skill4BInProgressOrBetterAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementCountUpgrade id="Hero74Skill4Requirement">
+        <Tooltip value=""/>
+        <Count Link="SpellUpHero74R0" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountBehavior id="Hero74Skill4SHOTS">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Hero74Skill4B" State="InProgressOrBetterAtUnit"/>
+    </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorHero65Skill1BInProgressOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
@@ -802,6 +834,32 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
         <Count Link="SpellUp222233322522" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSpellUpHero74E0CompleteOnlyTechTreeCheat">
+        <Count Link="SpellUpHero74E0" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSpellUpHero74Q0CompleteOnlyTechTreeCheat">
+        <Count Link="SpellUpHero74Q0" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSpellUpHero74W0CompleteOnlyTechTreeCheat">
+        <Count Link="SpellUpHero74W0" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountUpgradeSpellUpHero74E0CompleteOnlyTechTreeCheat1">
+        <OperandArray index="0" value="CountUpgradeSpellUpHero74E0CompleteOnlyTechTreeCheat"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeSpellUpHero74Q0CompleteOnlyTechTreeCheat1">
+        <OperandArray index="0" value="CountUpgradeSpellUpHero74Q0CompleteOnlyTechTreeCheat"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeSpellUpHero74W0CompleteOnlyTechTreeCheat1">
+        <OperandArray index="0" value="CountUpgradeSpellUpHero74W0CompleteOnlyTechTreeCheat"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="Hero74Skill3Requirement">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="SpellUpHero74E0" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeSpellUp22223332252CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -1767,6 +1825,10 @@
         <Tooltip value=""/>
         <Count Link="SpellUp222233374522" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="Hero74Skill2Requirement">
+        <Tooltip value=""/>
+        <Count Link="SpellUpHero74W0" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeSpellUp22223337452CompleteOnlyTechTreeCheat">
         <Tooltip value=""/>
         <Count Link="SpellUp22223337452" State="CompleteOnly"/>
@@ -1778,6 +1840,10 @@
     <CRequirementCountUpgrade id="CountUpgradeSpellUp222233374CompleteOnlyTechTreeCheat">
         <Tooltip value=""/>
         <Count Link="SpellUp222233374" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="Hero74Skill1Requirement">
+        <Tooltip value=""/>
+        <Count Link="SpellUpHero74Q0" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeSpellUp222233375222CompleteOnlyTechTreeCheat">
         <Tooltip value=""/>

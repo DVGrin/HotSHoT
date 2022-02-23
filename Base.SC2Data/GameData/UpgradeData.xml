@@ -715,6 +715,7 @@
         <EffectArray Reference="Effect,Hero12AttackD22,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero25Skill3D,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero34AttackD,LeechFraction[Life]" Value="0.1"/>
+        <EffectArray Reference="Effect,Hero74AttackD,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero20AttackD2,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero35AttackD,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero36AttackD,LeechFraction[Life]" Value="0.1"/>
@@ -1129,6 +1130,10 @@
         <EffectArray Reference="Effect,Hero72Skill3D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero72Skill4D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero73Skill1D,LeechFraction[Life]" Value="0.06"/>
+        <EffectArray Reference="Effect,Hero74Skill1D,LeechFraction[Life]" Value="0.1"/>
+        <EffectArray Reference="Effect,Hero74Skill1BeamD,LeechFraction[Life]" Value="0.06"/>
+        <EffectArray Reference="Effect,Hero74Skill2D,LeechFraction[Life]" Value="0.06"/>
+        <EffectArray Reference="Effect,Hero74Skill4D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero73Skill2D,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero73Skill3D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero73Skill4D,LeechFraction[Life]" Value="0.1"/>
@@ -1955,6 +1960,24 @@
         <MaxLevel value="18"/>
         <LeaderAlias value=""/>
         <Alert value=""/>
+    </CUpgrade>
+    <CUpgrade id="HeroLvUp52322" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Alert value=""/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Unit,Hero74,LifeMax[0]" Value="82.5"/>
+        <EffectArray Reference="Unit,Hero74,LifeStart[0]" Value="82.5"/>
+        <EffectArray Reference="Unit,Hero74,EnergyMax[0]" Value="55"/>
+        <EffectArray Reference="Unit,Hero74,EnergyStart[0]" Value="55"/>
+        <EffectArray Reference="Effect,Hero74AttackD,Amount[0]" Value="2"/>
+        <EffectArray Reference="Unit,Hero74,LifeRegenRate[0]" Value="0.050700"/>
+        <EffectArray Reference="Unit,Hero74,EnergyRegenRate[0]" Value="0.054600"/>
+        <EffectArray Reference="Effect,Hero34PassiveM,Amount[0]" Value="3"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <MaxLevel value="18"/>
+        <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="HeroLvUp524" parent="Research">
         <Flags index="TechTreeCheat" value="1"/>
@@ -3364,12 +3387,16 @@
         <EffectArray Reference="Effect,Hero1Skill4D,Amount[0]" Value="2"/>
         <EffectArray Reference="Effect,Hero7Skill1D,Amount[0]" Value="4"/>
         <EffectArray Reference="Effect,Hero7Skill1Healing,VitalArray[Life].Change[0]" Value="7"/>
+        <EffectArray Reference="Effect,Hero74PassiveHealing,VitalArray[Life].Change[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74PassiveM,Amount[0]" Value="5"/>
         <EffectArray Reference="Effect,Hero7Skill1M,Amount[0]" Value="7"/>
         <EffectArray Reference="Effect,Hero7Skill2D,Amount[0]" Value="5"/>
         <EffectArray Reference="Effect,Hero7Skill2Healing,VitalArray[Energy].Change[0]" Value="3.5"/>
         <EffectArray Reference="Effect,Hero7Skill2M,Amount[0]" Value="3.5"/>
         <EffectArray Reference="Effect,ApplyIncapBehavior22222222242533,Count[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero7Skill3M,Amount[0]" Value="6"/>
+        <EffectArray Reference="Effect,Hero74Skill3M,Amount[0]" Value="6"/>
+        <EffectArray Reference="Effect,Hero74SkillXDong2,Count[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero7Skill4Healing,VitalArray[Life].Change[0]" Value="9"/>
         <EffectArray Reference="Effect,Hero7Skill4M2,Amount[0]" Value="9"/>
         <EffectArray Reference="Effect,Hero9Skill3D,Amount[0]" Value="8"/>
@@ -3574,6 +3601,7 @@
         <EffectArray Reference="Effect,Hero32AttackD,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero33AttackD,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero34AttackD,Amount[0]" Value="8"/>
+        <EffectArray Reference="Effect,Hero74AttackD,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero35AttackD,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero36AttackD,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero36Skill2D,Amount[0]" Value="9.6"/>
@@ -4207,6 +4235,10 @@
         <EffectArray Operation="Multiply" Reference="Abil,Hero73Skill3,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
         <EffectArray Operation="Multiply" Reference="Abil,Hero73Skill4,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
         <EffectArray Operation="Multiply" Reference="Abil,Hero73Skill32,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,Hero74Skill1,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,Hero74Skill2,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,Hero74Skill3,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,Hero74Skill4dummy,Cost[0].Cooldown.TimeUse" Value="0.950000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="10"/>
         <LeaderAlias value=""/>
@@ -4297,6 +4329,10 @@
         <EffectArray Reference="Effect,Hero44Skill2Healing2,VitalArray[Life].Change" Value="0.18"/>
         <EffectArray Reference="Effect,Hero63Skill1D,Amount" Value="8"/>
         <EffectArray Reference="Effect,Hero73Skill1D,Amount" Value="8"/>
+        <EffectArray Reference="Effect,Hero74Skill1D,Amount" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="2.5"/>
+        <EffectArray Reference="Effect,Hero74Skill2D,Amount" Value="7.5"/>
+        <EffectArray Reference="Effect,Hero74Skill4D,Amount" Value="4.5"/>
         <EffectArray Reference="Effect,Hero73Skill2D,Amount" Value="6"/>
         <EffectArray Reference="Effect,StatInjang2D,Amount" Value="2"/>
         <EffectArray Reference="Effect,Hero73Skill4D,Amount" Value="1"/>
@@ -4887,6 +4923,30 @@
         <EffectArray Reference="Abil,Hero58Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero58Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero58Skill3D,Amount[0]" Value="35"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <MaxLevel value="4"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74E0" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74E1" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill3,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill3D,Amount[0]" Value="0"/>
+        <EffectArray Reference="Behavior,Hero74SkillXShield,Modification.VitalMaxArray[Shields]" Value="35"/>
+        <EffectArray Reference="Effect,Hero74Skill3M,Amount" Value="35"/>
+        <EffectArray Reference="Effect,Hero74SKill3G2,PeriodCount" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="4"/>
         <LeaderAlias value=""/>
@@ -12380,6 +12440,72 @@
         <MaxLevel value="4"/>
         <LeaderAlias value=""/>
     </CUpgrade>
+    <CUpgrade id="SpellUpHero74R1" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill4dummy,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Effect,Hero74Skill4D,Amount" Value="50"/>
+        <EffectArray Reference="Abil,Hero74Skill4,Cost[0].Charge.CountMax" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+        <MaxLevel value="2"/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74W0" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill2,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74R0" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill4dummy,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill4,Cost[0].Charge.CountMax" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74W1" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill2,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill2,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Effect,Hero74Skill2D,Amount[0]" Value="55"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <MaxLevel value="4"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74Q0" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74Q1" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
+        <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv2"/>
+        <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
     <CUpgrade id="SpellUp2222333745" parent="Research">
         <Flags index="TechTreeCheat" value="1"/>
         <InfoTooltipPriority value="2"/>
@@ -14473,6 +14599,48 @@
         <EffectArray Reference="Effect,Hero8Skill1D,Amount[0]" Value="25"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="4"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74Q2" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
+        <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv3"/>
+        <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74Q3" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
+        <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv4"/>
+        <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="SpellUpHero74Q4" parent="Research">
+        <Flags index="TechTreeCheat" value="1"/>
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\btn-status-detector.dds"/>
+        <Race value="Terr"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
+        <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv5"/>
+        <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
 </Catalog>

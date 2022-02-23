@@ -504,6 +504,27 @@
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value=""/>
     </CButton>
+    <CButton id="Hero74Passive">
+        <Icon value="Assets\Textures\btn-ability-zerg-dehaka-healingaura.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-dehaka-healingaura.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero74Skill4">
+        <Icon value="Assets\AddIcon\btn-hero35-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill1.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero74Skill4Cancel">
+        <Icon value="Assets\AddIcon\btn-hero35-skill1.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill1.dds"/>
+        <Hotkey value="Button/Hotkey/Hero74Skill4Btn5"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
     <CButton id="Hero9Passive">
         <Icon value="Assets\Textures\btn-unit-terran-nova.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-terran-nova.dds"/>
@@ -923,6 +944,13 @@
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value=""/>
         <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="Hero74Skill3">
+        <Icon value="Assets\AddIcon\btn-hero48-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero48-skill4.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
     </CButton>
     <CButton id="HeroSkillBtn552">
         <Icon value="Assets\AddIcon\btn-custom-terran-heart.dds"/>
@@ -1768,6 +1796,20 @@
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value=""/>
         <Hotkey value="Button/Hotkey/HeroSkillBtn4"/>
+    </CButton>
+    <CButton id="Hero74Skill1">
+        <Icon value="Assets\AddIcon\btn-hero35-skill4.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero35-skill4.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
+    </CButton>
+    <CButton id="Hero74Skill2">
+        <Icon value="Assets\AddIcon\btn-hero33-skill3.dds"/>
+        <AlertIcon value="Assets\AddIcon\btn-hero33-skill3.dds"/>
+        <Hotkey value="Button/Hotkey/HeroSkillBtn2"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value=""/>
     </CButton>
     <CButton id="HeroSkillBtn557">
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>

@@ -16,6 +16,19 @@
         <EditorCategories value="Race:Terran,TechType:Unit"/>
         <NodeArray index="Use" Link="EqCountUpgradeHero72Skill4LearnCompleteOnlyTechTreeCheat1"/>
     </CRequirement>
+    <CRequirement id="Hero74Skill2Requirement">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUpHero74W0CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="Hero74Skill3Requirement">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUpHero74E0CompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="Hero74Skill4Requirement2">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUpHero74R0CompleteOnly1"/>
+        <NodeArray index="Show" Link="GTECountBehaviorHero74Skill4BInProgressOrBetterAtUnit1"/>
+    </CRequirement>
     <CRequirement id="SpellUse">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
         <NodeArray index="Show" Link="EqCountUpgradeSpellUpCompleteOnly1"/>
@@ -261,6 +274,11 @@
         <EditorCategories value="Race:Terran,TechType:Unit"/>
         <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp222233362822CompleteOnly1"/>
         <NodeArray index="Show" Link="GTECountBehaviorHero64Skill4Impact2InProgressOrBetterAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="Hero74Skill4Requirement">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUpHero74R0CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHero74Skill4BInProgressOrBetterAtUnit0"/>
     </CRequirement>
     <CRequirement id="SpellUse437227">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
@@ -1427,6 +1445,10 @@
     <CRequirement id="Hero72Skill1Use">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
         <NodeArray index="Use" Link="EqCountUpgradeHero72Skill1LearnCompleteOnlyTechTreeCheat1"/>
+    </CRequirement>
+    <CRequirement id="Hero74Skill1Requirement">
+        <EditorCategories value="Race:Terran,TechType:Unit"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUpHero74Q0CompleteOnlyTechTreeCheat1"/>
     </CRequirement>
     <CRequirement id="SpellUse43745">
         <EditorCategories value="Race:Terran,TechType:Unit"/>

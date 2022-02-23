@@ -64,18 +64,18 @@
         <Effect index="0" value="Hero74Skill2G"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="1"/>
-            <Cooldown Location="Unit" TimeUse="1"/>
+            <Vital index="Energy" value="70"/>
+            <Cooldown Location="Unit" TimeUse="20"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="15"/>
+        <Range value="9.5"/>
         <FinishTime value="0.5"/>
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>
         <UninterruptibleArray index="Finish" value="1"/>
         <CursorEffect value="Hero74Skill2Sr"/>
         <AINotifyEffect value=""/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn63422" State="Restricted"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Hero74Skill2" State="Restricted" Requirements="Hero74Skill2Requirement"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero36Skill42">
@@ -7597,7 +7597,8 @@
         <Effect index="0" value="Hero74Skill1G"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="1"/>
+            <Vital index="Energy" value="60"/>
+            <Cooldown TimeUse="12"/>
         </Cost>
         <TargetFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -7605,8 +7606,18 @@
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>
         <UninterruptibleArray index="Finish" value="1"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="OracleWeaponOn"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Hero74Skill1" State="Restricted" Requirements="Hero74Skill1Requirement"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="Hero74Skill4MinRange">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Range value="6.5"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="Hero74Skill4dummy2">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="Hero74Skill4DongRemove2"/>
+        <Cost/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CommanderZeratulLevel10" State="Restricted" Requirements="Hero74Skill4Requirement2"/>
+    </CAbilEffectInstant>
     <CAbilEffectTarget id="Hero74SkillX">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <InfoTooltipPriority value="1"/>
@@ -7625,24 +7636,27 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn55322" State="Restricted"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
-    <CAbilEffectInstant id="Hero74Skill4">
+    <CAbilEffectTarget id="Hero74Skill4">
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="Hero74Skill4G"/>
+        <Effect index="0" value="Hero74Skill4G2"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="1"/>
-            <Cooldown TimeUse="1"/>
+            <Cooldown TimeUse="0.75"/>
         </Cost>
-        <CastOutroTime value="0.75"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="ArbiterMPStasisField"/>
-    </CAbilEffectInstant>
+        <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="30"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ArbiterMPStasisField" State="Restricted" Requirements="Hero74Skill4Requirement2"/>
+        <EffectRange index="0" value="6.8,1000"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero74Skill3">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <InfoTooltipPriority value="1"/>
         <Effect index="0" value="Hero74Skill3G"/>
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
-            <Vital index="Energy" value="1"/>
-            <Cooldown Location="Unit" TimeUse="1"/>
+            <Vital index="Energy" value="50"/>
+            <Cooldown Location="Unit" TimeUse="22.5"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="5.25"/>
@@ -7652,7 +7666,7 @@
         <UninterruptibleArray index="Finish" value="1"/>
         <AINotifyEffect value=""/>
         <EffectRange index="0" value="5,25"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSkillBtn5510422" State="Restricted"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Hero74Skill3" State="Restricted" Requirements="Hero74Skill3Requirement"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="Hero9Skill1">
@@ -8867,6 +8881,15 @@
         <MinAttackSpeedMultiplier value="0.45"/>
         <MaxAttackSpeedMultiplier value="4"/>
     </CAbilAttack>
+    <CAbilEffectInstant id="Hero74Skill4dummy">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="Hero74Skill4Dong"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+            <Cooldown TimeUse="120"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CommanderZeratulLevel10" State="Restricted" Requirements="Hero74Skill4Requirement"/>
+    </CAbilEffectInstant>
     <CAbilMove id="move">
         <CmdButtonArray index="Patrol" State="Restricted" Requirements="SpellUse43734223"/>
         <CmdButtonArray index="HoldPos" State="Restricted" Requirements="SpellUse43734223"/>

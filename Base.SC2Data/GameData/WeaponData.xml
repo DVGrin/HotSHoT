@@ -32,7 +32,6 @@
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
         <DisplayEffect value="Hero74AttackD"/>
         <TargetFilters value="Visible;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="4.5"/>
         <Marker Link="Weapon/Tosh"/>
         <Cost>
             <Cooldown Link="Weapon/Tosh"/>
