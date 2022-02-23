@@ -1789,11 +1789,11 @@ void HeroInfoInit() {
 
     // Hero74
     i += 1;
-    gv_HeroInformation[i].image = "Assets\\AddIcon\\btn-hero73.dds";
+    gv_HeroInformation[i].image = "BTNAirElemental.dds";
     gv_HeroInformation[i].unitname = "Hero74";
     gv_HeroInformation[i].levelup_upgrade = "HeroLvUp52322";
     gv_HeroInformation[i].name = StringExternal("Unit/Name/Hero74");
-    gv_HeroInformation[i].selection_tooltip = StringToText("");
+    gv_HeroInformation[i].selection_tooltip = StringExternal("DOCSTR_Hero74String");
     gv_HeroInformation[i].ability_resource = c_abilityResourceMana;
 }
 
@@ -3558,27 +3558,27 @@ void SkillsInit() {
 
     i += 1;
     // Hero74
-    gv_SkillLevelUpgrades[i][c_skillQ][0] = "";
-    gv_SkillLevelUpgrades[i][c_skillQ][1] = "";
-    gv_SkillLevelUpgrades[i][c_skillQ][2] = "";
-    gv_SkillLevelUpgrades[i][c_skillQ][3] = "";
-    gv_SkillLevelUpgrades[i][c_skillQ][4] = "";
+    gv_SkillLevelUpgrades[i][c_skillQ][0] = "SpellUpHero74Q0";
+    gv_SkillLevelUpgrades[i][c_skillQ][1] = "SpellUpHero74Q1";
+    gv_SkillLevelUpgrades[i][c_skillQ][2] = "SpellUpHero74Q2";
+    gv_SkillLevelUpgrades[i][c_skillQ][3] = "SpellUpHero74Q3";
+    gv_SkillLevelUpgrades[i][c_skillQ][4] = "SpellUpHero74Q4";
 
-    gv_SkillLevelUpgrades[i][c_skillW][0] = "";
-    gv_SkillLevelUpgrades[i][c_skillW][1] = "";
-    gv_SkillLevelUpgrades[i][c_skillW][2] = "";
-    gv_SkillLevelUpgrades[i][c_skillW][3] = "";
-    gv_SkillLevelUpgrades[i][c_skillW][4] = "";
+    gv_SkillLevelUpgrades[i][c_skillW][0] = "SpellUpHero74W0";
+    gv_SkillLevelUpgrades[i][c_skillW][1] = "SpellUpHero74W1";
+    gv_SkillLevelUpgrades[i][c_skillW][2] = "SpellUpHero74W1";
+    gv_SkillLevelUpgrades[i][c_skillW][3] = "SpellUpHero74W1";
+    gv_SkillLevelUpgrades[i][c_skillW][4] = "SpellUpHero74W1";
 
-    gv_SkillLevelUpgrades[i][c_skillE][0] = "";
-    gv_SkillLevelUpgrades[i][c_skillE][1] = "";
-    gv_SkillLevelUpgrades[i][c_skillE][2] = "";
-    gv_SkillLevelUpgrades[i][c_skillE][3] = "";
-    gv_SkillLevelUpgrades[i][c_skillE][4] = "";
+    gv_SkillLevelUpgrades[i][c_skillE][0] = "SpellUpHero74E0";
+    gv_SkillLevelUpgrades[i][c_skillE][1] = "SpellUpHero74E1";
+    gv_SkillLevelUpgrades[i][c_skillE][2] = "SpellUpHero74E1";
+    gv_SkillLevelUpgrades[i][c_skillE][3] = "SpellUpHero74E1";
+    gv_SkillLevelUpgrades[i][c_skillE][4] = "SpellUpHero74E1";
 
-    gv_SkillLevelUpgrades[i][c_skillR][0] = "";
-    gv_SkillLevelUpgrades[i][c_skillR][1] = "";
-    gv_SkillLevelUpgrades[i][c_skillR][2] = "";
+    gv_SkillLevelUpgrades[i][c_skillR][0] = "SpellUpHero74R0";
+    gv_SkillLevelUpgrades[i][c_skillR][1] = "SpellUpHero74R1";
+    gv_SkillLevelUpgrades[i][c_skillR][2] = "SpellUpHero74R1";
 }
 
 void InitGameParameters() {
