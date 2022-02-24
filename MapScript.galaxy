@@ -547,7 +547,7 @@ void gf_HrStat21 ();
 void gf_HrStat22 ();
 void gf_HrStat23 ();
 void gf_HrStat24 ();
-void gf_AttackSpeedLevelIncrease ();
+void gf_SetAttackSpeedToUpgradeLevel ();
 void gf_EvasionLevelIncrease ();
 void gf_CriticalChanceLevelIncrease ();
 void gf_CooldownReductionLevelIncrease ();
@@ -4780,10 +4780,10 @@ void gf_HrStat8 () {
 void gf_HrStat9 () {
     const int shop_index = 8;
     // Upgrade
-    gf_AttackSpeedLevelIncrease();
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellUp22223332223222", 1);
-    // Shop Changes
     gv_StatIncreasesBought[EventPlayer()][shop_index] += 1;
+    gf_SetAttackSpeedToUpgradeLevel();
+    // Shop Changes
     libNtve_gf_SetDialogItemText(gv_StatShopItemLabel[shop_index], (StringExternal("Param/Value/016D7E1B") + IntToText(gv_StatIncreasesBought[EventPlayer()][shop_index]) + StringExternal("Param/Value/2A26AC9A")), PlayerGroupSingle(EventPlayer()));
     lf_PayCostsForShopItem(shop_index);
     gf_SetStatShopTooltip(shop_index, EventPlayer());
@@ -5061,7 +5061,7 @@ void gf_HrStat24 () {
     lf_ShopRelatedChecks(shop_index);
 }
 
-void gf_AttackSpeedLevelIncrease () {
+void gf_SetAttackSpeedToUpgradeLevel () {
     int i;
     string[10] upgrade_names;
     int current_upgrade = gv_StatIncreasesBought[EventPlayer()][8];
@@ -5077,19 +5077,19 @@ void gf_AttackSpeedLevelIncrease () {
     upgrade_names[8] = "AttackSpeed22222222";
     upgrade_names[9] = "AttackSpeed222222222";
 
+    if (current_upgrade == 0) {
+        return;
+    }
+
     for (i = 0; i < 10; i += 1) {
-        if (i == 9) {
-            if (UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == false) {
-                UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[0], gv_PlayerHero[EventPlayer()], 1);
-                break;
-            } else {
-                break;
+        if (i + 1 < current_upgrade) {
+            if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == true)) {
+                UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], upgrade_names[i], EventPlayer(), 1);
             }
+            continue;
         }
-        if ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], upgrade_names[i]) == true)) {
-            UnitBehaviorRemovePlayer(gv_PlayerHero[EventPlayer()], upgrade_names[i], EventPlayer(), 1);
-            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[i + 1], gv_PlayerHero[EventPlayer()], 1);
-            break;
+        else if (i + 1 == current_upgrade) {
+            UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], upgrade_names[i], gv_PlayerHero[EventPlayer()], 1);
         }
     }
 }
@@ -5914,6 +5914,7 @@ void gf_HrHeroBuffPut () {
 void gf_HrHeroPassiveRepair () {
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Toherodamage", gv_PlayerHero[EventPlayer()], 1);
     UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Critical3", gv_PlayerHero[EventPlayer()], 1);
+    gf_SetAttackSpeedToUpgradeLevel();
     if ((gv_StatIncreasesBought[EventPlayer()][16] >= 1)) {
         UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "MagicShield", gv_PlayerHero[EventPlayer()], 1);
     }
