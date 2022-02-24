@@ -10634,29 +10634,39 @@ static bool lf_StatEligibleForBuying (int stat_index) {
 bool gt_TrStatDialogStatIncrease_Func (bool testConds, bool runActions) {
     int i;
     bool flag;
+    int timeout = 0;
+
     if (testConds) {
         // Not for observers
         if (!((PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()) == false))) {
-            return false;
-        }
-        // To prevent race conditions and double clicks
-        if (gv_PlayerMutex[EventPlayer()][c_mutexStatShop]) {
             return false;
         }
     }
     if (!runActions) {
         return true;
     }
+
+    // To prevent race conditions and double clicks
+    while (gv_PlayerMutex[EventPlayer()][c_mutexStatShop]) {
+        Wait(0.01, c_timeReal);
+        timeout += 1;
+        if (timeout > 200) {
+            return false;
+        }
+    }
+
     // Increase the stat if the criteria are met
     gv_PlayerMutex[EventPlayer()][c_mutexStatShop] = true;
     for (i = 0; i < 30; i += 1) {
         if ((EventDialogControl() == gv_StatShopButton[i])) {
             if (!(lf_StatEligibleForBuying(i))) {
+                gv_PlayerMutex[EventPlayer()][c_mutexStatShop] = false;
                 return false;
             }
             if (i == 26) {
                 // Check if there's a ward alive. Should be unnecessary but just in case
                 if (!(UnitGroupCount(UnitGroup("Gamsi", EventPlayer(), RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0)) {
+                    gv_PlayerMutex[EventPlayer()][c_mutexStatShop] = false;
                     return false;
                 }
             }
