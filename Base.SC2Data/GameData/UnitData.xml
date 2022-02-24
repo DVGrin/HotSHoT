@@ -10314,7 +10314,7 @@
             <LayoutButtons>
                 <Face value="A_Spell"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell1,0"/>
+                <AbilCmd value="Spell1,255"/>
                 <Requirements value="SpellUse"/>
                 <Row value="1"/>
                 <Column value="1"/>
@@ -10322,7 +10322,7 @@
             <LayoutButtons>
                 <Face value="A_Spell2"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell2,0"/>
+                <AbilCmd value="Spell2,255"/>
                 <Requirements value="SpellUse3"/>
                 <Row value="1"/>
                 <Column value="1"/>
@@ -10340,7 +10340,7 @@
             <LayoutButtons>
                 <Face value="A_Spell11"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell1b,0"/>
+                <AbilCmd value="Spell1b,255"/>
                 <Requirements value="SpellUse2"/>
                 <Row value="1"/>
                 <Column value="2"/>
@@ -10348,7 +10348,7 @@
             <LayoutButtons>
                 <Face value="A_Spell22"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell22,0"/>
+                <AbilCmd value="Spell22,255"/>
                 <Requirements value="SpellUse32"/>
                 <Row value="1"/>
                 <Column value="2"/>
@@ -10367,10 +10367,10 @@
             <LayoutButtons Face="HeroSkillBtn65352" Type="AbilCmd" AbilCmd="Hero52Skill2,Execute" Row="0" Column="1"/>
             <LayoutButtons Face="HeroSkillBtn653522" Type="AbilCmd" AbilCmd="Hero52Skill3,Execute" Row="0" Column="2"/>
             <LayoutButtons Face="HeroSkillBtn6535222" Type="AbilCmd" AbilCmd="Hero52Skill4,Execute" Row="0" Column="3"/>
-            <LayoutButtons Face="HeroSkillBtn6535222" Type="AbilCmd" AbilCmd="Hero52Skillc,Research1" Row="0" Column="3"/>
             <LayoutButtons Face="HeroSkillBtn65352222" Type="AbilCmd" AbilCmd="Hero52Skill4E,Execute" Row="0" Column="3"/>
             <LayoutButtons Face="Hero52Passive" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="Portal" Type="AbilCmd" AbilCmd="Portal,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="HeroSkillBtn6535222" Type="AbilCmd" AbilCmd="Hero52Skillc,Research1" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="0.6875"/>
         <SeparationRadius value="0.6875"/>

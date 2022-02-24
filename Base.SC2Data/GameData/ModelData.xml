@@ -86,6 +86,13 @@
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
     </CModel>
+    <CModel id="Hero74Skill3ShieldExplode" parent="LaunchFX">
+        <Model value="Assets\Doodads\TerrainShockwaveSnow\TerrainShockwaveSnow.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ToshAttackLaunch"/>
+        <ScaleMax value="1.800000,1.800000,1.800000"/>
+        <ScaleMin value="1.800000,1.800000,1.800000"/>
+    </CModel>
     <CModel id="Hero74Skill2RadiusEnemy" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Terran\PointDefenseRadius\PointDefenseRadius.m3"/>
         <EditorCategories value="Race:Terran"/>

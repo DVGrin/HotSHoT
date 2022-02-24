@@ -41,6 +41,24 @@
     <CSound id="EMP_Generator_ElectricArcs_Med">
         <Volume value="0.000000,0.000000"/>
     </CSound>
+    <CSound id="Hero74Skill3Sound2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray>
+            <File value="Assets\hero74skill3impact.wav"/>
+            <Pitch value="2.000000,2.000000"/>
+            <Volume value="6.000000,6.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="Hero74_Death" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\aaa.wav" FacialGroup=""/>
+        <Flags index="Ignorable" value="0"/>
+        <Mode value="2D"/>
+        <Volume value="2.500000,2.500000"/>
+    </CSound>
     <CSound id="Hero74Skill4Sound" parent="Combat">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\LightningThunder_OneShot_02.wav" FacialGroup=""/>

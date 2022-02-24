@@ -70,6 +70,41 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="SpellDong2347"/>
     </CEffectApplyBehavior>
+    <CEffectDamage id="Hero53PassiveM">
+        <EditorCategories value=""/>
+        <Amount value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="Hero74Skill1Mo4">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero74Skill1TEST"/>
+        <EffectArray value="Hero74Skill1ReduceCooldown"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="Hero74Skill1ReduceCooldown">
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="Hero74Skill1,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="0.5"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="Hero52Skill4Cooldown">
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="Hero52Skill4,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectSet id="Hero74Skill3Mo3">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero74Skill3Sr"/>
+        <EffectArray value="Hero74Skill3Sr4"/>
+    </CEffectSet>
+    <CEffectEnumArea id="Hero74Skill3Sr4">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="Effect/HybridFAoESearch"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="Hero74Skill3Dong3"/>
+    </CEffectEnumArea>
     <CEffectApplyBehavior id="Hero74Skill4Dong2">
         <ValidatorArray index="0" value="Hero74Skill4AND"/>
         <EditorCategories value=""/>
@@ -95,7 +130,7 @@
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ScannerSweep"/>
         <ExpireDelay value="2"/>
-        <RevealRadius value="1.5"/>
+        <RevealRadius value="2.2"/>
         <RevealFlags index="Unfog" value="1"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="Hero74Skill4G2">
@@ -131,7 +166,6 @@
     </CEffectDamage>
     <CEffectSet id="Hero74Skill3Mo2">
         <EditorCategories value=""/>
-        <EffectArray value="Hero74Skill3Sr"/>
         <EffectArray value="Hero74Skill3Sr3"/>
     </CEffectSet>
     <CEffectEnumArea id="Hero74Skill3Sr3">
@@ -158,6 +192,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Ranged"/>
+        <Amount value="60"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="Hero74Skill3Dong">
         <ValidatorArray index="0" value="NotHeroic22"/>
@@ -174,10 +209,8 @@
     <CEffectCreatePersistent id="Hero74SKill3G2">
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ScannerSweep"/>
-        <WhichLocation Value="CasterPoint"/>
-        <OffsetVectorStartLocation Value="CasterUnit"/>
-        <OffsetVectorEndLocation Value="CasterPoint"/>
-        <OffsetFacingFallback Value="CasterUnit"/>
+        <WhichLocation Value="SourcePoint"/>
+        <OffsetVectorEndLocation Value="SourcePoint"/>
         <PeriodCount value="10"/>
         <PeriodicEffectArray value="Hero74Skill3Sr2"/>
         <PeriodicPeriodArray value="0.04"/>
@@ -196,7 +229,7 @@
         <ValidatorArray value="Hero74Skill3InGyul"/>
         <EditorCategories value="Race:Protoss"/>
         <Marker Link="Effect/PsionicShockwaveApplyForce"/>
-        <WhichLocation Effect="Hero74Skill3G2" Value="CasterUnit"/>
+        <WhichLocation Effect="Hero74Skill3G2" Value="SourceUnit"/>
         <Amount value="1.25"/>
         <TimeScaleSource Value="Global"/>
     </CEffectApplyForce>
@@ -227,7 +260,6 @@
         <EditorCategories value=""/>
         <EffectArray value="Hero74Skill3G3"/>
         <EffectArray value="Hero74SKill3G2"/>
-        <EffectArray value="Hero74Skill3Dong3"/>
     </CEffectSet>
     <CEffectDamage id="Hero74Skill1BeamD" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
@@ -280,14 +312,14 @@
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Hero74Skill1Dong3">
         <EditorCategories value=""/>
-        <Behavior value="Hero74Skill1Slow"/>
+        <Behavior value="Hero74Skill1SlowLv1"/>
     </CEffectApplyBehavior>
     <CEffectSet id="Hero74Skill1Mo2">
         <EditorCategories value=""/>
         <EffectArray value="Hero74Skill1BeamD"/>
         <EffectArray value="Hero74Skill1Dong3"/>
     </CEffectSet>
-    <CEffectSet id="Hero74Skill1Mo22">
+    <CEffectSet id="Hero74Skill1Mo3">
         <EditorCategories value=""/>
         <EffectArray value="Hero74Skill1BeamD2"/>
         <EffectArray value="Hero74Skill1Dong3"/>
@@ -831,14 +863,14 @@
     <CEffectEnumArea id="Hero74Skill4Sr">
         <EditorCategories value=""/>
         <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="1" Effect="Hero74Skill4Mo"/>
+        <AreaArray Radius="1.25" Effect="Hero74Skill4Mo"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="Hero74Skill3Sr">
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
-        <ImpactLocation Value="TargetPoint"/>
-        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="1.25" Effect="Hero74Skill3Mo"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="Hero74Skill3Mo"/>
     </CEffectEnumArea>
     <CEffectModifyUnit id="Hero74PassiveHealing">
         <ValidatorArray value="EnemyTarget22"/>
@@ -3880,7 +3912,7 @@
         <PeriodicPeriodArray value="0"/>
     </CEffectCreatePersistent>
     <CEffectApplyBehavior id="Hero36PassiveDong3">
-        <ValidatorArray index="0" value="NotHeroic2"/>
+        <ValidatorArray index="0" value="HeroicMonster"/>
         <ValidatorArray value="NotStructure"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/Stimpack"/>
@@ -11748,7 +11780,7 @@
         <Kind value="Spell"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="Hero36PassiveDong">
-        <ValidatorArray index="0" value="NotHeroic2"/>
+        <ValidatorArray index="0" value="HeroicMonster"/>
         <ValidatorArray value="NotStructure"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/Stimpack"/>
@@ -13568,7 +13600,7 @@
         <ValidatorArray index="0" removed="1"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ApplyIncapBehavior"/>
-        <Behavior value="Herodebuff"/>
+        <Behavior value="Hero2Skill2Silence"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="ApplyIncapBehavior222222222232322">
         <ValidatorArray index="0" value="HeroDie2"/>
@@ -20122,7 +20154,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="75"/>
+        <Amount value="55"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="Hero53Skill1G">
         <EditorCategories value="Race:Terran"/>
@@ -25215,7 +25247,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Ranged"/>
-        <Amount value="14"/>
+        <Amount value="7"/>
     </CEffectDamage>
     <CEffectEnumArea id="Hero23Skill3Sr">
         <EditorCategories value="Race:Zerg"/>
@@ -30028,7 +30060,7 @@
         <ValidatorArray value="NotStructure"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ApplyIncapBehavior"/>
-        <Behavior value="Herodebuff4"/>
+        <Behavior value="Hero7Skill2Silence"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="ApplyIncapBehavior2222222224252">
         <ValidatorArray index="0" value="NotStructure"/>
@@ -30059,7 +30091,7 @@
         <ValidatorArray index="0" value="NotStructure"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ApplyIncapBehavior"/>
-        <Behavior value="Herodebuff43"/>
+        <Behavior value="Hero8Skill1Silence"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="ApplyIncapBehavior22222222242552">
         <ValidatorArray index="0" value="HeroSkillIn233"/>
@@ -30425,7 +30457,7 @@
         <ValidatorArray index="0" value="NotStructure"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ApplyIncapBehavior"/>
-        <Behavior value="Herodebuff5"/>
+        <Behavior value="Hero11Skill1Silence"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="Hero11Skill3Dong">
         <ValidatorArray index="0" value="NotStructure"/>

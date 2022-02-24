@@ -155,6 +155,11 @@
         <Filter index="Enemy" value="1"/>
         <Filter index="All" value="1"/>
     </CActorRange>
+    <CActorSound id="Hero74DeathSound" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="UnitDeath.Hero74" Send="Create"/>
+        <Sound value="Hero74_Death"/>
+    </CActorSound>
     <CActorAction id="Hero74Skill1" parent="GenericAttack" effectImpact="Hero13Skill1G2" effectLaunch="Hero13Skill1Missile">
         <On index="1" Terms="Effect.Hero74Skill1G3.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
         <On index="2" Terms="Effect.Hero74Skill1G3.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
@@ -261,6 +266,34 @@
         <StatusBarGroups index="All" value="0"/>
         <UnitIcon value="Assets\blackbg.tga"/>
     </CActorUnit>
+    <CActorSound id="Hero74Skill3Sound2" parent="SoundOneShot">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="Behavior.Hero74SkillXShield3.Off" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+    </CActorSound>
+    <CActorRange id="Hero74Skill3Range2" parent="RangeAbil" abil="Hero13Skill1">
+        <Filter index="Self" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Filter index="All" value="1"/>
+        <On index="1" Terms="Behavior.Hero74SkillXShield3.On" Send="Create"/>
+        <On index="2" Terms="Behavior.Hero74SkillXShield3.Off" Send="Destroy"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <Abil Link="Hero74Skill3KnockbackRange"/>
+    </CActorRange>
+    <CActorModel id="Hero74Skill3ShieldExplode" parent="ModelAnimationStyleOneShot">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Stand {} {} ContentPlayOnce"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Hero74Skill3Sr.Start; At Source" Send="Create"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
     <CActorModel id="Hero74Skill2RadiusEnemy" parent="ModelAnimationStyleContinuousUNIT">
         <Filter index="Self" value="1"/>
         <Filter index="Ally" value="1"/>
@@ -290,7 +323,7 @@
         <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
         <Host Subject=""/>
         <HostSiteOps Ops="SOpTargetPointStationary SOp74Height"/>
-        <Scale value="0.350000"/>
+        <Scale value="0.450000"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
     </CActorModel>
     <CActorRange id="Hero74Skill4RangeIndicator" parent="RangeAbil" abil="Hero13Skill1">
@@ -691,8 +724,8 @@
         <On index="34" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <On index="35" Terms="Abil.Hero74Skill1.SourceCastStart" Send="AnimBracketStart Spell Spell"/>
         <On index="36" Terms="Abil.Hero74Skill1.SourceFinishStop" Send="AnimBracketStop Spell"/>
-        <On index="37" Terms="Abil.Hero74Skill3.SourceCastStart" Send="AnimBracketStart Attack Attack"/>
-        <On index="38" Terms="Abil.Hero74Skill3.SourceFinishStop" Target="" Send="AnimBracketStop Attack"/>
+        <On index="37" Terms="Abil.Hero74Skill3.SourceCastStart" Send="AnimBracketStart Spell Spell"/>
+        <On index="38" Terms="Abil.Hero74Skill3.SourceFinishStop" Target="" Send="AnimBracketStop Spell"/>
         <On index="39" Terms="Effect.Hero74Skill4Missile.Start" Target="" Send="AnimBracketStart STAND Stand,One"/>
         <On index="40" Terms="Effect.Hero74Skill4Missile.Stop" Send="AnimBracketStop STAND"/>
         <On index="41" Terms="Abil.Hero74Skill2.SourceCastStart" Send="AnimBracketStart Spell Spell"/>
@@ -1030,8 +1063,8 @@
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
         <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
-        <On Terms="Behavior.Hero74Skill1Slow.Create" Send="Create"/>
-        <On Terms="Behavior.Hero74Skill1Slow.Destroy" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.Hero74Skill1SlowLv1.Create" Send="Create"/>
+        <On Terms="Behavior.Hero74Skill1SlowLv1.Destroy" Send="AnimBracketStop BSD"/>
         <On Terms="Behavior.Hero74Skill1SlowLv2.Create" Send="Create"/>
         <On Terms="Behavior.Hero74Skill1SlowLv3.Create" Send="Create"/>
         <On Terms="Behavior.Hero74Skill1SlowLv4.Create" Send="Create"/>
@@ -1134,7 +1167,7 @@
         <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
         <Host Subject=""/>
         <HostSiteOps Ops="SOpTargetPointStationary SOp74Height"/>
-        <Scale value="0.350000"/>
+        <Scale value="0.450000"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
     </CActorModel>
     <CActorModel id="Hero30Skill3EnemyRadius" parent="ModelAnimationStyleContinuousUNIT">
@@ -33799,7 +33832,7 @@
         <Inherits index="Visibility" value="1"/>
         <FogVisibility value="Hidden"/>
         <On index="1" Terms="ActorOrphan" Send="Destroy"/>
-        <On index="2" Terms="Behavior.Herodebuff.Create" Send="Create"/>
+        <On index="2" Terms="Behavior.Hero2Skill2Silence.Create" Send="Create"/>
         <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
@@ -33820,7 +33853,7 @@
         <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
-        <On Terms="Behavior.Herodebuff4.Create" Send="Create"/>
+        <On Terms="Behavior.Hero7Skill2Silence.Create" Send="Create"/>
         <On Terms="Behavior.Herodebuff42.Create" Send="Create"/>
         <On Terms="Behavior.Herodebuff422.Create" Send="Create"/>
         <On Terms="Behavior.Herodebuff4222.Create" Send="Create"/>
@@ -33850,7 +33883,7 @@
     <CActorModel id="SpellModel22423" parent="ModelAnimationStyleOneShot">
         <FogVisibility value="Hidden"/>
         <On index="1" Terms="ActorOrphan" Send="Destroy"/>
-        <On index="2" Terms="Behavior.Herodebuff43.Create" Send="Create"/>
+        <On index="2" Terms="Behavior.Hero8Skill1Silence.Create" Send="Create"/>
         <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
@@ -33884,7 +33917,7 @@
         <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
         <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
-        <On Terms="Behavior.Herodebuff5.Create" Send="Create"/>
+        <On Terms="Behavior.Hero11Skill1Silence.Create" Send="Create"/>
         <On Terms="Behavior.Herodebuff52.Create" Send="Create"/>
         <On Terms="Behavior.Herodebuff522.Create" Send="Create"/>
         <On Terms="Behavior.Herodebuff5222.Create" Send="Create"/>

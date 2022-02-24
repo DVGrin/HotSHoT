@@ -1161,7 +1161,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="3"/>
-        <Modification MoveSpeedMultiplier="0.75">
+        <Modification MoveSpeedMultiplier="0.7">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -1194,7 +1194,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="3"/>
-        <Modification MoveSpeedMultiplier="0.7">
+        <Modification MoveSpeedMultiplier="0.6">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -1227,7 +1227,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="3"/>
-        <Modification MoveSpeedMultiplier="0.65">
+        <Modification MoveSpeedMultiplier="0.5">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -1260,7 +1260,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="3"/>
-        <Modification MoveSpeedMultiplier="0.6">
+        <Modification MoveSpeedMultiplier="0.4">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -1287,7 +1287,7 @@
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.5"/>
+        <Duration value="1"/>
         <InitialEffect value="Hero74Skill3D"/>
         <Modification MoveSpeedMaximum="10" MoveSpeedMinimum="10">
             <StateFlags index="SuppressAttack" value="1"/>
@@ -1318,7 +1318,7 @@
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.5"/>
+        <Duration value="1"/>
         <InitialEffect value="Agrozisi22"/>
         <Modification MoveSpeedMaximum="10" MoveSpeedMinimum="10">
             <ModifyFlags index="SuppressTurning" value="1"/>
@@ -1348,10 +1348,10 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.5"/>
+        <Duration value="3"/>
         <InitialEffect value="Hero74Skill3D"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Hero74Skill1Slow">
+    <CBehaviorBuff id="Hero74Skill1SlowLv1">
         <Name value="Behavior/Name/debuffslow"/>
         <Tooltip value="Behavior/Tooltip/debuffslow"/>
         <Alignment value="Negative"/>
@@ -1389,7 +1389,7 @@
         <DisableValidatorArray value="NotHeroic2"/>
         <RemoveValidatorArray value="NotHeroic2"/>
         <Duration value="0.2"/>
-        <ExpireEffect value="Hero74Skill1TEST"/>
+        <ExpireEffect value="Hero74Skill1Mo4"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero74Skill2Impact">
         <Alignment value="Negative"/>
@@ -1747,8 +1747,10 @@
         <InfoIcon value="Assets\InviButton.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie2"/>
+        <RemoveValidatorArray value="HasNoSilence"/>
+        <RemoveValidatorArray value="HasNoStun"/>
         <TimeScaleSource Value="Global"/>
-        <FinalEffect value="Hero52Skill1Dong32"/>
+        <FinalEffect value="Hero52Skill4Cooldown"/>
         <Modification>
             <DeathResponse>
                 <Cost>
@@ -2177,7 +2179,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero73PassiveDong"/>
-        <Modification WeaponRange="1">
+        <Modification>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/Hero64Skill1Impact"/>
@@ -2362,6 +2364,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <FinalEffect value="Hero74Skill3Mo3"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero9Skill14dong32">
         <Alignment value="Positive"/>
@@ -3597,8 +3600,8 @@
         <RemoveValidatorArray value="PickupCheck2222225"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.5"/>
-        <Modification MoveSpeedMultiplier="0.5">
+        <Duration value="2.25"/>
+        <Modification MoveSpeedMultiplier="0.4">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -3659,9 +3662,8 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="9"/>
+        <Duration value="3"/>
         <PeriodCount value="1"/>
-        <PeriodicEffect value="Hero52Skill4zisi2"/>
         <Modification>
             <DeathResponse>
                 <Cost>
@@ -3676,6 +3678,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <ExpireEffect value="Hero52Skill4zisi2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero71Skill14">
         <Alignment value="Positive"/>
@@ -12204,6 +12207,7 @@
             </Cost>
         </DamageResponse>
         <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Stun" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero23Passive">
         <Alignment value="Positive"/>
@@ -12755,7 +12759,7 @@
         <RemoveValidatorArray value="HeroDie2"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="0.8"/>
+        <Duration value="0.3"/>
         <Modification>
             <StateFlags index="SuppressAttack" value="1"/>
             <AbilLinkDisableArray value="Hero36Skill1"/>
@@ -15934,6 +15938,7 @@
         <InfoFlags index="Hidden" value="1"/>
         <InitialEffect value="PickupMinerals100Set2"/>
         <FinalEffect value="PickupMinerals100Set24"/>
+        <BehaviorCategories index="Stun" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero22Skill2">
         <Alignment value="Positive"/>
@@ -16651,6 +16656,7 @@
         <PeriodicEffect value="Agrozisi22"/>
         <Name value="Behavior/Name/debuffsilence"/>
         <Tooltip value="Behavior/Tooltip/debuffsilence"/>
+        <BehaviorCategories index="Magic" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero24Skill3Slow2">
         <Alignment value="Negative"/>
@@ -21499,6 +21505,7 @@
         </DamageResponse>
         <Name value="Behavior/Name/debuffsilence"/>
         <Tooltip value="Behavior/Tooltip/debuffsilence"/>
+        <BehaviorCategories index="Magic" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero39Skill4impact">
         <Alignment value="Negative"/>
@@ -28447,7 +28454,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="0.97">
+        <DamageResponse ModifyFraction="0.99">
             <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
@@ -29618,6 +29625,7 @@
         </DamageResponse>
         <Name value="Behavior/Name/debuffsilence"/>
         <Tooltip value="Behavior/Tooltip/debuffsilence"/>
+        <BehaviorCategories index="Magic" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero55Skill2Impact2">
         <Alignment value="Negative"/>
@@ -30403,6 +30411,7 @@
         </DamageResponse>
         <Name value="Behavior/Name/debuffsilence"/>
         <Tooltip value="Behavior/Tooltip/debuffsilence"/>
+        <BehaviorCategories index="Magic" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero57Skill4Impact">
         <Alignment value="Negative"/>
@@ -33892,6 +33901,7 @@
         <PeriodicEffect value="Agrozisi22"/>
         <Name value="Behavior/Name/debuffsilence"/>
         <Tooltip value="Behavior/Tooltip/debuffsilence"/>
+        <BehaviorCategories index="Magic" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero16Skil1Impact">
         <Name value="Behavior/Name/debuffstunned"/>
@@ -34969,18 +34979,23 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Herodebuff5">
+    <CBehaviorBuff id="Hero11Skill1Silence">
+        <Name value="Behavior/Name/debuffsilence"/>
+        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
         <Alignment value="Negative"/>
         <Cost>
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
         <InfoIcon value="Assets\Textures\btn-ability-terran-holdfire.dds"/>
+        <BehaviorCategories index="Magic" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="1.5"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="Agrozisi22"/>
         <Modification>
             <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
             <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
@@ -35018,10 +35033,6 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <PeriodCount value="1"/>
-        <PeriodicEffect value="Agrozisi22"/>
-        <Name value="Behavior/Name/debuffsilence"/>
-        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MagicShield2">
         <Cost>
@@ -36602,17 +36613,23 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Herodebuff">
+    <CBehaviorBuff id="Hero2Skill2Silence">
+        <Name value="Behavior/Name/debuffsilence"/>
+        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
         <Alignment value="Negative"/>
         <Cost>
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
         <InfoIcon value="Assets\Textures\btn-ability-terran-holdfire.dds"/>
+        <BehaviorCategories index="Magic" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
+        <TimeScaleSource Value="Global"/>
         <Duration value="2.25"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="Agrozisi22"/>
         <Modification>
             <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
             <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
@@ -36650,11 +36667,6 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <TimeScaleSource Value="Global"/>
-        <PeriodCount value="1"/>
-        <PeriodicEffect value="Agrozisi22"/>
-        <Name value="Behavior/Name/debuffsilence"/>
-        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Herodebuff3">
         <Alignment value="Negative"/>
@@ -36733,17 +36745,23 @@
         <Range value="1"/>
         <Delay value="1.5"/>
     </CBehaviorWander>
-    <CBehaviorBuff id="Herodebuff4">
+    <CBehaviorBuff id="Hero7Skill2Silence">
+        <Name value="Behavior/Name/debuffsilence"/>
+        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
         <Alignment value="Negative"/>
         <Cost>
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
         <InfoIcon value="Assets\Textures\btn-ability-terran-holdfire.dds"/>
+        <BehaviorCategories index="Magic" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
+        <TimeScaleSource Value="Global"/>
         <Duration value="1.5"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="Agrozisi22"/>
         <Modification>
             <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
             <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
@@ -36781,23 +36799,24 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <TimeScaleSource Value="Global"/>
-        <PeriodCount value="1"/>
-        <PeriodicEffect value="Agrozisi22"/>
-        <Name value="Behavior/Name/debuffsilence"/>
-        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Herodebuff43">
+    <CBehaviorBuff id="Hero8Skill1Silence">
+        <Name value="Behavior/Name/debuffsilence"/>
+        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
         <Alignment value="Negative"/>
         <Cost>
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
         <InfoIcon value="Assets\Textures\btn-ability-terran-holdfire.dds"/>
+        <BehaviorCategories index="Magic" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
+        <TimeScaleSource Value="Global"/>
         <Duration value="1.5"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="Agrozisi22"/>
         <Modification>
             <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
             <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
@@ -36835,11 +36854,6 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <TimeScaleSource Value="Global"/>
-        <PeriodCount value="1"/>
-        <PeriodicEffect value="Agrozisi22"/>
-        <Name value="Behavior/Name/debuffsilence"/>
-        <Tooltip value="Behavior/Tooltip/debuffsilence"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Notauto">
         <Cost>

@@ -1751,29 +1751,29 @@
     <ObjectPoint Id="549" Position="76.828,91.1994,0" Scale="1,1,1" Type="Normal" Name="(중립생성)볼릭 좌" Color="0,0,0,0"/>
     <ObjectPoint Id="558" Position="125.72,78.48,0" Scale="1,1,1" Type="Normal" Name="(중립생성)야생 들개3 우" Color="0,0,0,0"/>
     <ObjectUnit Id="112" Position="160.5,79.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="Nexus" Player="13"/>
-    <ObjectUnit Id="121" Position="82.5,113.5,0" Rotation="5.8637" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="114" Position="159.5,94.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="13"/>
-    <ObjectUnit Id="192" Position="23,79.75,0" Scale="1,1,1" UnitType="Beacon_Protoss" Player="12"/>
-    <ObjectUnit Id="44" Position="192.5,80.5,0" Rotation="3.434" Scale="1,1,1" UnitType="SoohoTower" Player="13"/>
-    <ObjectUnit Id="712" Position="66.5,53.5,0" Rotation="5.866" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="224" Position="156.5,79.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="128" Position="141.5,105.5,0" Rotation="5.8632" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="41" Position="15.5,80.5,0" Rotation="3.4357" Scale="1,1,1" UnitType="SoohoTower" Player="12"/>
-    <ObjectUnit Id="110" Position="48.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="12"/>
-    <ObjectUnit Id="117" Position="157.5,97.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
-    <ObjectUnit Id="222" Position="43.5,79.5,0" Rotation="5.2526" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
-    <ObjectUnit Id="119" Position="125.5,45.5,0" Rotation="5.8637" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="225" Position="164.5,79.5,0" Rotation="5.249" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="109" Position="47.5,79.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="Nexus" Player="12"/>
     <ObjectUnit Id="111" Position="48.5,94.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="12"/>
     <ObjectUnit Id="131" Position="66.5,105.5,0" Rotation="5.8654" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="121" Position="82.5,113.5,0" Rotation="5.8637" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="114" Position="159.5,94.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="13"/>
     <ObjectUnit Id="223" Position="51.5,79.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="116" Position="50.5,97.5,0" Rotation="5.2526" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="192" Position="23,79.75,0" Scale="1,1,1" UnitType="Beacon_Protoss" Player="12"/>
+    <ObjectUnit Id="44" Position="192.5,80.5,0" Rotation="3.434" Scale="1,1,1" UnitType="SoohoTower" Player="13"/>
+    <ObjectUnit Id="712" Position="66.5,53.5,0" Rotation="5.866" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="118" Position="157.5,61.5,0" Rotation="5.2485" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
+    <ObjectUnit Id="224" Position="156.5,79.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="122" Position="125.5,113.5,0" Rotation="5.8613" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="113" Position="159.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="13"/>
+    <ObjectUnit Id="128" Position="141.5,105.5,0" Rotation="5.8632" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
+    <ObjectUnit Id="41" Position="15.5,80.5,0" Rotation="3.4357" Scale="1,1,1" UnitType="SoohoTower" Player="12"/>
+    <ObjectUnit Id="110" Position="48.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="FleetBeacon" Player="12"/>
     <ObjectUnit Id="115" Position="50.5,61.5,0" Rotation="5.2551" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
     <ObjectUnit Id="120" Position="82.5,45.5,0" Rotation="5.8662" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="117" Position="157.5,97.5,0" Rotation="5.251" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
+    <ObjectUnit Id="222" Position="43.5,79.5,0" Rotation="5.2526" Scale="1,1,1" UnitType="PhotonCannon" Player="12"/>
+    <ObjectUnit Id="119" Position="125.5,45.5,0" Rotation="5.8637" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="713" Position="141.5,53.5,0" Rotation="5.8635" Scale="1,1,1" UnitType="PhotonCannon" Player="13"/>
     <ObjectUnit Id="193" Position="185,79.75,0" Scale="1,1,1" UnitType="Beacon_Protoss" Player="13"/>
 </PlacedObjects>

@@ -209,6 +209,7 @@
         <EffectArray Reference="Abil,Hero73Skill2,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Effect,Hero73Skill2D,Amount" Value="6"/>
         <EffectArray Reference="Abil,Hero73Skill2,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Behavior,Hero73Skill2,Modification.WeaponRange" Value="0.25"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="4"/>
         <LeaderAlias value=""/>
@@ -1133,6 +1134,7 @@
         <EffectArray Reference="Effect,Hero74Skill1D,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero74Skill1BeamD,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero74Skill2D,LeechFraction[Life]" Value="0.06"/>
+        <EffectArray Reference="Effect,Hero74Skill3D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero74Skill4D,LeechFraction[Life]" Value="0.06"/>
         <EffectArray Reference="Effect,Hero73Skill2D,LeechFraction[Life]" Value="0.1"/>
         <EffectArray Reference="Effect,Hero73Skill3D,LeechFraction[Life]" Value="0.06"/>
@@ -3387,8 +3389,8 @@
         <EffectArray Reference="Effect,Hero1Skill4D,Amount[0]" Value="2"/>
         <EffectArray Reference="Effect,Hero7Skill1D,Amount[0]" Value="4"/>
         <EffectArray Reference="Effect,Hero7Skill1Healing,VitalArray[Life].Change[0]" Value="7"/>
-        <EffectArray Reference="Effect,Hero74PassiveHealing,VitalArray[Life].Change[0]" Value="5"/>
-        <EffectArray Reference="Effect,Hero74PassiveM,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74PassiveHealing,VitalArray[Life].Change[0]" Value="7.5"/>
+        <EffectArray Reference="Effect,Hero74PassiveM,Amount[0]" Value="7.5"/>
         <EffectArray Reference="Effect,Hero7Skill1M,Amount[0]" Value="7"/>
         <EffectArray Reference="Effect,Hero7Skill2D,Amount[0]" Value="5"/>
         <EffectArray Reference="Effect,Hero7Skill2Healing,VitalArray[Energy].Change[0]" Value="3.5"/>
@@ -4332,6 +4334,7 @@
         <EffectArray Reference="Effect,Hero74Skill1D,Amount" Value="5"/>
         <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="2.5"/>
         <EffectArray Reference="Effect,Hero74Skill2D,Amount" Value="7.5"/>
+        <EffectArray Reference="Effect,Hero74Skill3D,Amount" Value="6"/>
         <EffectArray Reference="Effect,Hero74Skill4D,Amount" Value="4.5"/>
         <EffectArray Reference="Effect,Hero73Skill2D,Amount" Value="6"/>
         <EffectArray Reference="Effect,StatInjang2D,Amount" Value="2"/>
@@ -4369,6 +4372,17 @@
         <EffectArray Reference="Effect,StatInjang6D,Amount" Value="0.4"/>
         <EffectArray Reference="Effect,Hero23Skill1D,Amount" Value="2"/>
         <EffectArray Reference="Effect,Hero23Skill1D2,Amount" Value="1"/>
+        <EffectArray Reference="Effect,Hero23Skill3M,Amount" Value="1.5"/>
+        <EffectArray Reference="Behavior,Hero23Skill3,Modification.DamageDealtScaled[Melee]" Value="1.5"/>
+        <EffectArray Reference="Behavior,Hero23Skill32,Modification.DamageDealtScaled[Melee]" Value="1.5"/>
+        <EffectArray Reference="Behavior,Hero23Skill322,Modification.DamageDealtScaled[Melee]" Value="1.5"/>
+        <EffectArray Reference="Behavior,Hero23Skill3222,Modification.DamageDealtScaled[Melee]" Value="1.5"/>
+        <EffectArray Reference="Behavior,Hero23Skill32222,Modification.DamageDealtScaled[Melee]" Value="1.5"/>
+        <EffectArray Reference="Behavior,Hero23Skill33,Modification.DamageDealtScaled[Melee]" Value="0.75"/>
+        <EffectArray Reference="Behavior,Hero23Skill332,Modification.DamageDealtScaled[Melee]" Value="0.75"/>
+        <EffectArray Reference="Behavior,Hero23Skill3322,Modification.DamageDealtScaled[Melee]" Value="0.75"/>
+        <EffectArray Reference="Behavior,Hero23Skill33222,Modification.DamageDealtScaled[Melee]" Value="0.75"/>
+        <EffectArray Reference="Behavior,Hero23Skill332222,Modification.DamageDealtScaled[Melee]" Value="0.75"/>
         <EffectArray Reference="Effect,StatInjang6Heal,VitalArray[Life].Change" Value="0.4"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="100"/>
@@ -4943,10 +4957,10 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero74Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero74Skill3,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,Hero74Skill3D,Amount[0]" Value="0"/>
+        <EffectArray Reference="Effect,Hero74Skill3D,Amount[0]" Value="35"/>
         <EffectArray Reference="Behavior,Hero74SkillXShield,Modification.VitalMaxArray[Shields]" Value="35"/>
         <EffectArray Reference="Effect,Hero74Skill3M,Amount" Value="35"/>
-        <EffectArray Reference="Effect,Hero74SKill3G2,PeriodCount" Value="5"/>
+        <EffectArray Reference="Effect,Hero74SKill3G2,PeriodCount" Value="2"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="4"/>
         <LeaderAlias value=""/>
@@ -10442,6 +10456,7 @@
         <Icon value="Assets\Textures\btn-status-detector.dds"/>
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero53Skill4,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,Hero53Passive,DamageResponse.ModifyFraction" Value="0.01"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Alert value=""/>
         <LeaderAlias value=""/>
@@ -10455,6 +10470,8 @@
         <EffectArray Reference="Abil,Hero53Skill4,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero53Skill4M,Amount" Value="10"/>
         <EffectArray Operation="Set" Reference="Effect,Hero53Skill4G,PeriodicEffectArray[2]" Value="Hero43Skill4Healing22"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,Hero53Passive,DamageResponse.ModifyFraction" Value="0.01"/>
+        <EffectArray Reference="Effect,Hero53PassiveM,Amount" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="2"/>
         <LeaderAlias value=""/>
@@ -10468,6 +10485,8 @@
         <EffectArray Reference="Abil,Hero53Skill4,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Effect,Hero53Skill4M,Amount" Value="10"/>
         <EffectArray Operation="Set" Reference="Effect,Hero53Skill4G,PeriodicEffectArray[3]" Value="Hero43Skill4Healing22"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,Hero53Passive,DamageResponse.ModifyFraction" Value="0.01"/>
+        <EffectArray Reference="Effect,Hero53PassiveM,Amount" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="2"/>
         <LeaderAlias value=""/>
@@ -10591,7 +10610,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero53Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero53Skill1,Cost[0].Vital[Energy]" Value="10"/>
-        <EffectArray Reference="Effect,Hero53Skill1D,Amount[0]" Value="50"/>
+        <EffectArray Reference="Effect,Hero53Skill1D,Amount[0]" Value="55"/>
         <EffectArray Reference="Effect,Hero53Skill1M,Amount" Value="5"/>
         <EffectArray Operation="Subtract" Reference="Behavior,Hero53Skill1Slow,Modification.MoveSpeedMultiplier" Value="0.05"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
@@ -11892,7 +11911,7 @@
         <EffectArray Reference="Effect,Hero7Skill2Healing,VitalArray[Energy].Change[0]" Value="35"/>
         <EffectArray Reference="Effect,Hero7Skill2M,Amount[0]" Value="35"/>
         <EffectArray Reference="Effect,Hero7Skill2M2,Amount[0]" Value="0.25"/>
-        <EffectArray Reference="Behavior,Herodebuff4,Duration[0]" Value="0.375000"/>
+        <EffectArray Reference="Behavior,Hero7Skill2Silence,Duration[0]" Value="0.375000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="4"/>
         <LeaderAlias value=""/>
@@ -11906,7 +11925,7 @@
         <EffectArray Reference="Abil,Hero11Skill1,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero11Skill1D,Amount[0]" Value="45"/>
         <EffectArray Reference="Effect,Hero11Skill1M,Amount[0]" Value="0.25"/>
-        <EffectArray Reference="Behavior,Herodebuff5,Duration[0]" Value="0.375000"/>
+        <EffectArray Reference="Behavior,Hero11Skill1Silence,Duration[0]" Value="0.375000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="4"/>
         <Alert value=""/>
@@ -12499,7 +12518,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
-        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="10"/>
         <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
         <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv2"/>
         <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
@@ -14608,7 +14627,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
-        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="10"/>
         <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
         <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv3"/>
         <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
@@ -14622,7 +14641,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
-        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="10"/>
         <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
         <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv4"/>
         <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>
@@ -14636,7 +14655,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero74Skill1,Cost[0].Vital[Energy]" Value="10"/>
-        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="5"/>
+        <EffectArray Reference="Effect,Hero74Skill1M,Amount[0]" Value="10"/>
         <EffectArray Reference="Effect,Hero74Skill1D,Amount[0]" Value="20"/>
         <EffectArray Operation="Set" Reference="Effect,Hero74Skill1Dong3,Behavior" Value="Hero74Skill1SlowLv5"/>
         <EffectArray Reference="Effect,Hero74Skill1BeamD,Amount" Value="10"/>

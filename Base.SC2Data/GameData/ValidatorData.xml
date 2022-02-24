@@ -46,10 +46,18 @@
         <AbilCmdIndex value="2"/>
         <Find value="0"/>
     </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareBehaviorCount id="HasNoStun">
+        <Compare value="LE"/>
+        <Categories index="Stun" value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="HasSlow">
         <Compare value="GE"/>
         <Value value="1"/>
         <Categories index="Slow" value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoSilence">
+        <Compare value="LE"/>
+        <Categories index="Magic" value="1"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="Hero26Skill4CheckDisease">
         <Compare value="GE"/>
@@ -890,6 +898,9 @@
     </CValidatorUnitCompareVital>
     <CValidatorUnitFilters id="Hero74PassiveFilter">
         <Filters value="Heroic;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroicMonster">
+        <Filters value="-;Self,Light,Structure,Missile,Dead,Hidden,Invulnerable"/>
     </CValidatorUnitFilters>
     <CValidatorCombine id="PickupCheck22222222222">
         <CombineArray value="ThisUnit2222222223112"/>

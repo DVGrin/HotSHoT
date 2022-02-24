@@ -1257,7 +1257,7 @@
     <CRequirement id="SpellUse4373353222">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
         <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333655222CompleteOnly1"/>
-        <NodeArray index="Show" Link="AndEqCountBehaviorHero52Skill422InProgressOrBetterAtUnit0EqCountBehaviorHero52Skill4coolInProgressOrBetterAtUnit0"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero52Skill422InProgressOrBetterAtUnit0"/>
     </CRequirement>
     <CRequirement id="SpellUse43733532222">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
