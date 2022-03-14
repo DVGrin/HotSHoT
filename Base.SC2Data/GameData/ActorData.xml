@@ -155,6 +155,21 @@
         <Filter index="Enemy" value="1"/>
         <Filter index="All" value="1"/>
     </CActorRange>
+    <CActorModel id="Hero39Skill3Impact3" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Death {} {} ContentPlayOnce"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="Effect.Hero39Skill3D2.Start; At Target" Send="Create"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck22" Send="SetScale 1.500000"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 2.000000"/>
+        <On Terms="ActorCreation; ValidateUnit PickupCheck2" Send="SetScale"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
+    </CActorModel>
     <CActorSound id="Hero74DeathSound" parent="SoundOneShot">
         <Inherits index="Visibility" value="0"/>
         <On Terms="UnitDeath.Hero74" Send="Create"/>
@@ -996,6 +1011,7 @@
         <EditorCategories value=""/>
         <On Terms="UnitBirth.PreserverA" Send="Create"/>
         <On Terms="UnitDeath.PreserverA" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetVisibility"/>
         <Host Subject="PreserverA"/>
         <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
         <Model value="PartyHatT1"/>
@@ -1004,6 +1020,7 @@
         <EditorCategories value=""/>
         <On Terms="UnitBirth.HighTemplar" Send="Create"/>
         <On Terms="UnitDeath.HighTemplar" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetVisibility"/>
         <Host Subject="HighTemplar"/>
         <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
         <Model value="PartyHatT1"/>
@@ -1012,6 +1029,7 @@
         <EditorCategories value=""/>
         <On Terms="UnitBirth.PreserverB" Send="Create"/>
         <On Terms="UnitDeath.PreserverB" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetVisibility"/>
         <Host Subject="PreserverB"/>
         <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
         <Model value="PartyHatT12"/>
@@ -1019,6 +1037,7 @@
     <CActorModel id="PartyHatWizardonT2Attachment" parent="ModelAddition">
         <EditorCategories value=""/>
         <On Terms="UnitDeath.HighTemplar2team" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetVisibility"/>
         <Host Subject="HighTemplar2team"/>
         <HostSiteOps Ops="PartyHatsTest PartyHatsTestOffset"/>
         <Model value="PartyHatT1"/>
@@ -6534,7 +6553,7 @@
         <On Terms="UnitDeath.Hero66Skill3Dummy" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetOpacity"/>
         <On Terms="ActorCreation" Send="SetOpacity 1.000000 1.500000"/>
-        <Host Subject="_Unit"/>
+        <Host Subject=""/>
         <HostSiteOps Ops="Hero66Skill3Jari"/>
         <Model value="SpellModel32332222223343423"/>
         <Scale value="0.175000"/>
@@ -6821,7 +6840,7 @@
         <On Terms="UnitDeath.Hero66Skill3Dummy" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetOpacity"/>
         <On Terms="ActorCreation" Send="SetOpacity 1.000000 1.500000"/>
-        <Host Subject="_Unit"/>
+        <Host Subject=""/>
         <HostSiteOps Ops="Hero66Skill3Jari"/>
         <Model value="SpellModel32332222223343423"/>
         <Scale value="0.175000"/>
@@ -13910,7 +13929,6 @@
         <On Terms="ActorCreation; ValidateUnit PickupCheck222" Send="SetScale 1.350000"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
-        <Model value="Hero39Skill3Impacts"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>

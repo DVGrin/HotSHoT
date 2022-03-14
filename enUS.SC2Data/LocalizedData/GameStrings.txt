@@ -729,6 +729,7 @@ Behavior/Name/Hero38Skill4g=Binding of Fear
 Behavior/Name/Hero39Passive=Shadow Hide
 Behavior/Name/Hero39PassiveCool=Shadow Hide Cooldown
 Behavior/Name/Hero39PassiveCool2=Damage Reaction
+Behavior/Name/Hero39PassiveCool3=WARNING!
 Behavior/Name/Hero39Skill1impact=Saliva Shock of Absorption
 Behavior/Name/Hero39Skill1impact2=Dark Shroud Passive Shock
 Behavior/Name/Hero39Skill2=Dark Shroud
@@ -1367,7 +1368,6 @@ Behavior/Name/SpellDong32222223=Unit Aggro
 Behavior/Name/SpellDong32222224=Spread Instinct
 Behavior/Name/SpellDong322222242=Spread Instinct System
 Behavior/Name/SpellDong322222243=Reckless Rampage
-Behavior/Name/SpellDong322222244=Shoot Stunt
 Behavior/Name/SpellDong3222222442=Stunt Shot Shock
 Behavior/Name/SpellDong32222224422=Hellfire Shock
 Behavior/Name/SpellDong322222244222=Passive Shock of Reckless Barrage
@@ -1738,7 +1738,7 @@ Behavior/Tooltip/Hero38Skill4g=
 Behavior/Tooltip/Hero39Passive=Stay stealthed. If you damage or deal damage to an enemy, or use a skill, you will break out of stealth.
 Behavior/Tooltip/Hero39PassiveCool=
 Behavior/Tooltip/Hero39PassiveCool2=
-Behavior/Tooltip/Hero39PassiveCool3=Enemy Dark Ray is nearby.
+Behavior/Tooltip/Hero39PassiveCool3=Enemy Dark Ray or Jade is nearby.
 Behavior/Tooltip/Hero39Skill1impact=
 Behavior/Tooltip/Hero39Skill1impact2=
 Behavior/Tooltip/Hero39Skill2=Absorbs all skill damage and harmful effects.
@@ -2364,7 +2364,6 @@ Behavior/Tooltip/SpellDong32222223=
 Behavior/Tooltip/SpellDong32222224=
 Behavior/Tooltip/SpellDong322222242=
 Behavior/Tooltip/SpellDong322222243=Basic attacks deal the same damage to enemies near the target.
-Behavior/Tooltip/SpellDong322222244=
 Behavior/Tooltip/SpellDong3222222442=
 Behavior/Tooltip/SpellDong32222224422=
 Behavior/Tooltip/SpellDong322222244222=
@@ -2963,7 +2962,7 @@ Button/Tooltip/Hero59=
 Button/Tooltip/Hero5Passive=<c val="ccffff">[Passive]</c> Every 10% of Xolus's health decreases, his basic attack speed is increased by 5%.
 Button/Tooltip/Hero6=
 Button/Tooltip/Hero60=
-Button/Tooltip/Hero60Passive=<c val="ccffff">[Passive]</c> Every time Bison basic attacks while in combat mode, he gains 5 heat energy. When you use a skill, you can get 15 heat energy. (Max: 200)
+Button/Tooltip/Hero60Passive=<c val="ccffff">[Passive]</c> Every time Bison basic attacks while in combat mode, he gains <c val="ffffff"><d ref="Effect,Hero60PassiveM,Amount" precision="2"/></c><c val="ff9999">(0.5 heat/AD)</c> heat energy. When you use a skill, you can get 15 heat energy. (Max: 200)
 Button/Tooltip/Hero61=
 Button/Tooltip/Hero61Passive=<c val="ccffff">[Passive]</c> When Musashi uses an ability, his next 3 basic attacks within 3 seconds gain 35% attack speed.
 Button/Tooltip/Hero61Skill4Unit=
@@ -3015,7 +3014,7 @@ Button/Tooltip/Hero74Skill2Dummy2=
 Button/Tooltip/Hero74Skill3=<c val="ccffff">[Active]</c> Zeph grants the target ally a shield for 5 seconds, absorbing up to <c val="ffffff"><d ref="Effect,Hero74Skill3M,Amount"/><c val="80FFFF">(0.6 AP)</c></c> damage. If the shield breaks or expires the storm within is set free; causing a shockwave that knocks back nearby enemies, dealing <c val="ffffff"><d ref="Effect,Hero74Skill3D,Amount"/><c val="80FFFF">(0.6 AP) magical damage</c></c>. Minions and monsters are not knocked back by this effect. Leveling this skill increases the knockback power.
 Button/Tooltip/Hero74Skill4=<c val="ccffff">[Active]</c> Zeph enters an artillery-like stance, being unable to move. In this stance Zeph can shoot 3 projectiles, each dealing <c val="ffffff"><d ref="Effect,Hero74Skill4D,Amount"/></c><c val="80FFFF">(0.45 AP)</c> <c val="80FFFF">magical damage</c>. Enemies that are slowed are stunned for 0.5 seconds on impact. Applies Hero74Skill1 slow effect on enemies that are hit.
 Button/Tooltip/Hero74Skill4Cancel=<c val="ccffff">[Active]</c> Press this button to cancel the artillery-mode.
-Button/Tooltip/Hero7Passive=<c val="ccffff">[Passive]</c> Metel blesses nearby allied Heroes, reducing all <c val="ff9999">Physical Damage</c> and <c val="80FFFF">Magic Damage</c> from enemies by 10%. Metel herself is unaffected.
+Button/Tooltip/Hero7Passive=<c val="ccffff">[Passive]</c> Metel blesses nearby allied Heroes, reducing all <c val="ff9999">Physical Damage</c> and <c val="80FFFF">Magic Damage</c> from enemies by 10%.
 Button/Tooltip/Hero8=
 Button/Tooltip/Hero9=
 Button/Tooltip/Hero9Passive=<c val="ccffff">[Passive]</c> Leinard deals bonus <c val="ffff99">True Damage</c> equal to 10% of her basic attack damage on hit. Leinard has a 25% chance to Headshot, dealing a bonus 50% of her basic attack damage as <c val="ffff99">True Damage</c>.
@@ -3099,7 +3098,7 @@ Button/Tooltip/HeroSkillBtn5533122=<c val="ccffff">[Active]</c> Grant creates a 
 Button/Tooltip/HeroSkillBtn55331222=<c val="ccffff">[Active]</c> Grant slams the ground, dealing <c val="ffffff"><d ref="Effect,Hero56Skill3D,Amount"/></c><c val="80FFFF">(0.65 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies and dragging them towards himself. The dragged enemies have their movement speed reduced by <c val="ffffff"><d ref="Effect,Hero56Skill3M,Amount"/>%</c> for 2 seconds.
 Button/Tooltip/HeroSkillBtn5533123=<c val="ccffff">[Active]</c> Grant roots nearby enemies, dealing <c val="ffffff"><d ref="Effect,Hero56Skill4D,Amount"/></c><c val="80FFFF">(1.0 AP)</c> <c val="80FFFF">magic damage</c>. Enemies that are rooted are locked for 2 seconds and cannot perform basic attacks. The constrained enemy hero's cannot use teleportation skills.
 Button/Tooltip/HeroSkillBtn553313=<c val="ccffff">[Active]</c> Bison slams into the enemy, dealing <c val="ffffff"><d ref="Effect,Hero60Skill1D,Amount"/></c><c val="ff9999">(0.9 AD)</c> <c val="ff9999">physical damage</c> and knocking them back. If you use this skill while in Race Mode, it fires a strong fire cannon at the enemy for <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero60Skill1D2,Amount"/></c><c val="ff9999">(0.9 AD)</c>, and the target takes 15% additional damage from all attacks from Bison for 5 seconds.
-Button/Tooltip/HeroSkillBtn5533132=<c val="ccffff">[Active]</c> Bison's weapon is empowered for <c val="ffffff"><d ref="Effect,Hero60Skill2M,Amount"/></c> seconds, causing his basic attacks to deal full damage to nearby enemies. Using this skill while in Race Mode increases your basic attack range by 2.5 and movement speed by 10%.
+Button/Tooltip/HeroSkillBtn5533132=<c val="ccffff">[Passive]</c> Increases Bison's maximum heat energy by <c val="ffffff"><d ref="Effect,Hero60PassiveM2,Amount"/></c>.<n/><c val="ccffff">[Active]</c> Bison's weapon is empowered for <c val="ffffff"><d ref="Effect,Hero60Skill2M,Amount"/></c> seconds, causing his basic attacks to deal full damage to nearby enemies. Using this skill while in Race Mode increases your basic attack range by 2.5 and movement speed by 10%.
 Button/Tooltip/HeroSkillBtn5533133=<c val="ccffff">[Active]</c> Bison fires missiles in a straight line. The missile explodes upon hitting an enemy or reaching the end of its range, dealing <c val="ffffff"><d ref="Effect,Hero60Skill3D,Amount"/></c><c val="ff9999">(0.85 AD) </c><c val="80FFFF">magical damage</c> to all enemies within range. If you use this skill while in Race Mode, the range increases and fires 3 missiles in a fan-shaped area.
 Button/Tooltip/HeroSkillBtn55331332=<c val="ccffff">[Active]</c> Bison transforms into a race mode with ranged attacks. Immediately after transformation, Bison's movement speed is increased by 0.5, and basic attacks fire a straight line of fire, dealing equal damage to all enemies. Heat energy is reduced by 10 per second for as long as the state is maintained. Using this skill once more will bring you back to combat mode.
 Button/Tooltip/HeroSkillBtn553314=<c val="ccffff">[Passive]</c> Each time Musashi basic attacks a minion or neutral monster he heals for <c val="ffffff"><d ref="Effect,Hero61Skill1M,Amount"/></c> HP.<n/><c val="ccffff">[Active]</c> Musashi's next 3 basic attacks are empowered. The 2nd basic attack deals <c val="ffffff"><d ref="Effect,Hero61Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> additional <c val="ff9999">physical damage</c> to the target and reduces their movement speed by <c val="ffffff"><d ref="Effect,Hero61Skill1M2,Amount"/>%</c> for 1.5 seconds. The final 3rd basic attack stuns for 1.25 seconds with the same additional <c val="ff9999">physical damage</c>.
@@ -3181,7 +3180,7 @@ Button/Tooltip/HeroSkillBtn5537222=<c val="ccffff">[Active]</c> Michael absorbs 
 Button/Tooltip/HeroSkillBtn554=<c val="ccffff">[Active]</c> Jade teleports to an enemy, attacking a vital point. Enemies attacked take <c val="ffffff"><d ref="Effect,Hero8Skill1D,Amount"/></c><c val="ff9999">(1.0 AD)</c> of <c val="ff9999">physical damage</c> and are silenced for 1 second.
 Button/Tooltip/HeroSkillBtn5542=<c val="ccffff">[Active]</c> Jade transforms her body into a blade to move quickly. While moving, she won't bump into other units and gain <c val="ffffff"><d ref="Effect,Hero8Skill2M,Amount"/>%</c> movement speed for 3 seconds. Enemies near Jade take <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero8Skill2D,Amount"/></c><c val="ff9999">(0.8 AD)</c>. Damage can't be applied more than once to the same target.
 Button/Tooltip/HeroSkillBtn55422=<c val="ccffff">[Active]</c> Jade unleashes several blades in unison and then causes them to return. Each time these blades pass an enemy they inflict <c val="ffffff"><d ref="Effect,Hero8Skill3D,Amount"/></c><c val="ff9999">(0.75 AD)</c> <c val="ff9999">physical damage</c> and reduce movement speed by <c val="ffffff"><d ref="Effect,Hero8Skill3M,Amount"/>%</c> for 2 seconds.
-Button/Tooltip/HeroSkillBtn554222=<c val="ccffff">[Passive]</c> Increases Jade's "Dark Scar" trigger condition (target's maximum health) by <c val="ffffff"><d ref="Effect,Hero8PassiveM2,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Jade hides in the shadows, becoming stealthed for 12 seconds. Basic attacks or skills while stealthed deal <c val="ffffff"><d ref="Effect,Hero8Skill4D,Amount"/></c><c val="ff9999">(1.35 AD)</c> additional <c val="ff9999">Physical Damage</c>. Stealth is removed after attacking.
+Button/Tooltip/HeroSkillBtn554222=<c val="ccffff">[Passive]</c> Increases Jade's "Dark Scar" trigger condition (target's maximum health) by <c val="ffffff"><d ref="Effect,Hero8PassiveM2,Amount" precision="1"/>%</c>.<n/><c val="ccffff">[Active]</c> Jade hides in the shadows, becoming stealthed for 12 seconds. Basic attacks or skills while stealthed deal <c val="ffffff"><d ref="Effect,Hero8Skill4D,Amount"/></c><c val="ff9999">(1.35 AD)</c> additional <c val="ff9999">Physical Damage</c>. Stealth is removed after attacking. Enemies will be alerted if you get close to them while stealthed.
 Button/Tooltip/HeroSkillBtn5543=<c val="ccffff">[Active]</c> Neherenia deals <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero29Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c> to the target and summons a vampire monster. Vampire monsters have 40% of Neherenia's base attack power and HP, 65% of her attack speed, and 110% of her movement speed. Each time the vampire monster performs a basic attack, Neherenia's health is restored by <c val="ffffff"><d ref="Effect,Hero29Skill1M,Amount"/></c><c val="ff9999">(0.3 AD)</c> HP.
 Button/Tooltip/HeroSkillBtn555=<c val="ccffff">[Active]</c> Venom Bug rolls around when moving, moving quickly for 7 seconds. Accelerates quickly while moving and deals <c val="ffffff"><d ref="Effect,Hero10Skill1D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> <c val="80FFFF">magic damage</c> to nearby enemies on impact. Enemies struck have their movementspeed reduced by <c val="ffffff"><d ref="Effect,Hero10Skill1M,Amount"/>%</c> for 3 seconds.
 Button/Tooltip/HeroSkillBtn5552=<c val="ccffff">[Passive]</c> Venom Bug takes 30% less damage from neutral monsters. When Venom Bug is attacked with a basic attack, the attacker receives <c val="ffffff"><d ref="Effect,Hero10Skill2D,Amount"/></c><c val="FF9866">(0.2 DP)</c> <c val="ffff99">True Damage</c></c> in retaliation.<n/><c val="ccffff">[Active]</c> Venom Bug taunts an enemy, causing him to attack Venom Bug for <c val="ffffff"><d ref="Effect,Hero10Skill2M,Amount" precision="2"/></c> second(s).
@@ -3275,7 +3274,7 @@ Button/Tooltip/HeroSkillBtn63733322=<c val="ccffff">[Active]</c> Lene immediatel
 Button/Tooltip/HeroSkillBtn64=<c val="ccffff">[Passive]</c> Each time Tangky basic attacks, he deals <c val="ffffff"><d ref="Effect,Hero12Skill1M2,Amount" precision="1"/></c> additional <c val="80FFFF">magic damage</c>. This effect stacks up to 5 times.<n/><c val="ccffff">[Active]</c> Increases Tangky's movementspeed by 15% for <c val="ffffff"><d ref="Effect,Hero12Skill1M,Amount"/></c> seconds and makes basic attacks also damage nearby enemies for 50% damage. For the duration of this skill the effect of the Outbreak Instinct is doubled.
 Button/Tooltip/HeroSkillBtn642=<c val="ccffff">[Active]</c> Tangky fires a stunning stunt shot, dealing <c val="ffffff"><d ref="Effect,Hero12Skill2D,Amount"/></c><c val="ff9999">(0.75 AD)</c> <c val="ff9999">Physical Damage</c> to nearby enemies and restores 5 energy for each enemy hit.
 Button/Tooltip/HeroSkillBtn6422=<c val="ccffff">[Active]</c> Tangky fires hundreds of bullets into the air, causing them to drop to their target location after 0.33 seconds for 3 seconds. Deals <c val="ffffff"><d ref="Effect,Hero12Skill3D,Amount"/></c><c val="80FFFF">(0.25 AP)</c> <c val="80FFFF">magic damage</c> every 0.33 seconds to enemies within range and reduces their movement speed by <c val="ffffff"><d ref="Effect,Hero12Skill3M,Amount"/>%</c> . Even if you leave the area of effect, the movement reduction effect lasts for 1 second. Total damage, if hit by all bullets = <c val="ffffff"><d ref="Effect,Hero12Skill3D,Amount*9"/></c> <c val="80FFFF">magic damage</c>.
-Button/Tooltip/HeroSkillBtn64222=<c val="ccffff">[Active]</c> Tangky fires in a cone in front of him for 2.5 seconds, dealing <c val="ffffff"><d ref="Effect,Hero12Skill4D,Amount"/></c><c val="ff9999">(0.6 AD) physical damage</c> and <c val="ffffff"><d ref="Effect,Hero12Skill4D2,Amount"/></c><c val="80FFFF">(0.4 AP)</c> <c val="80FFFF">magical damage</c> every 0.25 seconds. Total damage = <c val="ffffff"><d ref="Effect,Hero12Skill4D,Amount+Effect,Hero12Skill4D2,Amount*10"/> mixed damage.
+Button/Tooltip/HeroSkillBtn64222=<c val="ccffff">[Active]</c> Tangky fires in a cone in front of him for 2.5 seconds, dealing <c val="ffffff"><d ref="Effect,Hero12Skill4D,Amount"/></c><c val="ff9999">(0.65 AD) physical damage</c> and <c val="ffffff"><d ref="Effect,Hero12Skill4D2,Amount"/></c><c val="80FFFF">(0.4 AP)</c> <c val="80FFFF">magical damage</c> every 0.25 seconds. Total damage = <c val="ffffff"><d ref="Effect,Hero12Skill4D,Amount+Effect,Hero12Skill4D2,Amount*10"/> mixed damage.
 Button/Tooltip/HeroSkillBtn65=<c val="ccffff">[Active]</c> Moria throws a magic sphere at her target, dealing <c val="ffffff"><d ref="Effect,Hero15Skill1D,Amount"/></c><c val="80FFFF">(0.55 AP)</c><c val="cc99ff">(+<d ref="Effect,Hero15Skill1M,Amount"/>)</c> <c val=" 80FFFF">magic damage</c>. If the target is killed by this skill, this skill's damage is permanently increased by <c val="cc99ff">3</c>. (Max: 300)
 Button/Tooltip/HeroSkillBtn652=<c val="ccffff">[Active]</c> Moria creates a clone and sends it to the target area, becoming stealthed for 3 seconds. After the clone arrives it creates a powerful magic explosion, dealing <c val="ffffff"><d ref="Effect,Hero15Skill2D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> <c val="80FFFF">magical damage</c> to enemies within range. After 4 seconds the clone disappears. The clone's base damage and attack speed are equal to 50% of Moria's. The clone takes 20% more damage from enemies.
 Button/Tooltip/HeroSkillBtn6522=<c val="ccffff">[Active]</c> Moria quickly moves to the target area. Upon arrival Moria unleashes a powerful magic explosion, dealing <c val="ffffff"><d ref="Effect,Hero15Skill3D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> <c val="80FFFF">magical damage</c> to all enemies within range.
@@ -4535,6 +4534,7 @@ Effect/Name/Hero29AttackD=무기
 Effect/Name/Hero29Dong=마물 공격 속도
 Effect/Name/Hero29Dong2=공생 마물 공격 속도
 Effect/Name/Hero29DongRemove=공생 마물 공격 속도
+Effect/Name/Hero29KillCreditWorkAround=Hero29KillCreditWorkAround
 Effect/Name/Hero29Mo=공생 마물 버프 효과
 Effect/Name/Hero29PassiveDong=소환의 힘
 Effect/Name/Hero29Skill1D=흡혈의 힘
@@ -6048,6 +6048,8 @@ Effect/Name/Hero5Skill4M3=패왕의 분노
 Effect/Name/Hero60AttackD=무기
 Effect/Name/Hero60AttackG=무기
 Effect/Name/Hero60AttackG2=무기
+Effect/Name/Hero60PassiveM=Hero60PassiveM
+Effect/Name/Hero60PassiveM2=Hero60PassiveM2
 Effect/Name/Hero60PassiveManaHealing=열에너지
 Effect/Name/Hero60PassiveManaHealing2=열에너지
 Effect/Name/Hero60Skill1D=방어선 부수기
@@ -6770,6 +6772,7 @@ Effect/Name/Hero7Skill4Mo=기적의 재생
 Effect/Name/Hero7psSr=축복의 오라
 Effect/Name/Hero7psSr2=기적의 재생
 Effect/Name/Hero8AttackD=무기
+Effect/Name/Hero8CloakPeriodSet=Hero8CloakPeriodSet
 Effect/Name/Hero8PassiveRemove22=그림자 매복
 Effect/Name/Hero8Skill1D=급소 찌르기
 Effect/Name/Hero8Skill1Mo=급소 찌르기

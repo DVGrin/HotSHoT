@@ -70,9 +70,22 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="SpellDong2347"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="Hero29KillCreditWorkAround">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero29Dong"/>
+        <EffectArray value="KillsToCaster"/>
+    </CEffectSet>
     <CEffectDamage id="Hero53PassiveM">
         <EditorCategories value=""/>
         <Amount value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="Hero60PassiveM">
+        <EditorCategories value=""/>
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="Hero60PassiveM2">
+        <EditorCategories value=""/>
+        <Amount value="5"/>
     </CEffectDamage>
     <CEffectSet id="Hero74Skill1Mo4">
         <EditorCategories value=""/>
@@ -630,7 +643,7 @@
     <CEffectDamage id="Hero32Skill3M2">
         <EditorCategories value=""/>
         <ResponseFlags index="Acquire" value="1"/>
-        <Amount value="6"/>
+        <Amount value="15"/>
     </CEffectDamage>
     <CEffectDamage id="Hero3Skill2D2">
         <ValidatorArray value="NotHeroic2"/>
@@ -881,6 +894,11 @@
         </VitalArray>
         <ModifyFlags index="IsHeal" value="1"/>
     </CEffectModifyUnit>
+    <CEffectSet id="Hero8CloakPeriodSet">
+        <EditorCategories value=""/>
+        <EffectArray value="ApplyIncapBehavior22224"/>
+        <EffectArray value="Hero39PassiveG2"/>
+    </CEffectSet>
     <CEffectDamage id="Hero8PassiveD2" parent="DU_WEAP">
         <ValidatorArray value="LifeGEHalf222322"/>
         <ValidatorArray value="NotHeroic2"/>
@@ -9108,7 +9126,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="7"/>
+        <Amount value="8"/>
     </CEffectDamage>
     <CEffectDamage id="Hero12Skill1M222" parent="DU_WEAP">
         <ValidatorArray value="Hero12SkillIn2222"/>
@@ -9118,7 +9136,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="10"/>
+        <Amount value="12"/>
     </CEffectDamage>
     <CEffectDamage id="Hero12Skill1M2222" parent="DU_WEAP">
         <ValidatorArray value="Hero12SkillIn22222"/>
@@ -9128,7 +9146,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="13"/>
+        <Amount value="16"/>
     </CEffectDamage>
     <CEffectDamage id="Hero12Skill1M22222" parent="DU_WEAP">
         <ValidatorArray value="Hero12SkillIn222222"/>
@@ -9138,7 +9156,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="16"/>
+        <Amount value="20"/>
     </CEffectDamage>
     <CEffectSet id="Hero12Skill1Mo">
         <Marker Link="Effect/PickupMinerals100Set"/>
@@ -13981,7 +13999,7 @@
         <CreateFlags index="UseFood" value="0"/>
         <SpawnUnit value="Hero29S2"/>
         <SpawnCount value="2"/>
-        <SpawnEffect value="Hero29Dong"/>
+        <SpawnEffect value="Hero29KillCreditWorkAround"/>
     </CEffectCreateUnit>
     <CEffectDamage id="Hero29Skill2D" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
@@ -27001,6 +27019,7 @@
         <PeriodicPeriodArray value="0"/>
         <RevealRadius value="1.75"/>
         <RevealFlags index="Unfog" value="1"/>
+        <ExpireDelay value="1.5"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="Hero18Skill1G22">
         <EditorCategories value="Race:Terran"/>

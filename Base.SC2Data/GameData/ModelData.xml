@@ -86,6 +86,15 @@
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
     </CModel>
+    <CModel id="Hero39Skill3Impact3" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\ArcadePowerupStrongMissiles\ArcadePowerupStrongMissiles.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
     <CModel id="Hero74Skill3ShieldExplode" parent="LaunchFX">
         <Model value="Assets\Doodads\TerrainShockwaveSnow\TerrainShockwaveSnow.m3"/>
         <EditorCategories value="Race:Terran"/>
@@ -4323,7 +4332,7 @@
         <ScaleMax value="1.500000,1.500000,3.000000"/>
         <ScaleMin value="1.500000,1.500000,3.000000"/>
     </CModel>
-    <CModel id="Hero39Skill3Impacts" parent="ImpactFX">
+    <CModel id="Hero39Skill3Impact2" parent="ImpactFX">
         <Model value="Assets\Effects\Zerg\ZerglingMeleeImpact\ZerglingMeleeImpact.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Lighting value="ConsumptionModel"/>

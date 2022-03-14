@@ -12508,8 +12508,6 @@
             <StateFlags index="SuppressAttack" value="1"/>
             <HeightTime index="Start" value="0.4"/>
             <HeightTime index="Stop" value="0.1"/>
-            <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
-            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
             <AbilLinkEnableArray value="Hero23Skill4"/>
             <DeathResponse>
                 <Cost>
@@ -18556,7 +18554,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero32PassiveMo2"/>
-        <Modification MoveSpeedMultiplier="1.06">
+        <Modification MoveSpeedMultiplier="1.15">
             <DamageDealtScaled index="Melee" value="5.15"/>
             <DeathResponse>
                 <Cost>
@@ -18589,7 +18587,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero32PassiveMo2"/>
-        <Modification MoveSpeedMultiplier="1.12">
+        <Modification MoveSpeedMultiplier="1.2">
             <DamageDealtScaled index="Melee" value="5.15"/>
             <DeathResponse>
                 <Cost>
@@ -18622,7 +18620,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero32PassiveMo2"/>
-        <Modification MoveSpeedMultiplier="1.18">
+        <Modification MoveSpeedMultiplier="1.25">
             <DamageDealtScaled index="Melee" value="5.15"/>
             <DeathResponse>
                 <Cost>
@@ -18655,7 +18653,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero32PassiveMo2"/>
-        <Modification MoveSpeedMultiplier="1.24">
+        <Modification MoveSpeedMultiplier="1.3">
             <DamageDealtScaled index="Melee" value="5.15"/>
             <DeathResponse>
                 <Cost>
@@ -18688,7 +18686,7 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6"/>
         <InitialEffect value="Hero32PassiveMo2"/>
-        <Modification MoveSpeedMultiplier="1.3">
+        <Modification MoveSpeedMultiplier="1.35">
             <DamageDealtScaled index="Melee" value="5.15"/>
             <DeathResponse>
                 <Cost>
@@ -31578,7 +31576,7 @@
         <Period value="1.5"/>
         <PeriodicEffect value="Hero60Skill4Manadecrease"/>
         <FinalEffect value="Hero60Skill4Dong3"/>
-        <Modification MoveSpeedBonus="0.5">
+        <Modification MoveSpeedBonus="0.75">
             <WeaponArray Link="Hero60Weapon3"/>
             <WeaponDisableArray value="Hero60Weapon"/>
             <DeathResponse>
@@ -36053,10 +36051,9 @@
         <RemoveValidatorArray value="Teleinsik22"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="18"/>
-        <Period value="1.5"/>
-        <PeriodCount value="1"/>
+        <Period value="0.25"/>
         <InitialEffect value="HeroOkGi2223"/>
-        <PeriodicEffect value="ApplyIncapBehavior22224"/>
+        <PeriodicEffect value="Hero8CloakPeriodSet"/>
         <FinalEffect value="HeroOkGi22232"/>
         <Modification>
             <StateFlags index="Cloak" value="1"/>
@@ -43175,7 +43172,6 @@
         <Duration value="0.86"/>
         <InitialEffect value="Hero12AttackG2232"/>
         <Modification Height="0.6">
-            <StateFlags index="SuppressAttack" value="1"/>
             <HeightTime index="Start" value="0.7"/>
             <HeightTime index="Stop" value="0.3"/>
             <AbilLinkDisableArray value="Hero12Skill3"/>

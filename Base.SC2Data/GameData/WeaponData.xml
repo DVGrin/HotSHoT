@@ -312,9 +312,6 @@
         <Period value="2.15"/>
         <DamagePoint value="0.15"/>
         <Effect value="Hero60Skill4Mo2"/>
-        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
-        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
-        <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="Hero61Weapon2">
         <EditorCategories value="Race:Protoss"/>

@@ -3466,7 +3466,7 @@
         <EffectArray Reference="Effect,Hero8Skill3D,Amount[0]" Value="5.6"/>
         <EffectArray Reference="Effect,Hero9Skill1D,Amount[0]" Value="9.6"/>
         <EffectArray Reference="Effect,Hero9Skill4D,Amount[0]" Value="16"/>
-        <EffectArray Reference="Effect,Hero12Skill4D,Amount[0]" Value="4.8"/>
+        <EffectArray Reference="Effect,Hero12Skill4D,Amount[0]" Value="5.2"/>
         <EffectArray Reference="Effect,Hero12Skill2D,Amount[0]" Value="6"/>
         <EffectArray Reference="Effect,Hero13Skill1D,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero13Skill3D,Amount[0]" Value="4"/>
@@ -3728,6 +3728,8 @@
         <EffectArray Reference="Effect,Hero64Skill1D,Amount[0]" Value="9.6"/>
         <EffectArray Reference="Effect,Hero67Skill1D,Amount[0]" Value="6.4"/>
         <EffectArray Reference="Effect,Hero67Skill4D,Amount[0]" Value="8"/>
+        <EffectArray Reference="Effect,Hero60PassiveM,Amount[0]" Value="0.5"/>
+        <EffectArray Reference="Effect,Hero60PassiveManaHealing,VitalArray[Energy].Change" Value="0.5"/>
         <EffectArray Reference="Effect,Hero60Skill1D,Amount[0]" Value="7.2"/>
         <EffectArray Reference="Effect,Hero60Skill1D2,Amount[0]" Value="7.2"/>
         <EffectArray Reference="Effect,Hero68Skill1D,Amount[0]" Value="6.4"/>
@@ -9210,6 +9212,7 @@
         <Race value="Terr"/>
         <EffectArray Reference="Abil,Hero60Skill2,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero60Skill2b,Cost[0].Charge[0].CountMax[0]" Value="1"/>
+        <EffectArray Reference="Unit,Hero60,EnergyMax" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <LeaderAlias value=""/>
     </CUpgrade>
@@ -9223,6 +9226,8 @@
         <EffectArray Reference="Effect,Hero60Skill2M,Amount[0]" Value="1"/>
         <EffectArray Reference="Behavior,Hero60Skill22,Duration[0]" Value="1.500000"/>
         <EffectArray Reference="Behavior,Hero60Skill2,Duration[0]" Value="1.500000"/>
+        <EffectArray Reference="Unit,Hero60,EnergyMax" Value="5"/>
+        <EffectArray Reference="Effect,Hero60PassiveM2,Amount" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <MaxLevel value="5"/>
         <LeaderAlias value=""/>
@@ -13226,7 +13231,7 @@
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero32Skill3M,Amount[0]" Value="5"/>
-        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="6"/>
+        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero32Skill3Dong,Behavior[0]" Value="Hero32Skill32"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Alert value=""/>
@@ -13240,7 +13245,7 @@
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero32Skill3M,Amount[0]" Value="5"/>
-        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="6"/>
+        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero32Skill3Dong,Behavior[0]" Value="Hero32Skill322"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Alert value=""/>
@@ -13254,7 +13259,7 @@
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero32Skill3M,Amount[0]" Value="5"/>
-        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="6"/>
+        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero32Skill3Dong,Behavior[0]" Value="Hero32Skill3222"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Alert value=""/>
@@ -13268,7 +13273,7 @@
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Charge[0].CountMax[0]" Value="1"/>
         <EffectArray Reference="Abil,Hero32Skill3,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,Hero32Skill3M,Amount[0]" Value="5"/>
-        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="6"/>
+        <EffectArray Reference="Effect,Hero32Skill3M2,Amount[0]" Value="5"/>
         <EffectArray Operation="Set" Reference="Effect,Hero32Skill3Dong,Behavior[0]" Value="Hero32Skill32222"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Alert value=""/>
