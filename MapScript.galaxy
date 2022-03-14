@@ -674,6 +674,7 @@ trigger gt_TrHero62Skill3On;
 trigger gt_TrHero62Skill3End;
 trigger gt_TrHero66PassiveOn;
 trigger gt_TrHero66PassiveOn2;
+trigger gt_Hero33Skill2Vision;
 trigger gt_ScoreWindowToggle;
 trigger gt_TrMinionNotStop;
 trigger gt_TrMonsterMake1;
@@ -3917,6 +3918,9 @@ void gf_HrCharMake() {
                 TriggerEnable(gt_TrHero32Skill4On, true);
                 TriggerEnable(gt_TrHero32Skill4Off, true);
             }
+            if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 33)) {
+                TriggerEnable(gt_Hero33Skill2Vision, true);
+            }
             if ((gv_SelectedCharNum[gv_PlayerBayul[i]] == 36)) {
                 TriggerEnable(gt_TrHero36Skill4RPDown, true);
             }
@@ -4436,6 +4440,9 @@ void gf_SpawnHero(int player_number, int hero_number) {
         TriggerEnable(gt_TrHero32Skill2Up, true);
         TriggerEnable(gt_TrHero32Skill4On, true);
         TriggerEnable(gt_TrHero32Skill4Off, true);
+    }
+    if ((gv_SelectedCharNum[player_number] == 33)) {
+        TriggerEnable(gt_Hero33Skill2Vision, true);
     }
     if ((gv_SelectedCharNum[player_number] == 36)) {
         TriggerEnable(gt_TrHero36Skill4RPDown, true);
@@ -11771,6 +11778,52 @@ void gt_TrHero66PassiveOn2_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Jernigan smoke screen (E)
+//--------------------------------------------------------------------------------------------------
+bool gt_Hero33Skill2Vision_Func (bool testConds, bool runActions) {
+    int i;
+    bool share_vision;
+    playergroup allied_team;
+
+    if (!runActions) {
+        return true;
+    }
+
+    // Get the team as a playergroup
+    if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), UnitGetOwner(EventUnit())) == true)) {
+        allied_team = GameAttributePlayersForTeam(1);
+    } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), UnitGetOwner(EventUnit())) == true)) {
+        allied_team = GameAttributePlayersForTeam(2);
+    } else {
+        return false;
+    }
+
+    // Smoke screen on
+    if ((UnitBehaviorCount(EventUnit(), "Hero33Skill3impact3") >= 1)) {
+        share_vision = false;
+    }
+    // Smoke screen off
+    else if ((UnitBehaviorCount(EventUnit(), "Hero33Skill3impact3") == 0)) {
+        share_vision = true;
+    }
+
+    PlayerGroupLoopBegin(allied_team);
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        PlayerSetAlliance(PlayerGroupLoopCurrent(), c_allianceIdVision, UnitGetOwner(EventUnit()), share_vision);
+    }
+    PlayerGroupLoopEnd();
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Hero33Skill2Vision_Init () {
+    gt_Hero33Skill2Vision = TriggerCreate("gt_Hero33Skill2Vision_Func");
+    TriggerEnable(gt_Hero33Skill2Vision, false);
+    TriggerAddEventUnitBehaviorChange(gt_Hero33Skill2Vision, null, "Hero33Skill3impact3", c_unitBehaviorChangeAny);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: ????????? ??????/??????(??????)
 //--------------------------------------------------------------------------------------------------
 bool gt_ScoreWindowToggle_Func (bool testConds, bool runActions) {
@@ -16029,6 +16082,7 @@ void InitTriggers () {
     gt_TrHero62Skill3End_Init();
     gt_TrHero66PassiveOn_Init();
     gt_TrHero66PassiveOn2_Init();
+    gt_Hero33Skill2Vision_Init();
     gt_ScoreWindowToggle_Init();
     gt_TrMinionNotStop_Init();
     gt_TrMonsterMake1_Init();
