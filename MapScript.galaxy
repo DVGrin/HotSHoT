@@ -11784,6 +11784,7 @@ bool gt_Hero33Skill2Vision_Func (bool testConds, bool runActions) {
     int i;
     bool share_vision;
     playergroup allied_team;
+    int allied_minions;
 
     if (!runActions) {
         return true;
@@ -11792,8 +11793,10 @@ bool gt_Hero33Skill2Vision_Func (bool testConds, bool runActions) {
     // Get the team as a playergroup
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), UnitGetOwner(EventUnit())) == true)) {
         allied_team = GameAttributePlayersForTeam(1);
+        allied_minions = 12;
     } else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), UnitGetOwner(EventUnit())) == true)) {
         allied_team = GameAttributePlayersForTeam(2);
+        allied_minions = 13;
     } else {
         return false;
     }
@@ -11809,9 +11812,13 @@ bool gt_Hero33Skill2Vision_Func (bool testConds, bool runActions) {
 
     PlayerGroupLoopBegin(allied_team);
     for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        if (PlayerGroupLoopCurrent() == UnitGetOwner(EventUnit())) {
+            continue;
+        }
         PlayerSetAlliance(PlayerGroupLoopCurrent(), c_allianceIdVision, UnitGetOwner(EventUnit()), share_vision);
     }
     PlayerGroupLoopEnd();
+    PlayerSetAlliance(allied_minions, c_allianceIdVision, UnitGetOwner(EventUnit()), share_vision);
 
     return true;
 }
