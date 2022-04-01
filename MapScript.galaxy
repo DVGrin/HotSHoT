@@ -7600,6 +7600,9 @@ static void lf_PlayerHeroChoice(int player_number) {
         gv_CharSelectedName[player_number] = gv_HeroInformation[gv_SelectedCharNum[player_number] - 1].name;
         libNtve_gf_SetDialogItemImage(gv_TeamSelectDialogPlayerHeroImage[player_number], gv_CharSelectedImage[player_number], PlayerGroupAll());
         libNtve_gf_SetDialogItemTooltip(gv_TeamSelectDialogPlayerHeroImage[player_number], gv_CharSelectedName[player_number], PlayerGroupAll());
+        // Disable the hero for everyone else
+        DialogControlSetEnabled(gv_CharChooseWindowBtn[gv_SelectedCharNum[player_number] - 1], PlayerGroupAll(), false);
+        DialogControlSetEnabled(gv_CharChooseWindowImage[gv_SelectedCharNum[player_number] - 1], PlayerGroupAll(), false);
     }
     // "Ready" under the portrait
     libNtve_gf_SetDialogItemText(gv_TeamSelectDialogPlayerName[player_number], (StringExternal("Param/Value/0C8DBF4C") + PlayerName(player_number) + StringExternal("Param/Value/7ACF4E49")), PlayerGroupAll());
