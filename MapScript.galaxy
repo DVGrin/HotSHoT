@@ -132,7 +132,7 @@ bool[11] gv_HeroSelectionLockEnabled;
 string[11] gv_PlayerHandlerNumber;
 int gv_StrongUnitCount;
 int[4] gv_MinionMonsterStronger;
-int[11][4] gv_PlayerLevel;
+int[11][4] gv_PlayerLevelAndKDA;
 int gv_SkillLearnWindow;
 int gv_SkillLearnWindowLabel;
 int[4] gv_SkillLearnWindowButton;
@@ -196,6 +196,7 @@ bool[2] gv_HeroAllKill;
 int[11][2] gv_HeroBuffIng;
 int[11] gv_HeroKillPlayer;
 int[11][3] gv_HeroKillMoney;
+int[11] gv_HeroKillStreak;
 int[11][2] gv_HeroReviveCountNum;
 int[11] gv_HeroNonStopKill;
 int gv_HeroReviveWindow;
@@ -572,8 +573,9 @@ void gf_HrMonsterScorpionRegenTimerStart ();
 void gf_HrMonsterIceBugRegenTimerStart ();
 void gf_HrMonsterBossRegenTimerStart ();
 void gf_HrHeroReviveWindowMake ();
-void gf_HrHeroSkillIncreaseEffect ();
-void gf_HrHeroSkillIncreaseEffect2 ();
+// TODO: Remove both after testing
+void gf_HeroPassiveEffectsOnKill ();
+void gf_HeroPassiveEffectsOnDeath ();
 void gf_HrHeroAllKillMessage ();
 void gf_HrHeroAddKillMessage ();
 void gf_HrAssistantBonusTeam1 ();
@@ -729,7 +731,9 @@ trigger gt_TrMonsterIceBossRegen;
 trigger gt_TrBuildingDestroyMoojuck;
 trigger gt_TrSinhoBuildingReviveTimerStart;
 trigger gt_TrSinhoBuildingRevive;
+// TODO: Remove after testing alt
 trigger gt_TrHeroDeath;
+trigger gt_TrHeroDeath2;
 trigger gt_TrHeroReviveStand;
 trigger gt_TrNexusDestroyTeam1;
 trigger gt_TrNexusDestroyTeam2;
@@ -4156,7 +4160,7 @@ void gf_LearnSkill(int player_number, int skill) {
     int i;
     int j;
     int hero_number = gv_SelectedCharNum[player_number];
-    int hero_level = gv_PlayerLevel[player_number][0];
+    int hero_level = gv_PlayerLevelAndKDA[player_number][0];
     int current_skill_level = gv_SkillLevels[player_number][skill];
 
     // Bison can level up his Q, W and E to 6 and can't level up R
@@ -4308,28 +4312,28 @@ void gf_HrSkillLearnWindowOpen () {
         return;
     }
     // Enable every button if skill is available for level up
-    if (gv_SkillLevels[EventPlayer()][c_skillQ] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillQ]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillQ] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillQ]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
     }
-    if (gv_SkillLevels[EventPlayer()][c_skillW] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillW]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillW] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillW]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
     }
-    if (gv_SkillLevels[EventPlayer()][c_skillE] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillE]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillE] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillE]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
     }
-    if (gv_SkillLevels[EventPlayer()][c_skillR] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillR]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillR] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillR]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), true);
     }
 
     // Bison can level up skills to 6
     if (gv_SelectedCharNum[EventPlayer()] == 60) {
-        if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 5) && (gv_PlayerLevelAndKDA[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
         }
-        if ((gv_SkillLevels[EventPlayer()][c_skillW] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillW] == 5) && (gv_PlayerLevelAndKDA[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
         }
-        if ((gv_SkillLevels[EventPlayer()][c_skillE] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillE] == 5) && (gv_PlayerLevelAndKDA[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
         }
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
@@ -4360,25 +4364,25 @@ void gf_HrSkillLearnWindowClose () {
     }
 
     // Otherwise enable and disable buttons as necessary
-    if (gv_SkillLevels[EventPlayer()][c_skillQ] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillQ]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillQ] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillQ]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
     } else {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), false);
     }
 
-    if (gv_SkillLevels[EventPlayer()][c_skillW] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillW]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillW] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillW]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
     } else {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), false);
     }
 
-    if (gv_SkillLevels[EventPlayer()][c_skillE] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillE]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillE] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillE]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
     } else {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), false);
     }
 
-    if (gv_SkillLevels[EventPlayer()][c_skillR] < gv_MaxSkillLevel[gv_PlayerLevel[EventPlayer()][0]][c_skillR]) {
+    if (gv_SkillLevels[EventPlayer()][c_skillR] < gv_MaxSkillLevel[gv_PlayerLevelAndKDA[EventPlayer()][0]][c_skillR]) {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), true);
     } else {
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
@@ -4386,13 +4390,13 @@ void gf_HrSkillLearnWindowClose () {
 
     // Bison can level up skills to 6
     if (gv_SelectedCharNum[EventPlayer()] == 60) {
-        if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillQ] == 5) && (gv_PlayerLevelAndKDA[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillQ], PlayerGroupSingle(EventPlayer()), true);
         }
-        if ((gv_SkillLevels[EventPlayer()][c_skillW] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillW] == 5) && (gv_PlayerLevelAndKDA[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillW], PlayerGroupSingle(EventPlayer()), true);
         }
-        if ((gv_SkillLevels[EventPlayer()][c_skillE] == 5) && (gv_PlayerLevel[EventPlayer()][0] >= 11)) {
+        if ((gv_SkillLevels[EventPlayer()][c_skillE] == 5) && (gv_PlayerLevelAndKDA[EventPlayer()][0] >= 11)) {
             DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillE], PlayerGroupSingle(EventPlayer()), true);
         }
         DialogControlSetEnabled(gv_SkillLearnWindowButton[c_skillR], PlayerGroupSingle(EventPlayer()), false);
@@ -5648,7 +5652,7 @@ void gf_HrHeroReviveWindowMake () {
     }
 }
 
-void gf_HrHeroSkillIncreaseEffect () {
+void gf_HeroPassiveEffectsOnKill () {
     if ((gv_SelectedCharNum[gv_HeroKillPlayer[EventPlayer()]] == 32) && (gv_SkillLevels[gv_HeroKillPlayer[EventPlayer()]][c_skillW] >= 1)) {
         PlayerCreateEffectPoint(gv_HeroKillPlayer[EventPlayer()], "Hero32Skill2G22", PointFromId(1));
     }
@@ -5667,7 +5671,7 @@ void gf_HrHeroSkillIncreaseEffect () {
     }
 }
 
-void gf_HrHeroSkillIncreaseEffect2 () {
+void gf_HeroPassiveEffectsOnDeath () {
     if ((gv_SelectedCharNum[EventPlayer()] == 24)) {
         PlayerCreateEffectPoint(EventPlayer(), "Hero24Death", UnitGetPosition(EventUnit()));
     }
@@ -5778,9 +5782,9 @@ void gf_HrAssistantBonusTeam1 () {
     for (i = 1; i <= 4; i += 1) {
         if ((participated_in_kill[gv_PlayerBayul[i]] == true)) {
             assist_message[gv_PlayerBayul[i]] = (TextWithColor(PlayerName(gv_PlayerBayul[i]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[i], false))) + StringExternal("Param/Value/3934F88A"));
-            gv_PlayerLevel[gv_PlayerBayul[i]][3] += 1;
+            gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][3] += 1;
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
-            libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/2C3357F5") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/D9E79FA4") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/DC65B07B") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/39AC057A")), PlayerGroupAll());
+            libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/2C3357F5") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/D9E79FA4") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/DC65B07B") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/39AC057A")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/7498FB6B") + TextWithColor(StringExternal("Param/Value/A61AFE81"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/DE3747DD"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/D089DE34")));
             gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2];
             if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][21] == 1)) {
@@ -5849,9 +5853,9 @@ void gf_HrAssistantBonusTeam2 () {
     for (i = 5; i <= 8; i += 1) {
         if ((participated_in_kill[gv_PlayerBayul[i]] == true)) {
             assist_message[gv_PlayerBayul[i]] = (TextWithColor(PlayerName(gv_PlayerBayul[i]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerBayul[i], false))) + StringExternal("Param/Value/057E1FFE"));
-            gv_PlayerLevel[gv_PlayerBayul[i]][3] += 1;
+            gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][3] += 1;
             PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerBayul[i]]);
-            libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/30C3264C") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/C140D7C8") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/9130939D") + IntToText(gv_PlayerLevel[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/581A015F")), PlayerGroupAll());
+            libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerBayul[i]], (StringExternal("Param/Value/30C3264C") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][1]) + StringExternal("Param/Value/C140D7C8") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][2]) + StringExternal("Param/Value/9130939D") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerBayul[i]][3]) + StringExternal("Param/Value/581A015F")), PlayerGroupAll());
             UIDisplayMessage(PlayerGroupSingle(gv_PlayerBayul[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/878D3123") + TextWithColor(StringExternal("Param/Value/86749EDE"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/F27D4BF3"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/806A603B")));
             gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2];
             if ((gv_StatIncreasesBought[gv_PlayerBayul[i]][21] == 1)) {
@@ -7028,11 +7032,11 @@ void gf_UpdatePlayerStatisticsWindow() {
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelKDA],
             (
-                IntToText(gv_PlayerLevel[player][1]) + 
+                IntToText(gv_PlayerLevelAndKDA[player][1]) + 
                 StringToText("/") +
-                IntToText(gv_PlayerLevel[player][2]) + 
+                IntToText(gv_PlayerLevelAndKDA[player][2]) + 
                 StringToText("/") +
-                IntToText(gv_PlayerLevel[player][3])         
+                IntToText(gv_PlayerLevelAndKDA[player][3])         
             ),
             PlayerGroupAll()
         );
@@ -7082,7 +7086,7 @@ void gf_UpdatePlayerStatisticsWindow() {
             PlayerGroupAll()
         );
         
-        participated_in = (gv_PlayerLevel[player][1] + gv_PlayerLevel[player][3]) * 100;
+        participated_in = (gv_PlayerLevelAndKDA[player][1] + gv_PlayerLevelAndKDA[player][3]) * 100;
         if ((i < 4) && (gv_PlayerProfileTeamKillNum[0] > 0)) {
             participated_in /= gv_PlayerProfileTeamKillNum[0];
         }
@@ -7266,7 +7270,7 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum1], "displayunitstatus", "All");
             gv_HeroReviveCountNum[gv_PlayerBayul[lv_GPlayerNum1]][0] = 10;
             gv_HeroReviveCountNum[gv_PlayerBayul[lv_GPlayerNum1]][1] = 10;
-            gv_PlayerLevel[gv_PlayerBayul[lv_GPlayerNum1]][0] = 1;
+            gv_PlayerLevelAndKDA[gv_PlayerBayul[lv_GPlayerNum1]][0] = 1;
             gv_HeroKillMoney[gv_PlayerBayul[lv_GPlayerNum1]][0] = 60;
             gv_HeroKillMoney[gv_PlayerBayul[lv_GPlayerNum1]][1] = 12;
             gv_HeroKillMoney[gv_PlayerBayul[lv_GPlayerNum1]][2] = 20;
@@ -7297,7 +7301,7 @@ bool gt_Tr3PlayerSetting_Func (bool testConds, bool runActions) {
             PlayerOptionOverride(gv_PlayerBayul[lv_GPlayerNum3], "displayunitstatus", "All");
             gv_HeroReviveCountNum[gv_PlayerBayul[lv_GPlayerNum3]][0] = 10;
             gv_HeroReviveCountNum[gv_PlayerBayul[lv_GPlayerNum3]][1] = 10;
-            gv_PlayerLevel[gv_PlayerBayul[lv_GPlayerNum3]][0] = 1;
+            gv_PlayerLevelAndKDA[gv_PlayerBayul[lv_GPlayerNum3]][0] = 1;
             gv_HeroKillMoney[gv_PlayerBayul[lv_GPlayerNum3]][0] = 60;
             gv_HeroKillMoney[gv_PlayerBayul[lv_GPlayerNum3]][1] = 12;
             gv_HeroKillMoney[gv_PlayerBayul[lv_GPlayerNum3]][2] = 20;
@@ -10224,7 +10228,7 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
 
         gv_HeroReviveCountNum[EventPlayer()][0] = 10;
         gv_HeroReviveCountNum[EventPlayer()][1] = 10;
-        gv_PlayerLevel[EventPlayer()][0] = 1;
+        gv_PlayerLevelAndKDA[EventPlayer()][0] = 1;
         gv_HeroKillMoney[EventPlayer()][0] = 60;
         gv_HeroKillMoney[EventPlayer()][1] = 12;
         gv_HeroKillMoney[EventPlayer()][2] = 20;
@@ -10512,12 +10516,12 @@ bool gt_TrHeroLevelUp_Func (bool testConds, bool runActions) {
         gv_HeroReviveCountNum[EventPlayer()][1] += 8;
     }
 
-    gv_PlayerLevel[EventPlayer()][0] += 1;
+    gv_PlayerLevelAndKDA[EventPlayer()][0] += 1;
     gv_HeroKillMoney[EventPlayer()][0] += 15;
     gv_HeroKillMoney[EventPlayer()][1] += 4;
     gv_HeroKillMoney[EventPlayer()][2] += 7;
     gv_AllyGiveMoney[EventPlayer()] += 50;
-    libNtve_gf_SetDialogItemText(gv_ScoreDialogLevel[EventPlayer()], (StringExternal("Param/Value/6ADB3997") + IntToText(gv_PlayerLevel[EventPlayer()][0]) + StringExternal("Param/Value/DDE5A5FD")), PlayerGroupAll());
+    libNtve_gf_SetDialogItemText(gv_ScoreDialogLevel[EventPlayer()], (StringExternal("Param/Value/6ADB3997") + IntToText(gv_PlayerLevelAndKDA[EventPlayer()][0]) + StringExternal("Param/Value/DDE5A5FD")), PlayerGroupAll());
     gf_HrSkillLearnWindowOpen();
     gf_HrHeroLevelUpLink();
     TechTreeUpgradeAddLevel(EventPlayer(), "SpellLvUp", 1);
@@ -14673,7 +14677,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     }
 
     if (((gv_SelectedCharNum[EventPlayer()] == 24) || (gv_SelectedCharNum[EventPlayer()] == 54))) {
-        gf_HrHeroSkillIncreaseEffect2();
+        gf_HeroPassiveEffectsOnDeath();
     }
 
     if ((gv_HeroFirstKill == false) && (PlayerType(killing_player) == c_playerTypeUser)) {
@@ -14700,7 +14704,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     }
 
     if ((PlayerType(killing_player) == c_playerTypeUser)) {
-        gv_PlayerLevel[killing_player][1] += 1;
+        gv_PlayerLevelAndKDA[killing_player][1] += 1;
         if (((gv_SelectedSpellNum1[gv_HeroKillPlayer[EventPlayer()]] == 4) || (gv_SelectedSpellNum2[gv_HeroKillPlayer[EventPlayer()]] == 4)) && (UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "SpellDong4") == true)) {
             UnitCreateEffectUnit(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "Spelldong22", gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]]);
         }
@@ -14712,7 +14716,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
             bounty += (25 * (gv_HeroNonStopKill[EventPlayer()] + 1));
         }
 
-        if ((gv_PlayerLevel[EventPlayer()][0] > gv_PlayerLevel[killing_player][0])) {
+        if ((gv_PlayerLevelAndKDA[EventPlayer()][0] > gv_PlayerLevelAndKDA[killing_player][0])) {
             UIDisplayMessage(PlayerGroupSingle(killing_player), c_messageAreaSubtitle, (StringExternal("Param/Value/FAB94D7C") + TextWithColor(StringExternal("Param/Value/E161D6C8"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][0] + gv_HeroKillMoney[EventPlayer()][1] + bounty)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/089F3CD4"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/2D044E80")));
             PlayerModifyPropertyInt(killing_player, c_playerPropMinerals, c_playerPropOperAdd, (gv_HeroKillMoney[EventPlayer()][1] + bounty));
             gv_PlayerStatistics[EventPlayer()].minerals_lost += (gv_HeroKillMoney[EventPlayer()][0] + gv_HeroKillMoney[EventPlayer()][1] + bounty);
@@ -14723,11 +14727,11 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
         }
 
         if (((gv_SelectedCharNum[killing_player] == 32) || (gv_SelectedCharNum[killing_player] == 46) || (gv_SelectedCharNum[killing_player] == 66) || (gv_SelectedCharNum[killing_player] == 70))) {
-            gf_HrHeroSkillIncreaseEffect();
+            gf_HeroPassiveEffectsOnKill();
         }
 
         PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo", gv_PlayerHero[killing_player]);
-        libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[killing_player], (StringExternal("Param/Value/6B201FB2") + IntToText(gv_PlayerLevel[killing_player][1]) + StringExternal("Param/Value/D24522CA") + IntToText(gv_PlayerLevel[killing_player][2]) + StringExternal("Param/Value/B3E4C0D7") + IntToText(gv_PlayerLevel[killing_player][3]) + StringExternal("Param/Value/0D0DA65C")), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[killing_player], (StringExternal("Param/Value/6B201FB2") + IntToText(gv_PlayerLevelAndKDA[killing_player][1]) + StringExternal("Param/Value/D24522CA") + IntToText(gv_PlayerLevelAndKDA[killing_player][2]) + StringExternal("Param/Value/B3E4C0D7") + IntToText(gv_PlayerLevelAndKDA[killing_player][3]) + StringExternal("Param/Value/0D0DA65C")), PlayerGroupAll());
     }
 
     gv_HeroNonStopKill[EventPlayer()] = 0;
@@ -14740,8 +14744,8 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
         libNtve_gf_SetDialogItemText(gv_ScoreDialogTextB[5], (StringExternal("Param/Value/1CD6E931") + IntToText(gv_PlayerProfileTeamKillNum[1]) + StringExternal("Param/Value/B521C143")), PlayerGroupAll());
     }
 
-    gv_PlayerLevel[EventPlayer()][2] += 1;
-    libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[EventPlayer()], (StringExternal("Param/Value/4C5AC417") + IntToText(gv_PlayerLevel[EventPlayer()][1]) + StringExternal("Param/Value/E32F94F1") + IntToText(gv_PlayerLevel[EventPlayer()][2]) + StringExternal("Param/Value/784ECCE0") + IntToText(gv_PlayerLevel[EventPlayer()][3]) + StringExternal("Param/Value/43A6870C")), PlayerGroupAll());
+    gv_PlayerLevelAndKDA[EventPlayer()][2] += 1;
+    libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[EventPlayer()], (StringExternal("Param/Value/4C5AC417") + IntToText(gv_PlayerLevelAndKDA[EventPlayer()][1]) + StringExternal("Param/Value/E32F94F1") + IntToText(gv_PlayerLevelAndKDA[EventPlayer()][2]) + StringExternal("Param/Value/784ECCE0") + IntToText(gv_PlayerLevelAndKDA[EventPlayer()][3]) + StringExternal("Param/Value/43A6870C")), PlayerGroupAll());
     libNtve_gf_SetDialogItemText(gv_ScoreDialogName[EventPlayer()], (StringExternal("Param/Value/70CACF72") + PlayerName(EventPlayer()) + StringExternal("Param/Value/152670BB")), PlayerGroupAll());
     libNtve_gf_SetDialogItemColor(gv_ScoreDialogHeroImage[EventPlayer()], Color(100.00, 0.00, 0.00), PlayerGroupAll());
     DialogControlFadeTransparency(gv_ScoreDialogHeroImage[EventPlayer()], PlayerGroupAll(), 0.0, 50.0);
@@ -14768,6 +14772,404 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
 void gt_TrHeroDeath_Init () {
     gt_TrHeroDeath = TriggerCreate("gt_TrHeroDeath_Func");
     TriggerAddEventUnitDied(gt_TrHeroDeath, null);
+    TriggerEnable(gt_TrHeroDeath, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero death
+//--------------------------------------------------------------------------------------------------
+
+int lf_KillingPlayerNumber(int victim_player, int actual_killer) {
+    int i;
+    int default_killer;
+    int last_player_in_team;
+    string[9] kill_behaviours;
+
+    if ((PlayerType(actual_killer) == c_playerTypeUser)) {
+        return actual_killer;
+    }
+
+    // Not sure this check is necessary, left it in for compatibility reasons
+    if (PlayerType(actual_killer) != c_playerTypeHostile) {
+        return actual_killer;
+    }
+
+    kill_behaviours[1] = "Player1Assist4";
+    kill_behaviours[2] = "Player1Assist33";
+    kill_behaviours[3] = "Player1Assist323";
+    kill_behaviours[4] = "Player1Assist3223";
+    kill_behaviours[5] = "Player1Assist32223";
+    kill_behaviours[6] = "Player1Assist322223";
+    kill_behaviours[7] = "Player1Assist3222223";
+    kill_behaviours[8] = "Player1Assist32222222";
+
+    i = 1;
+    last_player_in_team = 4;
+    default_killer = 12;
+    if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), victim_player)) {
+        i = 5;
+        last_player_in_team = 8;
+        default_killer = 13;
+    }
+    for (; i <= last_player_in_team; i += 1) {
+        if (PlayerStatus(gv_PlayerBayul[i]) != c_playerStatusActive) {
+            continue;
+        }
+        if (UnitHasBehavior(gv_PlayerHero[victim_player], kill_behaviours[i])) {
+            return gv_PlayerBayul[i];
+        }
+    }
+    return default_killer;
+}
+
+string lf_HeroKillSoundLink(bool first_blood, int multikill, int killstreak) {
+    if (first_blood) { return "SystemSound"; }
+    if (multikill == 2) { return "SystemSound3"; }
+    if (multikill == 3) { return "SystemSound32"; }
+    if (multikill == 4) { return "SystemSound322"; }
+    if (killstreak == 2) { return "SystemSound3234"; }        
+    if (killstreak == 3) { return "SystemSound32342"; }        
+    if (killstreak == 4) { return "SystemSound323422"; }        
+    if (killstreak == 5) { return "SystemSound323"; }        
+    if (killstreak == 6) { return "SystemSound3232"; }        
+    if (killstreak == 7) { return "SystemSound3233"; }        
+    if (killstreak >= 8) { return "SystemSound32332"; }        
+    return "";
+}
+
+text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill) {
+    string[10] streak_message_links;
+    text message = StringToText("<s val=\"HelpPanelListBoxItemTitle\">");
+
+    if (first_blood) {
+        message += TextWithColor(
+            StringToText("First blood!"),  // TODO: Move to external string
+            Color(0.00, 100.00, 100.00)
+        );
+        message += StringToText("<n/>");
+    }
+
+    // Multikills
+    streak_message_links[0] = "Param/Value/AB71EABA";
+    streak_message_links[1] = "Param/Value/7146803F";
+    streak_message_links[2] = "Param/Value/87097627";
+    // Kill streaks
+    streak_message_links[3] = "Param/Value/A21CFBE1";
+    streak_message_links[4] = "Param/Value/4C15A50D";
+    streak_message_links[5] = "Param/Value/50A89A4B";
+    streak_message_links[6] = "Param/Value/00C847D5";
+    streak_message_links[7] = "Param/Value/3619623F";
+    streak_message_links[8] = "Param/Value/551276B1";
+    streak_message_links[9] = "Param/Value/1141AA81";
+
+    if (multikill >= 2) {
+        message += TextWithColor(
+            PlayerName(killer),
+            libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killer, false))
+        );
+        message += TextWithColor(
+            StringExternal(streak_message_links[MaxI(multikill - 2, 2)]),
+            Color(0.00, 100.00, 100.00)
+        );
+        message += StringToText("<n/>");
+    }
+
+    else if (gv_HeroKillStreak[killer] >= 2) {
+        message += TextWithColor(
+            PlayerName(killer),
+            libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killer, false))
+        );
+        message += TextWithColor(
+            StringExternal(streak_message_links[MaxI(gv_HeroKillStreak[killer] + 1, 9)]),
+            Color(0.00, 100.00, 100.00)
+        );
+        message += StringToText("<n/>");
+    }
+
+    message += TextWithColor(
+        PlayerName(killer),
+        libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killer, false))
+    );
+    message += StringToText("(");
+    message += TextWithColor(
+        UnitTypeGetName(UnitGetType(gv_PlayerHero[killer])),
+        Color(0.00, 100.00, 0.00)
+    );
+    message += StringToText(")");
+    message += StringToText(" has claimed");  // TODO: Move to external string
+    message += StringToText("<n/>");
+    TextWithColor(
+        PlayerName(victim),
+        libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(victim, false))
+    );
+    message += StringToText("(");
+    message += TextWithColor(
+        UnitTypeGetName(UnitGetType(gv_PlayerHero[victim])),
+        Color(0.00, 100.00, 0.00)
+    );
+    message += StringToText(")");
+    message += StringToText("'s life<n/>");  // TODO: Move to external string
+
+    message += StringToText("</s>");  // HelpPanelListBoxItemTitle
+    return message;
+}
+
+void lf_HeroPassiveEffectsOnDeath(int player, unit hero) {
+    // Kaion particle effects
+    if (gv_SelectedCharNum[player] == 24) {
+        PlayerCreateEffectPoint(player, "Hero24Death", UnitGetPosition(hero));
+    }
+    // Voltma passive AD
+    else if (gv_SelectedCharNum[player] == 54) {
+        UnitBehaviorRemove(hero, "Hero54Passive", (TechTreeBehaviorCount(player, "Hero54Passive", c_techCountInProgressOrBetter) / 2));
+        UnitBehaviorRemove(hero, "Hero54Passive2", (TechTreeBehaviorCount(player, "Hero54Passive2", c_techCountInProgressOrBetter) / 2));
+        UnitBehaviorRemove(hero, "Hero54Passive22", (TechTreeBehaviorCount(player, "Hero54Passive22", c_techCountInProgressOrBetter) / 2));
+        UnitBehaviorRemove(hero, "Hero54Passive222", (TechTreeBehaviorCount(player, "Hero54Passive222", c_techCountInProgressOrBetter) / 2));
+    }
+}
+
+void lf_HeroPassiveEffectsOnKill(int player, unit hero) {
+    // Galvaron W passive
+    if ((gv_SelectedCharNum[player] == 32) && (gv_SkillLevels[player][c_skillW] >= 1)) {
+        PlayerCreateEffectPoint(player, "Hero32Skill2G22", PointFromId(1));
+    }
+    // Shuirin passive
+    else if ((gv_SelectedCharNum[player] == 46) && (TechTreeUpgradeCount(player, "SpellUp222233322343", c_techCountCompleteOnly) < 50)) {
+        UnitBehaviorAdd(hero, "Hero46Passive", hero, 2);
+        TechTreeUpgradeAddLevel(player, "SpellUp222233322343", 2);
+    }
+    // Demol passive
+    else if ((gv_SelectedCharNum[player] == 66) && (TechTreeUpgradeCount(player, "SpellUp222233322722322", c_techCountCompleteOnly) < 24)) {
+        TechTreeUpgradeAddLevel(player, "SpellUp222233322722322", 1);
+        // TODO: Move this check from gt_TrHero66PassiveOn to separate function
+        // TODO: There is no need for it to be a trigger
+        if (((TechTreeUpgradeCount(player, "SpellUp222233322722322", c_techCountCompleteOnly) == 4) || (TechTreeUpgradeCount(player, "SpellUp222233322722322", c_techCountCompleteOnly) == 8) || (TechTreeUpgradeCount(player, "SpellUp222233322722322", c_techCountCompleteOnly) == 12) || (TechTreeUpgradeCount(player, "SpellUp222233322722322", c_techCountCompleteOnly) == 16) || (TechTreeUpgradeCount(player, "SpellUp222233322722322", c_techCountCompleteOnly) == 24))) {
+            PlayerCreateEffectPoint(player, "Hero66Passive", PointFromId(1));
+        }
+    }
+    // Drager jump reset
+    else if ((gv_SelectedCharNum[player] == 70) && (UnitHasBehavior(gv_PlayerHero[player], "Hero70Skill2cool") == true)) {
+        UnitCreateEffectUnit(hero, "Hero70Skill2Dong3", hero);
+    }
+}
+
+bool gt_TrHeroDeath2_Func (bool testConds, bool runActions) {
+    int bounty = 0;
+    int multikill = 0;
+    int killing_player;
+    bool first_blood = false;
+
+    if (testConds) {
+        if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
+            return false;
+        }
+        if (!((EventUnit() == gv_PlayerHero[EventPlayer()]))) {
+            return false;
+        }
+        if (!((gv_HeroDeathBoolean[EventPlayer()] == false))) {
+            return false;
+        }
+        if (!((gv_GameEndBoolean == false))) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    gv_HeroDeathBoolean[EventPlayer()] = true;
+
+    // Proward passive
+    if ((UnitGetType(EventUnit()) == "Hero19")) {
+        libNtve_gf_MakeUnitInvulnerable(gv_PlayerHero[EventPlayer()], true);
+        UnitRevive(gv_PlayerHero[EventPlayer()]);
+        UnitBehaviorAdd(gv_PlayerHero[EventPlayer()], "Hero19Passive", gv_PlayerHero[EventPlayer()], 1);
+        UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropLifePercent, 100.0);
+        UnitSetPropertyFixed(gv_PlayerHero[EventPlayer()], c_unitPropEnergyPercent, 100.0);
+        UnitClearSelection(EventPlayer());
+        UnitSelect(gv_PlayerHero[EventPlayer()], EventPlayer(), true);
+    }
+
+    // Find out the killing player, heroes take priority over non-player entities
+    killing_player = lf_KillingPlayerNumber(EventPlayer(), libNtve_gf_KillingPlayer());
+    gv_HeroKillPlayer[EventPlayer()] = killing_player;
+
+    // Transfer the jungle buffs if any
+    if (((gv_HeroBuffIng[EventPlayer()][0] >= 1) || (gv_HeroBuffIng[EventPlayer()][1] >= 1))) {
+        gf_HrHeroBuffPut();
+    }
+
+    lf_HeroPassiveEffectsOnDeath(EventPlayer(), EventUnit());
+    lf_HeroPassiveEffectsOnKill(killing_player, gv_PlayerHero[killing_player]);
+
+    if ((PlayerType(killing_player) == c_playerTypeUser)) {
+        if (gv_HeroFirstKill == false) {
+            gv_HeroFirstKill = true;
+            first_blood = true;
+            SoundPlay(SoundLink("SystemSound", -1), PlayerGroupAll(), 200.0, 0.0);
+            bounty += 100;
+        }
+
+        // Behaviours to track a potential multikill
+        // UnitBehaviorAdd(gv_PlayerHero[killing_player], "PlayerGKill", gv_PlayerHero[killing_player], 1);
+        UnitBehaviorAdd(gv_PlayerHero[killing_player], "PlayerGKill2", gv_PlayerHero[killing_player], 1);
+        multikill = UnitBehaviorCount(gv_PlayerHero[killing_player], "PlayerGKill2");
+
+        // TODO: Get rid of gv_HeroKillMoney?
+        // Base bounty
+        bounty += gv_HeroKillMoney[EventPlayer()][0];
+
+        // Bounty for killing someone who's higher level than you
+        if (gv_PlayerLevelAndKDA[EventPlayer()][0] > gv_PlayerLevelAndKDA[killing_player][0]) {
+            bounty += gv_HeroKillMoney[EventPlayer()][1];
+        }
+
+        // Bounties for kill or death streaks
+        if (gv_HeroKillStreak[EventPlayer()] < -1) {
+            bounty += 2 * (1 + gv_HeroKillStreak[EventPlayer()]) * (gv_PlayerLevelAndKDA[EventPlayer()][0] - 1);
+        }
+        else if (gv_HeroKillStreak[EventPlayer()] == 2) {
+            bounty += 50;
+        }
+        else if (gv_HeroKillStreak[EventPlayer()] > 2) {
+            bounty += 25 * (gv_HeroKillStreak[EventPlayer()] + 1);
+        }
+
+        // You can't get less than 60 minerals for a kill
+        bounty = MaxI(60, bounty);
+
+        // Give the minerals and update statistics
+        PlayerModifyPropertyInt(killing_player, c_playerPropMinerals, c_playerPropOperAdd, bounty);
+        gv_PlayerStatistics[EventPlayer()].minerals_lost += bounty;
+
+        // Display the message with the minerals earned to the killer
+        UIDisplayMessage(
+            PlayerGroupSingle(killing_player),
+            c_messageAreaSubtitle,
+            (
+                StringExternal("Param/Value/FB1959EE") + 
+                TextWithColor(StringExternal("Param/Value/772AC933"), Color(0.00, 87.45, 100.00)) + 
+                TextWithColor(IntToText(bounty), Color(0.00, 87.45, 100.00)) + 
+                TextWithColor(StringExternal("Param/Value/FABCA002"), Color(0.00, 87.45, 100.00)) +
+                StringExternal("Param/Value/3453FA0E")
+            )
+        );
+
+        // Increment the kill count and killstreaks
+        gv_PlayerLevelAndKDA[killing_player][1] += 1;
+        gv_HeroKillStreak[killing_player] = MaxI(1, gv_HeroKillStreak[killing_player] + 1);
+        gv_HeroKillStreak[EventPlayer()] = MinI(-1, gv_HeroKillStreak[EventPlayer()] - 1);
+
+        // Refresh Ghost duration if it's active
+        if (UnitHasBehavior(gv_PlayerHero[killing_player], "SpellDong4") == true) {
+            UnitCreateEffectUnit(gv_PlayerHero[killing_player], "Spelldong22", gv_PlayerHero[killing_player]);
+        }
+
+        // TODO: Check if this effect needs changes, specifically HeroKillGold part
+        // Give the kill experience
+        // PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo", gv_PlayerHero[killing_player]);
+        PlayerCreateEffectUnit(EventPlayer(), "HeroKill", gv_PlayerHero[killing_player]);
+
+        // Set the new score dialog values
+        libNtve_gf_SetDialogItemText(
+            gv_ScoreDialogTotalScore[killing_player],
+            (
+                StringExternal("Param/Value/6B201FB2") + 
+                IntToText(gv_PlayerLevelAndKDA[killing_player][1]) + 
+                StringExternal("Param/Value/D24522CA") + 
+                IntToText(gv_PlayerLevelAndKDA[killing_player][2]) + 
+                StringExternal("Param/Value/B3E4C0D7") + 
+                IntToText(gv_PlayerLevelAndKDA[killing_player][3]) + 
+                StringExternal("Param/Value/0D0DA65C")
+            ),
+            PlayerGroupAll()
+        );
+
+        // Increment the team kill count on the scoreboard
+        if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), killing_player) == true)) {
+            gv_PlayerProfileTeamKillNum[0] += 1;
+            libNtve_gf_SetDialogItemText(gv_ScoreDialogTextB[4], (StringExternal("Param/Value/46715145") + IntToText(gv_PlayerProfileTeamKillNum[0]) + StringExternal("Param/Value/211C87AC")), PlayerGroupAll());
+        }
+        else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), killing_player) == true)) {
+            gv_PlayerProfileTeamKillNum[1] += 1;
+            libNtve_gf_SetDialogItemText(gv_ScoreDialogTextB[5], (StringExternal("Param/Value/1CD6E931") + IntToText(gv_PlayerProfileTeamKillNum[1]) + StringExternal("Param/Value/B521C143")), PlayerGroupAll());
+        }
+    }
+
+    // Increment the death count
+    gv_PlayerLevelAndKDA[EventPlayer()][2] += 1;
+
+    // TODO: Write the function
+    // Display the kill message
+    UIDisplayMessage(
+        PlayerGroupAll(),
+        c_messageAreaDebug,
+        lf_HeroKillMessage(killing_player, EventPlayer(), first_blood, multikill)
+    );
+
+    // Play the kill sound
+    SoundPlay(
+        SoundLink(lf_HeroKillSoundLink(first_blood, multikill, gv_HeroKillStreak[killing_player]), -1),
+        PlayerGroupAll(), 200.0, 0.0
+    );
+
+    // Score dialog changes for the victim
+    libNtve_gf_SetDialogItemText(
+        gv_ScoreDialogTotalScore[EventPlayer()], 
+        (
+            StringExternal("Param/Value/4C5AC417") + 
+            IntToText(gv_PlayerLevelAndKDA[EventPlayer()][1]) + 
+            StringExternal("Param/Value/E32F94F1") + 
+            IntToText(gv_PlayerLevelAndKDA[EventPlayer()][2]) + 
+            StringExternal("Param/Value/784ECCE0") + 
+            IntToText(gv_PlayerLevelAndKDA[EventPlayer()][3]) + 
+            StringExternal("Param/Value/43A6870C")
+        ),
+        PlayerGroupAll()
+    );
+    // Change the name colour to red
+    libNtve_gf_SetDialogItemText(
+        gv_ScoreDialogName[EventPlayer()],
+        (
+            StringExternal("Param/Value/70CACF72") + 
+            PlayerName(EventPlayer()) + 
+            StringExternal("Param/Value/152670BB")
+        ),
+        PlayerGroupAll()
+    );
+    // Make the hero image red and slightly transparent
+    libNtve_gf_SetDialogItemColor(gv_ScoreDialogHeroImage[EventPlayer()], Color(100.00, 0.00, 0.00), PlayerGroupAll());
+    DialogControlFadeTransparency(gv_ScoreDialogHeroImage[EventPlayer()], PlayerGroupAll(), 0.0, 50.0);
+    // Enable the revive timer countdown
+    DialogControlSetVisible(gv_ScoreDialogReviveTime[EventPlayer()], PlayerGroupAll(), true);
+
+    // TODO: Look if those two functions can be combined
+    if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32222") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322222") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222222") == true))) {
+        gf_HrAssistantBonusTeam2();
+    }
+    else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322") == true))) {
+        gf_HrAssistantBonusTeam1();
+    }
+
+    // A message in chat if the whole team is dead
+    // TODO: Refactor this function
+    if ((((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[1]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[2]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[3]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[4]] == true) && (gv_HeroAllKill[0] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[0]) >= 2)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[5]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[6]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[7]] == true) && (gv_HeroDeathBoolean[gv_PlayerBayul[8]] == true) && (gv_HeroAllKill[1] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[1]) >= 2)))) {
+        gf_HrHeroAllKillMessage();
+    }
+
+    if ((UnitGetType(EventUnit()) != "Hero19")) {
+        TriggerExecute(gt_TrHeroReviveStand, true, false);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_TrHeroDeath2_Init () {
+    gt_TrHeroDeath2 = TriggerCreate("gt_TrHeroDeath2_Func");
+    TriggerAddEventUnitDied(gt_TrHeroDeath2, null);
+    // TriggerEnable(gt_TrHeroDeath2, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -16169,6 +16571,7 @@ void InitTriggers () {
     gt_TrSinhoBuildingReviveTimerStart_Init();
     gt_TrSinhoBuildingRevive_Init();
     gt_TrHeroDeath_Init();
+    gt_TrHeroDeath2_Init();
     gt_TrHeroReviveStand_Init();
     gt_TrNexusDestroyTeam1_Init();
     gt_TrNexusDestroyTeam2_Init();
