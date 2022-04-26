@@ -413,14 +413,14 @@
             <Cooldown Link="Abil/Hero73Skill3" Location="Unit" TimeUse="22"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="6"/>
+        <Range value="4"/>
         <Arc value="360"/>
         <FinishTime value="0.2"/>
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>
         <UninterruptibleArray index="Finish" value="1"/>
         <AINotifyEffect value=""/>
-        <EffectRange index="0" value="0,6"/>
+        <EffectRange index="0" value="0,4"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="Hero73Skill3Btn" State="Restricted" Requirements="SpellUse43747223"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
@@ -451,13 +451,13 @@
             <Cooldown Location="Unit" TimeUse="22"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="6"/>
+        <Range value="4"/>
         <FinishTime value="0.5"/>
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>
         <UninterruptibleArray index="Finish" value="1"/>
         <AINotifyEffect value=""/>
-        <EffectRange index="0" value="0,6"/>
+        <EffectRange index="0" value="0,4"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="Hero73Skill3Btn" State="Restricted" Requirements="SpellUse4374722"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
@@ -7012,7 +7012,7 @@
             <Cooldown Location="Unit" TimeUse="7.5"/>
         </Cost>
         <TargetFilters value="-;Self,Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="8"/>
+        <Range value="7.5"/>
         <FinishTime value="0.6"/>
         <UninterruptibleArray index="Cast" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>

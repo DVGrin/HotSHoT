@@ -1120,8 +1120,8 @@
     </CRequirement>
     <CRequirement id="SpellUse437334">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
-        <NodeArray index="Use" Link="Eq1570662034CountUpgradeSpellUp2222333622CompleteOnly1"/>
-        <NodeArray index="Show" Link="AndEqCountBehaviorHero10Skill1FastInProgressOrBetterAtUnitTechTreeCheat0EqCountBehaviorHero10Skill1coolInProgressOrBetterAtUnit0"/>
+        <NodeArray index="Use" Link="EqCountUpgradeSpellUp2222333622CompleteOnly1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHero10Skill1FastInProgressOrBetterAtUnitTechTreeCheat0"/>
     </CRequirement>
     <CRequirement id="SpellUse4373342">
         <EditorCategories value="Race:Terran,TechType:Unit"/>

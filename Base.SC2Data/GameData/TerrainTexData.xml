@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTerrainTex id="Forest1">
+        <Texture value="Assets\Forest Tileset\forest_1diffuse.dds"/>
+        <Normalmap value="Assets\Forest Tileset\forest_1normal.dds"/>
+    </CTerrainTex>
+    <CTerrainTex id="Forest12">
+        <Texture value="Assets\Forest Tileset\forest_2diffuse.dds"/>
+        <Normalmap value="Assets\Forest Tileset\forest_2normal.dds"/>
+        <EditorIcon value="TerrainTexDef/Icon/Forest1"/>
+    </CTerrainTex>
+    <CTerrainTex id="Forest13">
+        <Texture value="Assets\Forest Tileset\forest_3diffuse.dds"/>
+        <Normalmap value="Assets\Forest Tileset\forest_3normal.dds"/>
+        <EditorIcon value="TerrainTexDef/Icon/Forest1"/>
+    </CTerrainTex>
+    <CTerrainTex id="Forest14">
+        <Texture value="Assets\Forest Tileset\forest_4diffuse.dds"/>
+        <Normalmap value="Assets\Forest Tileset\forest_4normal.dds"/>
+        <EditorIcon value="TerrainTexDef/Icon/Forest1"/>
+    </CTerrainTex>
+    <CTerrainTex id="Forest15">
+        <Texture value="Assets\Forest Tileset\forest_5diffuse.dds"/>
+        <Normalmap value="Assets\Forest Tileset\forest_5normal.dds"/>
+        <EditorIcon value="TerrainTexDef/Icon/Forest1"/>
+    </CTerrainTex>
+    <CTerrainTex id="Forest152">
+        <Texture value="Assets\Forest Tileset\forest_6diffuse.dds"/>
+        <Normalmap value="Assets\Forest Tileset\forest_6normal.dds"/>
+        <EditorIcon value="TerrainTexDef/Icon/Forest1"/>
+    </CTerrainTex>
+</Catalog>

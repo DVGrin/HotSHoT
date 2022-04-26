@@ -70,14 +70,77 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="SpellDong2347"/>
     </CEffectApplyBehavior>
+    <CEffectDamage id="Hero17Skill2D2" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/ToshU"/>
+        <ResponseFlags index="Flee" value="0"/>
+        <ArmorReduction value="0"/>
+        <Flags index="Notification" value="0"/>
+        <Kind value="Ranged"/>
+        <VitalFractionMax index="Life" value="0.05"/>
+    </CEffectDamage>
+    <CEffectSet id="Hero17Skill2Mo3">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero17Skill2D"/>
+        <EffectArray value="Hero17Skill2D2"/>
+        <EffectArray value="Hero17AttackDong"/>
+    </CEffectSet>
+    <CEffectSet id="Hero26Skill3Mo">
+        <EditorCategories value=""/>
+        <EffectArray value="Hero26Skill3Dong2"/>
+        <EffectArray value="AssistSr"/>
+    </CEffectSet>
     <CEffectSet id="Hero29KillCreditWorkAround">
         <EditorCategories value=""/>
         <EffectArray value="Hero29Dong"/>
         <EffectArray value="KillsToCaster"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="Hero43AttackG2">
+        <ValidatorArray value="ThisUnit224"/>
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/ScannerSweep"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="Hero43AttackD"/>
+        <PeriodicEffectArray value="Hero43Skill2Mo22"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="Hero43Skill2Mo22">
+        <ValidatorArray value="NotStructure"/>
+        <ValidatorArray value="Hero43Skill2In2"/>
+        <Marker Link="Effect/PickupMinerals100Set"/>
+        <EffectArray value="Hero43Skill2Dong3"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="Hero43Skill3Healing4">
+        <ValidatorArray value="ThisUnit2222222432322"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Marker Link="Effect/GravitonPrisonLower"/>
+        <VitalArray index="Life">
+            <Change value="7.5"/>
+        </VitalArray>
+        <ModifyFlags index="IsHeal" value="1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="Hero43Skill3Healing3">
+        <ValidatorArray value="ThisUnit2222222432322"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Marker Link="Effect/GravitonPrisonLower"/>
+        <VitalArray index="Life">
+            <Change value="10.8"/>
+        </VitalArray>
+        <ModifyFlags index="IsHeal" value="1"/>
+    </CEffectModifyUnit>
     <CEffectDamage id="Hero53PassiveM">
         <EditorCategories value=""/>
         <Amount value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="Hero55Skill2M2">
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/ToshU"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <Amount value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <SearchFlags index="OffsetAreaByAngle" value="1"/>
     </CEffectDamage>
     <CEffectDamage id="Hero60PassiveM">
         <EditorCategories value=""/>
@@ -87,6 +150,13 @@
         <EditorCategories value=""/>
         <Amount value="5"/>
     </CEffectDamage>
+    <CEffectModifyUnit id="Hero10Skill1AddCooldown">
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="Hero10Skill1,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
     <CEffectSet id="Hero74Skill1Mo4">
         <EditorCategories value=""/>
         <EffectArray value="Hero74Skill1TEST"/>
@@ -694,7 +764,7 @@
         <Marker Link="Effect/ToshU"/>
         <ResponseFlags index="Acquire" value="1"/>
         <Kind value="Splash"/>
-        <Amount value="1.95"/>
+        <Amount value="2.878"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
@@ -713,7 +783,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Splash"/>
-        <Amount value="19.5"/>
+        <Amount value="20.15"/>
     </CEffectDamage>
     <CEffectDamage id="Hero58Skill2D2">
         <ValidatorArray value="hasjangopoison2"/>
@@ -1285,7 +1355,7 @@
         <Behavior value="HeroGainHP32332"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="StatInjang2Dong">
-        <ValidatorArray index="0" removed="1"/>
+        <ValidatorArray index="0" value="Hero74PassiveFilter"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/Stimpack"/>
         <Behavior value="HeroGainHP3232"/>
@@ -1518,14 +1588,14 @@
         <PeriodicEffectArray value="Hero73Skill3Sr2"/>
         <PeriodicEffectArray value="Hero73Skill3Sr2"/>
         <PeriodicEffectArray value="Hero73Skill3Sr2"/>
+        <PeriodicOffsetArray value="0,-4,0"/>
+        <PeriodicOffsetArray value="0,-5,0"/>
         <PeriodicOffsetArray value="0,-6,0"/>
         <PeriodicOffsetArray value="0,-7,0"/>
         <PeriodicOffsetArray value="0,-8,0"/>
         <PeriodicOffsetArray value="0,-9,0"/>
         <PeriodicOffsetArray value="0,-10,0"/>
         <PeriodicOffsetArray value="0,-11,0"/>
-        <PeriodicOffsetArray value="0,-12,0"/>
-        <PeriodicOffsetArray value="0,-13,0"/>
         <PeriodicPeriodArray value="0"/>
         <ExpireDelay value="0.6"/>
     </CEffectCreatePersistent>
@@ -1769,14 +1839,14 @@
         <PeriodicEffectArray value="Hero73Skill3Sr22"/>
         <PeriodicEffectArray value="Hero73Skill3Sr22"/>
         <PeriodicEffectArray value="Hero73Skill3Sr22"/>
+        <PeriodicOffsetArray value="0,-4,0"/>
+        <PeriodicOffsetArray value="0,-5,0"/>
         <PeriodicOffsetArray value="0,-6,0"/>
         <PeriodicOffsetArray value="0,-7,0"/>
         <PeriodicOffsetArray value="0,-8,0"/>
         <PeriodicOffsetArray value="0,-9,0"/>
         <PeriodicOffsetArray value="0,-10,0"/>
         <PeriodicOffsetArray value="0,-11,0"/>
-        <PeriodicOffsetArray value="0,-12,0"/>
-        <PeriodicOffsetArray value="0,-13,0"/>
         <PeriodicPeriodArray value="0"/>
         <RevealRadius value="3"/>
         <RevealFlags index="Unfog" value="1"/>
@@ -2208,7 +2278,7 @@
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
         <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="3.5" Effect="Hero53Skill3Dong"/>
+        <AreaArray Radius="2.75" Effect="Hero53Skill3Dong"/>
     </CEffectEnumArea>
     <CEffectCreatePersistent id="Hero53Skill3G">
         <EditorCategories value="Race:Terran"/>
@@ -2846,7 +2916,7 @@
         <WhichLocation Value="SourcePoint"/>
         <OffsetVectorEndLocation Value="SourcePoint"/>
         <InitialEffect value="Hero72PassiveMo2"/>
-        <PeriodCount value="8"/>
+        <PeriodCount value="9"/>
         <PeriodicEffectArray value="Hero72Skill2G22"/>
         <PeriodicEffectArray value="Hero72Skill2S"/>
         <PeriodicEffectArray value="Hero72Skill2S"/>
@@ -2855,6 +2925,9 @@
         <PeriodicEffectArray value="Hero72Skill2S"/>
         <PeriodicEffectArray value="Hero72Skill2S"/>
         <PeriodicEffectArray value="Hero72Skill2S"/>
+        <PeriodicEffectArray value="Hero72Skill2S"/>
+        <PeriodicEffectArray value=""/>
+        <PeriodicPeriodArray value="0"/>
         <PeriodicPeriodArray value="0"/>
         <PeriodicPeriodArray value="0.5"/>
         <PeriodicPeriodArray value="0.5"/>
@@ -2871,7 +2944,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Ranged"/>
-        <Amount value="40"/>
+        <Amount value="24"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="Hero72Skill1Dong22">
         <ValidatorArray index="0" value="NotDead222"/>
@@ -11614,7 +11687,7 @@
         <Amount value="7"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="Hero36Skill3Dong">
-        <ValidatorArray index="0" value="PickupCheck222233"/>
+        <ValidatorArray index="0" removed="1"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/Stimpack"/>
         <Behavior value="Hero36Skill3Impact"/>
@@ -16491,7 +16564,6 @@
         <VitalArray index="Life">
             <Change value="21.6"/>
         </VitalArray>
-        <ValidatorArray value="ThisUnit2222222432322"/>
         <ModifyFlags index="IsHeal" value="1"/>
     </CEffectModifyUnit>
     <CEffectCreatePersistent id="Hero43Skill3G2">
@@ -16526,12 +16598,14 @@
         <Marker Link="Effect/PickupMinerals100Set"/>
         <EffectArray value="Hero43Skill3Healing"/>
         <EffectArray value="Hero43Skill3Healing2"/>
+        <EffectArray value="Hero43Skill3Healing3"/>
+        <EffectArray value="Hero43Skill3Healing4"/>
         <EffectArray value="Hero43Skill3G2"/>
     </CEffectSet>
     <CEffectEnumArea id="Hero43Skill3Sr">
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
-        <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Neutral,Enemy,Light,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="8" Effect="Hero43Skill3Mo"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="Hero43Skill4Dong">
@@ -16557,7 +16631,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="25"/>
+        <Amount value="80"/>
     </CEffectDamage>
     <CEffectDamage id="Hero43Skill4M2" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
@@ -21805,7 +21879,7 @@
         <Marker Link="Effect/ToshU"/>
         <ResponseFlags index="Acquire" value="1"/>
         <Kind value="Splash"/>
-        <Amount value="1.5"/>
+        <Amount value="2.214"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
@@ -22236,7 +22310,7 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <Kind value="Spell"/>
-        <Amount value="24"/>
+        <Amount value="40"/>
     </CEffectDamage>
     <CEffectDamage id="Hero59Skill3D" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
@@ -23275,7 +23349,7 @@
     <CEffectEnumArea id="Hero26Skill2Sr">
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="Effect/HybridFAoESearch"/>
-        <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Neutral,Enemy,Light,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3.25" Effect="Hero26Skill2Healing"/>
     </CEffectEnumArea>
     <CEffectCreatePersistent id="Hero26Skill2G">
@@ -24986,7 +25060,7 @@
     <CEffectModifyUnit id="dabotoqcdreduceby50">
         <EditorCategories value=""/>
         <ImpactUnit Value="Caster"/>
-        <Cost Abil="Hero62Skill1,Execute" CooldownOperation="Multiply" CooldownTimeUse="0.5"/>
+        <Cost Abil="Hero62Skill1,Execute" CooldownOperation="Multiply" CooldownTimeUse="0.75"/>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="Hero70Skill2AddCooldown">
         <EditorCategories value=""/>
@@ -27550,6 +27624,8 @@
     <CEffectSet id="Hero17Skill2Mo">
         <Marker Link="Effect/PickupMinerals100Set"/>
         <EffectArray value="Hero17Skill2D"/>
+        <EffectArray value="Hero17Skill2D2"/>
+        <EffectArray value="Hero17AttackDong"/>
         <EffectArray value="Hero17Skill2DongRemove"/>
     </CEffectSet>
     <CEffectRemoveBehavior id="Hero17Skill2DongRemove">
@@ -27636,7 +27712,7 @@
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/Stimpack"/>
         <Behavior value="SpellDong2425232352"/>
-        <Count value="3"/>
+        <Count value="2"/>
     </CEffectApplyBehavior>
     <CEffectSet id="Hero17AttackMo">
         <Marker Link="Effect/PickupMinerals100Set"/>
@@ -28328,7 +28404,6 @@
     </CEffectDamage>
     <CEffectApplyBehavior id="Hero14Skill1Dong2">
         <ValidatorArray index="0" value="NotStructure"/>
-        <ValidatorArray value="PickupCheck222233"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ApplyIncapBehavior"/>
         <Behavior value="Hero14Skill1Impact2"/>
@@ -28412,7 +28487,6 @@
     </CEffectTeleport>
     <CEffectApplyBehavior id="Hero14Skill1Dong">
         <ValidatorArray index="0" value="NotStructure"/>
-        <ValidatorArray value="PickupCheck222233"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ApplyIncapBehavior"/>
         <Behavior value="Hero14Skill1Impact"/>
@@ -29208,7 +29282,7 @@
         <PeriodicEffectArray value="ApplyIncapBehavior26222"/>
         <PeriodicEffectArray value="ApplyIncapBehavior262223"/>
         <PeriodicPeriodArray value="0"/>
-        <PeriodicPeriodArray value="1.5"/>
+        <PeriodicPeriodArray value="0.1"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="HeroOkGi232552">
         <EditorCategories value="Race:Terran"/>
@@ -34888,7 +34962,7 @@
     <CEffectDamage id="Hero58PassiveM" parent="ToshU">
         <ValidatorArray index="0" removed="1"/>
         <Kind value="Splash"/>
-        <Amount value="15"/>
+        <Amount value="15.5"/>
     </CEffectDamage>
     <CEffectDamage id="Hero9AttackD" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
@@ -35116,4 +35190,10 @@
         <Abil value="Hero74Skill1"/>
         <Target Value="TargetUnit"/>
     </CEffectIssueOrder>
+    <CEffectApplyBehavior id="testbehaviordong">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="testbehavior"/>
+        <Count value="5"/>
+    </CEffectApplyBehavior>
 </Catalog>

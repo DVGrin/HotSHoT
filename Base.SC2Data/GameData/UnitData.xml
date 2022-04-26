@@ -6271,7 +6271,7 @@
             <LayoutButtons>
                 <Face value="A_Spell"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell1,0"/>
+                <AbilCmd value="Spell1,255"/>
                 <Requirements value="SpellUse"/>
                 <Row value="1"/>
                 <Column value="1"/>
@@ -6279,7 +6279,7 @@
             <LayoutButtons>
                 <Face value="A_Spell2"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell2,0"/>
+                <AbilCmd value="Spell2,255"/>
                 <Requirements value="SpellUse3"/>
                 <Row value="1"/>
                 <Column value="1"/>
@@ -6297,7 +6297,7 @@
             <LayoutButtons>
                 <Face value="A_Spell11"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell1b,0"/>
+                <AbilCmd value="Spell1b,255"/>
                 <Requirements value="SpellUse2"/>
                 <Row value="1"/>
                 <Column value="2"/>
@@ -6305,7 +6305,7 @@
             <LayoutButtons>
                 <Face value="A_Spell22"/>
                 <Type value="Passive"/>
-                <AbilCmd value="Spell22,0"/>
+                <AbilCmd value="Spell22,255"/>
                 <Requirements value="SpellUse32"/>
                 <Row value="1"/>
                 <Column value="2"/>
@@ -6322,7 +6322,6 @@
             <LayoutButtons Face="A_Spell1032" Type="AbilCmd" AbilCmd="Spell122,On" Row="1" Column="2"/>
             <LayoutButtons Face="HeroSkillBtn555" Type="AbilCmd" AbilCmd="Hero10Skill1,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="HeroSkillBtn5553" Type="AbilCmd" AbilCmd="Hero10Skill1s,Execute" Row="0" Column="0"/>
-            <LayoutButtons Face="HeroSkillBtn555" Type="AbilCmd" AbilCmd="Hero10Skillc,Research1" Row="0" Column="0"/>
             <LayoutButtons Face="HeroSkillBtn5552" Type="AbilCmd" AbilCmd="Hero10Skill2,Execute" Row="0" Column="1"/>
             <LayoutButtons Face="HeroSkillBtn55522" Type="AbilCmd" AbilCmd="Hero10Skill3,Execute" Row="0" Column="2"/>
             <LayoutButtons Face="HeroSkillBtn55522" Type="AbilCmd" AbilCmd="Hero10Skillc,Research2" Row="0" Column="2"/>
@@ -15358,6 +15357,7 @@
         <BehaviorArray Link="SpellPower"/>
         <BehaviorArray Link="DefensePowers"/>
         <BehaviorArray Link="MagicRasist"/>
+        <BehaviorArray Link="testbehavior"/>
         <WeaponArray index="0" Link="TestHeroWeapon"/>
         <WeaponArray index="1" removed="1"/>
         <CardLayouts index="0">

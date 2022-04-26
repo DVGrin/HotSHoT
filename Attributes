@@ -108,16 +108,6 @@
                 <Value Id="21555" Index="1"/>
             </Default>
         </Attribute>
-        <Attribute Namespace="999" Id="500">
-            <Default>
-                <Slot Id="8"/>
-                <Value Id="1131375984"/>
-            </Default>
-            <Default>
-                <Slot Id="9"/>
-                <Value Id="1131375984"/>
-            </Default>
-        </Attribute>
         <Attribute Namespace="999" Id="3003">
             <Default>
                 <Slot Id="0"/>
@@ -162,12 +152,10 @@
             <Default>
                 <Slot Id="8"/>
                 <Value Id="540094512"/>
-                <Locked/>
             </Default>
             <Default>
                 <Slot Id="9"/>
                 <Value Id="540094512"/>
-                <Locked/>
             </Default>
         </Attribute>
     </Variant>

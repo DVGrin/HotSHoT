@@ -86,12 +86,30 @@
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
     </CModel>
+    <CModel id="Hero34Skill1Model2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\VileRoachDebuff\VileRoachDebuff.m3"/>
+        <AnimSpeed value="1.500000"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
     <CModel id="Hero39Skill3Impact3" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\ArcadePowerupStrongMissiles\ArcadePowerupStrongMissiles.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Lighting value="ConsumptionModel"/>
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+    <CModel id="Hero34Skill1Model" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\AmonShards_Orange_AnimaShower\AmonShards_Orange_AnimaShower.m3"/>
+        <AnimSpeed value="1.500000"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="ConsumptionModel"/>
         <SelectionRadius value="0.625000"/>
         <ShadowRadius value="0.625000"/>
     </CModel>
@@ -544,8 +562,8 @@
         <Model value="Assets\Effects\Terran\Irradiate\Irradiate.m3"/>
         <EditorCategories value="Race:Protoss"/>
         <Lighting value="ArchonAttackImpact"/>
-        <ScaleMax value="3.300000,3.300000,0.150000"/>
-        <ScaleMin value="3.300000,3.300000,0.150000"/>
+        <ScaleMax value="2.300000,2.300000,0.150000"/>
+        <ScaleMin value="2.300000,2.300000,0.150000"/>
     </CModel>
     <CModel id="Hero53Skill1Model2" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Zerg\Devourer_AcidSpores_Missile\Devourer_AcidSpores_Missile.m3"/>

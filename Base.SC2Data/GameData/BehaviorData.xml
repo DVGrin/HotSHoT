@@ -1775,6 +1775,7 @@
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
         <InfoIcon value="Assets\Textures\btn-ability-terran-slow.dds"/>
+        <BehaviorCategories index="Slow" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
@@ -1798,7 +1799,6 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <BehaviorCategories index="Slow" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero59Skill1dol">
         <Alignment value="Positive"/>
@@ -2494,7 +2494,7 @@
         <InfoIcon value="Assets\Textures\btn-ability-hornerhan-mechbioweaponupgrades-c.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
-        <Modification WeaponRange="1.5">
+        <Modification WeaponRange="0.5">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -2559,7 +2559,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="3"/>
-        <Modification MoveSpeedMultiplier="1.1">
+        <Modification MoveSpeedMultiplier="1.075">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -2573,6 +2573,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <MaxStackCount value="2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="HeroGainHP3222">
         <Alignment value="Positive"/>
@@ -2601,6 +2602,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+        <MaxStackCount value="2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="HeroGainHP323">
         <Alignment value="Positive"/>
@@ -2668,7 +2670,6 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="6.1"/>
         <Period value="1.5"/>
-        <InitialEffect value="StatInjang2D"/>
         <PeriodicEffect value="StatInjang2D"/>
         <Modification>
             <DeathResponse>
@@ -2695,7 +2696,7 @@
         <InfoIcon value="Assets\Textures\btn-ability-hornerhan-hellbat-fear.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
-        <Modification MoveSpeedMultiplier="1.06" AttackSpeedMultiplier="1.05">
+        <Modification MoveSpeedMultiplier="1.05" AttackSpeedMultiplier="1.05">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -3362,7 +3363,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="0.55"/>
+        <Duration value="0.75"/>
         <PeriodCount value="0"/>
         <InitialEffect value="Hero72Skill4D"/>
         <ExpireEffect value="Hero72Skill4MD"/>
@@ -3433,7 +3434,9 @@
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="Bury" value="1"/>
             <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
             <AbilLinkDisableArray value="Hero72Skill1"/>
             <AbilLinkDisableArray value="Hero72Skill2"/>
             <AbilLinkDisableArray value="Hero72Skill3"/>
@@ -4565,7 +4568,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Handled="Hero72Skill2G2" ModifyFraction="0.6">
+        <DamageResponse Handled="Hero72Skill2G2" ModifyFraction="0.76">
             <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
@@ -8535,7 +8538,7 @@
         <RemoveValidatorArray value="HeroDie"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="1.5"/>
-        <InitialEffect value="Hero17Skill2D"/>
+        <InitialEffect value="Hero17Skill2Mo3"/>
         <Modification>
             <DeathResponse>
                 <Cost>
@@ -11577,7 +11580,7 @@
         <RemoveValidatorArray value="HeroDie2"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="15"/>
+        <Duration value="9"/>
         <Modification>
             <DeathResponse>
                 <Cost>
@@ -11606,7 +11609,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <MaxStackCount value="4"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="15"/>
+        <Duration value="9"/>
         <Modification>
             <DeathResponse>
                 <Cost>
@@ -17020,6 +17023,7 @@
             </DeathResponse>
         </Modification>
         <DamageResponse ModifyFraction="0.5">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -17055,7 +17059,7 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <InitialEffect value="Hero26Skill3Dong2"/>
+        <InitialEffect value="Hero26Skill3Mo"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero26Skill3impact2">
         <Alignment value="Positive"/>
@@ -17196,6 +17200,7 @@
             </DeathResponse>
         </Modification>
         <DamageResponse ModifyFraction="0.45">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -17227,6 +17232,7 @@
             </DeathResponse>
         </Modification>
         <DamageResponse ModifyFraction="0.4">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -18717,7 +18723,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisplayDuration index="Self" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="10.5"/>
+        <Duration value="12"/>
         <Modification>
             <StateFlags index="SuppressCollision" value="1"/>
             <DeathResponse>
@@ -18747,7 +18753,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisplayDuration index="Self" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="10.5"/>
+        <Duration value="12"/>
         <Modification>
             <StateFlags index="SuppressCollision" value="1"/>
             <DeathResponse>
@@ -18809,8 +18815,8 @@
         <RemoveValidatorArray value="PickupCheck222222"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.125"/>
-        <Modification SightMaximum="0.5">
+        <Duration value="0.8"/>
+        <Modification SightMaximum="1">
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -18867,7 +18873,7 @@
         <RemoveValidatorArray value="PickupCheck222222"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="1.125"/>
+        <Duration value="0.8"/>
         <Modification MoveSpeedMultiplier="0.7">
             <DamageDealtFraction index="Melee" value="-0.4"/>
             <DeathResponse>
@@ -22662,12 +22668,15 @@
         </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero43Skil2Impact">
+        <Name value="Behavior/Name/debuffstunned"/>
+        <Tooltip value="Behavior/Tooltip/debuffstunned"/>
         <Alignment value="Negative"/>
         <Cost>
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
         <InfoIcon value="Assets\Textures\btn-command-stop.dds"/>
+        <BehaviorCategories index="Stun" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HeroDie"/>
         <RemoveValidatorArray value="PickupCheck22222"/>
@@ -22676,6 +22685,7 @@
         <Duration value="0.75"/>
         <PeriodCount value="1"/>
         <PeriodicEffect value="PickupMinerals100Set2"/>
+        <FinalEffect value="PickupMinerals100Set24"/>
         <Modification MoveSpeedMaximum="0.0117">
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="SuppressAttack" value="1"/>
@@ -22695,10 +22705,6 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <Name value="Behavior/Name/debuffstunned"/>
-        <Tooltip value="Behavior/Tooltip/debuffstunned"/>
-        <FinalEffect value="PickupMinerals100Set24"/>
-        <BehaviorCategories index="Stun" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero43Skill1Slow">
         <Alignment value="Negative"/>
@@ -23169,6 +23175,8 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="12"/>
         <Modification MoveSpeedMultiplier="1.15">
+            <WeaponArray Link="Hero43Weapon2"/>
+            <WeaponDisableArray value="Hero43Weapon"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -23176,7 +23184,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Handled="Hero43Skill4Healing" ModifyFraction="0.75">
+        <DamageResponse ModifyFraction="0.2">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -23198,6 +23207,9 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="12"/>
         <Modification MoveSpeedMultiplier="1.2">
+            <WeaponArray Link="Hero43Weapon2"/>
+            <WeaponArray/>
+            <WeaponDisableArray value="Hero43Weapon"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -23205,7 +23217,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Handled="Hero43Skill4Healing" ModifyFraction="0.7">
+        <DamageResponse ModifyFraction="0.15">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -23227,6 +23240,8 @@
         <TimeScaleSource Value="Global"/>
         <Duration value="12"/>
         <Modification MoveSpeedMultiplier="1.25">
+            <WeaponArray Link="Hero43Weapon2"/>
+            <WeaponDisableArray value="Hero43Weapon"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -23234,7 +23249,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse Handled="Hero43Skill4Healing" ModifyFraction="0.65">
+        <DamageResponse ModifyFraction="0.1">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -30478,9 +30494,8 @@
         <RemoveValidatorArray value="HeroDie"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="15"/>
+        <Duration value="10.5"/>
         <Period value="1.5"/>
-        <PeriodCount value="10"/>
         <PeriodicEffect value="jangopassivedamageset"/>
         <Modification>
             <DeathResponse>
@@ -30754,6 +30769,9 @@
             </Cost>
         </DamageResponse>
         <InitialEffect value="HeroAssiD"/>
+        <Period value="3.75"/>
+        <PeriodCount value="0"/>
+        <PeriodicEffect value="Hero58PassiveDong"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero58Skill42">
         <Alignment value="Negative"/>
@@ -30883,7 +30901,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="0.76">
+        <DamageResponse ModifyFraction="0.6">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -30912,7 +30931,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="0.72">
+        <DamageResponse ModifyFraction="0.55">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -30941,7 +30961,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="0.68">
+        <DamageResponse ModifyFraction="0.5">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -30970,7 +30991,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="0.64">
+        <DamageResponse ModifyFraction="0.45">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -30999,7 +31021,8 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="0.6">
+        <DamageResponse ModifyFraction="0.4">
+            <Kind index="Splash" value="0"/>
             <Chance value="1"/>
             <Cost>
                 <Charge Link="Behavior/PsiStorm"/>
@@ -34705,6 +34728,7 @@
         <PeriodCount value="1"/>
         <PeriodicEffect value="Hero10Skill1zisi"/>
         <BuffFlags index="RefreshStack" value="1"/>
+        <InitialEffect value="Hero10Skill1AddCooldown"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Hero1Skill3Slow3">
         <Alignment value="Negative"/>
@@ -40838,8 +40862,9 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
-        <MaxStackCount value="3"/>
+        <MaxStackCount value="2"/>
         <FinalEffect value="Hero17Skill1G4"/>
+        <Duration value="15"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="SpellDong242523235223">
         <Alignment value="Positive"/>
@@ -44863,5 +44888,17 @@
         <Period value="0.1"/>
         <PeriodCount value="5"/>
         <PeriodicEffect value="jangoWtestdamageset"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="testbehavior">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="10"/>
+        <Duration value="5000"/>
+        <InitialEffect value="testbehaviordong"/>
+        <DamageResponse ModifyFraction="1.02">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+        </DamageResponse>
     </CBehaviorBuff>
 </Catalog>

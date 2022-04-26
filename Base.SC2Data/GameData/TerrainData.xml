@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CTerrain id="Monlyth">
         <Lighting value="Agria"/>
@@ -8,5 +8,51 @@
         <FogDensity value="0.000000"/>
         <FogFalloff value="0.000000"/>
         <FogStartingHeight value="0.000000"/>
+    </CTerrain>
+    <CTerrain id="Forest">
+        <EditorCategories value="Climate:Lunar"/>
+        <EditorHidden value="1"/>
+        <Lighting value="AgriaNight"/>
+        <LoadingScreen value="Assets\Textures\loading-monlyth.dds"/>
+        <Ambience value=""/>
+        <ReverbAmbient value=""/>
+        <BlendTextures value="Forest1"/>
+        <BlendTextures value="Forest12"/>
+        <BlendTextures value="Forest13"/>
+        <BlendTextures value="Forest14"/>
+        <BlendTextures value="Forest15"/>
+        <BlendTextures value="Forest152"/>
+        <BlendTextures value="Slayn5"/>
+        <BlendTextures value="Slayn8"/>
+        <HardTiles value="MarSaraTile"/>
+        <CliffSets value="MonlythCliff0"/>
+        <CliffSets value="MonlythCliff1"/>
+        <FogColor value="255,3,65,114"/>
+        <CreepEdgeNormalMap value="Assets\Textures\CreepEdgeNormal.dds"/>
+        <CreepSettingsArray index="Low" CreepOpaqueAlphaThreshold="0.180000" CreepTranslucentMinThreshold="0.050000" CreepTranslucentPassTint="1.000000,0.850000,0.750000"/>
+        <CreepSettingsArray index="Medium">
+            <CreepOpaqueAlphaThreshold value="0.180000"/>
+            <CreepTranslucentMinThreshold value="0.050000"/>
+            <CreepTranslucentMaxThreshold value="0.150000"/>
+            <CreepTranslucentPassTint value="1.000000,0.850000,0.750000"/>
+        </CreepSettingsArray>
+        <CreepSettingsArray index="High">
+            <CreepOpaqueAlphaThreshold value="0.180000"/>
+            <CreepTranslucentMinThreshold value="0.050000"/>
+            <CreepTranslucentMaxThreshold value="0.150000"/>
+            <CreepTranslucentPassTint value="1.000000,0.850000,0.750000"/>
+        </CreepSettingsArray>
+        <CreepSettingsArray index="Ultra">
+            <CreepOpaqueAlphaThreshold value="0.180000"/>
+            <CreepTranslucentMinThreshold value="0.050000"/>
+            <CreepTranslucentMaxThreshold value="0.150000"/>
+            <CreepTranslucentPassTint value="1.000000,0.850000,0.750000"/>
+        </CreepSettingsArray>
+        <CreepSettingsArray index="Extreme">
+            <CreepOpaqueAlphaThreshold value="0.180000"/>
+            <CreepTranslucentMinThreshold value="0.050000"/>
+            <CreepTranslucentMaxThreshold value="0.150000"/>
+            <CreepTranslucentPassTint value="1.000000,0.850000,0.750000"/>
+        </CreepSettingsArray>
     </CTerrain>
 </Catalog>

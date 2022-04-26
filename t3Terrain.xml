@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <terrain version="115">
-    <heightMap tileSet="Monlyth" uvtiling="19.500000 15.000000 -3.750000 0.000000 " dim="209 161 " offset="0.000000 0.000000 0.000000 " scale="1.000000e+00 1.000000e+00 1.000000e+00 ">
+    <heightMap tileSet="Forest" uvtiling="19.500000 15.000000 -3.750000 0.000000 " dim="209 161 " offset="0.000000 0.000000 0.000000 " scale="1.000000e+00 1.000000e+00 1.000000e+00 ">
         <cliffSetList num="2">
             <cliffSet i="0" name="SlaynCliff0"/>
             <cliffSet i="1" name="MonlythCliff0"/>
@@ -25,11 +25,11 @@
             <ramp dir="1" hi="2" lo="1" leftLo="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.170000e+02, 1.220000e+02) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.230000e+02, 1.220000e+02) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(4.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.200000e+02, 1.230000e+02) w=4.000000e+00 h=1.000000e+00" mid="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.200000e+02, 1.220000e+02) w=2.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
             <ramp dir="1" hi="2" lo="1" leftLo="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.330000e+02, 1.220000e+02) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.390000e+02, 1.220000e+02) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(4.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.360000e+02, 1.230000e+02) w=4.000000e+00 h=1.000000e+00" mid="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(1.360000e+02, 1.220000e+02) w=2.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
         </rampList>
-        <vertData quantizeBias="1.000505e+00" quantizeScale="1.560410e-04" standardHeight="8.000000e+00" name="t3HeightMap"/>
+        <vertData quantizeBias="1.000681e+00" quantizeScale="1.560416e-04" standardHeight="8.000000e+00" name="t3HeightMap"/>
         <masks name="t3TextureMasks"/>
         <textureSetList num="8">
-            <textureSet i="0" name="Monlyth"/>
-            <textureSet i="1" name="SlaynGrass"/>
+            <textureSet i="0" name="SlaynGrass"/>
+            <textureSet i="1" name="Forest"/>
             <textureSet i="2" name=""/>
             <textureSet i="3" name=""/>
             <textureSet i="4" name=""/>
@@ -38,22 +38,22 @@
             <textureSet i="7" name=""/>
         </textureSetList>
         <textureList num="64">
-            <texture i="0" name="MonlythTiles"/>
-            <texture i="1" name="MonlythDirt"/>
-            <texture i="2" name="MonlythCracked"/>
-            <texture i="3" name="MonlythRock"/>
-            <texture i="4" name="MonlythBricks"/>
-            <texture i="5" name="MonlythDunes"/>
-            <texture i="6" name="MonlythPlates"/>
-            <texture i="7" name="MonlythSand"/>
-            <texture i="8" name="SlaynGrass2"/>
-            <texture i="9" name="SlaynGrass8"/>
-            <texture i="10" name="SlaynGrass7"/>
-            <texture i="11" name="SlaynGrass4"/>
-            <texture i="12" name="SlaynGrass1"/>
-            <texture i="13" name="SlaynGrass6"/>
-            <texture i="14" name="SlaynGrass5"/>
-            <texture i="15" name="SlaynGrass3"/>
+            <texture i="0" name="SlaynGrass2"/>
+            <texture i="1" name="SlaynGrass8"/>
+            <texture i="2" name="SlaynGrass7"/>
+            <texture i="3" name="SlaynGrass4"/>
+            <texture i="4" name="SlaynGrass1"/>
+            <texture i="5" name="SlaynGrass6"/>
+            <texture i="6" name="SlaynGrass5"/>
+            <texture i="7" name="SlaynGrass3"/>
+            <texture i="8" name="Forest1"/>
+            <texture i="9" name="Forest12"/>
+            <texture i="10" name="Forest13"/>
+            <texture i="11" name="Forest14"/>
+            <texture i="12" name="Forest15"/>
+            <texture i="13" name="Forest152"/>
+            <texture i="14" name="Slayn8"/>
+            <texture i="15" name="Slayn5"/>
             <texture i="16" name=""/>
             <texture i="17" name=""/>
             <texture i="18" name=""/>
