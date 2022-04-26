@@ -11580,7 +11580,7 @@
         <RemoveValidatorArray value="HeroDie2"/>
         <BuffFlags index="RefreshStack" value="1"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="9"/>
+        <Duration value="15"/>
         <Modification>
             <DeathResponse>
                 <Cost>
@@ -11609,7 +11609,7 @@
         <BuffFlags index="RefreshStack" value="1"/>
         <MaxStackCount value="4"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="9"/>
+        <Duration value="15"/>
         <Modification>
             <DeathResponse>
                 <Cost>
