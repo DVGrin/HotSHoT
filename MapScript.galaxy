@@ -14898,7 +14898,7 @@ text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill)
     message += StringToText(")");
     message += StringToText(" has claimed");  // TODO: Move to external string
     message += StringToText("<n/>");
-    TextWithColor(
+    message += TextWithColor(
         PlayerName(victim),
         libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(victim, false))
     );
@@ -14908,7 +14908,7 @@ text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill)
         Color(0.00, 100.00, 0.00)
     );
     message += StringToText(")");
-    message += StringToText("'s life<n/>");  // TODO: Move to external string
+    message += StringToText("'s life");  // TODO: Move to external string
 
     message += StringToText("</s>");  // HelpPanelListBoxItemTitle
     return message;
