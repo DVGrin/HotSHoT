@@ -7,7 +7,7 @@
     <Constant name="StatisticsRowLabel5" val="Self-healing done"/>
     <Constant name="StatisticsRowLabel6" val="Resources spent"/>
     <Constant name="StatisticsRowLabel7" val="Wards placed"/>
-    <Constant name="StatisticsRowLabel8" val="Time spent dead"/>
+    <Constant name="StatisticsRowLabel8" val="Enemies killed"/>
     <Constant name="StatisticsRowLabel9" val="Minerals given to enemies"/>
     <Constant name="StatisticsRowLabel10" val="Kill participation"/>
 

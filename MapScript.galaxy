@@ -52,7 +52,7 @@ struct PlayerStatistics {
     int wards_placed;
     int minerals_spent;
     int gas_spent;
-    int time_spent_dead;
+    // int time_spent_dead;
     int minerals_lost;
 };
 
@@ -89,7 +89,7 @@ const int c_statisticsColumnLabelHealing = 3;
 const int c_statisticsColumnLabelSelfHealing = 4;
 const int c_statisticsColumnLabelResources = 5;
 const int c_statisticsColumnLabelWards = 6;
-const int c_statisticsColumnLabelTimeSpentDead = 7;
+const int c_statisticsColumnLabelEnemiesKilled = 7;
 const int c_statisticsColumnLabelMineralsLost = 8;
 const int c_statisticsColumnLabelKillParticipation = 9;
 
@@ -7076,8 +7076,8 @@ void gf_UpdatePlayerStatisticsWindow() {
             PlayerGroupAll()
         );
         libNtve_gf_SetDialogItemText(
-            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelTimeSpentDead],
-            IntToText(gv_PlayerStatistics[player].time_spent_dead),
+            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelEnemiesKilled],
+            IntToText(libNtve_gf_UnitGetPropertyKills(gv_PlayerHero[player], c_unitPropCurrent)),
             PlayerGroupAll()
         );
         libNtve_gf_SetDialogItemText(
@@ -15197,7 +15197,7 @@ bool gt_TrHeroReviveStand_Func (bool testConds, bool runActions) {
         libNtve_gf_SetDialogItemText(gv_HeroReviveWindowTime[EventPlayer()], (StringExternal("Param/Value/A7788B65") + IntToText(gv_HeroReviveCountNum[EventPlayer()][0]) + StringExternal("Param/Value/220CEBD0")), PlayerGroupSingle(EventPlayer()));
         libNtve_gf_SetDialogItemText(gv_ScoreDialogReviveTime[EventPlayer()], (StringExternal("Param/Value/1831C539") + TextWithColor(IntToText(gv_HeroReviveCountNum[EventPlayer()][0]), Color(100.00, 100.00, 100.00)) + StringExternal("Param/Value/47B532D3")), PlayerGroupAll());
         gv_HeroReviveCountNum[EventPlayer()][0] -= 1;
-        gv_PlayerStatistics[EventPlayer()].time_spent_dead += 1;
+        // gv_PlayerStatistics[EventPlayer()].time_spent_dead += 1;
         Wait(1.0, c_timeReal);
     }
     libNtve_gf_SetDialogItemText(gv_HeroReviveWindowTime[EventPlayer()], (StringExternal("Param/Value/9E9D9A06") + IntToText(gv_HeroReviveCountNum[EventPlayer()][0]) + StringExternal("Param/Value/90BBD409")), PlayerGroupSingle(EventPlayer()));
