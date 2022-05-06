@@ -92,9 +92,6 @@ const int c_statisticsColumnLabelEnemiesKilled = 7;
 const int c_statisticsColumnLabelMineralsLost = 8;
 const int c_statisticsColumnLabelKillParticipation = 9;
 
-const int c_mutexStatShop = 0;
-const int c_mutexSkillLevelUp = 1;
-
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
@@ -105,6 +102,8 @@ const int c_mutexSkillLevelUp = 1;
 // and numbers 9-10 for team 3 players,
 // and returns real player numbers
 int[11] gv_PlayerBayul;
+// TODO: Remove this variable
+// Used only in gf_HrHeroAllKillMessage()
 playergroup[2] gv_TeamPlayerGroup;
 int gv_TotalHeroNum;
 int[11] gv_SelectedCharNum;
@@ -191,6 +190,8 @@ bool[4] gv_RegenNewTimerIceBossBoolean;
 int[2] gv_RegenNewTimerIceBossStrong;
 bool[11] gv_HeroDeathBoolean;
 bool gv_HeroFirstKill;
+// TODO: Remove this variable
+// Used only in gf_HrHeroAllKillMessage()
 bool[2] gv_HeroAllKill;
 int[11][2] gv_HeroBuffIng;
 int[11] gv_HeroKillPlayer;
@@ -14562,7 +14563,6 @@ void gt_TrSinhoBuildingRevive_Init () {
 
 int lf_KillingPlayerNumber(int victim_player, int actual_killer) {
     int i;
-    int default_killer;
     int last_player_in_team;
     string[9] kill_behaviours;
 
@@ -14586,11 +14586,9 @@ int lf_KillingPlayerNumber(int victim_player, int actual_killer) {
 
     i = 1;
     last_player_in_team = 4;
-    default_killer = 12;
     if (PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), victim_player)) {
         i = 5;
         last_player_in_team = 8;
-        default_killer = 13;
     }
     for (; i <= last_player_in_team; i += 1) {
         if (PlayerStatus(gv_PlayerBayul[i]) != c_playerStatusActive) {
@@ -14600,7 +14598,7 @@ int lf_KillingPlayerNumber(int victim_player, int actual_killer) {
             return gv_PlayerBayul[i];
         }
     }
-    return default_killer;
+    return actual_killer;
 }
 
 string lf_HeroKillSoundLink(bool first_blood, int multikill, int killstreak) {
@@ -14620,14 +14618,14 @@ string lf_HeroKillSoundLink(bool first_blood, int multikill, int killstreak) {
 
 text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill) {
     string[10] streak_message_links;
-    text message = StringToText("<s val=\"HelpPanelListBoxItemTitle\">");
+    text message = StringToText("<s val=\"HelpPanelListBoxItemTitle\"> ");
 
     if (first_blood) {
         message += TextWithColor(
             StringToText("First blood!"),  // TODO: Move to external string
             Color(0.00, 100.00, 100.00)
         );
-        message += StringToText("<n/>");
+        message += StringToText("<n/> ");
     }
 
     // Multikills
@@ -14652,7 +14650,7 @@ text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill)
             StringExternal(streak_message_links[MinI(multikill - 2, 2)]),
             Color(0.00, 100.00, 100.00)
         );
-        message += StringToText("<n/>");
+        message += StringToText("<n/> ");
     }
 
     else if (gv_HeroKillStreak[killer] >= 2) {
@@ -14664,7 +14662,7 @@ text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill)
             StringExternal(streak_message_links[MinI(gv_HeroKillStreak[killer] + 1, 9)]),
             Color(0.00, 100.00, 100.00)
         );
-        message += StringToText("<n/>");
+        message += StringToText("<n/> ");
     }
 
     message += TextWithColor(
@@ -14690,6 +14688,39 @@ text lf_HeroKillMessage(int killer, int victim, bool first_blood, int multikill)
     );
     message += StringToText(")");
     message += StringToText("'s life");  // TODO: Move to external string
+
+    message += StringToText("</s>");  // HelpPanelListBoxItemTitle
+    return message;
+}
+
+text lf_ExecutionMessage(int killer, int victim) {
+    text message = StringToText("<s val=\"HelpPanelListBoxItemTitle\"> ");
+    message += TextWithColor(
+        StringToText("Execution!"),  // TODO: Move to external string
+        Color(90.00, 15.00, 15.00)
+    );
+    message += StringToText("<n/> ");
+
+    message += TextWithColor(
+        PlayerName(victim),
+        libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(victim, false))
+    );
+    message += StringToText("(");
+    message += TextWithColor(
+        UnitTypeGetName(UnitGetType(gv_PlayerHero[victim])),
+        Color(0.00, 100.00, 0.00)
+    );
+    message += StringToText(")");
+
+    if (killer == 11) {
+        message += StringToText(" got lost in the jungle!");  // TODO: Move to external string
+    } else {
+        message += StringToText(" was overrun by overwhelming ");  // TODO: Move to external string
+        message += TextWithColor(
+            StringToText("enemy forces"),  // TODO: Move to external string
+            libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(killer, false))
+        );
+    }  
 
     message += StringToText("</s>");  // HelpPanelListBoxItemTitle
     return message;
@@ -14848,9 +14879,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
             UnitCreateEffectUnit(gv_PlayerHero[killing_player], "Spelldong22", gv_PlayerHero[killing_player]);
         }
 
-        // TODO: Check if this effect needs changes, specifically HeroKillGold part
         // Give the kill experience
-        // PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo", gv_PlayerHero[killing_player]);
         PlayerCreateEffectUnit(EventPlayer(), "HeroKill", gv_PlayerHero[killing_player]);
 
         // Set the new score dialog values
@@ -14889,6 +14918,12 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
         SoundPlay(
             SoundLink(lf_HeroKillSoundLink(first_blood, multikill, gv_HeroKillStreak[killing_player]), -1),
             PlayerGroupAll(), 200.0, 0.0
+        );
+    } else {
+        UIDisplayMessage(
+            PlayerGroupAll(),
+            c_messageAreaDebug,
+            lf_ExecutionMessage(killing_player, EventPlayer())
         );
     }
 
