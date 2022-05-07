@@ -6,10 +6,10 @@
             <Anchor side="Left" relative="$parent" pos="Min" offset="12"/>
 
             <Frame type="Label" name="Label">
-                <Text val="Remove all objectives"/>
+                <Text val="@Param/Value/00D47175"/>
             </Frame>
 
-            <Tooltip val="Remove the objectives and this button"/>
+            <Tooltip val="@Param/Value/00F51662"/>
 
             <Visible val="False"/>
         </Frame>

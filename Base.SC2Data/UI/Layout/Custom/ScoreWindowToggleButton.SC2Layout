@@ -6,7 +6,7 @@
             <Anchor side="Top" relative="$parent" pos="Min" offset="50"/>
 
             <Frame type="Label" name="Label">
-                <Text val="Open score [TAB]"/>
+                <Text val="@Param/Value/0108650D"/>
             </Frame>
 
             <Visible val="False"/>

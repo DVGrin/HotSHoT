@@ -74,7 +74,7 @@
     
                     <Style val="SecurityButton"/>
                     <Color val="ffffff"/>
-                    <Text val="Game Statistics"/>
+                    <Text val="@Param/Value/009DD159"/>
                 </Frame>
 
                 <Frame type="Frame" name="MainBody">

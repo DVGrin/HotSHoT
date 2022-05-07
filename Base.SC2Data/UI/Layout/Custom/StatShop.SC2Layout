@@ -62,7 +62,7 @@
     
                     <Style val="SecurityButton"/>
                     <Color val="ffffff"/>
-                    <Text val="Shop"/>
+                    <Text val="@Param/Value/013B77B4"/>
                 </Frame>
             </Frame>
     

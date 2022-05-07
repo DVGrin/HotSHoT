@@ -7309,40 +7309,40 @@ MapInfo/Player07/Name=
 MapInfo/Player08/Name=
 MapInfo/Player09/Name=
 MapInfo/Player10/Name=
-MapInfo/Player11/Name=neutral monster
-MapInfo/Player12/Name=1 team
-MapInfo/Player13/Name=2 team
-MapInfo/Player14/Name=spectator point of view
+MapInfo/Player11/Name=Neutral monsters
+MapInfo/Player12/Name=Team 1
+MapInfo/Player13/Name=Team 2
+MapInfo/Player14/Name=Spectator point of view
 MapInfo/Player15/Name=hostility
 Model/Name/Hero41Skill4Impact=파워 모드
 Model/Name/Hero41Skill4m2=파워 모드
 NotMeleeHeroAttack=Melee Heroes cannot attack the target.
 NotSkillUsing=
-Param/Value/000C59F9=
-Param/Value/001B874B=<c val="33ccff">Burndress</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">melee, defense</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■■</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
-Param/Value/0025BCCC=<c val="ff9999">공격력(AD):</c><c val="ffffff"> 
-Param/Value/0028B92D=Lecthor
-Param/Value/002CEDBA=
-Param/Value/003FE45A=
-Param/Value/00479CBF=Onyx
-Param/Value/004DC037=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
-Param/Value/0068FA01=<s val="PurchasePanelGroupName"><c val="78b8ff">Increased ability power (<c val="ffffff">X</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/0083767F=
-Param/Value/008A28E8=Desilba
-Param/Value/009DD159=<c val="33ccff">Xion</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Wizard, Ranged</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■■■</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■□□□</c></s>
-Param/Value/00AD05F3=
+Param/Value/000C59F9=K/D/A
+Param/Value/001B874B=Hero damage dealt
+Param/Value/0025BCCC=Hero damage received
+Param/Value/0028B92D=Healing done
+Param/Value/002CEDBA=Self-healing done
+Param/Value/003FE45A=Resources spent
+Param/Value/00479CBF=Wards placed
+Param/Value/004DC037=Enemies killed
+Param/Value/0068FA01=Minerals given to enemies
+Param/Value/0083767F=Kill participation
+Param/Value/008A28E8=End Game
+Param/Value/009DD159=Game Statistics
+Param/Value/00AD05F3=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
 Param/Value/00BD21C3=<s val="Header18">Accept</c>
 Param/Value/00C847D5= can't be stopped!
-Param/Value/00D47175=</c> second(s) after - Respawn after..
+Param/Value/00D47175=Remove all objectives
 Param/Value/00F105AA=   K / D / A
-Param/Value/00F51662=</s></c>
+Param/Value/00F51662=Remove the objectives and this button
 Param/Value/00F772C4= <s val="HelpPanelListBoxItemTitle">
-Param/Value/0108650D= <s val="HelpPanelListBoxItemTitle">
-Param/Value/011C0259=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Increases <c val="FF9866">Defense Power (DP)</c> by <c val="ffffff">8</c>. Defense Power is reducing incoming <c val="FF9999">physical damage</c>.<n/>(Max: 20)
-Param/Value/012323B9=
-Param/Value/013B77B4=</s></c>
-Param/Value/01473258=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Defense Power (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/016587D9=Surfering
+Param/Value/0108650D=Open score [TAB]
+Param/Value/011C0259=Hero lock on/off [F5]
+Param/Value/012323B9=Enable this to prevent other unit selection
+Param/Value/013B77B4=Shop
+Param/Value/01473258=
+Param/Value/016587D9=Suffering
 Param/Value/01673405=
 Param/Value/016D7E1B=<s val="Header18"><c val="ccffff">
 Param/Value/018568F0=</s>
@@ -7854,7 +7854,7 @@ Param/Value/23B10544=<s val="PurchasePanelGroupName"><c val="78b8ff">Cooldown Re
 Param/Value/23C288C7=
 Param/Value/23CF5BBC= <s val="HelpPanelListBoxItemTitle">
 Param/Value/23E01348=/Opposition: 
-Param/Value/23E576A5=<s val="PurchasePanelGroupName"><c val="78b8ff">Surfering</s></c><n/><n/>Reduces enemy Hero's attack speed by 75% and movement speed by 60% for 4 seconds.
+Param/Value/23E576A5=
 Param/Value/23EDE8A9=0
 Param/Value/23F5188F=<s val="Header18"><c val="ccffff">
 Param/Value/24169B6E=Beacon
@@ -9475,7 +9475,7 @@ Param/Value/97E83587=<s val="Header18"><c val="ccffff">
 Param/Value/97EC7ED4=</s></c>
 Param/Value/97ED007B=Jango
 Param/Value/97F72AA9=<c val="ff0000">[OFF]</c> Hero selection has been removed.
-Param/Value/98053E15=Surfering
+Param/Value/98053E15=Suffering
 Param/Value/9824DEEA=
 Param/Value/98344BBB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/983A3B85=
@@ -9827,7 +9827,7 @@ Param/Value/B050C1FB=</s>
 Param/Value/B07B93BA= <s val="HelpPanelListBoxItemTitle">
 Param/Value/B07F380C=
 Param/Value/B09FC070=) as a result of surrender.
-Param/Value/B0AAB3EA=Moria
+Param/Value/B0AAB3EA=
 Param/Value/B0B250C1=
 Param/Value/B0D40608=<s val="Header18"><c val="ccffff">
 Param/Value/B0F3A731=<s val="Header18">
@@ -10161,9 +10161,9 @@ Param/Value/CA097A6F=<s val="Header18">reject</c>
 Param/Value/CA17E249=Lack of minerals.
 Param/Value/CA244DBE=<s val="Header18"><c val="ccffff">
 Param/Value/CA3B724F=</s></c>
-Param/Value/CA46CB81=Your team obtained 125 minerals each!
-Param/Value/CA4AA415=Moria
-Param/Value/CA7D2772=Valkyre
+Param/Value/CA46CB81=
+Param/Value/CA4AA415=
+Param/Value/CA7D2772=
 Param/Value/CA8902C9= is destroyed.
 Param/Value/CA8E6AED=</s>
 Param/Value/CA956579=
@@ -10180,7 +10180,7 @@ Param/Value/CB36202D=</s></c>
 Param/Value/CB418C32=Haemosu
 Param/Value/CB424073=<s val="PurchasePanelGroupName"><c val="78b8ff">Watchtower (<c val="ffffff">C</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
 Param/Value/CB5A4891= <s val="HelpPanelListBoxItemTitle">
-Param/Value/CB5ACB70=Your team obtained 125 minerals each!
+Param/Value/CB5ACB70=
 Param/Value/CB94B0AB=킬/데스/어시
 Param/Value/CBA7A160=<n/>영웅이 죽을 때까지 기본 공격력이 16, 기본 공격 속도가 15%만큼 증가합니다.
 Param/Value/CBAC11BC=)
@@ -10908,7 +10908,7 @@ Param/Value/FF26DC99= <s val="HelpPanelListBoxItemTitle">
 Param/Value/FF396FB0=</s>
 Param/Value/FF6CAED4=Garp
 Param/Value/FF6CE680=<s val="PurchasePanelGroupName"><c val="78b8ff">Q skill enhancement (<c val="ffffff">F1</c>)</c></s><n/><n/>It further strengthens the skills below.
-Param/Value/FF7D46E6=Your team obtained 125 minerals each!
+Param/Value/FF7D46E6=
 Param/Value/FF9E76AE=
 Param/Value/FFC929AF=/Opposition: 
 Param/Value/FFD9CF42=

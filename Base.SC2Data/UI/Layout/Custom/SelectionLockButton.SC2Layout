@@ -6,10 +6,10 @@
             <Anchor side="Left" relative="$parent" pos="Min" offset="12"/>
 
             <Frame type="Label" name="Label">
-                <Text val="Hero lock on/off [F5]"/>
+                <Text val="@Param/Value/011C0259"/>
             </Frame>
 
-            <Tooltip val="Enable this to prevent other unit selection"/>
+            <Tooltip val="@Param/Value/012323B9"/>
 
             <Visible val="False"/>
 

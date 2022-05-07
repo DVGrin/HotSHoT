@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-    <Constant name="StatisticsRowLabel1" val="K/D/A"/>
-    <Constant name="StatisticsRowLabel2" val="Hero damage dealt"/>
-    <Constant name="StatisticsRowLabel3" val="Hero damage received"/>
-    <Constant name="StatisticsRowLabel4" val="Healing done"/>
-    <Constant name="StatisticsRowLabel5" val="Self-healing done"/>
-    <Constant name="StatisticsRowLabel6" val="Resources spent"/>
-    <Constant name="StatisticsRowLabel7" val="Wards placed"/>
-    <Constant name="StatisticsRowLabel8" val="Enemies killed"/>
-    <Constant name="StatisticsRowLabel9" val="Minerals given to enemies"/>
-    <Constant name="StatisticsRowLabel10" val="Kill participation"/>
+    <Constant name="StatisticsRowLabel1" val="@Param/Value/000C59F9"/>
+    <Constant name="StatisticsRowLabel2" val="@Param/Value/001B874B"/>
+    <Constant name="StatisticsRowLabel3" val="@Param/Value/0025BCCC"/>
+    <Constant name="StatisticsRowLabel4" val="@Param/Value/0028B92D"/>
+    <Constant name="StatisticsRowLabel5" val="@Param/Value/002CEDBA"/>
+    <Constant name="StatisticsRowLabel6" val="@Param/Value/003FE45A"/>
+    <Constant name="StatisticsRowLabel7" val="@Param/Value/00479CBF"/>
+    <Constant name="StatisticsRowLabel8" val="@Param/Value/004DC037"/>
+    <Constant name="StatisticsRowLabel9" val="@Param/Value/0068FA01"/>
+    <Constant name="StatisticsRowLabel10" val="@Param/Value/0083767F"/>
 
     <Constant name="StatisticsLabelOffset" val="0"/>
     <Constant name="StatisticsLabelHeight" val="60"/>

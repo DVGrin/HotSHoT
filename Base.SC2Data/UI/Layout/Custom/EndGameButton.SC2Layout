@@ -12,7 +12,7 @@
 
             <Frame type="Label" name="Label">
                 <Style val="PurchasePanelNoSelection"/>
-                <Text val="End Game"/>
+                <Text val="@Param/Value/008A28E8"/>
             </Frame>
         </Frame>
     </Frame>
