@@ -16095,7 +16095,7 @@ bool gt_TrackHeroDamage_Func (bool testConds, bool runActions) {
     }
 
     gv_PlayerStatistics[EventUnitDamageSourcePlayer()].damage_dealt += EventUnitDamageAmount();
-    gv_PlayerStatistics[EventPlayer()].damage_absorbed += EventUnitDamageAbsorbed();
+    gv_PlayerStatistics[EventPlayer()].damage_absorbed += EventUnitDamageAmount();
 
     return true;
 }
