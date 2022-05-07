@@ -7039,11 +7039,13 @@ void gf_UpdatePlayerStatisticsWindow() {
             IntToText(gv_PlayerStatistics[player].wards_placed),
             PlayerGroupAll()
         );
-        libNtve_gf_SetDialogItemText(
-            gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelEnemiesKilled],
-            IntToText(libNtve_gf_UnitGetPropertyKills(gv_PlayerHero[player], c_unitPropCurrent)),
-            PlayerGroupAll()
-        );
+        if (libNtve_gf_UnitGetPropertyKills(gv_PlayerHero[player], c_unitPropCurrent) > 0) {
+            libNtve_gf_SetDialogItemText(
+                gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelEnemiesKilled],
+                IntToText(libNtve_gf_UnitGetPropertyKills(gv_PlayerHero[player], c_unitPropCurrent)),
+                PlayerGroupAll()
+            );
+        }
         libNtve_gf_SetDialogItemText(
             gv_PlayerStatisticsWindowNumber[i][c_statisticsColumnLabelMineralsLost],
             IntToText(gv_PlayerStatistics[player].minerals_lost),
@@ -15898,6 +15900,7 @@ bool gt_TrPlayerOut_Func (bool testConds, bool runActions) {
     }
 
     gv_HeroDeathBoolean[EventPlayer()] = true;
+    gf_UpdatePlayerStatisticsWindow();
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropMinerals, c_playerPropOperSetTo, 0);
     PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSetTo, 0);
     if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true)) {
