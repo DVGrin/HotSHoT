@@ -3477,7 +3477,7 @@
         <EffectArray Reference="Effect,Hero13Skill3D,Amount[0]" Value="4"/>
         <EffectArray Reference="Effect,Hero13Skill4D,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero8Skill4D,Amount[0]" Value="10.8"/>
-        <EffectArray Reference="Effect,Hero17Skill2D,Amount[0]" Value="12"/>
+        <EffectArray Reference="Effect,Hero17Skill2D,Amount[0]" Value="9.6"/>
         <EffectArray Reference="Effect,Hero21Skill3D,Amount[0]" Value="8"/>
         <EffectArray Reference="Effect,Hero17Skill1D,Amount[0]" Value="6.4"/>
         <EffectArray Reference="Effect,Hero25Skill1D,Amount[0]" Value="6.4"/>

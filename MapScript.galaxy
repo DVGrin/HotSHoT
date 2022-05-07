@@ -7119,10 +7119,18 @@ bool gt_Tr2GameSetting_Func (bool testConds, bool runActions) {
     UISetDragSelectEnabled(PlayerGroupAll(), false);
     CameraSetBounds(PlayerGroupAll(), RegionRect(PointGetX(PointFromId(220)), PointGetY(PointFromId(220)), PointGetX(PointFromId(221)), PointGetY(PointFromId(221))), true);
     CinematicFade(false, 0.0, c_fadeStyleNormal, Color(0.00, 0.00, 0.00), 0.0, true);
-    libNtve_gf_MakeUnitInvulnerable(UnitFromId(121), false);
-    libNtve_gf_MakeUnitInvulnerable(UnitFromId(120), false);
-    libNtve_gf_MakeUnitInvulnerable(UnitFromId(122), false);
-    libNtve_gf_MakeUnitInvulnerable(UnitFromId(119), false);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(131), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(712), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(116), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(115), true);
+	libNtve_gf_MakeUnitInvulnerable(UnitFromId(222), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(223), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(128), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(713), true);
+	libNtve_gf_MakeUnitInvulnerable(UnitFromId(117), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(118), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(224), true);
+    libNtve_gf_MakeUnitInvulnerable(UnitFromId(225), true);
     libNtve_gf_SetAlliance(12, 11, libNtve_ge_AllianceSetting_Enemy);
     libNtve_gf_SetAlliance(13, 11, libNtve_ge_AllianceSetting_Enemy);
     libNtve_gf_SetPlayerGroupAlliance(GameAttributePlayersForTeam(1), libNtve_ge_AllianceSetting_AllyWithSharedVision);
@@ -7132,13 +7140,17 @@ bool gt_Tr2GameSetting_Func (bool testConds, bool runActions) {
     PlayerCreateEffectUnit(12, "ApplyIncapBehavior222222222242", UnitFromId(116));
     PlayerCreateEffectUnit(12, "ApplyIncapBehavior222222222242", UnitFromId(115));
     PlayerCreateEffectUnit(12, "ApplyIncapBehavior2222222222422", UnitFromId(222));
+	UnitBehaviorAddPlayer(UnitFromId(222), "TowerHealthRegenerationSystem100", 12, 1);
     PlayerCreateEffectUnit(12, "ApplyIncapBehavior2222222222422", UnitFromId(223));
+	UnitBehaviorAddPlayer(UnitFromId(223), "TowerHealthRegenerationSystem100", 12, 1);
     PlayerCreateEffectUnit(13, "ApplyIncapBehavior22222222224", UnitFromId(128));
     PlayerCreateEffectUnit(13, "ApplyIncapBehavior22222222224", UnitFromId(713));
     PlayerCreateEffectUnit(13, "ApplyIncapBehavior222222222242", UnitFromId(117));
     PlayerCreateEffectUnit(13, "ApplyIncapBehavior222222222242", UnitFromId(118));
     PlayerCreateEffectUnit(13, "ApplyIncapBehavior2222222222422", UnitFromId(224));
+	UnitBehaviorAddPlayer(UnitFromId(224), "TowerHealthRegenerationSystem100", 13, 1);
     PlayerCreateEffectUnit(13, "ApplyIncapBehavior2222222222422", UnitFromId(225));
+	UnitBehaviorAddPlayer(UnitFromId(225), "TowerHealthRegenerationSystem100", 13, 1);
     return true;
 }
 

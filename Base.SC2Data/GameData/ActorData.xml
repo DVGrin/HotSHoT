@@ -121,6 +121,12 @@
         <Model value="Hero34Skill2Start3"/>
         <ModelFlags index="CloakedUndetectedIsHidden" value="1"/>
     </CActorModel>
+    <CActorModel id="BackdoorProtection" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="UnitDamaged; ValidateUnit HasBackdoorProtection" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpBackdoorProtection"/>
+        <Model value="BackdoorProtectionModel"/>
+    </CActorModel>
     <CActorRange id="CannonRadar2">
         <VisibleTo index="Self" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
@@ -1135,6 +1141,10 @@
     <CActorSiteOpLocalOffset id="SOp74TEST">
         <EditorCategories value=""/>
         <LocalOffset value="0.300000,-1.700000,-1.200000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSiteOpLocalOffset id="SOpBackdoorProtection">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.000000,0.000000,2.000000"/>
     </CActorSiteOpLocalOffset>
     <CActorModel id="SpellModel2323" parent="ModelAnimationStyleContinuous">
         <Inherits index="CloakEffect" value="1"/>

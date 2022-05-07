@@ -70,6 +70,12 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="SpellDong2347"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="BackdoorProtectionApply">
+        <ValidatorArray index="0" value="NoMinionsAround"/>
+        <EditorCategories value=""/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="BackdoorProtection"/>
+    </CEffectApplyBehavior>
     <CEffectDamage id="Hero17Skill2D2" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/ToshU"/>
@@ -1078,6 +1084,17 @@
     <CEffectDamage id="Hero74Skill5D">
         <Amount value="20"/>
     </CEffectDamage>
+    <CEffectEnumArea id="MinionSearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="Light;Player,Ally,Neutral"/>
+        <AreaArray Radius="10" Effect="RemoveBackdoorProtection"/>
+        <MinCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectRemoveBehavior id="RemoveBackdoorProtection">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="BackdoorProtection"/>
+    </CEffectRemoveBehavior>
     <CEffectModifyPlayer id="SealofExecutionupgrade">
         <EditorCategories value=""/>
         <Upgrades Upgrade="SealofExecutionUpgrade" Count="1"/>
@@ -25053,6 +25070,36 @@
         <Flags index="Notification" value="0"/>
         <Amount value="30"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="TowerApply66Regen">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TowerHealthRegen66"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TowerApply100Regen2">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TowerHealthRegen100"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TowerApply33Regen">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TowerHealthRegen33"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TowerRegenerationApply66System">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TowerHealthRegenerationSystem66"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TowerRegenerationApply33System">
+        <ValidatorArray index="0" value="TowerRegenerationApply2TargetFilters"/>
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TowerHealthRegenerationSystem33"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TowerRegenerationApply100System">
+        <EditorCategories value=""/>
+        <Behavior value="TowerHealthRegenerationSystem100"/>
+    </CEffectApplyBehavior>
     <CEffectApplyBehavior id="applyjangowtestdamagebehavior">
         <EditorCategories value=""/>
         <Behavior value="jangotest"/>

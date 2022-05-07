@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareVital id="CasterLifeGT66Percent" parent="CasterLifePercent">
+        <Compare value="GT"/>
+        <Value value="0.66"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="CasterLifeGT33Percent" parent="CasterLifePercent">
+        <Compare value="GT"/>
+        <Value value="0.33"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="CasterLifeLT33Percent" parent="CasterLifePercent">
+        <Compare value="LT"/>
+        <Value value="0.34"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="CasterLifeLT66Percent" parent="CasterLifePercent">
+        <Compare value="LT"/>
+        <Value value="0.67"/>
+    </CValidatorUnitCompareVital>
     <CValidatorUnitOrderQueue id="CasterNotAttacking2">
         <AbilLink value="move"/>
         <Find value="0"/>
@@ -46,6 +62,11 @@
         <AbilCmdIndex value="2"/>
         <Find value="0"/>
     </CValidatorUnitOrderQueue>
+    <CValidatorLocationEnumArea id="NoMinionsAround">
+        <AreaArray Count="0" Radius="10"/>
+        <Compare value="Eq"/>
+        <SearchFilters value="Light,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
     <CValidatorUnitCompareBehaviorCount id="HasNoStun">
         <Compare value="LE"/>
         <Categories index="Stun" value="1"/>
@@ -4320,5 +4341,10 @@
         <Value value="4"/>
         <Behavior value="Hero58Passive"/>
         <BehaviorAlignment value="Negative"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasBackdoorProtection">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="BackdoorProtection"/>
     </CValidatorUnitCompareBehaviorCount>
 </Catalog>

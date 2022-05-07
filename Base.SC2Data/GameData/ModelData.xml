@@ -79,6 +79,11 @@
         <ScaleMax value="0.250000,0.250000,0.250000"/>
         <ScaleMin value="0.250000,0.250000,0.250000"/>
     </CModel>
+    <CModel id="BackdoorProtectionModel">
+        <Model value="Assets\Effects\Protoss\DragoonForceShield\DragoonForceShield.m3"/>
+        <ScaleMax value="3.000000,3.000000,3.000000"/>
+        <ScaleMin value="3.000000,3.000000,3.000000"/>
+    </CModel>
     <CModel id="Hero13Skill1Impact2" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\TerranFlyingBuildingDeath\TerranFlyingBuildingDeath_Low.m3"/>
         <EditorCategories value="Race:Terran"/>

@@ -964,6 +964,19 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
+    <CBehaviorBuff id="BackdoorProtection">
+        <InfoIcon value="Assets\Textures\shield_blue.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DamageResponse ModifyFraction="0.3334">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BackdoorProtectionReapply">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="1"/>
+        <PeriodicEffect value="BackdoorProtectionApply"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="DamageNo">
         <Alignment value="Positive"/>
         <Cost>
@@ -6779,6 +6792,12 @@
                 <Cooldown Link="Behavior/PsiStorm"/>
             </Cost>
         </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BackdoorProtectionRemovalAura">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="0.3"/>
+        <PeriodicEffect value="MinionSearch"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MonsterAttackImpact">
         <Alignment value="Negative"/>
@@ -35289,7 +35308,6 @@
         <Modification>
             <DamageDealtScaled index="Melee" value="90"/>
             <VitalMaxArray index="Life" value="1200"/>
-            <VitalRegenArray index="Life" value="11.25"/>
             <DeathResponse>
                 <Cost>
                     <Charge Link="Behavior/PsiStorm"/>
@@ -36611,7 +36629,6 @@
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
-        <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\InviButton.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <MaxStackCount value="5"/>
@@ -36625,7 +36642,7 @@
                 </Cost>
             </DeathResponse>
         </Modification>
-        <DamageResponse ModifyFraction="1.1">
+        <DamageResponse ModifyFraction="1.2">
             <RequireEffectArray value="PhotonCannonU"/>
             <Chance value="1"/>
             <Cost>
@@ -44247,13 +44264,11 @@
         </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="PhotonAttacking23">
-        <Alignment value="Positive"/>
         <Cost>
             <Charge Link="Behavior/PsiStorm"/>
             <Cooldown Link="Behavior/PsiStorm"/>
         </Cost>
-        <InfoFlags index="Hidden" value="1"/>
-        <InfoIcon value="Assets\InviButton.dds"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Modification>
@@ -44836,6 +44851,58 @@
         <VeterancyLevelArray MinVeterancyXP="162"/>
         <VeterancyLevelArray MinVeterancyXP="190"/>
     </CBehaviorVeterancy>
+    <CBehaviorBuff id="TowerHealthRegen100">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterLifeGT66Percent"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="3.1"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="11.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TowerHealthRegen66">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterLifeLT66Percent"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="3.1"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="11.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TowerHealthRegen33">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterLifeLT33Percent"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="3.1"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="11.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TowerHealthRegenerationSystem100">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterLifeGT66Percent"/>
+        <Period value="3"/>
+        <PeriodicEffect value="TowerApply100Regen2"/>
+        <FinalEffect value="TowerRegenerationApply66System"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TowerHealthRegenerationSystem66">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterLifeGT33Percent"/>
+        <Period value="3"/>
+        <PeriodicEffect value="TowerApply66Regen"/>
+        <FinalEffect value="TowerRegenerationApply33System"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TowerHealthRegenerationSystem33">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="3"/>
+        <PeriodicEffect value="TowerApply33Regen"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="UnstablePlasmaShield">
         <Alignment value="Positive"/>
         <EditorCategories value="AbilityorEffectType:Units"/>

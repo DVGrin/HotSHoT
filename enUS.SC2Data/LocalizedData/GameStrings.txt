@@ -410,6 +410,7 @@ Behavior/Name/AttackSpeed222222=Attack Speed
 Behavior/Name/AttackSpeed2222222=Attack Speed
 Behavior/Name/AttackSpeed222222222=Attack Speed
 Behavior/Name/AttackSpeed3=Phantom Assault Attack Speed
+Behavior/Name/BackdoorProtection=Backdoor Protection
 Behavior/Name/BoosterItem2=Booster
 Behavior/Name/BoosterItem22=Wait for booster
 Behavior/Name/Critical=Critical Strike System
@@ -1230,7 +1231,6 @@ Behavior/Name/PhotonAttacking2422=Ouijadon death system
 Behavior/Name/PhotonAttacking24222=Hunter Zone Death System
 Behavior/Name/PhotonAttacking25=Guard Tower Enhancement System Tier 1
 Behavior/Name/PhotonAttacking252=Guard Tower Enhancement System Tier 2
-Behavior/Name/PhotonAttacking2522=Guard Tower Enhancement System Tier 3
 Behavior/Name/PhotonAttacking26=Watch Tower Destruction System
 Behavior/Name/Player1Assist=Player1 Assist
 Behavior/Name/Player1Assist2=Player1 Assist System
@@ -1429,6 +1429,7 @@ Behavior/Tooltip/AttackSpeed2222222=
 Behavior/Tooltip/AttackSpeed22222222=
 Behavior/Tooltip/AttackSpeed222222222=
 Behavior/Tooltip/AttackSpeed3=
+Behavior/Tooltip/BackdoorProtection=This structure takes 66,66% reduced damage while there are no enemy minions around.
 Behavior/Tooltip/BoosterItem2=Movement speed is increased, plus an additional increase after not taking damage for 4 seconds.
 Behavior/Tooltip/BoosterItem22=
 Behavior/Tooltip/DamageNo=
@@ -2191,11 +2192,11 @@ Behavior/Tooltip/MonsterDumit=
 Behavior/Tooltip/MonsterDumit2=
 Behavior/Tooltip/Nexussys=
 Behavior/Tooltip/PhotonAttacking=
-Behavior/Tooltip/PhotonAttacking2=Each attack deals 10% additional damage to the target. This effect stacks up to 5 times.
+Behavior/Tooltip/PhotonAttacking2=Each attack deals 20% additional damage to the target. This effect stacks up to 5 times.
 Behavior/Tooltip/PhotonAttacking22=
 Behavior/Tooltip/PhotonAttacking222=
 Behavior/Tooltip/PhotonAttacking223=
-Behavior/Tooltip/PhotonAttacking23=
+Behavior/Tooltip/PhotonAttacking23=This structure takes 31% reduced damage from all damage sources.
 Behavior/Tooltip/PhotonAttacking232=
 Behavior/Tooltip/PhotonAttacking2322=
 Behavior/Tooltip/PhotonAttacking23222=
@@ -2220,7 +2221,6 @@ Behavior/Tooltip/PhotonAttacking2422=
 Behavior/Tooltip/PhotonAttacking24222=
 Behavior/Tooltip/PhotonAttacking25=
 Behavior/Tooltip/PhotonAttacking252=
-Behavior/Tooltip/PhotonAttacking2522=
 Behavior/Tooltip/PhotonAttacking26=
 Behavior/Tooltip/Player1Assist=
 Behavior/Tooltip/Player1Assist2=
@@ -2938,7 +2938,7 @@ Button/Tooltip/Hero52Skill4Dummy=
 Button/Tooltip/Hero53=
 Button/Tooltip/Hero53Passive=<c val="ccffff">[Passive]</c> Glan has 1 health regeneration and gains <c val="ffffff"><d ref="1-Behavior,Hero53Passive,DamageResponse.ModifyFraction*100" precision="2"/>%</c> damage reduction for every 10% missing health.
 Button/Tooltip/Hero54=
-Button/Tooltip/Hero54Passive=<c val="ccffff">[Passive]</c> Each time Voltma kills an enemy with his basic attacks he gains 1 bonus damage. If Voltma dies, this effect is halved. (Max: <c val="ffffff"><d ref="Effect,Hero54PassiveM,Amount"/></c>)
+Button/Tooltip/Hero54Passive=<c val="ccffff">[Passive]</c> Each time Voltma kills an enemy with his basic attacks he gains 1 bonus damage. If Voltma dies he is losing 1/3rd of his accumulated bonus damage. (Max: <c val="ffffff"><d ref="Effect,Hero54PassiveM,Amount"/></c>)
 Button/Tooltip/Hero55=
 Button/Tooltip/Hero55Passive=<c val="ccffff">[Passive]</c> Each time Bax levels up, his maximum mana is increased by an additional 30.
 Button/Tooltip/Hero56=
@@ -3195,7 +3195,7 @@ Button/Tooltip/HeroSkillBtn55732=<c val="ccffff">[Active]</c> Chorus tries  to s
 Button/Tooltip/HeroSkillBtn557322=<c val="ccffff">[Active]</c> Chorus sprays himself or an allied hero with an unknown bodily fluid, healing the target for <c val="ffffff"><d ref="Effect,Hero34Skill3M,Amount"/></c><c val="80FFFF">(0.6 AP)</c> HP and increasing it's movement speed by <c val="ffffff"><d ref="Effect,Hero34Skill3M2,Amount"/>%</c> for 3 sec.
 Button/Tooltip/HeroSkillBtn5573222=<c val="ccffff">[Passive]</c> Chorus gains additional <c val="ffffff"><d ref="Effect,Hero34Skill4M,Amount"/></c> minerals for assists.<n/><c val="ccffff">[Active]</c> Chorus envelopes himself or an allied Hero in unknown body fluids, turning the target invulnerable for <c val="ffffff"><d ref="Effect,Hero34Skill4M2,Amount" precision="1"/></c> seconds.
 Button/Tooltip/HeroSkillBtn558=<c val="ccffff">[Passive]</c> Increases Kelro's lifesteal and spellvamp by <c val="ffffff"><d ref="Effect,Hero17Skill1M,Amount"/>%</c>.<n/><c val="ccffff">[Active]</c> Kelro marks the targeted enemy hero with Nightmare, dealing <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero17Skill1D,Amount"/></c><c val="ff9999">(0.8 AD)</c>.
-Button/Tooltip/HeroSkillBtn5582=<c val="ccffff">[Active]</c> Kelro hurls a worm in a straight line, dealing <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero17Skill2D,Amount"/></c><c val="ff9999">(1.5 AD)</c> + 5% of the target's max hp. If an enemy hero is marked with Nightmare the worm will automatically fly to the target affected by Nightmare instead. Nightmare disappears after hitting the affected enemy hero with two worms, or after 10 seconds.
+Button/Tooltip/HeroSkillBtn5582=<c val="ccffff">[Active]</c> Kelro hurls a worm in a straight line, dealing <c val="ff9999">physical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero17Skill2D,Amount"/></c><c val="ff9999">(1.2 AD)</c> + 5% of the target's max hp. If an enemy hero is marked with Nightmare the worm will automatically fly to the target affected by Nightmare instead. Nightmare disappears after hitting the affected enemy hero with two worms, or after 10 seconds.
 Button/Tooltip/HeroSkillBtn55822=<c val="ccffff">[Active]</c> Kelro contaminates the target, reducing basic attack speed and movement speed by <c val="ffffff"><d ref="Effect,Hero17Skill3M,Amount"/>%</c></c> for 5 sec.
 Button/Tooltip/HeroSkillBtn558222=<c val="ccffff">[Active]</c> Kelro unleashes a gigantic pollutant at an enemy hero. The target takes <c val="80FFFF">magical damage</c> equal to <c val="ffffff"><d ref="Effect,Hero17Skill4D,Amount"/></c><c val="ff9999">(1.5 AD)</c>. Targets struck are knocked back and stunned during the knockback. Deals 50% <c val="80FFFF">magical damage</c> to enemies near the target.
 Button/Tooltip/HeroSkillBtn559=<c val="ccffff">[Active]</c> Devola unleashes a powerful explosion forward, dealing <c val="ffffff"><d ref="Effect,Hero18Skill1D,Amount"/></c><c val="80FFFF">(0.75 AP)</c> <c val="80FFFF">magic damage</c> and reducing the movement speed of enemies within range by <c val="ffffff"><d ref="Effect,Hero18Skill1M,Amount"/>%</c> for 2.5 seconds.
@@ -3579,6 +3579,7 @@ Effect/Name/AttackSpeedDongRemove222222=공격 속도
 Effect/Name/AttackSpeedDongRemove2222222=공격 속도
 Effect/Name/AttackSpeedDongRemove22222222=공격 속도
 Effect/Name/AttackSpeedDongRemove222222222=공격 속도
+Effect/Name/BackdoorProtectionApply=Backdoor Protection Apply
 Effect/Name/BayArcApplyUnstablePlasmaShield=Bay Arc Apply Unstable Plasma Shield
 Effect/Name/BayArcApplyUnstablePlasmaShieldScaling=Bay Arc Apply Unstable Plasma Shield Scaling
 Effect/Name/BayArcPlasmaShieldTooltip=Bay Arc Plasma Shield Tooltip
@@ -7131,6 +7132,7 @@ Effect/Name/MinionDeathG=미니언 죽음
 Effect/Name/MinionDeathSr=미니언 죽음
 Effect/Name/MinionDeathSr2=미니언 죽음
 Effect/Name/MinionMakeTimerG=미니언 생성 타이머
+Effect/Name/MinionSearch=MinionSearch
 Effect/Name/MonsterAttackMo=무기
 Effect/Name/MonsterAttackMo2=무기
 Effect/Name/MonsterDumitDong=중립 몬스터 표시 더미
@@ -7205,6 +7207,7 @@ Effect/Name/PsiDischargeLaunchMissile222323=충격탄
 Effect/Name/PsiDischargeLaunchMissile23=개박살
 Effect/Name/PsiDischargeLaunchMissile232=투신의 난도질
 Effect/Name/PsionicShockwaveDamage=에너지 충격
+Effect/Name/RemoveBackdoorProtection=RemoveBackdoorProtection
 Effect/Name/SangD=상아의 저주
 Effect/Name/ScannerSpell=스캐너
 Effect/Name/ScannerSpell2=스캐너
@@ -7268,6 +7271,12 @@ Effect/Name/ToHeroDamage=피해 시스템
 Effect/Name/ToHeroDamage2=피해 시스템
 Effect/Name/Todamagesys=피해 시스템
 Effect/Name/ToshU=무기
+Effect/Name/TowerApply100Regen2=Tower Apply 100% Regen
+Effect/Name/TowerApply33Regen=Tower Apply 33% Regen
+Effect/Name/TowerApply66Regen=Tower Apply 66% Regen
+Effect/Name/TowerRegenerationApply100System=Tower Regeneration Apply 100% System
+Effect/Name/TowerRegenerationApply33System=Tower Regeneration Apply 33% System
+Effect/Name/TowerRegenerationApply66System=Tower Regeneration Apply 66% System
 Effect/Name/WarpBlades2=무기
 Effect/Name/Zeratul=무기
 Effect/Name/applyjangowtestdamagebehavior=apply jango w test damage behavior
