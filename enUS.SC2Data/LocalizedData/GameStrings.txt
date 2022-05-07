@@ -7346,45 +7346,45 @@ Param/Value/016587D9=Suffering
 Param/Value/01673405=
 Param/Value/016D7E1B=<s val="Header18"><c val="ccffff">
 Param/Value/018568F0=</s>
-Param/Value/01A0CDFF= <s val="HelpPanelListBoxItemTitle">
-Param/Value/01A529CE=</s></c>
+Param/Value/01A0CDFF=
+Param/Value/01A529CE=
 Param/Value/01F17A05=
-Param/Value/01F4F470= <s val="HelpPanelListBoxItemTitle">
-Param/Value/02137B35=<s val="Header18">
+Param/Value/01F4F470=
+Param/Value/02137B35=
 Param/Value/0214B204=</s></c>
-Param/Value/021505BE=If you leave in the middle of the game, the number of exits will be accumulated and storage data may be lost.
-Param/Value/02157E57=Win rate
-Param/Value/021AF4E1=<s val="PurchasePanelGroupName"><c val="78b8ff">Mana increase (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/022FBFD2=</s></c>
+Param/Value/021505BE=
+Param/Value/02157E57=
+Param/Value/021AF4E1=
+Param/Value/022FBFD2=
 Param/Value/0242BE2E=<s val="Header18">
-Param/Value/0271FB40=Kaion
+Param/Value/0271FB40=
 Param/Value/0275C334= will be regenerated soon.
-Param/Value/0280A01C=/Opposition: 
-Param/Value/0287BB42=</c>   <c val="6699ff">Critical hit rate:</c><c val="ffffff"> 
+Param/Value/0280A01C=
+Param/Value/0287BB42=
 Param/Value/029C2DDF=
-Param/Value/029DC35B=</s>
+Param/Value/029DC35B=
 Param/Value/02A4D13E=
-Param/Value/02AF0F2A=</c>   <c val="6699ff">Booster:</c><c val="ffffff"> 
-Param/Value/02B06633=Beacon
-Param/Value/02CDF0CF=Warcorn
-Param/Value/02D07892=<s val="Header18"><c val="ccffff">
-Param/Value/02E4C19B=<s val="Header18"><c val="ccffff">
+Param/Value/02AF0F2A=
+Param/Value/02B06633=
+Param/Value/02CDF0CF=
+Param/Value/02D07892=
+Param/Value/02E4C19B=
 Param/Value/02EF50FA=
 Param/Value/02F1E97E=</s>
-Param/Value/032AD73B=<s val="PurchasePanelGroupName"><c val="78b8ff">Cleanse</s></c><n/><n/>Removes all harmful effects on the hero for 3 seconds.
-Param/Value/03536FC9=Warcorn
-Param/Value/0356181F=</c>   <c val="6699ff">Maximum mana:</c><c val="ffffff"> 
+Param/Value/032AD73B=
+Param/Value/03536FC9=
+Param/Value/0356181F=
 Param/Value/03653BE0=
 Param/Value/037DA826=<c val="33ccff">Mordin</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■□□□□</c></s>
-Param/Value/03963AE3=</s>
-Param/Value/03D1BE60=</s></c>
-Param/Value/03F73BC0=</s>
+Param/Value/03963AE3=
+Param/Value/03D1BE60=
+Param/Value/03F73BC0=
 Param/Value/04337C94=
 Param/Value/043653A0=
-Param/Value/044239AC=<c val="ffffff">: 
+Param/Value/044239AC=
 Param/Value/0450D79A=<s val="Header18"><c val="ccffff">
-Param/Value/04A0120E=</s></c>
-Param/Value/04C966AD=%</c><n/>Cumulative Kills/Assists: <c val="ffffff">
+Param/Value/04A0120E=
+Param/Value/04C966AD=
 Param/Value/04D7BA83=
 Param/Value/04DF2E8C=Select Hero
 Param/Value/04ED909C=
@@ -7392,156 +7392,156 @@ Param/Value/0517C075=
 Param/Value/0532123E=Beacon
 Param/Value/054E3FEB=
 Param/Value/055E0D7D=
-Param/Value/056E1CCE=</s>
+Param/Value/056E1CCE=
 Param/Value/057E1FFE= 
-Param/Value/05810EB9=<c val="ffffff">: 
-Param/Value/059A2406= <IMG path="Assets\AddIcon\Rank-08GrandMaster.dds" height="64" width="64"/> <s val="Header18">
+Param/Value/05810EB9=
+Param/Value/059A2406=
 Param/Value/059CBA96=(Agree: 
 Param/Value/05A062EB=Enemy team's 
 Param/Value/05B30B49=The enemy team is in the process of voting for surrender.
-Param/Value/05CF34C5=Deken
-Param/Value/05DC0F58='s attack<n/> killed 
-Param/Value/05F62168= <s val="HelpPanelListBoxItemTitle">
+Param/Value/05CF34C5=
+Param/Value/05DC0F58=
+Param/Value/05F62168=
 Param/Value/05F78DFB=<s val="PlanetPanelPlanetName">
 Param/Value/0602E825=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your Q skill <c val="ffffff">[F1]</c></c></s>
 Param/Value/06072EE0=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your W skill <c val="ffffff">[F2]</c></c></s>
 Param/Value/06123B22=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your E skill <c val="ffffff">[F3]</c></c></s>
-Param/Value/062C72C1=Beacon
-Param/Value/062D849D=</s>
-Param/Value/0633BE4E=</s>
+Param/Value/062C72C1=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your R skill <c val="ffffff">[F4]</c></c></s>
+Param/Value/062D849D=
+Param/Value/0633BE4E=
 Param/Value/064F4967=<c val="33ccff">Shuirin</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Assassin</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■■■</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■□□□</c></s>
-Param/Value/066B0529= <s val="HelpPanelListBoxItemTitle">
+Param/Value/066B0529=
 Param/Value/067028AD=Increases your chance to evade basic attacks by 10%. When you receive a basic attack from an enemy, you deal 4 + <c val="ff9999">(0.4 DP)</c> + <c val="99ffcc">(0.2 RP)</c> <c val="ffff99">true damage</c> to the attacking enemy. Attackers suffer from a debuff, reducing incoming lifesteal/spellvamp and healing effects by 40% for 3 seconds. Seal of Iron deals 60% less damage to monsters.
 Param/Value/0683A4DB= <s val="HelpPanelListBoxItemTitle">
 Param/Value/06977E96=/Opposition: 
-Param/Value/069CC3BA=<s val="Header18"><c val="ccffff">
-Param/Value/06A54DC6=<s val="PurchasePanelGroupName"><c val="78e8ff">Learn your R skill <c val="ffffff">[F4]</c></c></s>
-Param/Value/06A7E755= <s val="HelpPanelListBoxItemTitle">
-Param/Value/06AE8A13=Govan
+Param/Value/069CC3BA=
+Param/Value/06A54DC6=
+Param/Value/06A7E755
+Param/Value/06AE8A13=
 Param/Value/06DE9191=
 Param/Value/070A714C=
-Param/Value/072FC99A=<c val="ccccff">/</c>
+Param/Value/072FC99A=
 Param/Value/073CB29C=
-Param/Value/0754513D=<s val="Header18"><c val="ccffff">
+Param/Value/0754513D=
 Param/Value/07570867=
 Param/Value/075CB298=
-Param/Value/0771F738=</c>   <c val="6699ff">Max mana:</c><c val="ffffff"> 
-Param/Value/07A85A9A=<s val="Header18"><c val="ccffff">
-Param/Value/07BCCBDB=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Resistance Power (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/07EF6D64=Enemy team's 
+Param/Value/0771F738=
+Param/Value/07A85A9A=
+Param/Value/07BCCBDB=
+Param/Value/07EF6D64=
 Param/Value/07F11049=
 Param/Value/081635A0=
-Param/Value/082C1706=  <IMG path="Assets\Textures\icon-gas-protoss.dds" height="18" width="18"/> 1<n/>Ignores <c val="ff9999">Physical Defense</c> and <c val="99ffcc">Magical Defense</c> by approximately <c val="ffffff">12%</c>.< n/> (max: 3)
+Param/Value/082C1706=
 Param/Value/082F865B=
 Param/Value/08307541= (</c><c val="66ff00">Ready</c><c val="888888">)</c></s>
-Param/Value/083423E7=Guard tower
+Param/Value/083423E7=
 Param/Value/0855D78F=
 Param/Value/0868797F=
-Param/Value/0876ACDB=<s val="Header18"><c val="ccffff">Close score (</c><c val="ffffff">Tab</c><c val="ccffff">)</c>
-Param/Value/088EE798= kills three times in a row!
-Param/Value/089F3CD4= Minerals!
-Param/Value/08CA739B=Mordin
-Param/Value/08D52D19=<s val="PurchasePanelCost"><c val="ffffff">
-Param/Value/08DCBE0E=</c>  Game odds: <c val="ffffff">
+Param/Value/0876ACDB=
+Param/Value/088EE798=
+Param/Value/089F3CD4=
+Param/Value/08CA739B=
+Param/Value/08D52D19=
+Param/Value/08DCBE0E=<
 Param/Value/08DEC2A7=<c val="33ccff">Gianter</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, Jungler</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
-Param/Value/09032895=Hero selection
-Param/Value/0915B747=</s></c>
+Param/Value/09032895=
+Param/Value/0915B747=
 Param/Value/095373D3=
 Param/Value/09645C38=/Opposition: 
 Param/Value/0985732D= <s val="HelpPanelListBoxItemTitle">
-Param/Value/09952D07=<s val="PlanetPanelPlanetName">
+Param/Value/09952D07=
 Param/Value/09B39D91=</s>
-Param/Value/09D82716=Defeat
+Param/Value/09D82716=
 Param/Value/09E05E15=
-Param/Value/09E4F027=<s val="PurchasePanelGroupName"><c val="78b8ff">Devil's Flask (<c val="ffffff">N</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/0A0254E3=Govan
+Param/Value/09E4F027=
+Param/Value/0A0254E3=
 Param/Value/0A235D69=
-Param/Value/0A2BE530=Galvalon
-Param/Value/0A2E6ECF=</s>
-Param/Value/0A313823=</s>
+Param/Value/0A2BE530=
+Param/Value/0A2E6ECF=
+Param/Value/0A313823=
 Param/Value/0A4EA953=</s>
 Param/Value/0A7B17E1=
-Param/Value/0A870B15=</c>   <c val="6699ff">Booster:</c><c val="ffffff"> 
+Param/Value/0A870B15=
 Param/Value/0A92B03F=Places a tower at the hero's current location, providing vision for 2 minutes.<n/>(Only one ward can be active at a time)
-Param/Value/0A92B612=<s val="Header18"> 1</s>
-Param/Value/0AE3A101=<Cheat list><n/>-mm: Add Minerals and Gases<n/>-lv: Hero level up<n/>-tu: Create a test hero<n/>-dpi number: Increases the test hero's physical defense stat level by the number<n/>-dpd number: Reduces the test hero's physical defense stat level by the number<n/>-rpi number: Increases the test hero's magic defense stat level by the number<n/>-rpd number: Decrease the test hero's magic defense stat level by the number<n/><n/><Command list><n/>-save: Store storage (cannot store cumulative kills/assists)<n/>-player: Shows handler numbers for all players.
-Param/Value/0AF3A712=</c></s>
-Param/Value/0B02C88C=<s val="Header18"><c val="ccffff">Close score (</c><c val="ffffff">Tab</c><c val="ccffff">)</c>
+Param/Value/0A92B612=
+Param/Value/0AE3A101=
+Param/Value/0AF3A712=
+Param/Value/0B02C88C=
 Param/Value/0B0E0FAE=</s>
-Param/Value/0B14802D=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
-Param/Value/0B1E7918=</s>
+Param/Value/0B14802D=
+Param/Value/0B1E7918=
 Param/Value/0B2277F9=</s></c>
-Param/Value/0B2706A5= <s val="HelpPanelListBoxItemTitle">
+Param/Value/0B2706A5= 
 Param/Value/0B289D6A=<s val="Header18"><c val="6699ff">Swap this player and hero.</c></s>
-Param/Value/0B3D8CE8=<s val="PurchasePanelGroupName"><c val="78b8ff">Healing Mana</s></c><n/><n/>Permanently increases the hero's mana regeneration by 1.5, restores 45% of the hero's mana when used, and nearby allied heroes recover 50% of that value.
-Param/Value/0B5066CD=</s></c>
+Param/Value/0B3D8CE8=
+Param/Value/0B5066CD=
 Param/Value/0B638122=
 Param/Value/0B70DF5D=The enemy team is in the process of voting for surrender.
 Param/Value/0B755AF0=
-Param/Value/0B8763C6=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
+Param/Value/0B8763C6=
 Param/Value/0B97C3DC=
-Param/Value/0B992D42=</c>   <c val="6699ff">Critical strike rate:</c><c val="ffffff"> 
+Param/Value/0B992D42=
 Param/Value/0BA6465C=<s val="Header18"><c val="ccffff">
-Param/Value/0BB54EBD= <s val="HelpPanelListBoxItemTitle">
+Param/Value/0BB54EBD=
 Param/Value/0BD69820=</s></c>
 Param/Value/0BDAB0D9= <s val="HelpPanelListBoxItemTitle">
-Param/Value/0BDE002D=<s val="PurchasePanelNoSelection">
-Param/Value/0BE358E4=Wiz
-Param/Value/0BECF791=<n/></c><c val="6699ff">Max health:</c><c val="ffffff"> 
+Param/Value/0BDE002D=
+Param/Value/0BE358E4=
+Param/Value/0BECF791=
 Param/Value/0BF24BF8=(Agree: 
-Param/Value/0BF73AC6=Soul Kaiser
-Param/Value/0BFE0036= <c val="6699ff">(Victory Points: </c><c val="ffffff">
-Param/Value/0C0DCF06= was the first to be killed.</s>
+Param/Value/0BF73AC6=
+Param/Value/0BFE0036=
+Param/Value/0C0DCF06=
 Param/Value/0C5060A4=<s val="GameOverDialogTitle">
 Param/Value/0C547F8B=
-Param/Value/0C5E550B=</s>
-Param/Value/0C7D9552=<s val="GameOverDialogTitle">
+Param/Value/0C5E550B=
+Param/Value/0C7D9552=
 Param/Value/0C8DBF4C=<s val="Header18"><c val="888888">
-Param/Value/0C8E771D=Liria
-Param/Value/0C9223F8=</s></c>
-Param/Value/0CA8CEC4=</s>
+Param/Value/0C8E771D=
+Param/Value/0C9223F8=
+Param/Value/0CA8CEC4=
 Param/Value/0CBFDDE9=Ready
-Param/Value/0CDCB625=Enemy team's 
+Param/Value/0CDCB625=
 Param/Value/0CDF17E9=<c val="ff0000">[OFF]</c> Hero selection has been removed.
-Param/Value/0CE6149E='s stat level</c></s><n/>
+Param/Value/0CE6149E=
 Param/Value/0D0DA65C=</s>
 Param/Value/0D1C55A8=</s>
 Param/Value/0D257CFA=</s>
 Param/Value/0D37E18B=Select Hero
-Param/Value/0D38B383=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Penetration (<c val="ffffff">V</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/0D38B383=
 Param/Value/0D3DC93F=
-Param/Value/0D5AF1AF=Haemosu
-Param/Value/0D8B29CF=Zero
+Param/Value/0D5AF1AF=
+Param/Value/0D8B29CF=
 Param/Value/0D9AD964= (<c val="ffff66">Selecting</c>)</s>
 Param/Value/0DAC2CC9=
 Param/Value/0DB8EA23=(Agree: 
 Param/Value/0DBB13B3=<s val="Header18"><c val="ccffff">
-Param/Value/0DD4866C=</s>
-Param/Value/0DEC0E96=<s val="Header18"><c val="ccffff">
+Param/Value/0DD4866C=
+Param/Value/0DEC0E96=
 Param/Value/0DFFE2F2= <s val="HelpPanelListBoxItemTitle">
-Param/Value/0E0943AB=<s val="Header18">
-Param/Value/0E2603E2=</s>
-Param/Value/0E29BC76=Enemy team's 
-Param/Value/0E319800=</s>
-Param/Value/0E7F8D9B=Hera
+Param/Value/0E0943AB=
+Param/Value/0E2603E2=
+Param/Value/0E29BC76= 
+Param/Value/0E319800=
+Param/Value/0E7F8D9B=
 Param/Value/0E8E2B11=</s></c>
-Param/Value/0EB75D56=Demol
+Param/Value/0EB75D56=
 Param/Value/0EC8098E=Increases the amount of spellvamp by <c val="ffffff">10%</c>. Spellvamp allows the attacking hero to gain back health when damaging an enemy hero with skills. Spellvamp has 60% effectiveness for <c val="ffff99">True Damage</c> and AoE damage.
-Param/Value/0EDAEAF3= <s val="HelpPanelListBoxItemTitle">
+Param/Value/0EDAEAF3=
 Param/Value/0EDF51E8=
-Param/Value/0F129044=</s>
-Param/Value/0F2CC604=Devola
-Param/Value/0F39DF22=<s val="Header18"><c val="ccffff">
-Param/Value/0F431017=Valkyre
-Param/Value/0F666ECB=Proward
-Param/Value/0F6E4246=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Damage (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
-Param/Value/0F889330=Burndress
+Param/Value/0F129044=
+Param/Value/0F2CC604=
+Param/Value/0F39DF22=
+Param/Value/0F431017=
+Param/Value/0F666ECB=
+Param/Value/0F6E4246=
+Param/Value/0F889330=
 Param/Value/0FA322F6=
 Param/Value/0FA3FB8C= (</c><c val="ffff66">Selecting</c>)</s>
-Param/Value/0FD4A904=<s val="PurchasePanelGroupName"><c val="78b8ff">Increase Attack Damage (<c val="ffffff">Z</c>)</c></s><n/><n/><IMG path="Assets\Textures\icon-mineral-protoss.dds" height="18" width="18"/> 
+Param/Value/0FD4A904=
 Param/Value/0FECD8A1=
-Param/Value/0FEDEF0E=(
-Param/Value/0FF38FCB=</c></s>
+Param/Value/0FEDEF0E=
+Param/Value/0FF38FCB=<
 Param/Value/0FF734A0= / 
 Param/Value/100B1892=</s>
 Param/Value/10144C07=(Agree: 

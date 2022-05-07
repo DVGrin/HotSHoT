@@ -5667,54 +5667,6 @@ void gf_HrHeroAllKillMessage () {
     }
 }
 
-void gf_HrHeroAddKillMessage () {
-    if ((UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill") == true) && (UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == true)) {
-        if ((UnitBehaviorCount(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == 2)) {
-            SoundPlay(SoundLink("SystemSound3", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/BE5FE003") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/AB71EABA"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/C12AB978")));
-        }
-        else if ((UnitBehaviorCount(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == 3)) {
-            SoundPlay(SoundLink("SystemSound32", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/2A008C47") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/7146803F"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/1D6D54E4")));
-        }
-        else if ((UnitBehaviorCount(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill2") == 4)) {
-            SoundPlay(SoundLink("SystemSound322", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/E93C159A") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/87097627"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/C93617CD")));
-        }
-    }
-    else if ((UnitHasBehavior(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]], "PlayerGKill") == false) && (gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] >= 2)) {
-        if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] == 2)) {
-            SoundPlay(SoundLink("SystemSound3234", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/E6F97B35") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/A21CFBE1"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/018568F0")));
-        }
-        else if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] == 3)) {
-            SoundPlay(SoundLink("SystemSound32342", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/796E1E00") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/4C15A50D"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/AEC890D1")));
-        }
-        else if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] == 4)) {
-            SoundPlay(SoundLink("SystemSound323422", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/D41287B8") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/50A89A4B"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/7BDAFC68")));
-        }
-        else if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] == 5)) {
-            SoundPlay(SoundLink("SystemSound323", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/56211A06") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/00C847D5"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/9AA0EC4A")));
-        }
-        else if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] == 6)) {
-            SoundPlay(SoundLink("SystemSound3232", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/A97DE4A0") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/3619623F"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/7CBD2A7C")));
-        }
-        else if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] == 7)) {
-            SoundPlay(SoundLink("SystemSound3233", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/E9D21E31") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/551276B1"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/4ED678AB")));
-        }
-        else if ((gv_HeroNonStopKill[gv_HeroKillPlayer[EventPlayer()]] >= 8)) {
-            SoundPlay(SoundLink("SystemSound32332", -1), PlayerGroupAll(), 200.0, 0.0);
-            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/F7ECA966") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + TextWithColor(StringExternal("Param/Value/1141AA81"), Color(0.00, 100.00, 100.00)) + StringExternal("Param/Value/398F817B")));
-        }
-    }
-    UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/76DCFFCF") + TextWithColor(PlayerName(gv_HeroKillPlayer[EventPlayer()]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_HeroKillPlayer[EventPlayer()], false))) + StringExternal("Param/Value/DAB50B22") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[gv_HeroKillPlayer[EventPlayer()]])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/94486C00") + StringExternal("Param/Value/05DC0F58") + TextWithColor(PlayerName(EventPlayer()), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(EventPlayer(), false))) + StringExternal("Param/Value/365C631C") + TextWithColor(UnitTypeGetName(UnitGetType(gv_PlayerHero[EventPlayer()])), Color(0.00, 100.00, 0.00)) + StringExternal("Param/Value/5BF56652") + StringExternal("Param/Value/3B1C6BBD")));
-}
-
 void gf_HrAssistantBonusTeam1 () {
     int i;
 

@@ -69,7 +69,7 @@
                 <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
                 <Anchor side="Left" relative="$parent/ButtonE" pos="Max" offset="#ButtonSpacing"/>
 
-                <Tooltip val="@Param/Value/06A54DC6"/>
+                <Tooltip val="@Param/Value/062C72C1"/>
                 <Shortcut val="@UI/Hotkey/LevelUpR"/>
                 <Enabled val="False"/>
             </Frame>
