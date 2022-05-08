@@ -34551,7 +34551,6 @@
         <ValidatorArray value="NotDead22"/>
         <ImpactLocation Value="SourceUnit"/>
         <ResponseFlags index="Flee" value="0"/>
-        <CasterHistory value="Damage"/>
     </CEffectDamage>
     <CEffectDamage id="MagmaFireD" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
@@ -34571,7 +34570,6 @@
         <ArmorReduction value="0"/>
         <Flags index="Notification" value="0"/>
         <ResponseFlags index="Flee" value="0"/>
-        <CasterHistory value="Damage"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="Hero22Skill1Dong">
         <ValidatorArray index="0" value="NotHeroic2"/>

@@ -7356,8 +7356,8 @@ Param/Value/01673405=
 Param/Value/016D7E1B=<s val="Header18"><c val="ccffff">
 Param/Value/018568F0=</s>
 Param/Value/01A0CDFF=
-Param/Value/01A529CE=
-Param/Value/01F17A05=
+Param/Value/01A529CE=Toggle statistics
+Param/Value/01F17A05=Statistics window can only be opened every 15 seconds for performance reasons
 Param/Value/01F4F470=
 Param/Value/02137B35=
 Param/Value/0214B204=</s></c>

@@ -290,6 +290,8 @@ int gv_PlayerStatisticsWindowOpenDummyButton;
 int[8] gv_PlayerStatisticsWindowHeroImage;
 int[8] gv_PlayerStatisticsWindowPlayerName;
 int[8][11] gv_PlayerStatisticsWindowNumber;
+int gv_SpectatorStatisticsWindowButton;
+int[2] gv_SpectatorStatisticsWindowTimer;
 int gv_EndGameButton;
 int gv_WinningTeam;
 
@@ -748,6 +750,7 @@ trigger gt_TrackHeroDamage;
 trigger gt_TrackHeroHealing;
 trigger gt_RemoveObjectivesButton;
 trigger gt_TogglePlayerStatisticsWindow;
+trigger gt_SpectatorStatisticsWindowToggle;
 trigger gt_EndGameForPlayer;
 
 //--------------------------------------------------------------------------------------------------
@@ -4605,6 +4608,11 @@ void gf_CreateStatDialog () {
     gv_SelectionLockButton = DialogControlHookupStandard(
         c_triggerControlTypeButton,
         "UIContainer/SelectionLockButton"
+    );
+
+    gv_SpectatorStatisticsWindowButton = DialogControlHookupStandard(
+        c_triggerControlTypeButton,
+        "UIContainer/SpectatorStatisticsWindowToggleButton"
     );
 
     gv_RemoveObjectivesButton = DialogControlHookupStandard(
@@ -9594,6 +9602,8 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     TriggerAddEventTimePeriodic(gt_HeroSelectionLockAction, 0.0625, c_timeGame);
     TriggerEnable(gt_HeroSelectionLockToggle, true);
     TriggerAddEventDialogControl(gt_HeroSelectionLockToggle, c_playerAny, gv_SelectionLockButton, c_triggerControlEventTypeClick);
+    TriggerEnable(gt_SpectatorStatisticsWindowToggle, true);
+    TriggerAddEventDialogControl(gt_SpectatorStatisticsWindowToggle, c_playerAny, gv_SpectatorStatisticsWindowButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_RemoveObjectivesButton, true);
     TriggerAddEventDialogControl(gt_RemoveObjectivesButton, c_playerAny, gv_RemoveObjectivesButton, c_triggerControlEventTypeClick);
     TriggerEnable(gt_CenterCameraOnHero, true);
@@ -9639,7 +9649,9 @@ bool gt_TrRankDialogView_Func (bool testConds, bool runActions) {
     DialogControlSetVisible(gv_ScoreWindowToggleButton, PlayerGroupAll(), true);
     DialogSetVisible(gv_ScoreDialog[1], PlayerGroupAll(), true);
     DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), true);
-    DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), true);
+    DialogControlSetVisible(gv_SelectionLockButton, GameAttributePlayersForTeam(1), true);
+    DialogControlSetVisible(gv_SelectionLockButton, GameAttributePlayersForTeam(2), true);
+    DialogControlSetVisible(gv_SpectatorStatisticsWindowButton, GameAttributePlayersForTeam(3), true);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), true);
     gf_HrCleanUpHeroSelectDialogs();
     HelpPanelAddTip(PlayerGroupAll(), libNtve_gf_FormatTipTitle(StringExternal("Param/Value/AD868381"), libNtve_ge_TipType_NormalTip), StringExternal("Param/Value/7B165D99"), StringExternal("Param/Value/4F1F220A"), "Assets\\AddIcon\\btn-achievement-00-beta.dds");
@@ -9948,6 +9960,8 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
     text message;
     unitref reference;
 
+    effecthistory history;
+
     if (testConds) {
         if (PlayerType(EventPlayer()) != c_playerTypeUser) {
             return false;
@@ -10171,6 +10185,72 @@ bool gt_TrChatCommandHandler_Func (bool testConds, bool runActions) {
         gf_HrSkillLearnWindowOpen();
         UnitClearSelection(EventPlayer());
         UnitSelect(gv_PlayerHero[EventPlayer()], EventPlayer(), true);
+        return true;
+    }
+
+    if (StringEqual(command, "-lastabilities", true)) {
+        history = UnitEffectHistory(gv_PlayerHero[EventPlayer()], 0);
+
+        message = StringToText("Last 5 abilities:<n/>");
+        for (i = 1; i <= 5; i += 1) {
+            if (EffectHistoryGetAbil(history, i)) {
+                message += StringToText(EffectHistoryGetAbil(history, i));
+                message += StringToText(", Dmg: ");
+                message += IntToText(EffectHistoryGetAmountInt(history, i, c_effectAmountDamaged, false));
+                message += StringToText(", Heal: ");
+                message += IntToText(EffectHistoryGetAmountInt(history, i, c_effectAmountHealed, false));
+                message += StringToText("<n/>");
+            }
+        }
+
+        UIDisplayMessage(
+            PlayerGroupAll(),
+            c_messageAreaChat,
+            message
+        );
+        return true;
+    }
+
+    if (StringEqual(command, "-lastweapons", true)) {
+        history = UnitEffectHistory(gv_PlayerHero[EventPlayer()], 0);
+
+        message = StringToText("Last 5 weapons:<n/>");
+        for (i = 1; i <= 5; i += 1) {
+            if (EffectHistoryGetWeapon(history, i)) {
+                message += StringToText(EffectHistoryGetWeapon(history, i));
+                message += StringToText(", Dmg: ");
+                message += IntToText(EffectHistoryGetAmountInt(history, i, c_effectAmountDamaged, true));
+                message += StringToText("<n/>");
+            }
+        }
+
+        UIDisplayMessage(
+            PlayerGroupAll(),
+            c_messageAreaChat,
+            message
+        );
+        return true;
+    }
+
+    if (StringEqual(command, "-lasteffects", true)) {
+        history = UnitEffectHistory(gv_PlayerHero[EventPlayer()], 0);
+
+        message = StringToText("Last 5 effects:<n/>");
+        for (i = 1; i <= 5; i += 1) {
+            message += StringToText(EffectHistoryGetEffect(history, i, c_effectHistoryEffectCurrent));
+            message += StringToText(", Dmg: ");
+            message += IntToText(EffectHistoryGetAmountInt(history, i, c_effectAmountDamaged, false));
+            message += StringToText(", Heal: ");
+            message += IntToText(EffectHistoryGetAmountInt(history, i, c_effectAmountHealed, false));
+            message += StringToText("<n/>");
+        }
+
+        UIDisplayMessage(
+            PlayerGroupAll(),
+            c_messageAreaChat,
+            message
+        );
+        return true;
     }
 
     return false;
@@ -15063,6 +15143,7 @@ bool gt_TrNexusDestroyTeam1_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SpectatorStatisticsWindowButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -15133,6 +15214,7 @@ bool gt_TrNexusDestroyTeam2_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SpectatorStatisticsWindowButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -15729,6 +15811,7 @@ bool gt_TrSurrenderOkTeam1Win_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SpectatorStatisticsWindowButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -15798,6 +15881,7 @@ bool gt_TrSurrenderOkTeam2Win_Func (bool testConds, bool runActions) {
     UISetMode(PlayerGroupAll(), c_uiModeFullscreen, c_transitionDurationDefault);
     DialogControlSetVisible(gv_StatShopDialog, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SelectionLockButton, PlayerGroupAll(), false);
+    DialogControlSetVisible(gv_SpectatorStatisticsWindowButton, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_RemoveObjectivesButton, PlayerGroupAll(), false);
     DialogSetVisible(gv_HeroReviveWindow, PlayerGroupAll(), false);
     DialogControlSetVisible(gv_SkillLearnWindow, PlayerGroupAll(), false);
@@ -16186,6 +16270,91 @@ void gt_TogglePlayerStatisticsWindow_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Show statistics window for spectators
+//--------------------------------------------------------------------------------------------------
+bool gt_SpectatorStatisticsWindowToggle_Func (bool testConds, bool runActions) {
+    int i;
+    int index;
+    int timeout = 15;
+
+    if (testConds) {
+        if (!(gv_GameStartBoolean == true)) {
+            return false;
+        }
+        if (!(PlayerGroupHasPlayer(GameAttributePlayersForTeam(3), EventPlayer()))) {
+            return false;
+        }
+    }
+
+    if (!runActions) {
+        return true;
+    }
+
+    for (index = 0; index <= 1; index += 1) {
+        if (EventPlayer() == gv_PlayerNumber[index + 9]) {
+            break;
+        }
+    }
+    if (index == 2) {
+        return false;
+    }
+
+    if (DialogControlIsVisible(gv_PlayerStatisticsWindow, EventPlayer())) {
+        DialogControlSetVisible(
+            gv_PlayerStatisticsWindow,
+            PlayerGroupSingle(EventPlayer()),
+            false
+        );
+        gv_SpectatorStatisticsWindowTimer[index] = timeout;
+        for (i = timeout; i > 0; i -= 1) {
+            libNtve_gf_SetDialogItemText(
+                gv_SpectatorStatisticsWindowButton,
+                TextWithColor(
+                    (
+                        StringExternal("Param/Value/01A529CE") +
+                        StringToText(" (") +
+                        IntToText(gv_SpectatorStatisticsWindowTimer[index]) +
+                        StringToText(")")
+                    ),
+                    Color(50.0, 7.0, 7.0)
+                ),
+                PlayerGroupSingle(EventPlayer())
+            );
+            Wait(1.0, c_timeReal);
+            gv_SpectatorStatisticsWindowTimer[index] -= 1;
+        }
+
+        libNtve_gf_SetDialogItemText(
+            gv_SpectatorStatisticsWindowButton,
+            StringExternal("Param/Value/01A529CE"),
+            PlayerGroupSingle(EventPlayer())
+        );
+        return true;
+
+    } else {
+        if (gv_SpectatorStatisticsWindowTimer[index] > 0) {
+            SoundPlay(SoundLink("UI_GenericError", -1), PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+            return true;
+        }
+
+        gf_UpdatePlayerStatisticsWindow();
+        DialogControlSetVisible(
+            gv_PlayerStatisticsWindow,
+            PlayerGroupSingle(EventPlayer()),
+            true
+        );
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_SpectatorStatisticsWindowToggle_Init () {
+    gt_SpectatorStatisticsWindowToggle = TriggerCreate("gt_SpectatorStatisticsWindowToggle_Func");
+    TriggerEnable(gt_SpectatorStatisticsWindowToggle, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: End the game for a player that clicked the button
 //--------------------------------------------------------------------------------------------------
 bool gt_EndGameForPlayer_Func (bool testConds, bool runActions) {
@@ -16262,6 +16431,7 @@ void InitTriggers () {
     gt_CenterCameraOnHero_Init();
     gt_HeroSelectionLockToggle_Init();
     gt_HeroSelectionLockAction_Init();
+    gt_SpectatorStatisticsWindowToggle_Init();
     gt_Trgametipbtn_Init();
     gt_TrMinionMake_Init();
     gt_TrHeroLevelUp_Init();

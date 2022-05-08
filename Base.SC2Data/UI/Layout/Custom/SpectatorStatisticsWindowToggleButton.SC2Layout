@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer" file="GameUI" >
+        <Frame type="Button" name="SpectatorStatisticsWindowToggleButton" template="MyButtonTemplate/ButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-304"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="12"/>
+
+            <Frame type="Label" name="Label">
+                <Text val="@Param/Value/01A529CE"/>
+            </Frame>
+
+            <Tooltip val="@Param/Value/01F17A05"/>
+
+            <Visible val="False"/>
+        </Frame>
+    </Frame>
+</Desc>
