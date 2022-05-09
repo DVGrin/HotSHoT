@@ -7350,14 +7350,14 @@ Param/Value/0108650D=Open score [TAB]
 Param/Value/011C0259=Hero lock on/off [F5]
 Param/Value/012323B9=Enable this to prevent other unit selection
 Param/Value/013B77B4=Shop
-Param/Value/01473258=
+Param/Value/01473258=Assist
 Param/Value/016587D9=Suffering
 Param/Value/01673405=
 Param/Value/016D7E1B=<s val="Header18"><c val="ccffff">
 Param/Value/018568F0=</s>
 Param/Value/01A0CDFF=
 Param/Value/01A529CE=Toggle statistics
-Param/Value/01F17A05=Statistics window can only be opened every 15 seconds for performance reasons
+Param/Value/01F17A05=Statistics window can only be opened every 5 seconds for performance reasons
 Param/Value/01F4F470=
 Param/Value/02137B35=
 Param/Value/0214B204=</s></c>
@@ -7402,7 +7402,7 @@ Param/Value/0532123E=Beacon
 Param/Value/054E3FEB=
 Param/Value/055E0D7D=
 Param/Value/056E1CCE=
-Param/Value/057E1FFE= 
+Param/Value/057E1FFE=
 Param/Value/05810EB9=
 Param/Value/059A2406=
 Param/Value/059CBA96=(Agree: 
@@ -7468,7 +7468,7 @@ Param/Value/0A235D69=
 Param/Value/0A2BE530=
 Param/Value/0A2E6ECF=
 Param/Value/0A313823=
-Param/Value/0A4EA953=</s>
+Param/Value/0A4EA953=
 Param/Value/0A7B17E1=
 Param/Value/0A870B15=
 Param/Value/0A92B03F=Places a tower at the hero's current location, providing vision for 2 minutes.<n/>(Only one ward can be active at a time)
@@ -7527,7 +7527,7 @@ Param/Value/0DB8EA23=(Agree:
 Param/Value/0DBB13B3=<s val="Header18"><c val="ccffff">
 Param/Value/0DD4866C=
 Param/Value/0DEC0E96=
-Param/Value/0DFFE2F2= <s val="HelpPanelListBoxItemTitle">
+Param/Value/0DFFE2F2=
 Param/Value/0E0943AB=
 Param/Value/0E2603E2=
 Param/Value/0E29BC76= 
@@ -7663,7 +7663,7 @@ Param/Value/1736D2B2=
 Param/Value/17464B7A=
 Param/Value/174C552C=
 Param/Value/1757544D=
-Param/Value/17688C44=</s>
+Param/Value/17688C44=
 Param/Value/176EC555=</c></s>
 Param/Value/1784B0FC=
 Param/Value/1791192A=
@@ -7968,8 +7968,8 @@ Param/Value/2BE9DB1C=
 Param/Value/2BF353AB=
 Param/Value/2BF59278=/Opposition: 
 Param/Value/2C177B25=
-Param/Value/2C30D7B6=You have earned 
-Param/Value/2C3357F5=<s val="Header18">
+Param/Value/2C30D7B6=
+Param/Value/2C3357F5=
 Param/Value/2C33F530=
 Param/Value/2C373131=
 Param/Value/2C477847=
@@ -8042,7 +8042,7 @@ Param/Value/307D03DF=
 Param/Value/3081669B=
 Param/Value/30A22F9D=
 Param/Value/30BC5E5F=
-Param/Value/30C3264C=<s val="Header18">
+Param/Value/30C3264C=
 Param/Value/30CA022A=
 Param/Value/30E00594=
 Param/Value/3102855D=
@@ -8171,7 +8171,7 @@ Param/Value/38DE1439=
 Param/Value/38F1C45B=
 Param/Value/39037900=<c val="33ccff">Basilisk</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
 Param/Value/392B771E=
-Param/Value/3934F88A= 
+Param/Value/3934F88A=
 Param/Value/393979C8=
 Param/Value/39404D05=Beacon
 Param/Value/3944E6B5=
@@ -8181,7 +8181,7 @@ Param/Value/3964C513=
 Param/Value/396AD69D=
 Param/Value/3982B81A=<s val="GameOverDialogTitle">
 Param/Value/398F817B=
-Param/Value/39AC057A=</s>
+Param/Value/39AC057A=
 Param/Value/39C609EC=
 Param/Value/39D52474=
 Param/Value/39DA894B=
@@ -8206,7 +8206,7 @@ Param/Value/3B96CF73=
 Param/Value/3B9EF42D=
 Param/Value/3BC0F0ED=
 Param/Value/3BD40790= is destroyed.
-Param/Value/3BEF4AFB= additional Minerals!
+Param/Value/3BEF4AFB=
 Param/Value/3BEFB440=
 Param/Value/3BF61FB3=
 Param/Value/3C2AF12A=<c val="33ccff">Demol</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, supporter</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
@@ -8601,7 +8601,7 @@ Param/Value/57FBF0FE=
 Param/Value/580D5B2B=
 Param/Value/581492DB=
 Param/Value/58152283= will be regenerated soon.
-Param/Value/581A015F=</s>
+Param/Value/581A015F=
 Param/Value/5828E1AB=
 Param/Value/583553B0=<s val="LoadingScreenTitleMarSara"><c val="ccffff">
 Param/Value/588777FA=
@@ -8952,7 +8952,7 @@ Param/Value/7446F680=
 Param/Value/744946CE=
 Param/Value/747CCAF4=
 Param/Value/748312A9=
-Param/Value/7498FB6B= <s val="HelpPanelListBoxItemTitle">
+Param/Value/7498FB6B=
 Param/Value/74BA56B3=<s val="Header18"><c val="ccffff">
 Param/Value/74C15E21=
 Param/Value/74C4A260=<c val="33ccff">Celin</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Ranged, Striker</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■□□□□□</c></s>
@@ -9138,7 +9138,7 @@ Param/Value/7FDAEBEA=
 Param/Value/7FF92532=
 Param/Value/804069B7=
 Param/Value/8053E07C=
-Param/Value/806A603B=</s>
+Param/Value/806A603B=
 Param/Value/807E2BCD=
 Param/Value/807F018B=
 Param/Value/8088D325=Increases <c val="99FFFF">Ability Power (AP)</c> by <c val="ffffff">10</c>. Heroes' basic attacks against structures deal additional damage equal to 80% of their ability power.
@@ -9254,7 +9254,7 @@ Param/Value/873C13D7=
 Param/Value/8752F9D5=
 Param/Value/875D5ACC=
 Param/Value/877B3ACA= / 
-Param/Value/878D3123= <s val="HelpPanelListBoxItemTitle">
+Param/Value/878D3123=
 Param/Value/87951378=<s val="GameOverDialogTitle">
 Param/Value/87B5CBBC=
 Param/Value/87BE6F8B=
@@ -9383,7 +9383,7 @@ Param/Value/90BBD409=</c> second(s).</s>
 Param/Value/90EC1923=
 Param/Value/90EC1F2A=
 Param/Value/9105F8A7=
-Param/Value/9130939D=<c val="ccccff">/</c>
+Param/Value/9130939D=
 Param/Value/9138AB48=</s></c>
 Param/Value/914DFF97=
 Param/Value/9190031A=
@@ -9549,7 +9549,7 @@ Param/Value/9C0DD5D0=
 Param/Value/9C0F7D59=
 Param/Value/9C204A92=
 Param/Value/9C4B6505=</s>
-Param/Value/9C537CB8= <s val="HelpPanelListBoxItemTitle">Assist: 
+Param/Value/9C537CB8=
 Param/Value/9C7AE696=
 Param/Value/9C8760F8=
 Param/Value/9C88A981=<c val="33ccff">Liria</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Wizard, Assassin, Ranged</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■□□□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■■■□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■□□□□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■□□□□□□</c></s>
@@ -9633,7 +9633,7 @@ Param/Value/A1996281=
 Param/Value/A1AAE20E= <s val="HelpPanelListBoxItemTitle"><c val="ff0000">You cannot surrender now.<n/>(20 minutes of game time must elapse)</c></s>
 Param/Value/A1B66393=
 Param/Value/A1B937B1=
-Param/Value/A1D07191= <s val="HelpPanelListBoxItemTitle">Assist: 
+Param/Value/A1D07191=
 Param/Value/A1DD285D=
 Param/Value/A1EB5F47=) will not surrender.
 Param/Value/A211DA62=<s val="Header18">
@@ -9702,7 +9702,7 @@ Param/Value/A6018535=
 Param/Value/A6078925=
 Param/Value/A613E5C4=
 Param/Value/A61ADDD0=) declares surrender to the enemy team.
-Param/Value/A61AFE81=You have earned 
+Param/Value/A61AFE81=
 Param/Value/A62933E6=
 Param/Value/A62B9A29=
 Param/Value/A641DDBE=Colossal Spore Tentacle has been slain.
@@ -10058,7 +10058,7 @@ Param/Value/C09652CB=
 Param/Value/C09BA795=
 Param/Value/C0E3AEE4=
 Param/Value/C12AB978=
-Param/Value/C140D7C8=<c val="ccccff">/</c>
+Param/Value/C140D7C8=
 Param/Value/C1426E69=
 Param/Value/C19C75F7=
 Param/Value/C19DDDBB=
@@ -10269,7 +10269,7 @@ Param/Value/D0639AE6=
 Param/Value/D06A070D=
 Param/Value/D075FEE7=
 Param/Value/D0778BF6=
-Param/Value/D089DE34=</s>
+Param/Value/D089DE34=
 Param/Value/D0D761C4=
 Param/Value/D0F089A5=
 Param/Value/D16ABC42=
@@ -10291,7 +10291,7 @@ Param/Value/D27B1B70=
 Param/Value/D2B70CE4=
 Param/Value/D2BE11C3=
 Param/Value/D2E18A65=
-Param/Value/D2E6CCBC=</s>
+Param/Value/D2E6CCBC=
 Param/Value/D30C15D5=
 Param/Value/D3227FF5=
 Param/Value/D32B27E8=
@@ -10326,7 +10326,7 @@ Param/Value/D523EB49=Blind Pick
 Param/Value/D52A61AD=</s></c>
 Param/Value/D52EE814=
 Param/Value/D53793F2=
-Param/Value/D53A8EAC=</s>
+Param/Value/D53A8EAC=
 Param/Value/D54A1C23=
 Param/Value/D5A2362F=
 Param/Value/D5BC5B9F=
@@ -10391,7 +10391,7 @@ Param/Value/D9A14FC4=Beacon
 Param/Value/D9AB7A68=
 Param/Value/D9C3DF2D=<c val="33ccff">Magner</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Defense, supporter</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■□□□□□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■■■■■■□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■■■■■□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■□□□</c></s>
 Param/Value/D9DCC2D9=
-Param/Value/D9E79FA4=<c val="ccccff">/</c>
+Param/Value/D9E79FA4=
 Param/Value/D9F468D6=
 Param/Value/DA1ECD73=
 Param/Value/DA384288=
@@ -10432,7 +10432,7 @@ Param/Value/DC42E0C5=
 Param/Value/DC59CFAB=<c val="33ccff">Eren</c><s val="Header18"><n/><n/><c val="6699ff">Style:</c> <c val="ffffff">Melee, Warrior</c><n/><n/><c val="6699ff">Attack Power:</c> <c val="ff9999">■■■■■■■■□□</c><n/><c val="6699ff">Ability Power:</c> <c val="99ffcc">■■□□□□□□□□</c><n/><c val="6699ff">Vitality:</c> <c val="33ff00">■■■■■□□□□□</c><n/><c val="6699ff">Difficulty:</c> <c val="ffcc00">■■■■■■■■■□</c></s>
 Param/Value/DC5F4BCB=
 Param/Value/DC65ADDF=
-Param/Value/DC65B07B=<c val="ccccff">/</c>
+Param/Value/DC65B07B=
 Param/Value/DC6D4389=
 Param/Value/DC6DB56C=
 Param/Value/DC8D25DF= <s val="HelpPanelListBoxItemTitle">
@@ -10456,7 +10456,7 @@ Param/Value/DDE5A5FD=</s></c>
 Param/Value/DDED09B0=
 Param/Value/DE1EF7E4=
 Param/Value/DE331FA0=
-Param/Value/DE3747DD= Minerals!
+Param/Value/DE3747DD=
 Param/Value/DE54CFF6=Headshot!
 Param/Value/DE594C7B=
 Param/Value/DE6857B4=Surrender vote (<c val="ffffff">-gg</c>)
@@ -10815,7 +10815,7 @@ Param/Value/F7723747=
 Param/Value/F7AACD10=
 Param/Value/F7D50078=
 Param/Value/F7DFD162=
-Param/Value/F7E20A48= <s val="HelpPanelListBoxItemTitle">
+Param/Value/F7E20A48=
 Param/Value/F7ECA966=
 Param/Value/F7F4870B=
 Param/Value/F7FDE15B=

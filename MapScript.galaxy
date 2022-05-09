@@ -577,8 +577,6 @@ void gf_HrMonsterBossRegenTimerStart ();
 void gf_HrHeroReviveWindowMake ();
 void gf_HrHeroAllKillMessage ();
 void gf_HrHeroAddKillMessage ();
-void gf_HrAssistantBonusTeam1 ();
-void gf_HrAssistantBonusTeam2 ();
 void gf_HrHeroBuffPut ();
 void gf_HrHeroPassiveRepair ();
 void gf_HrStartBeforeCounterMake ();
@@ -5672,149 +5670,6 @@ void gf_HrHeroAllKillMessage () {
             UIDisplayMessage(GameAttributePlayersForTeam(2), c_messageAreaDebug, (StringExternal("Param/Value/963C7A18") + TextWithColor(StringExternal("Param/Value/9271688F"), Color(100.00, 0.00, 0.00)) + StringExternal("Param/Value/09B39D91")));
             UIDisplayMessage(GameAttributePlayersForTeam(1), c_messageAreaDebug, (StringExternal("Param/Value/A3DC4FC2") + TextWithColor(StringExternal("Param/Value/1D6118B0"), Color(100.00, 0.00, 0.00)) + StringExternal("Param/Value/7EE08D4A")));
         }
-    }
-}
-
-void gf_HrAssistantBonusTeam1 () {
-    int i;
-
-    text[12] assist_message;
-    bool[12] participated_in_kill;
-    int number_of_assists;
-
-    for (i = 0; i <= 11; i += 1) {
-        assist_message[i] = StringToText("");
-    }
-
-    if ((PlayerType(gv_PlayerNumber[1]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[1]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[1]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist") == true)) {
-        participated_in_kill[gv_PlayerNumber[1]] = true;
-        number_of_assists += 1;
-    }
-    if ((PlayerType(gv_PlayerNumber[2]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[2]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[2]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3") == true)) {
-        participated_in_kill[gv_PlayerNumber[2]] = true;
-        number_of_assists += 1;
-    }
-    if ((PlayerType(gv_PlayerNumber[3]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[3]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[3]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32") == true)) {
-        participated_in_kill[gv_PlayerNumber[3]] = true;
-        number_of_assists += 1;
-    }
-    if ((PlayerType(gv_PlayerNumber[4]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[4]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[4]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322") == true)) {
-        participated_in_kill[gv_PlayerNumber[4]] = true;
-        number_of_assists += 1;
-    }
-
-    for (i = 1; i <= 4; i += 1) {
-        if ((participated_in_kill[gv_PlayerNumber[i]] == true)) {
-            assist_message[gv_PlayerNumber[i]] = (TextWithColor(PlayerName(gv_PlayerNumber[i]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerNumber[i], false))) + StringExternal("Param/Value/3934F88A"));
-            gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][3] += 1;
-            PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerNumber[i]]);
-            libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerNumber[i]], (StringExternal("Param/Value/2C3357F5") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][1]) + StringExternal("Param/Value/D9E79FA4") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][2]) + StringExternal("Param/Value/DC65B07B") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][3]) + StringExternal("Param/Value/39AC057A")), PlayerGroupAll());
-            UIDisplayMessage(PlayerGroupSingle(gv_PlayerNumber[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/7498FB6B") + TextWithColor(StringExternal("Param/Value/A61AFE81"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/DE3747DD"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/D089DE34")));
-            gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2];
-            if ((gv_StatIncreasesBought[gv_PlayerNumber[i]][21] == 1)) {
-                PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerNumber[i]]);
-                UIDisplayMessage(PlayerGroupSingle(gv_PlayerNumber[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/F7E20A48") + TextWithColor(StringExternal("Param/Value/2C30D7B6"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/3BEF4AFB"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/17688C44")));
-                gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2] / 2;
-            }
-
-            if (((gv_SelectedSpellNum1[gv_PlayerNumber[i]] == 4) || (gv_SelectedSpellNum2[gv_PlayerNumber[i]] == 4)) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerNumber[i]], "SpellDong4") == true)) {
-                UnitCreateEffectUnit(gv_PlayerHero[gv_PlayerNumber[i]], "Spelldong22", gv_PlayerHero[gv_PlayerNumber[i]]);
-            }
-
-            if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 32) && (gv_SkillLevels[gv_PlayerNumber[i]][c_skillW] >= 1)) {
-                PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero32Skill2G22", PointFromId(1));
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 34) && (gv_SkillLevels[gv_PlayerNumber[i]][c_skillR] >= 1)) {
-                PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero34Skill4G", PointFromId(1));
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 46) && (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322343", c_techCountCompleteOnly) < 50)) {
-                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerNumber[i]], "Hero46Passive", gv_PlayerHero[gv_PlayerNumber[i]], 1);
-                TechTreeUpgradeAddLevel(gv_PlayerNumber[i], "SpellUp222233322343", 1);
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 66) && (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) < 24)) {
-                TechTreeUpgradeAddLevel(gv_PlayerNumber[i], "SpellUp222233322722322", 1);
-                if (((TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 4) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 8) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 12) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 16) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 24))) {
-                    PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero66Passive", PointFromId(1));
-                }
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 70) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerNumber[i]], "Hero70Skill2cool") == true)) {
-                UnitCreateEffectUnit(gv_PlayerHero[gv_PlayerNumber[i]], "Hero70Skill2Dong3", gv_PlayerHero[gv_PlayerNumber[i]]);
-            }
-        }
-    }
-    if ((number_of_assists >= 1)) {
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/A1D07191") + assist_message[gv_PlayerNumber[1]] + assist_message[gv_PlayerNumber[2]] + assist_message[gv_PlayerNumber[3]] + assist_message[gv_PlayerNumber[4]] + StringExternal("Param/Value/D2E6CCBC")));
-    }
-}
-
-void gf_HrAssistantBonusTeam2 () {
-    int i;
-
-    text[12] assist_message;
-    bool[12] participated_in_kill;
-    int number_of_assists;
-
-    for (i = 0; i <= 11; i += 1) {
-        assist_message[i] = StringToText("");
-    }
-    if ((PlayerType(gv_PlayerNumber[5]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[5]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[5]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222") == true)) {
-        participated_in_kill[gv_PlayerNumber[5]] = true;
-        number_of_assists += 1;
-    }
-    if ((PlayerType(gv_PlayerNumber[6]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[6]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[6]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32222") == true)) {
-        participated_in_kill[gv_PlayerNumber[6]] = true;
-        number_of_assists += 1;
-    }
-    if ((PlayerType(gv_PlayerNumber[7]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[7]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[7]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322222") == true)) {
-        participated_in_kill[gv_PlayerNumber[7]] = true;
-        number_of_assists += 1;
-    }
-    if ((PlayerType(gv_PlayerNumber[8]) == c_playerTypeUser) && (PlayerStatus(gv_PlayerNumber[8]) == c_playerStatusActive) && (gv_HeroKillPlayer[EventPlayer()] != gv_PlayerNumber[8]) && (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222222") == true)) {
-        participated_in_kill[gv_PlayerNumber[8]] = true;
-        number_of_assists += 1;
-    }
-
-    for (i = 5; i <= 8; i += 1) {
-        if ((participated_in_kill[gv_PlayerNumber[i]] == true)) {
-            assist_message[gv_PlayerNumber[i]] = (TextWithColor(PlayerName(gv_PlayerNumber[i]), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerNumber[i], false))) + StringExternal("Param/Value/057E1FFE"));
-            gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][3] += 1;
-            PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo2", gv_PlayerHero[gv_PlayerNumber[i]]);
-            libNtve_gf_SetDialogItemText(gv_ScoreDialogTotalScore[gv_PlayerNumber[i]], (StringExternal("Param/Value/30C3264C") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][1]) + StringExternal("Param/Value/C140D7C8") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][2]) + StringExternal("Param/Value/9130939D") + IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][3]) + StringExternal("Param/Value/581A015F")), PlayerGroupAll());
-            UIDisplayMessage(PlayerGroupSingle(gv_PlayerNumber[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/878D3123") + TextWithColor(StringExternal("Param/Value/86749EDE"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText(gv_HeroKillMoney[EventPlayer()][2]), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/F27D4BF3"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/806A603B")));
-            gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2];
-            if ((gv_StatIncreasesBought[gv_PlayerNumber[i]][21] == 1)) {
-                PlayerCreateEffectUnit(EventPlayer(), "HeroKillMo22", gv_PlayerHero[gv_PlayerNumber[i]]);
-                UIDisplayMessage(PlayerGroupSingle(gv_PlayerNumber[i]), c_messageAreaSubtitle, (StringExternal("Param/Value/0DFFE2F2") + TextWithColor(StringExternal("Param/Value/4B765203"), Color(0.00, 87.45, 100.00)) + TextWithColor(IntToText((gv_HeroKillMoney[EventPlayer()][2] / 2)), Color(0.00, 87.45, 100.00)) + TextWithColor(StringExternal("Param/Value/602F3107"), Color(0.00, 87.45, 100.00)) + StringExternal("Param/Value/0A4EA953")));
-                gv_PlayerStatistics[EventPlayer()].minerals_lost += gv_HeroKillMoney[EventPlayer()][2] / 2;
-            }
-
-            if (((gv_SelectedSpellNum1[gv_PlayerNumber[i]] == 4) || (gv_SelectedSpellNum2[gv_PlayerNumber[i]] == 4)) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerNumber[i]], "SpellDong4") == true)) {
-                UnitCreateEffectUnit(gv_PlayerHero[gv_PlayerNumber[i]], "Spelldong22", gv_PlayerHero[gv_PlayerNumber[i]]);
-            }
-
-            if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 32) && (gv_SkillLevels[gv_PlayerNumber[i]][c_skillW] >= 1)) {
-                PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero32Skill2G22", PointFromId(1));
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 34) && (gv_SkillLevels[gv_PlayerNumber[i]][c_skillR] >= 1)) {
-                PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero34Skill4G", PointFromId(1));
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 46) && (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322343", c_techCountCompleteOnly) < 50)) {
-                UnitBehaviorAdd(gv_PlayerHero[gv_PlayerNumber[i]], "Hero46Passive", gv_PlayerHero[gv_PlayerNumber[i]], 1);
-                TechTreeUpgradeAddLevel(gv_PlayerNumber[i], "SpellUp222233322343", 1);
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 66) && (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) < 24)) {
-                TechTreeUpgradeAddLevel(gv_PlayerNumber[i], "SpellUp222233322722322", 1);
-                if (((TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 4) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 8) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 12) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 16) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 24))) {
-                    PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero66Passive", PointFromId(1));
-                }
-            }
-            else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 70) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerNumber[i]], "Hero70Skill2cool") == true)) {
-                UnitCreateEffectUnit(gv_PlayerHero[gv_PlayerNumber[i]], "Hero70Skill2Dong3", gv_PlayerHero[gv_PlayerNumber[i]]);
-            }
-        }
-    }
-    if ((number_of_assists >= 1)) {
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringExternal("Param/Value/9C537CB8") + assist_message[gv_PlayerNumber[5]] + assist_message[gv_PlayerNumber[6]] + assist_message[gv_PlayerNumber[7]] + assist_message[gv_PlayerNumber[8]] + StringExternal("Param/Value/D53A8EAC")));
     }
 }
 
@@ -14810,11 +14665,124 @@ void lf_HeroPassiveEffectsOnKill(int player, unit hero) {
     }
 }
 
+void lf_AssistMoneyAndMessage(int victim, int killer, playergroup participating_players) {
+    int i;
+
+    text assist_message;
+    int number_of_assists;
+
+    if (PlayerGroupCount(participating_players) == 1) {
+        return;
+    }
+
+    assist_message += StringToText(" <s val=\"HelpPanelListBoxItemTitle\">");
+    assist_message += StringExternal("Param/Value/01473258");  // Assist
+    assist_message += StringToText(": ");
+
+    for (i = 1; i <= 8; i += 1) {
+        if (!(PlayerGroupHasPlayer(participating_players, gv_PlayerNumber[i]))) {
+            continue;
+        }
+        if (gv_PlayerNumber[i] == killer) {
+            continue;
+        }
+
+        // Add player's name to the message
+        number_of_assists += 1;
+        assist_message += TextWithColor(
+            PlayerName(gv_PlayerNumber[i]),
+            libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerNumber[i], false))
+        );
+        assist_message += StringToText(" ");
+
+        // Add an assist to the KDA
+        gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][3] += 1;
+        libNtve_gf_SetDialogItemText(
+            gv_ScoreDialogTotalScore[gv_PlayerNumber[i]],
+            (
+                StringToText("<s val=\"Header18\">") +
+                IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][1]) + 
+                TextWithColor(StringToText("/"), Color(80.0, 80.0, 100.0)) +
+                IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][2]) + 
+                TextWithColor(StringToText("/"), Color(80.0, 80.0, 100.0)) +
+                IntToText(gv_PlayerLevelAndKDA[gv_PlayerNumber[i]][3]) + 
+                StringToText("</s>")
+            ),
+            PlayerGroupAll()
+        );
+
+        // Give 3 EXP for the assist
+        PlayerCreateEffectUnit(victim, "HeroKill2", gv_PlayerHero[gv_PlayerNumber[i]]);
+
+        // Display the assist message to the player
+        UIDisplayMessage(
+            PlayerGroupSingle(gv_PlayerNumber[i]),
+            c_messageAreaSubtitle,
+            (
+                StringToText(" <s val=\"HelpPanelListBoxItemTitle\">") +
+                TextWithColor(StringExternal("Param/Value/86749EDE"), Color(0.00, 87.45, 100.00)) + 
+                TextWithColor(IntToText(gv_HeroKillMoney[victim][2]), Color(0.00, 87.45, 100.00)) + 
+                TextWithColor(StringExternal("Param/Value/F27D4BF3"), Color(0.00, 87.45, 100.00)) + 
+                StringToText("</s>")
+            )
+        );
+
+        gv_PlayerStatistics[victim].minerals_lost += gv_HeroKillMoney[victim][2];
+
+        // Various assist effects
+        if ((gv_StatIncreasesBought[gv_PlayerNumber[i]][21] == 1)) {
+            PlayerCreateEffectUnit(victim, "HeroKill23", gv_PlayerHero[gv_PlayerNumber[i]]);
+            UIDisplayMessage(
+                PlayerGroupSingle(gv_PlayerNumber[i]),
+                c_messageAreaSubtitle,
+                (
+                    StringToText(" <s val=\"HelpPanelListBoxItemTitle\">") +
+                    TextWithColor(StringExternal("Param/Value/4B765203"), Color(0.00, 87.45, 100.00)) + 
+                    TextWithColor(IntToText((gv_HeroKillMoney[victim][2] / 2)), Color(0.00, 87.45, 100.00)) + 
+                    TextWithColor(StringExternal("Param/Value/602F3107"), Color(0.00, 87.45, 100.00)) + 
+                    StringToText("</s>")
+                )
+            );
+            gv_PlayerStatistics[victim].minerals_lost += gv_HeroKillMoney[victim][2] / 2;
+        }
+
+        if (((gv_SelectedSpellNum1[gv_PlayerNumber[i]] == 4) || (gv_SelectedSpellNum2[gv_PlayerNumber[i]] == 4)) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerNumber[i]], "SpellDong4") == true)) {
+            UnitCreateEffectUnit(gv_PlayerHero[gv_PlayerNumber[i]], "Spelldong22", gv_PlayerHero[gv_PlayerNumber[i]]);
+        }
+
+        if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 32) && (gv_SkillLevels[gv_PlayerNumber[i]][c_skillW] >= 1)) {
+            PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero32Skill2G22", PointFromId(1));
+        }
+        else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 34) && (gv_SkillLevels[gv_PlayerNumber[i]][c_skillR] >= 1)) {
+            PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero34Skill4G", PointFromId(1));
+        }
+        else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 46) && (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322343", c_techCountCompleteOnly) < 50)) {
+            UnitBehaviorAdd(gv_PlayerHero[gv_PlayerNumber[i]], "Hero46Passive", gv_PlayerHero[gv_PlayerNumber[i]], 1);
+            TechTreeUpgradeAddLevel(gv_PlayerNumber[i], "SpellUp222233322343", 1);
+        }
+        else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 66) && (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) < 24)) {
+            TechTreeUpgradeAddLevel(gv_PlayerNumber[i], "SpellUp222233322722322", 1);
+            if (((TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 4) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 8) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 12) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 16) || (TechTreeUpgradeCount(gv_PlayerNumber[i], "SpellUp222233322722322", c_techCountCompleteOnly) == 24))) {
+                PlayerCreateEffectPoint(gv_PlayerNumber[i], "Hero66Passive", PointFromId(1));
+            }
+        }
+        else if ((gv_SelectedCharNum[gv_PlayerNumber[i]] == 70) && (UnitHasBehavior(gv_PlayerHero[gv_PlayerNumber[i]], "Hero70Skill2cool") == true)) {
+            UnitCreateEffectUnit(gv_PlayerHero[gv_PlayerNumber[i]], "Hero70Skill2Dong3", gv_PlayerHero[gv_PlayerNumber[i]]);
+        }
+    }
+    
+    assist_message += StringToText("</s>");
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, assist_message);
+}
+
 bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
+    int i;
     int bounty = 0;
     int multikill = 0;
     int killing_player;
     bool first_blood = false;
+    string[8] assist_behaviours;
+    playergroup participating_players;
 
     if (testConds) {
         if (!((PlayerType(EventPlayer()) == c_playerTypeUser))) {
@@ -14836,6 +14804,15 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     }
 
     gv_HeroDeathBoolean[EventPlayer()] = true;
+
+    assist_behaviours[0] = "Player1Assist";
+    assist_behaviours[1] = "Player1Assist3";
+    assist_behaviours[2] = "Player1Assist32";
+    assist_behaviours[3] = "Player1Assist322";
+    assist_behaviours[4] = "Player1Assist3222";
+    assist_behaviours[5] = "Player1Assist32222";
+    assist_behaviours[6] = "Player1Assist322222";
+    assist_behaviours[7] = "Player1Assist3222222";
 
     // Proward passive
     if ((UnitGetType(EventUnit()) == "Hero19")) {
@@ -14860,6 +14837,23 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     lf_HeroPassiveEffectsOnDeath(EventPlayer(), EventUnit());
 
     if ((PlayerType(killing_player) == c_playerTypeUser)) {
+
+        PlayerGroupAdd(participating_players, killing_player);
+        for (i = 1; i <= 8; i += 1) {
+            if (PlayerType(gv_PlayerNumber[i]) != c_playerTypeUser) {
+                continue;
+            }
+            if (PlayerStatus(gv_PlayerNumber[i]) != c_playerStatusActive) {
+                continue;
+            }
+            if (gv_PlayerNumber[i] == killing_player) {
+                continue;
+            }
+            if (UnitHasBehavior(gv_PlayerHero[EventPlayer()], assist_behaviours[i - 1])) {
+                PlayerGroupAdd(participating_players, gv_PlayerNumber[i]);
+            }
+        }
+
         if (gv_HeroFirstKill == false) {
             gv_HeroFirstKill = true;
             first_blood = true;
@@ -15005,13 +14999,7 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     // Enable the revive timer countdown
     DialogControlSetVisible(gv_ScoreDialogReviveTime[EventPlayer()], PlayerGroupAll(), true);
 
-    // TODO: Look if those two functions can be combined
-    if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32222") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322222") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3222222") == true))) {
-        gf_HrAssistantBonusTeam2();
-    }
-    else if ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && ((UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist3") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist32") == true) || (UnitHasBehavior(gv_PlayerHero[EventPlayer()], "Player1Assist322") == true))) {
-        gf_HrAssistantBonusTeam1();
-    }
+    lf_AssistMoneyAndMessage(EventPlayer(), killing_player, participating_players);
 
     // A message in chat if the whole team is dead
     // TODO: Refactor this function
@@ -16275,7 +16263,7 @@ void gt_TogglePlayerStatisticsWindow_Init () {
 bool gt_SpectatorStatisticsWindowToggle_Func (bool testConds, bool runActions) {
     int i;
     int index;
-    int timeout = 15;
+    int timeout = 5;
 
     if (testConds) {
         if (!(gv_GameStartBoolean == true)) {
