@@ -151,7 +151,7 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="0"/>
         <Collide index="Small" value="0"/>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="FleetBeacon">
@@ -479,7 +479,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero72Skill1Missile" parent="MISSILE">
@@ -644,7 +644,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero50AttackMissile" parent="MISSILE">
@@ -885,7 +885,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero71Skill4Missile2" parent="MISSILE">
@@ -1137,7 +1137,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero9Skill4Dummy">
@@ -1365,7 +1365,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero68">
@@ -1518,7 +1518,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero67Skill4Dummy">
@@ -1724,7 +1724,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero57Skill1Missile2" parent="MISSILE">
@@ -2003,7 +2003,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero66Skill1Missile" parent="MISSILE">
@@ -2309,7 +2309,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero69Skill3Missile" parent="MISSILE">
@@ -2782,7 +2782,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero63Skill4Dummy">
@@ -2988,7 +2988,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero60">
@@ -3145,7 +3145,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
         <TurretArray value="Hellion"/>
     </CUnit>
@@ -3302,7 +3302,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero37Skill4Missile" parent="MISSILE">
@@ -3498,7 +3498,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero36">
@@ -3657,7 +3657,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero34">
@@ -3811,7 +3811,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero31">
@@ -3968,7 +3968,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero30Skill4Dummy">
@@ -4235,7 +4235,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero29S1">
@@ -4455,7 +4455,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero28">
@@ -4608,7 +4608,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero27">
@@ -4761,7 +4761,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero23">
@@ -4916,7 +4916,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero22">
@@ -5069,7 +5069,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero21Skill4Dummy">
@@ -5291,7 +5291,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero15AttackMissile2" parent="MISSILE">
@@ -5539,7 +5539,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero16">
@@ -5694,7 +5694,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero15">
@@ -5849,7 +5849,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero14">
@@ -6003,7 +6003,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero13">
@@ -6158,7 +6158,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero13Skill4Dummy">
@@ -6407,7 +6407,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero11Skill3Missile" parent="MISSILE">
@@ -6860,7 +6860,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero16Skill1Missile" parent="MISSILE">
@@ -7218,7 +7218,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero25Skill3Missile" parent="MISSILE">
@@ -7413,7 +7413,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero26Skill1Missile" parent="MISSILE">
@@ -7884,7 +7884,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero39">
@@ -8043,7 +8043,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero39Skill4Missile" parent="MISSILE">
@@ -8212,7 +8212,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero40Skill3Missile" parent="MISSILE">
@@ -8440,7 +8440,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero42AttackMissile" parent="MISSILE">
@@ -8650,7 +8650,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero43Skill1Weapon" parent="MISSILE">
@@ -8820,7 +8820,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero44AttackMissile" parent="MISSILE">
@@ -9104,7 +9104,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero46">
@@ -9259,7 +9259,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero46Skill2Missile" parent="MISSILE">
@@ -9470,7 +9470,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero47AttackMissile" parent="MISSILE">
@@ -9784,7 +9784,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero49Skill1Missile" parent="MISSILE">
@@ -9981,7 +9981,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero50Skill4Dummy">
@@ -10196,7 +10196,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero51AttackMissile" parent="MISSILE">
@@ -10481,7 +10481,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero52AttackMissile" parent="MISSILE">
@@ -10677,7 +10677,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero54">
@@ -10835,7 +10835,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero54Skill2Missile" parent="MISSILE">
@@ -11008,7 +11008,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero55Skill1Missile" parent="MISSILE">
@@ -11245,7 +11245,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero56Skill1Dummy">
@@ -11465,7 +11465,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero57PassiveMissile" parent="MISSILE">
@@ -11676,7 +11676,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero58AttackMissile" parent="MISSILE">
@@ -11871,7 +11871,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero59Skill3Missile" parent="MISSILE">
@@ -12085,7 +12085,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero62">
@@ -12238,7 +12238,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero61Skill4Unit">
@@ -12896,7 +12896,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Ultralisk">
@@ -13062,7 +13062,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="UnknownUnit" parent="MISSILE">
@@ -13259,7 +13259,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero8Skill3Missile" parent="MISSILE">
@@ -13428,7 +13428,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero7">
@@ -13582,7 +13582,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero6Skill4Dummy">
@@ -13792,7 +13792,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero6">
@@ -13946,7 +13946,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Gamsi">
@@ -14170,7 +14170,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero25">
@@ -14323,7 +14323,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero33">
@@ -14476,7 +14476,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="HighTemplar2team">
@@ -16184,7 +16184,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero18">
@@ -16379,7 +16379,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero48">
@@ -16537,7 +16537,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero65">
@@ -16697,7 +16697,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero5">
@@ -16848,7 +16848,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero20">
@@ -17004,7 +17004,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Hero35">
@@ -17160,7 +17160,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
     <CUnit id="Zeratul">
@@ -17310,7 +17310,7 @@
             <Charge Link="Hotshot/HeroRevive"/>
             <Cooldown Link="Hotshot/HeroRevive"/>
         </ReviveInfoBase>
-        <EffectHistoryLimit index="Damage" value="20"/>
+        <EffectHistoryLimit index="Damage" value="40"/>
         <EffectHistoryLimit index="Healing" value="10"/>
     </CUnit>
 </Catalog>
