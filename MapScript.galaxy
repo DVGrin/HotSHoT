@@ -55,6 +55,12 @@ struct PlayerStatistics {
     int minerals_lost;
 };
 
+struct DeathRecapTestItem {
+    int player;
+    fixed damage;
+    fixed percentage;
+};
+
 //--------------------------------------------------------------------------------------------------
 // Constants
 //--------------------------------------------------------------------------------------------------
@@ -14775,6 +14781,58 @@ void lf_AssistMoneyAndMessage(int victim, int killer, playergroup participating_
     UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, assist_message);
 }
 
+void lf_DeathRecapDmgPercentageInChat(int victim, playergroup killers) {
+    int i;
+    int index;
+    text message;
+    fixed total_damage;
+    DeathRecapTestItem[4] recap;
+    effecthistory history;
+    
+    PlayerGroupLoopBegin(killers);
+    for (; !PlayerGroupLoopDone(); PlayerGroupLoopStep()) {
+        history = UnitEffectHistory(gv_PlayerHero[PlayerGroupLoopCurrent()], 0);
+        recap[index].player = PlayerGroupLoopCurrent();
+        for (i = 1; i <= EffectHistoryCount(history); i += 1) {
+            if (EffectHistoryGetAmountInt(history, i, c_effectAmountDamaged, false) > 0) {
+                recap[index].damage += EffectHistoryGetAmountFixed(history, i, c_effectAmountDamaged, false);
+            }
+        }
+        index += 1;
+    }
+    PlayerGroupLoopEnd();
+
+    message = StringToText("Short Death Recap:<n/>");
+
+    for (i = 0; i < PlayerGroupCount(killers); i += 1) {
+        total_damage += recap[i].damage;
+    }
+    for (i = 0; i < PlayerGroupCount(killers); i += 1) {
+        recap[i].percentage = 100.0 * recap[i].damage / total_damage;
+        message += TextWithColor(
+            PlayerName(recap[i].player),
+            libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(gv_PlayerNumber[i], false))
+        );
+        message += StringToText(": ");
+        message += FixedToText(recap[i].damage, 0);
+        message += StringToText(" (");
+        message += FixedToText(recap[i].percentage, 1);
+        message += StringToText("%)");
+    }
+
+    UIDisplayMessage(
+        PlayerGroupSingle(victim),
+        c_messageAreaChat,
+        message
+    );
+
+    UIDisplayMessage(
+        GameAttributePlayersForTeam(3),
+        c_messageAreaChat,
+        message
+    );
+}
+
 bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     int i;
     int bounty = 0;
@@ -15006,6 +15064,8 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     if ((((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[1]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[2]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[3]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[4]] == true) && (gv_HeroAllKill[0] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[0]) >= 2)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[5]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[6]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[7]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[8]] == true) && (gv_HeroAllKill[1] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[1]) >= 2)))) {
         gf_HrHeroAllKillMessage();
     }
+
+    lf_DeathRecapDmgPercentageInChat(EventPlayer(), participating_players);
 
     if ((UnitGetType(EventUnit()) != "Hero19")) {
         TriggerExecute(gt_TrHeroReviveStand, true, false);
