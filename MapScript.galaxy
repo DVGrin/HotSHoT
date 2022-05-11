@@ -15072,6 +15072,8 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
             lf_HeroKillMessage(killing_player, EventPlayer(), first_blood, multikill)
         );
 
+        lf_DeathRecapDmgPercentageInChat(EventPlayer(), participating_players);
+
         // Play the kill sound
         SoundPlay(
             SoundLink(lf_HeroKillSoundLink(first_blood, multikill, gv_HeroKillStreak[killing_player]), -1),
@@ -15125,8 +15127,6 @@ bool gt_TrHeroDeath_Func (bool testConds, bool runActions) {
     if ((((PlayerGroupHasPlayer(GameAttributePlayersForTeam(1), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[1]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[2]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[3]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[4]] == true) && (gv_HeroAllKill[0] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[0]) >= 2)) || ((PlayerGroupHasPlayer(GameAttributePlayersForTeam(2), EventPlayer()) == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[5]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[6]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[7]] == true) && (gv_HeroDeathBoolean[gv_PlayerNumber[8]] == true) && (gv_HeroAllKill[1] == false) && (PlayerGroupCount(gv_TeamPlayerGroup[1]) >= 2)))) {
         gf_HrHeroAllKillMessage();
     }
-
-    lf_DeathRecapDmgPercentageInChat(EventPlayer(), participating_players);
 
     if ((UnitGetType(EventUnit()) != "Hero19")) {
         TriggerExecute(gt_TrHeroReviveStand, true, false);
