@@ -58,6 +58,9 @@ struct PlayerStatistics {
 struct DeathRecapTestItem {
     int player;
     fixed damage;
+    fixed physical_damage;
+    fixed magical_damage;
+    fixed true_damage;
     fixed percentage;
 };
 
@@ -14785,6 +14788,8 @@ void lf_DeathRecapDmgPercentageInChat(int victim, playergroup killers) {
     int i;
     int index;
     text message;
+    string effect;
+    string damage_type;
     fixed earliest_time;
     fixed total_damage;
     DeathRecapTestItem[4] recap;
@@ -14804,6 +14809,21 @@ void lf_DeathRecapDmgPercentageInChat(int victim, playergroup killers) {
             if (EffectHistoryGetAmountInt(history, i, c_effectAmountDamaged, false) > 0) {
                 earliest_time = MaxF(earliest_time, GameGetMissionTime() - EffectHistoryGetTime(history, i));
                 recap[index].damage += EffectHistoryGetAmountFixed(history, i, c_effectAmountDamaged, false);
+
+                effect = EffectHistoryGetEffect(history, i, c_effectHistoryEffectCurrent);
+
+                if (CatalogFieldExists(CatalogEntryScope(c_gameCatalogEffect, effect), "Kind")) {
+                    damage_type = CatalogFieldValueGet(c_gameCatalogEffect, effect, "Kind", c_playerAny);
+                    if (damage_type == "Spell") {
+                        recap[index].magical_damage += EffectHistoryGetAmountFixed(history, i, c_effectAmountDamaged, false);
+                    } else if (damage_type == "Splash") {
+                        recap[index].true_damage += EffectHistoryGetAmountFixed(history, i, c_effectAmountDamaged, false);
+                    } else {
+                        recap[index].physical_damage += EffectHistoryGetAmountFixed(history, i, c_effectAmountDamaged, false);
+                    }
+                } else {
+                    recap[index].magical_damage += EffectHistoryGetAmountFixed(history, i, c_effectAmountDamaged, false);
+                }
             }
         }
         index += 1;
@@ -14833,6 +14853,32 @@ void lf_DeathRecapDmgPercentageInChat(int victim, playergroup killers) {
         message += StringToText(" (");
         message += FixedToText(recap[i].percentage, 1);
         message += StringToText("%)<n/>");
+
+        message += StringToText(" — ");
+        message += TextWithColor(
+            (
+                FixedToText(recap[i].physical_damage, 0) +
+                StringToText(" physical")
+            ),
+            Color(100.0, 60.0, 60.0)
+        );
+        message += StringToText(", ");
+        message += TextWithColor(
+            (
+                FixedToText(recap[i].magical_damage, 0) +
+                StringToText(" magical")
+            ),
+            Color(50.0, 100.0, 100.0)
+        );
+        message += StringToText(", ");
+        message += TextWithColor(
+            (
+                FixedToText(recap[i].true_damage, 0) +
+                StringToText(" true")
+            ),
+            Color(100.0, 100.0, 60.0)
+        );
+        message += StringToText("<n/>");
     }
 
     UIDisplayMessage(

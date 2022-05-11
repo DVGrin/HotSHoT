@@ -1771,7 +1771,6 @@
         <ImpactLocation Value="SourceUnit"/>
         <Flags index="Kill" value="1"/>
         <Flags index="NoKillCredit" value="1"/>
-        <CasterHistory value="Damage"/>
     </CEffectDamage>
     <CEffectSet id="Hero73Skill4Mo">
         <Marker Link="Effect/PickupMinerals100Set"/>
