@@ -20,6 +20,7 @@
     <Include path="UI/Layout/Custom/ScoreWindowToggleButton.SC2Layout"/>
     <Include path="UI/Layout/Custom/StatShop.SC2Layout"/>
     <Include path="UI/Layout/Custom/PlayerStatisticsWindow.SC2Layout"/>
+    <Include path="UI/Layout/Custom/SpectatorStatisticsWindowToggleButton.SC2Layout"/>
     <Include path="UI/Layout/Custom/EndGameButton.SC2Layout"/>
 
     <!-- MaxStorm modifications -->
